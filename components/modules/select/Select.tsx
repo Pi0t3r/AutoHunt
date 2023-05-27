@@ -11,9 +11,16 @@ type SelectProps = {
   value: SelectOption | undefined;
   onChange: (value: SelectOption | undefined) => void;
   filter: string;
+  disabled?: boolean;
 };
 
-export function Select({ value, onChange, options, filter }: SelectProps) {
+export function Select({
+  value,
+  onChange,
+  options,
+  filter,
+  disabled,
+}: SelectProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [highlightedIndex, setHighlightedIndex] = useState(0);
 
@@ -35,7 +42,7 @@ export function Select({ value, onChange, options, filter }: SelectProps) {
       onBlur={() => setIsOpen(false)}
       onClick={() => setIsOpen((prev) => !prev)}
       tabIndex={0}
-      className={styles.container}
+      className={`${styles.container} ${disabled ? styles.disabled : ''}`}
     >
       <span className={styles.title}>{filter}</span>
       <div className={styles.divider} />
@@ -52,22 +59,23 @@ export function Select({ value, onChange, options, filter }: SelectProps) {
       <div className={styles.divider} />
       <div className={styles.caret} />
       <ul className={`${styles.options} ${isOpen ? styles.show : ""}`}>
-        {options && options.map((option, index) => (
-          <li
-            onClick={(e) => {
-              e.stopPropagation();
-              selectOption(option);
-              setIsOpen(false);
-            }}
-            onMouseEnter={() => setHighlightedIndex(index)}
-            key={option.value}
-            className={`${styles.option} ${
-              isOptionSelected(option) ? styles.selected : ""
-            } ${index === highlightedIndex ? styles.highlighted : ""}`}
-          >
-            {option.label}
-          </li>
-        ))}
+        {options &&
+          options.map((option, index) => (
+            <li
+              onClick={(e) => {
+                e.stopPropagation();
+                selectOption(option);
+                setIsOpen(false);
+              }}
+              onMouseEnter={() => setHighlightedIndex(index)}
+              key={option.value}
+              className={`${styles.option} ${
+                isOptionSelected(option) ? styles.selected : ""
+              } ${index === highlightedIndex ? styles.highlighted : ""}`}
+            >
+              {option.label}
+            </li>
+          ))}
       </ul>
     </div>
   );

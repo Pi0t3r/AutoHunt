@@ -7,19 +7,34 @@ import { body, options, fuelOptions } from "../../data/cars";
 type SelectOption = {
   label: string;
   value: string;
-  generations?: SelectOption[];
-  versions?: SelectOption[];
-  engine?: SelectOption[];
+  generations?: SelectOption[] | undefined;
+  versions?: SelectOption[] | undefined;
+  engine?: SelectOption[] | undefined;
+  models?: SelectOption[] | undefined;
 };
 
 export default function Offers() {
-   const [selectedBody, setSelectedBody] = useState<SelectOption | undefined>(undefined);
-  const [selectedFuel, setSelectedFuel] = useState<SelectOption | undefined>(undefined);
-  const [selectedGeneration, setSelectedGeneration] = useState<SelectOption | undefined>(undefined);
-  const [selectedVersion, setSelectedVersion] = useState<SelectOption | undefined>(undefined);
-  const [selectedBrand, setSelectedBrand] = useState<SelectOption | undefined>(undefined);
-  const [selectedModel, setSelectedModel] = useState<SelectOption | undefined>(undefined);
-  const [selectedEngine, setSelectedEngine] = useState<SelectOption | undefined>(undefined);
+  const [selectedBody, setSelectedBody] = useState<SelectOption | undefined>(
+    undefined
+  );
+  const [selectedFuel, setSelectedFuel] = useState<SelectOption | undefined>(
+    undefined
+  );
+  const [selectedGeneration, setSelectedGeneration] = useState<
+    SelectOption | undefined
+  >(undefined);
+  const [selectedVersion, setSelectedVersion] = useState<
+    SelectOption | undefined
+  >(undefined);
+  const [selectedBrand, setSelectedBrand] = useState<SelectOption | undefined>(
+    undefined
+  );
+  const [selectedModel, setSelectedModel] = useState<SelectOption | undefined>(
+    undefined
+  );
+  const [selectedEngine, setSelectedEngine] = useState<
+    SelectOption | undefined
+  >(undefined);
 
   const handleBrandChange = (brand: SelectOption | undefined) => {
     setSelectedBrand(brand);
@@ -40,32 +55,33 @@ export default function Offers() {
   const handleFuelChange = (selectedFuel: SelectOption | undefined) => {
     setSelectedFuel(selectedFuel);
   };
-  const getModelOptions = () => {
+  const getModelOptions = (): SelectOption[] => {
     if (selectedBrand) {
-      const brand = options.find(
-        (option) => option.value === (selectedBrand as SelectOption).value
+      const brand: SelectOption | undefined = options.find(
+        (option) => option.value === selectedBrand.value
       );
-      return brand ? brand.models : [];
+      return brand ? brand.models || [] : [];
     }
     return [];
   };
   const handleGenerationChange = (generation: SelectOption | undefined) => {
     setSelectedGeneration(generation);
-    setSelectedVersion(undefined)
-    setSelectedEngine(undefined)
+    setSelectedVersion(undefined);
+    setSelectedEngine(undefined);
   };
   const handleVersionChange = (version: SelectOption | undefined) => {
     setSelectedVersion(version);
-    setSelectedEngine(undefined)
+    setSelectedEngine(undefined);
   };
 
-  const getGenerationOption = () => {
+  const getGenerationOption = (): SelectOption[] => {
     if (selectedModel) {
       const model = getModelOptions().find(
         (option) => option.value === selectedModel.value
       );
       return model ? model.generations || [] : [];
     }
+    return [];
   };
 
   const getVersionOption = (): SelectOption[] => {
@@ -75,6 +91,7 @@ export default function Offers() {
       );
       return generation ? generation.versions || [] : [];
     }
+
     return [];
   };
 
@@ -88,6 +105,7 @@ export default function Offers() {
       );
       return version ? version.engine || [] : [];
     }
+
     return [];
   };
 
@@ -100,6 +118,7 @@ export default function Offers() {
           value={selectedBody}
           onChange={handleBodyChange}
           filter="Body"
+          disabled={selectedVersion?.value !== undefined}
         />
         <Select
           options={options}
@@ -136,7 +155,9 @@ export default function Offers() {
           value={selectedFuel}
           onChange={handleFuelChange}
           filter="Fuel type"
+          disabled={selectedEngine?.value !== undefined}
         />
+       
       </div>
     </div>
   );
