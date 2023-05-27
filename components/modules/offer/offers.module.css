@@ -1,6 +1,52 @@
-.div{
-    background-color: white;
-    width: 100%;
-    text-align: center;
-    color: black;
+.div {
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  color: black;
+}
+.button {
+  margin-top: 20px;
+  width: 90%;
+  padding: 18px;
+  background-color: #b78d20;
+  border: none;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.offers {
+  padding-top: 15px;
+  margin-top: 40px;
+  width: 100%;
+  background-color: #000000b3;
+}
+.offers .offer {
+  background-color: white;
+  width: 90%;
+  height: 400px;
+  margin: 15px auto;
+  padding-top: 5px;
+}
+
+.offers .offer .img {
+  width: 95%;
+  margin: auto;
+  height: 50%;
+  background-image: url("../../../app/utilities/images/car.png");
+  background-size: cover;
+  background-position: center;
+}
+.offer .info {
+    padding: 0 10px;
+    text-align: left;
+}
+.offer .info .title{
+    font-weight: bold;
+    font-size: 20px;
+}
+.offer .price {
+    color: #b78d20;
+    font-weight: bold;
+    font-size: 25px;
 }

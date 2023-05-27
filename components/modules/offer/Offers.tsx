@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import styles from "./offers.module.css";
@@ -157,7 +158,25 @@ export default function Offers() {
           filter="Fuel type"
           disabled={selectedEngine?.value !== undefined}
         />
-       
+        <button className={styles.button}>Show 2500 advertisements</button>
+      </div>
+      <div className={styles.offers}>
+        <div className={styles.offer}>
+          <div className={styles.img} />
+          <div className={styles.info}>
+            <p className={styles.title}>Mercedes-Benz GLC 220d 4Matic AMG Premium</p>
+            <p>2022 - 30 000km - Diesel - 1993 cm<sup>3</sup></p>
+            <p className={styles.price}>359 900 PLN</p>
+          </div>
+        </div>
+        <div className={styles.offer}>
+          <div className={styles.img} />
+          <div className={styles.info}>
+            <p className={styles.title}>Mercedes-Benz GLC 220d 4Matic AMG Premium</p>
+            <p>2022 - 30 000km - Diesel - 1993 cm<sup>3</sup></p>
+            <p className={styles.price}>359 900 PLN</p>
+          </div>
+        </div>
       </div>
     </div>
   );
