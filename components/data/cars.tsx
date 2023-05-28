@@ -3578,34 +3578,402 @@ export const options = [
               {
                 value: "sedan",
                 label: "Sedan (1997-2004)",
-                engine: [],
+                engine: [
+                  {
+                    value: "1.8-125km-92kw",
+                    label: "1.8 125KM 92kW",
+                  },
+                  {
+                    value: "1.8-t-150km-110kw",
+                    label: "1.8 T 150KM 110kW",
+                  },
+                  {
+                    value: "1.8-t-180km-132kw",
+                    label: "1.8 T 180KM 132kW",
+                  },
+                  {
+                    value: "1.8-t-quattro-180km-132kw",
+                    label: "1.8 T quattro 180KM 132kW",
+                  },
+                  {
+                    value: "2.0-130km-96kw",
+                    label: "2.0 130KM 96kW",
+                  },
+                  {
+                    value: "2.4-quattro-165km-121kw",
+                    label: "2.4 Quattro 165KM 121kW",
+                  },
+                  {
+                    value: "2.4-quattro-170km-125kw",
+                    label: "2.4 Quattro 170KM 125kW",
+                  },
+                  {
+                    value: "2.4-v6-170km-125kw",
+                    label: "2.4 V6 170KM 125kW",
+                  },
+                  {
+                    value: "2.4-v6-165km-121kw",
+                    label: "2.4 V6 165KM 121kW",
+                  },
+                  {
+                    value: "2.7-t-quattro-230km-169kw",
+                    label: "2.7 T quattro 230KM 169kW",
+                  },
+                  {
+                    value: "2.7-v6-biturbo-230km-169kw",
+                    label: "2.7 V6 biturbo 230KM 169kW",
+                  },
+                  {
+                    value: "2.7-v6-biturbo-250km-184kw",
+                    label: "2.7 V6 biturbo 250KM 184kW",
+                  },
+                  {
+                    value: "2.8-v30-quattro-193km-142kw",
+                    label: "2.8 V30 quattro 193KM 142kW",
+                  },
+                  {
+                    value: "2.8-v6-193km-142kw",
+                    label: "2.8 V6 193KM 142kW",
+                  },
+                  {
+                    value: "3.0-v6-220km-162kw",
+                    label: "3.0 V6 220KM 162kW",
+                  },
+                  {
+                    value: "3.7-v8-260km-191kw",
+                    label: "3.7 V8 260KM 191kW",
+                  },
+                  {
+                    value: "4.2-v8-300km-221kw",
+                    label: "4.2 V8 300KM 221kW",
+                  },
+                  {
+                    value: "1.9-tdi-110km-81kw",
+                    label: "1.9 TDI 110KM 81kW",
+                  },
+                  {
+                    value: "1.9-tdi-130km-96kw",
+                    label: "1.9 TDI 130KM 96kW",
+                  },
+                  {
+                    value: "1.9-tdi-115km-85kw",
+                    label: "1.9 TDI 115KM 85kW",
+                  },
+                  {
+                    value: "2.5-tdi-180km-132kw",
+                    label: "2.5 TDI 180KM 132kW",
+                  },
+                  {
+                    value: "2.5-tdi-quattro-150km-110kw",
+                    label: "2.5 TDI quattro 150KM 110kW",
+                  },
+                  {
+                    value: "2.5-v6-tdi-150km-110kw",
+                    label: "2.5 V6 TDI 150KM 110kW",
+                  },
+                  {
+                    value: "2.5-v6-tdi-155km-114kw",
+                    label: "2.5 V6 TDI 155KM 114kW",
+                  },
+                  {
+                    value: "2.5-v6-tdi-180km-132kw",
+                    label: "2.5 V6 TDI 180KM 132kW",
+                  },
+                  {
+                    value: "2.5-v6-tdi-163km-120kw",
+                    label: "2.5 V6 TDI 163KM 120kW",
+                  },
+                ],
               },
               {
                 value: "s6-avant",
                 label: "S6 Avant (1999-2004)",
-                engine: [],
+                engine: [
+                  {
+                    value: "4.2-v8-340km-250kw",
+                    label: "4.2 V8 340KM 250kW",
+                  },
+                ],
               },
               {
                 value: "s6-sedan",
                 label: "S6 Sedan (1999-2004)",
-                engine: [],
+                engine: [
+                  {
+                    value: "4.2-v8-340km-250kw",
+                    label: "4.2 V8 340KM 250kW",
+                  },
+                ],
               },
               {
                 value: "rs6-sedan",
                 label: "RS6 Sedan (2002-2004)",
-                engine: [],
+                engine: [
+                  {
+                    value: "4.2-v8-480km-353kw",
+                    label: "4.2 V8 480KM 353kW",
+                  },
+                  {
+                    value: "4.2-v8-biturbo-450km-331kw",
+                    label: "4.2 V8 biturbo 450KM 331kW",
+                  },
+                ],
               },
               {
                 value: "rs6-avant",
                 label: "RS6 Avant (2002-2004)",
-                engine: [],
+                engine: [
+                  {
+                    value: "4.2-v8-biturbo-450km-331kw",
+                    label: "4.2 V8 biturbo 450KM 331kW",
+                  },
+                  {
+                    value: "4.2-v8-biturbo-plus-480km-353kw",
+                    label: "4.2 V8 biturbo plus 480KM 353kW",
+                  },
+                ],
               },
             ],
           },
           {
             value: "c6",
             label: "C6 (2004-2011)",
-            versions: [],
+            versions: [
+              {
+                value: "avant",
+                label: "Avant (2004-2011)",
+                engine: [
+                  {
+                    value: "2.0-tfsi-170km-125kw",
+                    label: "2.0 TFSI 170KM 125kW",
+                  },
+                  {
+                    value: "2.0-tfsi-euro5-170km-125kw",
+                    label: "2.0 TFSI (Euro5) 170KM 125kW",
+                  },
+                  {
+                    value: "2.4-v6-24v-177km-130kw",
+                    label: "2.4 V6 24V 177KM 130kW",
+                  },
+                  {
+                    value: "2.8-v6-fsi-210km-154kw",
+                    label: "2.8 V6 FSI 210KM 154kW",
+                  },
+                  {
+                    value: "2.8-v6-fsi-220km-162kw",
+                    label: "2.8 V6 FSI 220KM 162kW",
+                  },
+                  {
+                    value: "2.8-v6-fsi-190km-140kw",
+                    label: "2.8 V6 FSI 190KM 140kW",
+                  },
+                  {
+                    value: "3.0-v6-fsi-290km-213kw",
+                    label: "3.0 V6 FSI 290KM 213kW",
+                  },
+                  {
+                    value: "3.2-v6-fsi-255km-188kw",
+                    label: "3.2 V6 FSI 255KM 188kW",
+                  },
+                  {
+                    value: "4.2-v8-40v-335km-246kw",
+                    label: "4.2 V8 40V 335KM 246kW",
+                  },
+                  {
+                    value: "4.2-v8-350km-257kw",
+                    label: "4.2 V8 350KM 257kW",
+                  },
+                  {
+                    value: "2.0-tdi-140km-103kw",
+                    label: "2.0 TDI 140KM 103kW",
+                  },
+                  {
+                    value: "2.0-tdi-170km-125kw",
+                    label: "2.0 TDI 170KM 125kW",
+                  },
+                  {
+                    value: "2.0-tdi-136km-100kw",
+                    label: "2.0 TDI 136KM 100kW",
+                  },
+                  {
+                    value: "2.0-tdie-136km-100kw",
+                    label: "2.0 TDI e 136KM 100kW",
+                  },
+                  {
+                    value: "2.7-v6-tdi-180km-132kw",
+                    label: "2.7 V6 TDI 180KM 132kW",
+                  },
+                  {
+                    value: "2.7-v6-tdi-190km-140kw",
+                    label: "2.7 V6 TDI 190KM 140kW",
+                  },
+                  {
+                    value: "3.0-v6-tdi-225km-165kw",
+                    label: "3.0 V6 TDI 225KM 165kW",
+                  },
+                  {
+                    value: "3.0-v6-tdi-233km-171kw",
+                    label: "3.0 V6 TDI 233KM 171kW",
+                  },
+                  {
+                    value: "3.0-v6-tdi-240km-177kw",
+                    label: "3.0 V6 TDI 240KM 177kW",
+                  },
+                ],
+              },
+              {
+                value: "limousine",
+                label: "Limousine (2004-2011)",
+                engine: [
+                  {
+                    value: "2.0-tfsi-170km-125kw",
+                    label: "2.0 TFSI 170KM 125kW",
+                  },
+                  {
+                    value: "2.0-tfsi-euro5-170km-125kw",
+                    label: "2.0 TFSI (Euro5) 170KM 125kW",
+                  },
+                  {
+                    value: "2.4-v6-24v-177km-130kw",
+                    label: "2.4 V6 24V 177KM 130kW",
+                  },
+                  {
+                    value: "2.8-v6-fsi-210km-154kw",
+                    label: "2.8 V6 FSI 210KM 154kW",
+                  },
+                  {
+                    value: "2.8-v6-fsi-220km-162kw",
+                    label: "2.8 V6 FSI 220KM 162kW",
+                  },
+                  {
+                    value: "2.8-v6-fsi-190km-140kw",
+                    label: "2.8 V6 FSI 190KM 140kW",
+                  },
+                  {
+                    value: "3.0-v6-fsi-290km-213kw",
+                    label: "3.0 V6 FSI 290KM 213kW",
+                  },
+                  {
+                    value: "3.2-v6-fsi-255km-188kw",
+                    label: "3.2 V6 FSI 255KM 188kW",
+                  },
+                  {
+                    value: "4.2-v8-40v-335km-246kw",
+                    label: "4.2 V8 40V 335KM 246kW",
+                  },
+                  {
+                    value: "4.2-v8-350km-257kw",
+                    label: "4.2 V8 350KM 257kW",
+                  },
+                  {
+                    value: "2.0-tdi-170km-125kw",
+                    label: "2.0 TDI 170KM 125kW",
+                  },
+                  {
+                    value: "2.0-tdi-136km-100kw",
+                    label: "2.0 TDI 136KM 100kW",
+                  },
+                  {
+                    value: "2.0-tdie-136km-100kw",
+                    label: "2.0 TDI e 136KM 100kW",
+                  },
+                  {
+                    value: "2.7-v6-tdi-180km-132kw",
+                    label: "2.7 V6 TDI 180KM 132kW",
+                  },
+                  {
+                    value: "2.7-v6-tdi-190km-140kw",
+                    label: "2.7 V6 TDI 190KM 140kW",
+                  },
+                  {
+                    value: "3.0-v6-tdi-225km-165kw",
+                    label: "3.0 V6 TDI 225KM 165kW",
+                  },
+                  {
+                    value: "3.0-v6-tdi-233km-171kw",
+                    label: "3.0 V6 TDI 233KM 171kW",
+                  },
+                  {
+                    value: "3.0-v6-tdi-240km-177kw",
+                    label: "3.0 V6 TDI 240KM 177kW",
+                  },
+                ],
+              },
+              {
+                value: "allroad-quattro",
+                label: "Allroad quattro (2006-2011)",
+                engine: [
+                  {
+                    value: "3.0-v6-fsi-290km-213kw",
+                    label: "3.0 V6 FSI 290KM 213kW",
+                  },
+                  {
+                    value: "3.2-v6-fsi-255km-188kw",
+                    label: "3.2 V6 FSI 255KM 188kW",
+                  },
+                  {
+                    value: "4.2-v8-350km-257kw",
+                    label: "4.2 V8 350KM 257kW",
+                  },
+                  {
+                    value: "2.7-v6-tdi-180km-132kw",
+                    label: "2.7 V6 TDI 180KM 132kW",
+                  },
+                  {
+                    value: "2.7-v6-tdi-190km-140kw",
+                    label: "2.7 V6 TDI 190KM 140kW",
+                  },
+                  {
+                    value: "3.0-v6-tdi-233km-171kw",
+                    label: "3.0 V6 TDI 233KM 171kW",
+                  },
+                  {
+                    value: "3.0-v6-tdi-240km-177kw",
+                    label: "3.0 V6 TDI 240KM 177kW",
+                  },
+                ],
+              },
+              {
+                value: "s6-limousine",
+                label: "S6 Limousine (2006-2011)",
+                engine: [
+                  {
+                    value: "5.2-v10-fsi-435km-320kw",
+                    label: "5.2 V10 FSI 435KM 320kW",
+                  },
+                ],
+              },
+              {
+                value: "s6-avant",
+                label: "S6 Avant (2006-2011)",
+                engine: [
+                  {
+                    value: "5.2-v10-fsi-435km-320kw",
+                    label: "5.2 V10 FSI 435KM 320kW",
+                  },
+                ],
+              },
+              {
+                value: "rs6-avant",
+                label: "RS6 Avant (2007-2010)",
+                engine: [
+                  {
+                    value: "5.0-v10-tfsi-580km-427kw",
+                    label: "5.0 V10 TFSI 580KM 427kW",
+                  },
+                ],
+              },
+              {
+                value: "rs6-limousine",
+                label: "RS6 Limousine (2007-2010)",
+                engine: [
+                  {
+                    value: "5.0-v10-tfsi-580km-427kw",
+                    label: "5.0 V10 TFSI 580KM 427kW",
+                  },
+                ],
+              },
+            ],
           },
           {
             value: "c7",

@@ -8,7 +8,7 @@ import { body, options, fuelOptions } from "../../data/cars";
 import Link from "next/link";
 import adv from "@/components/data/advertisement";
 import Image from "next/image";
-import { createConnection, Connection } from "typeorm";
+import { createConnection } from "typeorm";
 
 type SelectOption = {
   label: string;
