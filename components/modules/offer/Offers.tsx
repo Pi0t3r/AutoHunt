@@ -5,6 +5,9 @@ import styles from "./offers.module.css";
 import React, { SetStateAction, useState } from "react";
 import { Select } from "../select/Select";
 import { body, options, fuelOptions } from "../../data/cars";
+import Link from "next/link";
+import adv from "@/components/data/advertisement";
+import Image from "next/image";
 type SelectOption = {
   label: string;
   value: string;
@@ -161,22 +164,38 @@ export default function Offers() {
         <button className={styles.button}>Show 2500 advertisements</button>
       </div>
       <div className={styles.offers}>
-        <div className={styles.offer}>
-          <div className={styles.img} />
-          <div className={styles.info}>
-            <p className={styles.title}>Mercedes-Benz GLC 220d 4Matic AMG Premium</p>
-            <p>2022 - 30 000km - Diesel - 1993 cm<sup>3</sup></p>
-            <p className={styles.price}>359 900 PLN</p>
-          </div>
-        </div>
-        <div className={styles.offer}>
-          <div className={styles.img} />
-          <div className={styles.info}>
-            <p className={styles.title}>Mercedes-Benz GLC 220d 4Matic AMG Premium</p>
-            <p>2022 - 30 000km - Diesel - 1993 cm<sup>3</sup></p>
-            <p className={styles.price}>359 900 PLN</p>
-          </div>
-        </div>
+        <ul>
+          {adv.map((post) => (
+            <li key={post.id}>
+              <Link
+                href={`/${post.brand}/${post.model}/${post.title}-${post.id}`}
+              >
+                <div className={styles.offer}>
+                  <div className={styles.img}>
+                    <Image
+                      src={post.image}
+                      width={200}
+                      height={200}
+                      alt={`car images ${post.brand} ${post.model}`}
+                    />
+                  </div>
+                  <div className={styles.info}>
+                    <p className={styles.title}>
+                      {post.brand} {post.model}
+                    </p>
+                    <p>
+                      {post.yearbook} - {post.mileage}km - {post.engine}
+                    </p>
+                    <p>Damaged: {post.damage ? "Yes" : "No"}</p>
+                    <p className={styles.price}>
+                      {post.price.toLocaleString().replace(",", " ")} PLN
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
