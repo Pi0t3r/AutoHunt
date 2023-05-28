@@ -16,7 +16,7 @@ const adv = [
     price: 40000,
     image: audi,
     title: "",
-    damage: false,
+    damage: true,
   },
   {
     // CAR

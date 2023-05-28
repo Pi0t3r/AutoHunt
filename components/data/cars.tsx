@@ -32,31 +32,31 @@ export const options = [
                 engine: [
                   {
                     value: "1.2tfsi-86km-63kw",
-                    label: "1.2TFSI 86KM 63kW",
+                    label: "1.2 TFSI 86KM 63kW",
                   },
                   {
                     value: "1.4tfsi-122km-90kw",
-                    label: "1.4TFSI 122KM 90kW",
+                    label: "1.4 TFSI 122KM 90kW",
                   },
                   {
                     value: "1.4tfsi-185km-136kw",
-                    label: "1.4TFSI 185KM 136kW",
+                    label: "1.4 TFSI 185KM 136kW",
                   },
                   {
                     value: "1.4tfsi-119g-122km-90kw",
-                    label: "1.4TFSI 119g 122KM 90kW",
+                    label: "1.4 TFSI 119g 122KM 90kW",
                   },
                   {
                     value: "1.4tfsi-cod-140km-103kw",
-                    label: "1.4TFSI CoD 140KM 103kW",
+                    label: "1.4 TFSI CoD 140KM 103kW",
                   },
                   {
                     value: "1.6tdi-105km-77kw",
-                    label: "1.6TDI 105KM 77kW",
+                    label: "1.6 TDI 105KM 77kW",
                   },
                   {
                     value: "1.6tdi-90km-66kw",
-                    label: "1.6TDI 90KM 66kW",
+                    label: "1.6 TDI 90KM 66kW",
                   },
                   {
                     value: "2.0tdi-143km-105kw",
@@ -166,11 +166,11 @@ export const options = [
                   },
                   {
                     value: "1.4tdi-ultra-90km-66kw",
-                    label: "1.4TDI ultra 90KM 66kW",
+                    label: "1.4 TDI ultra 90KM 66kW",
                   },
                   {
                     value: "1.6tdi-116km-85kw",
-                    label: "1.6TDI 116KM 85kW",
+                    label: "1.6 TDI 116KM 85kW",
                   },
                 ],
               },

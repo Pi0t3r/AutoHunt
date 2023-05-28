@@ -2,12 +2,14 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import styles from "./offers.module.css";
-import React, { SetStateAction, useState } from "react";
+import React, { SetStateAction, useEffect, useState } from "react";
 import { Select } from "../select/Select";
 import { body, options, fuelOptions } from "../../data/cars";
 import Link from "next/link";
 import adv from "@/components/data/advertisement";
 import Image from "next/image";
+import { createConnection, Connection } from "typeorm";
+
 type SelectOption = {
   label: string;
   value: string;
@@ -16,6 +18,17 @@ type SelectOption = {
   engine?: SelectOption[] | undefined;
   models?: SelectOption[] | undefined;
 };
+
+async function connectDatabase() {
+  try {
+    await createConnection();
+    console.log("Connected to the database");
+  } catch (error) {
+    console.error("Database connection error:", error);
+  }
+}
+
+connectDatabase();
 
 export default function Offers() {
   const [selectedBody, setSelectedBody] = useState<SelectOption | undefined>(
@@ -39,6 +52,20 @@ export default function Offers() {
   const [selectedEngine, setSelectedEngine] = useState<
     SelectOption | undefined
   >(undefined);
+  const [advertisements, setAdvertisements] = useState([]);
+
+  useEffect(() => {
+    const fetchAdvertisements = async () => {
+      const connection = await createConnection();
+
+      const advertisementRepository = connection.getRepository(Advertisement);
+
+      const advertisements = await advertisementRepository.find();
+
+      setAdvertisements(advertisements);
+    };
+    fetchAdvertisements()
+  },[]);
 
   const handleBrandChange = (brand: SelectOption | undefined) => {
     setSelectedBrand(brand);
