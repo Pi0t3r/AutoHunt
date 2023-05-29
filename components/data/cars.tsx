@@ -4886,12 +4886,330 @@ export const options = [
           {
             value: "d4",
             label: "D4 (2010-2017)",
-            versions: [],
+            versions: [
+              {
+                value: "lang",
+                label: "Lang (2010-2013)",
+                engine: [
+                  {
+                    value: "3.0-tfsi-290km-213kw",
+                    label: "3.0 TFSI 290KM 213kW",
+                  },
+                  {
+                    value: "4.0-tfsi-420km-213kw",
+                    label: "4.0 TFSI 420KM 213kW",
+                  },
+                  {
+                    value: "4.2-fsi-372km-274kw",
+                    label: "4.2 FSI 372KM 274kW",
+                  },
+                  {
+                    value: "6.3-fsi-500km-368kw",
+                    label: "6.3 FSI 500KM 368kW",
+                  },
+                  {
+                    value: "3.0-tdi-250km-184kw",
+                    label: "3.0 TDI 250KM 184kW",
+                  },
+                  {
+                    value: "4.2-tdi-350km-257kw",
+                    label: "4.2 TDI 350KM 257kW",
+                  },
+                ],
+              },
+              {
+                value: "sedan",
+                label: "Sedan (2010-2013)",
+                engine: [
+                  {
+                    value: "3.0-tfsi-290km-213kw",
+                    label: "3.0 TFSI 290KM 213kW",
+                  },
+                  {
+                    value: "4.0-tfsi-420km-213kw",
+                    label: "4.0 TFSI 420KM 213kW",
+                  },
+                  {
+                    value: "4.2-fsi-372km-274kw",
+                    label: "4.2 FSI 372KM 274kW",
+                  },
+                  {
+                    value: "3.0-tdi-250km-184kw",
+                    label: "3.0 TDI 250KM 184kW",
+                  },
+                  {
+                    value: "3.0-tdi-204km-150kw",
+                    label: "3.0 TDI 204KM 150kW",
+                  },
+                  {
+                    value: "4.2-tdi-350km-257kw",
+                    label: "4.2 TDI 350KM 257kW",
+                  },
+                ],
+              },
+              {
+                value: "sedan-facelift",
+                label: "Sedan Facelifting (2012-2017)",
+                engine: [
+                  {
+                    value: "3.0-tfsi-310km-228kw",
+                    label: "3.0 TFSI 310KM 228kW",
+                  },
+                  {
+                    value: "4.0-tfsi-435km-320kw",
+                    label: "4.0 TFSI 435KM 320kW",
+                  },
+                  {
+                    value: "3.0-tdi-258km-190kw",
+                    label: "3.0 TDI 258KM 190kW",
+                  },
+                  {
+                    value: "3.0-tdi-262km-193kw",
+                    label: "3.0 TDI 262KM 193kW",
+                  },
+                  {
+                    value: "3.0-tdi-clean-diesel-258km-190kw",
+                    label: "3.0 TDI clean diesel 258KM 190kW",
+                  },
+                  {
+                    value: "4.2-tdi-385km-283kw",
+                    label: "4.2 TDI 385KM 283kW",
+                  },
+                  {
+                    value: "4.2-tdi-clean-diesel-385km-283kw",
+                    label: "4.2 TDI clean diesel 385KM 283kW",
+                  },
+                  {
+                    value: "2.0-tfsi-245km-180kw",
+                    label: "2.0 TFSI 245KM 180kW (hybrid)",
+                  },
+                ],
+              },
+              {
+                value: "s8",
+                label: "S8 (2012-2013)",
+                engine: [
+                  {
+                    value: "4.0-tfsi-520km-382kw",
+                    label: "4.0 TFSI 520KM 382kW",
+                  },
+                ],
+              },
+              {
+                value: "lang-facelift",
+                label: "Lang Facelifting (2013-2017)",
+                engine: [
+                  {
+                    value: "3.0-tfsi-310km-228kw",
+                    label: "3.0 TFSI 310KM 228kW",
+                  },
+                  {
+                    value: "4.0-tfsi-435km-320kw",
+                    label: "4.0 TFSI 435KM 320kW",
+                  },
+                  {
+                    value: "3.0-tdi-258km-190kw",
+                    label: "3.0 TDI 258KM 190kW",
+                  },
+                  {
+                    value: "3.0-tdi-262km-193kw",
+                    label: "3.0 TDI 262KM 193kW",
+                  },
+                  {
+                    value: "3.0-tdi-clean-diesel-258km-190kw",
+                    label: "3.0 TDI clean diesel 258KM 190kW",
+                  },
+                  {
+                    value: "4.2-tdi-385km-283kw",
+                    label: "4.2 TDI 385KM 283kW",
+                  },
+                  {
+                    value: "4.2-tdi-clean-diesel-385km-283kw",
+                    label: "4.2 TDI clean diesel 385KM 283kW",
+                  },
+                ],
+              },
+              {
+                value: "w12-lang",
+                label: "W12 Lang (2014-2015)",
+                engine: [
+                  {
+                    value: "6.3-fsi-500km-368kw",
+                    label: "6.3 FSI 500KM 368kW",
+                  },
+                ],
+              },
+              {
+                value: "w12-lang-facelift",
+                label: "W12 Lang Facelifting (2015-2017)",
+                engine: [
+                  {
+                    value: "6.3-fsi-500km-368kw",
+                    label: "6.3 FSI 500KM 368kW",
+                  },
+                ],
+              },
+              {
+                value: "s8-facelift",
+                label: "S8 Facelifting (2015-2017)",
+                engine: [
+                  {
+                    value: "4.0-tfsi-520km-382kw",
+                    label: "4.0 TFSI 520KM 382kW",
+                  },
+                  {
+                    value: "4.0-tfsi-605km-445kw",
+                    label: "4.0 TFSI 605KM 445kW",
+                  },
+                ],
+              },
+            ],
           },
           {
             value: "d5",
             label: "D5 (2017-present)",
-            versions: [],
+            versions: [
+              {
+                value: "lang",
+                label: "Lang (2017-2021)",
+                engine: [
+                  {
+                    value: "3.0-55-tfsi-340km-250kw",
+                    label: "3.0 55 TFSI 340KM 250kW",
+                  },
+                  {
+                    value: "4.0-60-tfsi-460km-338kw",
+                    label: "4.0 60 TFSI 460KM 338kW",
+                  },
+                  {
+                    value: "3.0-50-tdi-286km-210kw",
+                    label: "3.0 50 TDI 286KM 210kW",
+                  },
+                  {
+                    value: "4.0-60-tdi-435km-320kw",
+                    label: "4.0 60 TDI 435KM 320kW",
+                  },
+                ],
+              },
+              {
+                value: "sedan",
+                label: "Sedan (2017-2021)",
+                engine: [
+                  {
+                    value: "3.0-55-tfsi-340km-250kw",
+                    label: "3.0 55 TFSI 340KM 250kW",
+                  },
+                  {
+                    value: "4.0-60-tfsi-460km-338kw",
+                    label: "4.0 60 TFSI 460KM 338kW",
+                  },
+                  {
+                    value: "3.0-50-tdi-286km-210kw",
+                    label: "3.0 50 TDI 286KM 210kW",
+                  },
+                  {
+                    value: "4.0-60-tdi-435km-320kw",
+                    label: "4.0 60 TDI 435KM 320kW",
+                  },
+                ],
+              },
+              {
+                value: "s8",
+                label: "S8 (2019-2021)",
+                engine: [
+                  {
+                    value: "4.0-tfsi-571km-420kw",
+                    label: "4.0 TFSI 571KM 420kW",
+                  },
+                ],
+              },
+              {
+                value: "lang-e",
+                label: "Lang - e (2020-2021)",
+                engine: [
+                  {
+                    value: "3.0-60-tfsie-449km-330kw",
+                    label: "3.0 60 TFSI e 449KM 330kW",
+                  },
+                ],
+              },
+              {
+                value: "sedan-e",
+                label: "Sedan - e (2020-2021)",
+                engine: [
+                  {
+                    value: "3.0-60-tfsie-449km-330kw",
+                    label: "3.0 60 TFSI e 449KM 330kW",
+                  },
+                ],
+              },
+              {
+                value: "s8-facelift",
+                label: "S8 Facelifting (2021-present)",
+                engine: [
+                  {
+                    value: "4.0-tfsi-571km-420kw",
+                    label: "4.0 TFSI 571KM 420kW",
+                  },
+                ],
+              },
+              {
+                value: "sedan-long-facelift",
+                label: "Sedan Long Facelifting (2021-present)",
+                engine: [
+                  {
+                    value: "3.0-55-tfsi-340km-250kw",
+                    label: "3.0 55 TFSI 340KM 250kW",
+                  },
+                  {
+                    value: "4.0-60-tfsi-460km-338kw",
+                    label: "4.0 60 TFSI 460KM 338kW",
+                  },
+                  {
+                    value: "3.0-50-tdi-286km-210kw",
+                    label: "3.0 50 TDI 286KM 210kW",
+                  },
+                ],
+              },
+              {
+                value: "sedan-facelift",
+                label: "Sedan Facelifting (2021-present)",
+                engine: [
+                  {
+                    value: "3.0-55-tfsi-340km-250kw",
+                    label: "3.0 55 TFSI 340KM 250kW",
+                  },
+                  {
+                    value: "4.0-60-tfsi-460km-338kw",
+                    label: "4.0 60 TFSI 460KM 338kW",
+                  },
+                  {
+                    value: "3.0-50-tdi-286km-210kw",
+                    label: "3.0 50 TDI 286KM 210kW",
+                  },
+                ],
+              },
+              {
+                value: "sedan-long-plugin-facelift",
+                label: "Sedan Long Plug-in Facelifting (2022-present)",
+                engine: [
+                  {
+                    value: "3.0-tfsie-462km-340kw",
+                    label: "3.0 TFSI e 462KM 340kW",
+                  },
+                ],
+              },
+              {
+                value: "sedan-plugin-facelift",
+                label: "Sedan Plug-in Facelifting (2022-present)",
+                engine: [
+                  {
+                    value: "3.0-tfsie-462km-340kw",
+                    label: "3.0 TFSI e 462KM 340kW",
+                  },
+                ],
+              },
+            ],
           },
         ],
       },
