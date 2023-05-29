@@ -56,12 +56,11 @@ export default function Offers() {
 
   useEffect(() => {
     const fetchAdvertisements = async () => {
+
       const connection = await createConnection();
-
       const advertisementRepository = connection.getRepository(Advertisement);
-
       const advertisements = await advertisementRepository.find();
-
+      
       setAdvertisements(advertisements);
     };
     fetchAdvertisements()

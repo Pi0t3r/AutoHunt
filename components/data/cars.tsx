@@ -3978,14 +3978,967 @@ export const options = [
           {
             value: "c7",
             label: "C7 (2011-2007)",
-            versions: [],
+            versions: [
+              {
+                value: "limousine",
+                label: "Limousine (2011-2014)",
+                engine: [
+                  {
+                    value: "2.0-tfsi-180km-132kw",
+                    label: "2.0 TFSI 180KM 132kW",
+                  },
+                  {
+                    value: "2.0-tfsi-hybrid-245km-180kw",
+                    label: "2.0 TFSI hybrid 245KM 180kW",
+                  },
+                  {
+                    value: "2.8-fsi-204km-150kw",
+                    label: "2.8 FSI 204KM 150kW",
+                  },
+                  {
+                    value: "3.0-fsi-310km-228kw",
+                    label: "3.0 FSI 310KM 228kW",
+                  },
+                  {
+                    value: "2.0-tdi-177km-130kw",
+                    label: "2.0 TDI 177KM 130kW",
+                  },
+                  {
+                    value: "2.0-tdi-ultra-190km-140kw",
+                    label: "2.0 TDI ultra 190KM 140kW",
+                  },
+                  {
+                    value: "3.0-tdi-204km-150kw",
+                    label: "3.0 TDI 204KM 150kW",
+                  },
+                  {
+                    value: "3.0-tdi-245km-180kw",
+                    label: "3.0 TDI 245KM 180kW",
+                  },
+                  {
+                    value: "3.0-tdi-313km-230kw",
+                    label: "3.0 TDI 313KM 230kW",
+                  },
+                  {
+                    value: "3.0-tdi-clean-diesel-245km-180kw",
+                    label: "3.0 TDI clean diesel 245KM 180kW",
+                  },
+                ],
+              },
+              {
+                value: "avant",
+                label: "Avant (2011-2014)",
+                engine: [
+                  {
+                    value: "2.0-tfsi-180km-132kw",
+                    label: "2.0 TFSI 180KM 132kW",
+                  },
+                  {
+                    value: "2.8-fsi-204km-150kw",
+                    label: "2.8 FSI 204KM 150kW",
+                  },
+                  {
+                    value: "3.0-fsi-300km-221kw",
+                    label: "3.0 FSI 300KM 221kW",
+                  },
+                  {
+                    value: "3.0-fsi-310km-228kw",
+                    label: "3.0 FSI 310KM 228kW",
+                  },
+                  {
+                    value: "2.0-tdi-177km-130kw",
+                    label: "2.0 TDI 177KM 130kW",
+                  },
+                  {
+                    value: "2.0-tdi-ultra-190km-140kw",
+                    label: "2.0 TDI ultra 190KM 140kW",
+                  },
+                  {
+                    value: "3.0-tdi-204km-150kw",
+                    label: "3.0 TDI 204KM 150kW",
+                  },
+                  {
+                    value: "3.0-tdi-245km-180kw",
+                    label: "3.0 TDI 245KM 180kW",
+                  },
+                  {
+                    value: "3.0-tdi-313km-230kw",
+                    label: "3.0 TDI 313KM 230kW",
+                  },
+                  {
+                    value: "3.0-tdi-clean-diesel-245km-180kw",
+                    label: "3.0 TDI clean diesel 245KM 180kW",
+                  },
+                ],
+              },
+              {
+                value: "allroad-quattro",
+                label: "Allroad quattro (2012-2014)",
+                engine: [
+                  {
+                    value: "3.0-fsi-310km-228kw",
+                    label: "3.0 FSI 310KM 228kW",
+                  },
+                  {
+                    value: "3.0-tdi-204km-150kw",
+                    label: "3.0 TDI 204KM 150kW",
+                  },
+                  {
+                    value: "3.0-tdi-245km-180kw",
+                    label: "3.0 TDI 245KM 180kW",
+                  },
+                  {
+                    value: "3.0-tdi-313km-230kw",
+                    label: "3.0 TDI 313KM 230kW",
+                  },
+                  {
+                    value: "3.0-tdi-clean-diesel-245km-180kw",
+                    label: "3.0 TDI clean diesel 245KM 180kW",
+                  },
+                ],
+              },
+              {
+                value: "rs6-avant",
+                label: "RS6 Avant (2012-2014)",
+                engine: [
+                  {
+                    value: "4.0-tfsi-560km-412kw",
+                    label: "4.0 TFSI 560KM 412kW",
+                  },
+                ],
+              },
+              {
+                value: "s6-avant",
+                label: "S6 Avant (2013-2014)",
+                engine: [
+                  {
+                    value: "4.0-tfsi-420km-309kw",
+                    label: "4.0 TFSI 420KM 309kW",
+                  },
+                ],
+              },
+              {
+                value: "s6-limousine",
+                label: "S6 Limousine (2013-2014)",
+                engine: [
+                  {
+                    value: "4.0-tfsi-420km-309kw",
+                    label: "4.0 TFSI 420KM 309kW",
+                  },
+                ],
+              },
+              {
+                value: "allroad-quattro-facelift",
+                label: "Allroad quattro facelifting (2014-2017)",
+                engine: [
+                  {
+                    value: "3.0-tfsi-333km-245kw",
+                    label: "3.0 TFSI 333KM 245kW",
+                  },
+                  {
+                    value: "3.0-tdi-clean-diesel-218km-160kw",
+                    label: "3.0 TDI clean diesel 218KM 160W",
+                  },
+                  {
+                    value: "3.0-tdi-clean-diesel-272km-200kw",
+                    label: "3.0 TDI clean diesel 272KM 200W",
+                  },
+                  {
+                    value: "3.0-tdi-clean-diesel-320km-235kw",
+                    label: "3.0 TDI clean diesel 320KM 235W",
+                  },
+                ],
+              },
+              {
+                value: "rs6-avant-facelift",
+                label: "RS6 Avant facelifting (2014-2017)",
+                engine: [
+                  {
+                    value: "4.0-tfsi-560km-412kw",
+                    label: "4.0 TFSI 560KM 412kW",
+                  },
+                  {
+                    value: "4.0-tfsi-605km-445kw",
+                    label: "4.0 TFSI 605KM 445kW",
+                  },
+                ],
+              },
+              {
+                value: "limousine-facelift",
+                label: "Limousine facelifting (2014-2017)",
+                engine: [
+                  {
+                    value: "1.8-tfsi-190km-140kw",
+                    label: "1.8 TFSI 190KM 140kW",
+                  },
+                  {
+                    value: "1.8-tfsi-ultra-190km-140kw",
+                    label: "1.8 TFSI ultra 190KM 140kW",
+                  },
+                  {
+                    value: "2.0-tfsi-252km-185kw",
+                    label: "2.0 TFSI 252KM 185kW",
+                  },
+                  {
+                    value: "3.0-tfsi-333km-245kw",
+                    label: "3.0 TFSI 333KM 245kW",
+                  },
+                  {
+                    value: "2.0-tdi-190km-140kw",
+                    label: "2.0 TDI 190KM 140kW",
+                  },
+                  {
+                    value: "2.0-tdi-ultra-150km-110kw",
+                    label: "2.0 TDI ultra 150KM 110kW",
+                  },
+                  {
+                    value: "2.0-tdi-ultra-190km-140kw",
+                    label: "2.0 TDI ultra 190KM 140kW",
+                  },
+                  {
+                    value: "3.0-tdi-clean-diesel-218km-160kw",
+                    label: "3.0 TDI clean diesel 218KM 160kW",
+                  },
+                  {
+                    value: "3.0-tdi-clean-diesel-272km-200kw",
+                    label: "3.0 TDI clean diesel 272KM 200kW",
+                  },
+                  {
+                    value: "3.0-tdi-clean-diesel-320km-235kw",
+                    label: "3.0 TDI clean diesel 320KM 235kW",
+                  },
+                  {
+                    value: "3.0-tdi-competition-326km-240kw",
+                    label: "3.0 TDI competition 326KM 240kW",
+                  },
+                ],
+              },
+              {
+                value: "avant-facelift",
+                label: "Avant facelifting (2014-2017)",
+                engine: [
+                  {
+                    value: "1.8-tfsi-190km-140kw",
+                    label: "1.8 TFSI 190KM 140kW",
+                  },
+                  {
+                    value: "1.8-tfsi-ultra-190km-140kw",
+                    label: "1.8 TFSI ultra 190KM 140kW",
+                  },
+                  {
+                    value: "2.0-tfsi-252km-185kw",
+                    label: "2.0 TFSI 252KM 185kW",
+                  },
+                  {
+                    value: "3.0-tfsi-333km-245kw",
+                    label: "3.0 TFSI 333KM 245kW",
+                  },
+                  {
+                    value: "2.0-tdi-190km-140kw",
+                    label: "2.0 TDI 190KM 140kW",
+                  },
+                  {
+                    value: "2.0-tdi-ultra-150km-110kw",
+                    label: "2.0 TDI ultra 150KM 110kW",
+                  },
+                  {
+                    value: "2.0-tdi-ultra-190km-140kw",
+                    label: "2.0 TDI ultra 190KM 140kW",
+                  },
+                  {
+                    value: "3.0-tdi-clean-diesel-218km-160kw",
+                    label: "3.0 TDI clean diesel 218KM 160kW",
+                  },
+                  {
+                    value: "3.0-tdi-clean-diesel-272km-200kw",
+                    label: "3.0 TDI clean diesel 272KM 200kW",
+                  },
+                  {
+                    value: "3.0-tdi-clean-diesel-320km-235kw",
+                    label: "3.0 TDI clean diesel 320KM 235kW",
+                  },
+                  {
+                    value: "3.0-tdi-competition-326km-240kw",
+                    label: "3.0 TDI competition 326KM 240kW",
+                  },
+                ],
+              },
+              {
+                value: "s6-avant-facelift",
+                label: "S6 Avant facelifting (2015-2017)",
+                engine: [
+                  {
+                    value: "4.0-tfsi-450km-331kw",
+                    label: "4.0 TFSI 450KM 331kW",
+                  },
+                ],
+              },
+              {
+                value: "s6-limousine-facelift",
+                label: "S6 Limousine facelifting (2015-2017)",
+                engine: [
+                  {
+                    value: "4.0-tfsi-450km-331kw",
+                    label: "4.0 TFSI 450KM 331kW",
+                  },
+                ],
+              },
+            ],
           },
           {
             value: "c8",
             label: "C8 (2018-present)",
+            versions: [
+              {
+                value: "avant",
+                label: "Avant (2018-present)",
+                engine: [
+                  {
+                    value: "2.0-45-tfsi-245km-180kw",
+                    label: "2.0 45 TFSI 245KM 180kW",
+                  },
+                  {
+                    value: "2.0-45-tfsi-265km-195kw",
+                    label: "2.0 45 TFSI 265KM 195kW",
+                  },
+                  {
+                    value: "3.0-55-tfsi-340km-250kw",
+                    label: "3.0 55 TFSI 340KM 250kW",
+                  },
+                  {
+                    value: "2.0-35-tdi-163km-120kw",
+                    label: "2.0 35 TDI 163KM 120kW",
+                  },
+                  {
+                    value: "2.0-40-tdi-204km-150kw",
+                    label: "2.0 40 TDI 204KM 150kW",
+                  },
+                  {
+                    value: "3.0-50-tdi-286km-210kw",
+                    label: "3.0 50 TDI 286KM 210kW",
+                  },
+                ],
+              },
+              {
+                value: "limousine",
+                label: "Limousine (2018-present)",
+                engine: [
+                  {
+                    value: "2.0-45-tfsi-245km-180kw",
+                    label: "2.0 45 TFSI 245KM 180kW",
+                  },
+                  {
+                    value: "2.0-45-tfsi-265km-195kw",
+                    label: "2.0 45 TFSI 265KM 195kW",
+                  },
+                  {
+                    value: "3.0-55-tfsi-340km-250kw",
+                    label: "3.0 55 TFSI 340KM 250kW",
+                  },
+                  {
+                    value: "2.0-35-tdi-163km-120kw",
+                    label: "2.0 35 TDI 163KM 120kW",
+                  },
+                  {
+                    value: "2.0-40-tdi-204km-150kw",
+                    label: "2.0 40 TDI 204KM 150kW",
+                  },
+                  {
+                    value: "2.0-40-tdi-231km-170kw",
+                    label: "2.0 40 TDI 231KM 170kW",
+                  },
+                  {
+                    value: "3.0-50-tdi-286km-210kw",
+                    label: "3.0 50 TDI 286KM 210kW",
+                  },
+                ],
+              },
+              {
+                value: "allroad",
+                label: "Allroad (2018-present)",
+                engine: [
+                  {
+                    value: "3.0-55-tfsi-340km-250kw",
+                    label: "3.0 55 TFSI 340KM 250kW",
+                  },
+                  {
+                    value: "2.0-40-tdi-204km-150kw",
+                    label: "2.0 40 TDI 204KM 150kW",
+                  },
+                  {
+                    value: "3.0-45-tdi-231km-170kw",
+                    label: "3.0 45 TDI 231KM 170kW",
+                  },
+                  {
+                    value: "3.0-45-tdi-245km-180kw",
+                    label: "3.0 45 TDI 245KM 180kW",
+                  },
+                  {
+                    value: "3.0-50-tdi-286km-210kw",
+                    label: "3.0 50 TDI 286KM 210kW",
+                  },
+                  {
+                    value: "3.0-55-tdi-349km-257kw",
+                    label: "3.0 55 TDI 349KM 257kW",
+                  },
+                  {
+                    value: "3.0-55-tdi-344km-253kw",
+                    label: "3.0 55 TDI 344KM 253kW",
+                  },
+                ],
+              },
+              {
+                value: "s6-avant",
+                label: "S6 Avant (2019-present)",
+                engine: [
+                  {
+                    value: "3.0-tdi-349km-257kw",
+                    label: "3.0 TDI 349KM 257kW",
+                  },
+                  {
+                    value: "3.0-tdi-344km-253kw",
+                    label: "3.0 TDI 344KM 253kW",
+                  },
+                ],
+              },
+              {
+                value: "s6-limousine",
+                label: "S6 Limousine (2019-present)",
+                engine: [
+                  {
+                    value: "3.0-tdi-349km-257kw",
+                    label: "3.0 TDI 349KM 257kW",
+                  },
+                  {
+                    value: "3.0-tdi-344km-253kw",
+                    label: "3.0 TDI 344KM 253kW",
+                  },
+                ],
+              },
+              {
+                value: "rs6-avant",
+                label: "RS6 Avant (2019-present)",
+                engine: [
+                  {
+                    value: "4.0-tfsi-600km-441kw",
+                    label: "4.0 TFSI 600KM 441kW",
+                  },
+                  {
+                    value: "4.0-tfsi-performance-630km-463kw",
+                    label: "4.0 TFSI Performance 630KM 463kW",
+                  },
+                ],
+              },
+              {
+                value: "avant-plugin",
+                label: "Avant Plug In (2021-present)",
+                engine: [
+                  {
+                    value: "2.0-50-tfsie-299km-220kw",
+                    label: "2.0 50 TFSI e 299KM 220kW",
+                  },
+                  {
+                    value: "2.0-55-tfsie-367km-270kw",
+                    label: "2.0 55 TFSI e 367KM 270kW",
+                  },
+                ],
+              },
+              {
+                value: "limousine-plugin",
+                label: "Limousine Plug In (2021-present)",
+                engine: [
+                  {
+                    value: "2.0-50-tfsie-299km-220kw",
+                    label: "2.0 50 TFSI e 299KM 220kW",
+                  },
+                  {
+                    value: "2.0-55-tfsie-367km-270kw",
+                    label: "2.0 55 TFSI e 367KM 270kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "a7",
+        label: "A7",
+        generations: [
+          {
+            value: "I",
+            label: "I (2010-2017)",
+            versions: [
+              {
+                value: "sportback",
+                label: "Sportback (2010-2014)",
+                engine: [
+                  {
+                    value: "2.8-fsi-204km-150kw",
+                    label: "2.8 FSI 204KM 150kW",
+                  },
+                  {
+                    value: "3.0-tfsi-300km-221kw",
+                    label: "3.0 TFSI 300KM 221kW",
+                  },
+                  {
+                    value: "3.0-tfsi-310km-228kw",
+                    label: "3.0 TFSI 310KM 228kW",
+                  },
+                  {
+                    value: "3.0-tdi-204km-150kw",
+                    label: "3.0 TDI 204KM 150kW",
+                  },
+                  {
+                    value: "3.0-tdi-313km-230kw",
+                    label: "3.0 TDI 313KM 230kW",
+                  },
+                ],
+              },
+              {
+                value: "s7-sportback",
+                label: "S7 Sportback (2012-2014)",
+                engine: [
+                  {
+                    value: "4.0-tfsi-420km-309kw",
+                    label: "4.0 TFSI 420KM 309kW",
+                  },
+                ],
+              },
+              {
+                value: "rs7-sportback",
+                label: "RS7 Sportback (2013-2014)",
+                engine: [
+                  {
+                    value: "4.0-tfsi-560km-412kw",
+                    label: "4.0 TFSI 560KM 412kW",
+                  },
+                ],
+              },
+              {
+                value: "sportback-facelift",
+                label: "Sportback Facelifting (2014-2017)",
+                engine: [
+                  {
+                    value: "2.0-tfsi-252km-185kw",
+                    label: "2.0 TFSI 252KM 1185kW",
+                  },
+                  {
+                    value: "3.0-tfsi-333km-245kw",
+                    label: "3.0 TFSI 333KM 245kW",
+                  },
+                  {
+                    value: "3.0-tdi-clean-diesel-218km-160kw",
+                    label: "3.0 TDI clean diesel 218KM 160kW",
+                  },
+                  {
+                    value: "3.0-tdi-clean-diesel-272km-200kw",
+                    label: "3.0 TDI clean diesel 272KM 200kW",
+                  },
+                  {
+                    value: "3.0-tdi-clean-diesel-320km-235kw",
+                    label: "3.0 TDI clean diesel 320KM 235kW",
+                  },
+                  {
+                    value: "3.0-tdi-competition-326km-240kw",
+                    label: "3.0 TDI competition 326KM 240kW",
+                  },
+                  {
+                    value: "3.0-tdi-ultra-218km-160kw",
+                    label: "3.0 TDI ultra 218KM 160kW",
+                  },
+                ],
+              },
+              {
+                value: "rs7-sportback-facelift",
+                label: "RS7 Sportback Facelifting (2014-2017)",
+                engine: [
+                  {
+                    value: "4.0-tfsi-560km-412kw",
+                    label: "4.0 TFSI 560KM 412kW",
+                  },
+                  {
+                    value: "4.0-tfsi-605km-445kw",
+                    label: "4.0 TFSI 605KM 445kW",
+                  },
+                ],
+              },
+              {
+                value: "s7-sportback-facelift",
+                label: "S7 Sportback Facelifting (2014-2017)",
+                engine: [
+                  {
+                    value: "4.0-tfsi-450km-331kw",
+                    label: "4.0 TFSI 450KM 331kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "II",
+            label: "II (2017-present)",
+            versions: [
+              {
+                value: "sportback",
+                label: "Sportback (2017-present)",
+                engine: [
+                  {
+                    value: "2.0-45-tfsi-245km-180kw",
+                    label: "2.0 45 TFSI 245KM 180kW",
+                  },
+                  {
+                    value: "2.0-45-tfsi-265km-195kw",
+                    label: "2.0 45 TFSI 265KM 195kW",
+                  },
+                  {
+                    value: "3.0-55-tfsi-340km-250kw",
+                    label: "3.0 55 TFSI 340KM 250kW",
+                  },
+                  {
+                    value: "2.0-40-tdi-204km-150kw",
+                    label: "2.0 40 TDI 204KM 150kW",
+                  },
+                  {
+                    value: "3.0-50-tdi-286km-210kw",
+                    label: "3.0 50 TDI 286KM 210kW",
+                  },
+                ],
+              },
+              {
+                value: "s7-sportback",
+                label: "S7 Sportback (2019-present)",
+                engine: [
+                  {
+                    value: "3.0-tdi-349km-257kw",
+                    label: "3.0 TDI 349KM 257kW",
+                  },
+                  {
+                    value: "3.0-tdi-344km-253kw",
+                    label: "3.0 TDI 344KM 253kW",
+                  },
+                ],
+              },
+              {
+                value: "rs7-sportback",
+                label: "RS7 Sportback (2019-present)",
+                engine: [
+                  {
+                    value: "4.0-tfsi-600km-441kw",
+                    label: "4.0 TFSI 600KM 441kW",
+                  },
+                  {
+                    value: "4.0-tfsi-performance-630km-463kw",
+                    label: "4.0 TFSI Performance 630KM 463kW",
+                  },
+                ],
+              },
+              {
+                value: "sportback-e",
+                label: "Sportback - e (2019-present)",
+                engine: [
+                  {
+                    value: "2.0-50-tfsie-299km-220kw",
+                    label: "2.0 50 TFSI e 299KM 220kW",
+                  },
+                  {
+                    value: "2.0-55-tfsie-367km-270kw",
+                    label: "2.0 55 TFSI e 367KM 270kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "a8",
+        label: "A8",
+        generations: [
+          {
+            value: "d2",
+            label: "D2 (1994-2002)",
+            versions: [
+              {
+                value: "sedan",
+                label: "Sedan (1994-2002)",
+                engine: [
+                  {
+                    value: "2.8-163km-120kw",
+                    label: "2.8 163KM 120kW",
+                  },
+                  {
+                    value: "2.8-174km-128kw",
+                    label: "2.8 174KM 128kW",
+                  },
+                  {
+                    value: "2.8-30v-193km-142kw",
+                    label: "2.8 30V 193KM 142kW",
+                  },
+                  {
+                    value: "2.8-30v-quattro-193km-142kw",
+                    label: "2.8 30V quattro 193KM 142kW",
+                  },
+                  {
+                    value: "2.8-quattro-163km-120kw",
+                    label: "2.8 quattro 163KM 120kW",
+                  },
+                  {
+                    value: "3.7-230km-169kw",
+                    label: "3.7 230KM 169kW",
+                  },
+                  {
+                    value: "3.7-40v-260km-191kw",
+                    label: "3.7 40V 260KM 191kW",
+                  },
+                  {
+                    value: "3.7-40v-quattro-260km-191kw",
+                    label: "3.7 40V quattro 260KM 191kW",
+                  },
+                  {
+                    value: "3.7-quattro-230km-169kw",
+                    label: "3.7 quattro 230KM 169kW",
+                  },
+                  {
+                    value: "4.2-300km-221kw",
+                    label: "4.2 300KM 221kW",
+                  },
+                  {
+                    value: "4.2-40v-quattro-310km-228kw",
+                    label: "4.2 40V quattro 310KM 228kW",
+                  },
+                  {
+                    value: "4.2-40v-quattro-300km-221kw",
+                    label: "4.2 40V quattro 300KM 221kW",
+                  },
+                  {
+                    value: "4.2-quattro-300km-221kw",
+                    label: "4.2 quattro 300KM 221kW",
+                  },
+                  {
+                    value: "4.2-quattro-238km-175kw",
+                    label: "4.2 quattro 238KM 175kW",
+                  },
+                  {
+                    value: "4.2-quattro-245km-180kw",
+                    label: "4.2 quattro 245KM 180kW",
+                  },
+                  {
+                    value: "6.0-quattro-420km-309kw",
+                    label: "6.0 quattro 420KM 309kW",
+                  },
+                  {
+                    value: "2.5-tdi-150km-110kw",
+                    label: "2.5 TDI 150KM 110kW",
+                  },
+                  {
+                    value: "2.5-tdi-180km-132kw",
+                    label: "2.5 TDI 180KM 132kW",
+                  },
+                  {
+                    value: "2.5-tdi-quattro-150km-110kw",
+                    label: "2.5 TDI quattro 150KM 110kW",
+                  },
+                  {
+                    value: "2.5-tdi-quattro-180km-132kw",
+                    label: "2.5 TDI quattro 180KM 132kW",
+                  },
+                  {
+                    value: "3.3-tdi-225km-165kw",
+                    label: "3.3 TDI 225KM 165kW",
+                  },
+                ],
+              },
+              {
+                value: "s8-sedan",
+                label: "S8 Sedan (1996-2002)",
+                engine: [
+                  {
+                    value: "4.2-v8-340km-250kw",
+                    label: "4.2 V8 340KM 250kW",
+                  },
+                  {
+                    value: "4.2-v8-360km-265kw",
+                    label: "4.2 V8 360KM 265kW",
+                  },
+                ],
+              },
+              {
+                value: "long",
+                label: "Long (1998-2002)",
+                engine: [
+                  {
+                    value: "4.2-310km-228kw",
+                    label: "4.2 310KM 228kW",
+                  },
+                  {
+                    value: "6.0-420km-309kw",
+                    label: "6.0 420KM 309kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "d3",
+            label: "D3 (2003-2010)",
+            versions: [
+              {
+                value: "long",
+                label: "Long (2002-2010)",
+                engine: [
+                  {
+                    value: "3.0-v6-220km-162kw",
+                    label: "3.0 V6 220KM 162kW",
+                  },
+                  {
+                    value: "3.2-v6-fsi-260km-191kw",
+                    label: "3.2 V6 FSI 260KM 191kW",
+                  },
+                  {
+                    value: "4.2-v8-335km-246kw",
+                    label: "4.2 V8 335KM 246kW",
+                  },
+                  {
+                    value: "4.2-v8-fsi-350km-257kw",
+                    label: "4.2 V8 FSI 350KM 257kW",
+                  },
+                  {
+                    value: "6.0-w12-450km-331kw",
+                    label: "6.0 W12 450KM 331kW",
+                  },
+                  {
+                    value: "3.0-v6-tdi-233km-171kw",
+                    label: "3.0 V6 TDI 233KM 171kW",
+                  },
+                  {
+                    value: "4.0-v8-tdi-275km-202kw",
+                    label: "4.0 V8 TDI 275KM 202kW",
+                  },
+                  {
+                    value: "4.2-v8-tdi-326km-240kw",
+                    label: "4.2 V8 TDI 326KM 240kW",
+                  },
+                ],
+              },
+              {
+                value: "sedan",
+                label: "Sedan (2002-2010)",
+                engine: [
+                  {
+                    value: "2.8-v6-fsi-210km-154kw",
+                    label: "2.8 V6 FSI 210KM 154kW",
+                  },
+                  {
+                    value: "3.0-v6-220km-162kw",
+                    label: "3.0 V6 220KM 162kW",
+                  },
+                  {
+                    value: "3.2-i-v6-24v-fsi-quattro-260km-191kw",
+                    label: "3.2 i V6 24V FSI quattro 260KM 191kW",
+                  },
+                  {
+                    value: "3.2-v6-fsi-260km-191kw",
+                    label: "3.2 V6 FSI 260KM 191kW",
+                  },
+                  {
+                    value: "3.7-v8-280km-206kw",
+                    label: "3.7 V8 280KM 206kW",
+                  },
+                  {
+                    value: "4.2-v8-335km-246kw",
+                    label: "4.2 V8 335KM 246kW",
+                  },
+                  {
+                    value: "4.2-v8-fsi-350km-257kw",
+                    label: "4.2 V8 FSI 350KM 257kW",
+                  },
+                  {
+                    value: "6.0-w12-450km-331kw",
+                    label: "6.0 W12 450KM 331kW",
+                  },
+                  {
+                    value: "3.0-v6-tdi-233km-171kw",
+                    label: "3.0 V6 TDI 233KM 171kW",
+                  },
+                  {
+                    value: "4.0-v8-tdi-275km-202kw",
+                    label: "4.0 V8 TDI 275KM 202kW",
+                  },
+                  {
+                    value: "4.2-v8-tdi-326km-240kw",
+                    label: "4.2 V8 TDI 326KM 240kW",
+                  },
+                ],
+              },
+              {
+                value: "s8-sedan",
+                label: "S8 Sedan (2006-2010)",
+                engine: [
+                  {
+                    value: "5.2-v10-fsi-331kw",
+                    label: "5.2 V10 FSI 331kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "d4",
+            label: "D4 (2010-2017)",
+            versions: [],
+          },
+          {
+            value: "d5",
+            label: "D5 (2017-present)",
             versions: [],
           },
         ],
+      },
+      {
+        value: "etron",
+        label: "E-tron",
+        generations: [],
+      },
+      {
+        value: "q2",
+        label: "Q2",
+        generations: [],
+      },
+      {
+        value: "q3",
+        label: "Q3",
+        generations: [],
+      },
+      {
+        value: "q4",
+        label: "Q4",
+        generations: [],
+      },
+      {
+        value: "q5",
+        label: "Q5",
+        generations: [],
+      },
+      {
+        value: "q7",
+        label: "Q7",
+        generations: [],
+      },
+      {
+        value: "q8",
+        label: "Q8",
+        generations: [],
+      },
+      {
+        value: "r8",
+        label: "R8",
+        generations: [],
+      },
+      {
+        value: "tt",
+        label: "TT",
+        generations: [],
       },
     ],
   },
