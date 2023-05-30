@@ -5582,7 +5582,58 @@ export const options = [
       {
         value: "q4",
         label: "Q4",
-        generations: [],
+        generations: [
+          {
+            value: "I",
+            label: "I (2021-present)",
+            versions: [
+              {
+                value: "etron-sportback",
+                label: "E-tron Sportback (2021-present)",
+                engine: [
+                  {
+                    value: "35-170km-125kw",
+                    label: "35 170KM 125kW",
+                  },
+                  {
+                    value: "40-204km-150kw",
+                    label: "40 204KM 150kW",
+                  },
+                  {
+                    value: "45-265km-195kw",
+                    label: "45 265KM 195kW",
+                  },
+                  {
+                    value: "50-299km-220kw",
+                    label: "50 299KM 220kW",
+                  },
+                ],
+              },
+              {
+                value: "etron",
+                label: "e-tron (2021-present)",
+                engine: [
+                  {
+                    value: "35-170km-125kw",
+                    label: "35 170KM 125kW",
+                  },
+                  {
+                    value: "40-204km-150kw",
+                    label: "40 204KM 150kW",
+                  },
+                  {
+                    value: "45-265km-195kw",
+                    label: "45 265KM 195kW",
+                  },
+                  {
+                    value: "50-299km-220kw",
+                    label: "50 299KM 220kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "q5",
