@@ -5920,21 +5920,731 @@ export const options = [
       {
         value: "q7",
         label: "Q7",
-        generations: [],
+        generations: [
+          {
+            value: "I",
+            label: "I (2005-2015)",
+            versions: [
+              {
+                value: "suv",
+                label: "SUV (2005-2009)",
+                engine: [
+                  {
+                    value: "3.6-fsi-280km-206kw",
+                    label: "3.6 FSI 280KM 206kW",
+                  },
+                  {
+                    value: "4.2-i-v8-quattro-350km-257kw",
+                    label: "4.2 i V8 quattro 350KM 257kW",
+                  },
+                  {
+                    value: "3.0-tdi-211km-155kw",
+                    label: "3.0 TDI 211KM 155kW",
+                  },
+                  {
+                    value: "3.0-tdi-quattro-233km-171kw",
+                    label: "3.0 TDI quattro 233KM 171kW",
+                  },
+                  {
+                    value: "3.0-tdi-dpf-tiptronic-quattro-240km-177kw",
+                    label: "3.0. TDI DPF Tiptronic quattro 240KM 177kW",
+                  },
+                  {
+                    value: "4.2-tdi-326km-240kw",
+                    label: "4.2 TDI 326KM 240kW",
+                  },
+                  {
+                    value: "4.2-tdi-dpf-tiptronic-quattro-340km-250kw",
+                    label: "4.2 TDI DPF Tiptronic quattro 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "suv-facelift-v12-quattro",
+                label: "SUV Facelifting V12 Quattro (2009-2011)",
+                engine: [
+                  {
+                    value: "6.0-tdi-v12-500km-368kw",
+                    label: "6.0 TDI V12 500KM 368kW",
+                  },
+                ],
+              },
+              {
+                value: "suv-facelift",
+                label: "SUV Facelifting (2009-2015)",
+                engine: [
+                  {
+                    value: "3.0-tfsi-333km-245kw",
+                    label: "3.0 TFSI 333KM 245kW",
+                  },
+                  {
+                    value: "3.0-tfsi-272km-200kw",
+                    label: "3.0 TFSI 272kW 200kW",
+                  },
+                  {
+                    value: "3.0-tdi-240km-177kw",
+                    label: "3.0 TDI 240KM 177kW",
+                  },
+                  {
+                    value: "3.0-tdi-clean-diesel-245km-180kw",
+                    label: "3.0 TDI clean diesel 245KM 180kW",
+                  },
+                  {
+                    value: "3.0-tdi-dpf-204km-150kw",
+                    label: "3.0 TDI DPF 204KM 150kW",
+                  },
+                  {
+                    value: "3.0-tdi-dpf-245km-180kw",
+                    label: "3.0 TDI DPF 245KM 180kW",
+                  },
+                  {
+                    value: "4.2-tdi-dpf-340km-250kw",
+                    label: "4.2 TDI DPF 340KM 250kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "II",
+            label: "II (2015-present)",
+            versions: [
+              {
+                value: "suv",
+                label: "SUV (2015-2019)",
+                engine: [
+                  {
+                    value: "3.0-tfsi-333km-245kw",
+                    label: "3.0 TFSI 333KM 245kW",
+                  },
+                  {
+                    value: "3.0-45-tdi-231km-170kw",
+                    label: "3.0 45 TDI 231KM 170kW",
+                  },
+                  {
+                    value: "3.0-50-tdi-286km-210kw",
+                    label: "3.0 50 TDI 286KM 210kW",
+                  },
+                  {
+                    value: "3.0-tdi-272km-200kw",
+                    label: "3.0 TDI 272KM 200kW",
+                  },
+                  {
+                    value: "3.0-tdi-218km-160kw",
+                    label: "3.0 TDI 218KM 160kW",
+                  },
+                ],
+              },
+              {
+                value: "etron",
+                label: "e-tron (2016-2019)",
+                engine: [
+                  {
+                    value: "3.0-tdi-373km-274kw-hybrid",
+                    label: "3.0 TDI 373KM 274kW hybrid",
+                  },
+                ],
+              },
+              {
+                value: "sq7",
+                label: "SQ7 (2016-2019)",
+                engine: [
+                  {
+                    value: "4.0-tdi-435km-320kw",
+                    label: "4.0 TDI 435KM 320kW",
+                  },
+                ],
+              },
+              {
+                value: "sq7-facelift",
+                label: "SQ7 Facelifting (2019-present)",
+                engine: [
+                  {
+                    value: "4.0-tfsi-507km-373kw",
+                    label: "4.0 TFSI 507KM 373kW",
+                  },
+                  {
+                    value: "4.0-tdi-435km-320kw",
+                    label: "4.0 TDI 435KM 320kW",
+                  },
+                ],
+              },
+              {
+                value: "suv-facelift",
+                label: "SUV Facelifting (2019-present)",
+                engine: [
+                  {
+                    value: "3.0-55-tfsi-340km-250kw",
+                    label: "3.0 55 TFSI 340KM 250kW",
+                  },
+                  {
+                    value: "3.0-45-tdi-231km-170kw",
+                    label: "3.0 45 TDI 231KM 170kW",
+                  },
+                  {
+                    value: "3.0-50-tdi-286km-210kw",
+                    label: "3.0 50 TDI 286KM 210kW",
+                  },
+                ],
+              },
+              {
+                value: "q7e",
+                label: "Q7-e (2020-present)",
+                engine: [
+                  {
+                    value: "3.0-55-tfsie-381km-280kw",
+                    label: "3.0 55 TFSI e 381KM 280kW",
+                  },
+                  {
+                    value: "3.0-60-tfsie-462km-340kw",
+                    label: "3.0 60 TFSI e 462KM 340kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "q8",
         label: "Q8",
-        generations: [],
+        generations: [
+          {
+            value: "I",
+            label: "I (2018-present)",
+            version: [
+              {
+                value: "suv",
+                label: "SUV (2018-present)",
+                engine: [
+                  {
+                    value: "3.0-55-tfsi-340km-250kw",
+                    label: "3.0 55 TFSI 340KM 250kW",
+                  },
+                  {
+                    value: "3.0-45-tdi-231km-170kw",
+                    label: "3.0 45 TDI 231KM 170kW",
+                  },
+                  {
+                    value: "3.0-50-tdi-286km-210kw",
+                    label: "3.0 50 TDI 286KM 210kW",
+                  },
+                ],
+              },
+              {
+                value: "rsq8",
+                label: "RS Q8 (2019-present)",
+                engine: [
+                  {
+                    value: "4.0-tfsi-600km-441kw",
+                    label: "4.0 TFSI 600KM 441kW",
+                  },
+                ],
+              },
+              {
+                value: "sq8",
+                label: "SQ8 (2019-present)",
+                engine: [
+                  {
+                    value: "4.0-tfsi-507km-373kw",
+                    label: "4.0 TFSI 507KM 373kW",
+                  },
+                  {
+                    value: "4.0-tdi-v8-435km-320kw",
+                    label: "4.0 TDI V8 435KM 320kW",
+                  },
+                ],
+              },
+              {
+                value: "q8e",
+                label: "Q8-e (2020-present)",
+                engine: [
+                  {
+                    value: "3.0-55-381km-280kw",
+                    label: "3.0 55 381KM 280kW",
+                  },
+                  {
+                    value: "3.0-60-462km-340kw",
+                    label: "3.0 60 462KM 340kW",
+                  },
+                ],
+              },
+              {
+                value: "etron-sportback",
+                label: "e-tron Sportback (2023-present)",
+                engine: [
+                  {
+                    value: "114-kwh-408km-300kw",
+                    label: "114 kWH 408KM 300kW",
+                  },
+                  {
+                    value: "95-kwh-340km-250kw",
+                    label: "95 kWh 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "etron",
+                label: "e-tron (2023-present)",
+                engine: [
+                  {
+                    value: "114-kwh-408km-300kw",
+                    label: "114 kWh 408KM 300kW",
+                  },
+                  {
+                    value: "95-kwh-340km-250kw",
+                    label: "95 kWh 340KM 250kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "r8",
         label: "R8",
-        generations: [],
+        generations: [
+          {
+            value: "I",
+            label: "I (2006-2015)",
+            versions: [
+              {
+                value: "coupe",
+                label: "Coupe (2006-2015)",
+                engine: [
+                  {
+                    value: "4.2-fsi-420km-309kw",
+                    label: "4.2 FSI 420KM 309kW",
+                  },
+                  {
+                    value: "4.2-fsi-430km-316kw",
+                    label: "4.2 FSI 430KM 316kW",
+                  },
+                  {
+                    value: "5.2-fsi-525km-386kw",
+                    label: "5.2 FSI 525KM 386kW",
+                  },
+                ],
+              },
+              {
+                value: "spyder",
+                label: "Spyder (2009-2015)",
+                engine: [
+                  {
+                    value: "4.2-fsi-430km-316kw",
+                    label: "4.2 FSI 430KM 316kW",
+                  },
+                  {
+                    value: "5.2-fsi-525km-386kw",
+                    label: "5.2 FSI 525KM 386kW",
+                  },
+                ],
+              },
+              {
+                value: "spyder-facelift",
+                label: "Spyder Facelifting (2012-2015)",
+                engine: [
+                  {
+                    value: "4.2-fsi-430km-316kw",
+                    label: "4.2 FSI 430KM 316kW",
+                  },
+                  {
+                    value: "5.2-fsi-525km-386kw",
+                    label: "5.2 FSI 525KM 386kW",
+                  },
+                ],
+              },
+              {
+                value: "coupe-facelift",
+                label: "Coupe Facelifting (2012-2015)",
+                engine: [
+                  {
+                    value: "4.2-fsi-430km-316kw",
+                    label: "4.2 FSI 430KM 316kW",
+                  },
+                  {
+                    value: "5.2-fsi-525km-386kw",
+                    label: "5.2 FSI 525KM 386kW",
+                  },
+                  {
+                    value: "5.2-fsi-550km-405kw",
+                    label: "5.2 FSI 550KM 405kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "II",
+            label: "II (2015-present)",
+            versions: [
+              {
+                value: "coupe",
+                label: "Coupe (2015-2018)",
+                engine: [
+                  {
+                    value: "5.2-v10-540km-397kw",
+                    label: "5.2 V10 540KM 397kW",
+                  },
+                  {
+                    value: "5.2-v10-plus-610km-449kw",
+                    label: "5.2 V10 Plus 610KM 449kW",
+                  },
+                ],
+              },
+              {
+                value: "spyder",
+                label: "Spyder (2015-2018)",
+                version: [
+                  {
+                    value: "5.2-v10-540km-397kw",
+                    label: "5.2 V10 540KM 397kW",
+                  },
+                  {
+                    value: "5.2-v10-plus-610km-449kw",
+                    label: "5.2 V10 Plus 610KM 449kW",
+                  },
+                ],
+              },
+              {
+                value: "spyder-facelift",
+                label: "Spyder Facelifting (2019-present)",
+                engine: [
+                  {
+                    value: "5.2-fsi-570km-419kw",
+                    label: "5.2 FSI 570KM 419kW",
+                  },
+                  {
+                    value: "5.2-fsi-620km-456kw",
+                    label: "5.2 FSI 620KM 456kW",
+                  },
+                ],
+              },
+              {
+                value: "coupe-facelift",
+                label: "Coupe Facelifting (2019-present)",
+                engine: [
+                  {
+                    value: "5.2-fsi-570km-419kw",
+                    label: "5.2 FSI 570KM 419kW",
+                  },
+                  {
+                    value: "5.2-fsi-620km-456kw",
+                    label: "5.2 FSI 620KM 456kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "tt",
         label: "TT",
+        generations: [
+          {
+            value: "8n",
+            label: "8N (1998-2006)",
+            versions: [
+              {
+                value: "coupe",
+                label: "Coupe (1998-2006)",
+                engine: [
+                  {
+                    value: "1.8-t-150km-110kw",
+                    label: "1.8 T 150KM 110kW",
+                  },
+                  {
+                    value: "1.8-t-180km-132kw",
+                    label: "1.8 T 180KM 132kW",
+                  },
+                  {
+                    value: "1.8-t-225km-165kw",
+                    label: "1.8 T 225KM 165kW",
+                  },
+                  {
+                    value: "1.8-t-163km-120kw",
+                    label: "1.8 T 163KM 120kW",
+                  },
+                  {
+                    value: "1.8-t-190km-140kw",
+                    label: "1.8 T 190KM 140kW",
+                  },
+                  {
+                    value: "1.8-t-quattro-180km-132kw",
+                    label: "1.8 T Quattro 180KM 132kW",
+                  },
+                  {
+                    value: "1.8-t-sport-240km-177kw",
+                    label: "1.8 T sport 240KM 177kW",
+                  },
+                  {
+                    value: "3.2-v6-250km-184kw",
+                    label: "3.2 V6 250KM 184kW",
+                  },
+                ],
+              },
+              {
+                value: "roadster",
+                label: "Roadster (1999-2006)",
+                engine: [
+                  {
+                    value: "1.8-t-150km-110kw",
+                    label: "1.8 T 150KM 110kW",
+                  },
+                  {
+                    value: "1.8-t-180km-132kw",
+                    label: "1.8 T 180KM 132kW",
+                  },
+                  {
+                    value: "1.8-t-225km-165kw",
+                    label: "1.8 T 225KM 165kW",
+                  },
+                  {
+                    value: "1.8-t-163km-120kw",
+                    label: "1.8 T 163KM 120kW",
+                  },
+                  {
+                    value: "1.8-t-190km-140kw",
+                    label: "1.8 T 190KM 140kW",
+                  },
+                  {
+                    value: "1.8-t-quattro-180km-132kw",
+                    label: "1.8 T Quattro 180KM 132kW",
+                  },
+                  {
+                    value: "3.2-v6-250km-184kw",
+                    label: "3.2 V6 250KM 184kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "8j",
+            label: "8J (2006-2013)",
+            versions: [
+              {
+                value: "roadster",
+                label: "Roadster (2006-2010)",
+                engine: [
+                  {
+                    value: "1.8-tfsi-160km-118kw",
+                    label: "1.8 TFSI 160KM 118kW",
+                  },
+                  {
+                    value: "2.0-tfsi-200km-147kw",
+                    label: "2.0 TFSI 200KM 147kW",
+                  },
+                  {
+                    value: "2.0-tfsi-272km-200kw",
+                    label: "2.0 TFSI 272KM 200kW",
+                  },
+                  {
+                    value: "2.5-tfsi-340km-250kw",
+                    label: "2.5 TFSI 340KM 250kW",
+                  },
+                  {
+                    value: "3.2-i-v6-24v-250km-184kw",
+                    label: "3.2 i V6 24V 250KM 184kW",
+                  },
+                  {
+                    value: "2.0-tdi-dpf-quattro-170km-125kw",
+                    label: "2.0 TDI DPF Quattro 170KM 125kW",
+                  },
+                ],
+              },
+              {
+                value: "coupe",
+                label: "Coupe (2006-2010)",
+                engine: [
+                  {
+                    value: "1.8-tfsi-160-120km-88kw",
+                    label: "1.8 TFSI (160) 120KM 88kW",
+                  },
+                  {
+                    value: "1.8-tfsi-160km-118kw",
+                    label: "1.8 TFSI 160KM 118kW",
+                  },
+                  {
+                    value: "2.0-tfsi-200km-147kw",
+                    label: "2.0 TFSI 200KM 147kW",
+                  },
+                  {
+                    value: "2.0-tfsi-272km-200kw",
+                    label: "2.0 TFSI 272KM 200kW",
+                  },
+                  {
+                    value: "2.0-tfsi-quattro-stronic-200km-147kw",
+                    label: "2.0 TFSI Quattro S tronic 200KM 147kW",
+                  },
+                  {
+                    value: "2.5-tfsi-340km-250kw",
+                    label: "2.5 TFSI 340KM 250kW",
+                  },
+                  {
+                    value: "3.2-i-v6-24v-quattro-250km-184kw",
+                    label: "3.2 i V6 24V quattro 250KM 184kW",
+                  },
+                  {
+                    value: "2.0-tdi-170km-125kw",
+                    label: "2.0 TDI 170KM 125kW",
+                  },
+                ],
+              },
+              {
+                value: "roadster-facelift",
+                label: "Roadster Facelifting (2010-2013)",
+                engine: [
+                  {
+                    value: "1.8-tfsi-160km-118kw",
+                    label: "1.8 TFSI 160KM 118kW",
+                  },
+                  {
+                    value: "2.0-tfsi-272km-200kw",
+                    label: "2.0 TFSI 272KM 200kW",
+                  },
+                  {
+                    value: "2.0-tfsi-211km-155kw",
+                    label: "2.0 TFSI 211KM 155kW",
+                  },
+                  {
+                    value: "2.5-tfsi-340km-250kw",
+                    label: "2.5 TFSI 340KM 250kW",
+                  },
+                  {
+                    value: "2.0-tdi-170km-125kw",
+                    label: "2.0 TDI 170KM 125kW",
+                  },
+                ],
+              },
+              {
+                value: "coupe-facelift",
+                label: "Coupe Facelifting (2010-2013)",
+                engine: [
+                  {
+                    value: "1.8-tfsi-160km-118kw",
+                    label: "1.8 TFSI 160KM 118kW",
+                  },
+                  {
+                    value: "2.0-tfsi-272km-200kw",
+                    label: "2.0 TFSI 272KM 200kW",
+                  },
+                  {
+                    value: "2.0-tfsi-211km-155kw",
+                    label: "2.0 TFSI 211KM 155kW",
+                  },
+                  {
+                    value: "2.5-tfsi-340km-250kw",
+                    label: "2.5 TFSI 340KM 250kW",
+                  },
+                  {
+                    value: "2.0-tdi-170km-125kw",
+                    label: "2.0 TDI 170KM 125kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "8s",
+            label: "8S (2014-present)",
+            versions: [
+              {
+                value: "roadster",
+                label: "Roadster (2014-2016)",
+                engine: [
+                  {
+                    value: "2.0-tfsi-230km-169kw",
+                    label: "2.0 TFSI 230KM 169kW",
+                  },
+                  {
+                    value: "2.0-tdi-ultra-184km-135kw",
+                    label: "2.0 TDI ultra 184KM 135kW",
+                  },
+                ],
+              },
+              {
+                value: "coupe",
+                label: "Coupe (2014-2018)",
+                engine: [
+                  {
+                    value: "1.8-tfsi-180km-132kw",
+                    label: "1.8 TFSI 180KM 132kW",
+                  },
+                  {
+                    value: "2.0-tfsi-230km-169kw",
+                    label: "2.0 TFSI 230KM 169kW",
+                  },
+                  {
+                    value: "2.0-tdi-ultra-184km-135kw",
+                    label: "2.0 TDI ultra 184KM 135kW",
+                  },
+                ],
+              },
+              {
+                value: "roadster-tts",
+                label: "Roadster TTS (2015-2016)",
+                engine: [
+                  {
+                    value: "2.0-tfsi-310km-228kw",
+                    label: "2.0 TFSI 310KM 228kW",
+                  },
+                ],
+              },
+              {
+                value: "coupe-tts",
+                label: "Coupe TTS (2015-2018)",
+                engine: [
+                  {
+                    value: "2.0-tfsi-310km-228kw",
+                    label: "2.0 TFSI 310KM 228kW",
+                  },
+                ],
+              },
+              {
+                value: "rs-coupe",
+                label: "RS Coupe (2016-2018)",
+                engine: [
+                  {
+                    value: "2.5-tfsi-400km-294kw",
+                    label: "2.5 TFSI 400KM 294kW",
+                  },
+                ],
+              },
+              {
+                value: "coupe-s-facelift",
+                label: "Coupe S Facelifting (2022-present)",
+                engine: [
+                  {
+                    value: "2.0-tfsi-320km-235kw",
+                    label: "2.0 TFSI 320KM 235kW",
+                  },
+                ],
+              },
+              {
+                value: "coupe-facelift",
+                label: "Coupe Facelifting (2022-present)",
+                engine: [
+                  {
+                    value: "2.0-45-tfsi-245km-180kw",
+                    label: "2.0 45 TFSI 245KM 180kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "100",
+        label: "200",
+        generations: [],
+      },
+      {
+        value: "100",
+        label: "200",
         generations: [],
       },
     ],
