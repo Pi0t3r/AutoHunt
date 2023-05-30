@@ -5216,17 +5216,368 @@ export const options = [
       {
         value: "etron",
         label: "E-tron",
-        generations: [],
+        generations: [
+          {
+            value: "I",
+            label: "I (2019-present)",
+            versions: [
+              {
+                value: "suv",
+                label: "SUV (2019-2022)",
+                engine: [
+                  {
+                    value: "50-313km-230kw",
+                    label: "55-408km-300kw",
+                  },
+                  {
+                    value: "55-408km-300kw",
+                    label: "55 408KM 300kW",
+                  },
+                ],
+              },
+              {
+                value: "sportback",
+                label: "Sportback (2020-2022)",
+                engine: [
+                  {
+                    value: "50-71kwh-313km-230kw",
+                    label: "50 71kWh 313KM 230kW",
+                  },
+                  {
+                    value: "55-95kwh-408km-300kw",
+                    label: "55 85kWh 408KM 300kW",
+                  },
+                ],
+              },
+              {
+                value: "sportback-s",
+                label: "Sportback-S (2020-2022)",
+                engine: [
+                  {
+                    value: "95-kwh-503km-370kw",
+                    label: "95 kWh 503KM 370kW",
+                  },
+                ],
+              },
+              {
+                value: "suv-s",
+                label: "SUV-S (2020-2022)",
+                engine: [
+                  {
+                    value: "95-kwh-503km-370kw",
+                    label: "95 kWh 503KM 370kW",
+                  },
+                ],
+              },
+              {
+                value: "grand-tourer-rs",
+                label: "Grand Tourer RS (2021-present)",
+                engine: [
+                  {
+                    value: "83.7-kwh-598km-440kw",
+                    label: "83.7 kWh 598KM 440kW",
+                  },
+                ],
+              },
+              {
+                value: "grand-tourer",
+                label: "Grand Tourer (2021-present)",
+                engine: [
+                  {
+                    value: "60-83.7-kwh-476km-350kw",
+                    label: "60 83.7 kWh 476KM 350kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "q2",
         label: "Q2",
-        generations: [],
+        generations: [
+          {
+            value: "I",
+            label: "I (2016-present)",
+            versions: [
+              {
+                value: "suv",
+                label: "SUV (2016-2020)",
+                engine: [
+                  {
+                    value: "1.0-30-tfsi-116km-85kw",
+                    label: "1.0 30 TFSI 116KM 85kW",
+                  },
+                  {
+                    value: "1.0-tfsi-116km-85kw",
+                    label: "1.0 TFSI 116KM 85kW",
+                  },
+                  {
+                    value: "1.4-tfsi-cod-ultra-150km-110kw",
+                    label: "1.4 TFSI COD Ultra 150KM 110kW",
+                  },
+                  {
+                    value: "1.5-35-tfsi-150km-110kw",
+                    label: "1.5 35 TFSI 150KM 110kW",
+                  },
+                  {
+                    value: "2.0-40-tfsi-190km-140kw",
+                    label: "2.0 40 TFSI 190KM 140kW",
+                  },
+                  {
+                    value: "1.6-tdi-116km-85kw",
+                    label: "1.6 TDI 116KM 85kW",
+                  },
+                  {
+                    value: "2.0-35-tdi-150km-110kw",
+                    label: "2.0 35 TDI 150KM 110kW",
+                  },
+                  {
+                    value: "2.0-tdi-150km-140kw",
+                    label: "2.0 TDI 150KM 140kW",
+                  },
+                  {
+                    value: "2.0-tdi-190km-140kw",
+                    label: "2.0 TDI 190KM 140kW",
+                  },
+                ],
+              },
+              {
+                value: "suv-facelift",
+                label: "SUV Facelifting (2020-present)",
+                engine: [
+                  {
+                    value: "1.0-30-tfsi-110km-81kw",
+                    label: "1.0 30 TFSI 110KM 81kW",
+                  },
+                  {
+                    value: "1.0-35-tfsi-150km-110kw",
+                    label: "1.0 35 TFSI 150KM 110kW",
+                  },
+                  {
+                    value: "2.0-40-tfsi-190km-140kw",
+                    label: "2.0 40 TFSI 190KM 140kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "q3",
         label: "Q3",
-        generations: [],
+        generations: [
+          {
+            value: "I",
+            label: "I (2011-2018)",
+            versions: [
+              {
+                value: "suv",
+                label: "SUV (2011-2015)",
+                engine: [
+                  {
+                    value: "1.4-tfsi-150km-110kw",
+                    label: "1.4 TFSI 150KM 110kW",
+                  },
+                  {
+                    value: "2.0-tfsi-170km-125kw",
+                    label: "2.0 TFSI 170KM 125kW",
+                  },
+                  {
+                    value: "2.0-tfsi-211km-155kw",
+                    label: "2.0 TFSI 211KM 155kW",
+                  },
+                  {
+                    value: "2.0-tdi-177km-130kw",
+                    label: "2.0 TDI 177KM 130kW",
+                  },
+                  {
+                    value: "2.0-tdi-140km-103kw",
+                    label: "2.0 TDI 140KM 103kW",
+                  },
+                  {
+                    value: "2.0-tdi-140km-103kw",
+                    label: "2.0 TDI 140KM 103kW",
+                  },
+                ],
+              },
+              {
+                value: "rsq3",
+                label: "RS Q3 (2013-2014)",
+                engine: [
+                  {
+                    value: "2.5-tfsi-310km-228kw",
+                    label: "2.5 TFSI 310KM 228kW",
+                  },
+                ],
+              },
+              {
+                value: "rsq3-facelift",
+                label: "RS Q3 Facelifting (2015-2017)",
+                engine: [
+                  {
+                    value: "2.5-tfsi-340km-250kw",
+                    label: "2.5 TFSI 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "suv-facelift",
+                label: "SUV Facelifting (2015-2018)",
+                engine: [
+                  {
+                    value: "1.4-tfsi-150km-110kw",
+                    label: "1.4 TFSI 150KM 110kW",
+                  },
+                  {
+                    value: "1.4-tfsi-125km-92kw",
+                    label: "1.4 TFSI 125KM 92kW",
+                  },
+                  {
+                    value: "1.4-tfsi-cylinder-on-demand-150km-110kw",
+                    label: "1.4 TFSI cylinder on demand 150KM 110KW",
+                  },
+                  {
+                    value: "2.0-tfsi-180km-132kw",
+                    label: "2.0 TFSI 180KM 132kW",
+                  },
+                  {
+                    value: "2.0-tfsi-220km-162kw",
+                    label: "2.0 TFSI 220KM 162kW",
+                  },
+                  {
+                    value: "2.0-tdi-150km-110kw",
+                    label: "2.0 TDI 150KM 110kW",
+                  },
+                  {
+                    value: "2.0-tdi-184km-135kw",
+                    label: "2.0 TDI 184KM 135kW",
+                  },
+                  {
+                    value: "2.0-tdi-120km-88kw",
+                    label: "2.0 TDI 120KM 88kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "II",
+            label: "II (2018-present)",
+            versions: [
+              {
+                value: "suv",
+                label: "SUV (2018-present)",
+                engine: [
+                  {
+                    value: "1.5-35-tfsi-150km-110kw",
+                    label: "1.5 35 TFSI 150KM 110kW",
+                  },
+                  {
+                    value: "2.0-40-tfsi-190km-140kw",
+                    label: "2.0 40 TFSI 190KM 140kW",
+                  },
+                  {
+                    value: "2.0-45-tfsi-230km-169kw",
+                    label: "2.0 45 TFSI 230KM 169kW",
+                  },
+                  {
+                    value: "2.0-45-tfsi-245km-180kw",
+                    label: "2.0 45 TFSI 245KM 180kW",
+                  },
+                  {
+                    value: "2.0-35-tdi-150km-110kw",
+                    label: "2.0 35 TDI 150KM 110kW",
+                  },
+                  {
+                    value: "2.0-40-tdi-190km-140kw",
+                    label: "2.0 40 TDI 190KM 140kW",
+                  },
+                  {
+                    value: "2.0-40-tdi-200km-147kw",
+                    label: "2.0 40 TDI 200KM 147kW",
+                  },
+                ],
+              },
+              {
+                value: "rsq3-sportback",
+                label: "RS Q3 Sportback (2019-present)",
+                engine: [
+                  {
+                    value: "2.5-tfsi-400km-294kw",
+                    label: "2.5 TFSI 400KM 294kW",
+                  },
+                ],
+              },
+              {
+                value: "rsq3",
+                label: "RS Q3 (2019-present)",
+                engine: [
+                  {
+                    value: "2.5-tfsi-400km-294kw",
+                    label: "2.5 TFSI 400KM 294kW",
+                  },
+                ],
+              },
+              {
+                value: "sportback",
+                label: "Sportback (2019-present)",
+                engine: [
+                  {
+                    value: "1.5-35-tfsi-150km-110kw",
+                    label: "1.5 35 TFSI 150KM 110kW",
+                  },
+                  {
+                    value: "2.0-40-tfsi-190km-140kw",
+                    label: "2.0 40 TFSI 190KM 140kW",
+                  },
+                  {
+                    value: "2.0-45-tfsi-230km-169kw",
+                    label: "2.0 45 TFSI 230KM 169kW",
+                  },
+                  {
+                    value: "2.0-45-tfsi-245km-180kw",
+                    label: "2.0 45 TFSI 245KM 180kW",
+                  },
+                  {
+                    value: "2.0-35-tdi-150km-110kw",
+                    label: "2.0 35 TDI 150KM 110kW",
+                  },
+                  {
+                    value: "2.0-40-tdi-190km-140kw",
+                    label: "2.0 40 TDI 190KM 140kW",
+                  },
+                  {
+                    value: "2.0-40-tdi-200km-147kw",
+                    label: "2.0 40 TDI 200KM 147kW",
+                  },
+                ],
+              },
+              {
+                value: "sportback-e",
+                label: "Sportback-e (2021-present)",
+                engine: [
+                  {
+                    value: "1.4-45-tfsie-245km-180kw",
+                    label: "1.4 45 TFSI e 245KM 180kW",
+                  },
+                ],
+              },
+              {
+                value: "suv-e",
+                label: "SUV-e (2021-present)",
+                engine: [
+                  {
+                    value: "1.4-45-tfsie-245km-180kw",
+                    label: "1.4 45 TFSI e 245KM 180kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "q4",
