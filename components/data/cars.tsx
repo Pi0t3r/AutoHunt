@@ -5638,7 +5638,284 @@ export const options = [
       {
         value: "q5",
         label: "Q5",
-        generations: [],
+        generations: [
+          {
+            value: "I",
+            label: "I (2008-2016)",
+            versions: [
+              {
+                value: "suv",
+                label: "SUV (2008-2012)",
+                engine: [
+                  {
+                    value: "2.0-tfsi-211km-155kw",
+                    label: "2.0 TFSI 211KM 155kW",
+                  },
+                  {
+                    value: "2.0-tfsi-180km-132kw",
+                    label: "2.0 TFSI 180KM 132kW",
+                  },
+                  {
+                    value: "3.2-tfsi-270km-199kw",
+                    label: "3.2 TFSI 270KM 199kW",
+                  },
+                  {
+                    value: "2.0-tdi-170km-125kw",
+                    label: "2.0 TDI 170KM 125kW",
+                  },
+                  {
+                    value: "2.0-tdi-143km-105kw",
+                    label: "2.0 TDI 143KM 105kW",
+                  },
+                  {
+                    value: "3.0-tdi-240km-177kw",
+                    label: "3.0 TDI 240KM 177kW",
+                  },
+                  {
+                    value: "2.0-tfsi-hybrid-211km-155kw",
+                    label: "2.0 TFSI hybrid 211KM 155kW",
+                  },
+                ],
+              },
+              {
+                value: "suv-facelift",
+                label: "SUV Facelifting (2012-2016)",
+                engine: [
+                  {
+                    value: "2.0-tfsi-225km-165kw",
+                    label: "2.0 TFSI 225KM 165kW",
+                  },
+                  {
+                    value: "2.0-tfsi-180km-132kw",
+                    label: "2.0 TFSI 180KM 132kW",
+                  },
+                  {
+                    value: "2.0-tfsi-hybrid-245km-180kw",
+                    label: "2.0 TFSI hybrid 245KM 180kW",
+                  },
+                  {
+                    value: "3.0-tfsi-272km-300kw",
+                    label: "3.0 TFSI 272KM 200kW",
+                  },
+                  {
+                    value: "2.0-tdi-143km-105kw",
+                    label: "2.0-tdi-143km-130kw",
+                  },
+                  {
+                    value: "2.0-tdi-177km-130kw",
+                    label: "2.0-tdi-177km-110kw",
+                  },
+                  {
+                    value: "2.0-tdi-150km-110kw",
+                    label: "2.0 TDI 150km 110kw",
+                  },
+                  {
+                    value: "2.0-tdi-clean-diesel-150km-110kw",
+                    label: "2.0 TDI clean diesel 150KM 110kW",
+                  },
+                  {
+                    value: "2.0-tdi-clean-diesel-190km-140kw",
+                    label: "2.0 TDI clean diesel 190KM 140kW",
+                  },
+                  {
+                    value: "3.0-tdi-245km-180kw",
+                    label: "3.0 TDI 245KM 180kW",
+                  },
+                  {
+                    value: "3.0-tdi-clean-diesel-258km-190kw",
+                    label: "3.0 TDI clean diesel 258KM 190kW",
+                  },
+                ],
+              },
+              {
+                value: "sq5",
+                label: "SQ5 (2013-2016)",
+                engine: [
+                  {
+                    value: "3.0-tdi-313km-230kw",
+                    label: "3.0 TDI 313KM 230kW",
+                  },
+                  {
+                    value: "3.0-tdi-326km-240kw",
+                    label: "3.0 TDI 326KM 240kW",
+                  },
+                  {
+                    value: "3.0-tdi-340km-250kw",
+                    label: "3.0 TDI 340KM 250kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "II",
+            label: "II (2017-present)",
+            engine: [
+              {
+                value: "suv",
+                label: "SUV (2017-2020)",
+                engine: [
+                  {
+                    value: "2.0-40-tfsi-190km-140kw",
+                    label: "2.0 40 TFSI 190KM 140kW",
+                  },
+                  {
+                    value: "2.0-45-tfsi-245km-180kw",
+                    label: "2.0 45 TFSI 245KM 180kW",
+                  },
+                  {
+                    value: "2.0-tfsi-252km-185kw",
+                    label: "2.0 TFSI 252KM 185kW",
+                  },
+                  {
+                    value: "2.0-35-tdi-163km-120kw",
+                    label: "2.0 35 TDI 163KM 120kW",
+                  },
+                  {
+                    value: "2.0-40-tdi-190km-140kw",
+                    label: "2.0 40 TDI 190KM 140kW",
+                  },
+                  {
+                    value: "2.0-tdi-190km-140kw",
+                    label: "2.0 TDI 190KM 140kW",
+                  },
+                  {
+                    value: "2.0-tdi-150km-110kw",
+                    label: "2.0 TDI 150KM 110kW",
+                  },
+                  {
+                    value: "2.0-tdi-163km-120kw",
+                    label: "2.0 TDI 163KM 120kW",
+                  },
+                  {
+                    value: "3.0-tdi-286km-210kw",
+                    label: "3.0 TDI 286KM 210kW",
+                  },
+                ],
+              },
+              {
+                value: "sq5",
+                label: "SQ5 (2017-2020)",
+                engine: [
+                  {
+                    value: "3.0-tfsi-354km-260kw",
+                    label: "3.0 TFSI 354KM 260kW",
+                  },
+                  {
+                    value: "3.0-tdi-347km-255kw",
+                    label: "3.0 TDI 347KM 255kW",
+                  },
+                ],
+              },
+              {
+                value: "q5e",
+                label: "Q5-e (2019-present)",
+                engine: [
+                  {
+                    value: "2.0-50-tfsie-299km-220kw",
+                    label: "2.0 50 TFSI e 299KM 220kW",
+                  },
+                  {
+                    value: "2.0-55-tfsie-367km-270kw",
+                    label: "2.0 55 TFSI e 367KM 270kW",
+                  },
+                ],
+              },
+              {
+                value: "sq5-facelift",
+                label: "SQ5 Facelifting (2020-present)",
+                engine: [
+                  {
+                    value: "3.0-tdi-341km-251kw",
+                    label: "3.0 TDI 341KM 251kW",
+                  },
+                ],
+              },
+              {
+                value: "sq5-sportback",
+                label: "SQ5 Sportack (2020-present)",
+                engine: [
+                  {
+                    value: "3.0-tdi-341km-251kw",
+                    label: "3.0 TDI 341KM 251kW",
+                  },
+                ],
+              },
+              {
+                value: "q5-sportack",
+                label: "Q5 Sportback (2020-present)",
+                engine: [
+                  {
+                    value: "2.0-40-tfsi-mhev-204km-150kw",
+                    label: "2.0 40 TFSI MHEV 265KM 195kW",
+                  },
+                  {
+                    value: "2.0-45-tfsi-265km-195kw",
+                    label: "2.0 45 TFSI 265KM 195kW",
+                  },
+                  {
+                    value: "2.0-35-tdi-163km-120kw",
+                    label: "2.0 35 TDI 163KM 120kW",
+                  },
+                  {
+                    value: "2.0-40-tdi-204km-150kw",
+                    label: "2.0 40 TDI 204KM 150kW",
+                  },
+                ],
+              },
+              {
+                value: "suv-facelift",
+                label: "SUV Facelifting (2020-present)",
+                engine: [
+                  {
+                    value: "2.0-40-tfsi-mhev-204km-150kw",
+                    label: "2.0 40 TFSI MHEV 204KM 150kW",
+                  },
+                  {
+                    value: "2.0-45-tfsi-265km-195kw",
+                    label: "2.0 45 TFSI 265KM 195kW",
+                  },
+                  {
+                    value: "2.0-35-tdi-163km-120kw",
+                    label: "2.0 35 TDI 163KM 120kW",
+                  },
+                  {
+                    value: "2.0-40-tdi-204km-150kw",
+                    label: "2.0 40 TDI 204KM 150kW",
+                  },
+                ],
+              },
+              {
+                value: "q5e-sportback",
+                label: "Q5-e Sportback (2021-present)",
+                engine: [
+                  {
+                    value: "2.0-50-tfsie-299km-220kw",
+                    label: "2.0 50 TFSI e 299KM 220kW",
+                  },
+                  {
+                    value: "2.0-55-tfsie-367km-270kw",
+                    label: "2.0 55 TFSI e 367KM 270kW",
+                  },
+                ],
+              },
+              {
+                value: "q5e-facelifting",
+                label: "Q5-e Facelifting (2021-present)",
+                engine: [
+                  {
+                    value: "2.0-50-tfsie-299km-220kw",
+                    label: "2.0 50 TFSI e 299KM 220kW",
+                  },
+                  {
+                    value: "2.0-55-tfsie-367km-270kw",
+                    label: "2.0 55 TFSI e 367KM 270kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "q7",
