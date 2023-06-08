@@ -1,25 +1,41 @@
-import audi from "../images/audi-a5-884245_1280 (1).jpg";
 import car from "../images/car-1879629_1280 (2).jpg";
-const adv = [
+const advert = [
   {
-    // CAR
     id: 1,
-    body: "coupe",
+    body: "Coupe",
     brand: "Audi",
     model: "A5",
     generation: "I (2007-2016)",
     version: "Coupe (2007-2011)",
-    engine: "1.8 TFSI 170KM 125kw",
-    fuel_type: "gasoline",
+    capacity: "1.8",
+    power: 170,
+    gearbox: "Automatic",
+    drive: "Front wheel",
+    fuel: "Gasoline",
     mileage: 12000,
     yearbook: 2008,
     price: 40000,
-    image: audi,
     title: "",
-    damage: true,
+    isDamage: true,
+    color: "white",
+    color_type: "Metalic",
+    day_register: 11,
+    month_register: 1,
+    year_register: 2008,
+    vin: "W1NKM0FB0PF005186",
+    status: "used",
+    titleImage: "https://www.audiklub.org/upload/a5s5/a5-ibiswhite.jpg",
+    images: ["", ""],
+    image1: "https://www.audiklub.org/upload/a5s5/a5-ibiswhite.jpg",
+    image2:
+      "https://maxtondesign.pl/pol_pl_Splitter-Tylny-Srodkowy-Audi-A5-S-Line-8T-FL-Coupe-Sportback-Bez-dyfuzora-8085_5.jpg",
+    image3:
+      "https://i.pinimg.com/originals/c9/ee/04/c9ee04bf956a8f1a22d56c77ab9cc31d.jpg",
+    image4:
+      "https://i.wpimg.pl/c/646x/filerepo.grupawp.pl/api/v1/display/embed/e4996a05-07cb-4903-8119-4beee9aa1d17",
+    image5: "https://i.ebayimg.com/images/g/KvQAAOSwGotWn2Q4/s-l400.jpg",
   },
   {
-    // CAR
     id: 2,
     body: "sedan",
     brand: "Audi",
@@ -27,14 +43,13 @@ const adv = [
     generation: "I (2007-2016)",
     version: "Sportback (2009-2011)",
     engine: "2.0 TFSI 180KM 132kw",
-    fuel_type: "gasoline",
+    fuel: "gasoline",
     mileage: 150000,
     yearbook: 2010,
     price: 70000,
-    image: car,
+    titleImage: car,
   },
   {
-    // CAR
     id: 3,
     body: "coupe",
     brand: "Audi",
@@ -42,12 +57,13 @@ const adv = [
     generation: "I (2007-2016)",
     version: "RS5 (2010-2012)",
     engine: "4.2 FSI 450KM 331kw",
-    fuel_type: "gasoline",
+    fuel: "gasoline",
     mileage: 1000,
     yearbook: 2011,
     price: 210000,
-    image: car,
+    titleImage:
+      "https://bi.im-g.pl/im/e8/97/18/z25788392AMP,Audi-A5-Sportback.jpg",
   },
 ];
 
-export default adv;
+export default advert;

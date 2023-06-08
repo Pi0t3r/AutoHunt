@@ -2,13 +2,12 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import styles from "./offers.module.css";
-import React, { SetStateAction, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Select } from "../select/Select";
 import { body, options, fuelOptions } from "../../data/cars";
 import Link from "next/link";
-import adv from "@/components/data/advertisement";
+import advert from "@/components/data/advertisement";
 import Image from "next/image";
-import { createConnection } from "typeorm";
 
 type SelectOption = {
   label: string;
@@ -19,16 +18,6 @@ type SelectOption = {
   models?: SelectOption[] | undefined;
 };
 
-async function connectDatabase() {
-  try {
-    await createConnection();
-    console.log("Connected to the database");
-  } catch (error) {
-    console.error("Database connection error:", error);
-  }
-}
-
-connectDatabase();
 
 export default function Offers() {
   const [selectedBody, setSelectedBody] = useState<SelectOption | undefined>(
@@ -53,7 +42,6 @@ export default function Offers() {
     SelectOption | undefined
   >(undefined);
   const [advertisements, setAdvertisements] = useState([]);
-
 
   const handleBrandChange = (brand: SelectOption | undefined) => {
     setSelectedBrand(brand);
@@ -180,15 +168,13 @@ export default function Offers() {
       </div>
       <div className={styles.offers}>
         <ul>
-          {adv.map((post) => (
+          {advert.map((post) => (
             <li key={post.id}>
-              <Link
-                href={`/${post.brand}/${post.model}/${post.title}-${post.id}`}
-              >
+              <Link href={"/advert/" + post.id} key={post.id}>
                 <div className={styles.offer}>
                   <div className={styles.img}>
                     <Image
-                      src={post.image}
+                      src={post.titleImage}
                       width={200}
                       height={200}
                       alt={`car images ${post.brand} ${post.model}`}
@@ -201,7 +187,7 @@ export default function Offers() {
                     <p>
                       {post.yearbook} - {post.mileage}km - {post.engine}
                     </p>
-                    <p>Damaged: {post.damage ? "Yes" : "No"}</p>
+                    <p>Damaged: {post.isDamage ? "Yes" : "No"}</p>
                     <p className={styles.price}>
                       {post.price.toLocaleString().replace(",", " ")} PLN
                     </p>
