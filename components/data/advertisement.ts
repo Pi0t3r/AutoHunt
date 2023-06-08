@@ -1,69 +1,130 @@
-import car from "../images/car-1879629_1280 (2).jpg";
-const advert = [
+export interface iCar {
+  titleImage: string;
+  id: number;
+  body: string;
+  brand: string;
+  model: string;
+  generation: string;
+  version: string;
+  capacity: string;
+  power: number;
+  gearbox: string;
+  drive: string;
+  fuel: string;
+  mileage: number;
+  productionYear: number;
+  price: number;
+  isDamage: boolean;
+  vin: string;
+  status: string;
+  images: string[];
+  registrationDate: string;
+  seller_name: string;
+  seller_phone: string;
+  seller_map: string;
+}
+
+const advert: iCar[] = [
   {
     id: 1,
+    body: "Sedan",
+    brand: "Audi",
+    model: "A7",
+    generation: "I (2010-2017)",
+    version: "Sportback (2010-2014)",
+    capacity: "3.0",
+    power: 245,
+    gearbox: "Automatic",
+    drive: "4x4",
+    fuel: "Diesel",
+    mileage: 278000,
+    productionYear: 2011,
+    price: 69900,
+    isDamage: false,
+    registrationDate: "11/01/2011",
+    vin: "WAUZZZ4GXBN025127",
+    status: "used",
+    titleImage:
+      "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InhjOXE2cHVmeXN4NjItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.tMKiWMJpIYLreXSfWe5nhLvt5aJJt5KOfNw9ZcKFtE0/image;s=1080x720",
+    images: [
+      "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InhjOXE2cHVmeXN4NjItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.tMKiWMJpIYLreXSfWe5nhLvt5aJJt5KOfNw9ZcKFtE0/image;s=1080x720",
+      "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImttZzc2Y290a25oNi1PVE9NT1RPUEwiLCJ3IjpbeyJmbiI6IndnNGducXA2eTFmLU9UT01PVE9QTCIsInMiOiIxNiIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.NCcDfh3aebw9X4jcLa6CwssNOa6lyVFZQkqzcELxnl0/image;s=1080x720",
+      "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InI1bGtqMGxneW90eTItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.A18mPQHZEnr-19qP-wK0OPQN2bAHczGVfuWoLZ0deIg/image;s=1080x720",
+      "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IngzMmZ4NnZsc2p4ejEtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.ohm3eW3WAX5H2rGD_MRBReYHc5h6vszTMzF0t9O4epw/image;s=1080x720",
+      "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImwwdDloMHI5YXBhczMtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.IumNZqolV6Av_c6TnIyT8fuM1Tq0hYshPfht-bAYH8Y/image;s=1080x720",
+    ],
+    seller_name: "Patryk",
+    seller_map: "Zabrze, Śląskie",
+    seller_phone: "505035557",
+  },
+  {
+    id: 2,
     body: "Coupe",
     brand: "Audi",
     model: "A5",
     generation: "I (2007-2016)",
-    version: "Coupe (2007-2011)",
-    capacity: "1.8",
-    power: 170,
+    version: "RS5 Coupe Facelifting (2012-2016)",
+    capacity: "4.2",
+    power: 450,
     gearbox: "Automatic",
-    drive: "Front wheel",
+    drive: "4x4",
     fuel: "Gasoline",
-    mileage: 12000,
-    yearbook: 2008,
-    price: 40000,
-    title: "",
-    isDamage: true,
-    color: "white",
-    color_type: "Metalic",
-    day_register: 11,
-    month_register: 1,
-    year_register: 2008,
-    vin: "W1NKM0FB0PF005186",
+    mileage: 77000,
+    productionYear: 2014,
+    price: 180000,
+    isDamage: false,
+    registrationDate: "02/01/2014",
+    vin: "WBA5R1C05LFH59123",
     status: "used",
-    titleImage: "https://www.audiklub.org/upload/a5s5/a5-ibiswhite.jpg",
-    images: ["", ""],
-    image1: "https://www.audiklub.org/upload/a5s5/a5-ibiswhite.jpg",
-    image2:
-      "https://maxtondesign.pl/pol_pl_Splitter-Tylny-Srodkowy-Audi-A5-S-Line-8T-FL-Coupe-Sportback-Bez-dyfuzora-8085_5.jpg",
-    image3:
-      "https://i.pinimg.com/originals/c9/ee/04/c9ee04bf956a8f1a22d56c77ab9cc31d.jpg",
-    image4:
-      "https://i.wpimg.pl/c/646x/filerepo.grupawp.pl/api/v1/display/embed/e4996a05-07cb-4903-8119-4beee9aa1d17",
-    image5: "https://i.ebayimg.com/images/g/KvQAAOSwGotWn2Q4/s-l400.jpg",
-  },
-  {
-    id: 2,
-    body: "sedan",
-    brand: "Audi",
-    model: "A5",
-    generation: "I (2007-2016)",
-    version: "Sportback (2009-2011)",
-    engine: "2.0 TFSI 180KM 132kw",
-    fuel: "gasoline",
-    mileage: 150000,
-    yearbook: 2010,
-    price: 70000,
-    titleImage: car,
+    titleImage:
+      "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InZ4bTFkN2Ywa2t5bjEtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.O1tRdHcqAojRtoJqEAKcmDODDNR9Y7AXZzmDC3SvdJI/image;s=640x480",
+    images: [
+      "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InZ4bTFkN2Ywa2t5bjEtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.O1tRdHcqAojRtoJqEAKcmDODDNR9Y7AXZzmDC3SvdJI/image;s=640x480",
+      "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjI5eWx0aTFqOXplZjMtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.3vFaGL_1A0V78pUhJwyUo4FqDCscxDFjVXN2AIZCcZw/image;s=1080x720",
+      "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjZrOHdmM2Fha2FwdS1PVE9NT1RPUEwiLCJ3IjpbeyJmbiI6IndnNGducXA2eTFmLU9UT01PVE9QTCIsInMiOiIxNiIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.6NRxrSXRiHUCVjboCL-AHs7h12wEpBxdnwSkfCRGeSA/image;s=1080x720",
+      "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InRjMnhpcWp1bzV2bDItT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.jzlo7u_-Tix_Kv4izpHwLY1MFCaj6s262SfdY867RdM/image;s=1080x720",
+      "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6IjN2MXFsbHlxaDVlcjMtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.iMLfauNYe5zpkmXIKirsup9BGMqwRiVy07ZVJ79jNsM/image;s=1080x720",
+    ],
+    seller_name: "Michał",
+    seller_phone: "530515071",
+    seller_map: "Warszawa, Mazowieckie, Wawer",
   },
   {
     id: 3,
-    body: "coupe",
+    body: "Sedan",
     brand: "Audi",
-    model: "A5",
-    generation: "I (2007-2016)",
-    version: "RS5 (2010-2012)",
-    engine: "4.2 FSI 450KM 331kw",
+    model: "A6",
+    generation: "C7 (2011-2017)",
+    version: "S6 Limousine (2013-2014)",
+    capacity: "4.0",
+    power: 420,
+    gearbox: "Automatic",
+    drive: "4x4",
     fuel: "gasoline",
-    mileage: 1000,
-    yearbook: 2011,
-    price: 210000,
+    isDamage: false,
+    registrationDate: "02/01/2013",
+    vin: "WAUF2AFC2DN021238",
+    status: "used",
+    mileage: 170000,
+    productionYear: 2013,
+    price: 125000,
     titleImage:
-      "https://bi.im-g.pl/im/e8/97/18/z25788392AMP,Audi-A5-Sportback.jpg",
+      "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InBkZ20zaW1xMHdlYy1PVE9NT1RPUEwiLCJ3IjpbeyJmbiI6IndnNGducXA2eTFmLU9UT01PVE9QTCIsInMiOiIxNiIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.4SJYu_j7op9Md86Q_5fM4wIltjqSFtJa9Un9AJ8gXac/image;s=1080x720",
+    images: [
+      "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InBkZ20zaW1xMHdlYy1PVE9NT1RPUEwiLCJ3IjpbeyJmbiI6IndnNGducXA2eTFmLU9UT01PVE9QTCIsInMiOiIxNiIsInAiOiIxMCwtMTAiLCJhIjoiMCJ9XX0.4SJYu_j7op9Md86Q_5fM4wIltjqSFtJa9Un9AJ8gXac/image;s=1080x720",
+      "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6InQwb3o2emZ6eHF0aTEtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.J2Tw0-Edo3eMtoAKu4ka1aTBpCKjIZAG0svogZsyQu4/image;s=1080x720",
+      "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImZjZWU4MHcwZ3p5bjMtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.9fYNHP9oowDcWKxRRnfPHwXXifDsR5BtPXqJqHgUUuU/image;s=1080x720",
+      "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6ImdmN3Z1ZDYyeG4xNjEtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.r6Scoe09XSoA8s0vYa9ziwg656HCSWKTtNvspD4Yuhw/image;s=1080x720",
+      "https://ireland.apollo.olxcdn.com/v1/files/eyJmbiI6Im9yNmljenlsbmM5YzEtT1RPTU9UT1BMIiwidyI6W3siZm4iOiJ3ZzRnbnFwNnkxZi1PVE9NT1RPUEwiLCJzIjoiMTYiLCJwIjoiMTAsLTEwIiwiYSI6IjAifV19.-7WIDmitRd1FnGjmhwygAr48ZJAX-vLn9-UrTsKeFJg/image;s=1080x720",
+    ],
+    // ABOUT SELLER
+    seller_name: "Michał",
+    seller_phone: "694978560",
+    seller_map: "Strachówka, wołomiński, Mazowieckie",
   },
+  {
+    id:4,
+  }
 ];
 
 export default advert;

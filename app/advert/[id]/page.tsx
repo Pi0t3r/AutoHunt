@@ -1,55 +1,38 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { usePathname } from "next/navigation";
 import advert from "@/components/data/advertisement";
 import styles from "./page.module.css";
-import Image from "next/image";
-import { BsFillTelephoneFill, BsFillChatDotsFill } from "react-icons/bs";
-import { FaMapPin, FaUserAlt } from "react-icons/fa";
+import { BsFillTelephoneFill, BsFillArrowLeftCircleFill } from "react-icons/bs";
+import { FaMapPin } from "react-icons/fa";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import Link from "next/link";
 function Advert() {
   const pathname = usePathname();
   const carId = Number(pathname.split("/").pop());
-  const car = advert.find((car) => car.id === carId);
-
+  const car = advert.find((car) => car?.id === carId);
+  const phoneNumber = car?.seller_phone || "";
+  const formattedNumber = phoneNumber.replace(/(\d{3})(?=\d)/g, "$1 ");
   return (
     <div className={styles.container}>
+      <div>
+        <Link href={"/"}>
+          <BsFillArrowLeftCircleFill />
+        </Link>
+      </div>
       <div className={styles.offer}>
         <div className={styles.image}>
-          <Carousel key={car.id}>
-            <Image
-              src={car?.image1}
-              width={350}
-              height={350}
-              alt={`${car.brand} ${car.model} ${car.version}`}
-            />
-
-            <Image
-              src={car.image2}
-              width={350}
-              height={350}
-              alt={`${car.brand} ${car.model} ${car.version}`}
-            />
-
-            <Image
-              src={car.image3}
-              width={350}
-              height={350}
-              alt={`${car.brand} ${car.model} ${car.version}`}
-            />
-            <Image
-              src={car.image4}
-              width={350}
-              height={350}
-              alt={`${car.brand} ${car.model} ${car.version}`}
-            />
-            <Image
-              src={car.image5}
-              width={350}
-              height={350}
-              alt={`${car.brand} ${car.model} ${car.version}`}
-            />
+          <Carousel key={car?.id} showIndicators={false}>
+            {car?.images.map((image, index) => (
+              <img
+                className={styles.image}
+                src={image}
+                alt={`${car?.brand} ${car?.model} ${car?.version}`}
+                key={index}
+              />
+            ))}
           </Carousel>
         </div>
         <div className={styles.infoCar}>
@@ -67,7 +50,7 @@ function Advert() {
             Version <span>{car?.version}</span>
           </p>
           <p>
-            Yearbook <span>{car?.yearbook}</span>
+            Yearbook <span>{car?.productionYear}</span>
           </p>
           <p>
             Mileage <span>{car?.mileage} km</span>
@@ -93,17 +76,9 @@ function Advert() {
           <p>
             Damaged <span>{car?.isDamage ? "Yes" : "No"}</span>
           </p>
+
           <p>
-            Color <span>{car?.color}</span>
-          </p>
-          <p>
-            Color Type <span>{car?.color_type}</span>
-          </p>
-          <p>
-            First Registration{" "}
-            <span>
-              {car?.day_register}/ {car?.month_register} / {car?.year_register}
-            </span>
+            First Registration <span>{car?.registrationDate}</span>
           </p>
           <p>
             VIN <span>{car?.vin}</span>
@@ -116,20 +91,13 @@ function Advert() {
           <p className={styles.title}>About the seller</p>
           <div className={styles.seller}>
             <p>
-              Dealer <span>Wiktor</span>
+              Dealer <span>{car?.seller_name}</span>
             </p>
             <p>
-              <BsFillTelephoneFill /> <span>604555789</span>
+              <BsFillTelephoneFill /> <span>{formattedNumber}</span>
             </p>
             <p>
-              <BsFillChatDotsFill /> <span>Very Efficiently responds</span>
-            </p>
-            <p>
-              <FaMapPin />{" "}
-              <span>Warszawska 33, 42-350 Koziegłowy, Śląskie</span>
-            </p>
-            <p>
-              <FaUserAlt /> <span>The Seller from 2019</span>
+              <FaMapPin /> <span>{car?.seller_map}</span>
             </p>
           </div>
         </div>

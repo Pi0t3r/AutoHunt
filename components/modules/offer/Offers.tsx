@@ -18,8 +18,8 @@ type SelectOption = {
   models?: SelectOption[] | undefined;
 };
 
-
 export default function Offers() {
+  const [numAds, setNumAds] = useState(advert.length);
   const [selectedBody, setSelectedBody] = useState<SelectOption | undefined>(
     undefined
   );
@@ -41,7 +41,6 @@ export default function Offers() {
   const [selectedEngine, setSelectedEngine] = useState<
     SelectOption | undefined
   >(undefined);
-  const [advertisements, setAdvertisements] = useState([]);
 
   const handleBrandChange = (brand: SelectOption | undefined) => {
     setSelectedBrand(brand);
@@ -164,7 +163,7 @@ export default function Offers() {
           filter="Fuel type"
           disabled={selectedEngine?.value !== undefined}
         />
-        <button className={styles.button}>Show 2500 advertisements</button>
+        <button className={styles.button}>Show {numAds} advertisements</button>
       </div>
       <div className={styles.offers}>
         <ul>
@@ -182,14 +181,17 @@ export default function Offers() {
                   </div>
                   <div className={styles.info}>
                     <p className={styles.title}>
-                      {post.brand} {post.model}
+                      {post.brand} {post.model}{" "}
+                      {post.generation ? post.generation.split(" ")[0] : ""}
                     </p>
                     <p>
-                      {post.yearbook} - {post.mileage}km - {post.engine}
+                      {post.productionYear} - {post.mileage}km - {post.capacity}{" "}
+                      cm
+                      <sup>3</sup> {post.power}KM
                     </p>
                     <p>Damaged: {post.isDamage ? "Yes" : "No"}</p>
                     <p className={styles.price}>
-                      {post.price.toLocaleString().replace(",", " ")} PLN
+                      {post.price &&  post.price.toString().replace(",", " ")} PLN
                     </p>
                   </div>
                 </div>

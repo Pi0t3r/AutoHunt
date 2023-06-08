@@ -10,7 +10,8 @@ const nextConfig = {
       "i.ebayimg.com",
       "maxtondesign.pl",
       "i.pinimg.com",
-      "i.wpimg.pl"
+      "i.wpimg.pl",
+      "ireland.apollo.olxcdn.com"
     ],
   },
 };

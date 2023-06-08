@@ -3977,7 +3977,7 @@ export const options = [
           },
           {
             value: "c7",
-            label: "C7 (2011-2007)",
+            label: "C7 (2011-2017)",
             versions: [
               {
                 value: "limousine",
@@ -4488,6 +4488,10 @@ export const options = [
                   {
                     value: "3.0-tdi-204km-150kw",
                     label: "3.0 TDI 204KM 150kW",
+                  },
+                  {
+                    value: "3.0-tdi-245km-180kw",
+                    label: "3.0 TDI 245KM 180kW",
                   },
                   {
                     value: "3.0-tdi-313km-230kw",
