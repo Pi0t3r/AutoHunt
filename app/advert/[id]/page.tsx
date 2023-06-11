@@ -4,20 +4,35 @@
 import { usePathname } from "next/navigation";
 import advert from "@/components/data/advertisement";
 import styles from "./page.module.css";
-import { BsFillTelephoneFill, BsFillArrowLeftCircleFill } from "react-icons/bs";
+import {
+  BsFillTelephoneFill,
+  BsFillArrowLeftCircleFill,
+  BsFillFlagFill,
+} from "react-icons/bs";
 import { FaMapPin } from "react-icons/fa";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { AiOutlineHeart, AiFillHeart, AiFillCloseCircle } from "react-icons/ai";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import Link from "next/link";
+import { useState } from "react";
 function Advert() {
   const pathname = usePathname();
   const carId = Number(pathname.split("/").pop());
   const car = advert.find((car) => car?.id === carId);
   const phoneNumber = car?.seller_phone || "";
   const formattedNumber = phoneNumber.replace(/(\d{3})(?=\d)/g, "$1 ");
+  const [clickedHeart, setClickedHeart] = useState<boolean>(false);
+  const [reportVisible, setReportVisible] = useState<boolean>(false);
+  const handleClickHeart = () => {
+    setClickedHeart(!clickedHeart);
+  };
+
+  const handleReportClick = () => {
+    setReportVisible(true);
+  };
   return (
     <div className={styles.container}>
-      <div>
+      <div className={styles.back}>
         <Link href={"/"}>
           <BsFillArrowLeftCircleFill />
         </Link>
@@ -34,6 +49,9 @@ function Advert() {
               />
             ))}
           </Carousel>
+          <button className={styles.heart} onClick={handleClickHeart}>
+            {clickedHeart ? <AiOutlineHeart /> : <AiFillHeart />}
+          </button>
         </div>
         <div className={styles.infoCar}>
           <p className={styles.title}>Details</p>
@@ -100,8 +118,67 @@ function Advert() {
               <FaMapPin /> <span>{car?.seller_map}</span>
             </p>
           </div>
+          <button className={styles.report} onClick={handleReportClick}>
+            <BsFillFlagFill /> <span>Report </span>
+          </button>
         </div>
       </div>
+      {reportVisible && (
+        <div className={styles.reportContainer}>
+          <div className={styles.titleReport}>
+            <p>report a violation</p>
+            <button onClick={() => setReportVisible(false)}>
+              <AiFillCloseCircle />
+            </button>
+          </div>
+          <div className={styles.choose}>
+            <fieldset>
+              <div>
+                {" "}
+                <input type="radio" id="spam" name="reason" value="spam" />
+                <label htmlFor="spam">Spam</label>
+              </div>
+
+              <div>
+                <input
+                  type="radio"
+                  id="category"
+                  name="reason"
+                  value="category"
+                />
+                <label htmlFor="category">Wrong category</label>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="obsolete-notice"
+                  name="reason"
+                  value="obsolete-notice"
+                />
+                <label htmlFor="obsolete-notice">Obsolete notice</label>
+              </div>
+
+              <div>
+                <input type="radio" id="other" name="reason" value="other" />
+                <label htmlFor="other">Other</label>
+              </div>
+              <div>
+                <p>
+                  In the box below, describe why the advertisement violates our
+                  rules:
+                </p>
+                <textarea
+                  name="comment"
+                  id="comment"
+                  cols="30"
+                  rows="10"
+                ></textarea>
+              </div>
+              <input type="submit" value="Send" />
+            </fieldset>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
