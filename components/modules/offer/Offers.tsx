@@ -173,7 +173,7 @@ export default function Offers() {
                 <div className={styles.offer}>
                   <div className={styles.img}>
                     <Image
-                      src={post.titleImage}
+                      src={post.images[0]}
                       width={200}
                       height={200}
                       alt={`car images ${post.brand} ${post.model}`}
@@ -191,7 +191,7 @@ export default function Offers() {
                     </p>
                     <p>Damaged: {post.isDamage ? "Yes" : "No"}</p>
                     <p className={styles.price}>
-                      {post.price &&  post.price.toString().replace(",", " ")} PLN
+                      {post.price && post.price.toLocaleString()} PLN
                     </p>
                   </div>
                 </div>

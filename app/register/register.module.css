@@ -106,9 +106,6 @@ button.active {
   margin: 20px 0;
   box-shadow: #a3a3a33e;
 }
-.form form a span {
-  text-shadow: -1px 5px 3px #2f2d2d;
-}
 .form form .submit {
   background-color: #b78d20;
   color: white;

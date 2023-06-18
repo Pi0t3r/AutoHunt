@@ -50,7 +50,7 @@ function Advert() {
             ))}
           </Carousel>
           <button className={styles.heart} onClick={handleClickHeart}>
-            {clickedHeart ? <AiOutlineHeart /> : <AiFillHeart />}
+            {clickedHeart ? <AiFillHeart /> : <AiOutlineHeart />}
           </button>
         </div>
         <div className={styles.infoCar}>
