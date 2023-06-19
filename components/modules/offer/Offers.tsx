@@ -41,6 +41,7 @@ export default function Offers() {
   const [selectedEngine, setSelectedEngine] = useState<
     SelectOption | undefined
   >(undefined);
+  const [filteredAds, setFilteredAds] = useState(advert);
 
   const handleBrandChange = (brand: SelectOption | undefined) => {
     setSelectedBrand(brand);
@@ -114,7 +115,36 @@ export default function Offers() {
 
     return [];
   };
+  const handleFilter = () => {
+    let filtered = advert;
+    if (selectedBrand) {
+      filtered = filtered.filter((ad) => ad.brand === selectedBrand.value);
+    }
+    if (selectedModel) {
+      filtered = filtered.filter((ad) => ad.model === selectedModel.value);
+    }
+    if (selectedGeneration) {
+      filtered = filtered.filter(
+        (ad) => ad.generation === selectedGeneration.value
+      );
+    }
+    if (selectedVersion) {
+      filtered = filtered.filter((ad) => ad.version === selectedVersion.value);
+    }
+    if (selectedEngine) {
+      filtered = filtered.filter((ad) => ad.capacity === selectedEngine.value);
+    }
+    if (selectedBody) {
+      filtered = filtered.filter((ad) => ad.body === selectedBody.value);
+    }
+    if (selectedFuel) {
+      filtered = filtered.filter((ad) => ad.fuel === selectedFuel.value);
+    }
 
+    setFilteredAds(filtered);
+    setNumAds(filtered.length);
+    console.log(filtered);
+  };
   return (
     <div className={styles.div}>
       <h2>What you're looking for?</h2>
@@ -163,7 +193,9 @@ export default function Offers() {
           filter="Fuel type"
           disabled={selectedEngine?.value !== undefined}
         />
-        <button className={styles.button}>Show {numAds} advertisements</button>
+        <button className={styles.button} onClick={handleFilter}>
+          Show {numAds} advertisements
+        </button>
       </div>
       <div className={styles.offers}>
         <ul>
@@ -187,7 +219,7 @@ export default function Offers() {
                     <p>
                       {post.productionYear} - {post.mileage}km - {post.capacity}{" "}
                       cm
-                      <sup>3</sup> {post.power}KM
+                      <sup>3</sup> {post.power}KM - {post.fuel}
                     </p>
                     <p>Damaged: {post.isDamage ? "Yes" : "No"}</p>
                     <p className={styles.price}>

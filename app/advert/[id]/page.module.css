@@ -7,7 +7,6 @@
   padding: 10px 0;
 }
 .container .back a svg {
-  color: #b78d20;
   width: 35px;
   height: 35px;
 }
@@ -18,8 +17,17 @@
   object-fit: contain;
   height: auto;
 }
-.heart {
+.heart,
+.reportContainer .titleReport,
+.choose {
   position: absolute;
+}
+.infoCar p,
+.infoSeller p,
+.container .back a svg {
+  color: #b78d20;
+}
+.heart {
   top: 0;
   left: 0;
   background: none;
@@ -45,8 +53,8 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  color: #b78d20;
 }
+
 .infoCar p span {
   color: white;
   width: 45%;
@@ -59,7 +67,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  color: #b78d20;
 }
 .infoSeller .title {
   color: white;
@@ -105,10 +112,8 @@
   font-weight: bold;
   color: white;
   background-color: #b78d20;
-  position: absolute;
   left: 0;
   right: 0;
-  /* text-align: center; */
   display: flex;
   justify-content: space-between;
   padding: 0 15px;
@@ -116,7 +121,6 @@
 .reportContainer .titleReport button {
   background: none;
   border: none;
-
 }
 .reportContainer .titleReport button svg {
   width: 20px;
@@ -125,7 +129,6 @@
   cursor: pointer;
 }
 .choose {
-  position: absolute;
   top: 15%;
   left: 0;
   right: 0;

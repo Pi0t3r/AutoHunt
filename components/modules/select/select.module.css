@@ -38,8 +38,14 @@
 .clear-btn:hover {
   color: #333;
 }
+.dividerOne {
+  position: absolute;
+  height: 75%;
+  left: 30%;
+  background-color: #777;
+  width: 1px;
+}
 .divider {
-  bottom: 10%;
   background-color: #777;
   align-self: stretch;
   width: 1px;

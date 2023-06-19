@@ -45,7 +45,7 @@ export function Select({
       className={`${styles.container} ${disabled ? styles.disabled : ''}`}
     >
       <span className={styles.title}>{filter}</span>
-      <div className={styles.divider} />
+      <div className={styles.dividerOne} />
       <span className={styles.value}>{value?.label}</span>
       <button
         onClick={(e) => {

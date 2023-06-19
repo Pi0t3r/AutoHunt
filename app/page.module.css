@@ -55,10 +55,10 @@
 
 @keyframes jumping {
   from {
-    bottom:5%
+    bottom: 5%;
   }
   to {
-    bottom:0%
+    bottom: 0%;
   }
 }
 .main {

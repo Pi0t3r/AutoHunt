@@ -3,6 +3,7 @@ import Navbar from "@/components/modules/navbar/Navbar";
 import Footer from "@/components/modules/footer/Footer";
 import Offers from "@/components/modules/offer/Offers";
 import styles from "./page.module.css";
+
 export default function Home() {
   return (
     <div className={styles.div}>

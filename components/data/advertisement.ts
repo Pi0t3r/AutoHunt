@@ -95,7 +95,7 @@ const advert: iCar[] = [
     power: 420,
     gearbox: "Automatic",
     drive: "4x4",
-    fuel: "gasoline",
+    fuel: "Gasoline",
     isDamage: false,
     registrationDate: "02/01/2013",
     vin: "WAUF2AFC2DN021238",
