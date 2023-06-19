@@ -132,7 +132,7 @@ export default function Offers() {
       filtered = filtered.filter((ad) => ad.version === selectedVersion.value);
     }
     if (selectedEngine) {
-      filtered = filtered.filter((ad) => ad.capacity === selectedEngine.value);
+      filtered = filtered.filter((ad) => ad.engine === selectedEngine.value);
     }
     if (selectedBody) {
       filtered = filtered.filter((ad) => ad.body === selectedBody.value);
@@ -217,9 +217,7 @@ export default function Offers() {
                       {post.generation ? post.generation.split(" ")[0] : ""}
                     </p>
                     <p>
-                      {post.productionYear} - {post.mileage}km - {post.capacity}{" "}
-                      cm
-                      <sup>3</sup> {post.power}KM - {post.fuel}
+                      {post.productionYear} - {post.mileage}km - {post.engine}
                     </p>
                     <p>Damaged: {post.isDamage ? "Yes" : "No"}</p>
                     <p className={styles.price}>

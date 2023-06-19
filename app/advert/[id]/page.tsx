@@ -76,11 +76,11 @@ function Advert() {
           <p>
             Displacement capacity{" "}
             <span>
-              {car?.capacity} cm<sup>3</sup>
+              {car?.engine.slice(0,7)} cm<sup>3</sup>
             </span>
           </p>
           <p>
-            Power <span>{car?.power}</span>
+            Power <span>{car?.engine.slice(8,13)}</span>
           </p>
           <p>
             Gearbox <span>{car?.gearbox}</span>

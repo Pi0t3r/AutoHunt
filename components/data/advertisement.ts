@@ -5,8 +5,7 @@ export interface iCar {
   model: string;
   generation: string;
   version: string;
-  capacity: string;
-  power: number;
+  engine: string;
   gearbox: string;
   drive: string;
   fuel: string;
@@ -29,10 +28,9 @@ const advert: iCar[] = [
     body: "Sedan",
     brand: "Audi",
     model: "A7",
-    generation: "I (2010-2017)",
-    version: "Sportback (2010-2014)",
-    capacity: "3.0",
-    power: 245,
+    generation: "I",
+    version: "Sportback",
+    engine: "3.0 TDI 204KM 150kW",
     gearbox: "Automatic",
     drive: "4x4",
     fuel: "Diesel",
@@ -59,10 +57,9 @@ const advert: iCar[] = [
     body: "Coupe",
     brand: "Audi",
     model: "A5",
-    generation: "I (2007-2016)",
-    version: "RS5 Coupe Facelifting (2012-2016)",
-    capacity: "4.2",
-    power: 450,
+    generation: "I",
+    version: "RS5 Coupe Facelifting",
+    engine: "4.2 FSI 450KM 331kW",
     gearbox: "Automatic",
     drive: "4x4",
     fuel: "Gasoline",
@@ -91,8 +88,9 @@ const advert: iCar[] = [
     model: "A6",
     generation: "C7 (2011-2017)",
     version: "S6 Limousine (2013-2014)",
-    capacity: "4.0",
-    power: 420,
+    // capacity: "4.0",
+    // power: 420,
+    engine: "",
     gearbox: "Automatic",
     drive: "4x4",
     fuel: "Gasoline",
@@ -122,8 +120,9 @@ const advert: iCar[] = [
     model: "4 Series",
     generation: "G26",
     version: "Gran Coupe (2021-present)",
-    capacity: "2.0",
-    power: 245,
+    // capacity: "2.0",
+    // power: 245,
+    engine: "",
     gearbox: "Automatic",
     drive: "4x4",
     fuel: "Gasoline",
@@ -154,8 +153,7 @@ const advert: iCar[] = [
     model: "G Class",
     generation: "W483 (2018-present)",
     version: "400d",
-    capacity: "2 925",
-    power: 330,
+    engine: "",
     gearbox: "Automatic",
     drive: "4x4 (automatically included)",
     fuel: "Diesel",

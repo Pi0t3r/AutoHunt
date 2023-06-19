@@ -2,7 +2,6 @@ import styles from "./select.module.css";
 import React, { useState, useEffect } from "react";
 
 type SelectOption = {
-  label: string;
   value: string;
 };
 
@@ -22,7 +21,7 @@ export function Select({
   disabled,
 }: SelectProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [highlightedIndex, setHighlightedIndex] = useState(0);
+  const [highlightedIndex, setHighlightedIndex] = useState<number>(0);
 
   function clearOption() {
     onChange(undefined);
@@ -45,8 +44,8 @@ export function Select({
       className={`${styles.container} ${disabled ? styles.disabled : ''}`}
     >
       <span className={styles.title}>{filter}</span>
-      <div className={styles.dividerOne} />
-      <span className={styles.value}>{value?.label}</span>
+      <div className={styles.divider} />
+      <span className={styles.value}>{value?.value}</span>
       <button
         onClick={(e) => {
           e.stopPropagation();
@@ -73,7 +72,7 @@ export function Select({
                 isOptionSelected(option) ? styles.selected : ""
               } ${index === highlightedIndex ? styles.highlighted : ""}`}
             >
-              {option.label}
+              {option.value}
             </li>
           ))}
       </ul>
