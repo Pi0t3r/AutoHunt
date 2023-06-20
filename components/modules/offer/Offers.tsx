@@ -2,7 +2,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import styles from "./offers.module.css";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Select } from "../select/Select";
 import { body, options, fuelOptions } from "../../data/cars";
 import Link from "next/link";
@@ -42,25 +42,6 @@ export default function Offers() {
   >(undefined);
   const [filteredAds, setFilteredAds] = useState(advert);
 
-  const handleBrandChange = (brand: SelectOption | undefined) => {
-    setSelectedBrand(brand);
-    setSelectedModel(undefined);
-    setSelectedGeneration(undefined);
-    setSelectedVersion(undefined);
-    setSelectedEngine(undefined);
-  };
-  const handleModelChange = (model: SelectOption | undefined) => {
-    setSelectedModel(model);
-    setSelectedGeneration(undefined);
-    setSelectedVersion(undefined);
-    setSelectedEngine(undefined);
-  };
-  const handleBodyChange = (selectedBody: SelectOption | undefined) => {
-    setSelectedBody(selectedBody);
-  };
-  const handleFuelChange = (selectedFuel: SelectOption | undefined) => {
-    setSelectedFuel(selectedFuel);
-  };
   const getModelOptions = (): SelectOption[] => {
     if (selectedBrand) {
       const brand: SelectOption | undefined = options.find(
@@ -69,15 +50,6 @@ export default function Offers() {
       return brand ? brand.models || [] : [];
     }
     return [];
-  };
-  const handleGenerationChange = (generation: SelectOption | undefined) => {
-    setSelectedGeneration(generation);
-    setSelectedVersion(undefined);
-    setSelectedEngine(undefined);
-  };
-  const handleVersionChange = (version: SelectOption | undefined) => {
-    setSelectedVersion(version);
-    setSelectedEngine(undefined);
   };
 
   const getGenerationOption = (): SelectOption[] => {
@@ -101,9 +73,6 @@ export default function Offers() {
     return [];
   };
 
-  const handleEngineChange = (engine: SelectOption | undefined) => {
-    setSelectedEngine(engine);
-  };
   const getEngineOption = (): SelectOption[] => {
     if (selectedVersion) {
       const version = getVersionOption().find(
@@ -139,8 +108,59 @@ export default function Offers() {
     if (selectedFuel) {
       filtered = filtered.filter((ad) => ad.fuel === selectedFuel.value);
     }
-
     setFilteredAds(filtered);
+  };
+  const handleBrandChange = (brand: SelectOption | undefined) => {
+    setSelectedBrand(brand);
+    setSelectedModel(undefined);
+    setSelectedGeneration(undefined);
+    setSelectedVersion(undefined);
+    setSelectedEngine(undefined);
+    const filtered = advert.filter((ad) => ad.brand === brand?.value);
+
+    setNumAds(filtered.length);
+  };
+  const handleModelChange = (model: SelectOption | undefined) => {
+    setSelectedModel(model);
+    setSelectedGeneration(undefined);
+    setSelectedVersion(undefined);
+    setSelectedEngine(undefined);
+    const filtered = advert.filter((ad) => ad.model === model?.value);
+
+    setNumAds(filtered.length);
+  };
+  const handleBodyChange = (selectedBody: SelectOption | undefined) => {
+    setSelectedBody(selectedBody);
+
+    const filtered = advert.filter((ad) => ad.body === selectedBody?.value);
+
+    setNumAds(filtered.length);
+  };
+  const handleFuelChange = (selectedFuel: SelectOption | undefined) => {
+    setSelectedFuel(selectedFuel);
+    const filtered = advert.filter((ad) => ad.fuel === selectedFuel?.value);
+
+    setNumAds(filtered.length);
+  };
+  const handleGenerationChange = (generation: SelectOption | undefined) => {
+    setSelectedGeneration(generation);
+    setSelectedVersion(undefined);
+    setSelectedEngine(undefined);
+    const filtered = advert.filter((ad) => ad.generation === generation?.value);
+
+    setNumAds(filtered.length);
+  };
+  const handleVersionChange = (version: SelectOption | undefined) => {
+    setSelectedVersion(version);
+    setSelectedEngine(undefined);
+    const filtered = advert.filter((ad) => ad.version === version?.value);
+
+    setNumAds(filtered.length);
+  };
+  const handleEngineChange = (engine: SelectOption | undefined) => {
+    setSelectedEngine(engine);
+    const filtered = advert.filter((ad) => ad.engine === engine?.value);
+
     setNumAds(filtered.length);
   };
   return (

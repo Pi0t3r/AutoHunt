@@ -5186,19 +5186,164 @@ export const options = [
           },
         ],
       },
-      {
-        value: "100",
-        generations: [],
-      },
-      {
-        value: "200",
-        generations: [],
-      },
     ],
   },
   {
     value: "BMW",
-    models: [{}],
+    models: [
+      {
+        value: "i4",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "M Gran Coupe",
+                engine: [
+                  {
+                    value: "M50 544KM 400kW",
+                  },
+                ],
+              },
+              {
+                value: "Gran Coupe",
+                engine: [
+                  {
+                    value: "eDrive 35 286KM 210kW",
+                  },
+                  {
+                    value: "eDrive 40 340KM 250kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "i7",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "101.7kWh 544KM 400kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "iX",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "SUV M",
+                engine: [
+                  {
+                    value: "105 kWH 619KM 455kW",
+                  },
+                ],
+              },
+              {
+                value: "SUV",
+                engine: [
+                  {
+                    value: "105.2kWh 523KM 385kW",
+                  },
+                  {
+                    value: "71 kWh 326KM 240kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "iX1",
+        generations: [],
+      },
+      {
+        value: "iX3",
+        generations: [],
+      },
+      {
+        value: "1 Series",
+        generations: [],
+      },
+      {
+        value: "2 Series",
+        generations: [],
+      },
+      {
+        value: "3 Series",
+        generations: [],
+      },
+      {
+        value: "4 Series",
+        generations: [],
+      },
+      {
+        value: "5 Series",
+        generations: [],
+      },
+      {
+        value: "6 Series",
+        generations: [],
+      },
+      {
+        value: "7 Series",
+        generations: [],
+      },
+      {
+        value: "8 Series",
+        generations: [],
+      },
+      {
+        value: "X1",
+        generations: [],
+      },
+      {
+        value: "X2",
+        generations: [],
+      },
+      {
+        value: "X3",
+        generations: [],
+      },
+      {
+        value: "X4",
+        generations: [],
+      },
+      {
+        value: "X5",
+        generations: [],
+      },
+      {
+        value: "X6",
+        generations: [],
+      },
+      {
+        value: "X7",
+        generations: [],
+      },
+      {
+        value: "XM",
+        generations: [],
+      },
+      {
+        value: "Z4",
+        generations: [],
+      },
+    ],
   },
   {
     value: "Mercedes-Benz",
