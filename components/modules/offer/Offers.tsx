@@ -10,7 +10,6 @@ import advert from "@/components/data/advertisement";
 import Image from "next/image";
 
 type SelectOption = {
-  label: string;
   value: string;
   generations?: SelectOption[] | undefined;
   versions?: SelectOption[] | undefined;
@@ -143,7 +142,6 @@ export default function Offers() {
 
     setFilteredAds(filtered);
     setNumAds(filtered.length);
-    console.log(filtered);
   };
   return (
     <div className={styles.div}>
@@ -199,7 +197,7 @@ export default function Offers() {
       </div>
       <div className={styles.offers}>
         <ul>
-          {advert.map((post) => (
+          {filteredAds.map((post) => (
             <li key={post.id}>
               <Link href={"/advert/" + post.id} key={post.id}>
                 <div className={styles.offer}>
