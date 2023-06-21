@@ -5269,19 +5269,599 @@ export const options = [
       },
       {
         value: "iX1",
-        generations: [],
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "30 64.7 kWh 313KM 230kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "iX3",
-        generations: [],
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "80 kWh 286KM 210kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "1 Series",
-        generations: [],
+        generations: [
+          {
+            value: "E81/E87",
+            versions: [
+              {
+                value: "Hatchback 5d E87",
+                engine: [
+                  {
+                    value: "1.6 116i 115KM 85kW",
+                  },
+                  {
+                    value: "1.6 116i 122KM 90kW",
+                  },
+                  {
+                    value: "2.0 118i 129KM 95kW",
+                  },
+                  {
+                    value: "2.0 118i 143KM 105kW",
+                  },
+                  {
+                    value: "2.0 120i 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 120i 170KM 125kW",
+                  },
+                  {
+                    value: "3.0 130i 265KM 195kW",
+                  },
+                  {
+                    value: "2.0 116d 115KM 85kW",
+                  },
+                  {
+                    value: "2.0 118d 122KM 90kW",
+                  },
+                  {
+                    value: "2.0 118d 143KM 105kW",
+                  },
+                  {
+                    value: "2.0 120d 163KM 120kW",
+                  },
+                  {
+                    value: "2.0 120d 177KM 130kW",
+                  },
+                  {
+                    value: "2.0 123d 204KM 150kW",
+                  },
+                ],
+              },
+              {
+                value: "Hatchback 3d E81",
+                engine: [
+                  {
+                    value: "1.6 116i 122KM 90kW",
+                  },
+                  {
+                    value: "2.0 118i 143KM 105kW",
+                  },
+                  {
+                    value: "2.0 120i 170KM 125kW",
+                  },
+                  {
+                    value: "3.0 130i 265KM 195kW",
+                  },
+                  {
+                    value: "2.0 116d 115KM 85kW",
+                  },
+                  {
+                    value: "2.0 118d 143KM 105kW",
+                  },
+                  {
+                    value: "2.0 120d 177KM 130kW",
+                  },
+                  {
+                    value: "2.0 123d 204KM 150kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe E82",
+                engine: [
+                  {
+                    value: "120i 170KM 125kW",
+                  },
+                  {
+                    value: "125i 218KM 160kW",
+                  },
+                  {
+                    value: "135i 306KM 225kW",
+                  },
+                  {
+                    value: "118d 143KM 105kW",
+                  },
+                  {
+                    value: "120d 177KM 130kW",
+                  },
+                  {
+                    value: "123d 204KM 150kW",
+                  },
+                ],
+              },
+              {
+                value: "Cabrio E88",
+                engine: [
+                  {
+                    value: "118i 143KM 105kW",
+                  },
+                  {
+                    value: "120i 170KM 125kW",
+                  },
+                  {
+                    value: "125i 218KM 160kW",
+                  },
+                  {
+                    value: "135i 306KM 225kW",
+                  },
+                  {
+                    value: "118d 143KM 105kW",
+                  },
+                  {
+                    value: "120d 177KM 130kW",
+                  },
+                  {
+                    value: "123d 204KM 150kW",
+                  },
+                ],
+              },
+              {
+                value: "M Coupe",
+                engine: [
+                  {
+                    value: "sDrive35iS 340KM 250kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "F20-F21",
+            versions: [
+              {
+                value: "Hatchback 5d",
+                engine: [
+                  {
+                    value: "114i 102KM 75kW",
+                  },
+                  {
+                    value: "116i 136KM 100kW",
+                  },
+                  {
+                    value: "118i 170KM 125kW",
+                  },
+                  {
+                    value: "125i 218KM 160kW",
+                  },
+                  {
+                    value: "M 135i 320KM 235kW",
+                  },
+                  {
+                    value: "114d 95KM 70kW",
+                  },
+                  {
+                    value: "116d 116KM 85kW",
+                  },
+                  {
+                    value: "116d EfficientDynamics 116KM 85kW",
+                  },
+                  {
+                    value: "118d 143KM 105kW",
+                  },
+                  {
+                    value: "120d 184KM 135kW",
+                  },
+                  {
+                    value: "125d 218KM 160kW",
+                  },
+                ],
+              },
+              {
+                value: "Hatchback 3d",
+                engine: [
+                  {
+                    value: "114i 102KM 75kW",
+                  },
+                  {
+                    value: "116i 136KM 100kW",
+                  },
+                  {
+                    value: "118i 170KM 125kW",
+                  },
+                  {
+                    value: "125i 218KM 160kW",
+                  },
+                  {
+                    value: "M 135i 320KM 235kW",
+                  },
+                  {
+                    value: "114d 95KM 70kW",
+                  },
+                  {
+                    value: "116d 116KM 85kW",
+                  },
+                  {
+                    value: "116d EfficientDynamics 116KM 85kW",
+                  },
+                  {
+                    value: "118d 143KM 105kW",
+                  },
+                  {
+                    value: "120d 184KM 135kW",
+                  },
+                  {
+                    value: "125d 218KM 160kW",
+                  },
+                ],
+              },
+              {
+                value: "Hatchback 3d Facelifting",
+                engine: [
+                  {
+                    value: "116i 109KM 80kW",
+                  },
+                  {
+                    value: "118i 136KM 100kW",
+                  },
+                  {
+                    value: "120i 177KM 130kW",
+                  },
+                  {
+                    value: "120i 184KM 135kW",
+                  },
+                  {
+                    value: "125i 218KM 160kW",
+                  },
+                  {
+                    value: "125i 224KM 165kW",
+                  },
+                  {
+                    value: "M 135i 326KM 240kW",
+                  },
+                  {
+                    value: "M 140i 340KM 250kW",
+                  },
+                  {
+                    value: "114d 95KM 70kW",
+                  },
+                  {
+                    value: "116d 116KM 85kW",
+                  },
+                  {
+                    value: "116d EfficientDynamics Edition 116KM 85kW",
+                  },
+                  {
+                    value: "118d 150KM 110kW",
+                  },
+                  {
+                    value: "120d 190KM 140kW",
+                  },
+                  {
+                    value: "125d 224KM 165kW",
+                  },
+                ],
+              },
+              {
+                value: "Hatchback 5d Facelifting",
+                engine: [
+                  {
+                    value: "116i 109KM 80kW",
+                  },
+                  {
+                    value: "118i 136KM 100kW",
+                  },
+                  {
+                    value: "120i 177KM 130kW",
+                  },
+                  {
+                    value: "120i 184KM 135kW",
+                  },
+                  {
+                    value: "125i 218KM 160kW",
+                  },
+                  {
+                    value: "125i 224KM 165kW",
+                  },
+                  {
+                    value: "M 135i 326KM 240kW",
+                  },
+                  {
+                    value: "M 140i 340KM 250kW",
+                  },
+                  {
+                    value: "114d 95KM 70kW",
+                  },
+                  {
+                    value: "116d 116KM 85kW",
+                  },
+                  {
+                    value: "116d EfficientDynamics Edition 116KM 85kW",
+                  },
+                  {
+                    value: "118d 150KM 110kW",
+                  },
+                  {
+                    value: "120d 190KM 140kW",
+                  },
+                  {
+                    value: "125d 224KM 165kW",
+                  },
+                ],
+              },
+              {
+                value: "M-Hatchback 5d Facelifting",
+                engine: [
+                  {
+                    value: "M 140i 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "M-Hatchback 3d Facelifting",
+                engine: [
+                  {
+                    value: "M 140i 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "Hatchback 5d Facelifting 2017",
+                engine: [
+                  {
+                    value: "118i 136KM 100kW",
+                  },
+                  {
+                    value: "120i 184KM 135kW",
+                  },
+                  {
+                    value: "125i 224KM 165kW",
+                  },
+                  {
+                    value: "116d 116KM 85kW",
+                  },
+                  {
+                    value: "118d 150KM 110kW",
+                  },
+                  {
+                    value: "120d 190KM 140kW",
+                  },
+                  {
+                    value: "125d 224KM 165kW",
+                  },
+                ],
+              },
+              {
+                value: "Hatchback 3d Facelifting 2017",
+                engine: [
+                  {
+                    value: "120i 184KM 135kW",
+                  },
+                  {
+                    value: "125i 224KM 165kW",
+                  },
+                  {
+                    value: "118d 150KM 110kW",
+                  },
+                  {
+                    value: "120d 190KM 140kW",
+                  },
+                  {
+                    value: "125d 224KM 165kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "F40",
+            versions: [
+              {
+                value: "Hatchback M",
+                engine: [
+                  {
+                    value: "2.0 128ti 265KM 195kW",
+                  },
+                  {
+                    value: "2.0 M 135i 306KM 225kW",
+                  },
+                ],
+              },
+              {
+                value: "Hatchback",
+                engine: [
+                  {
+                    value: "1.5 116i 109KM 80kW",
+                  },
+                  {
+                    value: "1.5 118i 136KM 100kW",
+                  },
+                  {
+                    value: "1.5 118i 140KM 103kW",
+                  },
+                  {
+                    value: "2.0 120i 178KM 131kW",
+                  },
+                  {
+                    value: "1.5 116d 85kW",
+                  },
+                  {
+                    value: "2.0 118d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 120d 190KM 140kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "2 Series",
-        generations: [],
+        generations: [
+          {
+            value: "F22-F23-F45-F46",
+            versions: [
+              {
+                value: "M-Coupe",
+                engine: [
+                  {
+                    value: "M2 370KM 272kW",
+                  },
+                  {
+                    value: "M 235i 326KM 240kW",
+                  },
+                  {
+                    value: "M 240i 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "218i 136KM 100kW",
+                  },
+                  {
+                    value: "220i 184KM 135kW",
+                  },
+                  {
+                    value: "220i (Euro 6) 184KM 135kW",
+                  },
+                  {
+                    value: "228i 245KM 180kW",
+                  },
+                  {
+                    value: "228i (Euro 6) 245KM 180kW",
+                  },
+                  {
+                    value: "230i 252KM 185kW",
+                  },
+                  {
+                    value: "218d 143KM 105kW",
+                  },
+                  {
+                    value: "218d 150KM 110kW",
+                  },
+                  {
+                    value: "220d 184KM 135kW",
+                  },
+                  {
+                    value: "220d 190KM 140kW",
+                  },
+                  {
+                    value: "220d (Euro 6) 190KM 140kW",
+                  },
+                  {
+                    value: "225d 218KM 160kW",
+                  },
+                  {
+                    value: "225d 224KM 165kW",
+                  },
+                ],
+              },
+              {
+                value: "M-Cabrio",
+                engine: [
+                  {
+                    value: "M 235i 326KM 240kW",
+                  },
+                  {
+                    value: "M 240i 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "Cabrio",
+                engine: [
+                  {
+                    value: "218i 136KM 100kW",
+                  },
+                  {
+                    value: "220i 184KM 135kW",
+                  },
+                  {
+                    value: "228i 245KM 180kW",
+                  },
+                  {
+                    value: "230i 252KM 185kW",
+                  },
+                  {
+                    value: "218d 150KM 110kW",
+                  },
+                  {
+                    value: "220d 190KM 140kW",
+                  },
+                  {
+                    value: "225d 224KM 165kW",
+                  },
+                ],
+              },
+              {
+                value: "Active Tourer",
+                engine: [],
+              },
+              {
+                value: "Grand Tourer",
+                engine: [],
+              },
+              {
+                value: "M-Cabrio Facelifting",
+                engine: [],
+              },
+              {
+                value: "M-Coupe Facelifting",
+                engine: [],
+              },
+              {
+                value: "Cabrio Facelifting",
+                engine: [],
+              },
+              {
+                value: "Coupe Facelifting",
+                engine: [],
+              },
+              {
+                value: "Grand Tourer Facelifting",
+                engine: [],
+              },
+              {
+                value: "Active Tourer Facelifting",
+                engine: [],
+              },
+            ],
+          },
+          {
+            value: "G42-U06",
+            versions: [],
+          },
+        ],
       },
       {
         value: "3 Series",
