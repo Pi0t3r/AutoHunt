@@ -6374,29 +6374,535 @@ export const options = [
               },
               {
                 value: "M3 Coupe",
-                engine: [],
+                engine: [
+                  {
+                    value: "2.3 195KM 143kW",
+                  },
+                  {
+                    value: "2.3 200KM 147kW",
+                  },
+                  {
+                    value: "2.3 215KM 158kW",
+                  },
+                  {
+                    value: "2.3 220KM 162kW",
+                  },
+                  {
+                    value: "2.5 Evolution 238KM 175kW",
+                  },
+                ],
               },
               {
                 value: "M3 Cabrio",
-                engine: [],
+                engine: [
+                  {
+                    value: "2.3 195KM 143kW",
+                  },
+                  {
+                    value: "2.3 200KM 147kW",
+                  },
+                  {
+                    value: "2.3 215KM 158kW",
+                  },
+                  {
+                    value: "2.3 220KM 162kW",
+                  },
+                  {
+                    value: "2.5 Evolution 238KM 175kW",
+                  },
+                ],
               },
               {
                 value: "Touring",
-                engine: [],
+                engine: [
+                  {
+                    value: "316i 100KM 74kW",
+                  },
+                  {
+                    value: "316i 102KM 75kW",
+                  },
+                  {
+                    value: "318i 113KM 83kW",
+                  },
+                  {
+                    value: "318i 115KM 85kW",
+                  },
+                  {
+                    value: "320i 129KM 95kW",
+                  },
+                  {
+                    value: "325i 170KM 125kW",
+                  },
+                  {
+                    value: "325i X 170KM 125kW",
+                  },
+                  {
+                    value: "324td 115KM 85kW",
+                  },
+                ],
               },
             ],
           },
           {
             value: "E36",
-            versions: [],
+            versions: [
+              {
+                value: "Sedan",
+                engine: [
+                  {
+                    value: "316i 100KM 74kW",
+                  },
+                  {
+                    value: "316i 102KM 75kW",
+                  },
+                  {
+                    value: "318i 113KM 83kW",
+                  },
+                  {
+                    value: "318i 115KM 85kW",
+                  },
+                  {
+                    value: "318is 140KM 103kW",
+                  },
+                  {
+                    value: "320i 150KM 110kW",
+                  },
+                  {
+                    value: "323i 170KM 125kW",
+                  },
+                  {
+                    value: "325i 192KM 141kW",
+                  },
+                  {
+                    value: "328i 193KM 142kW",
+                  },
+                  {
+                    value: "318tds 90KM 66kW",
+                  },
+                  {
+                    value: "325td 115KM 85kW",
+                  },
+                  {
+                    value: "325tds 143KM 105kW",
+                  },
+                ],
+              },
+              {
+                value: "M3 Sedan",
+                engine: [
+                  {
+                    value: "3.0 R6 286KM 210kW",
+                  },
+                  {
+                    value: "3.0 R6 295KM 217kW",
+                  },
+                  {
+                    value: "3.0 R6 321KM 236kW",
+                  },
+                ],
+              },
+              {
+                value: "M3 Coupe",
+                engine: [
+                  {
+                    value: "3.0 R6 286KM 210kW",
+                  },
+                  {
+                    value: "3.0 R6 295KM 217kW",
+                  },
+                  {
+                    value: "3.0 R6 321KM 236kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "316i 102KM 75kW",
+                  },
+                  {
+                    value: "318is 140KM 103kW",
+                  },
+                  {
+                    value: "320i 150KM 110kW",
+                  },
+                  {
+                    value: "323i 2.5 170KM 125kW",
+                  },
+                  {
+                    value: "325i 192KM 141kW",
+                  },
+                  {
+                    value: "328i 193KM 142kW",
+                  },
+                ],
+              },
+              {
+                value: "Cabrio",
+                engine: [
+                  {
+                    value: "318i 115KM 85kW",
+                  },
+                  {
+                    value: "320i 150KM 110kW",
+                  },
+                  {
+                    value: "323i 2.5 170KM 125kW",
+                  },
+                  {
+                    value: "325i 192KM 141kW",
+                  },
+                  {
+                    value: "328i 193KM 142kW",
+                  },
+                ],
+              },
+              {
+                value: "Touring",
+                engine: [
+                  {
+                    value: "316i 102KM 75kW",
+                  },
+                  {
+                    value: "318i 115KM 85kW",
+                  },
+                  {
+                    value: "320i 150KM 110kW",
+                  },
+                  {
+                    value: "323i 170KM 125kW",
+                  },
+                  {
+                    value: "325i 192KM 141kW",
+                  },
+                  {
+                    value: "328i 193KM 142kW",
+                  },
+                  {
+                    value: "318tds 90KM 66kW",
+                  },
+                  {
+                    value: "325tds 143KM 105kW",
+                  },
+                ],
+              },
+              {
+                value: "Compact",
+                engine: [
+                  {
+                    value: "316i 102KM 75kW",
+                  },
+                  {
+                    value: "316i 105KM 77kW",
+                  },
+                  {
+                    value: "318ti 140KM 103kW",
+                  },
+                  {
+                    value: "320i 150KM 110kW",
+                  },
+                  {
+                    value: "323ti 170KM 125kW",
+                  },
+                  {
+                    value: "318tds 90KM 66kW",
+                  },
+                ],
+              },
+              {
+                value: "M3 Cabrio",
+                engine: [
+                  {
+                    value: "3.0 R6 286KM 210kW",
+                  },
+                  {
+                    value: "3.2 R6 321KM 236kW",
+                  },
+                ],
+              },
+            ],
           },
           {
             value: "E46",
-            versions: [],
+            versions: [
+              {
+                value: "Sedan",
+                engine: [
+                  {
+                    value: "1.8 316i 116KM 85kW",
+                  },
+                  {
+                    value: "1.9 316i 105KM 77kW",
+                  },
+                  {
+                    value: "1.9 318i 118KM 87kW",
+                  },
+                  {
+                    value: "2.0 318i 143KM 105kW",
+                  },
+                  {
+                    value: "2.0 320i 150KM 110kW",
+                  },
+                  {
+                    value: "2.2 320i 170KM 125kW",
+                  },
+                  {
+                    value: "2.5 323i 170KM 125kW",
+                  },
+                  {
+                    value: "2.5 325i 192KM 141kW",
+                  },
+                  {
+                    value: "2.5 325iX 192KM 141kW",
+                  },
+                  {
+                    value: "2.8 328i 193KM 142kW",
+                  },
+                  {
+                    value: "3.0 330i 231KM 170kW",
+                  },
+                  {
+                    value: "3.0 330iX 231KM 170kW",
+                  },
+                  {
+                    value: "2.0 318d 115KM 85kW",
+                  },
+                  {
+                    value: "2.0 320d 136KM 100kW",
+                  },
+                  {
+                    value: "2.0 320d 150KM 110kW",
+                  },
+                  {
+                    value: "3.0 330d 184KM 135kW",
+                  },
+                  {
+                    value: "3.0 330d 204KM 150kW",
+                  },
+                  {
+                    value: "3.0 330xd 184KM 135kW",
+                  },
+                  {
+                    value: "3.0 330xd 204KM 150kW",
+                  },
+                ],
+              },
+              {
+                value: "Touring",
+                engine: [
+                  {
+                    value: "316i 116KM 85kW",
+                  },
+                  {
+                    value: "318Ci 143KM 105kW",
+                  },
+                  {
+                    value: "318i 118KM 87kW",
+                  },
+                  {
+                    value: "320Ci 170KM 125kW",
+                  },
+                  {
+                    value: "320i 150KM 110kW",
+                  },
+                  {
+                    value: "325Ci 192KM 141kW",
+                  },
+                  {
+                    value: "325iX 192KM 141kW",
+                  },
+                  {
+                    value: "328i 193KM 142kW",
+                  },
+                  {
+                    value: "330i 231KM 170KM",
+                  },
+                  {
+                    value: "330iX 231KM 170kW",
+                  },
+                  {
+                    value: "318d 115KM 85kW",
+                  },
+                  {
+                    value: "320d 136KM 100kW",
+                  },
+                  {
+                    value: "320d 150KM 110kW",
+                  },
+                  {
+                    value: "330d 184KM 135kW",
+                  },
+                  {
+                    value: "330d 204KM 150kW",
+                  },
+                  {
+                    value: "330dX 184KM 135kW",
+                  },
+                  {
+                    value: "330Xd 204KM 150kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "316i 116KM 85kW",
+                  },
+                  {
+                    value: "318Ci 118KM 87kW",
+                  },
+                  {
+                    value: "318Ci 143KM 105kW",
+                  },
+                  {
+                    value: "318Ci 150KM 110kW",
+                  },
+                  {
+                    value: "320Ci 150KM 110kW",
+                  },
+                  {
+                    value: "320Ci 170KM 125kW",
+                  },
+                  {
+                    value: "323Ci 170KM 125kW",
+                  },
+                  {
+                    value: "323Ci 192KM 141kW",
+                  },
+                  {
+                    value: "328Ci 193KM 142kW",
+                  },
+                  {
+                    value: "330Ci 231KM 170kW",
+                  },
+                  {
+                    value: "320Cd 150KM 110kW",
+                  },
+                  {
+                    value: "330Cd 204KM 150kW",
+                  },
+                ],
+              },
+              {
+                value: "Compact",
+                engine: [
+                  {
+                    value: "316i 105KM 77kW",
+                  },
+                  {
+                    value: "316ti 116KM 85kW",
+                  },
+                  {
+                    value: "318ti 143KM 105kW",
+                  },
+                  {
+                    value: "320i 170KM 125kW",
+                  },
+                  {
+                    value: "325ti 192KM 141kW",
+                  },
+                  {
+                    value: "318td 115KM 85kW",
+                  },
+                  {
+                    value: "320td 150KM 110kW",
+                  },
+                ],
+              },
+              {
+                value: "Cabrio",
+                engine: [
+                  {
+                    value: "318Ci 143KM 105kW",
+                  },
+                  {
+                    value: "320i 170KM 125kW",
+                  },
+                  {
+                    value: "323i 170KM 125kW",
+                  },
+                  {
+                    value: "325i 192KM 141kW",
+                  },
+                  {
+                    value: "328i 193KM 142kW",
+                  },
+                  {
+                    value: "330i 231KM 170kW",
+                  },
+                  {
+                    value: "320Cd 150KM 110kW",
+                  },
+                  {
+                    value: "330Xd 204KM 150kW",
+                  },
+                  {
+                    value: "330Xd 184KM 135kW",
+                  },
+                ],
+              },
+              {
+                value: "M3 Coupe",
+                engine: [
+                  {
+                    value: "3.2i 24V 343KM 252kW",
+                  },
+                  {
+                    value: "3.2i 24V CLS 360KM 264kW",
+                  },
+                ],
+              },
+              {
+                value: "M3 Cabrio",
+                engine: [
+                  {
+                    value: "3.2i 24V 343KM 252kW",
+                  },
+                ],
+              },
+            ],
           },
           {
             value: "E90-91-92-93",
-            versions: [],
+            versions: [
+              {
+                value: "Limousine E90",
+                engine: [],
+              },
+              {
+                value: "Touring E91",
+                engine: [],
+              },
+              {
+                value: "Coupe E92",
+                engine: [],
+              },
+              {
+                value: "Cabrio E93",
+              },
+              {
+                value: "M3 Cabrio E93",
+                engine: [],
+              },
+              {
+                value: "M3 Coupe E92",
+                engine: [],
+              },
+              {
+                value: "M3 Limousine E90",
+                engine: [],
+              },
+              {
+                value: "Cabrio E93 Facelifting",
+                engine: [],
+              },
+              {
+                value: "Coupe E92 Facelifting",
+                engine: [],
+              },
+            ],
           },
           {
             value: "F30-F31-F34",
