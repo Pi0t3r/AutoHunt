@@ -5825,47 +5825,588 @@ export const options = [
               },
               {
                 value: "Active Tourer",
-                engine: [],
+                engine: [
+                  {
+                    value: "216i 102KM 75kW",
+                  },
+                  {
+                    value: "218i 136KM 100kW",
+                  },
+                  {
+                    value: "220i 192KM 141kW",
+                  },
+                  {
+                    value: "225i 231KM 170kW",
+                  },
+                  {
+                    value: "214d 95KM 70kW",
+                  },
+                  {
+                    value: "216d 116KM 85kW",
+                  },
+                  {
+                    value: "218d 150KM 110kW",
+                  },
+                  {
+                    value: "220d 190KM 140kW",
+                  },
+                  {
+                    value: "225xe 224KM 165kW",
+                  },
+                ],
               },
               {
                 value: "Grand Tourer",
-                engine: [],
+                engine: [
+                  {
+                    value: "216i 102KM 75kW",
+                  },
+                  {
+                    value: "218i 136KM 100kW",
+                  },
+                  {
+                    value: "220i 192KM 141kW",
+                  },
+                  {
+                    value: "214d 95KM 70kW",
+                  },
+                  {
+                    value: "216d 116KM 85kW",
+                  },
+                  {
+                    value: "218d 150KM 110kW",
+                  },
+                  {
+                    value: "220d 190KM 140kW",
+                  },
+                ],
               },
               {
                 value: "M-Cabrio Facelifting",
-                engine: [],
+                engine: [
+                  {
+                    value: "M 240i 340KM 250kW",
+                  },
+                ],
               },
               {
                 value: "M-Coupe Facelifting",
-                engine: [],
+                engine: [
+                  {
+                    value: "M2 370KM 272kW",
+                  },
+                  {
+                    value: "M2 Competition 410KM 302kW",
+                  },
+                  {
+                    value: "M 240i 340KM 250kW",
+                  },
+                ],
               },
               {
                 value: "Cabrio Facelifting",
-                engine: [],
+                engine: [
+                  {
+                    value: "218i 136KM 100kW",
+                  },
+                  {
+                    value: "220i 184KM 135kW",
+                  },
+                  {
+                    value: "230i 252KM 185kW",
+                  },
+                  {
+                    value: "218d 150KM 110kW",
+                  },
+                  {
+                    value: "220d 190KM 140kW",
+                  },
+                  {
+                    value: "225d 224KM 165kW",
+                  },
+                ],
               },
               {
                 value: "Coupe Facelifting",
-                engine: [],
+                engine: [
+                  {
+                    value: "218i 136KM 100kW",
+                  },
+                  {
+                    value: "220i 184KM 135kW",
+                  },
+                  {
+                    value: "230i 252KM 185kW",
+                  },
+                  {
+                    value: "218d 150KM 110kW",
+                  },
+                  {
+                    value: "220d 190KM 140kW",
+                  },
+                  {
+                    value: "225d 224KM 165kW",
+                  },
+                ],
               },
               {
                 value: "Grand Tourer Facelifting",
-                engine: [],
+                engine: [
+                  {
+                    value: "216i 109KM 80kW",
+                  },
+                  {
+                    value: "218i 136KM 100kW",
+                  },
+                  {
+                    value: "218i 140KM 103kW",
+                  },
+                  {
+                    value: "220i 178KM 131kW",
+                  },
+                  {
+                    value: "220i 192KM 141kW",
+                  },
+                  {
+                    value: "216d 116KM 85kW",
+                  },
+                  {
+                    value: "218d 150KM 110kW",
+                  },
+                  {
+                    value: "220d 190KM 140kW",
+                  },
+                ],
               },
               {
                 value: "Active Tourer Facelifting",
-                engine: [],
+                engine: [
+                  {
+                    value: "216i 109KM 80kW",
+                  },
+                  {
+                    value: "218i 136KM 100kW",
+                  },
+                  {
+                    value: "218i 140KM 103kW",
+                  },
+                  {
+                    value: "220i 178KM 131kW",
+                  },
+                  {
+                    value: "220i 192KM 141kW",
+                  },
+                  {
+                    value: "225i 231KM 170kW",
+                  },
+                  {
+                    value: "216d 116KM 85kW",
+                  },
+                  {
+                    value: "218d 150KM 110kW",
+                  },
+                  {
+                    value: "220d 190KM 140kW",
+                  },
+                  {
+                    value: "225xe 224KM 165kW",
+                  },
+                ],
               },
             ],
           },
           {
             value: "G42-U06",
-            versions: [],
+            versions: [
+              {
+                value: "M Coupe CS",
+                engine: [
+                  {
+                    value: "M 3.0 CS 450KM 331kW",
+                  },
+                ],
+              },
+              {
+                value: "M Grand Coupe",
+                engine: [
+                  {
+                    value: "2.0 235i 306KM 225kW",
+                  },
+                ],
+              },
+              {
+                value: "Gran Coupe",
+                engine: [
+                  {
+                    value: "1.5 218i 136KM 100kW",
+                  },
+                  {
+                    value: "1.5 218i 140KM 103kW",
+                  },
+                  {
+                    value: "2.0 220i 178KM 131kW",
+                  },
+                  {
+                    value: "1.5 216d 116KM 85kW",
+                  },
+                  {
+                    value: "2.0 218d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 220d 190KM 140kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "2.0 218i 156KM 115kW",
+                  },
+                  {
+                    value: "2.0 220i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 230i 245KM 180kW",
+                  },
+                  {
+                    value: "2.0 220d 190KM 140kW",
+                  },
+                ],
+              },
+              {
+                value: "Active Tourer",
+                engine: [
+                  {
+                    value: "1.5 216i 122KM 90kW",
+                  },
+                  {
+                    value: "1.5 218i 136KM 100kW",
+                  },
+                  {
+                    value: "2.0 218d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 223d 211KM 155kW",
+                  },
+                  {
+                    value: "1.5 220i 170KM 125kW",
+                  },
+                  {
+                    value: "2.0 218i 218KM 160kW",
+                  },
+                ],
+              },
+              {
+                value: "Active Tourer Plug-In",
+                engine: [
+                  {
+                    value: "1.5 225e 245KM 180kW",
+                  },
+                  {
+                    value: "1.5 230e 326KM 240kW",
+                  },
+                ],
+              },
+              {
+                value: "M Coupe",
+                engine: [
+                  {
+                    value: "3.0 M2 460KM 338kW",
+                  },
+                ],
+              },
+            ],
           },
         ],
       },
       {
         value: "3 Series",
-        generations: [],
+        generations: [
+          {
+            value: "E21",
+            versions: [
+              {
+                value: "Cabrio",
+                engine: [
+                  {
+                    value: "316 75KM 55kW",
+                  },
+                  {
+                    value: "316 90KM 66kW",
+                  },
+                  {
+                    value: "318 90KM 66kW",
+                  },
+                  {
+                    value: "318 98KM 72kW",
+                  },
+                  {
+                    value: "318i 105KM 77kW",
+                  },
+                  {
+                    value: "320 109KM 80kW",
+                  },
+                  {
+                    value: "320 122KM 90kW",
+                  },
+                  {
+                    value: "320i 125KM 92kW",
+                  },
+                  {
+                    value: "323i 143KM 105kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "315 75KM 55kW",
+                  },
+                  {
+                    value: "316 90KM 66kW",
+                  },
+                  {
+                    value: "318 90KM 66kW",
+                  },
+                  {
+                    value: "318 98KM 72kW",
+                  },
+                  {
+                    value: "318 106KM 78kW",
+                  },
+                  {
+                    value: "320 109KM 80kW",
+                  },
+                  {
+                    value: "320 122KM 90kW",
+                  },
+                  {
+                    value: "320i 125KM 92kW",
+                  },
+                  {
+                    value: "323i 143KM 105kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "E30",
+            versions: [
+              {
+                value: "Sedan",
+                engine: [
+                  {
+                    value: "315 75KM 55kW",
+                  },
+                  {
+                    value: "316 90KM 66kW",
+                  },
+                  {
+                    value: "316 (Ecotronic) 90KM 66kW",
+                  },
+                  {
+                    value: "316i 100KM 74kW",
+                  },
+                  {
+                    value: "316i 102KM 75kW",
+                  },
+                  {
+                    value: "318i 113KM 83kW",
+                  },
+                  {
+                    value: "318i 115KM 85kW",
+                  },
+                  {
+                    value: "318i 105KM 77kW",
+                  },
+                  {
+                    value: "318i 102KM 75kW",
+                  },
+                  {
+                    value: "318is 136KM 100kW",
+                  },
+                  {
+                    value: "320i 129KM 95kW",
+                  },
+                  {
+                    value: "320i 125KM 92kW",
+                  },
+                  {
+                    value: "320is 192KM 141kW",
+                  },
+                  {
+                    value: "323i 139KM 102kW",
+                  },
+                  {
+                    value: "323i 150KM 110kW",
+                  },
+                  {
+                    value: "325 e 2.7 122KM 90kW",
+                  },
+                  {
+                    value: "325 e 2.7 129KM 95kW",
+                  },
+                  {
+                    value: "325i 171KM 126kW",
+                  },
+                  {
+                    value: "325i 170KM 125kW",
+                  },
+                  {
+                    value: "325i X 170KM 125kW",
+                  },
+                  {
+                    value: "325i X 171KM 126kW",
+                  },
+                  {
+                    value: "333i 197KM 145kW",
+                  },
+                  {
+                    value: "324d 86KM 63kW",
+                  },
+                  {
+                    value: "324td 115KM 85kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "315 75KM 55kW",
+                  },
+                  {
+                    value: "316 90KM 66kW",
+                  },
+                  {
+                    value: "316 (Ecotronic) 90KM 66kW",
+                  },
+                  {
+                    value: "316i 100KM 74kW",
+                  },
+                  {
+                    value: "316i 102KM 75kW",
+                  },
+                  {
+                    value: "318i 102KM 75kW",
+                  },
+                  {
+                    value: "318i 104KM 76kW",
+                  },
+                  {
+                    value: "318i 113KM 83kW",
+                  },
+                  {
+                    value: "318i 115KM 85kW",
+                  },
+                  {
+                    value: "318is 136KM 100kW",
+                  },
+                  {
+                    value: "320i 125KM 92kW",
+                  },
+                  {
+                    value: "320i 129KM 95kW",
+                  },
+                  {
+                    value: "320i 192KM 141kW",
+                  },
+                  {
+                    value: "323i 139KM 102kW",
+                  },
+                  {
+                    value: "323i 150KM 110kW",
+                  },
+                  {
+                    value: "325e 122KM 90kW",
+                  },
+                  {
+                    value: "325e 129KM 95kW",
+                  },
+                  {
+                    value: "325i 170KM 125kW",
+                  },
+                  {
+                    value: "325i 171KM 126kW",
+                  },
+                  {
+                    value: "325i X 170KM 125kW",
+                  },
+                  {
+                    value: "325i X 171KM 126kW",
+                  },
+                  {
+                    value: "333i 197KM 145kW",
+                  },
+                  {
+                    value: "324d 86KM 63kW",
+                  },
+                  {
+                    value: "324td 115KM 85kW",
+                  },
+                ],
+              },
+              {
+                value: "Cabrio",
+                engine: [
+                  {
+                    value: "318i 113KM 83kW",
+                  },
+                  {
+                    value: "318is 136KM 100kW",
+                  },
+                  {
+                    value: "320i 129KM 95kW",
+                  },
+                  {
+                    value: "320i 192KM 141kW",
+                  },
+                  {
+                    value: "325i 170KM 125kW",
+                  },
+                  {
+                    value: "325i 171KM 126kW",
+                  },
+                ],
+              },
+              {
+                value: "M3 Coupe",
+                engine: [],
+              },
+              {
+                value: "M3 Cabrio",
+                engine: [],
+              },
+              {
+                value: "Touring",
+                engine: [],
+              },
+            ],
+          },
+          {
+            value: "E36",
+            versions: [],
+          },
+          {
+            value: "E46",
+            versions: [],
+          },
+          {
+            value: "E90-91-92-93",
+            versions: [],
+          },
+          {
+            value: "F30-F31-F34",
+            versions: [],
+          },
+          {
+            value: "G20-G21",
+            versions: [],
+          },
+        ],
       },
       {
         value: "4 Series",
