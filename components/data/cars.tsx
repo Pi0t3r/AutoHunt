@@ -6869,48 +6869,777 @@ export const options = [
             versions: [
               {
                 value: "Limousine E90",
-                engine: [],
+                engine: [
+                  {
+                    value: "316i 122KM 90kW",
+                  },
+                  {
+                    value: "318i 129KM 95kW",
+                  },
+                  {
+                    value: "318i 143KM 105kW",
+                  },
+                  {
+                    value: "320i 150KM 110kW",
+                  },
+                  {
+                    value: "320i 170KM 125kW",
+                  },
+                  {
+                    value: "320si 173KM 127kW",
+                  },
+                  {
+                    value: "325i 218KM 160kW",
+                  },
+                  {
+                    value: "325i (3.0) 218KM 160kW",
+                  },
+                  {
+                    value: "325Xi 218KM 160kW",
+                  },
+                  {
+                    value: "330i 258KM 190kW",
+                  },
+                  {
+                    value: "330i 272KM 200kW",
+                  },
+                  {
+                    value: "330Xi 258KM 190kW",
+                  },
+                  {
+                    value: "330Xi 272KM 200kW",
+                  },
+                  {
+                    value: "335i 306KM 225kW",
+                  },
+                  {
+                    value: "335Xi 306KM 225kW",
+                  },
+                  {
+                    value: "316d 115KM 85kW",
+                  },
+                  {
+                    value: "318d 122KM 90kW",
+                  },
+                  {
+                    value: "318d 143KM 105kW",
+                  },
+                  {
+                    value: "320dd 150KM 110kW",
+                  },
+                  {
+                    value: "320d 163KM 120kW",
+                  },
+                  {
+                    value: "320d 177KM 130kW",
+                  },
+                  {
+                    value: "320d 184KM 135kW",
+                  },
+                  {
+                    value: "320d EfficientDynamics 163KM 120kW",
+                  },
+                  {
+                    value: "325d 197KM 145kW",
+                  },
+                  {
+                    value: "325d 204KM 150kW",
+                  },
+                  {
+                    value: "330d 231KM 170KM",
+                  },
+                  {
+                    value: "330d 245KM 180kW",
+                  },
+                  {
+                    value: "330Xd 231KM 170kW",
+                  },
+                  {
+                    value: "335d 286KM 210kW",
+                  },
+                ],
               },
               {
                 value: "Touring E91",
-                engine: [],
+                engine: [
+                  {
+                    value: "1.6 316i 122KM 90kW",
+                  },
+                  {
+                    value: "2.0 318i 129KM 95kW",
+                  },
+                  {
+                    value: "2.0 318i 143KM 105kW",
+                  },
+                  {
+                    value: "2.0 320i 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 320i 170KM 125kW",
+                  },
+                  {
+                    value: "2.5 325i 218KM 160kW",
+                  },
+                  {
+                    value: "2.5 325Xi 218KM 160kW",
+                  },
+                  {
+                    value: "3.0 330i 272KM 200kW",
+                  },
+                  {
+                    value: "3.0 330Xi 258KM 190kW",
+                  },
+                  {
+                    value: "3.0 335i 306KM 225kW",
+                  },
+                  {
+                    value: "2.0 316d 115KM 85kW",
+                  },
+                  {
+                    value: "2.0 318d 122KM 90kW",
+                  },
+                  {
+                    value: "2.0 318d 143KM 105kW",
+                  },
+                  {
+                    value: "2.0 320d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 320d 163KM 120kW",
+                  },
+                  {
+                    value: "2.0 320d 177KM 130kW",
+                  },
+                  {
+                    value: "2.0 320d 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 320d EfficientDynamics 163KM 120kW",
+                  },
+                  {
+                    value: "3.0 325d 204KM 150kW",
+                  },
+                  {
+                    value: "3.0 330d 245KM 180kW",
+                  },
+                  {
+                    value: "3.0 335d 286KM 210kW",
+                  },
+                ],
               },
               {
                 value: "Coupe E92",
-                engine: [],
+                engine: [
+                  {
+                    value: "320i 170KM 125kW",
+                  },
+                  {
+                    value: "325i 218KM 160kW",
+                  },
+                  {
+                    value: "325Xi 218KM 160kW",
+                  },
+                  {
+                    value: "330i 272KM 200kW",
+                  },
+                  {
+                    value: "330Xi 272KM 200kW",
+                  },
+                  {
+                    value: "335i 306KM 225kW",
+                  },
+                  {
+                    value: "335Xi 306KM 225kW",
+                  },
+                  {
+                    value: "320d 177KM 130kW",
+                  },
+                  {
+                    value: "325d 197KM 145kW",
+                  },
+                  {
+                    value: "330d 231KM 170kW",
+                  },
+                  {
+                    value: "330d 245KM 180kW",
+                  },
+                  {
+                    value: "330Xd 231KM 170kW",
+                  },
+                  {
+                    value: "335d 286KM 210kW",
+                  },
+                ],
               },
               {
                 value: "Cabrio E93",
+                engine: [
+                  {
+                    value: "320i 170KM 125kW",
+                  },
+                  {
+                    value: "325i 218KM 160kW",
+                  },
+                  {
+                    value: "330i 272KM 200kW",
+                  },
+                  {
+                    value: "335i 306KM 225kW",
+                  },
+                  {
+                    value: "320d 177KM 130kW",
+                  },
+                  {
+                    value: "325d 197KM 145kW",
+                  },
+                  {
+                    value: "330d 231KM 170kW",
+                  },
+                  {
+                    value: "330d 245KM 180kW",
+                  },
+                ],
               },
               {
                 value: "M3 Cabrio E93",
-                engine: [],
+                engine: [
+                  {
+                    value: "4.0 V8 420KM 309kW",
+                  },
+                ],
               },
               {
                 value: "M3 Coupe E92",
-                engine: [],
+                engine: [
+                  {
+                    value: "4.0 V8 420KM 309kW",
+                  },
+                ],
               },
               {
                 value: "M3 Limousine E90",
-                engine: [],
+                engine: [
+                  {
+                    value: "4.0 V8 420KM 309kW",
+                  },
+                ],
               },
               {
                 value: "Cabrio E93 Facelifting",
-                engine: [],
+                engine: [
+                  {
+                    value: "320i 170KM 125kW",
+                  },
+                  {
+                    value: "325i 218KM 160kW",
+                  },
+                  {
+                    value: "330i 272KM 200kW",
+                  },
+                  {
+                    value: "335i 306KM 225kW",
+                  },
+                  {
+                    value: "320d 184KM 135kW",
+                  },
+                  {
+                    value: "325d 204KM 150kW",
+                  },
+                  {
+                    value: "330d 245KM 180kW",
+                  },
+                ],
               },
               {
                 value: "Coupe E92 Facelifting",
-                engine: [],
+                engine: [
+                  {
+                    value: "320i 170KM 125kW",
+                  },
+                  {
+                    value: "325i 218KM 160kW",
+                  },
+                  {
+                    value: "330i 272KM 200kW",
+                  },
+                  {
+                    value: "335i 306KM 225kW",
+                  },
+                  {
+                    value: "320d 184KM 135kW",
+                  },
+                  {
+                    value: "325d 204KM 150kW",
+                  },
+                  {
+                    value: "330d 245KM 180kW",
+                  },
+                  {
+                    value: "335d 286KM 210kW",
+                  },
+                ],
               },
             ],
           },
           {
             value: "F30-F31-F34",
-            versions: [],
+            versions: [
+              {
+                value: "Limousine",
+                engine: [
+                  {
+                    value: "1.6 316i 136KM 100kW",
+                  },
+                  {
+                    value: "1.6 320i EfficientDynamics Edition 170KM 125kW",
+                  },
+                  {
+                    value: "2.0 320i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 328i 245KM 180kW",
+                  },
+                  {
+                    value: "3.0 335i 306KM 225kW",
+                  },
+                  {
+                    value: "2.0 316d 116KM 85kW",
+                  },
+                  {
+                    value: "2.0 318d 143KM 105kW",
+                  },
+                  {
+                    value: "2.0 320d 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 320d Efficiency Dynamics 163KM 120kW",
+                  },
+                  {
+                    value: "2.0 325d 218KM 160kW",
+                  },
+                  {
+                    value: "3.0 330d 258KM 190kW",
+                  },
+                  {
+                    value: "3.0 335d 313KM 230kW",
+                  },
+                  {
+                    value: "3.0 ActiveHybrid 3 340KM 250kW",
+                  },
+                  {
+                    value: "3.0 ActiveHybrid 3 354KM 260kW",
+                  },
+                ],
+              },
+              {
+                value: "Touring",
+                engine: [
+                  {
+                    value: "1.6 316i 136KM 100kW",
+                  },
+                  {
+                    value: "2.0 320i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 328i 245KM 180kW",
+                  },
+                  {
+                    value: "3.0 335i 306KM 225kW",
+                  },
+                  {
+                    value: "2.0 316d 116KM 85kW",
+                  },
+                  {
+                    value: "2.0 318d 143KM 105kW",
+                  },
+                  {
+                    value: "2.0 320d 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 320d Efficiency Dynamics 163KM 120kW",
+                  },
+                  {
+                    value: "2.0 325d 218KM 160kW",
+                  },
+                  {
+                    value: "3.0 330d 258KM 190kW",
+                  },
+                  {
+                    value: "3.0 335d 313KM 230kW",
+                  },
+                ],
+              },
+              {
+                value: "Gran Tourismo",
+                engine: [
+                  {
+                    value: "2.0 320i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 328i 245KM 180kW",
+                  },
+                  {
+                    value: "3.0 335i 306KM 225kW",
+                  },
+                  {
+                    value: "2.0 328d 143KM 105kW",
+                  },
+                  {
+                    value: "2.0 318d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 320d 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 320d 190KM 140kW",
+                  },
+                  {
+                    value: "2.0 325d 218KM 160kW",
+                  },
+                  {
+                    value: "3.0 330d 258KM 190kW",
+                  },
+                  {
+                    value: "3.0 335d 313KM 230kW",
+                  },
+                ],
+              },
+              {
+                value: "M3 Limousine",
+                engine: [
+                  {
+                    value: "3.0 M3 431KM 317kW",
+                  },
+                ],
+              },
+              {
+                value: "Limousine Facelifting",
+                engine: [
+                  {
+                    value: "1.5 318i 136KM 100kW",
+                  },
+                  {
+                    value: "2.0 320i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 330i 252KM 185kW",
+                  },
+                  {
+                    value: "3.0 340i 326KM 240kW",
+                  },
+                  {
+                    value: "2.0 316d 116KM 85kW",
+                  },
+                  {
+                    value: "2.0 318d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 320d 190KM 140kW",
+                  },
+                  {
+                    value: "2.0 320d EfficientDynamics 163KM 120kW",
+                  },
+                  {
+                    value: "2.0 325d 218KM 160kW",
+                  },
+                  {
+                    value: "2.0 325d 224KM 165kW",
+                  },
+                  {
+                    value: "3.0 330d 258KM 190kW",
+                  },
+                  {
+                    value: "3.0 335d 313KM 230kW",
+                  },
+                  {
+                    value: "2.0 330e 252KM 185kW",
+                  },
+                ],
+              },
+              {
+                value: "Touring Facelifting",
+                engine: [
+                  {
+                    value: "1.5 318i 136KM 100kW",
+                  },
+                  {
+                    value: "2.0 320i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 330i 252KM 185kW",
+                  },
+                  {
+                    value: "3.0 340i 326KM 240kW",
+                  },
+                  {
+                    value: "2.0 316d 116KM 85kW",
+                  },
+                  {
+                    value: "2.0 318d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 320d 190KM 140kW",
+                  },
+                  {
+                    value: "2.0 320d EfficientDynamics 163KM 120kW",
+                  },
+                  {
+                    value: "2.0 325d 218KM 160kW",
+                  },
+                  {
+                    value: "2.0 325d 224KM 165kW",
+                  },
+                  {
+                    value: "3.0 330d 258KM 190kW",
+                  },
+                  {
+                    value: "3.0 335d 313KM 230kW",
+                  },
+                ],
+              },
+              {
+                value: "M3 Limousine Facelifting",
+                engine: [
+                  {
+                    value: "3.0 M3 431KM 317kW",
+                  },
+                ],
+              },
+              {
+                value: "Gran Tourismo Facelifting",
+                engine: [
+                  {
+                    value: "2.0 320i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 330i 252KM 185kW",
+                  },
+                  {
+                    value: "3.0 340i 326KM 240kW",
+                  },
+                  {
+                    value: "2.0 318d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 320d 190KM 140kW",
+                  },
+                  {
+                    value: "2.0 325d 224KM 165kW",
+                  },
+                  {
+                    value: "3.0 330d 258KM 190kW",
+                  },
+                  {
+                    value: "3.0 335d 313KM 230kW",
+                  },
+                ],
+              },
+            ],
           },
           {
             value: "G20-G21",
-            versions: [],
+            versions: [
+              {
+                value: "Limousine",
+                engine: [
+                  {
+                    value: "2.0 318i 156KM 115kW",
+                  },
+                  {
+                    value: "2.0 320i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 330i 258KM 190kW",
+                  },
+                  {
+                    value: "2.0 316d 122KM 90kW",
+                  },
+                  {
+                    value: "2.0 318d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 320d 190KM 140kW",
+                  },
+                  {
+                    value: "3.0 330d 265KM 195kW",
+                  },
+                  {
+                    value: "3.0 330d 286KM 210kW",
+                  },
+                  {
+                    value: "2.0 330e 292KM 215kW",
+                  },
+                ],
+              },
+              {
+                value: "Touring M",
+                engine: [
+                  {
+                    value: "3.0 340i 374KM 275kW",
+                  },
+                  {
+                    value: "3.0 340d 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "Touring",
+                engine: [
+                  {
+                    value: "2.0 318i 156KM 115kW",
+                  },
+                  {
+                    value: "2.0 320i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 330i 258KM 190kW",
+                  },
+                  {
+                    value: "2.0 316d 122KM 90kW",
+                  },
+                  {
+                    value: "2.0 318d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 320d 190KM 140kW",
+                  },
+                  {
+                    value: "3.0 330d 265KM 195kW",
+                  },
+                  {
+                    value: "3.0 330d 286KM 210kW",
+                  },
+                  {
+                    value: "2.0 330e 292KM 215kW",
+                  },
+                ],
+              },
+              {
+                value: "Limousine M",
+                engine: [
+                  {
+                    value: "3.0 M3 480KM 353kW",
+                  },
+                  {
+                    value: "3.0 M3 Competition 510KM 375kW",
+                  },
+                  {
+                    value: "3.0 M340i 375KM 275kW",
+                  },
+                  {
+                    value: "3.0 M340d 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "Limousine M Facelifting",
+                engine: [
+                  {
+                    value: "3.0 M3 Competition 510KM 375kW",
+                  },
+                  {
+                    value: "3.0 M3 480KM 353kW",
+                  },
+                  {
+                    value: "3.0 M340i 374KM 275kW",
+                  },
+                  {
+                    value: "3.0 M340d 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "Touring M Facelifting",
+                engine: [
+                  {
+                    value: "3.0 M3 Competition 510KM 375kW",
+                  },
+                  {
+                    value: "3.0 M3 480KM 353kW",
+                  },
+                  {
+                    value: "3.0 M340i 374KM 275kW",
+                  },
+                  {
+                    value: "3.0 M30d 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "Touring Plug-In Facelifting",
+                engine: [
+                  {
+                    value: "2.0 320e 204KM 150kW",
+                  },
+                  {
+                    value: "2.0 330e 292KM 215kW",
+                  },
+                ],
+              },
+              {
+                value: "Limousine Plug-In Facelifting",
+                engine: [
+                  {
+                    value: "2.0 320e 204KM 150kW",
+                  },
+                  {
+                    value: "2.0 330e 292KM 215kW",
+                  },
+                ],
+              },
+              {
+                value: "Touring Facelifting",
+                engine: [
+                  {
+                    value: "2.0 318i 156KM 115kW",
+                  },
+                  {
+                    value: "2.0 320i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 330i 245KM 180kW",
+                  },
+                  {
+                    value: "2.0 316d 122KM 90kW",
+                  },
+                  {
+                    value: "2.0 318d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 320d 190KM 140kW",
+                  },
+                  {
+                    value: "3.0 330d 286KM 210kW",
+                  },
+                ],
+              },
+              {
+                value: "Limousine Facelifting",
+                engine: [
+                  {
+                    value: "2.0 318i 156KM 115kW",
+                  },
+                  {
+                    value: "2.0 320i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 330i 245KM 180kW",
+                  },
+                  {
+                    value: "2.0 316d 122KM 90kW",
+                  },
+                  {
+                    value: "2.0 318d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 320d 190KM 140kW",
+                  },
+                  {
+                    value: "3.0 330d 286KM 210kW",
+                  },
+                ],
+              },
+            ],
           },
         ],
       },
