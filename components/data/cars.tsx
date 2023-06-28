@@ -7645,7 +7645,378 @@ export const options = [
       },
       {
         value: "4 Series",
-        generations: [],
+        generations: [
+          {
+            value: "F32-33-36",
+            versions: [
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "420i 184KM 135kW",
+                  },
+                  {
+                    value: "420i (Euro 6) 184KM 135kW",
+                  },
+                  {
+                    value: "428i 245KM 180kW",
+                  },
+                  {
+                    value: "430i 252KM 185kW",
+                  },
+                  {
+                    value: "435i 306KM 225kW",
+                  },
+                  {
+                    value: "435i (Euro 6) 306KM 225kW",
+                  },
+                  {
+                    value: "440i 326KM 240kW",
+                  },
+                  {
+                    value: "418d 150KM 110kW",
+                  },
+                  {
+                    value: "420d 184KM 135kW",
+                  },
+                  {
+                    value: "420d 190KM 140kW",
+                  },
+                  {
+                    value: "425d 218KM 160kW",
+                  },
+                  {
+                    value: "425d 224KM 165kW",
+                  },
+                  {
+                    value: "425d (Euro 6) 218KM 160kW",
+                  },
+                  {
+                    value: "430d 258KM 190kW",
+                  },
+                  {
+                    value: "430d (Euro 6) 258KM 190kW",
+                  },
+                  {
+                    value: "435d 313KM 230kW",
+                  },
+                  {
+                    value: "435d (Euro 6) 313KM 230kW",
+                  },
+                ],
+              },
+              {
+                value: "Cabrio",
+                engine: [
+                  {
+                    value: "420i 184KM 135kW",
+                  },
+                  {
+                    value: "420i (Euro 6) 184KM 135kW",
+                  },
+                  {
+                    value: "428i 245KM 180kW",
+                  },
+                  {
+                    value: "428i (Euro 6) 245KM 180kW",
+                  },
+                  {
+                    value: "430i 252KM 252KM 185kW",
+                  },
+                  {
+                    value: "435i 306KM 225kW",
+                  },
+                  {
+                    value: "435i (Euro 6) 306KM 225kW",
+                  },
+                  {
+                    value: "440i 326KM 240kW",
+                  },
+                  {
+                    value: "420d 184KM 135kW",
+                  },
+                  {
+                    value: "420d 190KM 140kW",
+                  },
+                  {
+                    value: "425d 218KM 160kW",
+                  },
+                  {
+                    value: "425d 224KM 165kW",
+                  },
+                  {
+                    value: "425d (Euro 6) 218KM 160kW",
+                  },
+                  {
+                    value: "430d 258KM 190kW",
+                  },
+                  {
+                    value: "430d (Euro 6) 258KM 190kW",
+                  },
+                  {
+                    value: "435d 313KM 230kW",
+                  },
+                  {
+                    value: "435d (Euro 6) 313KM 230kW",
+                  },
+                ],
+              },
+              {
+                value: "Gran Coupe",
+                engine: [
+                  {
+                    value: "420i 184KM 135kW",
+                  },
+                  {
+                    value: "428i 245KM 180kW",
+                  },
+                  {
+                    value: "430i 252KM 252KM 185kW",
+                  },
+                  {
+                    value: "435i 306KM 225kW",
+                  },
+                  {
+                    value: "440i 326KM 240kW",
+                  },
+                  {
+                    value: "418d 143KM 105kW",
+                  },
+                  {
+                    value: "418d 150KM 110kW",
+                  },
+                  {
+                    value: "420d 184KM 135kW",
+                  },
+                  {
+                    value: "420d 190KM 140kW",
+                  },
+                  {
+                    value: "425d 224KM 165kW",
+                  },
+                  {
+                    value: "430d 258KM 190kW",
+                  },
+                  {
+                    value: "435d 313KM 230kW",
+                  },
+                ],
+              },
+              {
+                value: "M4 Coupe",
+                engine: [
+                  {
+                    value: "3.0 M4 431KM 317kW",
+                  },
+                ],
+              },
+              {
+                value: "M4 Cabrio",
+                engine: [
+                  {
+                    value: "3.0 M4 431KM 317kW",
+                  },
+                  {
+                    value: "3.0 M4 (Euro 6) 431KM 317kW",
+                  },
+                ],
+              },
+              {
+                value: "M4 Cabrio Facelifting",
+                engine: [
+                  {
+                    value: "M4 431KM 317kW",
+                  },
+                ],
+              },
+              {
+                value: "M4 Coupe Facelifting",
+                engine: [
+                  {
+                    value: "M4 431KM 317kW",
+                  },
+                ],
+              },
+              {
+                value: "Cabrio Facelifting",
+                engine: [
+                  {
+                    value: "420i 184KM 135kW",
+                  },
+                  {
+                    value: "420i 252KM 185kW",
+                  },
+                  {
+                    value: "440i 326KM 240kW",
+                  },
+                  {
+                    value: "420d 190KM 140kW",
+                  },
+                  {
+                    value: "425d 224KM 165kW",
+                  },
+                  {
+                    value: "430d 252KM 185kW",
+                  },
+                  {
+                    value: "435d 313KM 230kW",
+                  },
+                ],
+              },
+              {
+                value: "Gran Coupe Facelifting",
+                engine: [
+                  {
+                    value: "420i 184KM 135kW",
+                  },
+                  {
+                    value: "420i 252KM 185kW",
+                  },
+                  {
+                    value: "440i 326KM 240kW",
+                  },
+                  {
+                    value: "420d 190KM 140kW",
+                  },
+                  {
+                    value: "425d 224KM 165kW",
+                  },
+                  {
+                    value: "430d 258KM 185kW",
+                  },
+                  {
+                    value: "435d 313KM 230kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe Facelifting",
+                engine: [
+                  {
+                    value: "420i 184KM 135kW",
+                  },
+                  {
+                    value: "420i 252KM 185kW",
+                  },
+                  {
+                    value: "440i 326KM 240kW",
+                  },
+                  {
+                    value: "418d 150KM 110kW",
+                  },
+                  {
+                    value: "420d 190KM 140kW",
+                  },
+                  {
+                    value: "425d 224KM 165kW",
+                  },
+                  {
+                    value: "430d 258KM 185kW",
+                  },
+                  {
+                    value: "435d 313KM 230kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "G22-23-26",
+            versions: [
+              {
+                value: "M4 Coupe",
+                engine: [
+                  {
+                    value: "3.0 M4 480KM 353kW",
+                  },
+                  {
+                    value: "3.0 M4 Competition 510KM 375kW",
+                  },
+                ],
+              },
+              {
+                value: "Cabrio",
+                engine: [
+                  {
+                    value: "2.0 420i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 430i 245KM 180kW",
+                  },
+                  {
+                    value: "2.0 430i 258KM 190kW",
+                  },
+                  {
+                    value: "3.0 M440i 374KM 275kW",
+                  },
+                  {
+                    value: "2.0 420d 190KM 140kW",
+                  },
+                  {
+                    value: "3.0 430d 286KM 210kW",
+                  },
+                  {
+                    value: "3.0 M440d 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "2.0 420i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 430i 245KM 180kW",
+                  },
+                  {
+                    value: "2.0 430i 258KM 190kW",
+                  },
+                  {
+                    value: "3.0 M440i 374KM 275kW",
+                  },
+                  {
+                    value: "2.0 420d 190KM 140kW",
+                  },
+                  {
+                    value: "3.0 430d 286KM 210kW",
+                  },
+                  {
+                    value: "3.0 M440d 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "M4 Cabrio",
+                engine: [
+                  {
+                    value: "3.0 M4 Competition 510KM 375kW",
+                  },
+                ],
+              },
+              {
+                value: "Gran Coupe",
+                engine: [
+                  {
+                    value: "2.0 420i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 430i 245KM 180kW",
+                  },
+                  {
+                    value: "3.0 M440i 374KM 275kW",
+                  },
+                  {
+                    value: "2.0 420d 190KM 140kW",
+                  },
+                  {
+                    value: "3.0 430d 286KM 210kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "5 Series",
