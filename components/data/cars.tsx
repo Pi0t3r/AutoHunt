@@ -8815,35 +8815,179 @@ export const options = [
             versions: [
               {
                 value: "Limousine",
-                engine: [],
+                engine: [
+                  {
+                    value: "520i 184KM 135kW",
+                  },
+                  {
+                    value: "530i 252KM 185kW",
+                  },
+                  {
+                    value: "540i 340KM 250kW",
+                  },
+                  {
+                    value: "550i 462KM 340kW",
+                  },
+                  {
+                    value: "518d 150KM 110kW",
+                  },
+                  {
+                    value: "520d 190KM 140kW",
+                  },
+                  {
+                    value: "520d Efficient Dynamics Edition 190KM 140kW",
+                  },
+                  {
+                    value: "525d 231KM 170kW",
+                  },
+                  {
+                    value: "530d 265KM 195kW",
+                  },
+                  {
+                    value: "540d 320KM 235kW",
+                  },
+                  {
+                    value: "M550d 400KM 294kW",
+                  },
+                  {
+                    value: "530e IPerformance 252KM 185kW",
+                  },
+                ],
               },
               {
                 value: "Touring",
-                engine: [],
+                engine: [
+                  {
+                    value: "520i 184KM 135kW",
+                  },
+                  {
+                    value: "530i 252KM 185kW",
+                  },
+                  {
+                    value: "540i 340KM 250kW",
+                  },
+                  {
+                    value: "518d 150KM 110kW",
+                  },
+                  {
+                    value: "520d 190KM 140kW",
+                  },
+
+                  {
+                    value: "525d 231KM 170kW",
+                  },
+                  {
+                    value: "530d 265KM 195kW",
+                  },
+                  {
+                    value: "540d 320KM 235kW",
+                  },
+                  {
+                    value: "M550d 400KM 294kW",
+                  },
+                ],
               },
               {
                 value: "M5 Limousine",
-                engine: [],
+                engine: [
+                  {
+                    value: "4.4 600KM 441kW",
+                  },
+                  {
+                    value: "4.4 M550i 530KM 390kW",
+                  },
+                ],
               },
               {
                 value: "Touring Plug-In",
-                engine: [],
+                engine: [
+                  {
+                    value: "2.0 520e 204KM 150kW",
+                  },
+                  {
+                    value: "2.0 530e 292KM 215kW",
+                  },
+                ],
               },
               {
                 value: "Limousine Plug-In",
-                engine: [],
+                engine: [
+                  {
+                    value: "2.0 520e 204KM 150kW",
+                  },
+                  {
+                    value: "2.0 530e 292KM 215kW",
+                  },
+                  {
+                    value: "3.0 545e 394KM 290kW",
+                  },
+                ],
               },
               {
                 value: "M5 Limousine Facelifting",
-                engine: [],
+                engine: [
+                  {
+                    value: "4.4 M5 600KM 441kW",
+                  },
+                  {
+                    value: "4.4 M5 CS 635KM 467kW",
+                  },
+                  {
+                    value: "4.4 M550i 530KM 390kW",
+                  },
+                ],
               },
               {
                 value: "Touring Facelifting",
-                engine: [],
+                engine: [
+                  {
+                    value: "2.0 520i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 530i 252KM 185kW",
+                  },
+                  {
+                    value: "3.0 540i 333KM 245kW",
+                  },
+                  {
+                    value: "2.0 518d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 520d 190KM 140kW",
+                  },
+                  {
+                    value: "3.0 530d 286KM 210kW",
+                  },
+                  {
+                    value: "3.0 540d 340KM 250kW",
+                  },
+                ],
               },
               {
                 value: "Limousine Facelifting",
-                engine: [],
+                engine: [
+                  {
+                    value: "2.0 520i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 530i 252KM 185kW",
+                  },
+                  {
+                    value: "3.0 540i 333KM 245kW",
+                  },
+                  {
+                    value: "2.0 518d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 520d 190KM 140kW",
+                  },
+                  {
+                    value: "3.0 530d 286KM 210kW",
+                  },
+                  {
+                    value: "3.0 540d 340KM 250kW",
+                  },
+                ],
               },
             ],
           },
@@ -8851,11 +8995,800 @@ export const options = [
       },
       {
         value: "6 Series",
-        generations: [],
+        generations: [
+          {
+            value: "E24",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "3.0 Alpina 300KM 221kW",
+                  },
+                  {
+                    value: "3.5 Alpina 330KM 243kW",
+                  },
+                  {
+                    value: "628 CSi 184KM 135kW",
+                  },
+                  {
+                    value: "630 CS 184KM 135kW",
+                  },
+                  {
+                    value: "630 CS 185KM 136kW",
+                  },
+                  {
+                    value: "633 CS 197KM 145kW",
+                  },
+                  {
+                    value: "635 CSi 185KM 136kW",
+                  },
+                  {
+                    value: "635 CSi 192KM 141kW",
+                  },
+                  {
+                    value: "635 CSi 211KM 155kW",
+                  },
+                  {
+                    value: "635 CSi 218KM 160kW",
+                  },
+                  {
+                    value: "635 CSi 220KM 162kW",
+                  },
+                  {
+                    value: "635 M CSi 260KM 191kW",
+                  },
+                  {
+                    value: "635 CSi 286KM 210kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "E63-64",
+            versions: [
+              {
+                value: "Cabrio",
+                engine: [
+                  {
+                    value: "630i 272KM 200kW",
+                  },
+                  {
+                    value: "630i 258KM 190kW",
+                  },
+                  {
+                    value: "640i 320KM 235kW",
+                  },
+                  {
+                    value: "645 Ci 333KM 245kW",
+                  },
+                  {
+                    value: "650i 367KM 270kW",
+                  },
+                  {
+                    value: "635d 286KM 210kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "630i 258KM 190kW",
+                  },
+                  {
+                    value: "630i 272KM 200kW",
+                  },
+                  {
+                    value: "645 Ci 333KM 245kW",
+                  },
+                  {
+                    value: "650i 367KM 270kW",
+                  },
+                  {
+                    value: "635d 286KM 210kW",
+                  },
+                ],
+              },
+              {
+                value: "M6 Cabrio",
+                engine: [
+                  {
+                    value: "5.0 V10 507KM 373kW",
+                  },
+                ],
+              },
+              {
+                value: "M6 Coupe",
+                engine: [
+                  {
+                    value: "5.0 V10 507KM 373kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "F06-F12-F13",
+            versions: [
+              {
+                value: "Cabrio",
+                engine: [
+                  {
+                    value: "640i 320KM 235kW",
+                  },
+                  {
+                    value: "650i 407KM 299kW",
+                  },
+                  {
+                    value: "650i 450KM 331kW",
+                  },
+                  {
+                    value: "640d 313KM 230kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "640i 320KM 235kW",
+                  },
+                  {
+                    value: "650i 407KM 299kW",
+                  },
+                  {
+                    value: "650i 450KM 331kW",
+                  },
+                  {
+                    value: "640d 313KM 230kW",
+                  },
+                ],
+              },
+              {
+                value: "M6 Coupe",
+                engine: [
+                  {
+                    value: "M6 560KM 412kW",
+                  },
+                ],
+              },
+              {
+                value: "Gran Coupe",
+                engine: [
+                  {
+                    value: "640i 320KM 235kW",
+                  },
+                  {
+                    value: "650i 450KM 331kW",
+                  },
+                  {
+                    value: "640d 313KM 230kW",
+                  },
+                ],
+              },
+              {
+                value: "M6 Cabrio",
+                engine: [
+                  {
+                    value: "M6 560KM 412kW",
+                  },
+                ],
+              },
+              {
+                value: "M6 Gran Coupe Facelifting",
+                engine: [
+                  {
+                    value: "M6 560KM 412kW",
+                  },
+                ],
+              },
+              {
+                value: "M6 Gran Coupe",
+                engine: [
+                  {
+                    value: "M6 560KM 412kW",
+                  },
+                ],
+              },
+              {
+                value: "M6 Coupe Facelifting",
+                engine: [
+                  {
+                    value: "M6 560KM 412kW",
+                  },
+                ],
+              },
+              {
+                value: "Cabrio Facelifting",
+                engine: [
+                  {
+                    value: "640i 320KM 235kW",
+                  },
+                  {
+                    value: "650i 450KM 331kW",
+                  },
+                  {
+                    value: "640d 313KM 230kW",
+                  },
+                ],
+              },
+              {
+                value: "Gran Coupe Facelifting",
+                engine: [
+                  {
+                    value: "640i 320KM 235kW",
+                  },
+                  {
+                    value: "650i 450KM 331kW",
+                  },
+                  {
+                    value: "640d 313KM 230kW",
+                  },
+                ],
+              },
+              {
+                value: "M6 Cabrio Facelifting",
+                engine: [
+                  {
+                    value: "M6 560KM 412kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe Facelifting",
+                engine: [
+                  {
+                    value: "640i 320KM 235kW",
+                  },
+                  {
+                    value: "650i 450KM 331kW",
+                  },
+                  {
+                    value: "640d 313KM 230kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "G32",
+            versions: [
+              {
+                value: "Gran Tourismo",
+                engine: [
+                  {
+                    value: "630i 258KM 190kW",
+                  },
+                  {
+                    value: "640i 340KM 250kW",
+                  },
+                  {
+                    value: "620d 190KM 140kW",
+                  },
+                  {
+                    value: "630d 265KM 195kW",
+                  },
+                  {
+                    value: "640d 320KM 235kW",
+                  },
+                ],
+              },
+              {
+                value: "Gran Tourismo Facelifting",
+                engine: [
+                  {
+                    value: "2.0 630i 258KM 190kW",
+                  },
+                  {
+                    value: "3.0 640i 333KM 245kW",
+                  },
+                  {
+                    value: "2.0 620d 190KM 140kW",
+                  },
+                  {
+                    value: "3.0 630d 286KM 210kW",
+                  },
+                  {
+                    value: "3.0 640d 340KM 250kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "7 Series",
-        generations: [],
+        generations: [
+          {
+            value: "E23",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "725i 150KM 110kW",
+                  },
+                  {
+                    value: "728 170KM 125kW",
+                  },
+                  {
+                    value: "728i 184KM 135kW",
+                  },
+                  {
+                    value: "730 184KM 135kW",
+                  },
+                  {
+                    value: "732i 197KM 145kW",
+                  },
+                  {
+                    value: "733i 197KM 145kW",
+                  },
+                  {
+                    value: "735i 185KM 136kW",
+                  },
+                  {
+                    value: "735i 192KM 141kW",
+                  },
+                  {
+                    value: "735i 218KM 160kW",
+                  },
+                  {
+                    value: "745i (3.4) 252KM 185kW",
+                  },
+                  {
+                    value: "745i (3.5) 252KM 185kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "E32",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "730i 188KM 138kW",
+                  },
+                  {
+                    value: "730i 197KM 145kW",
+                  },
+                  {
+                    value: "730i V8 218KM 160kW",
+                  },
+                  {
+                    value: "735i 211KM 155kW",
+                  },
+                  {
+                    value: "735i 220KM 162kW",
+                  },
+                  {
+                    value: "740i V8 286KM 210kW",
+                  },
+                  {
+                    value: "750i V12 300KM 221kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "E38",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "728i 193KM 142kW",
+                  },
+                  {
+                    value: "730i 211KM 155kW",
+                  },
+                  {
+                    value: "730i 218KM 160kW",
+                  },
+                  {
+                    value: "730i L 218KM 160kW",
+                  },
+                  {
+                    value: "735i 235KM 173kW",
+                  },
+                  {
+                    value: "735i 238KM 175kW",
+                  },
+                  {
+                    value: "740i B40/1 286KM 210kW",
+                  },
+                  {
+                    value: "740i B40/2 286KM 210kW",
+                  },
+                  {
+                    value: "740i L 286KM 210kW",
+                  },
+                  {
+                    value: "750i 326KM 240kW",
+                  },
+                  {
+                    value: "750i L 326KM 240kW",
+                  },
+                  {
+                    value: "725tds 143KM 105kW",
+                  },
+                  {
+                    value: "730d 184KM 135kW",
+                  },
+                  {
+                    value: "730d 193KM 142kW",
+                  },
+                  {
+                    value: "740d 238KM 175kW",
+                  },
+                  {
+                    value: "740d 245KM 180kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "E65",
+            versions: [
+              {
+                value: "Sedan",
+                engine: [
+                  {
+                    value: "4.4 Turbo Alpina 500KM 368kW",
+                  },
+                  {
+                    value: "730i 231KM 170kW",
+                  },
+                  {
+                    value: "730i 258KM 190kW",
+                  },
+                  {
+                    value: "735i 272KM 200kW",
+                  },
+                  {
+                    value: "740i 306KM 225kW",
+                  },
+                  {
+                    value: "745i 333KM 245kW",
+                  },
+                  {
+                    value: "750i 367KM 270kW",
+                  },
+                  {
+                    value: "750i 362KM 266kW",
+                  },
+                  {
+                    value: "760i 445KM 327kW",
+                  },
+                  {
+                    value: "730d 218KM 160kW",
+                  },
+                  {
+                    value: "730d 231KM 170kW",
+                  },
+                  {
+                    value: "740d 258KM 190kW",
+                  },
+                  {
+                    value: "745d 330KM 243kW",
+                  },
+                ],
+              },
+              {
+                value: "Sedan L",
+                engine: [
+                  {
+                    value: "4.4 Turbo Alpina 500KM 368kW",
+                  },
+                  {
+                    value: "730i L 231KM 170kW",
+                  },
+                  {
+                    value: "730i L 258KM 190kW",
+                  },
+                  {
+                    value: "735i L 272KM 200kW",
+                  },
+                  {
+                    value: "740i L 306KM 225kW",
+                  },
+                  {
+                    value: "745i L 333KM 245kW",
+                  },
+                  {
+                    value: "750i 362KM 266kW",
+                  },
+                  {
+                    value: "750i L 367KM 270kW",
+                  },
+                  {
+                    value: "760i L 445KM 327kW",
+                  },
+                  {
+                    value: "730d L 218KM 160kW",
+                  },
+                  {
+                    value: "730d L 231KM 170kW",
+                  },
+                  {
+                    value: "740d L 258KM 190kW",
+                  },
+                  {
+                    value: "745d L 330KM 243kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "F01",
+            versions: [
+              {
+                value: "Sedan L",
+                engine: [
+                  {
+                    value: "740i 326KM 240kW",
+                  },
+                  {
+                    value: "750i 407KM 299kW",
+                  },
+                  {
+                    value: "730d 245KM 180kW",
+                  },
+                  {
+                    value: "740d 306KM 225kW",
+                  },
+                  {
+                    value: "ActiveHybrid V8 465KM 342kW",
+                  },
+                ],
+              },
+              {
+                value: "Sedan",
+                engine: [
+                  {
+                    value: "740i 326KM 240kW",
+                  },
+                  {
+                    value: "750i 407KM 299kW",
+                  },
+                  {
+                    value: "730d 245KM 180kW",
+                  },
+                  {
+                    value: "740d 306KM 225kW",
+                  },
+                  {
+                    value: "ActiveHybrid V8 465KM 342kW",
+                  },
+                ],
+              },
+              {
+                value: "Sedan L Facelifting",
+                engine: [
+                  {
+                    value: "740Li 320KM 235kW",
+                  },
+                  {
+                    value: "750Li 450KM 331kW",
+                  },
+                  {
+                    value: "760Li 544KM 400kW",
+                  },
+                  {
+                    value: "730Ld 258KM 190kW",
+                  },
+                  {
+                    value: "750Ld 381KM 280kW",
+                  },
+                  {
+                    value: "ActiveHybrid 7 L 354KM 260kW",
+                  },
+                ],
+              },
+              {
+                value: "Sedan Facelifting",
+                engine: [
+                  {
+                    value: "740i 320KM 235kW",
+                  },
+                  {
+                    value: "750i 450KM 331kW",
+                  },
+                  {
+                    value: "760i 544KM 400kW",
+                  },
+                  {
+                    value: "730d 258KM 190kW",
+                  },
+                  {
+                    value: "740d 313KM 230kW",
+                  },
+                  {
+                    value: "750d 381KM 280kW",
+                  },
+                  {
+                    value: "ActiveHybrid 7 354KM 260kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "G11-G12",
+            versions: [
+              {
+                value: "Sedan",
+                engine: [
+                  {
+                    value: "740i 326KM 240kW",
+                  },
+                  {
+                    value: "750i 450KM 331kW",
+                  },
+                  {
+                    value: "730d 265KM 195kW",
+                  },
+                  {
+                    value: "740d 320KM 235kW",
+                  },
+                  {
+                    value: "750d 400KM 294kW",
+                  },
+                  {
+                    value: "740e 326KM 240kW",
+                  },
+                  {
+                    value: "740e iPerformance 326KM 240kW",
+                  },
+                ],
+              },
+              {
+                value: "Sedan L",
+                engine: [
+                  {
+                    value: "740i 326KM 240kW",
+                  },
+                  {
+                    value: "750i 450KM 331kW",
+                  },
+                  {
+                    value: "730d 265KM 195kW",
+                  },
+                  {
+                    value: "740d 320KM 235kW",
+                  },
+                  {
+                    value: "750d 400KM 294kW",
+                  },
+                  {
+                    value: "740e 326KM 240kW",
+                  },
+                  {
+                    value: "740e iPerformance 326KM 240kW",
+                  },
+                ],
+              },
+              {
+                value: "M Lang",
+                engine: [
+                  {
+                    value: "760i 610KM 449kW",
+                  },
+                ],
+              },
+              {
+                value: "M Lang Facelifting",
+                engine: [
+                  {
+                    value: "6.6 M760i 585KM 430kW",
+                  },
+                ],
+              },
+              {
+                value: "Sedan L Facelifting",
+                engine: [
+                  {
+                    value: "3.0 740i 340KM 250kW",
+                  },
+                  {
+                    value: "3.0 740i 333KM 245kW",
+                  },
+                  {
+                    value: "4.4 750i 530KM 390kW",
+                  },
+                  {
+                    value: "6.6 M760i 585KM 430kW",
+                  },
+                  {
+                    value: "3.0 730d 265KM 195kW",
+                  },
+                  {
+                    value: "3.0 730d 286KM 210kW",
+                  },
+                  {
+                    value: "3.0 740d 320KM 235kW",
+                  },
+                  {
+                    value: "3.0 740d 340KM 250kW",
+                  },
+                  {
+                    value: "3.0 750d 400KM 294kW",
+                  },
+                  {
+                    value: "3.0 745e 394KM 290kW",
+                  },
+                ],
+              },
+              {
+                value: "Sedan Facelifting",
+                engine: [
+                  {
+                    value: "3.0 740i 326KM 240kW",
+                  },
+                  {
+                    value: "3.0 740i 340KM 250kW",
+                  },
+                  {
+                    value: "3.0 740i 333KM 245kW",
+                  },
+                  {
+                    value: "4.4 750i 530KM 390kW",
+                  },
+                  {
+                    value: "3.0 730d 265KM 195kW",
+                  },
+                  {
+                    value: "3.0 730d 286KM 210kW",
+                  },
+                  {
+                    value: "3.0 740d 320KM 235kW",
+                  },
+                  {
+                    value: "3.0 740d 340KM 250kW",
+                  },
+                  {
+                    value: "3.0 750d 400KM 294kW",
+                  },
+                  {
+                    value: "3.0 745e 394KM 290kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "G70",
+            versions: [
+              {
+                value: "Sedan Plug-In",
+                engine: [
+                  {
+                    value: "3.0 50e 489KM 360kW",
+                  },
+                  {
+                    value: "3.0 M60e 571KM 420kW",
+                  },
+                ],
+              },
+              {
+                value: "Sedan",
+                engine: [
+                  {
+                    value: "3.0 40d 299KM 220kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "8 Series",
