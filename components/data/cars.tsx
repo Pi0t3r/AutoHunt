@@ -9792,23 +9792,817 @@ export const options = [
       },
       {
         value: "8 Series",
-        generations: [],
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "830Ci 218KM 160kW",
+                  },
+                  {
+                    value: "840Ci 282KM 207kW",
+                  },
+                  {
+                    value: "850CSi (5.6) 381KM 280kW",
+                  },
+                  {
+                    value: "850Ci 300KM 221kW",
+                  },
+                  {
+                    value: "850i 300KM 221kW",
+                  },
+                  {
+                    value: "850Ci (5.4) 326KM 240kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "II",
+            versions: [
+              {
+                value: "M Cabrio",
+                engine: [
+                  {
+                    value: "4.4 M850i 530KM 390kW",
+                  },
+                  {
+                    value: "4.4 V8 M8 600KM 441kW",
+                  },
+                ],
+              },
+              {
+                value: "Cabrio",
+                engine: [
+                  {
+                    value: "3.0 840i 340KM 250kW",
+                  },
+                  {
+                    value: "3.0 840i 333KM 245kW",
+                  },
+                  {
+                    value: "3.0 840d 320KM 235kW",
+                  },
+                  {
+                    value: "3.0 840d 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "M Coupe",
+                engine: [
+                  {
+                    value: "4.4 M8 600KM 441kW",
+                  },
+                  {
+                    value: "4.4 M850i 530KM 390kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "3.0 840i 340KM 250kW",
+                  },
+                  {
+                    value: "3.0 840i 333KM 245kW",
+                  },
+                  {
+                    value: "3.0 840d 320KM 235kW",
+                  },
+                  {
+                    value: "3.0 840d 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "M Gran Coupe",
+                engine: [
+                  {
+                    value: "4.4 M850i 530KM 390kW",
+                  },
+                  {
+                    value: "4.4 V8 600KM 441kW",
+                  },
+                ],
+              },
+              {
+                value: "Gran Coupe",
+                engine: [
+                  {
+                    value: "3.0 840i 340KM 250kW",
+                  },
+                  {
+                    value: "3.0 840i 333KM 245kW",
+                  },
+                  {
+                    value: "3.0 840d 320KM 235kW",
+                  },
+                  {
+                    value: "3.0 840d 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "M Gran Coupe Facelifting",
+                engine: [
+                  {
+                    value: "4.4 850i 530KM 390kW",
+                  },
+                  {
+                    value: "4.4 M8 600KM 441kW",
+                  },
+                ],
+              },
+              {
+                value: "Gran Coupe Facelifting",
+                engine: [
+                  {
+                    value: "3.0 840i 333KM 245kW",
+                  },
+                  {
+                    value: "3.0 840d 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "M Cabrio Facelifting",
+                engine: [
+                  {
+                    value: "4.4 850i 530KM 390kW",
+                  },
+                  {
+                    value: "4.4 M8 600KM 441kW",
+                  },
+                ],
+              },
+              {
+                value: "Cabrio Facelifting",
+                engine: [
+                  {
+                    value: "3.0 840i 340KM 250kW",
+                  },
+                  {
+                    value: "3.0 840d 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "M Coupe Facelifting",
+                engine: [
+                  {
+                    value: "4.4 850i 530KM 390kW",
+                  },
+                  {
+                    value: "4.4 M8 600KM 441kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe Facelifting",
+                engine: [
+                  {
+                    value: "3.0 840i 333KM 245kW",
+                  },
+                  {
+                    value: "3.0 840d 340KM 250kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "X1",
-        generations: [],
+        generations: [
+          {
+            value: "E84",
+            versions: [
+              {
+                value: "Crossover",
+                engine: [
+                  {
+                    value: "sDrive18i 150KM 110kW",
+                  },
+                  {
+                    value: "sDrive20i 184KM 135kW",
+                  },
+                  {
+                    value: "xDrive20i 184KM 135kW",
+                  },
+                  {
+                    value: "xDrive25i 218KM 160kW",
+                  },
+                  {
+                    value: "xDrive28i 258KM 190kW",
+                  },
+                  {
+                    value: "xDrive28i 245KM 180kW",
+                  },
+                  {
+                    value: "sDrive16d 116KM 85kW",
+                  },
+                  {
+                    value: "sDrive18d 143KM 105kW",
+                  },
+                  {
+                    value: "sDrive20d 177KM 130kW",
+                  },
+                  {
+                    value: "sDrive20d 184KM 135kW",
+                  },
+                  {
+                    value: "sDrive20d EfficientDynamics Edition 163KM 120kW",
+                  },
+                  {
+                    value: "xDrive18d 143KM 105kW",
+                  },
+                  {
+                    value: "xDrive20d 177KM 130kW",
+                  },
+                  {
+                    value: "xDrive20d 184KM 135kW",
+                  },
+                  {
+                    value: "xDrive23d 204KM 150kW",
+                  },
+                  {
+                    value: "xDrive25d 218KM 160kW",
+                  },
+                ],
+              },
+              {
+                value: "Crossover Facelifting",
+                engine: [
+                  {
+                    value: "sDrive 20i 184KM 135kW",
+                  },
+                  {
+                    value: "xDrive 20i 184KM 135kW",
+                  },
+                  {
+                    value: "xDrive 28i 245KM 180kW",
+                  },
+                  {
+                    value: "sDrive 16d 116KM 85kW",
+                  },
+                  {
+                    value: "sDrive 18d 143KM 105kW",
+                  },
+                  {
+                    value: "sDrive 18i 150KM 110kW",
+                  },
+                  {
+                    value: "sDrive 20d 184KM 135kW",
+                  },
+                  {
+                    value: "sDrive 20d EfficientDynamics Edition 163KM 120kW",
+                  },
+                  {
+                    value: "xDrive 18d 143KM 105kW",
+                  },
+                  {
+                    value: "xDrive 20d 184KM 135kW",
+                  },
+                  {
+                    value: "xDrive 25d 218KM 160kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "F48",
+            versions: [
+              {
+                value: "Crossover",
+                engine: [
+                  {
+                    value: "sDrive 18i 140KM 103kW",
+                  },
+                  {
+                    value: "sDrive18i 136KM 100kW",
+                  },
+                  {
+                    value: "sDrive20i 192KM 141kW",
+                  },
+                  {
+                    value: "xDrive20i 192KM 141kW",
+                  },
+                  {
+                    value: "xDrive25i 231KM 170kW",
+                  },
+                  {
+                    value: "1.5 16d 116KM 85kW",
+                  },
+                  {
+                    value: "sDrive18d 150KM 110kW",
+                  },
+                  {
+                    value: "sDrive20d 190KM 140kW",
+                  },
+                  {
+                    value: "xDrive18d 150KM 110kW",
+                  },
+                  {
+                    value: "xDrive20d 190KM 140kW",
+                  },
+                  {
+                    value: "xDrive25d 231KM 170kW",
+                  },
+                ],
+              },
+              {
+                value: "Crossover Facelifting",
+                engine: [
+                  {
+                    value: "1.5 18i 140KM 103kW",
+                  },
+                  {
+                    value: "1.5 18i 136KM 100kW",
+                  },
+                  {
+                    value: "2.0 20i 192KM 141kW",
+                  },
+                  {
+                    value: "2.0 20i 178KM 131kW",
+                  },
+                  {
+                    value: "2.0 25i 231KM 170kW",
+                  },
+                  {
+                    value: "1.5 16d 116KM 85kW",
+                  },
+                  {
+                    value: "2.0 18d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 20d 190KM 140kW",
+                  },
+                  {
+                    value: "2.0 25d 231KM 170kW",
+                  },
+                ],
+              },
+              {
+                value: "Crossover Plug-In",
+                engine: [
+                  {
+                    value: "1.5 25e 220KM 162kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "U11",
+            versions: [
+              {
+                value: "Crossover Plug-In",
+                engine: [
+                  {
+                    value: "1.5 25e 245KM 180kW",
+                  },
+                  {
+                    value: "1.5 30e 326KM 240kW",
+                  },
+                ],
+              },
+              {
+                value: "Crossover",
+                engine: [
+                  {
+                    value: "1.5 18i 136KM 100kW",
+                  },
+                  {
+                    value: "1.5 20i 170KM 125kW",
+                  },
+                  {
+                    value: "2.0 23i 218KM 160kW",
+                  },
+                  {
+                    value: "2.0 18d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 20d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 23d 211KM 155kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "X2",
-        generations: [],
+        generations: [
+          {
+            value: "Crossover",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "1.5 18i 140KM 103kW",
+                  },
+                  {
+                    value: "1.5 18i 136KM 100kW",
+                  },
+                  {
+                    value: "2.0 20i 192KM 141kW",
+                  },
+                  {
+                    value: "2.0 20i 178KM 131kW",
+                  },
+                  {
+                    value: "2.0 M35i 306KM 225kW",
+                  },
+                  {
+                    value: "1.5 16d 116KM 85kW",
+                  },
+                  {
+                    value: "2.0 18d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 20d 190KM 140kW",
+                  },
+                  {
+                    value: "2.0 25d 231KM 170kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "Crossover Plug-In",
+            versions: [
+              {
+                value: "1.5 25e 220KM 162kW",
+              },
+            ],
+          },
+        ],
       },
       {
         value: "X3",
-        generations: [],
+        generations: [
+          {
+            value: "E83",
+            versions: [
+              {
+                value: "2.0i 150KM 110kW",
+              },
+              {
+                value: "2.5i 192KM 141kW",
+              },
+              {
+                value: "2.5i 218KM 160kW",
+              },
+              {
+                value: "3.0i 231KM 170kW",
+              },
+              {
+                value: "3.0i 272KM 200kW",
+              },
+              {
+                value: "xDrive20i 150KM 110kW",
+              },
+              {
+                value: "xDrive25i 218KM 160kW",
+              },
+              {
+                value: "xDrive30i 272KM 200kW",
+              },
+              {
+                value: "3.0d 204KM 150kW",
+              },
+              {
+                value: "3.0d 218KM 160kW",
+              },
+              {
+                value: "3.0sd 286KM 210kW",
+              },
+              {
+                value: "xDrive18d 143KM 105kW",
+              },
+              {
+                value: "xDrive20d 177KM 130kW",
+              },
+              {
+                value: "xDrive30d 218KM 160kW",
+              },
+              {
+                value: "xDrive35d 286KM 210kW",
+              },
+            ],
+          },
+          {
+            value: "F25",
+            versions: [
+              {
+                value: "SUV",
+                engine: [
+                  {
+                    value: "2.0 20i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 20i (sDrive) 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 28i 245KM 180kW",
+                  },
+                  {
+                    value: "3.0 28i 258KM 190kW",
+                  },
+                  {
+                    value: "3.0 35i 306KM 225kW",
+                  },
+                  {
+                    value: "2.0 18d 143KM 105kW",
+                  },
+                  {
+                    value: "2.0 18d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 20d 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 20d 190KM 140kW",
+                  },
+                  {
+                    value: "3.0 30d 258KM 190kW",
+                  },
+                  {
+                    value: "3.0 35d 313KM 230kW",
+                  },
+                ],
+              },
+              {
+                value: "SUV Facelifting",
+                engine: [
+                  {
+                    value: "sDrive20i 184KM 135kW",
+                  },
+                  {
+                    value: "xDrive20i 184KM 135kW",
+                  },
+                  {
+                    value: "xDrive28i 245KM 180kW",
+                  },
+                  {
+                    value: "xDrive35i 306KM 225kW",
+                  },
+                  {
+                    value: "sDrive18d 150KM 110kW",
+                  },
+                  {
+                    value: "xDrive20d 190KM 140kW",
+                  },
+                  {
+                    value: "xDrive30d 258KM 190kW",
+                  },
+                  {
+                    value: "xDrive35d 313KM 230kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "G01",
+            versions: [
+              {
+                value: "M-SUV",
+                engine: [
+                  {
+                    value: "3.0 480KM 353kW",
+                  },
+                  {
+                    value: "M40i 360KM 265kW",
+                  },
+                  {
+                    value: "M40i 354KM 260kW",
+                  },
+                  {
+                    value: "3.0 M40d 340KM 250kW",
+                  },
+                  {
+                    value: "M40d 326KM 240kW",
+                  },
+                ],
+              },
+              {
+                value: "SUV",
+                engine: [
+                  {
+                    value: "2.0 20i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 28i 245KM 180kW",
+                  },
+                  {
+                    value: "2.0 30i 252KM 185kW",
+                  },
+                  {
+                    value: "3.0 35i 306KM 225kW",
+                  },
+                  {
+                    value: "2.0 18d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 20d 190KM 140kW",
+                  },
+                  {
+                    value: "2.0 25d 211KM 155kW",
+                  },
+                  {
+                    value: "2.0 25d 231KM 170kW",
+                  },
+                  {
+                    value: "3.0 30d 265KM 195kW",
+                  },
+                  {
+                    value: "3.0 30d 286KM 210kW",
+                  },
+                  {
+                    value: "3.0 35d 313KM 230kW",
+                  },
+                  {
+                    value: "2.0 30e 292KM 215kW",
+                  },
+                ],
+              },
+              {
+                value: "M SUV Facelifting",
+                engine: [
+                  {
+                    value: "3.0 M 480KM 353kW",
+                  },
+                  {
+                    value: "3.0 M40i 360KM 265kW",
+                  },
+                  {
+                    value: "3.0 M40d 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "SUV Plug-In Facelifting",
+                engine: [
+                  {
+                    value: "2.0 30e 292KM 215kW",
+                  },
+                ],
+              },
+              {
+                value: "SUV Facelifting",
+                engine: [
+                  {
+                    value: "2.0 20i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 30i 245KM 180kW",
+                  },
+                  {
+                    value: "2.0 18d 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 20d 190KM 140kW",
+                  },
+                  {
+                    value: "3.0 30d 286KM 210kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "X4",
-        generations: [],
+        generations: [
+          {
+            value: "G01",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "M40i 360KM 265kW",
+                  },
+                  {
+                    value: "xDrive20i 184KM 135kW",
+                  },
+                  {
+                    value: "xDrive28i 245KM 180kW",
+                  },
+                  {
+                    value: "xDrive35i 306KM 225kW",
+                  },
+                  {
+                    value: "xDrive20d 190KM 140kW",
+                  },
+                  {
+                    value: "xDrive30d 258KM 190kW",
+                  },
+                  {
+                    value: "xDrive35d 313KM 230kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "G02",
+            versions: [
+              {
+                value: "M SUV",
+                engine: [
+                  {
+                    value: "3.0 480KM 353kW",
+                  },
+                  {
+                    value: "3.0 M Competition 510KM 375kW",
+                  },
+                  {
+                    value: "3.0 M40i 360KM 265kW",
+                  },
+                  {
+                    value: "M40i 354KM 260kW",
+                  },
+                  {
+                    value: "3.0 M40d 340KM 250kW",
+                  },
+                  {
+                    value: "M40d 326KM 240kW",
+                  },
+                ],
+              },
+              {
+                value: "SUV",
+                engine: [
+                  {
+                    value: "20i 184KM 135kW",
+                  },
+                  {
+                    value: "30i 252KM 185kW",
+                  },
+                  {
+                    value: "20d 190KM 140kW",
+                  },
+                  {
+                    value: "25d 231KM 170kW",
+                  },
+                  {
+                    value: "3.0 30d 286KM 210kW",
+                  },
+                  {
+                    value: "30d 265KM 195kW",
+                  },
+                ],
+              },
+              {
+                value: "M SUV Facelifting",
+                engine: [
+                  {
+                    value: "3.0 M 480KM 353kW",
+                  },
+                  {
+                    value: "3.0 M40d 340KM 250kW",
+                  },
+                  {
+                    value: "3.0 M40i 360KM 265kW",
+                  },
+                ],
+              },
+              {
+                value: "SUV Facelifting",
+                engine: [
+                  {
+                    value: "2.0 20i 184KM 135kW",
+                  },
+                  {
+                    value: "2.0 30i 245KM 180kW",
+                  },
+                  {
+                    value: "2.0 20d 190KM 140kW",
+                  },
+                  {
+                    value: "3.0 30d 286KM 210kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "X5",
