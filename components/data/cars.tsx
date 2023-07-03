@@ -8020,7 +8020,834 @@ export const options = [
       },
       {
         value: "5 Series",
-        generations: [],
+        generations: [
+          {
+            value: "E12",
+            versions: [
+              {
+                value: "Sedan",
+                engine: [
+                  {
+                    value: "3.0 Alpina 300KM 221kW",
+                  },
+                  {
+                    value: "518 90KM 66kW",
+                  },
+                  {
+                    value: "520 115KM 85kW",
+                  },
+                  {
+                    value: "520i 125KM 92kW",
+                  },
+                  {
+                    value: "520i 130KM 96kW",
+                  },
+                  {
+                    value: "520/6 122KM 90kW",
+                  },
+                  {
+                    value: "525 145KM 107kW",
+                  },
+                  {
+                    value: "525 150KM 110kW",
+                  },
+                  {
+                    value: "528 165KM 121kW",
+                  },
+                  {
+                    value: "528 170KM 125kW",
+                  },
+                  {
+                    value: "528i 180KM 132kW",
+                  },
+                  {
+                    value: "528i 184KM 135kW",
+                  },
+                  {
+                    value: "530i Alpina 300KM 221kW",
+                  },
+                  {
+                    value: "530i Alpina 330KM 243kW",
+                  },
+                ],
+              },
+              {
+                value: "M5 Sedan",
+                engine: [
+                  {
+                    value: "3.5 218KM 160kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "E28",
+            versions: [
+              {
+                value: "Sedan",
+                engine: [
+                  {
+                    value: "3.5 Alpina 330KM 243kW",
+                  },
+                  {
+                    value: "518 90KM 66kW",
+                  },
+                  {
+                    value: "518i 105KM 77kW",
+                  },
+                  {
+                    value: "520i 125KM 92kW",
+                  },
+                  {
+                    value: "520i 129KM 95kW",
+                  },
+                  {
+                    value: "525e 2.7 125KM 92kW",
+                  },
+                  {
+                    value: "525e 2.7 129KM 95kW",
+                  },
+                  {
+                    value: "525i 150KM 110kW",
+                  },
+                  {
+                    value: "528e 2.7 122KM 90kW",
+                  },
+                  {
+                    value: "528i 184KM 135kW",
+                  },
+                  {
+                    value: "524d 86KM 63kW",
+                  },
+                  {
+                    value: "524td 115KM 85kW",
+                  },
+                ],
+              },
+              {
+                value: "M5 Sedan",
+                engine: [
+                  {
+                    value: "3.5 286KM 210kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "E34",
+            versions: [
+              {
+                value: "Sedan",
+                engine: [
+                  {
+                    value: "3.5 Alpina 360KM 265kW",
+                  },
+                  {
+                    value: "518i 113KM 83kW",
+                  },
+                  {
+                    value: "518i 115KM 85kW",
+                  },
+                  {
+                    value: "520i 129KM 95kW",
+                  },
+                  {
+                    value: "520i 24V 150KM 110kW",
+                  },
+                  {
+                    value: "525i 170KM 125kW",
+                  },
+                  {
+                    value: "525i 24V 192KM 141kW",
+                  },
+                  {
+                    value: "525i 24V X 192KM 141kW",
+                  },
+                  {
+                    value: "530i 188KM 138kW",
+                  },
+                  {
+                    value: "530i V8 218KM 160kW",
+                  },
+                  {
+                    value: "535i 211KM 155kW",
+                  },
+                  {
+                    value: "540i V8 286KM 210kW",
+                  },
+                  {
+                    value: "524td 115KM 85kW",
+                  },
+                  {
+                    value: "525td 115KM 85kW",
+                  },
+                  {
+                    value: "525tds 143KM 105kW",
+                  },
+                ],
+              },
+              {
+                value: "Touring",
+                engine: [
+                  {
+                    value: "1.8 518i 113KM 83kW",
+                  },
+                  {
+                    value: "1.8 518i 115KM 85kW",
+                  },
+                  {
+                    value: "2.0 520i 150KM 110kW",
+                  },
+                  {
+                    value: "2.5 525i 192KM 141kW",
+                  },
+                  {
+                    value: "2.5 525iX 192KM 141kW",
+                  },
+                  {
+                    value: "3.0 530i 218KM 160kW",
+                  },
+                  {
+                    value: "3.5 Alpina 360KM 265kW",
+                  },
+                  {
+                    value: "4.0 540i 286KM 210kW",
+                  },
+                  {
+                    value: "2.5 525td 115KM 85kW",
+                  },
+                  {
+                    value: "2.5 525tds 143KM 105kW",
+                  },
+                ],
+              },
+              {
+                value: "M5 Sedan",
+                engine: [
+                  {
+                    value: "3.5 316KM 232kW",
+                  },
+                  {
+                    value: "3.8 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "M5 Touring",
+                engine: [
+                  {
+                    value: "3.8 340KM 250kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "E39",
+            versions: [
+              {
+                value: "Touring",
+                engine: [
+                  {
+                    value: "520i 136KM 100kW",
+                  },
+                  {
+                    value: "520i 150KM 110kW",
+                  },
+                  {
+                    value: "520i 24V 170KM 125kW",
+                  },
+                  {
+                    value: "523i 170KM 125kW",
+                  },
+                  {
+                    value: "525i 170KM 125kW",
+                  },
+                  {
+                    value: "525i 192KM 141kW",
+                  },
+                  {
+                    value: "528i 193KM 142kW",
+                  },
+                  {
+                    value: "530i 24V 231KM 170kW",
+                  },
+                  {
+                    value: "540i 286KM 210kW",
+                  },
+                  {
+                    value: "B10 Alpina 347KM 255kW",
+                  },
+                  {
+                    value: "520d 136KM 100kW",
+                  },
+                  {
+                    value: "525d 163KM 100kW",
+                  },
+                  {
+                    value: "525tds 143KM 105kW",
+                  },
+                  {
+                    value: "530d 184KM 135kW",
+                  },
+                  {
+                    value: "530d 24V 193KM 142kW",
+                  },
+                  {
+                    value: "530d Alpina 245KM 180kW",
+                  },
+                ],
+              },
+              {
+                value: "Sedan",
+                engine: [
+                  {
+                    value: "2.0 520i 150KM 110kW",
+                  },
+                  {
+                    value: "2.2 520i 170KM 125kW",
+                  },
+                  {
+                    value: "2.2 525i 170KM 125kW",
+                  },
+                  {
+                    value: "2.5 523i 170KM 125kW",
+                  },
+                  {
+                    value: "2.5 525i 192KM 141kW",
+                  },
+                  {
+                    value: "2.8 528i 193KM 142kW",
+                  },
+                  {
+                    value: "3.0 530i 231KM 170kW",
+                  },
+                  {
+                    value: "3.5 535i 235KM 173kW",
+                  },
+                  {
+                    value: "3.5 535i 245KM 180kW",
+                  },
+                  {
+                    value: "4.4 540i 282KM 207kW",
+                  },
+                  {
+                    value: "4.4 540i 286KM 210kW",
+                  },
+                  {
+                    value: "4.6 B10 Alpina 347KM 255kW",
+                  },
+                  {
+                    value: "2.5 520d 136KM 100kW",
+                  },
+                  {
+                    value: "2.5 525tds 143KM 105kW",
+                  },
+                  {
+                    value: "2.5 525d 163KM 120kW",
+                  },
+                  {
+                    value: "3.0 530d 184KM 135kW",
+                  },
+                  {
+                    value: "3.0 530d 193KM 142kW",
+                  },
+                  {
+                    value: "3.0 530d Alpina 245KM 180kW",
+                  },
+                ],
+              },
+              {
+                value: "M5 Sedan",
+                engine: [
+                  {
+                    value: "4.9 V8 400KM 294kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "E60",
+            versions: [
+              {
+                value: "Touring",
+                engine: [
+                  {
+                    value: "4.4 Turbo Alpina 507KM 373kW",
+                  },
+                  {
+                    value: "520i 170KM 125kW",
+                  },
+                  {
+                    value: "523i 177KM 130kW",
+                  },
+                  {
+                    value: "523i 190KM 140kW",
+                  },
+                  {
+                    value: "523i 192KM 141kW",
+                  },
+
+                  {
+                    value: "525i 218KM 160kW",
+                  },
+                  {
+                    value: "525iX 218KM 160kW",
+                  },
+                  {
+                    value: "530i 231KM 170kW",
+                  },
+                  {
+                    value: "530i 258KM 190kW",
+                  },
+                  {
+                    value: "530i 272KM 200kW",
+                  },
+                  {
+                    value: "530iX 258KM 190kW",
+                  },
+                  {
+                    value: "540i 306KM 225kW",
+                  },
+                  {
+                    value: "545i 333KM 245kW",
+                  },
+                  {
+                    value: "550i 367KM 270kW",
+                  },
+                  {
+                    value: "520d 177KM 130kW",
+                  },
+                  {
+                    value: "520d 163KM 120kW",
+                  },
+                  {
+                    value: "525d 177KM 130kW",
+                  },
+                  {
+                    value: "525d 197KM 145kW",
+                  },
+                  {
+                    value: "530d 218KM 160kW",
+                  },
+                  {
+                    value: "530d 231KM 170kW",
+                  },
+                  {
+                    value: "530dX 235KM 173kW",
+                  },
+                  {
+                    value: "535d 272KM 200kW",
+                  },
+                  {
+                    value: "535d 286KM 210kW",
+                  },
+                ],
+              },
+              {
+                value: "Sedan",
+                engine: [
+                  {
+                    value: "2.2 520i 170KM 125kW",
+                  },
+                  {
+                    value: "2.5 523i 177KM 130kW",
+                  },
+                  {
+                    value: "2.5 525i 192KM 141kW",
+                  },
+                  {
+                    value: "2.5 525i 218KM 160kW",
+                  },
+                  {
+                    value: "2.5 525Xi 218KM 160kW",
+                  },
+                  {
+                    value: "3.0 530i 258KM 190kW",
+                  },
+                  {
+                    value: "3.0 530i 231KM 170kW",
+                  },
+                  {
+                    value: "3.0 530i 272KM 200kW",
+                  },
+                  {
+                    value: "4.4 545i 333KM 245kW",
+                  },
+                  {
+                    value: "4.4 Turbo Alpina 507KM 373kW",
+                  },
+                  {
+                    value: "523i 190KM 140kW",
+                  },
+                  {
+                    value: "535i 306KM 225kW",
+                  },
+                  {
+                    value: "540i 306KM 225kW",
+                  },
+                  {
+                    value: "550i 367KM 270kW",
+                  },
+                  {
+                    value: "2.0 520d 163KM 120kW",
+                  },
+                  {
+                    value: "2.0 520d 177KM 130kW",
+                  },
+                  {
+                    value: "2.5 525d 177KM 130kW",
+                  },
+                  {
+                    value: "3.0 530d 218KM 160kW",
+                  },
+                  {
+                    value: "3.0 535d 272KM 200kW",
+                  },
+                  {
+                    value: "525d 197KM 145kW",
+                  },
+                  {
+                    value: "530d 231KM 170kW",
+                  },
+                  {
+                    value: "530d 235KM 173kW",
+                  },
+                  {
+                    value: "535d 286KM 210kW",
+                  },
+                ],
+              },
+              {
+                value: "M5 Sedan",
+                engine: [
+                  {
+                    value: "5.0 V10 507KM 373kW",
+                  },
+                ],
+              },
+              {
+                value: "M5 Touring",
+                engine: [
+                  {
+                    value: "5.0 V10 507KM 373kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "F10-F11",
+            versions: [
+              {
+                value: "M5 Touring",
+                engine: [
+                  {
+                    value: "5.0 V10 507KM 373kW",
+                  },
+                ],
+              },
+              {
+                value: "M5 Limousine",
+                engine: [
+                  {
+                    value: "4.4 V8 560KM 412kW",
+                  },
+                  {
+                    value: "5.0 V10 507KM 373kW",
+                  },
+                ],
+              },
+              {
+                value: "Gran Tourismo",
+                engine: [
+                  {
+                    value: "528i 258KM 190kW",
+                  },
+                  {
+                    value: "535i 306KM 225kW",
+                  },
+                  {
+                    value: "550i 407KM 299kW",
+                  },
+                  {
+                    value: "550i 450KM 331kW",
+                  },
+                  {
+                    value: "550i 449KM 330kW",
+                  },
+                  {
+                    value: "520d 184KM 135kW",
+                  },
+                  {
+                    value: "530d 245KM 180kW",
+                  },
+                  {
+                    value: "530d 258KM 190kW",
+                  },
+                  {
+                    value: "535d 299KM 220kW",
+                  },
+                  {
+                    value: "535d 313KM 230kW",
+                  },
+                ],
+              },
+              {
+                value: "Touring",
+                engine: [
+                  {
+                    value: "520i 184KM 135kW",
+                  },
+                  {
+                    value: "523i 204KM 150kW",
+                  },
+                  {
+                    value: "528i 258KM 190kW",
+                  },
+                  {
+                    value: "528i 245KM 180kW",
+                  },
+                  {
+                    value: "530i 272KM 200kW",
+                  },
+                  {
+                    value: "535i 306KM 225kW",
+                  },
+                  {
+                    value: "550i 407KM 299kW",
+                  },
+                  {
+                    value: "550i 450KM 331kW",
+                  },
+                  {
+                    value: "518d 143KM 105kW",
+                  },
+                  {
+                    value: "518d 150KM 110kW",
+                  },
+                  {
+                    value: "520d 184KM 135kW",
+                  },
+                  {
+                    value: "520d 190KM 140kW",
+                  },
+                  {
+                    value: "525d 218KM 160kW",
+                  },
+                  {
+                    value: "525d 204KM 150kW",
+                  },
+                  {
+                    value: "530d 245KM 180kW",
+                  },
+                  {
+                    value: "530d 258KM 190kW",
+                  },
+                  {
+                    value: "535d 300KM 221kW",
+                  },
+                  {
+                    value: "535d 313KM 280kW",
+                  },
+                  {
+                    value: "M550d 381KM 280kW",
+                  },
+                ],
+              },
+              {
+                value: "Limousine",
+                engine: [
+                  {
+                    value: "520i 184KM 135kW",
+                  },
+                  {
+                    value: "523i 204KM 150kW",
+                  },
+                  {
+                    value: "528i 258KM 190kW",
+                  },
+                  {
+                    value: "528i 245KM 180kW",
+                  },
+                  {
+                    value: "530i 272KM 200kW",
+                  },
+                  {
+                    value: "535i 306KM 225kW",
+                  },
+                  {
+                    value: "550i 407KM 299kW",
+                  },
+                  {
+                    value: "550i 450KM 331kW",
+                  },
+                  {
+                    value: "518d 143KM 105kW",
+                  },
+                  {
+                    value: "518d 150KM 110kW",
+                  },
+                  {
+                    value: "520d 184KM 135kW",
+                  },
+                  {
+                    value: "520d 190KM 140kW",
+                  },
+                  {
+                    value: "520d Efficient Dynamics 184KM 135kW",
+                  },
+                  {
+                    value: "525d 218KM 160kW",
+                  },
+                  {
+                    value: "525d 204KM 150kW",
+                  },
+                  {
+                    value: "530d 245KM 180kW",
+                  },
+                  {
+                    value: "530d 258KM 190kW",
+                  },
+                  {
+                    value: "535d 300KM 221kW",
+                  },
+                  {
+                    value: "535d 313KM 280kW",
+                  },
+                  {
+                    value: "M550d xDrive 381KM 280kW",
+                  },
+                  {
+                    value: "ActiveHybrid 5 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "Limousine Facelifting",
+                engine: [
+                  {
+                    value: "520i 184KM 135kW",
+                  },
+                  {
+                    value: "528i 245KM 180kW",
+                  },
+                  {
+                    value: "535i 306KM 225kW",
+                  },
+                  {
+                    value: "550i 449KM 330kW",
+                  },
+                  {
+                    value: "550i 450KM 331kW",
+                  },
+                  {
+                    value: "518d 150KM 110kW",
+                  },
+                  {
+                    value: "520d 190KM 140kW",
+                  },
+                  {
+                    value: "525d 218KM 160kW",
+                  },
+                  {
+                    value: "530d 258KM 190kW",
+                  },
+                  {
+                    value: "535d 313KM 230kW",
+                  },
+                  {
+                    value: "M550d 381KM 280kW",
+                  },
+                  {
+                    value: "ActiveHybrid 5 340KM 250kW",
+                  },
+                ],
+              },
+              {
+                value: "Touring Facelifting",
+                engine: [
+                  {
+                    value: "520i 184KM 135kW",
+                  },
+                  {
+                    value: "528i 245KM 180kW",
+                  },
+                  {
+                    value: "535i 306KM 225kW",
+                  },
+                  {
+                    value: "550i 449KM 330kW",
+                  },
+                  {
+                    value: "550i 407KM 299kW",
+                  },
+                  {
+                    value: "518d 150KM 110kW",
+                  },
+                  {
+                    value: "520d 190KM 140kW",
+                  },
+                  {
+                    value: "525d 218KM 160kW",
+                  },
+                  {
+                    value: "530d 258KM 190kW",
+                  },
+                  {
+                    value: "535d 313KM 230kW",
+                  },
+                  {
+                    value: "M550d 381KM 280kW",
+                  },
+                  {
+                    value: "M550d 381KM 280kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "G30-G31",
+            versions: [
+              {
+                value: "Limousine",
+                engine: [],
+              },
+              {
+                value: "Touring",
+                engine: [],
+              },
+              {
+                value: "M5 Limousine",
+                engine: [],
+              },
+              {
+                value: "Touring Plug-In",
+                engine: [],
+              },
+              {
+                value: "Limousine Plug-In",
+                engine: [],
+              },
+              {
+                value: "M5 Limousine Facelifting",
+                engine: [],
+              },
+              {
+                value: "Touring Facelifting",
+                engine: [],
+              },
+              {
+                value: "Limousine Facelifting",
+                engine: [],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "6 Series",
