@@ -11198,8 +11198,4 @@ export const options = [
       },
     ],
   },
-  {
-    value: "Mercedes-Benz",
-    models: [{}],
-  },
 ];

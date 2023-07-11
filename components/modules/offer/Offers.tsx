@@ -232,7 +232,9 @@ export default function Offers() {
                   <div className={styles.info}>
                     <p className={styles.title}>
                       {post.brand} {post.model}{" "}
-                      {post.generation ? post.generation.split(" ")[0] : ""}
+                      {post.generation ? post.generation.split(" ")[0] : ""}{" "}
+                      {" "}
+                      {post.version}
                     </p>
                     <p>
                       {post.productionYear} - {post.mileage}km - {post.engine}
