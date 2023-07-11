@@ -4,6 +4,7 @@ export const body = [
   { value: "Avant" },
   { value: "Sedan" },
   { value: "Compact" },
+  { value: "Cabrio" },
 ];
 export const fuelOptions = [
   { value: "Diesel" },
@@ -19,7 +20,6 @@ export const options = [
     models: [
       {
         value: "A1",
-
         generations: [
           {
             value: "I",
@@ -4352,11 +4352,9 @@ export const options = [
       },
       {
         value: "Q4",
-
         generations: [
           {
             value: "I",
-
             versions: [
               {
                 value: "E-tron Sportback",
@@ -4485,8 +4483,7 @@ export const options = [
           },
           {
             value: "II",
-
-            engine: [
+            versions: [
               {
                 value: "SUV",
                 engine: [
@@ -4622,7 +4619,6 @@ export const options = [
         generations: [
           {
             value: "I",
-
             versions: [
               {
                 value: "SUV",
@@ -4688,7 +4684,6 @@ export const options = [
           },
           {
             value: "II",
-
             versions: [
               {
                 value: "SUV",

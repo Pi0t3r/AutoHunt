@@ -74,13 +74,7 @@ function Advert() {
             Mileage <span>{car?.mileage} km</span>
           </p>
           <p>
-            Displacement capacity{" "}
-            <span>
-              {car?.engine.slice(0,7)} cm<sup>3</sup>
-            </span>
-          </p>
-          <p>
-            Power <span>{car?.engine.slice(8,13)}</span>
+            Engine <span>{car?.engine}</span>
           </p>
           <p>
             Gearbox <span>{car?.gearbox}</span>
@@ -112,7 +106,10 @@ function Advert() {
               Dealer <span>{car?.seller_name}</span>
             </p>
             <p>
-              <BsFillTelephoneFill /> <span>{formattedNumber}</span>
+              <BsFillTelephoneFill />{" "}
+              <span>
+                <a href={"tel:" + car?.seller_phone}>{formattedNumber}</a>
+              </span>
             </p>
             <p>
               <FaMapPin /> <span>{car?.seller_map}</span>
@@ -170,11 +167,10 @@ function Advert() {
                 <textarea
                   name="comment"
                   id="comment"
-                  cols="30"
-                  rows="10"
+                  
                 ></textarea>
               </div>
-              <input type="submit" value="Send" />
+              <input type="submit" value="Send" onClick={()=> setReportVisible(false)} />
             </fieldset>
           </div>
         </div>

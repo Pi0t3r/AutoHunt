@@ -24,18 +24,6 @@ export default function Home() {
         <section className={styles.offers}>
           <Offers />
         </section>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
       </main>
       <Footer />
     </div>
