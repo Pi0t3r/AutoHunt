@@ -206,15 +206,12 @@ export const options = [
       },
       {
         value: "A3",
-
         generations: [
           {
             value: "8L",
-
             versions: [
               {
                 value: "Hatchback",
-
                 engine: [
                   {
                     value: "1.6 i 102KM 75kW",
@@ -4399,7 +4396,6 @@ export const options = [
         generations: [
           {
             value: "I",
-
             versions: [
               {
                 value: "SUV",
