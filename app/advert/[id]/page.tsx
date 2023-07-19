@@ -164,13 +164,13 @@ function Advert() {
                   In the box below, describe why the advertisement violates our
                   rules:
                 </p>
-                <textarea
-                  name="comment"
-                  id="comment"
-                  
-                ></textarea>
+                <textarea name="comment" id="comment"></textarea>
               </div>
-              <input type="submit" value="Send" onClick={()=> setReportVisible(false)} />
+              <input
+                type="submit"
+                value="Send"
+                onClick={() => setReportVisible(false)}
+              />
             </fieldset>
           </div>
         </div>

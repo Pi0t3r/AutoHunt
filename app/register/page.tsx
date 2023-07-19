@@ -3,12 +3,30 @@ import Link from "next/link";
 import styles from "./register.module.css";
 import { BsGoogle, BsFacebook, BsArrowLeftCircle } from "react-icons/bs";
 import { useState } from "react";
-
+import { auth } from "../../firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
 export default function Register() {
   const [activeButton, setActiveButton] = useState<string>("login");
 
   const handleButtonClick = (button: any) => {
     setActiveButton(button);
+  };
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    const { email, password } = e.target.elements;
+    createUserWithEmailAndPassword(auth, email.value, password.value)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+        window.alert("Succesfully created user");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        window.alert(errorMessage);
+      });
   };
 
   return (
@@ -42,11 +60,21 @@ export default function Register() {
           </button>
         </div>
         {activeButton === "login" && (
-          <form action="login">
+          <form action="login" onSubmit={handleSubmit}>
             <label htmlFor="email">E-mail</label>
-            <input type="email" placeholder="example@email.com" required />
+            <input
+              name="email"
+              type="email"
+              placeholder="example@email.com"
+              required
+            />
             <label htmlFor="password">Password</label>
-            <input type="password" placeholder="••••••••••" required />
+            <input
+              name="password"
+              type="password"
+              placeholder="••••••••••"
+              required
+            />
             <Link href="/register/forgot">
               <span>Forgot password?</span>
             </Link>
