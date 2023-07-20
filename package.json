@@ -12,6 +12,7 @@
     "@firebase/app": "^0.9.14",
     "@firebase/auth": "^1.0.0",
     "@prisma/client": "^4.14.0",
+    "@types/firebase": "^3.2.1",
     "@types/node": "20.0.0",
     "@types/react": "18.2.5",
     "@types/react-dom": "18.2.3",
