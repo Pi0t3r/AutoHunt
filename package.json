@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@firebase/app": "^0.9.14",
+    "@firebase/auth": "^1.0.0",
     "@prisma/client": "^4.14.0",
     "@types/node": "20.0.0",
     "@types/react": "18.2.5",
@@ -16,7 +18,7 @@
     "eslint": "8.39.0",
     "eslint-config-next": "13.4.0",
     "express": "^4.18.2",
-    "firebase": "^8.6.8",
+    "firebase": "^8.10.1",
     "next": "13.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",

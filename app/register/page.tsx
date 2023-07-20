@@ -4,29 +4,34 @@ import styles from "./register.module.css";
 import { BsGoogle, BsFacebook, BsArrowLeftCircle } from "react-icons/bs";
 import { useState } from "react";
 import { auth } from "../../firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword } from "@firebase/auth";
+import { error } from "console";
+
 export default function Register() {
   const [activeButton, setActiveButton] = useState<string>("login");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [errorMessage, setErrorMessage] = useState<string>("");
 
   const handleButtonClick = (button: any) => {
     setActiveButton(button);
   };
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const { email, password } = e.target.elements;
-    createUserWithEmailAndPassword(auth, email.value, password.value)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log(user);
-        window.alert("Succesfully created user");
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        window.alert(errorMessage);
-      });
+
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
+      console.log(user);
+    } catch (error: any) {
+      const errorMessage = error.message;
+      setErrorMessage(errorMessage);
+    }
   };
 
   return (
@@ -63,15 +68,21 @@ export default function Register() {
           <form action="login" onSubmit={handleSubmit}>
             <label htmlFor="email">E-mail</label>
             <input
+              id="email"
               name="email"
               type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="example@email.com"
               required
             />
             <label htmlFor="password">Password</label>
             <input
+              id="password"
               name="password"
               type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               placeholder="••••••••••"
               required
             />
@@ -79,6 +90,7 @@ export default function Register() {
               <span>Forgot password?</span>
             </Link>
             <input type="submit" value="Log in" className={styles.submit} />
+            {errorMessage && <p>{errorMessage}</p>}
           </form>
         )}
         {activeButton === "signup" && (

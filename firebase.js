@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
-import { getAuth } from 'firebase/auth'
+import { getAuth } from "firebase/auth";
+
 const firebaseConfig = {
   apiKey: "AIzaSyAHVPuCCT1e41rzWSkH8jRcLlSIA3hEv28",
   authDomain: "autohunt-1f665.firebaseapp.com",
@@ -11,4 +12,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth();
+const auth = getAuth(app);
+
+export { auth };
+export default app;
