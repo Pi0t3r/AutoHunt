@@ -8,6 +8,9 @@ import { body, options, fuelOptions } from "../../data/cars";
 import Link from "next/link";
 import advert from "@/components/data/advertisement";
 import Image from "next/image";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../../firebase";
+import AdvertCard from "@/components/advertCart";
 
 type SelectOption = {
   value: string;
@@ -41,6 +44,20 @@ export default function Offers() {
     SelectOption | undefined
   >(undefined);
   const [filteredAds, setFilteredAds] = useState(advert);
+  const [carAdvert, setCarAdvert] = useState([]);
+  useEffect(() => {
+    const getCarAdvert = async () => {
+      const advertCollection = collection(db, "CarOffers");
+      const advertSnapshot = await getDocs(advertCollection);
+      const advert = advertSnapshot.docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      setCarAdvert(advert);
+      console.log("This is a car advert list: ", carAdvert);
+    };
+    getCarAdvert();
+  }, []);
 
   const getModelOptions = (): SelectOption[] => {
     if (selectedBrand) {
@@ -214,10 +231,14 @@ export default function Offers() {
         <button className={styles.button} onClick={handleFilter}>
           Show {numAds} advertisements
         </button>
+        <Link href={"/create"}>Add new Advert</Link>
       </div>
       <div className={styles.offers}>
         <ul>
-          {filteredAds.map((post) => (
+          {/* {carAdvert.map((item) => {
+            <li>item.brand ? <AdvertCard props={item}></AdvertCard></li> : null;
+          })} */}
+          {/* {filteredAds.map((post) => (
             <li key={post.id}>
               <Link href={"/advert/" + post.id} key={post.id}>
                 <div className={styles.offer}>
@@ -233,7 +254,6 @@ export default function Offers() {
                     <p className={styles.title}>
                       {post.brand} {post.model}{" "}
                       {post.generation ? post.generation.split(" ")[0] : ""}{" "}
-                      {" "}
                       {post.version}
                     </p>
                     <p>
@@ -247,7 +267,7 @@ export default function Offers() {
                 </div>
               </Link>
             </li>
-          ))}
+          ))} */}
         </ul>
       </div>
     </div>

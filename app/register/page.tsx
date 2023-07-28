@@ -4,34 +4,52 @@ import styles from "./register.module.css";
 import { BsGoogle, BsFacebook, BsArrowLeftCircle } from "react-icons/bs";
 import { useState } from "react";
 import { auth } from "../../firebase";
-import { createUserWithEmailAndPassword } from "@firebase/auth";
-import { error } from "console";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "@firebase/auth";
+import { useRouter } from "next/navigation";
 
 export default function Register() {
   const [activeButton, setActiveButton] = useState<string>("login");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
-
   const handleButtonClick = (button: any) => {
     setActiveButton(button);
   };
+  const router = useRouter();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmitRegister = async (e: React.FormEvent) => {
     e.preventDefault();
+    const { email, password } = e.target.elements;
 
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
-      const user = userCredential.user;
-      console.log(user);
-    } catch (error: any) {
-      const errorMessage = error.message;
-      setErrorMessage(errorMessage);
-    }
+    await createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log("User created:", user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        window.alert(errorMessage);
+      });
+  };
+  const handleSubmitLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const { email, password } = e.target.elements;
+
+    await signInWithEmailAndPassword(auth, email.value, password.value)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        router.push("/");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        window.alert(errorMessage);
+      });
   };
 
   return (
@@ -65,7 +83,7 @@ export default function Register() {
           </button>
         </div>
         {activeButton === "login" && (
-          <form action="login" onSubmit={handleSubmit}>
+          <form action="login" onSubmit={handleSubmitLogin}>
             <label htmlFor="email">E-mail</label>
             <input
               id="email"
@@ -94,11 +112,7 @@ export default function Register() {
           </form>
         )}
         {activeButton === "signup" && (
-          <form action="signup">
-            <label htmlFor="name">Full name</label>
-            <input type="text" placeholder="Please enter full name" />
-            <label htmlFor="number">Phone number</label>
-            <input type="number" placeholder="Phone number" />
+          <form action="signup" onSubmit={handleSubmitRegister}>
             <label htmlFor="email">E-mail</label>
             <input type="email" placeholder="example@email.com" />
             <label htmlFor="password">Password</label>
