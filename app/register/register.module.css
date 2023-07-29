@@ -109,6 +109,7 @@ button.active {
 .form form .submit {
   background-color: #b78d20;
   color: white;
+  cursor: pointer;
 }
 
 .checkboxDiv{

@@ -2,54 +2,53 @@
 import Link from "next/link";
 import styles from "./register.module.css";
 import { BsGoogle, BsFacebook, BsArrowLeftCircle } from "react-icons/bs";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { auth } from "../../firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "@firebase/auth";
 import { useRouter } from "next/navigation";
+import { useUserContext } from "@/context/UserContext";
+
+type ActiveButton = "login" | "signup";
 
 export default function Register() {
-  const [activeButton, setActiveButton] = useState<string>("login");
+  const [activeButton, setActiveButton] = useState<ActiveButton>("login");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [errorMessage, setErrorMessage] = useState<string>("");
-  const handleButtonClick = (button: any) => {
+  const { setUser } = useUserContext();
+  const router = useRouter();
+
+  useEffect(() => {}, [activeButton]);
+
+  const handleButtonClick = (button: ActiveButton) => {
     setActiveButton(button);
   };
-  const router = useRouter();
 
   const handleSubmitRegister = async (e: React.FormEvent) => {
     e.preventDefault();
-    const { email, password } = e.target.elements;
-
-    await createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log("User created:", user);
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        window.alert(errorMessage);
-      });
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      console.log("User created:", email);
+    } catch (error) {
+      const errorMessage = (error as Error).message;
+      setErrorMessage(errorMessage);
+    }
   };
   const handleSubmitLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    const { email, password } = e.target.elements;
 
-    await signInWithEmailAndPassword(auth, email.value, password.value)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log(user);
-        router.push("/");
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        window.alert(errorMessage);
-      });
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      console.log("User just logged:", email);
+      setUser({ email });
+      router.push("/");
+    } catch (error) {
+      const errorMessage = (error as Error).message;
+      setErrorMessage(errorMessage);
+    }
   };
 
   return (

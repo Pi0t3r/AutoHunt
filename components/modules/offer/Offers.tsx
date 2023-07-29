@@ -54,7 +54,6 @@ export default function Offers() {
         id: doc.id,
       }));
       setCarAdvert(advert);
-      console.log("This is a car advert list: ", carAdvert);
     };
     getCarAdvert();
   }, []);
