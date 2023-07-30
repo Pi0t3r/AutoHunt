@@ -3,6 +3,9 @@ import Link from "next/link";
 import styles from "./sidebar.module.css";
 import { useUserContext } from "@/context/UserContext";
 import { useRouter } from "next/navigation";
+import { BiExit } from "react-icons/bi";
+import { AiOutlineUser } from "react-icons/ai";
+import { MdOutlineLocalOffer } from "react-icons/md";
 const Sidebar = () => {
   const { user, setUser } = useUserContext();
   const router = useRouter();
@@ -22,14 +25,18 @@ const Sidebar = () => {
       <div>
         <ul>
           <li>
-            <Link href="/profile">Profile</Link>
+            <Link href="/profile">
+              <AiOutlineUser /> Profile
+            </Link>
           </li>
           <li>
-            <Link href="/myAdvert">My Car Advert</Link>
+            <Link href="/myAdvert">
+              <MdOutlineLocalOffer /> My Car Advert
+            </Link>
           </li>
           <li>
             <button onClick={handleLogout} className={styles.logoutButton}>
-              Logout
+              <BiExit /> Logout
             </button>
           </li>
         </ul>

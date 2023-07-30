@@ -3,9 +3,9 @@
   padding: 5%;
   text-align: center;
 }
-.sidebar .button{
-    margin: 40px 0;
-    /* background-color: red; */
+.sidebar .button {
+  margin: 40px 0;
+  /* background-color: red; */
 }
 
 .sidebar .button a {
@@ -24,17 +24,14 @@
   list-style-type: none;
   text-align: left;
   line-height: 40px;
-
+  padding: 0;
 }
-.sidebar div ul li a{
-    color: black;
+.sidebar div ul li a, .sidebar div ul li button {
+  color: black;
+  font-size: 20px;
 }
 
-.logoutButton{
-    border: 1px solid red;
-    width: 50%;
-    padding: 10px;
-    background-color: white;
-    border-radius: 5px;
-    color: black;
+.logoutButton {
+  border: none;
+  background: none;
 }
