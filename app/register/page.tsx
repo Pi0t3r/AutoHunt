@@ -11,7 +11,6 @@ import {
 import { useRouter } from "next/navigation";
 import { useUserContext } from "../../context/UserContext";
 
-
 type ActiveButton = "login" | "signup";
 
 export default function Register() {

@@ -30,7 +30,24 @@
 }
 
 /* LOGGEDINNAVBAR */
-.nav div span svg {
+.nav .button {
+  z-index: 100;
+}
+.nav .button button {
+  background: none;
+  border: none;
+}
+.nav .button button svg {
   width: 35px;
   height: 35px;
+  color: #b78d20;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
 }
