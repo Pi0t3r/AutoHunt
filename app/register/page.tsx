@@ -9,7 +9,8 @@ import {
   signInWithEmailAndPassword,
 } from "@firebase/auth";
 import { useRouter } from "next/navigation";
-import { useUserContext } from "@/context/UserContext";
+import { useUserContext } from "../../context/UserContext";
+
 
 type ActiveButton = "login" | "signup";
 
@@ -31,7 +32,7 @@ export default function Register() {
     e.preventDefault();
     try {
       await createUserWithEmailAndPassword(auth, email, password);
-      console.log("User created:", email);
+      window.alert("User created!");
     } catch (error) {
       const errorMessage = (error as Error).message;
       setErrorMessage(errorMessage);
@@ -42,7 +43,6 @@ export default function Register() {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      console.log("User just logged:", email);
       setUser({ email });
       router.push("/");
     } catch (error) {

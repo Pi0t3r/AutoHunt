@@ -28,3 +28,9 @@
 .nav div h1 span {
   color: #b78d20;
 }
+
+/* LOGGEDINNAVBAR */
+.nav div span svg {
+  width: 35px;
+  height: 35px;
+}

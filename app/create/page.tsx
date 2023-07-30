@@ -2,7 +2,8 @@
 import { useState } from "react";
 import { auth, storage } from "../../firebase";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import { collection, getDocs } from "firebase/firestore";
+import { CollectionReference, DocumentData, collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase";
 export default function CreateAdvert() {
   const [brand, setBrand] = useState<string>("");
   const [model, setModel] = useState<string>("");

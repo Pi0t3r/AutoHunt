@@ -1,15 +1,13 @@
-'use client'
+"use client";
 import { BsChevronDown } from "react-icons/bs";
 import Navbar from "@/components/modules/navbar/Navbar";
 import Footer from "@/components/modules/footer/Footer";
 import Offers from "@/components/modules/offer/Offers";
 import styles from "./page.module.css";
-import UserContext from "@/context/UserContext";
-import { useState } from "react";
+
 export default function Home() {
-  const [user, setUser] = useState<{ email: string } | null>(null);
-  return (
-    <UserContext.Provider value={{ user, setUser }}>
+ 
+  return ( 
       <div className={styles.div}>
         <div className={styles.shadow} />
         <Navbar />
@@ -31,6 +29,5 @@ export default function Home() {
         </main>
         <Footer />
       </div>
-    </UserContext.Provider>
   );
 }
