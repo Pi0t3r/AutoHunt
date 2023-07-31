@@ -3,6 +3,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { UserContext } from "../context/UserContext";
 import { useEffect, useState } from "react";
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -16,8 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [user, setUser] = useState<{ email: string } | null>(() => {
-    const storedUser = localStorage.getItem("user");
-    return storedUser ? JSON.parse(storedUser) : null;
+    if (typeof window !== "undefined") {
+      const storedUser = localStorage.getItem("user");
+      return storedUser ? JSON.parse(storedUser) : null;
+    } else {
+      return null;
+    }
   });
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(user));
