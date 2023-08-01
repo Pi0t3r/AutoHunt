@@ -6,10 +6,10 @@ import React, { useEffect, useState } from "react";
 import { Select } from "../select/Select";
 import { body, options, fuelOptions } from "../../data/cars";
 import Link from "next/link";
-import advert from "@/components/data/advertisement";
+import advert from "@/data/advertisement";
 import Image from "next/image";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../../firebase";
+import { db } from "../../firebase";
 import AdvertCard from "@/components/advertCart";
 
 type SelectOption = {

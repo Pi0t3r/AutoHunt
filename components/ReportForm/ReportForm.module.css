@@ -1,0 +1,60 @@
+.reportContainer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    background-color: rgb(204, 203, 203);
+    width: 80%;
+    height: 50%;
+  }
+  .reportContainer .titleReport {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    background-color: #b78d20;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+  .reportContainer .titleReport button {
+    background: none;
+    border: none;
+  }
+  .reportContainer .titleReport button svg {
+    width: 20px;
+    height: 20px;
+    color: white;
+    cursor: pointer;
+  }
+  .choose {
+    top: 15%;
+    left: 0;
+    right: 0;
+  }
+  .choose fieldset {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    line-height: 25px;
+    margin: 0 auto;
+    border: none;
+  }
+  .choose fieldset textarea {
+    width: 100%;
+    height: 100px;
+  }
+  .choose input[type="submit"] {
+    background-color: #b78d20;
+    border: none;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+    border-radius: 5px;
+  }

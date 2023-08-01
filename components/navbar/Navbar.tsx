@@ -2,7 +2,7 @@
 import styles from "./navbar.module.css";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { useUserContext } from "../../../context/UserContext";
+import { useUserContext } from "../../context/UserContext";
 import LoggedInNabar from "./LoggedInNavbar";
 export default function Navbar() {
   const { user } = useUserContext();

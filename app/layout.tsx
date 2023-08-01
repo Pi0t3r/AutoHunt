@@ -1,8 +1,7 @@
 "use client";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import { UserContext } from "../context/UserContext";
-import { useEffect, useState } from "react";
+import { UserProvider } from "@/context/UserContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,31 +15,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [user, setUser] = useState<{ email: string } | null>(() => {
-    if (typeof window !== "undefined") {
-      const storedUser = localStorage.getItem("user");
-      return storedUser ? JSON.parse(storedUser) : null;
-    } else {
-      return null;
-    }
-  });
-  useEffect(() => {
-    localStorage.setItem("user", JSON.stringify(user));
-  }, [user]);
-
-  const handleSetUser = (userData: { email: string } | null) => {
-    setUser(userData);
-  };
-  const contextValue = {
-    user,
-    setUser: handleSetUser,
-  };
   return (
     <html lang="en">
       <body className={inter.className}>
-        <UserContext.Provider value={contextValue}>
-          {children}
-        </UserContext.Provider>
+        <UserProvider>{children}</UserProvider>
       </body>
     </html>
   );

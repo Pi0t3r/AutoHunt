@@ -7,7 +7,7 @@ import { AiOutlineClose } from "react-icons/ai";
 
 const LoggedInNabar = () => {
   const [visible, setVisible] = useState(false);
-  
+
   const toggleSidebar = () => {
     setVisible(!visible);
   };
