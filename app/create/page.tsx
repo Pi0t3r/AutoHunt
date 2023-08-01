@@ -2,7 +2,7 @@
 import React from "react";
 import { auth, storage } from "../../firebase";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import { collection, getDocs } from "firebase/firestore";
+import { addDoc, collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
 import { Select } from "@/components/select/Select";
 

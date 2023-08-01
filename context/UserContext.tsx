@@ -16,9 +16,16 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   const [user, setUser] = useState<{ email: string } | null>(() => {
     if (typeof window !== "undefined") {
       const storedUser = localStorage.getItem("user");
-      return storedUser && typeof storedUser === "string"
-        ? JSON.parse(storedUser)
-        : null;
+      try {
+        if (storedUser && typeof storedUser === "string") {
+          return JSON.parse(storedUser);
+        } else {
+          return null;
+        }
+      } catch (error) {
+        console.error("Error parsing user data from localStorage:", error);
+        return null;
+      }
     } else {
       return null;
     }

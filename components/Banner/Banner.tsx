@@ -18,16 +18,22 @@ const Banner = ({ carImages }: BannerProps) => {
 
   return (
     <div className={styles.image}>
-      <Carousel showIndicators={false}>
-        {carImages?.images.map((image: CarImage, index: number) => (
-          <Image
-            className={styles.image}
-            src={image}
-            alt={`Car Image ${index + 1}`}
-            key={index}
-          />
-        ))}
-      </Carousel>
+      {carImages ? (
+        <Carousel showIndicators={false}>
+          {carImages.map((image: CarImage, index: number) => (
+            <Image
+              className={styles.image}
+              src={image}
+              alt={`Car Image ${index + 1}`}
+              key={index}
+              width={350}
+              height={350}
+            />
+          ))}
+        </Carousel>
+      ) : (
+        <p>No car images available.</p>
+      )}
       <button className={styles.heart} onClick={handleClickHeart}>
         {clickedHeart ? <AiFillHeart /> : <AiOutlineHeart />}
       </button>
