@@ -2,13 +2,10 @@
 import React from "react";
 import { auth, storage } from "../../firebase";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import {
-  CollectionReference,
-  DocumentData,
-  collection,
-  getDocs,
-} from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 import { db } from "../../firebase";
+import { Select } from "@/components/select/Select";
+
 export default function CreateAdvert() {
   const [state, setState] = React.useState({
     brand: "",
@@ -24,20 +21,23 @@ export default function CreateAdvert() {
     gearbook: "",
     mileage: "",
     yearbook: "",
-    file: null,
+    file: null as File | null,
   });
-  function handleChange(e: { target: { value: any } }) {
-    const value = e.target.value;
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const { name, value } = e.target;
     setState({
       ...state,
-      [e.target.value]: value,
+      [name]: value,
     });
   }
 
-  // const handleImageUpload = (e) => {
-  //   state.file(e.target.files[0]);
-
-  // };
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0] || null;
+    setState({
+      ...state,
+      file,
+    });
+  };
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -88,12 +88,6 @@ export default function CreateAdvert() {
           } catch (error) {
             alert(error);
           }
-          // state.brand("");
-          // setModel("");
-          // setGearbook("");
-          // setVersion("");
-          // setFile(null);
-          // setPrice("");
         });
       }
     );
@@ -104,55 +98,7 @@ export default function CreateAdvert() {
       <h3>Create new advert</h3>
       <form onSubmit={handleSubmit}>
         <div>
-          <input
-            type="text"
-            value={state.brand}
-            onChange={handleChange}
-            placeholder="Brand"
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            value={state.model}
-            onChange={handleChange}
-            placeholder="Model"
-          />
-        </div>
-        <div>
-          <input type="text" value={state.generation} onChange={handleChange} />
-        </div>
-        <div>
-          <input type="text" value={state.version} onChange={handleChange} />
-        </div>
-        <div>
-          <input type="text" value={state.engine} onChange={handleChange} />
-        </div>
-        <div>
-          <input type="text" value={state.drive} onChange={handleChange} />
-        </div>
-        <div>
-          <input type="text" value={state.fuelType} onChange={handleChange} />
-        </div>
-        <div>
-          <input type="text" value={state.status} onChange={handleChange} />
-        </div>
-        <div>
-          <input type="text" value={state.vin} onChange={handleChange} />
-        </div>
-        <div>
-          <input
-            type="text"
-            value={state.price}
-            onChange={handleChange}
-            placeholder="Price"
-          />
-        </div>
-        <div>
-          <input type="text" value={state.gearbook} onChange={handleChange} />
-        </div>
-        <div>
-          {/* <input type="file" required onChange={handleImageUpload} /> */}
+          <input type="file" required onChange={handleImageUpload} />
         </div>
         <button>Submit</button>
       </form>

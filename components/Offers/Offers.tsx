@@ -237,7 +237,7 @@ export default function Offers() {
           {/* {carAdvert.map((item) => {
             <li>item.brand ? <AdvertCard props={item}></AdvertCard></li> : null;
           })} */}
-          {/* {filteredAds.map((post) => (
+           {filteredAds.map((post) => (
             <li key={post.id}>
               <Link href={"/advert/" + post.id} key={post.id}>
                 <div className={styles.offer}>
@@ -266,7 +266,7 @@ export default function Offers() {
                 </div>
               </Link>
             </li>
-          ))} */}
+          ))}
         </ul>
       </div>
     </div>
