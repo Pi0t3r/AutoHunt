@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import styles from "./ReportForm.module.css";
 
-const ReportForm = ({ setReportVisible }) => {
+interface ReportFormProps {
+  setReportVisible: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const ReportForm = ({ setReportVisible }: ReportFormProps) => {
   const [selectedReason, setSelectedReason] = useState("");
   const [comment, setComment] = useState("");
 

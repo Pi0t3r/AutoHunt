@@ -3,8 +3,8 @@ import Link from "next/link";
 import styles from "./register.module.css";
 import { BsGoogle, BsFacebook, BsArrowLeftCircle } from "react-icons/bs";
 import { useEffect, useState } from "react";
-import LoginForm from "@/components/LoginForm/LoginForm";
-import RegisterForm from "@/components/RegisterForm/RegisterForm";
+import LoginForm from "@/components/loginForm/LoginForm";
+import RegisterForm from "@/components/registerForm/RegisterForm";
 
 type ActiveButton = "login" | "signup";
 

@@ -1,9 +1,25 @@
 import React from "react";
 import { BsFillTelephoneFill, BsFillFlagFill } from "react-icons/bs";
 import { FaMapPin } from "react-icons/fa";
-import styles from "./SellerDetails.module.css";
+import styles from "./sellerDetails.module.css";
 
-const SellerDetails = ({ car, formattedNumber, handleReportClick }) => {
+interface SellerDetailsProps {
+  car:
+    | {
+        seller_name: string;
+        seller_phone: string;
+        seller_map: string;
+      }
+    | undefined;
+  formattedNumber: string;
+  handleReportClick: () => void;
+}
+
+const SellerDetails = ({
+  car,
+  formattedNumber,
+  handleReportClick,
+}: SellerDetailsProps) => {
   return (
     <div className={styles.infoSeller}>
       <p className={styles.title}>About the seller</p>

@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 import { BsChevronDown } from "react-icons/bs";
 import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
-import Offers from "@/components/Offers/Offers";
+import Offers from "@/components/offers/Offers";
 import styles from "./page.module.css";
 
 dotenv.config();

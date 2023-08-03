@@ -7,10 +7,10 @@ import styles from "./page.module.css";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import Link from "next/link";
 import { useState } from "react";
-import Banner from "@/components/Banner/Banner";
-import CarDetails from "@/components/CarDetails/CarDetails";
-import SellerDetails from "@/components/SellerDetails/SellerDetails";
-import ReportForm from "@/components/ReportForm/ReportForm";
+import Banner from "@/components/banner/Banner";
+import CarDetails from "@/components/carDetails/CarDetails";
+import SellerDetails from "@/components/sellerDetails/SellerDetails";
+import ReportForm from "@/components/reportForm/ReportForm";
 
 function Advert() {
   const pathname = usePathname();
