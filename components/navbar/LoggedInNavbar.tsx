@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "./navbar.module.css";
 import Link from "next/link";
 import { FiMenu } from "react-icons/fi";
-import Sidebar from "../sidebar/page";
+import Sidebar from "../sidebar/Page";
 import { AiOutlineClose } from "react-icons/ai";
 
 const LoggedInNabar = () => {
