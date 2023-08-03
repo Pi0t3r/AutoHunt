@@ -4,7 +4,9 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { signInWithEmailAndPassword } from "@firebase/auth";
 import { useUserContext } from "../../context/UserContext";
-import { auth } from "../../.env";
+// import { auth } from "../../.env";
+require("dotenv").config();
+
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
