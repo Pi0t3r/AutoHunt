@@ -1,53 +1,74 @@
 import React from "react";
 import styles from "./CarDetails.module.css";
 
-const CarDetails = ({ car }) => {
+interface iCarDetails {
+  car:
+    | {
+        brand: string;
+        model: string;
+        generation: string;
+        version: string;
+        productionYear: number;
+        mileage: number;
+        engine: string;
+        gearbox: string;
+        drive: string;
+        fuel: string;
+        isDamage: boolean;
+        registrationDate: string;
+        vin: string;
+        status: string;
+      }
+    | undefined;
+}
+
+const CarDetails = ({ car }: iCarDetails) => {
   return (
     <div className={styles.infoCar}>
       <p className={styles.title}>Details</p>
-      <p>
-        Vehicle brand <span>{car?.brand}</span>
-      </p>
-      <p>
-        Vehicle model <span>{car?.model}</span>
-      </p>
-      <p>
-        Vehicle generation <span>{car?.generation}</span>
-      </p>
-      <p>
-        Version <span>{car?.version}</span>
-      </p>
-      <p>
-        Yearbook <span>{car?.productionYear}</span>
-      </p>
-      <p>
-        Mileage <span>{car?.mileage} km</span>
-      </p>
-      <p>
-        Engine <span>{car?.engine}</span>
-      </p>
-      <p>
-        Gearbox <span>{car?.gearbox}</span>
-      </p>
-      <p>
-        Drive <span>{car?.drive}</span>
-      </p>
-      <p>
-        Fuel type <span>{car?.fuel}</span>
-      </p>
-      <p>
-        Damaged <span>{car?.isDamage ? "Yes" : "No"}</span>
-      </p>
+      <dl>
+        <dt>Vehicle brand</dt>
+        <dd>{car?.brand}</dd>
 
-      <p>
-        First Registration <span>{car?.registrationDate}</span>
-      </p>
-      <p>
-        VIN <span>{car?.vin}</span>
-      </p>
-      <p>
-        Status <span>{car?.status}</span>
-      </p>
+        <dt>Vehicle model</dt>
+        <dd>{car?.model}</dd>
+
+        <dt>Vehicle generation</dt>
+        <dd>{car?.generation}</dd>
+
+        <dt>Version</dt>
+        <dd>{car?.version}</dd>
+
+        <dt>Yearbook</dt>
+        <dd>{car?.productionYear}</dd>
+
+        <dt>Mileage</dt>
+        <dd>{car?.mileage} km</dd>
+
+        <dt>Engine</dt>
+        <dd>{car?.engine}</dd>
+
+        <dt>Gearbox</dt>
+        <dd>{car?.gearbox}</dd>
+
+        <dt>Drive</dt>
+        <dd>{car?.drive}</dd>
+
+        <dt>Fuel type</dt>
+        <dd>{car?.fuel}</dd>
+
+        <dt>Damaged</dt>
+        <dd>{car?.isDamage ? "Yes" : "No"}</dd>
+
+        <dt>First Registration</dt>
+        <dd>{car?.registrationDate}</dd>
+
+        <dt>VIN</dt>
+        <dd>{car?.vin}</dd>
+
+        <dt>Status</dt>
+        <dd>{car?.status}</dd>
+      </dl>
     </div>
   );
 };

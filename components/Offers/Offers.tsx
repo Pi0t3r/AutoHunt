@@ -9,8 +9,7 @@ import Link from "next/link";
 import advert from "@/data/advertisement";
 import Image from "next/image";
 import { collection, getDocs } from "firebase/firestore";
-import { db } from "../../firebase";
-import AdvertCard from "@/components/advertCart";
+// import { db } from "../../firebase";
 
 type SelectOption = {
   value: string;
@@ -44,7 +43,6 @@ export default function Offers() {
     SelectOption | undefined
   >(undefined);
   const [filteredAds, setFilteredAds] = useState(advert);
-  const [carAdvert, setCarAdvert] = useState([]);
   useEffect(() => {
     const getCarAdvert = async () => {
       const advertCollection = collection(db, "CarOffers");
@@ -53,7 +51,6 @@ export default function Offers() {
         ...doc.data(),
         id: doc.id,
       }));
-      setCarAdvert(advert);
     };
     getCarAdvert();
   }, []);

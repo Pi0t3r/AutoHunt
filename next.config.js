@@ -5,12 +5,6 @@ const nextConfig = {
   },
   images: {
     domains: [
-      "bi.im-g.pl",
-      "www.audiklub.org",
-      "i.ebayimg.com",
-      "maxtondesign.pl",
-      "i.pinimg.com",
-      "i.wpimg.pl",
       "ireland.apollo.olxcdn.com"
     ],
   },

@@ -1,22 +1,17 @@
 .infoCar {
-    background-color: rgba(0, 0, 0, 0.65);
-    padding: 10px;
-  }
-  
-  .infoCar .title {
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    letter-spacing: 1px;
-  }
-  .infoCar p {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-right: 30px;
-  }
-  
-  .infoCar p span {
-    color: white;
-    width: 45%;
-  }
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 10px;
+}
+
+.infoCar .title {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+.infoCar dl dt {
+  color: #b78d20;
+}
+.infoCar dl dd {
+  color: white;
+}
