@@ -34,3 +34,8 @@ The Autohunt project is not released under any license.
 - No ability to register new accounts
 - No function to add new car ads
 - Currently lack of proper design and user interface
+
+## Contact
+
+[Linkedin](https://www.linkedin.com/in/piotrkapuscinski/)
+Mail: kapuscinskipiotr11@gmail.com
