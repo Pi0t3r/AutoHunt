@@ -21,9 +21,19 @@ const RegisterForm = () => {
   return (
     <form action="signup" onSubmit={handleSubmitRegister}>
       <label htmlFor="email">E-mail</label>
-      <input type="email" placeholder="example@email.com" />
+      <input
+        type="email"
+        placeholder="example@email.com"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
       <label htmlFor="password">Password</label>
-      <input type="password" placeholder="••••••••" />
+      <input
+        type="password"
+        placeholder="••••••••"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
       <div className={styles.checkboxDiv}>
         <input type="checkbox" required />
         <p>
