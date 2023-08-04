@@ -4,9 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { signInWithEmailAndPassword } from "@firebase/auth";
 import { useUserContext } from "../../context/UserContext";
-// import { auth } from "../../.env";
-require("dotenv").config();
-
+import { auth } from "../../firebase";
 
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -26,6 +24,7 @@ const LoginForm = () => {
       const errorMessage = (error as Error).message;
       setErrorMessage(errorMessage);
     }
+    ``;
   };
   return (
     <form action="login" onSubmit={handleSubmitLogin}>

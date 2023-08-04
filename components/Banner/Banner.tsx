@@ -15,7 +15,7 @@ const Banner = ({ carImages }: BannerProps) => {
   const handleClickHeart = () => {
     setClickedHeart(!clickedHeart);
   };
-
+  
   return (
     <div className={styles.image}>
       {carImages ? (

@@ -17,7 +17,7 @@ const RegisterForm = () => {
       setErrorMessage(errorMessage);
     }
   };
-
+  console.log(process.env.APP_ID);
   return (
     <form action="signup" onSubmit={handleSubmitRegister}>
       <label htmlFor="email">E-mail</label>

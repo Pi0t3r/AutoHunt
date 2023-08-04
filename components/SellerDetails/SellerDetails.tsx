@@ -20,6 +20,7 @@ const SellerDetails = ({
   formattedNumber,
   handleReportClick,
 }: SellerDetailsProps) => {
+  console.log(process.env);
   return (
     <div className={styles.infoSeller}>
       <p className={styles.title}>About the seller</p>

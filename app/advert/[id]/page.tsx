@@ -24,6 +24,7 @@ function Advert() {
   const handleReportClick = () => {
     setReportVisible(true);
   };
+  
   return (
     <div className={styles.container}>
       <div className={styles.back}>

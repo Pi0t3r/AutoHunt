@@ -9,7 +9,7 @@ import Link from "next/link";
 import advert from "@/data/advertisement";
 import Image from "next/image";
 import { collection, getDocs } from "firebase/firestore";
-// import { db } from "../../firebase";
+import { db } from "../../firebase";
 
 type SelectOption = {
   value: string;
