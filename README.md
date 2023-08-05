@@ -9,7 +9,6 @@ Autohunt is an online application that aims to help users find their dream car o
 - Firebase
 - CSS (in future it will be replacement on Tailwind)
 
-
 ## Status
 
 The Autohunt project is under development and is not yet finished. Currently, some features are not yet implemented and the project does not have full functionality.
@@ -24,7 +23,19 @@ The main goal of the Autohunt project is to make it easier for users to find the
 
 ## Installation instructions
 
-There are currently no installation instructions, as the project is still in development.
+1. Install dependencies
+
+```
+npm install / npm i
+```
+
+2. Run project
+
+```
+npm run dev
+```
+
+3. Write code
 
 ## Planned functions
 
