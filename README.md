@@ -26,7 +26,7 @@ The main goal of the Autohunt project is to make it easier for users to find the
 1. Install dependencies
 
 ```
-npm install / npm i
+npm install
 ```
 
 2. Run project
