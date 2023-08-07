@@ -12,13 +12,12 @@ const LoginForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const { setUser } = useUserContext();
   const router = useRouter();
-
   const handleSubmitLogin = async (e: React.FormEvent) => {
     e.preventDefault();
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      setUser({ email });
+      setUser({ email: email, name: "", surname: "" });
       router.push("/");
     } catch (error) {
       const errorMessage = (error as Error).message;

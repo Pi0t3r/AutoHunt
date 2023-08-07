@@ -5,12 +5,15 @@
 }
 .sidebar .button {
   margin: 40px 0;
-  /* background-color: red; */
+}
+.sidebar .div span {
+  color: black;
 }
 
 .sidebar .button a {
+  display: block;
   padding: 15px;
-  width: 100%;
+  width: 80%;
   border: none;
   background-color: #b78d20;
   color: white;
@@ -26,7 +29,8 @@
   line-height: 40px;
   padding: 0;
 }
-.sidebar div ul li a, .sidebar div ul li button {
+.sidebar div ul li a,
+.sidebar div ul li button {
   color: black;
   font-size: 20px;
 }
@@ -34,4 +38,5 @@
 .logoutButton {
   border: none;
   background: none;
+  padding: 0;
 }
