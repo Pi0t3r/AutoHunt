@@ -1,10 +1,5 @@
 "use client";
 import React from "react";
-// import { auth, storage } from "../../firebase";
-import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import { addDoc, collection, getDocs } from "firebase/firestore";
-// import { db } from "../../firebase";
-import { Select } from "@/components/select/Select";
 
 export default function CreateAdvert() {
   const [state, setState] = React.useState({
