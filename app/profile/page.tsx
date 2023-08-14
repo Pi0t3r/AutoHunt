@@ -1,60 +1,55 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import { useUserContext } from "@/context/UserContext";
+import React, { useState } from "react";
 import Link from "next/link";
-import { collection, getDocs, query, where } from "firebase/firestore";
-import { db } from "@/firebase";
-import { AiOutlineUser } from "react-icons/ai";
+import {
+  AiOutlineUser,
+  AiOutlineEye,
+  AiOutlineEyeInvisible,
+} from "react-icons/ai";
+import styles from "./profile.module.css";
+import useUserData from "@/useUserData";
 export default function Profile() {
-  const { user, setUser } = useUserContext();
-  const [userName, setUserName] = useState("");
-  const [userSurname, setUserSurname] = useState("");
-  const [userMail, setUserMail] = useState("");
-  const [userPassword, setUserPassword] = useState("");
+  const { userMail, userName, userPassword, userSurname } = useUserData();
+  const [visiblePassword, setVisiblePassword] = useState(false);
 
-  const getUserData = async () => {
-    try {
-      if (user && user.email) {
-        const userCollectionRef = collection(db, "users");
-        const q = query(userCollectionRef, where("email", "==", user.email));
-        const usersSnapshot = await getDocs(q);
-        if (!usersSnapshot.empty) {
-          const userData = usersSnapshot.docs[0].data();
-          setUserName(userData.name);
-          setUserSurname(userData.surname);
-          setUserMail(userData.email);
-          setUserPassword(userData.password);
-        }
-      }
-    } catch (error) {
-      console.error(error);
-    }
+  const handleVisiblePassword = () => {
+    setVisiblePassword(!visiblePassword);
   };
-  useEffect(() => {
-    if (!user) {
-      const storedUser = localStorage.getItem("user");
-      if (storedUser) {
-        setUser(JSON.parse(storedUser));
-      }
-    }
-    if (user && !userName && !userSurname) {
-      getUserData();
-    }
-  }, [user, userName, userSurname, setUser]);
 
   return (
-    <div>
+    <div className={styles.container}>
       <Link href="/">
         <button>Back</button>
       </Link>
       <div>
         <div>
-          <div>
+          <div className={styles.circle}>
             <AiOutlineUser />
           </div>
-          Witam, {userName} {userSurname} <br />
-          <span>Twój mail to: {userMail}</span> <br />
-          <span>Twoje hasło to: {userPassword}</span>
+        </div>
+        <div className={styles.info}>
+          <p>
+            Hello,{" "}
+            <span className={styles.data}>
+              {userName} {userSurname}
+            </span>{" "}
+            <br />
+            Your email: <span className={styles.data}>{userMail}</span> <br />
+            <span className={styles.password}>
+              Your password:{" "}
+              <span className={styles.data}>
+                {visiblePassword ? userPassword : "•••••••"}
+              </span>{" "}
+              <button onClick={handleVisiblePassword}>
+                {visiblePassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+              </button>
+            </span>
+          </p>
+        </div>
+        <div className={styles.button}>
+          <Link href="/reset">
+            <button>Change my password</button>
+          </Link>
         </div>
       </div>
     </div>
