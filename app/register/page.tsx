@@ -12,7 +12,6 @@ export default function Register() {
   const [activeButton, setActiveButton] = useState<ActiveButton>("login");
 
   useEffect(() => {}, [activeButton]);
-
   const handleButtonClick = (button: ActiveButton) => {
     setActiveButton(button);
   };

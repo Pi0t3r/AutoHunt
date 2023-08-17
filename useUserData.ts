@@ -10,7 +10,14 @@ const useUserData = () => {
     userSurname: "",
     userMail: "",
     userPassword: "",
+    userProfilePicture: "",
   });
+  const updateProfilePicture = (newProfilePicture:string) => {
+    setUserData((prevUserData) => ({
+      ...prevUserData,
+      userProfilePicture: newProfilePicture,
+    }));
+  };
   const getUserData = async () => {
     try {
       if (user && user.email) {
@@ -24,6 +31,7 @@ const useUserData = () => {
             userSurname: userData.surname,
             userMail: userData.email,
             userPassword: userData.password,
+            userProfilePicture: userData.userProfilePicture,
           });
         }
       }
@@ -49,7 +57,7 @@ const useUserData = () => {
     userData.userPassword,
     setUser,
   ]);
-  return userData;
+  return { userData, updateProfilePicture };
 };
 
 export default useUserData;

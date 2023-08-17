@@ -8,10 +8,11 @@ import { AiOutlineUser } from "react-icons/ai";
 import { MdOutlineLocalOffer } from "react-icons/md";
 import useUserData from "@/useUserData";
 const Sidebar = () => {
-  const { userName, userSurname } = useUserData();
+  const { userData } = useUserData();
+  const { userName, userSurname } = userData;
   const { user, setUser } = useUserContext();
   const router = useRouter();
-  
+
   const handleLogout = () => {
     setUser(null);
     localStorage.removeItem("user");

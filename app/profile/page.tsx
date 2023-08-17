@@ -9,7 +9,8 @@ import {
 import styles from "./profile.module.css";
 import useUserData from "@/useUserData";
 export default function Profile() {
-  const { userMail, userName, userPassword, userSurname } = useUserData();
+  const { userData } = useUserData();
+  const { userMail, userName, userPassword, userSurname } = userData;
   const [visiblePassword, setVisiblePassword] = useState(false);
 
   const handleVisiblePassword = () => {
@@ -54,4 +55,9 @@ export default function Profile() {
       </div>
     </div>
   );
+}
+function getUploadTaskSnapshot(
+  uploadTask: Promise<import("@firebase/storage").UploadResult>
+) {
+  throw new Error("Function not implemented.");
 }
