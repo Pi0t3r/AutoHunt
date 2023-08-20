@@ -4,7 +4,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/firebase";
 import { Select } from "../../components/select/Select";
 import { body, fuelOptions, options } from "../../data/cars";
-
+import Link from "next/link";
 type SelectOptions = {
   value?: string | undefined;
   brand?: SelectOptions[] | string;
@@ -30,6 +30,23 @@ type SelectOptions = {
 };
 
 export default function CreateAdvert() {
+  const [formData, setFormData] = useState({
+    brand: "",
+    model: "",
+    generation: "",
+    version: "",
+    engine: "",
+  });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const advertData = { ...formData };
+      const advertRef = await addDoc(collection(db, "adverts"), advertData);
+      console.log("Ogłoszenie dodane z ID: ", advertRef.id);
+    } catch (error) {
+      console.error("Błąd przy dodawaniu ogłoszenia: ", error);
+    }
+  };
   const [selectedBody, setSelectedBody] = useState<SelectOptions | undefined>(
     undefined
   );
@@ -123,6 +140,7 @@ export default function CreateAdvert() {
   };
 
   const handleBrandChange = (brand: SelectOptions | undefined) => {
+    setFormData((prevData) => ({ ...prevData, brand: brand?.value || "" }));
     setSelectedBrand(brand);
     setSelectedModel(undefined);
     setSelectedGeneration(undefined);
@@ -130,6 +148,7 @@ export default function CreateAdvert() {
     setSelectedEngine(undefined);
   };
   const handleModelChange = (model: SelectOptions | undefined) => {
+    setFormData((prevData) => ({ ...prevData, model: model?.value || "" }));
     setSelectedModel(model);
     setSelectedGeneration(undefined);
     setSelectedVersion(undefined);
@@ -142,18 +161,23 @@ export default function CreateAdvert() {
     setSelectedFuel(selectedFuel);
   };
   const handleGenerationChange = (generation: SelectOptions | undefined) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      generation: generation?.value || "",
+    }));
     setSelectedGeneration(generation);
     setSelectedVersion(undefined);
     setSelectedEngine(undefined);
   };
   const handleVersionChange = (version: SelectOptions | undefined) => {
+    setFormData((prevData) => ({ ...prevData, version: version?.value || "" }));
     setSelectedVersion(version);
     setSelectedEngine(undefined);
   };
   const handleEngineChange = (engine: SelectOptions | undefined) => {
+    setFormData((prevData) => ({ ...prevData, engine: engine?.value || "" }));
     setSelectedEngine(engine);
   };
-  // console.log(selectedBrand?.value);
   const Result = () => {
     return (
       <p>
@@ -165,54 +189,60 @@ export default function CreateAdvert() {
   };
   return (
     <div>
+      <Link href={"/"}>
+        <button>Back</button>
+      </Link>
       <h3>Create new advert</h3>
-      <Select
-        options={body}
-        value={selectedBody}
-        onChange={handleBodyChange}
-        filter="Body"
-        disabled={selectedVersion?.value !== undefined}
-      />
-      <Select
-        options={options}
-        value={selectedBrand}
-        onChange={handleBrandChange}
-        filter="Brand"
-      />
-      <Select
-        options={getModelOptions()}
-        value={selectedModel}
-        onChange={handleModelChange}
-        filter="Model"
-      />
-      <Select
-        options={getGenerationOption()}
-        value={selectedGeneration}
-        onChange={handleGenerationChange}
-        filter="Generation"
-      />
-      <Select
-        options={getVersionOption()}
-        value={selectedVersion}
-        onChange={handleVersionChange}
-        filter="Version"
-      />
-      <Select
-        options={getEngineOption()}
-        value={selectedEngine}
-        onChange={handleEngineChange}
-        filter="Engine"
-      />
-      <Select
-        options={fuelOptions}
-        value={selectedFuel}
-        onChange={handleFuelChange}
-        filter="Fuel type"
-        disabled={selectedEngine?.value !== undefined}
-      />
-      <p>
-        Wystawiasz ogłoszenie o samochód: <Result />
-      </p>
+      <form onSubmit={handleSubmit}>
+        <Select
+          options={body}
+          value={selectedBody}
+          onChange={handleBodyChange}
+          filter="Body"
+          disabled={selectedVersion?.value !== undefined}
+        />
+        <Select
+          options={options}
+          value={selectedBrand}
+          onChange={handleBrandChange}
+          filter="Brand"
+        />
+        <Select
+          options={getModelOptions()}
+          value={selectedModel}
+          onChange={handleModelChange}
+          filter="Model"
+        />
+        <Select
+          options={getGenerationOption()}
+          value={selectedGeneration}
+          onChange={handleGenerationChange}
+          filter="Generation"
+        />
+        <Select
+          options={getVersionOption()}
+          value={selectedVersion}
+          onChange={handleVersionChange}
+          filter="Version"
+        />
+        <Select
+          options={getEngineOption()}
+          value={selectedEngine}
+          onChange={handleEngineChange}
+          filter="Engine"
+        />
+        <Select
+          options={fuelOptions}
+          value={selectedFuel}
+          onChange={handleFuelChange}
+          filter="Fuel type"
+          disabled={selectedEngine?.value !== undefined}
+        />
+        <p>
+          Wystawiasz ogłoszenie o samochód: <Result />
+        </p>
+        <button type="submit">Wystaw</button>
+      </form>
     </div>
   );
 }

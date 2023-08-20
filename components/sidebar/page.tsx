@@ -2,21 +2,24 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from "./sidebar.module.css";
 import { useUserContext } from "@/context/UserContext";
-import { useRouter } from "next/navigation";
 import { BiExit } from "react-icons/bi";
 import { AiOutlineUser } from "react-icons/ai";
 import { MdOutlineLocalOffer } from "react-icons/md";
 import useUserData from "@/useUserData";
+import { auth } from "@/firebase";
 const Sidebar = () => {
   const { userData } = useUserData();
   const { userName, userSurname } = userData;
   const { user, setUser } = useUserContext();
-  const router = useRouter();
 
-  const handleLogout = () => {
-    setUser(null);
-    localStorage.removeItem("user");
-    router.push("/register");
+  const handleLogout = async () => {
+    try {
+      await auth.signOut();
+      setUser(null);
+      localStorage.removeItem("user");
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
