@@ -4,15 +4,13 @@
 import styles from "./offers.module.css";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import advert from "@/data/advertisement";
-import Image from "next/image";
+// import Image from "next/image";
 import Filters from "../filters/Filters";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/firebase";
 
 export default function Offers() {
-  const [filteredAds, setFilteredAds] = useState(advert);
-  const [advertData, setAdvertData] = useState([]);
+  const [advertData, setAdvertData] = useState<any[]>([]);
 
   const fetchAdverts = async () => {
     try {
@@ -26,6 +24,9 @@ export default function Offers() {
   useEffect(() => {
     fetchAdverts();
   }, []);
+  if (advertData.length === 0) {
+    return <p>Loading ...</p>;
+  }
 
   return (
     <div className={styles.div}>
@@ -38,16 +39,8 @@ export default function Offers() {
         <ul>
           {advertData.map((post) => (
             <li key={post.id}>
-              <Link href={"/advert/" + post.id} key={post.id}>
+              <Link href={`/advert/${post.id}`} key={post.id}>
                 <div className={styles.offer}>
-                  <div className={styles.img}>
-                    {/* <Image
-                      src={post.images[0]}
-                      width={200}
-                      height={200}
-                      alt={`car images ${post.brand} ${post.model}`}
-                    /> */}
-                  </div>
                   <div className={styles.info}>
                     <p>
                       {post.brand} {post.model}{" "}
