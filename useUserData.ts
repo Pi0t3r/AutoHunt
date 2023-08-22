@@ -12,7 +12,7 @@ const useUserData = () => {
     userPassword: "",
     userProfilePicture: "",
   });
-  const updateProfilePicture = (newProfilePicture:string) => {
+  const updateProfilePicture = (newProfilePicture: string) => {
     setUserData((prevUserData) => ({
       ...prevUserData,
       userProfilePicture: newProfilePicture,

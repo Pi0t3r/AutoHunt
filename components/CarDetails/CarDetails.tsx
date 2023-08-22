@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import styles from "./CarDetails.module.css";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/firebase";
-import { useRouter } from "next/router";
-const CarDetails = () => {
-  const router = useRouter();
-  const { id } = router.query;
-  const carId = Number(id);
+
+interface CarDetailsProps {
+  carId: number;
+}
+const CarDetails: React.FC<CarDetailsProps> = ({ carId }) => {
   const [advertData, setAdvertData] = useState<any[]>([]);
+
   const fetchAdvert = async () => {
     try {
       const querySnapshot = await getDocs(collection(db, "adverts"));
@@ -20,28 +21,36 @@ const CarDetails = () => {
   useEffect(() => {
     fetchAdvert();
   }, []);
+  if (advertData.length === 0) {
+    return <p>Loading...</p>;
+  }
+  const advert = advertData.find((advert) => advert.id === carId);
+  
+  if (!advert) {
+    return <p>Advertisement not found</p>;
+  }
   const showDoc = () => {
-    console.log(advertData);
+    console.log(advertData.find((advert) => advert.id === carId))
   };
   return (
     <div className={styles.infoCar}>
       <p className={styles.title}>Details</p>
-      {/* <button onClick={showDoc}>click</button> */}
+      <button onClick={showDoc}>click</button>
       <dl>
         <dt>Vehicle brand</dt>
-        <dd>{advertData.brand}</dd>
+        <dd>{advert.brand}</dd>
 
         <dt>Vehicle model</dt>
-        <dd>{advertData.model}</dd>
+        <dd>{advert.model}</dd>
 
         <dt>Vehicle generation</dt>
-        <dd>{advertData.generation}</dd>
+        <dd>{advert.generation}</dd>
 
         <dt>Version</dt>
-        <dd>{advertData.version}</dd>
+        <dd>{advert.version}</dd>
 
         <dt>Engine</dt>
-        <dd>{advertData.engine}</dd>
+        <dd>{advert.engine}</dd>
       </dl>
     </div>
   );

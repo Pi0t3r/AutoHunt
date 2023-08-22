@@ -1,5 +1,4 @@
 import { Select } from "../select/Select";
-import advert from "@/data/advertisement";
 import React, { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/firebase";
@@ -14,7 +13,6 @@ type SelectOption = {
 };
 
 export default function Filters() {
-  const [numAds, setNumAds] = useState(advert.length);
   const [selectedBody, setSelectedBody] = useState<SelectOption | undefined>(
     undefined
   );
@@ -36,7 +34,6 @@ export default function Filters() {
   const [selectedEngine, setSelectedEngine] = useState<
     SelectOption | undefined
   >(undefined);
-  const [filteredAds, setFilteredAds] = useState(advert);
   useEffect(() => {
     const getCarAdvert = async () => {
       const advertCollection = collection(db, "CarOffers");
@@ -90,85 +87,38 @@ export default function Filters() {
 
     return [];
   };
-  const handleFilter = () => {
-    let filtered = advert;
-    if (selectedBrand) {
-      filtered = filtered.filter((ad) => ad.brand === selectedBrand.value);
-    }
-    if (selectedModel) {
-      filtered = filtered.filter((ad) => ad.model === selectedModel.value);
-    }
-    if (selectedGeneration) {
-      filtered = filtered.filter(
-        (ad) => ad.generation === selectedGeneration.value
-      );
-    }
-    if (selectedVersion) {
-      filtered = filtered.filter((ad) => ad.version === selectedVersion.value);
-    }
-    if (selectedEngine) {
-      filtered = filtered.filter((ad) => ad.engine === selectedEngine.value);
-    }
-    if (selectedBody) {
-      filtered = filtered.filter((ad) => ad.body === selectedBody.value);
-    }
-    if (selectedFuel) {
-      filtered = filtered.filter((ad) => ad.fuel === selectedFuel.value);
-    }
-    setFilteredAds(filtered);
-  };
   const handleBrandChange = (brand: SelectOption | undefined) => {
     setSelectedBrand(brand);
     setSelectedModel(undefined);
     setSelectedGeneration(undefined);
     setSelectedVersion(undefined);
     setSelectedEngine(undefined);
-    const filtered = advert.filter((ad) => ad.brand === brand?.value);
-
-    setNumAds(filtered.length);
   };
   const handleModelChange = (model: SelectOption | undefined) => {
     setSelectedModel(model);
     setSelectedGeneration(undefined);
     setSelectedVersion(undefined);
     setSelectedEngine(undefined);
-    const filtered = advert.filter((ad) => ad.model === model?.value);
 
-    setNumAds(filtered.length);
   };
   const handleBodyChange = (selectedBody: SelectOption | undefined) => {
     setSelectedBody(selectedBody);
-
-    const filtered = advert.filter((ad) => ad.body === selectedBody?.value);
-
-    setNumAds(filtered.length);
   };
   const handleFuelChange = (selectedFuel: SelectOption | undefined) => {
     setSelectedFuel(selectedFuel);
-    const filtered = advert.filter((ad) => ad.fuel === selectedFuel?.value);
-
-    setNumAds(filtered.length);
   };
   const handleGenerationChange = (generation: SelectOption | undefined) => {
     setSelectedGeneration(generation);
     setSelectedVersion(undefined);
     setSelectedEngine(undefined);
-    const filtered = advert.filter((ad) => ad.generation === generation?.value);
-
-    setNumAds(filtered.length);
   };
   const handleVersionChange = (version: SelectOption | undefined) => {
     setSelectedVersion(version);
     setSelectedEngine(undefined);
-    const filtered = advert.filter((ad) => ad.version === version?.value);
 
-    setNumAds(filtered.length);
   };
   const handleEngineChange = (engine: SelectOption | undefined) => {
     setSelectedEngine(engine);
-    const filtered = advert.filter((ad) => ad.engine === engine?.value);
-
-    setNumAds(filtered.length);
   };
   return (
     <div>
@@ -216,8 +166,8 @@ export default function Filters() {
         filter="Fuel type"
         disabled={selectedEngine?.value !== undefined}
       />
-      <button className={styles.button} onClick={handleFilter}>
-        Show {numAds} advertisements
+      <button className={styles.button}>
+        Show  advertisements
       </button>
     </div>
   );

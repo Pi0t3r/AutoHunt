@@ -11,6 +11,7 @@ import useUserData from "@/useUserData";
 export default function Profile() {
   const { userData } = useUserData();
   const { userMail, userName, userPassword, userSurname } = userData;
+  
   const [visiblePassword, setVisiblePassword] = useState(false);
 
   const handleVisiblePassword = () => {
