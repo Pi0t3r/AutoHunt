@@ -4,7 +4,6 @@
 import styles from "./offers.module.css";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-// import Image from "next/image";
 import Filters from "../filters/Filters";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/firebase";

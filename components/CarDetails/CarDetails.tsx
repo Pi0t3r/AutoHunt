@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 import styles from "./CarDetails.module.css";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/firebase";
-
-interface CarDetailsProps {
-  advertId: number;
-}
-
+import { useRouter } from "next/router";
 const CarDetails = () => {
+  const router = useRouter();
+  const { id } = router.query;
+  const carId = Number(id);
   const [advertData, setAdvertData] = useState<any[]>([]);
   const fetchAdvert = async () => {
     try {
@@ -27,7 +26,7 @@ const CarDetails = () => {
   return (
     <div className={styles.infoCar}>
       <p className={styles.title}>Details</p>
-      <button onClick={showDoc}>click</button>
+      {/* <button onClick={showDoc}>click</button> */}
       <dl>
         <dt>Vehicle brand</dt>
         <dd>{advertData.brand}</dd>
