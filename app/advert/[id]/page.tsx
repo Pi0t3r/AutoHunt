@@ -14,40 +14,32 @@ import { useRouter } from "next/router";
 
 function Advert() {
   const [reportVisible, setReportVisible] = useState(false);
-  const router = useRouter();
+  const router = useRouter(); 
   const { id } = router.query;
+  const handleReportClick = () => {
+    setReportVisible(true);
+  };
 
-  if (typeof id === "string") {
-    const advertId = id;
+  return (
+    <div className={styles.container}>
+      <div className={styles.back}>
+        <Link href={"/"}>
+          <BsFillArrowLeftCircleFill />
+        </Link>
+      </div>
+      <div className={styles.offer}>
+        {/* <Banner carImages={car?.images} /> */}
 
-    const handleReportClick = () => {
-      setReportVisible(true);
-    };
+        <CarDetails advertId={id as string}/>
 
-    return (
-      <div className={styles.container}>
-        <div className={styles.back}>
-          <Link href={"/"}>
-            <BsFillArrowLeftCircleFill />
-          </Link>
-        </div>
-        <div className={styles.offer}>
-          {/* <Banner carImages={car?.images} /> */}
-
-          <CarDetails advertId={advertId} />
-
-          {/* <SellerDetails
+        {/* <SellerDetails
             car={car}
             formattedNumber={formattedNumber}
             handleReportClick={handleReportClick}
           /> */}
-        </div>
-        {reportVisible && <ReportForm setReportVisible={setReportVisible} />}
       </div>
-    );
-  } else {
-    return <p>Loading...</p>;
-  }
+      {reportVisible && <ReportForm setReportVisible={setReportVisible} />}
+    </div>
+  );
 }
-
 export default Advert;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CarDetails.module.css";
-import { getDoc, doc } from "firebase/firestore";
+import { getDoc, doc, collection } from "firebase/firestore";
 import { db } from "@/firebase";
 
 interface CarDetailsProps {
@@ -8,33 +8,27 @@ interface CarDetailsProps {
 }
 
 const CarDetails: React.FC<CarDetailsProps> = ({ advertId }) => {
-  const [advertData, setAdvertData] = useState<any | null>(null);
-
+  const [advertData, setAdvertData] = useState<any>(null);
   useEffect(() => {
-    if (typeof advertId === "string") {
-      const fetchAdvertDetails = async () => {
-        try {
-          const advertDocRef = doc(db, "adverts", advertId);
-          const advertDoc = await getDoc(advertDocRef);
-          if (advertDoc.exists()) {
-            setAdvertData(advertDoc.data());
-          } else {
-            console.log("Document does not exists");
-          }
-        } catch (err) {
-          console.error("My error: ", err);
+    const fetchAdvertDetails = async () => {
+      try {
+        const advertDocRef = doc(db, "adverts", advertId); // Użyj ID do odnalezienia dokumentu w Firebase
+        const advertDoc = await getDoc(advertDocRef);
+        if (advertDoc.exists()) {
+          setAdvertData(advertDoc.data());
+        } else {
+          console.error("Document does not exist");
         }
-      };
-      fetchAdvertDetails();
-    }
+      } catch (err) {
+        console.error("Error fetching: ", err);
+      }
+    };
+    fetchAdvertDetails();
   }, [advertId]);
-  const showDoc = () => {
-    console.log(doc(db, "adverts", advertId));
-  };
+
   return (
     <div className={styles.infoCar}>
       <p className={styles.title}>Details</p>
-      <button onClick={showDoc}>click</button>
       <dl>
         <dt>Vehicle brand</dt>
         <dd>{advertData.brand}</dd>

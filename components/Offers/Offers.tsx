@@ -5,27 +5,18 @@ import styles from "./offers.module.css";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Filters from "../filters/Filters";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "@/firebase";
-
+import { fetchAdverts } from "@/api/getAdvertDetails";
 export default function Offers() {
   const [advertData, setAdvertData] = useState<any[]>([]);
 
-  const fetchAdverts = async () => {
-    try {
-      const querySnapshot = await getDocs(collection(db, "adverts"));
-      const adverts = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setAdvertData(adverts);
-    } catch (error) {
-      console.error("Błąd przy pobieraniu ogłoszeń: ", error);
-    }
-  };
   useEffect(() => {
-    fetchAdverts();
+    const fetchOffers = async () => {
+      const adverts = await fetchAdverts();
+      setAdvertData(adverts);
+    };
+    fetchOffers();
   }, []);
+
   if (advertData.length === 0) {
     return <p>Loading ...</p>;
   }
