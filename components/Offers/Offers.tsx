@@ -14,7 +14,10 @@ export default function Offers() {
   const fetchAdverts = async () => {
     try {
       const querySnapshot = await getDocs(collection(db, "adverts"));
-      const adverts = querySnapshot.docs.map((doc) => doc.data());
+      const adverts = querySnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
       setAdvertData(adverts);
     } catch (error) {
       console.error("Błąd przy pobieraniu ogłoszeń: ", error);
@@ -26,7 +29,9 @@ export default function Offers() {
   if (advertData.length === 0) {
     return <p>Loading ...</p>;
   }
-
+  const showDoc = () => {
+    console.log(advertData.map((car) => car.id));
+  };
   return (
     <div className={styles.div}>
       <h2>What you're looking for?</h2>
@@ -46,12 +51,14 @@ export default function Offers() {
                       {post.generation ? post.generation.split(" ")[0] : ""}{" "}
                       {post.version}
                     </p>
+                    <p>{post.id}</p>
                   </div>
                 </div>
               </Link>
             </li>
           ))}
         </ul>
+        <button onClick={showDoc}>click</button>
       </div>
     </div>
   );

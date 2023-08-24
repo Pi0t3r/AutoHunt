@@ -1,36 +1,35 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CarDetails.module.css";
-import { collection, getDocs } from "firebase/firestore";
+import { getDoc, doc } from "firebase/firestore";
 import { db } from "@/firebase";
 
 interface CarDetailsProps {
-  carId: number;
+  advertId: string | string[] | undefined;
 }
-const CarDetails: React.FC<CarDetailsProps> = ({ carId }) => {
-  const [advertData, setAdvertData] = useState<any[]>([]);
 
-  const fetchAdvert = async () => {
-    try {
-      const querySnapshot = await getDocs(collection(db, "adverts"));
-      const adverts = querySnapshot.docs.map((doc) => doc.data());
-      setAdvertData(adverts);
-    } catch (error) {
-      console.error("Błąd przy pobieraniu ogłoszeń: ", error);
-    }
-  };
+const CarDetails: React.FC<CarDetailsProps> = ({ advertId }) => {
+  const [advertData, setAdvertData] = useState<any | null>(null);
+
   useEffect(() => {
-    fetchAdvert();
-  }, []);
-  if (advertData.length === 0) {
-    return <p>Loading...</p>;
-  }
-  const advert = advertData.find((advert) => advert.id === carId);
-  
-  if (!advert) {
-    return <p>Advertisement not found</p>;
-  }
+    if (typeof advertId === "string") {
+      const fetchAdvertDetails = async () => {
+        try {
+          const advertDocRef = doc(db, "adverts", advertId);
+          const advertDoc = await getDoc(advertDocRef);
+          if (advertDoc.exists()) {
+            setAdvertData(advertDoc.data());
+          } else {
+            console.log("Document does not exists");
+          }
+        } catch (err) {
+          console.error("My error: ", err);
+        }
+      };
+      fetchAdvertDetails();
+    }
+  }, [advertId]);
   const showDoc = () => {
-    console.log(advertData.find((advert) => advert.id === carId))
+    console.log(doc(db, "adverts", advertId));
   };
   return (
     <div className={styles.infoCar}>
@@ -38,19 +37,19 @@ const CarDetails: React.FC<CarDetailsProps> = ({ carId }) => {
       <button onClick={showDoc}>click</button>
       <dl>
         <dt>Vehicle brand</dt>
-        <dd>{advert.brand}</dd>
+        <dd>{advertData.brand}</dd>
 
         <dt>Vehicle model</dt>
-        <dd>{advert.model}</dd>
+        <dd>{advertData.model}</dd>
 
         <dt>Vehicle generation</dt>
-        <dd>{advert.generation}</dd>
+        <dd>{advertData.generation}</dd>
 
         <dt>Version</dt>
-        <dd>{advert.version}</dd>
+        <dd>{advertData.version}</dd>
 
         <dt>Engine</dt>
-        <dd>{advert.engine}</dd>
+        <dd>{advertData.engine}</dd>
       </dl>
     </div>
   );
