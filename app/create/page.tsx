@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/firebase";
 import { Select } from "../../components/select/Select";
-import { body, fuelOptions, options } from "../../data/cars";
+import { body, fuelOptions, options, drive, gearbox } from "../../data/cars";
 import Link from "next/link";
 type SelectOptions = {
   value?: string | undefined;
@@ -42,7 +42,7 @@ export default function CreateAdvert() {
     firstRegister: "",
     vin: "",
     gearbox: "",
-    price: 0,
+    price: "",
   });
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -73,6 +73,12 @@ export default function CreateAdvert() {
     undefined
   );
   const [selectedEngine, setSelectedEngine] = useState<
+    SelectOptions | undefined
+  >(undefined);
+  const [selectedDrive, setSelectedDrive] = useState<SelectOptions | undefined>(
+    undefined
+  );
+  const [selectedGearbox, setSelectedGearbox] = useState<
     SelectOptions | undefined
   >(undefined);
 
@@ -185,12 +191,56 @@ export default function CreateAdvert() {
     setFormData((prevData) => ({ ...prevData, engine: engine?.value || "" }));
     setSelectedEngine(engine);
   };
+  const handleYearbookChange = (event) => {
+    setFormData((prevData) => ({ ...prevData, yearbook: event.target.value }));
+  };
+
+  const handleMileageChange = (event) => {
+    setFormData((prevData) => ({ ...prevData, mileage: event.target.value }));
+  };
+
+  const handleFirstRegisterChange = (event) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      firstRegister: event.target.value,
+    }));
+  };
+
+  const handleVinChange = (event) => {
+    setFormData((prevData) => ({ ...prevData, vin: event.target.value }));
+  };
+
+  const handleGearboxChange = (gearbox: SelectOptions | undefined) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      gearbox: gearbox?.value || "",
+    }));
+    setSelectedGearbox(gearbox);
+  };
+
+  const handleDriveChange = (drive: SelectOptions | undefined) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      drive: drive?.value || "",
+    }));
+    setSelectedDrive(drive);
+  };
+
+  const handlePriceChange = (event) => {
+    const value = event.target.value;
+    setFormData((prevData) => ({
+      ...prevData,
+      price: value !== "" ? parseFloat(value) : "",
+    }));
+  };
+  
   const Result = () => {
     return (
       <p>
         {selectedBrand?.value} {selectedModel?.value}{" "}
         {selectedGeneration?.value} {selectedVersion?.value}{" "}
-        {selectedEngine?.value}
+        {selectedEngine?.value} {selectedDrive?.value} {selectedGearbox?.value}{" "}
+        {formData.price}
       </p>
     );
   };
@@ -245,8 +295,63 @@ export default function CreateAdvert() {
           filter="Fuel type"
           disabled={selectedEngine?.value !== undefined}
         />
+        <Select
+          options={drive}
+          value={selectedDrive}
+          onChange={handleDriveChange}
+          filter="Drive"
+        />
+
+        <Select
+          options={gearbox}
+          value={selectedGearbox}
+          onChange={handleGearboxChange}
+          filter="Gearbox"
+        />
+        <label htmlFor="yearbook">
+          Yearbook:
+          <input
+            type="number"
+            id="yearbook"
+            value={formData.yearbook}
+            onChange={handleYearbookChange}
+          />
+        </label>
+        <label htmlFor="mileage">
+          Mileage:
+          <input
+            type="number"
+            id="mileage"
+            value={formData.mileage}
+            onChange={handleMileageChange}
+          />
+        </label>
+        <label htmlFor="firstRegister">
+          First Register:
+          <input
+            type="text"
+            id="firstRegister"
+            value={formData.firstRegister}
+            onChange={handleFirstRegisterChange}
+          />
+        </label>
+        <label htmlFor="vin">
+          VIN:
+          <input
+            type="text"
+            id="vin"
+            value={formData.vin}
+            onChange={handleVinChange}
+          />
+        </label>
         <label htmlFor="price">
-          <input type="number" placeholder="Price" />
+          Price:
+          <input
+            type="number"
+            id="price"
+            value={formData.price}
+            onChange={handlePriceChange}
+          />
         </label>
         <p>
           Wystawiasz ogłoszenie o samochód: <Result />

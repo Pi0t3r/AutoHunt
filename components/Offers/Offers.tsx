@@ -20,11 +20,6 @@ export default function Offers() {
   if (advertData.length === 0) {
     return <p>Loading ...</p>;
   }
-  const showDoc = () => {
-    const target = "NTmONBRAgypKrEW1BT3d";
-    console.log(advertData.map((car) => car.id));
-    console.log(advertData.find((car) => car.id === target));
-  };
   return (
     <div className={styles.div}>
       <h2>What you're looking for?</h2>
@@ -44,14 +39,13 @@ export default function Offers() {
                       {post.generation ? post.generation.split(" ")[0] : ""}{" "}
                       {post.version}
                     </p>
-                    <p>{post.id}</p>
+                    <p>{post.price}</p>
                   </div>
                 </div>
               </Link>
             </li>
           ))}
         </ul>
-        <button onClick={showDoc}>click</button>
       </div>
     </div>
   );

@@ -15,10 +15,17 @@ export const fuelOptions = [
 ];
 
 export const drive = [
-  {value:"4x4"},
-  
-]
+  { value: "4x4 (automatically included)" },
+  { value: "4x4 (manually included)" },
+  { value: "4x4 (permanent)" },
+  { value: "RWD" },
+  { value: "FWD" },
+];
 
+export const gearbox = [
+  {value:"Automatic"},
+  {value:"Manual"}
+]
 export const options = [
   {
     value: "Audi",
