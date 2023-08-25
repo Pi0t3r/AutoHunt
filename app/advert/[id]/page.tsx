@@ -10,12 +10,9 @@ import Banner from "@/components/banner/Banner";
 import CarDetails from "@/components/carDetails/CarDetails";
 import SellerDetails from "@/components/sellerDetails/SellerDetails";
 import ReportForm from "@/components/reportForm/ReportForm";
-import { useRouter } from "next/router";
 
 function Advert() {
   const [reportVisible, setReportVisible] = useState(false);
-  const router = useRouter(); 
-  const { id } = router.query;
   const handleReportClick = () => {
     setReportVisible(true);
   };
@@ -30,7 +27,7 @@ function Advert() {
       <div className={styles.offer}>
         {/* <Banner carImages={car?.images} /> */}
 
-        <CarDetails advertId={id as string}/>
+        <CarDetails />
 
         {/* <SellerDetails
             car={car}

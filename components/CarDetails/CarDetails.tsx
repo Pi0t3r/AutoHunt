@@ -3,16 +3,12 @@ import styles from "./CarDetails.module.css";
 import { getDoc, doc, collection } from "firebase/firestore";
 import { db } from "@/firebase";
 
-interface CarDetailsProps {
-  advertId: string | string[] | undefined;
-}
-
-const CarDetails: React.FC<CarDetailsProps> = ({ advertId }) => {
+const CarDetails = () => {
   const [advertData, setAdvertData] = useState<any>(null);
   useEffect(() => {
     const fetchAdvertDetails = async () => {
       try {
-        const advertDocRef = doc(db, "adverts", advertId); // Użyj ID do odnalezienia dokumentu w Firebase
+        const advertDocRef = doc(db, "adverts");
         const advertDoc = await getDoc(advertDocRef);
         if (advertDoc.exists()) {
           setAdvertData(advertDoc.data());
@@ -24,7 +20,7 @@ const CarDetails: React.FC<CarDetailsProps> = ({ advertId }) => {
       }
     };
     fetchAdvertDetails();
-  }, [advertId]);
+  }, []);
 
   return (
     <div className={styles.infoCar}>
