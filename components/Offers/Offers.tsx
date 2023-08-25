@@ -21,7 +21,9 @@ export default function Offers() {
     return <p>Loading ...</p>;
   }
   const showDoc = () => {
+    const target = "NTmONBRAgypKrEW1BT3d";
     console.log(advertData.map((car) => car.id));
+    console.log(advertData.find((car) => car.id === target));
   };
   return (
     <div className={styles.div}>

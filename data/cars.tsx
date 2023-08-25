@@ -14,6 +14,11 @@ export const fuelOptions = [
   { value: "LPG" },
 ];
 
+export const drive = [
+  {value:"4x4"},
+  
+]
+
 export const options = [
   {
     value: "Audi",

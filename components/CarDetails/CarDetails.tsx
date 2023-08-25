@@ -1,45 +1,38 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CarDetails.module.css";
-import { getDoc, doc, collection } from "firebase/firestore";
-import { db } from "@/firebase";
-
+import { useParams } from "next/navigation";
+import { fetchAdverts } from "@/api/getAdvertDetails";
 const CarDetails = () => {
-  const [advertData, setAdvertData] = useState<any>(null);
+  const [advertData, setAdvertData] = useState<any[]>([]);
+  const params = useParams();
   useEffect(() => {
-    const fetchAdvertDetails = async () => {
-      try {
-        const advertDocRef = doc(db, "adverts");
-        const advertDoc = await getDoc(advertDocRef);
-        if (advertDoc.exists()) {
-          setAdvertData(advertDoc.data());
-        } else {
-          console.error("Document does not exist");
-        }
-      } catch (err) {
-        console.error("Error fetching: ", err);
-      }
+    const fetchOffers = async () => {
+      const adverts = await fetchAdverts();
+      setAdvertData(adverts);
     };
-    fetchAdvertDetails();
+    fetchOffers();
   }, []);
+
+  if (advertData.length === 0) {
+    return <p>Loading ...</p>;
+  }
+  const showData = advertData.find((car) => car.id === params.id)
 
   return (
     <div className={styles.infoCar}>
       <p className={styles.title}>Details</p>
+      {/* <button onClick={showDoc}>click me</button> */}
       <dl>
-        <dt>Vehicle brand</dt>
-        <dd>{advertData.brand}</dd>
-
-        <dt>Vehicle model</dt>
-        <dd>{advertData.model}</dd>
-
-        <dt>Vehicle generation</dt>
-        <dd>{advertData.generation}</dd>
-
-        <dt>Version</dt>
-        <dd>{advertData.version}</dd>
-
-        <dt>Engine</dt>
-        <dd>{advertData.engine}</dd>
+        <dt>Vehicle Brand</dt>
+        <dd>{showData.brand}</dd>
+        <dt>Vehicle Model</dt>
+        <dd>{showData.model}</dd>
+        <dt>Vehicle Generation</dt>
+        <dd>{showData.generation}</dd>
+        <dt>Vehicle Version</dt>
+        <dd>{showData.version}</dd>
+        <dt>Vehicle Engine</dt>
+        <dd>{showData.engine}</dd>
       </dl>
     </div>
   );

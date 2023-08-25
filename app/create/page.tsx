@@ -36,6 +36,13 @@ export default function CreateAdvert() {
     generation: "",
     version: "",
     engine: "",
+    yearbook: "",
+    mileage: "",
+    drive: "",
+    firstRegister: "",
+    vin: "",
+    gearbox: "",
+    price: 0,
   });
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -238,6 +245,9 @@ export default function CreateAdvert() {
           filter="Fuel type"
           disabled={selectedEngine?.value !== undefined}
         />
+        <label htmlFor="price">
+          <input type="number" placeholder="Price" />
+        </label>
         <p>
           Wystawiasz ogłoszenie o samochód: <Result />
         </p>
