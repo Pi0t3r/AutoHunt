@@ -39,9 +39,11 @@ npm run dev
 
 ## Planned functions
 
-- Adding and managing car ads
-- Improving the appearance and user interface
+- Improved appearance and user interface
 - Implementation of additional filters for search results
+- Deleting ads and editing them
+- View of the cars on display
+- Possibility to add a photo of the cars
 
 ## License
 
@@ -49,8 +51,8 @@ The Autohunt project is not released under any license.
 
 ## Known problems
 
-- No function to add new car ads
-- Currently lack of proper design and user interface
+- Lack of ability to insert photos of cars
+- Currently lacking a proper design and user interface
 
 ## Contact
 
