@@ -1,33 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/firebase";
-import { Select } from "../../components/select/Select";
+import { Select, SelectOption } from "../../components/select/Select";
 import { body, fuelOptions, options, drive, gearbox } from "../../data/cars";
 import Link from "next/link";
-type SelectOptions = {
-  value?: string | undefined;
-  brand?: SelectOptions[] | string;
-  model?: SelectOptions[] | string;
-  generation?: SelectOptions[] | string;
-  version?: SelectOptions[] | string;
-  body?: SelectOptions[] | string;
-  yearbook?: SelectOptions[] | number;
-  mileage?: SelectOptions[] | number;
-  engine?: SelectOptions[] | string;
-  gearbook?: SelectOptions[] | string;
-  drive?: SelectOptions[] | string;
-  fuelType?: SelectOptions[] | string;
-  damaged?: SelectOptions[] | boolean;
-  firstRegistration?: string;
-  vin?: SelectOptions[] | string;
-  status?: SelectOptions[] | string;
-  price?: SelectOptions[] | number;
-  file?: SelectOptions[] | string;
-  dealer?: SelectOptions[] | string;
-  phone?: SelectOptions[] | string;
-  location?: SelectOptions[] | string;
-};
 
 export default function CreateAdvert() {
   const [formData, setFormData] = useState({
@@ -44,45 +21,47 @@ export default function CreateAdvert() {
     gearbox: "",
     price: "",
   });
-  const handleSubmit = async (event) => {
+  const [advertAdded, setAdvertAdded] = useState(false);
+  const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
     try {
       const advertData = { ...formData };
       const advertRef = await addDoc(collection(db, "adverts"), advertData);
       console.log("Ogłoszenie dodane z ID: ", advertRef.id);
+      setAdvertAdded(true);
     } catch (error) {
       console.error("Błąd przy dodawaniu ogłoszenia: ", error);
     }
   };
-  const [selectedBody, setSelectedBody] = useState<SelectOptions | undefined>(
+  const [selectedBody, setSelectedBody] = useState<SelectOption | undefined>(
     undefined
   );
-  const [selectedBrand, setSelectedBrand] = useState<SelectOptions | undefined>(
+  const [selectedBrand, setSelectedBrand] = useState<SelectOption | undefined>(
     undefined
   );
-  const [selectedModel, setSelectedModel] = useState<SelectOptions | undefined>(
+  const [selectedModel, setSelectedModel] = useState<SelectOption | undefined>(
     undefined
   );
   const [selectedGeneration, setSelectedGeneration] = useState<
-    SelectOptions | undefined
+    SelectOption | undefined
   >(undefined);
   const [selectedVersion, setSelectedVersion] = useState<
-    SelectOptions | undefined
+    SelectOption | undefined
   >(undefined);
-  const [selectedFuel, setSelectedFuel] = useState<SelectOptions | undefined>(
+  const [selectedFuel, setSelectedFuel] = useState<SelectOption | undefined>(
     undefined
   );
   const [selectedEngine, setSelectedEngine] = useState<
-    SelectOptions | undefined
+    SelectOption | undefined
   >(undefined);
-  const [selectedDrive, setSelectedDrive] = useState<SelectOptions | undefined>(
+  const [selectedDrive, setSelectedDrive] = useState<SelectOption | undefined>(
     undefined
   );
   const [selectedGearbox, setSelectedGearbox] = useState<
-    SelectOptions | undefined
+    SelectOption | undefined
   >(undefined);
 
-  const getModelOptions = (): SelectOptions[] => {
+  const getModelOptions = (): SelectOption[] => {
     if (selectedBrand && selectedBrand.value) {
       const brand = options.find(
         (option) => option.value === selectedBrand.value
@@ -92,7 +71,7 @@ export default function CreateAdvert() {
     return [];
   };
 
-  const getGenerationOption = (): SelectOptions[] => {
+  const getGenerationOption = (): SelectOption[] => {
     if (selectedModel && selectedModel.value) {
       const brand = options.find(
         (option) => option.value === selectedBrand?.value
@@ -107,7 +86,7 @@ export default function CreateAdvert() {
     return [];
   };
 
-  const getVersionOption = (): SelectOptions[] => {
+  const getVersionOption = (): SelectOption[] => {
     if (selectedGeneration && selectedGeneration.value) {
       const brand = options.find(
         (option) => option.value === selectedBrand?.value
@@ -127,7 +106,7 @@ export default function CreateAdvert() {
     return [];
   };
 
-  const getEngineOption = (): SelectOptions[] => {
+  const getEngineOption = (): SelectOption[] => {
     if (selectedVersion && selectedVersion.value) {
       const brand = options.find(
         (option) => option.value === selectedBrand?.value
@@ -152,7 +131,7 @@ export default function CreateAdvert() {
     return [];
   };
 
-  const handleBrandChange = (brand: SelectOptions | undefined) => {
+  const handleBrandChange = (brand: SelectOption | undefined) => {
     setFormData((prevData) => ({ ...prevData, brand: brand?.value || "" }));
     setSelectedBrand(brand);
     setSelectedModel(undefined);
@@ -160,20 +139,20 @@ export default function CreateAdvert() {
     setSelectedVersion(undefined);
     setSelectedEngine(undefined);
   };
-  const handleModelChange = (model: SelectOptions | undefined) => {
+  const handleModelChange = (model: SelectOption | undefined) => {
     setFormData((prevData) => ({ ...prevData, model: model?.value || "" }));
     setSelectedModel(model);
     setSelectedGeneration(undefined);
     setSelectedVersion(undefined);
     setSelectedEngine(undefined);
   };
-  const handleBodyChange = (selectedBody: SelectOptions | undefined) => {
+  const handleBodyChange = (selectedBody: SelectOption | undefined) => {
     setSelectedBody(selectedBody);
   };
-  const handleFuelChange = (selectedFuel: SelectOptions | undefined) => {
+  const handleFuelChange = (selectedFuel: SelectOption | undefined) => {
     setSelectedFuel(selectedFuel);
   };
-  const handleGenerationChange = (generation: SelectOptions | undefined) => {
+  const handleGenerationChange = (generation: SelectOption | undefined) => {
     setFormData((prevData) => ({
       ...prevData,
       generation: generation?.value || "",
@@ -182,35 +161,35 @@ export default function CreateAdvert() {
     setSelectedVersion(undefined);
     setSelectedEngine(undefined);
   };
-  const handleVersionChange = (version: SelectOptions | undefined) => {
+  const handleVersionChange = (version: SelectOption | undefined) => {
     setFormData((prevData) => ({ ...prevData, version: version?.value || "" }));
     setSelectedVersion(version);
     setSelectedEngine(undefined);
   };
-  const handleEngineChange = (engine: SelectOptions | undefined) => {
+  const handleEngineChange = (engine: SelectOption | undefined) => {
     setFormData((prevData) => ({ ...prevData, engine: engine?.value || "" }));
     setSelectedEngine(engine);
   };
-  const handleYearbookChange = (event) => {
+  const handleYearbookChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFormData((prevData) => ({ ...prevData, yearbook: event.target.value }));
   };
 
-  const handleMileageChange = (event) => {
+  const handleMileageChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFormData((prevData) => ({ ...prevData, mileage: event.target.value }));
   };
 
-  const handleFirstRegisterChange = (event) => {
+  const handleFirstRegisterChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFormData((prevData) => ({
       ...prevData,
       firstRegister: event.target.value,
     }));
   };
 
-  const handleVinChange = (event) => {
+  const handleVinChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFormData((prevData) => ({ ...prevData, vin: event.target.value }));
   };
 
-  const handleGearboxChange = (gearbox: SelectOptions | undefined) => {
+  const handleGearboxChange = (gearbox: SelectOption | undefined) => {
     setFormData((prevData) => ({
       ...prevData,
       gearbox: gearbox?.value || "",
@@ -218,7 +197,7 @@ export default function CreateAdvert() {
     setSelectedGearbox(gearbox);
   };
 
-  const handleDriveChange = (drive: SelectOptions | undefined) => {
+  const handleDriveChange = (drive: SelectOption | undefined) => {
     setFormData((prevData) => ({
       ...prevData,
       drive: drive?.value || "",
@@ -226,23 +205,38 @@ export default function CreateAdvert() {
     setSelectedDrive(drive);
   };
 
-  const handlePriceChange = (event) => {
+  const handlePriceChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setFormData((prevData) => ({
       ...prevData,
       price: value !== "" ? parseFloat(value) : "",
     }));
   };
-  
+
   const Result = () => {
-    return (
-      <p>
-        {selectedBrand?.value} {selectedModel?.value}{" "}
-        {selectedGeneration?.value} {selectedVersion?.value}{" "}
-        {selectedEngine?.value} {selectedDrive?.value} {selectedGearbox?.value}{" "}
-        {formData.price}
-      </p>
-    );
+    if (advertAdded) {
+      return <p>Ogłoszenie zostało dodane</p>;
+    } else {
+      return (
+        <p>
+          {selectedBrand?.value} {selectedModel?.value}{" "}
+          {selectedGeneration?.value} {selectedVersion?.value}{" "}
+          {selectedEngine?.value} {selectedDrive?.value}{" "}
+          {selectedGearbox?.value} {formData.price}
+        </p>
+      );
+    }
+  };
+  const clearData = () => {
+    setSelectedBrand(undefined);
+    setSelectedDrive(undefined);
+    setSelectedModel(undefined);
+    setSelectedEngine(undefined);
+    setSelectedFuel(undefined);
+    setSelectedGearbox(undefined);
+    setSelectedGeneration(undefined);
+    setSelectedBody(undefined);
+    setSelectedVersion(undefined);
   };
   return (
     <div>
@@ -356,7 +350,9 @@ export default function CreateAdvert() {
         <p>
           Wystawiasz ogłoszenie o samochód: <Result />
         </p>
-        <button type="submit">Wystaw</button>
+        <button onClick={clearData} type="submit">
+          Display
+        </button>
       </form>
     </div>
   );

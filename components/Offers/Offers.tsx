@@ -25,7 +25,6 @@ export default function Offers() {
       <h2>What you're looking for?</h2>
       <div>
         <Filters />
-        <Link href={"/create"}>Add new Advert</Link>
       </div>
       <div className={styles.offers}>
         <ul>

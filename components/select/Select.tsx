@@ -1,7 +1,7 @@
 import styles from "./select.module.css";
 import React, { useState, useEffect } from "react";
 
-type SelectOption = {
+export type SelectOption = {
   value: string;
 };
 
@@ -48,7 +48,7 @@ export function Select({
       <span className={styles.value}>{value?.value}</span>
       <button
         onClick={(e) => {
-          e.stopPropagation();
+          e.preventDefault();
           clearOption();
         }}
         className={styles["clear-btn"]}
