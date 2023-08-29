@@ -4,28 +4,14 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "@/firebase";
 import { body, fuelOptions, options } from "../../data/cars";
 import styles from "../offers/offers.module.css";
-export type SelectOption = {
+type SelectOption = {
   value: string;
   brand?: SelectOption[] | undefined;
   models?: SelectOption[] | undefined;
   generations?: SelectOption[] | undefined;
   versions?: SelectOption[] | undefined;
   body?: SelectOption[] | undefined;
-  yearbook?: SelectOption[] | undefined;
-  mileage?: SelectOption[] | undefined;
   engine?: SelectOption[] | undefined;
-  gearbook?: SelectOption[] | undefined;
-  drive?: SelectOption[] | undefined;
-  fuelType?: SelectOption[] | undefined;
-  damaged?: SelectOption[] | undefined;
-  firstRegistration?: undefined;
-  vin?: SelectOption[] | undefined;
-  status?: SelectOption[] | undefined;
-  price?: SelectOption[] | undefined;
-  file?: SelectOption[] | undefined;
-  dealer?: SelectOption[] | undefined;
-  phone?: SelectOption[] | undefined;
-  location?: SelectOption[] | undefined;
 };
 
 export default function Filters() {

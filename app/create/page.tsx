@@ -5,8 +5,11 @@ import { db } from "@/firebase";
 import { Select, SelectOption } from "../../components/select/Select";
 import { body, fuelOptions, options, drive, gearbox } from "../../data/cars";
 import Link from "next/link";
+import useUserData from "@/useUserData";
 
 export default function CreateAdvert() {
+  const { userData } = useUserData();
+  const { userName, userSurname, userMail } = userData;
   const [formData, setFormData] = useState({
     brand: "",
     model: "",
@@ -20,6 +23,10 @@ export default function CreateAdvert() {
     vin: "",
     gearbox: "",
     price: "",
+    phone: "",
+    sellerName: "",
+    sellerSurname: "",
+    sellerContact: "",
   });
   const [advertAdded, setAdvertAdded] = useState(false);
   const handleSubmit = async (event: { preventDefault: () => void }) => {
@@ -60,7 +67,10 @@ export default function CreateAdvert() {
   const [selectedGearbox, setSelectedGearbox] = useState<
     SelectOption | undefined
   >(undefined);
-
+  const [phone, setPhone] = useState<SelectOption | undefined>(undefined);
+  const [nameAndSurname, setNameAndSurname] = useState<
+    SelectOption | undefined
+  >(undefined);
   const getModelOptions = (): SelectOption[] => {
     if (selectedBrand && selectedBrand.value) {
       const brand = options.find(
@@ -212,7 +222,22 @@ export default function CreateAdvert() {
       price: value !== "" ? parseFloat(value) : "",
     }));
   };
-
+  const handlePhoneChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setFormData((prevData) => ({
+      ...prevData,
+      phone: value || "",
+    }));
+    setPhone(value);
+  };
+  const handleUserInfoChange = () => {
+    setFormData((prevData) => ({
+      ...prevData,
+      sellerName: userName,
+      sellerSurname: userSurname,
+      sellerContact: userMail,
+    }));
+  };
   const Result = () => {
     if (advertAdded) {
       return <p>Ogłoszenie zostało dodane</p>;
@@ -237,6 +262,7 @@ export default function CreateAdvert() {
     setSelectedGeneration(undefined);
     setSelectedBody(undefined);
     setSelectedVersion(undefined);
+    handleUserInfoChange();
   };
   return (
     <div>
@@ -347,8 +373,17 @@ export default function CreateAdvert() {
             onChange={handlePriceChange}
           />
         </label>
+        <label htmlFor="phone">
+          Your phone number:
+          <input
+            type="tel"
+            id="phone"
+            value={formData.phone}
+            onChange={handlePhoneChange}
+          />
+        </label>
         <p>
-          Wystawiasz ogłoszenie o samochód: <Result />
+          {userName} {userSurname} You place an ad for a car: <Result />
         </p>
         <button onClick={clearData} type="submit">
           Display

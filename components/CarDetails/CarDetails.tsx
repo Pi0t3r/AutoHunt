@@ -16,12 +16,11 @@ const CarDetails = () => {
   if (advertData.length === 0) {
     return <p>Loading ...</p>;
   }
-  const showData = advertData.find((car) => car.id === params.id)
+  const showData = advertData.find((car) => car.id === params.id);
 
   return (
     <div className={styles.infoCar}>
       <p className={styles.title}>Details</p>
-      {/* <button onClick={showDoc}>click me</button> */}
       <dl>
         <dt>Vehicle Brand</dt>
         <dd>{showData.brand}</dd>

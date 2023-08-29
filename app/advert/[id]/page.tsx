@@ -29,11 +29,12 @@ function Advert() {
 
         <CarDetails />
 
-        {/* <SellerDetails
-            car={car}
-            formattedNumber={formattedNumber}
-            handleReportClick={handleReportClick}
-          /> */}
+        <SellerDetails />
+        <div>
+          {/* <button className={styles.report} onClick={handleReportClick}>
+        <BsFillFlagFill /> <span>Report </span>
+      </button> */}
+        </div>
       </div>
       {reportVisible && <ReportForm setReportVisible={setReportVisible} />}
     </div>
