@@ -3,10 +3,11 @@ import React, { ChangeEvent, useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/firebase";
 import { Select, SelectOption } from "../../components/select/Select";
-import { body, fuelOptions, options, drive, gearbox } from "../../data/cars";
+import { fuelOptions, options, drive, gearbox } from "../../data/cars";
 import Link from "next/link";
 import useUserData from "@/useUserData";
-
+import { BodySelect } from "@/components/Selects/BodySelect";
+import { BrandSelect } from "@/components/Selects/BrandSelect";
 export default function CreateAdvert() {
   const { userData } = useUserData();
   const { userName, userSurname, userMail } = userData;
@@ -30,20 +31,7 @@ export default function CreateAdvert() {
     sellerPlace: "",
   });
   const [advertAdded, setAdvertAdded] = useState(false);
-  const handleSubmit = async (event: { preventDefault: () => void }) => {
-    event.preventDefault();
-    try {
-      const advertData = { ...formData };
-      const advertRef = await addDoc(collection(db, "adverts"), advertData);
-      console.log("Ogłoszenie dodane z ID: ", advertRef.id);
-      setAdvertAdded(true);
-    } catch (error) {
-      console.error("Błąd przy dodawaniu ogłoszenia: ", error);
-    }
-  };
-  const [selectedBody, setSelectedBody] = useState<SelectOption | undefined>(
-    undefined
-  );
+
   const [selectedBrand, setSelectedBrand] = useState<SelectOption | undefined>(
     undefined
   );
@@ -68,10 +56,7 @@ export default function CreateAdvert() {
   const [selectedGearbox, setSelectedGearbox] = useState<
     SelectOption | undefined
   >(undefined);
-  const [phone, setPhone] = useState<SelectOption | undefined>(undefined);
-  const [nameAndSurname, setNameAndSurname] = useState<
-    SelectOption | undefined
-  >(undefined);
+  const [selectedImage, setSelectedImage] = useState<File[]>([]);
   const getModelOptions = (): SelectOption[] => {
     if (selectedBrand && selectedBrand.value) {
       const brand = options.find(
@@ -141,7 +126,17 @@ export default function CreateAdvert() {
     }
     return [];
   };
-
+  const handleSubmit = async (event: { preventDefault: () => void }) => {
+    event.preventDefault();
+    try {
+      const advertData = { ...formData };
+      const advertRef = await addDoc(collection(db, "adverts"), advertData);
+      console.log("Ogłoszenie dodane z ID: ", advertRef.id);
+      setAdvertAdded(true);
+    } catch (error) {
+      console.error("Błąd przy dodawaniu ogłoszenia: ", error);
+    }
+  };
   const handleBrandChange = (brand: SelectOption | undefined) => {
     setFormData((prevData) => ({ ...prevData, brand: brand?.value || "" }));
     setSelectedBrand(brand);
@@ -156,9 +151,6 @@ export default function CreateAdvert() {
     setSelectedGeneration(undefined);
     setSelectedVersion(undefined);
     setSelectedEngine(undefined);
-  };
-  const handleBodyChange = (selectedBody: SelectOption | undefined) => {
-    setSelectedBody(selectedBody);
   };
   const handleFuelChange = (selectedFuel: SelectOption | undefined) => {
     setSelectedFuel(selectedFuel);
@@ -250,12 +242,14 @@ export default function CreateAdvert() {
       return <p>Ogłoszenie zostało dodane</p>;
     } else {
       return (
-        <p>
-          {selectedBrand?.value} {selectedModel?.value}{" "}
-          {selectedGeneration?.value} {selectedVersion?.value}{" "}
-          {selectedEngine?.value} {selectedDrive?.value}{" "}
-          {selectedGearbox?.value} {formData.price}
-        </p>
+        <>
+          <p>
+            {selectedBrand?.value} {selectedModel?.value}{" "}
+            {selectedGeneration?.value} {selectedVersion?.value}{" "}
+            {selectedEngine?.value} {selectedDrive?.value}{" "}
+            {selectedGearbox?.value} {formData.price}
+          </p>
+        </>
       );
     }
   };
@@ -267,7 +261,6 @@ export default function CreateAdvert() {
     setSelectedFuel(undefined);
     setSelectedGearbox(undefined);
     setSelectedGeneration(undefined);
-    setSelectedBody(undefined);
     setSelectedVersion(undefined);
     handleUserInfoChange();
   };
@@ -278,19 +271,8 @@ export default function CreateAdvert() {
       </Link>
       <h3>Create new advert</h3>
       <form onSubmit={handleSubmit}>
-        <Select
-          options={body}
-          value={selectedBody}
-          onChange={handleBodyChange}
-          filter="Body"
-          disabled={selectedVersion?.value !== undefined}
-        />
-        <Select
-          options={options}
-          value={selectedBrand}
-          onChange={handleBrandChange}
-          filter="Brand"
-        />
+        <BodySelect />
+        <BrandSelect onChange={handleBrandChange} />
         <Select
           options={getModelOptions()}
           value={selectedModel}
@@ -320,7 +302,6 @@ export default function CreateAdvert() {
           value={selectedFuel}
           onChange={handleFuelChange}
           filter="Fuel type"
-          disabled={selectedEngine?.value !== undefined}
         />
         <Select
           options={drive}
