@@ -27,6 +27,7 @@ export default function CreateAdvert() {
     sellerName: "",
     sellerSurname: "",
     sellerContact: "",
+    sellerPlace: "",
   });
   const [advertAdded, setAdvertAdded] = useState(false);
   const handleSubmit = async (event: { preventDefault: () => void }) => {
@@ -219,16 +220,22 @@ export default function CreateAdvert() {
     const value = event.target.value;
     setFormData((prevData) => ({
       ...prevData,
-      price: value !== "" ? parseFloat(value) : "",
+      price: value,
     }));
   };
   const handlePhoneChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
     setFormData((prevData) => ({
       ...prevData,
-      phone: value || "",
+      phone: value,
     }));
-    setPhone(value);
+  };
+  const handlePlaceChange = (event: ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    setFormData((prevData) => ({
+      ...prevData,
+      sellerPlace: value,
+    }));
   };
   const handleUserInfoChange = () => {
     setFormData((prevData) => ({
@@ -328,58 +335,56 @@ export default function CreateAdvert() {
           onChange={handleGearboxChange}
           filter="Gearbox"
         />
-        <label htmlFor="yearbook">
+        <label>
           Yearbook:
           <input
             type="number"
-            id="yearbook"
             value={formData.yearbook}
             onChange={handleYearbookChange}
           />
         </label>
-        <label htmlFor="mileage">
+        <label>
           Mileage:
           <input
             type="number"
-            id="mileage"
             value={formData.mileage}
             onChange={handleMileageChange}
           />
         </label>
-        <label htmlFor="firstRegister">
+        <label>
           First Register:
           <input
             type="text"
-            id="firstRegister"
             value={formData.firstRegister}
             onChange={handleFirstRegisterChange}
           />
         </label>
-        <label htmlFor="vin">
+        <label>
           VIN:
-          <input
-            type="text"
-            id="vin"
-            value={formData.vin}
-            onChange={handleVinChange}
-          />
+          <input type="text" value={formData.vin} onChange={handleVinChange} />
         </label>
-        <label htmlFor="price">
+        <label>
           Price:
           <input
             type="number"
-            id="price"
             value={formData.price}
             onChange={handlePriceChange}
           />
         </label>
-        <label htmlFor="phone">
+        <label>
           Your phone number:
           <input
             type="tel"
-            id="phone"
             value={formData.phone}
             onChange={handlePhoneChange}
+          />
+        </label>
+        <label>
+          Place:
+          <input
+            type="text"
+            value={formData.sellerPlace}
+            onChange={handlePlaceChange}
           />
         </label>
         <p>
