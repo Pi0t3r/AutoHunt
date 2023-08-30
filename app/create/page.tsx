@@ -2,8 +2,8 @@
 import React, { ChangeEvent, useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/firebase";
-import { Select, SelectOption } from "../../components/select/Select";
-import { options, gearbox, drive } from "../../data/cars";
+import { SelectOption } from "../../components/select/Select";
+import { options } from "../../data/cars";
 import Link from "next/link";
 import useUserData from "@/useUserData";
 import { BodySelect } from "@/components/Selects/BodySelect";
@@ -11,6 +11,7 @@ import { BrandSelect } from "@/components/Selects/BrandSelect";
 import { FuelSelect } from "@/components/Selects/FuelSelect";
 import { MyInput } from "@/components/Inputs/MyInput";
 import { CustomSelect } from "@/components/Selects/CustomSelect";
+import { CarDataSelect } from "@/components/Selects/CarDataSelect";
 export default function CreateAdvert() {
   const { userData } = useUserData();
   const { userName, userSurname, userMail } = userData;
@@ -145,31 +146,6 @@ export default function CreateAdvert() {
     setSelectedVersion(undefined);
     setSelectedEngine(undefined);
   };
-  const handleModelChange = (model: SelectOption | undefined) => {
-    setFormData((prevData) => ({ ...prevData, model: model?.value || "" }));
-    setSelectedModel(model);
-    setSelectedGeneration(undefined);
-    setSelectedVersion(undefined);
-    setSelectedEngine(undefined);
-  };
-  const handleGenerationChange = (generation: SelectOption | undefined) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      generation: generation?.value || "",
-    }));
-    setSelectedGeneration(generation);
-    setSelectedVersion(undefined);
-    setSelectedEngine(undefined);
-  };
-  const handleVersionChange = (version: SelectOption | undefined) => {
-    setFormData((prevData) => ({ ...prevData, version: version?.value || "" }));
-    setSelectedVersion(version);
-    setSelectedEngine(undefined);
-  };
-  const handleEngineChange = (engine: SelectOption | undefined) => {
-    setFormData((prevData) => ({ ...prevData, engine: engine?.value || "" }));
-    setSelectedEngine(engine);
-  };
 
   const handleUserInfoChange = () => {
     setFormData((prevData) => ({
@@ -179,26 +155,28 @@ export default function CreateAdvert() {
       sellerContact: userMail,
     }));
   };
-  // const Result = () => {
-  //   if (advertAdded) {
-  //     return <p>Your ad has been added</p>;
-  //   } else {
-  //     return (
-  //       <>
-  //         <p>
-  //           {selectedBrand?.value} {selectedModel?.value}{" "}
-  //           {selectedGeneration?.value} {selectedVersion?.value}{" "}
-  //           {selectedEngine?.value} {selectedGearbox?.value} {formData.price}
-  //         </p>
-  //       </>
-  //     );
-  //   }
-  // };
+  const Result = () => {
+    if (advertAdded) {
+      return <p>Your ad has been added</p>;
+    } else {
+      return;
+      // (
+      //   <>
+      //     <p>
+      //       {selectedBrand?.value} {selectedModel?.value}{" "}
+      //       {selectedGeneration?.value} {selectedVersion?.value}{" "}
+      //       {selectedEngine?.value} {selectedGearbox?.value} {formData.price}
+      //     </p>
+      //   </>
+      // );
+    }
+  };
   const clearData = () => {
     setSelectedBrand(undefined);
     setSelectedModel(undefined);
     setSelectedEngine(undefined);
-
+    setSelectedDrive(undefined);
+    setSelectedGearbox(undefined);
     setSelectedGeneration(undefined);
     setSelectedVersion(undefined);
     handleUserInfoChange();
@@ -212,29 +190,59 @@ export default function CreateAdvert() {
       <form onSubmit={handleSubmit}>
         <BodySelect />
         <BrandSelect onChange={handleBrandChange} />
-        <Select
-          options={getModelOptions()}
-          value={selectedModel}
-          onChange={handleModelChange}
+        <CarDataSelect
           filter="Model"
+          value={selectedModel}
+          options={getModelOptions()}
+          onChange={(model: SelectOption | undefined) => {
+            setFormData((prevData) => ({
+              ...prevData,
+              model: model?.value || "",
+            }));
+            setSelectedModel(model);
+            setSelectedGeneration(undefined);
+            setSelectedVersion(undefined);
+            setSelectedEngine(undefined);
+          }}
         />
-        <Select
-          options={getGenerationOption()}
-          value={selectedGeneration}
-          onChange={handleGenerationChange}
+        <CarDataSelect
           filter="Generation"
+          value={selectedGeneration}
+          onChange={(generation: SelectOption | undefined) => {
+            setFormData((prevData) => ({
+              ...prevData,
+              generation: generation?.value || "",
+            }));
+            setSelectedGeneration(generation);
+            setSelectedVersion(undefined);
+            setSelectedEngine(undefined);
+          }}
+          options={getGenerationOption()}
         />
-        <Select
-          options={getVersionOption()}
-          value={selectedVersion}
-          onChange={handleVersionChange}
+        <CarDataSelect
           filter="Version"
+          value={selectedVersion}
+          options={getVersionOption()}
+          onChange={(version: SelectOption | undefined) => {
+            setFormData((prevData) => ({
+              ...prevData,
+              version: version?.value || "",
+            }));
+            setSelectedVersion(version);
+            setSelectedEngine(undefined);
+          }}
         />
-        <Select
-          options={getEngineOption()}
-          value={selectedEngine}
-          onChange={handleEngineChange}
+        <CarDataSelect
           filter="Engine"
+          value={selectedEngine}
+          options={getEngineOption()}
+          onChange={(engine: SelectOption | undefined) => {
+            setFormData((prevData) => ({
+              ...prevData,
+              engine: engine?.value || "",
+            }));
+            setSelectedEngine(engine);
+          }}
         />
         <FuelSelect />
         <CustomSelect
@@ -337,7 +345,7 @@ export default function CreateAdvert() {
           }}
         />
         <p>
-          {userName} {userSurname} You place an ad for a car:
+          {userName} {userSurname} You place an ad for a car: <Result />
         </p>
         <button onClick={clearData} type="submit">
           Display
