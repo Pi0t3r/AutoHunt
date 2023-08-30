@@ -3,15 +3,14 @@ import React, { ChangeEvent, useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/firebase";
 import { Select, SelectOption } from "../../components/select/Select";
-import { options, gearbox } from "../../data/cars";
+import { options, gearbox, drive } from "../../data/cars";
 import Link from "next/link";
 import useUserData from "@/useUserData";
 import { BodySelect } from "@/components/Selects/BodySelect";
 import { BrandSelect } from "@/components/Selects/BrandSelect";
 import { FuelSelect } from "@/components/Selects/FuelSelect";
-import { DriveSelect } from "@/components/Selects/DriveSelect";
-import { GearboxSelect } from "@/components/Selects/GearboxSelect";
-import { YearbookInput } from "@/components/Inputs/YearbookInput";
+import { MyInput } from "@/components/Inputs/MyInput";
+import { CustomSelect } from "@/components/Selects/CustomSelect";
 export default function CreateAdvert() {
   const { userData } = useUserData();
   const { userName, userSurname, userMail } = userData;
@@ -52,7 +51,6 @@ export default function CreateAdvert() {
   const [selectedEngine, setSelectedEngine] = useState<
     SelectOption | undefined
   >(undefined);
-
   const [selectedGearbox, setSelectedGearbox] = useState<
     SelectOption | undefined
   >(undefined);
@@ -173,42 +171,6 @@ export default function CreateAdvert() {
     setSelectedEngine(engine);
   };
 
-  const handleMileageChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setFormData((prevData) => ({ ...prevData, mileage: event.target.value }));
-  };
-
-  const handleFirstRegisterChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      firstRegister: event.target.value,
-    }));
-  };
-
-  const handleVinChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setFormData((prevData) => ({ ...prevData, vin: event.target.value }));
-  };
-
-  const handlePriceChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    setFormData((prevData) => ({
-      ...prevData,
-      price: value,
-    }));
-  };
-  const handlePhoneChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    setFormData((prevData) => ({
-      ...prevData,
-      phone: value,
-    }));
-  };
-  const handlePlaceChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    setFormData((prevData) => ({
-      ...prevData,
-      sellerPlace: value,
-    }));
-  };
   const handleUserInfoChange = () => {
     setFormData((prevData) => ({
       ...prevData,
@@ -217,26 +179,26 @@ export default function CreateAdvert() {
       sellerContact: userMail,
     }));
   };
-  const Result = () => {
-    if (advertAdded) {
-      return <p>Ogłoszenie zostało dodane</p>;
-    } else {
-      return (
-        <>
-          <p>
-            {selectedBrand?.value} {selectedModel?.value}{" "}
-            {selectedGeneration?.value} {selectedVersion?.value}{" "}
-            {selectedEngine?.value} {selectedGearbox?.value} {formData.price}
-          </p>
-        </>
-      );
-    }
-  };
+  // const Result = () => {
+  //   if (advertAdded) {
+  //     return <p>Your ad has been added</p>;
+  //   } else {
+  //     return (
+  //       <>
+  //         <p>
+  //           {selectedBrand?.value} {selectedModel?.value}{" "}
+  //           {selectedGeneration?.value} {selectedVersion?.value}{" "}
+  //           {selectedEngine?.value} {selectedGearbox?.value} {formData.price}
+  //         </p>
+  //       </>
+  //     );
+  //   }
+  // };
   const clearData = () => {
     setSelectedBrand(undefined);
     setSelectedModel(undefined);
     setSelectedEngine(undefined);
-    setSelectedGearbox(undefined);
+
     setSelectedGeneration(undefined);
     setSelectedVersion(undefined);
     handleUserInfoChange();
@@ -275,27 +237,25 @@ export default function CreateAdvert() {
           filter="Engine"
         />
         <FuelSelect />
-        <DriveSelect
-          value={selectedDrive}
-          onChange={(drive: SelectOption | undefined) => {
+        <CustomSelect
+          onChangeDrive={(drive: SelectOption | undefined) => {
             setFormData((prevData) => ({
               ...prevData,
               drive: drive?.value || "",
             }));
             setSelectedDrive(drive);
           }}
-        />
-        <GearboxSelect
-          value={selectedGearbox}
-          onChange={(gearbox: SelectOption | undefined) => {
+          onChangeGearbox={(gearbox: SelectOption | undefined) => {
             setFormData((prevData) => ({
               ...prevData,
               gearbox: gearbox?.value || "",
             }));
             setSelectedGearbox(gearbox);
           }}
+          valueDrive={selectedDrive}
+          valueGearbox={selectedGearbox}
         />
-        <YearbookInput
+        <MyInput
           value={formData.yearbook}
           onChange={(event: ChangeEvent<HTMLInputElement>) => {
             setFormData((prevData) => ({
@@ -303,53 +263,81 @@ export default function CreateAdvert() {
               yearbook: event.target.value,
             }));
           }}
+          type="number"
+          title="Yearbook"
         />
-        <label>
-          Mileage:
-          <input
-            type="number"
-            value={formData.mileage}
-            onChange={handleMileageChange}
-          />
-        </label>
-        <label>
-          First Register:
-          <input
-            type="text"
-            value={formData.firstRegister}
-            onChange={handleFirstRegisterChange}
-          />
-        </label>
-        <label>
-          VIN:
-          <input type="text" value={formData.vin} onChange={handleVinChange} />
-        </label>
-        <label>
-          Price:
-          <input
-            type="number"
-            value={formData.price}
-            onChange={handlePriceChange}
-          />
-        </label>
-        <label>
-          Your phone number:
-          <input
-            type="tel"
-            value={formData.phone}
-            onChange={handlePhoneChange}
-          />
-        </label>
-        <label>
-          Place:
-          <input
-            type="text"
-            value={formData.sellerPlace}
-            onChange={handlePlaceChange}
-          />
-        </label>
+        <MyInput
+          value={formData.mileage}
+          type="number"
+          title="Mileage"
+          onChange={(event: ChangeEvent<HTMLInputElement>) => {
+            setFormData((prevData) => ({
+              ...prevData,
+              mileage: event.target.value,
+            }));
+          }}
+        />
+        <MyInput
+          title="First Register"
+          type="text"
+          value={formData.firstRegister}
+          placeholder="e.g. 23/01/2023"
+          onChange={(event: ChangeEvent<HTMLInputElement>) => {
+            setFormData((prevData) => ({
+              ...prevData,
+              firstRegister: event.target.value,
+            }));
+          }}
+        />
+        <MyInput
+          title="VIN"
+          value={formData.vin}
+          onChange={(event: ChangeEvent<HTMLInputElement>) => {
+            setFormData((prevData) => ({
+              ...prevData,
+              vin: event.target.value,
+            }));
+          }}
+          type="text"
+        />
+        <MyInput
+          title="Price"
+          type="number"
+          value={formData.price}
+          onChange={(event: ChangeEvent<HTMLInputElement>) => {
+            const value = event.target.value;
+            setFormData((prevData) => ({
+              ...prevData,
+              price: value,
+            }));
+          }}
+        />
+        <MyInput
+          title="Your phone number"
+          type="tel"
+          value={formData.phone}
+          onChange={(event: ChangeEvent<HTMLInputElement>) => {
+            const value = event.target.value;
+            setFormData((prevData) => ({
+              ...prevData,
+              phone: value,
+            }));
+          }}
+        />
+        <MyInput
+          title="Place"
+          type="text"
+          value={formData.sellerPlace}
+          onChange={(event: ChangeEvent<HTMLInputElement>) => {
+            const value = event.target.value;
+            setFormData((prevData) => ({
+              ...prevData,
+              sellerPlace: value,
+            }));
+          }}
+        />
         <p>
-          {userName} {userSurname} You place an ad for a car: <Result />
+          {userName} {userSurname} You place an ad for a car:
         </p>
         <button onClick={clearData} type="submit">
           Display
