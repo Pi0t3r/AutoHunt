@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { drive } from "@/data/cars";
 import { Select, SelectOption } from "../select/Select";
 
-export const DriveSelect = () => {
-  const [selectedDrive, setSelectedDrive] = useState<SelectOption | undefined>(
-    undefined
-  );
+interface DriveSelectProps {
+  value: SelectOption | undefined;
+  onChange: (value: SelectOption | undefined) => void;
+}
 
-  const handleDriveChange = (drive: SelectOption | undefined) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      drive: drive?.value || "",
-    }));
-    setSelectedDrive(drive);
-  };
-  return <Select options={drive} filter="Drive" onChange={handleDriveChange} value={setSelectedDrive} />;
+export const DriveSelect: React.FC<DriveSelectProps> = ({
+  onChange,
+  value,
+}) => {
+  return (
+    <Select options={drive} filter="Drive" onChange={onChange} value={value} />
+  );
 };

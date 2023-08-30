@@ -3,12 +3,15 @@ import React, { ChangeEvent, useState } from "react";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "@/firebase";
 import { Select, SelectOption } from "../../components/select/Select";
-import { fuelOptions, options, drive, gearbox } from "../../data/cars";
+import { options, gearbox } from "../../data/cars";
 import Link from "next/link";
 import useUserData from "@/useUserData";
 import { BodySelect } from "@/components/Selects/BodySelect";
 import { BrandSelect } from "@/components/Selects/BrandSelect";
 import { FuelSelect } from "@/components/Selects/FuelSelect";
+import { DriveSelect } from "@/components/Selects/DriveSelect";
+import { GearboxSelect } from "@/components/Selects/GearboxSelect";
+import { YearbookInput } from "@/components/Inputs/YearbookInput";
 export default function CreateAdvert() {
   const { userData } = useUserData();
   const { userName, userSurname, userMail } = userData;
@@ -49,10 +52,13 @@ export default function CreateAdvert() {
   const [selectedEngine, setSelectedEngine] = useState<
     SelectOption | undefined
   >(undefined);
-  
+
   const [selectedGearbox, setSelectedGearbox] = useState<
     SelectOption | undefined
   >(undefined);
+  const [selectedDrive, setSelectedDrive] = useState<SelectOption | undefined>(
+    undefined
+  );
   const [selectedImage, setSelectedImage] = useState<File[]>([]);
   const getModelOptions = (): SelectOption[] => {
     if (selectedBrand && selectedBrand.value) {
@@ -166,9 +172,6 @@ export default function CreateAdvert() {
     setFormData((prevData) => ({ ...prevData, engine: engine?.value || "" }));
     setSelectedEngine(engine);
   };
-  const handleYearbookChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setFormData((prevData) => ({ ...prevData, yearbook: event.target.value }));
-  };
 
   const handleMileageChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFormData((prevData) => ({ ...prevData, mileage: event.target.value }));
@@ -184,16 +187,6 @@ export default function CreateAdvert() {
   const handleVinChange = (event: ChangeEvent<HTMLInputElement>) => {
     setFormData((prevData) => ({ ...prevData, vin: event.target.value }));
   };
-
-  const handleGearboxChange = (gearbox: SelectOption | undefined) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      gearbox: gearbox?.value || "",
-    }));
-    setSelectedGearbox(gearbox);
-  };
-
- 
 
   const handlePriceChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -233,8 +226,7 @@ export default function CreateAdvert() {
           <p>
             {selectedBrand?.value} {selectedModel?.value}{" "}
             {selectedGeneration?.value} {selectedVersion?.value}{" "}
-            {selectedEngine?.value}{" "}
-            {selectedGearbox?.value} {formData.price}
+            {selectedEngine?.value} {selectedGearbox?.value} {formData.price}
           </p>
         </>
       );
@@ -283,27 +275,35 @@ export default function CreateAdvert() {
           filter="Engine"
         />
         <FuelSelect />
-        <Select
-          options={drive}
+        <DriveSelect
           value={selectedDrive}
-          onChange={handleDriveChange}
-          filter="Drive"
+          onChange={(drive: SelectOption | undefined) => {
+            setFormData((prevData) => ({
+              ...prevData,
+              drive: drive?.value || "",
+            }));
+            setSelectedDrive(drive);
+          }}
         />
-
-        <Select
-          options={gearbox}
+        <GearboxSelect
           value={selectedGearbox}
-          onChange={handleGearboxChange}
-          filter="Gearbox"
+          onChange={(gearbox: SelectOption | undefined) => {
+            setFormData((prevData) => ({
+              ...prevData,
+              gearbox: gearbox?.value || "",
+            }));
+            setSelectedGearbox(gearbox);
+          }}
         />
-        <label>
-          Yearbook:
-          <input
-            type="number"
-            value={formData.yearbook}
-            onChange={handleYearbookChange}
-          />
-        </label>
+        <YearbookInput
+          value={formData.yearbook}
+          onChange={(event: ChangeEvent<HTMLInputElement>) => {
+            setFormData((prevData) => ({
+              ...prevData,
+              yearbook: event.target.value,
+            }));
+          }}
+        />
         <label>
           Mileage:
           <input
