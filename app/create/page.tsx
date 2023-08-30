@@ -8,6 +8,7 @@ import Link from "next/link";
 import useUserData from "@/useUserData";
 import { BodySelect } from "@/components/Selects/BodySelect";
 import { BrandSelect } from "@/components/Selects/BrandSelect";
+import { FuelSelect } from "@/components/Selects/FuelSelect";
 export default function CreateAdvert() {
   const { userData } = useUserData();
   const { userName, userSurname, userMail } = userData;
@@ -44,15 +45,11 @@ export default function CreateAdvert() {
   const [selectedVersion, setSelectedVersion] = useState<
     SelectOption | undefined
   >(undefined);
-  const [selectedFuel, setSelectedFuel] = useState<SelectOption | undefined>(
-    undefined
-  );
+
   const [selectedEngine, setSelectedEngine] = useState<
     SelectOption | undefined
   >(undefined);
-  const [selectedDrive, setSelectedDrive] = useState<SelectOption | undefined>(
-    undefined
-  );
+  
   const [selectedGearbox, setSelectedGearbox] = useState<
     SelectOption | undefined
   >(undefined);
@@ -131,7 +128,6 @@ export default function CreateAdvert() {
     try {
       const advertData = { ...formData };
       const advertRef = await addDoc(collection(db, "adverts"), advertData);
-      console.log("Ogłoszenie dodane z ID: ", advertRef.id);
       setAdvertAdded(true);
     } catch (error) {
       console.error("Błąd przy dodawaniu ogłoszenia: ", error);
@@ -151,9 +147,6 @@ export default function CreateAdvert() {
     setSelectedGeneration(undefined);
     setSelectedVersion(undefined);
     setSelectedEngine(undefined);
-  };
-  const handleFuelChange = (selectedFuel: SelectOption | undefined) => {
-    setSelectedFuel(selectedFuel);
   };
   const handleGenerationChange = (generation: SelectOption | undefined) => {
     setFormData((prevData) => ({
@@ -200,13 +193,7 @@ export default function CreateAdvert() {
     setSelectedGearbox(gearbox);
   };
 
-  const handleDriveChange = (drive: SelectOption | undefined) => {
-    setFormData((prevData) => ({
-      ...prevData,
-      drive: drive?.value || "",
-    }));
-    setSelectedDrive(drive);
-  };
+ 
 
   const handlePriceChange = (event: ChangeEvent<HTMLInputElement>) => {
     const value = event.target.value;
@@ -246,7 +233,7 @@ export default function CreateAdvert() {
           <p>
             {selectedBrand?.value} {selectedModel?.value}{" "}
             {selectedGeneration?.value} {selectedVersion?.value}{" "}
-            {selectedEngine?.value} {selectedDrive?.value}{" "}
+            {selectedEngine?.value}{" "}
             {selectedGearbox?.value} {formData.price}
           </p>
         </>
@@ -255,10 +242,8 @@ export default function CreateAdvert() {
   };
   const clearData = () => {
     setSelectedBrand(undefined);
-    setSelectedDrive(undefined);
     setSelectedModel(undefined);
     setSelectedEngine(undefined);
-    setSelectedFuel(undefined);
     setSelectedGearbox(undefined);
     setSelectedGeneration(undefined);
     setSelectedVersion(undefined);
@@ -297,12 +282,7 @@ export default function CreateAdvert() {
           onChange={handleEngineChange}
           filter="Engine"
         />
-        <Select
-          options={fuelOptions}
-          value={selectedFuel}
-          onChange={handleFuelChange}
-          filter="Fuel type"
-        />
+        <FuelSelect />
         <Select
           options={drive}
           value={selectedDrive}
