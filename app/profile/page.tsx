@@ -11,7 +11,7 @@ import useUserData from "@/useUserData";
 export default function Profile() {
   const { userData } = useUserData();
   const { userMail, userName, userPassword, userSurname } = userData;
-  
+
   const [visiblePassword, setVisiblePassword] = useState(false);
 
   const handleVisiblePassword = () => {
@@ -51,6 +51,11 @@ export default function Profile() {
         <div className={styles.button}>
           <Link href="/profile/resetPassword">
             <button>Change my password</button>
+          </Link>
+        </div>
+        <div>
+          <Link href="/profile/deleteAcc">
+            <button>I want to delete my account</button>
           </Link>
         </div>
       </div>
