@@ -1,25 +1,56 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, ChangeEvent, useEffect } from "react";
 import Link from "next/link";
 import useUserData from "@/useUserData";
-
+import { db } from "@/firebase";
+import { collection, doc, updateDoc } from "firebase/firestore";
 
 export default function ResetPassword() {
   const [newPassword, setNewPassword] = useState("");
-  const [currentPassowrd, setCurrentPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [error, setError] = useState("");
+  const [currentPassword, setCurrentPassword] = useState("");
+  const [confirmNewPassword, setConfirmNewPassword] = useState("");
+  const [mess, setMess] = useState("");
   const { userData } = useUserData();
-  const { userPassword } = userData;
+  const { userPassword, userId } = userData;
 
-  const checkNewPassword = () => {
-    if (newPassword === confirmPassword) {
-      setError("");
+  const handleChangePassword = async () => {
+    if (currentPassword !== userPassword) {
+      setMess("Current password is incorrect");
+      return;
     } else {
-      setError("Password is not the same");
+      setMess("");
+    }
+
+    if (newPassword !== confirmNewPassword) {
+      setMess("New passwords do not match");
+      return;
+    } else {
+      setMess("Your password is updated!");
+    }
+
+    try {
+      const userCollectionRef = collection(db, "users");
+      const userDocRef = doc(userCollectionRef, userId);
+      await updateDoc(userDocRef, {
+        password: newPassword,
+      });
+    } catch (err) {
+      console.error("Password change error: ", err);
+      setMess("Error updating password");
     }
   };
+  useEffect(() => {
+    if (mess === "") {
+      setNewPassword("");
+      setConfirmNewPassword("");
+      setCurrentPassword("");
+    }
+  }, [mess]);
 
+  const handleSubmit = async (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    await handleChangePassword();
+  };
 
   return (
     <>
@@ -29,11 +60,12 @@ export default function ResetPassword() {
         </button>
       </div>
       <h3>Change Password</h3>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           Current Password
           <input
             type="password"
+            value={currentPassword}
             onChange={(e) => setCurrentPassword(e.target.value)}
           />
         </label>
@@ -41,6 +73,7 @@ export default function ResetPassword() {
           New Password
           <input
             type="password"
+            value={newPassword}
             onChange={(e) => setNewPassword(e.target.value)}
           />
         </label>
@@ -48,15 +81,13 @@ export default function ResetPassword() {
           Confirm new Password
           <input
             type="password"
-            onChange={(e) => setConfirmPassword(e.target.value)}
+            value={confirmNewPassword}
+            onChange={(e) => setConfirmNewPassword(e.target.value)}
           />
         </label>
         <input type="submit" value="Change Password Account" />
       </form>
-      <p>
-        {currentPassowrd} {newPassword} & {confirmPassword}
-      </p>
-      {error && <p>{error}</p>}
+      {mess && <p>{mess}</p>}
     </>
   );
 }

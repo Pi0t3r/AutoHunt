@@ -11,6 +11,7 @@ const useUserData = () => {
     userMail: "",
     userPassword: "",
     userProfilePicture: "",
+    userId: "",
   });
   const updateProfilePicture = (newProfilePicture: string) => {
     setUserData((prevUserData) => ({
@@ -32,6 +33,7 @@ const useUserData = () => {
             userMail: userData.email,
             userPassword: userData.password,
             userProfilePicture: userData.userProfilePicture,
+            userId: usersSnapshot.docs[0].id,
           });
         }
       }
@@ -55,6 +57,7 @@ const useUserData = () => {
     userData.userSurname,
     userData.userMail,
     userData.userPassword,
+    userData.userId,
     setUser,
   ]);
   return { userData, updateProfilePicture };
