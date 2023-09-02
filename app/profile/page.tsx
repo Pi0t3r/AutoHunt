@@ -49,7 +49,7 @@ export default function Profile() {
           </p>
         </div>
         <div className={styles.button}>
-          <Link href="/reset">
+          <Link href="/profile/resetPassword">
             <button>Change my password</button>
           </Link>
         </div>
