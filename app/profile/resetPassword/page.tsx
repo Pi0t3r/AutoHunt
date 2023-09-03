@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, ChangeEvent, useEffect } from "react";
+import React, { useState, useEffect, FormEvent } from "react";
 import Link from "next/link";
 import useUserData from "@/useUserData";
 import { db } from "@/firebase";
@@ -47,7 +47,7 @@ export default function ResetPassword() {
     }
   }, [mess]);
 
-  const handleSubmit = async (e: ChangeEvent<HTMLInputElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await handleChangePassword();
   };

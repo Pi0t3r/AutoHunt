@@ -9,10 +9,21 @@ import {
 import { db } from "../firebase";
 
 interface UserContextType {
-  user: { email: string; name: string; surname: string } | null;
+  user: {
+    email: string;
+    name: string;
+    surname: string;
+    password: string;
+  } | null;
   setUser: (
-    user: { email: string; name: string; surname: string } | null
+    user: {
+      email: string;
+      name: string;
+      surname: string;
+      password: string;
+    } | null
   ) => void;
+  updatePassword: (newPassword: string) => void;
 }
 
 export const UserContext = createContext<UserContextType | null>(null);
@@ -21,6 +32,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     email: string;
     name: string;
     surname: string;
+    password: string;
   } | null>(() => {
     if (typeof window !== "undefined") {
       const storedUser = localStorage.getItem("user");
@@ -41,10 +53,10 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(user));
     if (user) {
-      const { email, name, surname } = user;
+      const { email, name, surname, password } = user;
       if (email && name && surname) {
         const userDocRef = doc(collection(db, "users"), email);
-        setDoc(userDocRef, { name, surname, email })
+        setDoc(userDocRef, { name, surname, email, password })
           .then(() => {
             console.log("User data is saved!");
           })
@@ -55,13 +67,27 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     }
   }, [user]);
   const handleSetUser = (
-    userData: { email: string; name: string; surname: string } | null
+    userData: {
+      email: string;
+      name: string;
+      surname: string;
+      password: string;
+    } | null
   ) => {
     setUser(userData);
+  };
+  const updatePassword = (newPassword: string) => {
+    if (user) {
+      setUser({
+        ...user,
+        password: newPassword,
+      });
+    }
   };
   const contextValue = {
     user,
     setUser: handleSetUser,
+    updatePassword,
   };
   return (
     <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>
