@@ -16,11 +16,13 @@ export default function CreateAdvert() {
   const { userData } = useUserData();
   const { userName, userSurname, userMail } = userData;
   const [formData, setFormData] = useState({
+    body: "",
     brand: "",
     model: "",
     generation: "",
     version: "",
     engine: "",
+    fuel: "",
     yearbook: "",
     mileage: "",
     drive: "",
@@ -56,6 +58,13 @@ export default function CreateAdvert() {
     SelectOption | undefined
   >(undefined);
   const [selectedDrive, setSelectedDrive] = useState<SelectOption | undefined>(
+    undefined
+  );
+  const [selectedBody, setSelectedBody] = useState<SelectOption | undefined>(
+    undefined
+  );
+
+  const [selectedFuel, setSelectedFuel] = useState<SelectOption | undefined>(
     undefined
   );
   const [selectedImage, setSelectedImage] = useState<File[]>([]);
@@ -146,6 +155,15 @@ export default function CreateAdvert() {
     setSelectedVersion(undefined);
     setSelectedEngine(undefined);
   };
+  const handleBodyChange = (body: SelectOption | undefined) => {
+    setFormData((prevData) => ({ ...prevData, body: body?.value || "" }));
+    setSelectedBody(body);
+  };
+
+  const handleFuelChange = (fuel: SelectOption | undefined) => {
+    setFormData((prevData) => ({ ...prevData, fuel: fuel?.value || "" }));
+    setSelectedFuel(fuel);
+  };
 
   const handleUserInfoChange = () => {
     setFormData((prevData) => ({
@@ -164,6 +182,8 @@ export default function CreateAdvert() {
   };
   const clearData = () => {
     setSelectedBrand(undefined);
+    setSelectedBody(undefined);
+    setSelectedFuel(undefined);
     setSelectedModel(undefined);
     setSelectedEngine(undefined);
     setSelectedDrive(undefined);
@@ -179,7 +199,7 @@ export default function CreateAdvert() {
       </Link>
       <h3>Create new advert</h3>
       <form onSubmit={handleSubmit}>
-        <BodySelect />
+        <BodySelect onChange={handleBodyChange} value={selectedBody} />
         <BrandSelect onChange={handleBrandChange} />
         {/* <CarDataSelect
           filter="Model"
@@ -289,7 +309,7 @@ export default function CreateAdvert() {
             setSelectedEngine(engine);
           }}
         />
-        <FuelSelect />
+        <FuelSelect onChange={handleFuelChange} value={selectedFuel} />
         <CustomSelect
           onChangeDrive={(drive: SelectOption | undefined) => {
             setFormData((prevData) => ({

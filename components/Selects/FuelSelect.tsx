@@ -1,20 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { fuelOptions } from "@/data/cars";
 import { Select, SelectOption } from "../select/Select";
 
-export const FuelSelect = () => {
-  const [selectedFuel, setSelectedFuel] = useState<SelectOption | undefined>(
-    undefined
-  );
-  const handleFuelChange = (selectedFuel: SelectOption | undefined) => {
-    setSelectedFuel(selectedFuel);
-  };
+interface FuelSelectProps {
+  value: SelectOption | undefined;
+  onChange: (value: SelectOption | undefined) => void;
+}
+
+export const FuelSelect = ({ value, onChange }: FuelSelectProps) => {
   return (
     <Select
-      onChange={handleFuelChange}
+      onChange={onChange}
       filter="Fuel type"
       options={fuelOptions}
-      value={selectedFuel}
+      value={value}
     />
   );
 };

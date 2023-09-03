@@ -1,6 +1,6 @@
 import { Select } from "../select/Select";
 import React, { useState, useEffect } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "@/firebase";
 import { body, fuelOptions, options } from "../../data/cars";
 import styles from "../offers/offers.module.css";
@@ -14,7 +14,17 @@ type SelectOption = {
   engine?: SelectOption[] | undefined;
 };
 
-export default function Filters() {
+type FiltersProps = {
+  lenght: number;
+  advertData: any[];
+  setAdvertData: (data: any[]) => void;
+};
+
+export default function Filters({
+  lenght,
+  advertData,
+  setAdvertData,
+}: FiltersProps) {
   const [selectedBody, setSelectedBody] = useState<SelectOption | undefined>(
     undefined
   );
@@ -38,15 +48,59 @@ export default function Filters() {
   >(undefined);
   useEffect(() => {
     const getCarAdvert = async () => {
-      const advertCollection = collection(db, "CarOffers");
-      const advertSnapshot = await getDocs(advertCollection);
+      const advertCollection = collection(db, "adverts");
+      let newQuery = query(advertCollection);
+
+      if (selectedBrand) {
+        newQuery = query(newQuery, where("brand", "==", selectedBrand.value));
+      }
+      if (selectedModel) {
+        newQuery = query(newQuery, where("model", "==", selectedModel.value));
+      }
+      if (selectedGeneration) {
+        newQuery = query(
+          newQuery,
+          where("generation", "==", selectedGeneration.value)
+        );
+      }
+      if (selectedVersion) {
+        newQuery = query(
+          newQuery,
+          where("version", "==", selectedVersion.value)
+        );
+      }
+      if (selectedEngine) {
+        newQuery = query(newQuery, where("engine", "==", selectedEngine.value));
+      }
+      if (selectedBody) {
+        newQuery = query(newQuery, where("body", "==", selectedBody.value));
+        console.log(`Selected body: ${selectedBody}`);
+      }
+      if (selectedFuel) {
+        console.log(`Selected fuel: ${selectedFuel}`);
+        newQuery = query(newQuery, where("fuel", "==", selectedFuel.value));
+      }
+
+      const advertSnapshot = await getDocs(newQuery);
       const advert = advertSnapshot.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
       }));
+
+      setAdvertData(advert);
     };
+
     getCarAdvert();
-  }, []);
+  }, [
+    selectedBrand,
+    selectedModel,
+    selectedBody,
+    setAdvertData,
+    selectedEngine,
+    selectedGeneration,
+    selectedFuel,
+    selectedVersion,
+  ]);
 
   const getModelOptions = (): SelectOption[] => {
     if (selectedBrand) {
@@ -166,7 +220,7 @@ export default function Filters() {
         filter="Fuel type"
         disabled={selectedEngine?.value !== undefined}
       />
-      <button className={styles.button}>Show advertisements</button>
+      <button className={styles.button}>Show advertisements {lenght} </button>
     </div>
   );
 }

@@ -17,16 +17,11 @@ export default function Offers() {
     fetchOffers();
   }, []);
 
-  if (advertData.length === 0) {
-    return <p>Loading ...</p>;
-  }
-  return (
-    <div className={styles.div}>
-      <h2>What you're looking for?</h2>
-      <div>
-        <Filters />
-      </div>
-      <div className={styles.offers}>
+  const showAdvert = () => {
+    if (advertData.length === 0) {
+      return <p>Loading ...</p>;
+    } else {
+      return (
         <ul>
           {advertData.map((post) => (
             <li key={post.id}>
@@ -45,7 +40,20 @@ export default function Offers() {
             </li>
           ))}
         </ul>
+      );
+    }
+  };
+  return (
+    <div className={styles.div}>
+      <h2>What you're looking for?</h2>
+      <div>
+        <Filters
+          lenght={advertData.length}
+          advertData={advertData}
+          setAdvertData={setAdvertData}
+        />
       </div>
+      <div className={styles.offers}>{showAdvert()}</div>
     </div>
   );
 }
