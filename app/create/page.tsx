@@ -390,7 +390,7 @@ export default function CreateAdvert() {
           }}
         />
         <p>
-          {userName} {userSurname} You place an ad for a car: <Result />
+          {userName} {userSurname} <Result />
         </p>
         <button onClick={clearData} type="submit">
           Display
