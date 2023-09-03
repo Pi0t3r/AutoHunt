@@ -3,12 +3,15 @@ import { createUserWithEmailAndPassword } from "@firebase/auth";
 import { auth, db } from "../../firebase";
 import styles from "../../app/register/register.module.css";
 import { doc, setDoc, collection } from "firebase/firestore";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 const RegisterForm = () => {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [info, setInfo] = useState(false);
+
   const handleSubmitRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -26,7 +29,8 @@ const RegisterForm = () => {
         email: email,
         password: password,
       });
-      window.alert("User created!");
+      // window.alert("User created!");
+      setInfo(true);
     } catch (error) {
       const errorMessage = (error as Error).message;
       setErrorMessage(errorMessage);
@@ -71,6 +75,16 @@ const RegisterForm = () => {
           Similar Technologies, which I have read.
         </p>
       </div>
+      {info && (
+        <div>
+          <div>
+            <button onClick={() => setInfo(false)}>
+              <AiOutlineCloseCircle />
+            </button>
+          </div>
+          <p>You have been registered! Now go to the Login tab and log in.</p>
+        </div>
+      )}
       <input type="submit" value="Create account" className={styles.submit} />
     </form>
   );
