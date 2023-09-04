@@ -40,10 +40,10 @@ npm run dev
 ## Planned functions
 
 - Improved appearance and user interface
-- Implementation of additional filters for search results
 - Deleting ads and editing them
 - View of the cars on display
 - Possibility to add a photo of the cars
+- Posibility to edit and delete own ads
 
 ## License
 
