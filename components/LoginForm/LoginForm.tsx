@@ -17,7 +17,7 @@ const LoginForm = () => {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      setUser({ email: email, name: "", surname: "" });
+      setUser({ email: email, name: "", surname: "", password: "" });
       router.push("/");
     } catch (error) {
       const errorMessage = (error as Error).message;

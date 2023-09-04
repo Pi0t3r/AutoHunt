@@ -51,6 +51,7 @@ export default function Profile() {
           <Link href="/profile/resetPassword">
             <button>Change my password</button>
           </Link>
+          <br />
           <Link href="/profile/deleteAcc">
             <button>I want to delete my account</button>
           </Link>

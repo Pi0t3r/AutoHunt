@@ -4,6 +4,12 @@ import Link from "next/link";
 import useUserData from "@/useUserData";
 import { db } from "@/firebase";
 import { collection, doc, updateDoc } from "firebase/firestore";
+import {
+  EmailAuthProvider,
+  getAuth,
+  reauthenticateWithCredential,
+  updatePassword,
+} from "@firebase/auth";
 
 export default function ResetPassword() {
   const [newPassword, setNewPassword] = useState("");
@@ -12,6 +18,7 @@ export default function ResetPassword() {
   const [mess, setMess] = useState("");
   const { userData } = useUserData();
   const { userPassword, userId } = userData;
+  const auth = getAuth();
 
   const handleChangePassword = async () => {
     if (currentPassword !== userPassword) {
@@ -29,6 +36,17 @@ export default function ResetPassword() {
     }
 
     try {
+      const user = auth.currentUser;
+      if (!user) {
+        setMess("User not logged in");
+        return;
+      }
+      const credential = EmailAuthProvider.credential(
+        user.email,
+        currentPassword
+      );
+      await updatePassword(user, newPassword);
+
       const userCollectionRef = collection(db, "users");
       const userDocRef = doc(userCollectionRef, userId);
       await updateDoc(userDocRef, {
