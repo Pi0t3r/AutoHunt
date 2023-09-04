@@ -201,60 +201,6 @@ export default function CreateAdvert() {
       <form onSubmit={handleSubmit}>
         <BodySelect onChange={handleBodyChange} value={selectedBody} />
         <BrandSelect onChange={handleBrandChange} />
-        {/* <CarDataSelect
-          filter="Model"
-          value={selectedModel}
-          onChange={(model: SelectOption | undefined) => {
-            setFormData((prevData) => ({
-              ...prevData,
-              model: model?.value || "",
-            }));
-            setSelectedModel(model);
-            setSelectedGeneration(undefined);
-            setSelectedVersion(undefined);
-            setSelectedEngine(undefined);
-          }}
-          level="Model"
-        />
-        <CarDataSelect
-          filter="Generation"
-          value={selectedGeneration}
-          onChange={(generation: SelectOption | undefined) => {
-            setFormData((prevData) => ({
-              ...prevData,
-              generation: generation?.value || "",
-            }));
-            setSelectedGeneration(generation);
-            setSelectedVersion(undefined);
-            setSelectedEngine(undefined);
-          }}
-          level="Generation"
-        />
-        <CarDataSelect
-          filter="Version"
-          value={selectedVersion}
-          onChange={(version: SelectOption | undefined) => {
-            setFormData((prevData) => ({
-              ...prevData,
-              version: version?.value || "",
-            }));
-            setSelectedVersion(version);
-            setSelectedEngine(undefined);
-          }}
-          level="Version"
-        />
-        <CarDataSelect
-          filter="Engine"
-          value={selectedEngine}
-          onChange={(engine: SelectOption | undefined) => {
-            setFormData((prevData) => ({
-              ...prevData,
-              engine: engine?.value || "",
-            }));
-            setSelectedEngine(engine);
-          }}
-          level="Engine"
-        /> */}
         <CarDataSelect
           filter="Model"
           value={selectedModel}

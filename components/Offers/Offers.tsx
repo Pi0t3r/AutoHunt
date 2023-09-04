@@ -13,7 +13,6 @@ export default function Offers() {
   useEffect(() => {
     const fetchOffers = async () => {
       const adverts = await fetchAdverts();
-      let fiteredAdverts = adverts
       if (sortBy === "Low") {
         adverts.sort((a, b) => a.price - b.price);
       } else if (sortBy === "High") {

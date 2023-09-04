@@ -1,16 +1,36 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ChangeEvent } from "react";
 import { useParams } from "next/navigation";
 import { fetchAdverts } from "@/api/getAdvertDetails";
 import Link from "next/link";
 import CarDetails from "@/components/carDetails/CarDetails";
 import SellerDetails from "@/components/sellerDetails/SellerDetails";
 import { db } from "@/firebase";
-import { deleteDoc, doc, collection } from "firebase/firestore";
+import { deleteDoc, doc, collection, updateDoc } from "firebase/firestore";
+
 
 function MyAdvert() {
   const [advertData, setAdvertData] = useState<any[]>([]);
   const params = useParams();
+  const [isEditing, setIsEditing] = useState(false);
+  const [formData, setFormData] = useState({
+    body: "",
+    brand: "",
+    model: "",
+    generation: "",
+    version: "",
+    drive: "",
+    engine: "",
+    firstRegister: "",
+    fuel: "",
+    gearbox: "",
+    mileage: "",
+    phone: "",
+    price: "",
+    yearbook: "",
+    sellerPlace: "",
+    vin: "",
+  });
   useEffect(() => {
     const fetchOffers = async () => {
       const adverts = await fetchAdverts();
@@ -18,6 +38,7 @@ function MyAdvert() {
     };
     fetchOffers();
   }, []);
+
   const handleDelete = async () => {
     if (params.id) {
       try {
@@ -32,6 +53,7 @@ function MyAdvert() {
   if (advertData.length === 0) {
     return <p>Loading ...</p>;
   }
+  
   const showData = advertData.find((car) => car.id === params.id);
   return (
     <div>
@@ -44,7 +66,6 @@ function MyAdvert() {
       <SellerDetails data={showData} />
       <div>
         <button onClick={handleDelete}>Delete advert</button>
-        <button>Edit advert</button>
       </div>
     </div>
   );
