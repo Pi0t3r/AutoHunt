@@ -4,6 +4,7 @@ import { useParams } from "next/navigation";
 import { fetchAdverts } from "@/api/getAdvertDetails";
 import Link from "next/link";
 import CarDetails from "@/components/carDetails/CarDetails";
+import SellerDetails from "@/components/sellerDetails/SellerDetails";
 function MyAdvert() {
   const [advertData, setAdvertData] = useState<any[]>([]);
   const params = useParams();
@@ -26,8 +27,8 @@ function MyAdvert() {
           <button>Back</button>
         </Link>
       </div>
-      <h2>Hi!</h2>
       <CarDetails data={showData}/>
+      <SellerDetails data={showData}/>
     </div>
   );
 }

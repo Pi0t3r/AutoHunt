@@ -53,6 +53,7 @@ The Autohunt project is not released under any license.
 
 - Lack of ability to insert photos of cars
 - Currently lacking a proper design and user interface
+- if user select e.g. Audi and want to sort ads by price, unfortunately all offers show up
 
 ## Contact
 
