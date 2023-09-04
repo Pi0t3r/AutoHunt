@@ -40,7 +40,7 @@ npm run dev
 ## Planned functions
 
 - Improved appearance and user interface
-- Deleting ads and editing them
+- Editing own advert
 - View of the cars on display
 - Possibility to add a photo of the cars
 - Posibility to edit and delete own ads
