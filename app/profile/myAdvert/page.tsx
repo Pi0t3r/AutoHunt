@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { fetchAdverts } from "@/api/getAdvertDetails";
 import useUserData from "@/useUserData";
+import styles from "./myAdvert.module.css";
 
 export default function MyAdvert() {
   const [advertData, setAdvertData] = useState<any[]>([]);
@@ -34,13 +35,15 @@ export default function MyAdvert() {
       <ul>
         {userAdverts.map((advert) => (
           <li key={advert.id}>
-            <div>
-              <p>
-                {advert.brand} {advert.model} {advert.generation}{" "}
-                {advert.version} {advert.engine} {advert.price} PLN{" "}
-                {advert.sellerPlace}
-              </p>
-            </div>
+            <Link href={`/profile/myAdvert/advert/${advert.id}`}>
+              <div className={styles.info}>
+                <p>
+                  {advert.brand} {advert.model} {advert.generation}{" "}
+                  {advert.version} {advert.engine} {advert.price} PLN{" "}
+                  {advert.sellerPlace}
+                </p>
+              </div>
+            </Link>
           </li>
         ))}
       </ul>
