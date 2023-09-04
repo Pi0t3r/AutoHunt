@@ -5,6 +5,9 @@ import { fetchAdverts } from "@/api/getAdvertDetails";
 import Link from "next/link";
 import CarDetails from "@/components/carDetails/CarDetails";
 import SellerDetails from "@/components/sellerDetails/SellerDetails";
+import { db } from "@/firebase";
+import { deleteDoc, doc, collection } from "firebase/firestore";
+
 function MyAdvert() {
   const [advertData, setAdvertData] = useState<any[]>([]);
   const params = useParams();
@@ -15,6 +18,16 @@ function MyAdvert() {
     };
     fetchOffers();
   }, []);
+  const handleDelete = async () => {
+    if (params.id) {
+      try {
+        await deleteDoc(doc(collection(db, "adverts"), params.id as string));
+        window.location.href = "/profile/myAdvert";
+      } catch (err) {
+        console.error(`Error while deleting ads: ${err}`);
+      }
+    }
+  };
 
   if (advertData.length === 0) {
     return <p>Loading ...</p>;
@@ -27,8 +40,12 @@ function MyAdvert() {
           <button>Back</button>
         </Link>
       </div>
-      <CarDetails data={showData}/>
-      <SellerDetails data={showData}/>
+      <CarDetails data={showData} />
+      <SellerDetails data={showData} />
+      <div>
+        <button onClick={handleDelete}>Delete advert</button>
+        <button>Edit advert</button>
+      </div>
     </div>
   );
 }
