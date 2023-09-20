@@ -76,8 +76,8 @@ export default function Offers() {
         <span>Sortuj </span>
         <select name="sort" id="sort" onChange={handleSortChange}>
           <option value="default">---</option>
-          <option value="Low">By price (Low to hight)</option>
-          <option value="Hight">By price (Hight to low)</option>
+          <option value="Low">By price (Low to high)</option>
+          <option value="High">By price (High to low)</option>
         </select>
       </div>
       <div className={styles.offers}>{showAdvert()}</div>
