@@ -36,6 +36,14 @@ export default function Offers() {
               <Link href={`/advert/${post.id}`} key={post.id}>
                 <div className={styles.offer}>
                   <div className={styles.info}>
+                    <div>
+                      {post.images && post.images.length > 0 && (
+                        <img
+                          src={post.images[0]}
+                          alt={`Image 0`}
+                        />
+                      )}
+                    </div>
                     <p>
                       {post.brand} {post.model}{" "}
                       {post.generation ? post.generation.split(" ")[0] : ""}{" "}

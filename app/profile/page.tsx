@@ -64,8 +64,7 @@ export default function Profile() {
       console.error("File not found");
     }
   };
-
-  const handleRemoveFile = () => setImageFile(undefined);
+  
   const handleVisiblePassword = () => {
     setVisiblePassword(!visiblePassword);
   };

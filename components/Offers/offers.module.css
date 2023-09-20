@@ -55,6 +55,9 @@
 .offer .info {
   padding: 0 10px;
 }
+.offer .info div img {
+  width: 100%;
+}
 .offer .info .title {
   color: black;
   font-size: 20px;

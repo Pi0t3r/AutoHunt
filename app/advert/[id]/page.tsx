@@ -38,10 +38,8 @@ function Advert() {
         </Link>
       </div>
       <div className={styles.offer}>
-        {/* <Banner /> */}
-
+        <Banner images={showData.images} />
         <CarDetails data={showData} />
-
         <SellerDetails data={showData} />
         <div>
           <button className={styles.report} onClick={handleReportClick}>

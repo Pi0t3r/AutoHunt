@@ -1,6 +1,6 @@
 "use client";
 import React, { ChangeEvent, useState } from "react";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, updateDoc } from "firebase/firestore";
 import { db } from "@/firebase";
 import { SelectOption } from "../../components/select/Select";
 import { options } from "../../data/cars";
@@ -12,6 +12,26 @@ import { FuelSelect } from "@/components/Selects/FuelSelect";
 import { MyInput } from "@/components/Inputs/MyInput";
 import { CustomSelect } from "@/components/Selects/CustomSelect";
 import { CarDataSelect } from "@/components/Selects/CarDataSelect";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { storage } from "@/firebase";
+interface ImageUploadProps {
+  onImageSelect: (filtes: FileList) => void;
+}
+
+const ImageUpload: React.FC<ImageUploadProps> = ({ onImageSelect }) => {
+  const handleImageSelect = (e: ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    if (files) {
+      onImageSelect(files);
+    }
+  };
+  return (
+    <div>
+      <input type="file" multiple onChange={handleImageSelect} />
+    </div>
+  );
+};
+
 export default function CreateAdvert() {
   const { userData } = useUserData();
   const { userName, userSurname, userMail } = userData;
@@ -67,7 +87,7 @@ export default function CreateAdvert() {
   const [selectedFuel, setSelectedFuel] = useState<SelectOption | undefined>(
     undefined
   );
-  const [selectedImage, setSelectedImage] = useState<File[]>([]);
+  const [selectedImages, setSelectedImages] = useState<File[]>([]);
   const getModelOptions = (): SelectOption[] => {
     if (selectedBrand && selectedBrand.value) {
       const brand = options.find(
@@ -76,6 +96,10 @@ export default function CreateAdvert() {
       return brand ? brand.models || [] : [];
     }
     return [];
+  };
+  const handleImageSelect = (files: FileList) => {
+    const imageArray = Array.from(files);
+    setSelectedImages(imageArray);
   };
 
   const getGenerationOption = (): SelectOption[] => {
@@ -142,9 +166,16 @@ export default function CreateAdvert() {
     try {
       const advertData = { ...formData };
       const advertRef = await addDoc(collection(db, "adverts"), advertData);
+      if (selectedImages.length > 0) {
+        const imageUrls = await uploadImagesToStorage(
+          selectedImages,
+          advertRef.id
+        );
+        await updateDoc(advertRef, { images: imageUrls });
+      }
       setAdvertAdded(true);
     } catch (error) {
-      console.error("Błąd przy dodawaniu ogłoszenia: ", error);
+      console.error("Error while adding advert: ", error);
     }
   };
   const handleBrandChange = (brand: SelectOption | undefined) => {
@@ -180,6 +211,18 @@ export default function CreateAdvert() {
       return;
     }
   };
+  const uploadImagesToStorage = async (images: File[], advertId: string) => {
+    const imageUrls: string[] = [];
+
+    for (const image of images) {
+      const storageRef = ref(storage, `adverts/${advertId}/${image.name}`);
+      await uploadBytes(storageRef, image);
+      const downloadURL = await getDownloadURL(storageRef);
+      imageUrls.push(downloadURL);
+    }
+
+    return imageUrls;
+  };
   const clearData = () => {
     setSelectedBrand(undefined);
     setSelectedBody(undefined);
@@ -199,6 +242,7 @@ export default function CreateAdvert() {
       </Link>
       <h3>Create new advert</h3>
       <form onSubmit={handleSubmit}>
+        <ImageUpload onImageSelect={handleImageSelect} />
         <BodySelect onChange={handleBodyChange} value={selectedBody} />
         <BrandSelect onChange={handleBrandChange} />
         <CarDataSelect
