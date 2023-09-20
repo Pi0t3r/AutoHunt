@@ -41,8 +41,6 @@ npm run dev
 
 - Improved appearance and user interface
 - Editing own advert
-- View of the cars on display
-- Possibility to add a photo of the cars
 - Posibility to edit and delete own ads
 
 ## License
@@ -51,7 +49,6 @@ The Autohunt project is not released under any license.
 
 ## Known problems
 
-- Lack of ability to insert photos of cars
 - Currently lacking a proper design and user interface
 - if user select e.g. Audi and want to sort ads by price, unfortunately all offers show up
 
