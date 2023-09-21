@@ -1,70 +1,55 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import {
-  AiOutlineUser,
-  AiOutlineEye,
-  AiOutlineEyeInvisible,
-} from "react-icons/ai";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import styles from "./profile.module.css";
 import useUserData from "@/useUserData";
-import {
-  getStorage,
-  ref,
-  uploadBytesResumable,
-  getDownloadURL,
-} from "firebase/storage";
-import Image from "next/image";
-
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { storage, db } from "@/firebase";
+import { updateDoc, doc } from "firebase/firestore";
+import ProfileImage from "@/components/profileImage/Page";
 export default function Profile() {
   const { userData } = useUserData();
   const { userMail, userName, userPassword, userSurname } = userData;
   const [visiblePassword, setVisiblePassword] = useState(false);
-  const [imageFile, setImageFile] = useState<File>();
-  const [downloadURL, setDownloadURL] = useState("");
-  const [isUploading, setIsuploading] = useState(false);
-  const storage = getStorage();
-  const handleSelectedFile = (files: any) => {
-    setImageFile(files[0]);
+  const [profileImage, setProfileImage] = useState<string | null>(null);
+  const [imageFile, setImageFile] = useState<File | null>(null);
+
+  useEffect(() => {
+    if (userData.userProfilePicture) {
+      setProfileImage(userData.userProfilePicture);
+    }
+  }, [userData.userProfilePicture]);
+
+  const handleSelectedFile = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files[0]) {
+      setImageFile(event.target.files[0]);
+      const imageUrl = URL.createObjectURL(event.target.files[0]);
+      setProfileImage(imageUrl);
+    }
   };
-  const handleUploadFile = () => {
+  const handleUploadFile = async () => {
     if (imageFile) {
-      const name = imageFile.name;
-      const storageRef = ref(storage, `image/${name}`);
-      const uploadTask = uploadBytesResumable(storageRef, imageFile);
+      const storageRef = ref(storage, `profileImages/${userMail}`);
+      try {
+        const uploadTask = uploadBytesResumable(storageRef, imageFile);
+        await uploadTask;
 
-      uploadTask.on(
-        "state_changed",
-        (snapshot) => {
-          const progress =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        const imageUrl = await getDownloadURL(storageRef);
+        setProfileImage(imageUrl);
 
-         
-
-          switch (snapshot.state) {
-            case "paused":
-              console.log("Upload is paused");
-              break;
-            case "running":
-              console.log("Upload is running");
-              break;
-          }
-        },
-        (error) => {
-          console.error(error.message);
-        },
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then((url) => {
-
-            setDownloadURL(url);
-          });
-        }
-      );
+        const userDocRef = doc(db, "users", userMail);
+        const userDataToUpdate = {
+          profileImage: imageUrl,
+        };
+        await updateDoc(userDocRef, userDataToUpdate);
+      } catch (err) {
+        console.error(`Error while sending file: ${err}`);
+      }
     } else {
       console.error("File not found");
     }
   };
-  
   const handleVisiblePassword = () => {
     setVisiblePassword(!visiblePassword);
   };
@@ -77,23 +62,15 @@ export default function Profile() {
       <>
         <div>
           <div className={styles.circle}>
-            {downloadURL && (
-              <>
-                <Image
-                  src={downloadURL}
-                  width={250}
-                  height={250}
-                  alt="Profile Picture user"
-                />
-              </>
-            )}
+            <ProfileImage userMail={userMail} selectedImage={profileImage}/>
           </div>
           <div>
             <input
               type="file"
               accept="image/png"
-              onChange={(files) => handleSelectedFile(files.target.value)}
+              onChange={handleSelectedFile}
             />
+            <button onClick={handleUploadFile}>Upload</button>
           </div>
         </div>
         <div className={styles.info}>

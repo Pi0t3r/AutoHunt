@@ -1,6 +1,13 @@
 import { useState, useEffect } from "react";
 import { useUserContext } from "./context/UserContext";
-import { collection, getDocs, query, where } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDocs,
+  query,
+  updateDoc,
+  where,
+} from "firebase/firestore";
 import { db } from "@/firebase";
 
 const useUserData = () => {
@@ -13,11 +20,26 @@ const useUserData = () => {
     userProfilePicture: "",
     userId: "",
   });
-  const updateProfilePicture = (newProfilePicture: string) => {
-    setUserData((prevUserData) => ({
-      ...prevUserData,
-      userProfilePicture: newProfilePicture,
-    }));
+  const updateProfilePicture = (newProfilePicture: string | null) => {
+    if (user) {
+      setUser({
+        ...user,
+        profileImage: newProfilePicture,
+      });
+      if (user.email && newProfilePicture !== null) {
+        const userDocRef = doc(db, "users", user.email);
+        const userDataToUpdate = {
+          profileImage: newProfilePicture,
+        };
+        updateDoc(userDocRef, userDataToUpdate)
+          .then(() => {
+            console.log("Profile picture updated");
+          })
+          .catch((err) => {
+            console.error(`Error updating profile picture: ${err}`);
+          });
+      }
+    }
   };
   const getUserData = async () => {
     try {
@@ -58,6 +80,7 @@ const useUserData = () => {
     userData.userMail,
     userData.userPassword,
     userData.userId,
+    userData.userProfilePicture,
     setUser,
   ]);
   return { userData, updateProfilePicture };

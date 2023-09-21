@@ -7,9 +7,10 @@ import { AiOutlineUser } from "react-icons/ai";
 import { MdOutlineLocalOffer } from "react-icons/md";
 import useUserData from "@/useUserData";
 import { auth } from "@/firebase";
+import ProfileImage from "../profileImage/Page";
 const Sidebar = () => {
   const { userData } = useUserData();
-  const { userName, userSurname } = userData;
+  const { userName, userSurname, userMail } = userData;
   const { user, setUser } = useUserContext();
 
   const handleLogout = async () => {
@@ -25,6 +26,9 @@ const Sidebar = () => {
   return (
     <div className={styles.sidebar}>
       <div className={styles.div}>
+        <div className={styles.profilePicture}>
+          <ProfileImage userMail={userMail} />
+        </div>
         <span>
           Hello, <br />
           {userName} {userSurname}

@@ -8,15 +8,23 @@
   left: 10px;
 }
 
+.circle,
+.circle img {
+  border-radius: 50%;
+}
+
 .circle {
   background-color: rgb(136, 136, 136);
   width: 100px;
-  margin: 0 auto;
+  margin: 0 auto 50px;
   height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
+}
+.circle img {
+  box-shadow: 1px 1px 14px black;
+  padding-top: 15px;
 }
 .circle svg {
   width: 50px;

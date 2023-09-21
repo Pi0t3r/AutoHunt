@@ -14,6 +14,7 @@ interface UserContextType {
     name: string;
     surname: string;
     password: string;
+    profileImage: string | null;
   } | null;
   setUser: (
     user: {
@@ -21,6 +22,7 @@ interface UserContextType {
       name: string;
       surname: string;
       password: string;
+      profileImage: string | null;
     } | null
   ) => void;
   updatePassword: (newPassword: string) => void;
@@ -33,6 +35,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
     name: string;
     surname: string;
     password: string;
+    profileImage: string | null;
   } | null>(() => {
     if (typeof window !== "undefined") {
       const storedUser = localStorage.getItem("user");
@@ -53,10 +56,10 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     localStorage.setItem("user", JSON.stringify(user));
     if (user) {
-      const { email, name, surname, password } = user;
+      const { email, name, surname, password, profileImage } = user;
       if (email && name && surname) {
         const userDocRef = doc(collection(db, "users"), email);
-        setDoc(userDocRef, { name, surname, email, password })
+        setDoc(userDocRef, { name, surname, email, password, profileImage })
           .then(() => {
             console.log("User data is saved!");
           })
@@ -72,6 +75,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
       name: string;
       surname: string;
       password: string;
+      profileImage: string;
     } | null
   ) => {
     setUser(userData);
@@ -84,10 +88,19 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
       });
     }
   };
+  const updateProfilePicture = (newImage: string) => {
+    if (user) {
+      setUser({
+        ...user,
+        profileImage: newImage,
+      });
+    }
+  };
   const contextValue = {
     user,
     setUser: handleSetUser,
     updatePassword,
+    updateProfilePicture,
   };
   return (
     <UserContext.Provider value={contextValue}>{children}</UserContext.Provider>

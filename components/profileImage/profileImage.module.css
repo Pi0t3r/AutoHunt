@@ -1,0 +1,5 @@
+.profileImage img {
+  width: 75%;
+  border-radius: 50%;
+  box-shadow: 1px 1px 14px #000;
+}
