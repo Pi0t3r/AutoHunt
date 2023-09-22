@@ -1,16 +1,53 @@
 "use client";
 import Link from "next/link";
 import styles from "./register.module.css";
-import { BsGoogle, BsFacebook, BsArrowLeftCircle } from "react-icons/bs";
-import { useEffect, useState } from "react";
+import { BsGoogle, BsArrowLeftCircle } from "react-icons/bs";
+import React, { useEffect, useState } from "react";
 import LoginForm from "@/components/loginForm/LoginForm";
 import RegisterForm from "@/components/registerForm/RegisterForm";
+import {
+  GoogleAuthProvider,
+  getAuth,
+  signInWithPopup,
+  updateProfile,
+  updateEmail,
+} from "firebase/auth";
+import { db } from "@/firebase";
+import { collection, doc, setDoc } from "firebase/firestore";
+import { useUserContext } from "@/context/UserContext";
 
 type ActiveButton = "login" | "signup";
 
 export default function Register() {
   const [activeButton, setActiveButton] = useState<ActiveButton>("login");
-
+  const provider = new GoogleAuthProvider();
+  const auth = getAuth();
+  const { setUser } = useUserContext();
+  const handleSignInWithGoogle = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          const credential = GoogleAuthProvider.credentialFromResult(result);
+          const token = credential?.accessToken;
+          const user = result.user;
+          console.log(token)
+          console.log(user)
+        })
+        .catch((error) => {       
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          const email = error.customData.email;     
+          const credential = GoogleAuthProvider.credentialFromError(error);
+        });
+    } catch (error: any) {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      const email = error.customData?.email;
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      console.log("Google sign-in error: ", error);
+    }
+  };
   useEffect(() => {}, [activeButton]);
   const handleButtonClick = (button: ActiveButton) => {
     setActiveButton(button);
@@ -23,11 +60,8 @@ export default function Register() {
       </Link>
       <h1>Join us to continue</h1>
       <div className={styles.containerButton}>
-        <button>
+        <button onClick={handleSignInWithGoogle}>
           <BsGoogle /> <span>Sign in with Google</span>
-        </button>
-        <button>
-          <BsFacebook /> <span>Sign in with Facebook</span>
         </button>
       </div>
       <span className={styles.or}>or</span>

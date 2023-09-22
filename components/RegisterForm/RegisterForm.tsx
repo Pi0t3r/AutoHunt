@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { createUserWithEmailAndPassword } from "@firebase/auth";
-import { auth, db } from "../../firebase";
+import { createUserWithEmailAndPassword, getAuth } from "@firebase/auth";
+import { db } from "../../firebase";
 import styles from "../../app/register/register.module.css";
 import { doc, setDoc, collection } from "firebase/firestore";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { useUserContext } from "@/context/UserContext";
+
 const RegisterForm = () => {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
@@ -11,6 +13,8 @@ const RegisterForm = () => {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [info, setInfo] = useState(false);
+  const { setUser } = useUserContext();
+  const auth = getAuth();
 
   const handleSubmitRegister = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -29,7 +33,7 @@ const RegisterForm = () => {
         email: email,
         password: password,
       });
-      // window.alert("User created!");
+
       setInfo(true);
     } catch (error) {
       const errorMessage = (error as Error).message;
