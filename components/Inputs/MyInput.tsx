@@ -16,6 +16,7 @@ export const MyInput: React.FC<MyInputProps> = ({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        required
       />
     </label>
   );

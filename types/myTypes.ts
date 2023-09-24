@@ -30,7 +30,7 @@ export type SelectProps = {
   disabled?: boolean;
 };
 
-export interface carDetailsProps {
+interface carDetailsProps {
   brand: string;
   model: string;
   generation: string;
@@ -38,6 +38,9 @@ export interface carDetailsProps {
   engine: string;
 }
 
+export interface carDataProps {
+  data: carDetailsProps;
+}
 interface SellerDetailsProps {
   sellerName: string;
   sellerSurname: string;
@@ -65,10 +68,6 @@ export interface CarDataSelectProps {
 export interface FilterSelectProps {
   value?: SelectOptionProps | undefined;
   onChange: (value: SelectOptionProps | undefined) => void;
-}
-
-export interface carDataProps {
-  data: carDetailsProps;
 }
 
 export interface ImageUploadProps {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import styles from "./Banner.module.css";
+import styles from "./banner.module.css";
 
 const Banner = ({ images }: { images: string[] }) => {
   const [clickedHeart, setClickedHeart] = useState(false);
@@ -18,7 +18,7 @@ const Banner = ({ images }: { images: string[] }) => {
       <div>
         <Carousel>
           {images.map((image, index) => (
-            <div key={index}>
+            <div key={index} className={styles.container}>
               <img src={image} alt={`Image ${index}`} />
             </div>
           ))}
