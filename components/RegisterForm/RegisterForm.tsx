@@ -13,7 +13,6 @@ const RegisterForm = () => {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [info, setInfo] = useState(false);
-  const { setUser } = useUserContext();
   const auth = getAuth();
 
   const handleSubmitRegister = async (e: React.FormEvent) => {

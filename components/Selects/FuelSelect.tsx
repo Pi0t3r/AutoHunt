@@ -1,13 +1,9 @@
 import React from "react";
 import { fuelOptions } from "@/data/cars";
-import { Select, SelectOption } from "../select/Select";
+import { Select } from "../select/Select";
+import { FilterSelectProps } from "@/types/myTypes";
 
-interface FuelSelectProps {
-  value: SelectOption | undefined;
-  onChange: (value: SelectOption | undefined) => void;
-}
-
-export const FuelSelect = ({ value, onChange }: FuelSelectProps) => {
+export const FuelSelect = ({ value, onChange }: FilterSelectProps) => {
   return (
     <Select
       onChange={onChange}

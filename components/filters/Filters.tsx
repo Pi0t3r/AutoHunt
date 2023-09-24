@@ -4,21 +4,7 @@ import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "@/firebase";
 import { body, fuelOptions, options } from "../../data/cars";
 import styles from "../offers/offers.module.css";
-type SelectOption = {
-  value: string;
-  brand?: SelectOption[] | undefined;
-  models?: SelectOption[] | undefined;
-  generations?: SelectOption[] | undefined;
-  versions?: SelectOption[] | undefined;
-  body?: SelectOption[] | undefined;
-  engine?: SelectOption[] | undefined;
-};
-
-type FiltersProps = {
-  lenght: number;
-  advertData: any[];
-  setAdvertData: (data: any[]) => void;
-};
+import { SelectOption, FiltersProps } from "@/types/myTypes";
 
 export default function Filters({
   lenght,

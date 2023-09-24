@@ -1,19 +1,7 @@
 import React from "react";
 import styles from "./CarDetails.module.css";
-
-interface carDetailsProps {
-  brand: string;
-  model: string;
-  generation: string;
-  version: string;
-  engine: string;
-}
-
-interface iData {
-  data: carDetailsProps;
-}
-
-const CarDetails = ({ data }: iData) => {
+import { carDataProps } from "@/types/myTypes";
+const CarDetails = ({ data }: carDataProps) => {
   return (
     <div className={styles.infoCar}>
       <p className={styles.title}>Details</p>

@@ -1,13 +1,12 @@
 "use client";
-import React, { useState, useEffect, ChangeEvent } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import { fetchAdverts } from "@/api/getAdvertDetails";
 import Link from "next/link";
 import CarDetails from "@/components/carDetails/CarDetails";
 import SellerDetails from "@/components/sellerDetails/SellerDetails";
 import { db } from "@/firebase";
-import { deleteDoc, doc, collection, updateDoc } from "firebase/firestore";
-
+import { deleteDoc, doc, collection } from "firebase/firestore";
 
 function MyAdvert() {
   const [advertData, setAdvertData] = useState<any[]>([]);
@@ -53,7 +52,7 @@ function MyAdvert() {
   if (advertData.length === 0) {
     return <p>Loading ...</p>;
   }
-  
+
   const showData = advertData.find((car) => car.id === params.id);
   return (
     <div>

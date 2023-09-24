@@ -1,13 +1,6 @@
-import React, { useState } from "react";
-import { SelectOption, Select } from "../select/Select";
-import { options } from "@/data/cars";
-
-interface CarDataSelectProps {
-  filter: string;
-  value: SelectOption | undefined;
-  options: SelectOption[];
-  onChange: (value: SelectOption | undefined) => void;
-}
+import React from "react";
+import { Select } from "../select/Select";
+import { CarDataSelectProps } from "@/types/myTypes";
 
 export const CarDataSelect: React.FC<CarDataSelectProps> = ({
   filter,

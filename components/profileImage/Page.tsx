@@ -3,11 +3,8 @@ import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "@/firebase";
 import { AiOutlineUser } from "react-icons/ai";
 import styles from "./profileImage.module.css";
+import { ProfileImageProps } from "@/types/myTypes";
 
-interface ProfileImageProps {
-  userMail: string;
-  selectedImage?: string | null;
-}
 const ProfileImage = ({ userMail, selectedImage }: ProfileImageProps) => {
   const [profileImageURL, setProfileImageURL] = useState<string | null>(null);
 

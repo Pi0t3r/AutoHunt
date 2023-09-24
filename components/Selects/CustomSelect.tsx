@@ -1,12 +1,7 @@
-import React, { useState } from "react";
-import { Select, SelectOption } from "../select/Select";
+import React from "react";
+import { Select } from "../select/Select";
 import { gearbox, drive } from "../../data/cars";
-interface CustomSelectProps {
-  onChangeDrive: (value: SelectOption | undefined) => void;
-  onChangeGearbox: (value: SelectOption | undefined) => void;
-  valueDrive: SelectOption | undefined;
-  valueGearbox: SelectOption | undefined;
-}
+import { CustomSelectProps } from "@/types/myTypes";
 
 export const CustomSelect: React.FC<CustomSelectProps> = ({
   onChangeDrive,

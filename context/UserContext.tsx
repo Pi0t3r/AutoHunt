@@ -7,26 +7,7 @@ import {
   ReactNode,
 } from "react";
 import { db } from "../firebase";
-
-interface UserContextType {
-  user: {
-    email: string;
-    name: string;
-    surname: string;
-    password: string;
-    profileImage: string | null;
-  } | null;
-  setUser: (
-    user: {
-      email: string;
-      name: string;
-      surname: string;
-      password: string;
-      profileImage: string | null;
-    } | null
-  ) => void;
-  updatePassword: (newPassword: string) => void;
-}
+import { UserContextType } from "@/types/myTypes";
 
 export const UserContext = createContext<UserContextType | null>(null);
 export const UserProvider = ({ children }: { children: ReactNode }) => {

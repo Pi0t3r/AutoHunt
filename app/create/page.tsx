@@ -2,7 +2,6 @@
 import React, { ChangeEvent, useState } from "react";
 import { addDoc, collection, updateDoc } from "firebase/firestore";
 import { db } from "@/firebase";
-import { SelectOption } from "../../components/select/Select";
 import { options } from "../../data/cars";
 import Link from "next/link";
 import useUserData from "@/useUserData";
@@ -14,9 +13,7 @@ import { CustomSelect } from "@/components/Selects/CustomSelect";
 import { CarDataSelect } from "@/components/Selects/CarDataSelect";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "@/firebase";
-interface ImageUploadProps {
-  onImageSelect: (filtes: FileList) => void;
-}
+import { ImageUploadProps, SelectOptionProps } from "@/types/myTypes";
 
 const ImageUpload: React.FC<ImageUploadProps> = ({ onImageSelect }) => {
   const handleImageSelect = (e: ChangeEvent<HTMLInputElement>) => {
@@ -58,37 +55,37 @@ export default function CreateAdvert() {
   });
   const [advertAdded, setAdvertAdded] = useState(false);
 
-  const [selectedBrand, setSelectedBrand] = useState<SelectOption | undefined>(
+  const [selectedBrand, setSelectedBrand] = useState<SelectOptionProps | undefined>(
     undefined
   );
-  const [selectedModel, setSelectedModel] = useState<SelectOption | undefined>(
+  const [selectedModel, setSelectedModel] = useState<SelectOptionProps | undefined>(
     undefined
   );
   const [selectedGeneration, setSelectedGeneration] = useState<
-    SelectOption | undefined
+    SelectOptionProps | undefined
   >(undefined);
   const [selectedVersion, setSelectedVersion] = useState<
-    SelectOption | undefined
+    SelectOptionProps | undefined
   >(undefined);
 
   const [selectedEngine, setSelectedEngine] = useState<
-    SelectOption | undefined
+    SelectOptionProps | undefined
   >(undefined);
   const [selectedGearbox, setSelectedGearbox] = useState<
-    SelectOption | undefined
+    SelectOptionProps | undefined
   >(undefined);
-  const [selectedDrive, setSelectedDrive] = useState<SelectOption | undefined>(
+  const [selectedDrive, setSelectedDrive] = useState<SelectOptionProps | undefined>(
     undefined
   );
-  const [selectedBody, setSelectedBody] = useState<SelectOption | undefined>(
+  const [selectedBody, setSelectedBody] = useState<SelectOptionProps | undefined>(
     undefined
   );
 
-  const [selectedFuel, setSelectedFuel] = useState<SelectOption | undefined>(
+  const [selectedFuel, setSelectedFuel] = useState<SelectOptionProps | undefined>(
     undefined
   );
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
-  const getModelOptions = (): SelectOption[] => {
+  const getModelOptions = (): SelectOptionProps[] => {
     if (selectedBrand && selectedBrand.value) {
       const brand = options.find(
         (option) => option.value === selectedBrand.value
@@ -102,7 +99,7 @@ export default function CreateAdvert() {
     setSelectedImages(imageArray);
   };
 
-  const getGenerationOption = (): SelectOption[] => {
+  const getGenerationOption = (): SelectOptionProps[] => {
     if (selectedModel && selectedModel.value) {
       const brand = options.find(
         (option) => option.value === selectedBrand?.value
@@ -117,7 +114,7 @@ export default function CreateAdvert() {
     return [];
   };
 
-  const getVersionOption = (): SelectOption[] => {
+  const getVersionOption = (): SelectOptionProps[] => {
     if (selectedGeneration && selectedGeneration.value) {
       const brand = options.find(
         (option) => option.value === selectedBrand?.value
@@ -137,7 +134,7 @@ export default function CreateAdvert() {
     return [];
   };
 
-  const getEngineOption = (): SelectOption[] => {
+  const getEngineOption = (): SelectOptionProps[] => {
     if (selectedVersion && selectedVersion.value) {
       const brand = options.find(
         (option) => option.value === selectedBrand?.value
@@ -178,7 +175,7 @@ export default function CreateAdvert() {
       console.error("Error while adding advert: ", error);
     }
   };
-  const handleBrandChange = (brand: SelectOption | undefined) => {
+  const handleBrandChange = (brand: SelectOptionProps | undefined) => {
     setFormData((prevData) => ({ ...prevData, brand: brand?.value || "" }));
     setSelectedBrand(brand);
     setSelectedModel(undefined);
@@ -186,12 +183,12 @@ export default function CreateAdvert() {
     setSelectedVersion(undefined);
     setSelectedEngine(undefined);
   };
-  const handleBodyChange = (body: SelectOption | undefined) => {
+  const handleBodyChange = (body: SelectOptionProps | undefined) => {
     setFormData((prevData) => ({ ...prevData, body: body?.value || "" }));
     setSelectedBody(body);
   };
 
-  const handleFuelChange = (fuel: SelectOption | undefined) => {
+  const handleFuelChange = (fuel: SelectOptionProps | undefined) => {
     setFormData((prevData) => ({ ...prevData, fuel: fuel?.value || "" }));
     setSelectedFuel(fuel);
   };
@@ -249,7 +246,7 @@ export default function CreateAdvert() {
           filter="Model"
           value={selectedModel}
           options={getModelOptions()}
-          onChange={(model: SelectOption | undefined) => {
+          onChange={(model: SelectOptionProps | undefined) => {
             setFormData((prevData) => ({
               ...prevData,
               model: model?.value || "",
@@ -263,7 +260,7 @@ export default function CreateAdvert() {
         <CarDataSelect
           filter="Generation"
           value={selectedGeneration}
-          onChange={(generation: SelectOption | undefined) => {
+          onChange={(generation: SelectOptionProps | undefined) => {
             setFormData((prevData) => ({
               ...prevData,
               generation: generation?.value || "",
@@ -278,7 +275,7 @@ export default function CreateAdvert() {
           filter="Version"
           value={selectedVersion}
           options={getVersionOption()}
-          onChange={(version: SelectOption | undefined) => {
+          onChange={(version: SelectOptionProps | undefined) => {
             setFormData((prevData) => ({
               ...prevData,
               version: version?.value || "",
@@ -291,7 +288,7 @@ export default function CreateAdvert() {
           filter="Engine"
           value={selectedEngine}
           options={getEngineOption()}
-          onChange={(engine: SelectOption | undefined) => {
+          onChange={(engine: SelectOptionProps | undefined) => {
             setFormData((prevData) => ({
               ...prevData,
               engine: engine?.value || "",
@@ -301,14 +298,14 @@ export default function CreateAdvert() {
         />
         <FuelSelect onChange={handleFuelChange} value={selectedFuel} />
         <CustomSelect
-          onChangeDrive={(drive: SelectOption | undefined) => {
+          onChangeDrive={(drive: SelectOptionProps | undefined) => {
             setFormData((prevData) => ({
               ...prevData,
               drive: drive?.value || "",
             }));
             setSelectedDrive(drive);
           }}
-          onChangeGearbox={(gearbox: SelectOption | undefined) => {
+          onChangeGearbox={(gearbox: SelectOptionProps | undefined) => {
             setFormData((prevData) => ({
               ...prevData,
               gearbox: gearbox?.value || "",

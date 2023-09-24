@@ -1,16 +1,12 @@
 import React, { useState } from "react";
 import { options } from "@/data/cars";
-import { Select, SelectOption } from "../select/Select";
-
-interface BrandSelectProps {
-  onChange: (value: SelectOption | undefined) => void;
-}
-
-export const BrandSelect: React.FC<BrandSelectProps> = ({ onChange }) => {
-  const [selectedBrand, setSelectedBrand] = useState<SelectOption | undefined>(
-    undefined
-  );
-  const handleBrandChange = (brand: SelectOption | undefined) => {
+import { Select } from "../select/Select";
+import { FilterSelectProps, SelectOptionProps } from "@/types/myTypes";
+export const BrandSelect: React.FC<FilterSelectProps> = ({ onChange }) => {
+  const [selectedBrand, setSelectedBrand] = useState<
+    SelectOptionProps | undefined
+  >(undefined);
+  const handleBrandChange = (brand: SelectOptionProps | undefined) => {
     setSelectedBrand(brand);
     onChange(brand);
   };

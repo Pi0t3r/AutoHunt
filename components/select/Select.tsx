@@ -1,17 +1,6 @@
 import styles from "./select.module.css";
 import React, { useState, useEffect } from "react";
-
-export type SelectOption = {
-  value: string;
-};
-
-type SelectProps = {
-  options: SelectOption[];
-  value: SelectOption | undefined;
-  onChange: (value: SelectOption | undefined) => void;
-  filter: string;
-  disabled?: boolean;
-};
+import { SelectOptionProps, SelectProps } from "@/types/myTypes";
 
 export function Select({
   value,
@@ -26,10 +15,10 @@ export function Select({
   function clearOption() {
     onChange(undefined);
   }
-  function selectOption(option: SelectOption) {
+  function selectOption(option: SelectOptionProps) {
     if (option !== value) onChange(option);
   }
-  function isOptionSelected(option: SelectOption) {
+  function isOptionSelected(option: SelectOptionProps) {
     return option === value;
   }
   useEffect(() => {
@@ -41,7 +30,7 @@ export function Select({
       onBlur={() => setIsOpen(false)}
       onClick={() => setIsOpen((prev) => !prev)}
       tabIndex={0}
-      className={`${styles.container} ${disabled ? styles.disabled : ''}`}
+      className={`${styles.container} ${disabled ? styles.disabled : ""}`}
     >
       <span className={styles.title}>{filter}</span>
       <div className={styles.divider} />

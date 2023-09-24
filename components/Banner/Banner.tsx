@@ -3,7 +3,6 @@ import { Carousel } from "react-responsive-carousel";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styles from "./Banner.module.css";
-import Image from "next/image";
 
 const Banner = ({ images }: { images: string[] }) => {
   const [clickedHeart, setClickedHeart] = useState(false);

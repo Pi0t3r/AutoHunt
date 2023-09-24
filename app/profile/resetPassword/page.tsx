@@ -7,7 +7,6 @@ import { collection, doc, updateDoc } from "firebase/firestore";
 import {
   EmailAuthProvider,
   getAuth,
-  reauthenticateWithCredential,
   updatePassword,
 } from "@firebase/auth";
 

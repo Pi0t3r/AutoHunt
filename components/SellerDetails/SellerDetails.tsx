@@ -2,19 +2,9 @@ import React from "react";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { FaMapPin } from "react-icons/fa";
 import styles from "./sellerDetails.module.css";
+import { SellerDataProps } from "@/types/myTypes";
 
-interface SellerDetailsProps {
-  sellerName: string;
-  sellerSurname: string;
-  phone: string;
-  sellerPlace: string;
-}
-
-interface iData {
-  data: SellerDetailsProps;
-}
-
-const SellerDetails = ({ data }: iData) => {
+const SellerDetails = ({ data }: SellerDataProps) => {
   return (
     <div className={styles.infoSeller}>
       <p className={styles.title}>About the seller</p>

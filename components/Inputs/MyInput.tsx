@@ -1,12 +1,5 @@
-import React, { ChangeEvent } from "react";
-
-interface MyInputProps {
-  value: string;
-  onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  title: string;
-  type: string;
-  placeholder?: string;
-}
+import React from "react";
+import { MyInputProps } from "@/types/myTypes";
 
 export const MyInput: React.FC<MyInputProps> = ({
   value,
