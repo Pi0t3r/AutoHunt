@@ -36,6 +36,15 @@ interface carDetailsProps {
   generation: string;
   version: string;
   engine: string;
+  mileage: number;
+  body: string;
+  drive: string;
+  firstRegister: string;
+  fuel: string;
+  gearbox: string;
+  price: number;
+  yearbook: number;
+  vin: string;
 }
 
 export interface carDataProps {
@@ -109,4 +118,9 @@ export interface UserContextType {
     } | null
   ) => void;
   updatePassword: (newPassword: string) => void;
+}
+
+export interface MyTimerProps {
+  expiryTimestamp: Date;
+  onExpire: () => void;
 }

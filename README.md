@@ -40,8 +40,6 @@ npm run dev
 ## Planned functions
 
 - Improved appearance and user interface
-- Editing own advert
-- Posibility to edit and delete own ads
 - Posibility to login & register with Google account
 
 ## License
