@@ -7,7 +7,7 @@ Autohunt is an online application that aims to help users find their dream car o
 - Next.js
 - Typescript
 - Firebase
-- CSS (in future it will be replacement on Tailwind)
+- CSS (in future it will be replacement on Tailwind or MaterialUI)
 
 ## Status
 
@@ -49,7 +49,6 @@ The Autohunt project is not released under any license.
 ## Known problems
 
 - Currently lacking a proper design and user interface
-- if user select e.g. Audi and want to sort ads by price, unfortunately all offers show up
 
 ## Contact
 
