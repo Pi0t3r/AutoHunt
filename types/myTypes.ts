@@ -45,6 +45,7 @@ interface carDetailsProps {
   price: number;
   yearbook: number;
   vin: string;
+  createAdvert: string;
 }
 
 export interface carDataProps {

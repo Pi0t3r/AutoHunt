@@ -24,7 +24,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onImageSelect }) => {
   };
   return (
     <div>
-      <input type="file" multiple onChange={handleImageSelect} />
+      <input type="file" multiple onChange={handleImageSelect} required />
     </div>
   );
 };
@@ -52,15 +52,16 @@ export default function CreateAdvert() {
     sellerSurname: "",
     sellerContact: "",
     sellerPlace: "",
+    createAdvert: "",
   });
   const [advertAdded, setAdvertAdded] = useState(false);
 
-  const [selectedBrand, setSelectedBrand] = useState<SelectOptionProps | undefined>(
-    undefined
-  );
-  const [selectedModel, setSelectedModel] = useState<SelectOptionProps | undefined>(
-    undefined
-  );
+  const [selectedBrand, setSelectedBrand] = useState<
+    SelectOptionProps | undefined
+  >(undefined);
+  const [selectedModel, setSelectedModel] = useState<
+    SelectOptionProps | undefined
+  >(undefined);
   const [selectedGeneration, setSelectedGeneration] = useState<
     SelectOptionProps | undefined
   >(undefined);
@@ -74,16 +75,16 @@ export default function CreateAdvert() {
   const [selectedGearbox, setSelectedGearbox] = useState<
     SelectOptionProps | undefined
   >(undefined);
-  const [selectedDrive, setSelectedDrive] = useState<SelectOptionProps | undefined>(
-    undefined
-  );
-  const [selectedBody, setSelectedBody] = useState<SelectOptionProps | undefined>(
-    undefined
-  );
+  const [selectedDrive, setSelectedDrive] = useState<
+    SelectOptionProps | undefined
+  >(undefined);
+  const [selectedBody, setSelectedBody] = useState<
+    SelectOptionProps | undefined
+  >(undefined);
 
-  const [selectedFuel, setSelectedFuel] = useState<SelectOptionProps | undefined>(
-    undefined
-  );
+  const [selectedFuel, setSelectedFuel] = useState<
+    SelectOptionProps | undefined
+  >(undefined);
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
   const getModelOptions = (): SelectOptionProps[] => {
     if (selectedBrand && selectedBrand.value) {
@@ -161,7 +162,11 @@ export default function CreateAdvert() {
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
     try {
-      const advertData = { ...formData };
+      const date = new Date();
+      const advertData = {
+        ...formData,
+        createAdvert: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
+      };
       const advertRef = await addDoc(collection(db, "adverts"), advertData);
       if (selectedImages.length > 0) {
         const imageUrls = await uploadImagesToStorage(
@@ -205,7 +210,7 @@ export default function CreateAdvert() {
     if (advertAdded) {
       return <p>Your ad has been added</p>;
     } else {
-      return;
+      return null;
     }
   };
   const uploadImagesToStorage = async (images: File[], advertId: string) => {

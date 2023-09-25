@@ -12,7 +12,7 @@ export default function Offers() {
   const handleChangeSortOption = (event: ChangeEvent<HTMLSelectElement>) => {
     setSortOption(event.target.value);
   };
-  const [sortedAdvertData, setSortedAdvertData] = useState<any[]>([]); 
+  const [sortedAdvertData, setSortedAdvertData] = useState<any[]>([]);
   useEffect(() => {
     const sortAdvertData = () => {
       const sortedData = [...advertData];
@@ -48,6 +48,7 @@ export default function Offers() {
                       {post.version}
                     </p>
                     <p>{post.price}</p>
+                    <p>{post.createAdvert}</p>
                   </div>
                 </div>
               </Link>

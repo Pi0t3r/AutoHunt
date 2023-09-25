@@ -34,6 +34,7 @@ const CarDetails = ({ data }: carDataProps) => {
         <dt>VIN</dt>
         <dd>{data.vin}</dd>
       </dl>
+      <p>created: {data.createAdvert}</p>
     </div>
   );
 };
