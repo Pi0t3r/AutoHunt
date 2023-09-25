@@ -13,7 +13,7 @@ export type SelectOption = {
 };
 
 export type FiltersProps = {
-  lenght: number;
+  filteredLength: number;
   advertData: any[];
   setAdvertData: (data: any[]) => void;
 };

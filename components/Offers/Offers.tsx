@@ -5,43 +5,41 @@ import styles from "./offers.module.css";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import Link from "next/link";
 import Filters from "../filters/Filters";
-import { fetchAdverts } from "@/api/getAdvertDetails";
 
 export default function Offers() {
   const [advertData, setAdvertData] = useState<any[]>([]);
-  const [sortBy, setSortBy] = useState("default");
+  const [sortOption, setSortOption] = useState<string>("default");
+  const handleChangeSortOption = (event: ChangeEvent<HTMLSelectElement>) => {
+    setSortOption(event.target.value);
+  };
+  const [sortedAdvertData, setSortedAdvertData] = useState<any[]>([]); 
   useEffect(() => {
-    const fetchOffers = async () => {
-      const adverts = await fetchAdverts();
-      if (sortBy === "Low") {
-        adverts.sort((a, b) => a.price - b.price);
-      } else if (sortBy === "High") {
-        adverts.sort((a, b) => b.price - a.price);
-      } else if (sortBy === "default") {
-        return;
+    const sortAdvertData = () => {
+      const sortedData = [...advertData];
+      if (sortOption === "Low") {
+        sortedData.sort((a, b) => a.price - b.price);
+      } else if (sortOption === "High") {
+        sortedData.sort((a, b) => b.price - a.price);
       }
-      setAdvertData(adverts);
+      setSortedAdvertData(sortedData);
     };
-    fetchOffers();
-  }, [sortBy]);
 
+    sortAdvertData();
+  }, [advertData, sortOption]);
   const showAdvert = () => {
     if (advertData.length === 0) {
       return <p>Loading ...</p>;
     } else {
       return (
         <ul>
-          {advertData.map((post) => (
+          {sortedAdvertData.map((post) => (
             <li key={post.id}>
               <Link href={`/advert/${post.id}`} key={post.id}>
                 <div className={styles.offer}>
                   <div className={styles.info}>
                     <div>
                       {post.images && post.images.length > 0 && (
-                        <img
-                          src={post.images[0]}
-                          alt={`Image 0`}
-                        />
+                        <img src={post.images[0]} alt={`Image 0`} />
                       )}
                     </div>
                     <p>
@@ -59,27 +57,32 @@ export default function Offers() {
       );
     }
   };
-  const handleSortChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    setSortBy(event.target.value);
-  };
+  const filteredLength = sortedAdvertData.length;
+
   return (
     <div className={styles.div}>
       <h2>What you're looking for?</h2>
       <div>
         <Filters
-          lenght={advertData.length}
+          filteredLength={filteredLength}
           advertData={advertData}
           setAdvertData={setAdvertData}
         />
       </div>
       <div>
-        <span>Sortuj </span>
-        <select name="sort" id="sort" onChange={handleSortChange}>
+        <span>Sort </span>
+        <select
+          name="sort"
+          id="sort"
+          value={sortOption}
+          onChange={handleChangeSortOption}
+        >
           <option value="default">---</option>
           <option value="Low">By price (Low to high)</option>
           <option value="High">By price (High to low)</option>
         </select>
       </div>
+
       <div className={styles.offers}>{showAdvert()}</div>
     </div>
   );

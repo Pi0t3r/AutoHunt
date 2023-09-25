@@ -9,7 +9,6 @@ import { db } from "@/firebase";
 import { deleteDoc, doc, collection, updateDoc } from "firebase/firestore";
 import { MyInput } from "@/components/Inputs/MyInput";
 import Banner from "@/components/banner/Banner";
-import MyTimer from "@/components/timer/MyTimer";
 
 function MyAdvert() {
   const [advertData, setAdvertData] = useState<any[]>([]);
@@ -33,53 +32,34 @@ function MyAdvert() {
     sellerPlace: "",
     vin: "",
   });
-  const [countdownActive, setCountdownActive] = useState(false);
-  const time = new Date();
-  time.setSeconds(time.getSeconds() + 300);
 
-  useEffect(() => {
-    const fetchOffers = async () => {
-      const adverts = await fetchAdverts();
-      setAdvertData(adverts);
-      const editAdvert = adverts.find((car) => car.id === params.id);
-      if (editAdvert) {
-        setFormData({
-          ...formData,
-          ...editAdvert,
-        });
-      }
-    };
-    fetchOffers();
-  }, [formData, params.id]);
 
   const handleEdit = () => {
     setIsEditing(!isEditing);
-    setCountdownActive(false);
   };
   const handleSaveChanges = async () => {
     if (params.id) {
       try {
-        const advertRef = doc(db, "adverts", params.id as string);
-        await updateDoc(advertRef, {
+        await updateDoc(doc(db, "adverts", params.id as string), {
           phone: formData.phone,
           price: formData.price,
           mileage: formData.mileage,
           sellerPlace: formData.sellerPlace,
         });
-        setIsEditing(false);
-        setCountdownActive(true);
-        localStorage.setItem("countdownActive", "true");
       } catch (err) {
         console.error(`Error while saving changes: ${err}`);
       }
     }
   };
   useEffect(() => {
-    const savedCountdownActive = localStorage.getItem("countdownActive");
-    if (savedCountdownActive === "true") {
-      setCountdownActive(true);
-    }
-  }, []);
+    const fetchOffers = async () => {
+      const adverts = await fetchAdverts();
+      setAdvertData(adverts);
+    };
+    fetchOffers();
+  }, [formData, params.id]);
+
+
   const handleCancelEdit = () => {
     setIsEditing(false);
   };
@@ -97,6 +77,7 @@ function MyAdvert() {
   if (advertData.length === 0) {
     return <p>Loading ...</p>;
   }
+
   const showData = advertData.find((car) => car.id === params.id);
   return (
     <div>
@@ -164,19 +145,10 @@ function MyAdvert() {
           <SellerDetails data={showData} />
           <div>
             <button onClick={handleDelete}>Delete advert</button>
-            <button onClick={handleEdit} disabled={countdownActive}>
+            <button onClick={handleEdit}>
               Edit advert
             </button>
           </div>
-          {countdownActive && (
-            <div>
-              <p>Remaining time to next edit:</p>
-              <MyTimer
-                expiryTimestamp={time}
-                onExpire={() => setCountdownActive(false)}
-              />
-            </div>
-          )}
         </div>
       )}
     </div>

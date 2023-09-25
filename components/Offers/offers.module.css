@@ -4,22 +4,7 @@
   text-align: center;
   color: black;
 }
-.button {
-  margin-top: 20px;
-  width: 90%;
-  padding: 18px;
-  background-color: #b78d20;
-  border: none;
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: all .3s;
-}
-.button:hover {
-  background-color: #c89e31;
-}
+
 .offers {
   margin-top: 15px;
   background-color: #c6c6c6b3;

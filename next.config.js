@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["ireland.apollo.olxcdn.com"],
+    domains: ["ireland.apollo.olxcdn.com", "firebasestorage.googleapis.com"],
   },
   env: {
     FIREBASE_KEY: process.env.FIREBASE_KEY,

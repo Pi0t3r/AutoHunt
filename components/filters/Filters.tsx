@@ -7,7 +7,7 @@ import styles from "../offers/offers.module.css";
 import { SelectOption, FiltersProps } from "@/types/myTypes";
 
 export default function Filters({
-  lenght,
+  filteredLength,
   advertData,
   setAdvertData,
 }: FiltersProps) {
@@ -160,6 +160,7 @@ export default function Filters({
   const handleEngineChange = (engine: SelectOption | undefined) => {
     setSelectedEngine(engine);
   };
+
   return (
     <div>
       <Select
@@ -206,7 +207,7 @@ export default function Filters({
         filter="Fuel type"
         disabled={selectedEngine?.value !== undefined}
       />
-      <button className={styles.button}>Show advertisements {lenght} </button>
+      <p className={styles.information}>Available advertisements: {filteredLength}</p>
     </div>
   );
 }

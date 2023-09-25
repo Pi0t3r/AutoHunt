@@ -4,6 +4,7 @@ import { storage } from "@/firebase";
 import { AiOutlineUser } from "react-icons/ai";
 import styles from "./profileImage.module.css";
 import { ProfileImageProps } from "@/types/myTypes";
+import Image from "next/image";
 
 const ProfileImage = ({ userMail, selectedImage }: ProfileImageProps) => {
   const [profileImageURL, setProfileImageURL] = useState<string | null>(null);
@@ -26,7 +27,7 @@ const ProfileImage = ({ userMail, selectedImage }: ProfileImageProps) => {
   return (
     <div className={styles.profileImage}>
       {profileImageURL ? (
-        <img src={profileImageURL} alt="Profile picture user" />
+        <Image src={profileImageURL} alt="Profile picture user" width={150} height={150} />
       ) : (
         <AiOutlineUser />
       )}
