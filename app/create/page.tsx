@@ -13,21 +13,8 @@ import { CustomSelect } from "@/components/Selects/CustomSelect";
 import { CarDataSelect } from "@/components/Selects/CarDataSelect";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "@/firebase";
-import { ImageUploadProps, SelectOptionProps } from "@/types/myTypes";
-
-const ImageUpload: React.FC<ImageUploadProps> = ({ onImageSelect }) => {
-  const handleImageSelect = (e: ChangeEvent<HTMLInputElement>) => {
-    const files = e.target.files;
-    if (files) {
-      onImageSelect(files);
-    }
-  };
-  return (
-    <div>
-      <input type="file" multiple onChange={handleImageSelect} required />
-    </div>
-  );
-};
+import { SelectOptionProps } from "@/types/myTypes";
+import ImageUpload from "@/components/imageUpload/ImageUpload";
 
 export default function CreateAdvert() {
   const { userData } = useUserData();
@@ -55,7 +42,6 @@ export default function CreateAdvert() {
     createAdvert: "",
   });
   const [advertAdded, setAdvertAdded] = useState(false);
-
   const [selectedBrand, setSelectedBrand] = useState<
     SelectOptionProps | undefined
   >(undefined);
@@ -68,7 +54,6 @@ export default function CreateAdvert() {
   const [selectedVersion, setSelectedVersion] = useState<
     SelectOptionProps | undefined
   >(undefined);
-
   const [selectedEngine, setSelectedEngine] = useState<
     SelectOptionProps | undefined
   >(undefined);
@@ -81,11 +66,18 @@ export default function CreateAdvert() {
   const [selectedBody, setSelectedBody] = useState<
     SelectOptionProps | undefined
   >(undefined);
-
   const [selectedFuel, setSelectedFuel] = useState<
     SelectOptionProps | undefined
   >(undefined);
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
+
+  const mapField = (field: string, value: string) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      [field]: value,
+    }));
+  };
+
   const getModelOptions = (): SelectOptionProps[] => {
     if (selectedBrand && selectedBrand.value) {
       const brand = options.find(
@@ -252,10 +244,7 @@ export default function CreateAdvert() {
           value={selectedModel}
           options={getModelOptions()}
           onChange={(model: SelectOptionProps | undefined) => {
-            setFormData((prevData) => ({
-              ...prevData,
-              model: model?.value || "",
-            }));
+            mapField("model", model?.value || "");
             setSelectedModel(model);
             setSelectedGeneration(undefined);
             setSelectedVersion(undefined);
@@ -266,10 +255,7 @@ export default function CreateAdvert() {
           filter="Generation"
           value={selectedGeneration}
           onChange={(generation: SelectOptionProps | undefined) => {
-            setFormData((prevData) => ({
-              ...prevData,
-              generation: generation?.value || "",
-            }));
+            mapField("generation", generation?.value || "");
             setSelectedGeneration(generation);
             setSelectedVersion(undefined);
             setSelectedEngine(undefined);
@@ -281,10 +267,7 @@ export default function CreateAdvert() {
           value={selectedVersion}
           options={getVersionOption()}
           onChange={(version: SelectOptionProps | undefined) => {
-            setFormData((prevData) => ({
-              ...prevData,
-              version: version?.value || "",
-            }));
+            mapField("version", version?.value || "");
             setSelectedVersion(version);
             setSelectedEngine(undefined);
           }}
@@ -294,27 +277,18 @@ export default function CreateAdvert() {
           value={selectedEngine}
           options={getEngineOption()}
           onChange={(engine: SelectOptionProps | undefined) => {
-            setFormData((prevData) => ({
-              ...prevData,
-              engine: engine?.value || "",
-            }));
+            mapField("engine", engine?.value || "");
             setSelectedEngine(engine);
           }}
         />
         <FuelSelect onChange={handleFuelChange} value={selectedFuel} />
         <CustomSelect
           onChangeDrive={(drive: SelectOptionProps | undefined) => {
-            setFormData((prevData) => ({
-              ...prevData,
-              drive: drive?.value || "",
-            }));
+            mapField("drive", drive?.value || "");
             setSelectedDrive(drive);
           }}
           onChangeGearbox={(gearbox: SelectOptionProps | undefined) => {
-            setFormData((prevData) => ({
-              ...prevData,
-              gearbox: gearbox?.value || "",
-            }));
+            mapField("gearbox", gearbox?.value || "");
             setSelectedGearbox(gearbox);
           }}
           valueDrive={selectedDrive}
@@ -323,10 +297,7 @@ export default function CreateAdvert() {
         <MyInput
           value={formData.yearbook}
           onChange={(event: ChangeEvent<HTMLInputElement>) => {
-            setFormData((prevData) => ({
-              ...prevData,
-              yearbook: event.target.value,
-            }));
+            mapField("yearbook", event.target.value);
           }}
           type="number"
           title="Yearbook"
@@ -336,10 +307,7 @@ export default function CreateAdvert() {
           type="number"
           title="Mileage"
           onChange={(event: ChangeEvent<HTMLInputElement>) => {
-            setFormData((prevData) => ({
-              ...prevData,
-              mileage: event.target.value,
-            }));
+            mapField("mileage", event.target.value);
           }}
         />
         <MyInput
@@ -348,20 +316,14 @@ export default function CreateAdvert() {
           value={formData.firstRegister}
           placeholder="e.g. 23/01/2023"
           onChange={(event: ChangeEvent<HTMLInputElement>) => {
-            setFormData((prevData) => ({
-              ...prevData,
-              firstRegister: event.target.value,
-            }));
+            mapField("firstRegister", event.target.value);
           }}
         />
         <MyInput
           title="VIN"
           value={formData.vin}
           onChange={(event: ChangeEvent<HTMLInputElement>) => {
-            setFormData((prevData) => ({
-              ...prevData,
-              vin: event.target.value,
-            }));
+            mapField("vin", event.target.value);
           }}
           type="text"
         />
@@ -370,11 +332,7 @@ export default function CreateAdvert() {
           type="number"
           value={formData.price}
           onChange={(event: ChangeEvent<HTMLInputElement>) => {
-            const value = event.target.value;
-            setFormData((prevData) => ({
-              ...prevData,
-              price: value,
-            }));
+            mapField("price", event.target.value);
           }}
         />
         <MyInput
@@ -382,11 +340,7 @@ export default function CreateAdvert() {
           type="tel"
           value={formData.phone}
           onChange={(event: ChangeEvent<HTMLInputElement>) => {
-            const value = event.target.value;
-            setFormData((prevData) => ({
-              ...prevData,
-              phone: value,
-            }));
+            mapField("phone", event.target.value);
           }}
         />
         <MyInput
@@ -402,7 +356,7 @@ export default function CreateAdvert() {
           }}
         />
         <p>
-          {userName} {userSurname} <Result />
+          <Result />
         </p>
         <button onClick={clearData} type="submit">
           Display
