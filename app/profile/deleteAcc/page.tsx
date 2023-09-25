@@ -11,7 +11,7 @@ export default function DeleteAcc() {
 
     try {
       const userId = user?.uid;
-      await deleteDoc(doc(db, "users", userId));
+      await deleteDoc(doc(db, "users", userId as string));
       await user?.delete();
       await auth.signOut();
       setUser(null);

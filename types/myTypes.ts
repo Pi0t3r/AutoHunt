@@ -110,7 +110,7 @@ export interface UserContextType {
     profileImage: string | null;
   } | null;
   setUser: (
-    user: {
+    userData: {
       email: string;
       name: string;
       surname: string;
@@ -119,8 +119,8 @@ export interface UserContextType {
     } | null
   ) => void;
   updatePassword: (newPassword: string) => void;
+  updateProfilePicture: (newImage: string) => void;
 }
-
 export interface MyTimerProps {
   expiryTimestamp: Date;
   onExpire: () => void;

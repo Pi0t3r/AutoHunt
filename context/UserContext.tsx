@@ -56,7 +56,7 @@ export const UserProvider = ({ children }: { children: ReactNode }) => {
       name: string;
       surname: string;
       password: string;
-      profileImage: string;
+      profileImage: string | null;
     } | null
   ) => {
     setUser(userData);
