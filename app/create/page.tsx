@@ -18,6 +18,7 @@ import { options } from "../../data/cars";
 export default function CreateAdvert() {
   const { userData } = useUserData();
   const { userName, userSurname, userMail } = userData;
+  // Initialize state for form data
   const [formData, setFormData] = useState({
     body: "",
     brand: "",
@@ -40,7 +41,9 @@ export default function CreateAdvert() {
     sellerPlace: "",
     createAdvert: "",
   });
+  // State to track if the advert has been added
   const [advertAdded, setAdvertAdded] = useState(false);
+  // Initialize state for selected options
   const [selectedBrand, setSelectedBrand] = useState<
     SelectOptionProps | undefined
   >(undefined);
@@ -70,6 +73,7 @@ export default function CreateAdvert() {
   >(undefined);
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
 
+  // Function to update a specific form field in the state
   const mapField = (field: string, value: string) => {
     setFormData((prevData) => ({
       ...prevData,
@@ -77,6 +81,12 @@ export default function CreateAdvert() {
     }));
   };
 
+  // Function to handle the selection of images
+  const handleImageSelect = (files: FileList) => {
+    const imageArray = Array.from(files);
+    setSelectedImages(imageArray);
+  };
+  // Function to get model options based on the selected brand
   const getModelOptions = (): SelectOptionProps[] => {
     if (selectedBrand && selectedBrand.value) {
       const brand = options.find(
@@ -86,11 +96,7 @@ export default function CreateAdvert() {
     }
     return [];
   };
-  const handleImageSelect = (files: FileList) => {
-    const imageArray = Array.from(files);
-    setSelectedImages(imageArray);
-  };
-
+  // Function to get generation options based on the selected model
   const getGenerationOption = (): SelectOptionProps[] => {
     if (selectedModel && selectedModel.value) {
       const brand = options.find(
@@ -105,7 +111,7 @@ export default function CreateAdvert() {
     }
     return [];
   };
-
+  // Function to get version options based on the selected generation
   const getVersionOption = (): SelectOptionProps[] => {
     if (selectedGeneration && selectedGeneration.value) {
       const brand = options.find(
@@ -125,7 +131,7 @@ export default function CreateAdvert() {
     }
     return [];
   };
-
+  // Function to get engine options based on the selected version
   const getEngineOption = (): SelectOptionProps[] => {
     if (selectedVersion && selectedVersion.value) {
       const brand = options.find(
@@ -150,6 +156,7 @@ export default function CreateAdvert() {
     }
     return [];
   };
+  // Function to handle the form submission
   const handleSubmit = async (event: { preventDefault: () => void }) => {
     event.preventDefault();
     try {
@@ -158,7 +165,9 @@ export default function CreateAdvert() {
         ...formData,
         createAdvert: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`,
       };
+      // Add advert data to the Firestore collection
       const advertRef = await addDoc(collection(db, "adverts"), advertData);
+      // Upload images to Firebase Storage and update the advert with image URLs
       if (selectedImages.length > 0) {
         const imageUrls = await uploadImagesToStorage(
           selectedImages,
@@ -166,11 +175,13 @@ export default function CreateAdvert() {
         );
         await updateDoc(advertRef, { images: imageUrls });
       }
+      // Set advertAdded to true
       setAdvertAdded(true);
     } catch (error) {
       console.error("Error while adding advert: ", error);
     }
   };
+  // Function to handle brand change
   const handleBrandChange = (brand: SelectOptionProps | undefined) => {
     setFormData((prevData) => ({ ...prevData, brand: brand?.value || "" }));
     setSelectedBrand(brand);
@@ -179,16 +190,18 @@ export default function CreateAdvert() {
     setSelectedVersion(undefined);
     setSelectedEngine(undefined);
   };
+  // Function to handle body change
   const handleBodyChange = (body: SelectOptionProps | undefined) => {
     setFormData((prevData) => ({ ...prevData, body: body?.value || "" }));
     setSelectedBody(body);
   };
 
+  // Function to handle fuel change
   const handleFuelChange = (fuel: SelectOptionProps | undefined) => {
     setFormData((prevData) => ({ ...prevData, fuel: fuel?.value || "" }));
     setSelectedFuel(fuel);
   };
-
+  // Function to update user information in the form
   const handleUserInfoChange = () => {
     setFormData((prevData) => ({
       ...prevData,
@@ -197,6 +210,8 @@ export default function CreateAdvert() {
       sellerContact: userMail,
     }));
   };
+
+  // Component to display result message
   const Result = () => {
     if (advertAdded) {
       return <p>Your ad has been added</p>;
@@ -204,6 +219,7 @@ export default function CreateAdvert() {
       return null;
     }
   };
+  // Function to upload images to Firebase Storage
   const uploadImagesToStorage = async (images: File[], advertId: string) => {
     const imageUrls: string[] = [];
 
@@ -216,6 +232,7 @@ export default function CreateAdvert() {
 
     return imageUrls;
   };
+  // Function to clear selected data
   const clearData = () => {
     setSelectedBody(undefined);
     setSelectedFuel(undefined);
