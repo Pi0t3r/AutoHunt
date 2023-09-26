@@ -1,20 +1,19 @@
 "use client";
-import React, { ChangeEvent, useState } from "react";
-import { addDoc, collection, updateDoc } from "firebase/firestore";
-import { db } from "@/firebase";
-import { options } from "../../data/cars";
-import Link from "next/link";
-import useUserData from "@/useUserData";
+import { MyInput } from "@/components/Inputs/MyInput";
 import { BodySelect } from "@/components/Selects/BodySelect";
 import { BrandSelect } from "@/components/Selects/BrandSelect";
-import { FuelSelect } from "@/components/Selects/FuelSelect";
-import { MyInput } from "@/components/Inputs/MyInput";
-import { CustomSelect } from "@/components/Selects/CustomSelect";
 import { CarDataSelect } from "@/components/Selects/CarDataSelect";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { storage } from "@/firebase";
-import { SelectOptionProps } from "@/types/myTypes";
+import { CustomSelect } from "@/components/Selects/CustomSelect";
+import { FuelSelect } from "@/components/Selects/FuelSelect";
 import ImageUpload from "@/components/imageUpload/ImageUpload";
+import { db, storage } from "@/firebase";
+import { SelectOptionProps } from "@/types/myTypes";
+import useUserData from "@/useUserData";
+import { addDoc, collection, updateDoc } from "firebase/firestore";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import Link from "next/link";
+import { ChangeEvent, useState } from "react";
+import { options } from "../../data/cars";
 
 export default function CreateAdvert() {
   const { userData } = useUserData();
@@ -157,7 +156,7 @@ export default function CreateAdvert() {
       const date = new Date();
       const advertData = {
         ...formData,
-        createAdvert: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`,
+        createAdvert: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`,
       };
       const advertRef = await addDoc(collection(db, "adverts"), advertData);
       if (selectedImages.length > 0) {
@@ -218,7 +217,6 @@ export default function CreateAdvert() {
     return imageUrls;
   };
   const clearData = () => {
-    setSelectedBrand(undefined);
     setSelectedBody(undefined);
     setSelectedFuel(undefined);
     setSelectedModel(undefined);

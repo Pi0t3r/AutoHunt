@@ -1,13 +1,13 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import ProfileImage from "@/components/profileImage/Page";
+import { db, storage } from "@/firebase";
+import useUserData from "@/useUserData";
+import { doc, updateDoc } from "firebase/firestore";
+import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import Link from "next/link";
+import React, { useEffect, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import styles from "./profile.module.css";
-import useUserData from "@/useUserData";
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
-import { storage, db } from "@/firebase";
-import { updateDoc, doc } from "firebase/firestore";
-import ProfileImage from "@/components/profileImage/Page";
 export default function Profile() {
   const { userData } = useUserData();
   const { userMail, userName, userPassword, userSurname } = userData;

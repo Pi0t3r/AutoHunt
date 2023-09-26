@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import Image from "next/image";
+import { useState } from "react";
+import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
 import { Carousel } from "react-responsive-carousel";
-import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styles from "./banner.module.css";
-import Image from "next/image";
 
 const Banner = ({ images }: { images: string[] }) => {
   const [clickedHeart, setClickedHeart] = useState(false);

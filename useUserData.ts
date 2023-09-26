@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import { useUserContext } from "./context/UserContext";
+import { db } from "@/firebase";
 import {
   collection,
   doc,
@@ -8,7 +7,8 @@ import {
   updateDoc,
   where,
 } from "firebase/firestore";
-import { db } from "@/firebase";
+import { useEffect, useState } from "react";
+import { useUserContext } from "./context/UserContext";
 
 const useUserData = () => {
   const { user, setUser } = useUserContext();

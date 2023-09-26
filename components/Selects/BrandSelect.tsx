@@ -1,8 +1,11 @@
-import React, { useState } from "react";
 import { options } from "@/data/cars";
-import { Select } from "../select/Select";
 import { FilterSelectProps, SelectOptionProps } from "@/types/myTypes";
-export const BrandSelect: React.FC<FilterSelectProps> = ({ onChange }) => {
+import React, { useState } from "react";
+import { Select } from "../select/Select";
+export const BrandSelect: React.FC<FilterSelectProps> = ({
+  onChange,
+
+}) => {
   const [selectedBrand, setSelectedBrand] = useState<
     SelectOptionProps | undefined
   >(undefined);

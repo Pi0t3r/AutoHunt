@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import styles from "./navbar.module.css";
 import Link from "next/link";
+import { useState } from "react";
+import { AiOutlineClose } from "react-icons/ai";
 import { FiMenu } from "react-icons/fi";
 import Sidebar from "../sidebar/Page";
-import { AiOutlineClose } from "react-icons/ai";
+import styles from "./navbar.module.css";
 
 const LoggedInNabar = () => {
   const [visible, setVisible] = useState(false);

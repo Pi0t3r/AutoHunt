@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import styles from "./offers.module.css";
-import React, { ChangeEvent, useEffect, useState } from "react";
 import Link from "next/link";
+import { ChangeEvent, useEffect, useState } from "react";
 import Filters from "../filters/Filters";
+import styles from "./offers.module.css";
 
 export default function Offers() {
   const [advertData, setAdvertData] = useState<any[]>([]);
@@ -66,7 +66,6 @@ export default function Offers() {
       <div>
         <Filters
           filteredLength={filteredLength}
-          advertData={advertData}
           setAdvertData={setAdvertData}
         />
       </div>

@@ -1,16 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import styles from "./page.module.css";
-import { BsFillArrowLeftCircleFill } from "react-icons/bs";
-import Link from "next/link";
-import React, { useState, useEffect } from "react";
-import { useParams } from "next/navigation";
 import { fetchAdverts } from "@/api/getAdvertDetails";
 import Banner from "@/components/banner/Banner";
 import CarDetails from "@/components/carDetails/CarDetails";
-import SellerDetails from "@/components/sellerDetails/SellerDetails";
 import ReportForm from "@/components/reportForm/ReportForm";
-import { BsFillFlagFill } from "react-icons/bs";
+import SellerDetails from "@/components/sellerDetails/SellerDetails";
+import Link from "next/link";
+import { useParams } from "next/navigation";
+import { useEffect, useState } from "react";
+import { BsFillArrowLeftCircleFill, BsFillFlagFill } from "react-icons/bs";
+import styles from "./page.module.css";
 function Advert() {
   const [reportVisible, setReportVisible] = useState(false);
   const handleReportClick = () => {

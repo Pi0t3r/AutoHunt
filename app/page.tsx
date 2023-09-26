@@ -1,7 +1,7 @@
-import { BsChevronDown } from "react-icons/bs";
-import Navbar from "@/components/navbar/Navbar";
 import Footer from "@/components/footer/Footer";
+import Navbar from "@/components/navbar/Navbar";
 import Offers from "@/components/offers/Offers";
+import { BsChevronDown } from "react-icons/bs";
 import styles from "./page.module.css";
 
 

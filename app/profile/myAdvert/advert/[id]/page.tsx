@@ -1,14 +1,14 @@
 "use client";
-import React, { useState, useEffect, ChangeEvent } from "react";
-import { useParams } from "next/navigation";
 import { fetchAdverts } from "@/api/getAdvertDetails";
-import Link from "next/link";
+import { MyInput } from "@/components/Inputs/MyInput";
+import Banner from "@/components/banner/Banner";
 import CarDetails from "@/components/carDetails/CarDetails";
 import SellerDetails from "@/components/sellerDetails/SellerDetails";
 import { db } from "@/firebase";
-import { deleteDoc, doc, collection, updateDoc } from "firebase/firestore";
-import { MyInput } from "@/components/Inputs/MyInput";
-import Banner from "@/components/banner/Banner";
+import { collection, deleteDoc, doc, updateDoc } from "firebase/firestore";
+import Link from "next/link";
+import { useParams } from "next/navigation";
+import { ChangeEvent, useEffect, useState } from "react";
 
 function MyAdvert() {
   const [advertData, setAdvertData] = useState<any[]>([]);

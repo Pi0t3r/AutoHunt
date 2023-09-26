@@ -14,7 +14,6 @@ export type SelectOption = {
 
 export type FiltersProps = {
   filteredLength: number;
-  advertData: any[];
   setAdvertData: (data: any[]) => void;
 };
 
@@ -78,6 +77,7 @@ export interface CarDataSelectProps {
 export interface FilterSelectProps {
   value?: SelectOptionProps | undefined;
   onChange: (value: SelectOptionProps | undefined) => void;
+
 }
 
 export interface ImageUploadProps {
@@ -125,5 +125,3 @@ export interface MyTimerProps {
   expiryTimestamp: Date;
   onExpire: () => void;
 }
-
-

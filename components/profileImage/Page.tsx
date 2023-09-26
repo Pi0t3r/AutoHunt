@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { getDownloadURL, ref } from "firebase/storage";
 import { storage } from "@/firebase";
+import { ProfileImageProps } from "@/types/myTypes";
+import { getDownloadURL, ref } from "firebase/storage";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 import { AiOutlineUser } from "react-icons/ai";
 import styles from "./profileImage.module.css";
-import { ProfileImageProps } from "@/types/myTypes";
-import Image from "next/image";
 
 const ProfileImage = ({ userMail, selectedImage }: ProfileImageProps) => {
   const [profileImageURL, setProfileImageURL] = useState<string | null>(null);

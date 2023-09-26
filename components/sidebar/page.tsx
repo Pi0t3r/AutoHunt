@@ -1,13 +1,12 @@
-import React from "react";
-import Link from "next/link";
-import styles from "./sidebar.module.css";
 import { useUserContext } from "@/context/UserContext";
-import { BiExit } from "react-icons/bi";
-import { AiOutlineUser } from "react-icons/ai";
-import { MdOutlineLocalOffer } from "react-icons/md";
-import useUserData from "@/useUserData";
 import { auth } from "@/firebase";
+import useUserData from "@/useUserData";
+import Link from "next/link";
+import { AiOutlineUser } from "react-icons/ai";
+import { BiExit } from "react-icons/bi";
+import { MdOutlineLocalOffer } from "react-icons/md";
 import ProfileImage from "../profileImage/Page";
+import styles from "./sidebar.module.css";
 const Sidebar = () => {
   const { userData } = useUserData();
   const { userName, userSurname, userMail } = userData;

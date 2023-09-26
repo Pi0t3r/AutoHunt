@@ -1,11 +1,11 @@
 "use client";
-import Link from "next/link";
-import styles from "./register.module.css";
-import { BsArrowLeftCircle } from "react-icons/bs";
-import React, { useEffect, useState } from "react";
 import LoginForm from "@/components/loginForm/LoginForm";
 import RegisterForm from "@/components/registerForm/RegisterForm";
 import { ActiveButton } from "@/types/myTypes";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { BsArrowLeftCircle } from "react-icons/bs";
+import styles from "./register.module.css";
 
 export default function Register() {
   const [activeButton, setActiveButton] = useState<ActiveButton>("login");
@@ -20,7 +20,6 @@ export default function Register() {
         <BsArrowLeftCircle />
       </Link>
       <h1>Join us to continue</h1>
-      {/* <span className={styles.or}>or</span> */}
       <div className={styles.form}>
         <div className={styles.formButton}>
           <button

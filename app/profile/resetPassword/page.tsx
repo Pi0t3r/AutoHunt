@@ -1,14 +1,10 @@
 "use client";
-import React, { useState, useEffect, FormEvent } from "react";
-import Link from "next/link";
-import useUserData from "@/useUserData";
 import { db } from "@/firebase";
+import useUserData from "@/useUserData";
+import { EmailAuthProvider, getAuth, updatePassword } from "@firebase/auth";
 import { collection, doc, updateDoc } from "firebase/firestore";
-import {
-  EmailAuthProvider,
-  getAuth,
-  updatePassword,
-} from "@firebase/auth";
+import Link from "next/link";
+import { FormEvent, useEffect, useState } from "react";
 
 export default function ResetPassword() {
   const [newPassword, setNewPassword] = useState("");

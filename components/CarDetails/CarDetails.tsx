@@ -1,6 +1,5 @@
-import React from "react";
-import styles from "./CarDetails.module.css";
 import { carDataProps } from "@/types/myTypes";
+import styles from "./CarDetails.module.css";
 const CarDetails = ({ data }: carDataProps) => {
   return (
     <div className={styles.infoCar}>

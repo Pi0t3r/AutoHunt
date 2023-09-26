@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import styles from "../../app/register/register.module.css";
+import { signInWithEmailAndPassword } from "@firebase/auth";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { signInWithEmailAndPassword } from "@firebase/auth";
+import React, { useState } from "react";
+import styles from "../../app/register/register.module.css";
 import { useUserContext } from "../../context/UserContext";
 import { auth } from "../../firebase";
 

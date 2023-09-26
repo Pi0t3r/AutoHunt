@@ -1,14 +1,13 @@
-import { Select } from "../select/Select";
-import React, { useState, useEffect } from "react";
-import { collection, getDocs, query, where } from "firebase/firestore";
 import { db } from "@/firebase";
+import { FiltersProps, SelectOption } from "@/types/myTypes";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { body, fuelOptions, options } from "../../data/cars";
 import styles from "../offers/offers.module.css";
-import { SelectOption, FiltersProps } from "@/types/myTypes";
+import { Select } from "../select/Select";
 
 export default function Filters({
   filteredLength,
-  advertData,
   setAdvertData,
 }: FiltersProps) {
   const [selectedBody, setSelectedBody] = useState<SelectOption | undefined>(

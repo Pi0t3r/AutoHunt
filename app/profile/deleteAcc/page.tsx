@@ -1,9 +1,8 @@
 "use client";
-import React from "react";
-import Link from "next/link";
-import { auth, db } from "@/firebase";
 import { useUserContext } from "@/context/UserContext";
+import { auth, db } from "@/firebase";
 import { deleteDoc, doc } from "firebase/firestore";
+import Link from "next/link";
 export default function DeleteAcc() {
   const { user, setUser } = useUserContext();
   async function handleDeleteUser() {

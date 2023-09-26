@@ -1,13 +1,13 @@
+import { UserContextType } from "@/types/myTypes";
 import { collection, doc, setDoc } from "firebase/firestore";
 import {
+  ReactNode,
   createContext,
   useContext,
-  useState,
   useEffect,
-  ReactNode,
+  useState,
 } from "react";
 import { db } from "../firebase";
-import { UserContextType } from "@/types/myTypes";
 
 export const UserContext = createContext<UserContextType | null>(null);
 export const UserProvider = ({ children }: { children: ReactNode }) => {

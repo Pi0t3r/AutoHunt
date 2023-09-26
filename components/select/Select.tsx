@@ -1,6 +1,6 @@
-import styles from "./select.module.css";
-import React, { useState, useEffect } from "react";
 import { SelectOptionProps, SelectProps } from "@/types/myTypes";
+import { useEffect, useState } from "react";
+import styles from "./select.module.css";
 
 export function Select({
   value,

@@ -1,8 +1,8 @@
 "use client";
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import { fetchAdverts } from "@/api/getAdvertDetails";
 import useUserData from "@/useUserData";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 import styles from "./myAdvert.module.css";
 
 export default function MyAdvert() {

@@ -1,7 +1,7 @@
-import React from "react";
-import { Select } from "../select/Select";
-import { gearbox, drive } from "../../data/cars";
 import { CustomSelectProps } from "@/types/myTypes";
+import React from "react";
+import { drive, gearbox } from "../../data/cars";
+import { Select } from "../select/Select";
 
 export const CustomSelect: React.FC<CustomSelectProps> = ({
   onChangeDrive,

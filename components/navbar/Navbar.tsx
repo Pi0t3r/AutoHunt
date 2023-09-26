@@ -1,9 +1,9 @@
 "use client";
-import styles from "./navbar.module.css";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useUserContext } from "../../context/UserContext";
 import LoggedInNabar from "./LoggedInNavbar";
+import styles from "./navbar.module.css";
 export default function Navbar() {
   const { user } = useUserContext();
   const [scroll, setScroll] = useState<number>(0);

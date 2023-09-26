@@ -1,5 +1,5 @@
-import React, { ChangeEvent } from "react";
 import { ImageUploadProps } from "@/types/myTypes";
+import React, { ChangeEvent } from "react";
 const ImageUpload: React.FC<ImageUploadProps> = ({ onImageSelect }) => {
   const handleImageSelect = (e: ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;

@@ -1,17 +1,16 @@
-import React, { useState } from "react";
 import { createUserWithEmailAndPassword, getAuth } from "@firebase/auth";
-import { db } from "../../firebase";
-import styles from "../../app/register/register.module.css";
-import { doc, setDoc, collection } from "firebase/firestore";
+import { collection, doc, setDoc } from "firebase/firestore";
+import React, { useState } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
-import { useUserContext } from "@/context/UserContext";
+import styles from "../../app/register/register.module.css";
+import { db } from "../../firebase";
 
 const RegisterForm = () => {
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [, setErrorMessage] = useState("");
   const [info, setInfo] = useState(false);
   const auth = getAuth();
 

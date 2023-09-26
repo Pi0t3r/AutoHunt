@@ -1,8 +1,7 @@
-import React from "react";
+import { SellerDataProps } from "@/types/myTypes";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { FaMapPin } from "react-icons/fa";
 import styles from "./sellerDetails.module.css";
-import { SellerDataProps } from "@/types/myTypes";
 
 const SellerDetails = ({ data }: SellerDataProps) => {
   return (

@@ -1,11 +1,8 @@
-import React, { useState } from "react";
+import { ReportFormProps } from "@/types/myTypes";
 import { AiFillCloseCircle } from "react-icons/ai";
 import styles from "./ReportForm.module.css";
-import { ReportFormProps } from "@/types/myTypes";
 
 const ReportForm = ({ setReportVisible }: ReportFormProps) => {
-  const [selectedReason, setSelectedReason] = useState("");
-  const [comment, setComment] = useState("");
 
   const handleSubmit = () => {
     setReportVisible(false);
