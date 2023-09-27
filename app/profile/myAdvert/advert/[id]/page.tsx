@@ -33,10 +33,11 @@ function MyAdvert() {
     vin: "",
   });
 
-
+  // Function to handle the "Edit" button click
   const handleEdit = () => {
     setIsEditing(!isEditing);
   };
+  // Function to save changes to the Firebase database
   const handleSaveChanges = async () => {
     if (params.id) {
       try {
@@ -52,6 +53,7 @@ function MyAdvert() {
     }
   };
   useEffect(() => {
+    // Fetch advert data
     const fetchOffers = async () => {
       const adverts = await fetchAdverts();
       setAdvertData(adverts);
@@ -59,10 +61,12 @@ function MyAdvert() {
     fetchOffers();
   }, [formData, params.id]);
 
-
+  // Function to handle canceling the edit mode
   const handleCancelEdit = () => {
     setIsEditing(false);
   };
+
+  // Function to handle deleting the advert
   const handleDelete = async () => {
     if (params.id) {
       try {
@@ -145,9 +149,7 @@ function MyAdvert() {
           <SellerDetails data={showData} />
           <div>
             <button onClick={handleDelete}>Delete advert</button>
-            <button onClick={handleEdit}>
-              Edit advert
-            </button>
+            <button onClick={handleEdit}>Edit advert</button>
           </div>
         </div>
       )}

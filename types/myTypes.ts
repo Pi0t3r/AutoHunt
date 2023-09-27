@@ -77,7 +77,6 @@ export interface CarDataSelectProps {
 export interface FilterSelectProps {
   value?: SelectOptionProps | undefined;
   onChange: (value: SelectOptionProps | undefined) => void;
-
 }
 
 export interface ImageUploadProps {

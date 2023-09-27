@@ -6,9 +6,12 @@ import { useEffect, useState } from "react";
 import styles from "./myAdvert.module.css";
 
 export default function MyAdvert() {
+  // State declaration for user's advertisement data
   const [advertData, setAdvertData] = useState<any[]>([]);
+  // Get user data from context
   const { userData } = useUserData();
   const { userMail } = userData;
+  // Effect to fetch user's advertisements
   useEffect(() => {
     const fetchOffers = async () => {
       try {
@@ -20,6 +23,7 @@ export default function MyAdvert() {
     };
     fetchOffers();
   }, []);
+  // Filter user's advertisements based on email address
   const userAdverts = advertData.filter(
     (advert) => advert.sellerContact === userMail
   );

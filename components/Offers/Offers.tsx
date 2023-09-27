@@ -5,30 +5,36 @@ import Link from "next/link";
 import { ChangeEvent, useEffect, useState } from "react";
 import Filters from "../filters/Filters";
 import styles from "./offers.module.css";
-
+// Defining the Offers component
 export default function Offers() {
-  const [advertData, setAdvertData] = useState<any[]>([]);
-  const [sortOption, setSortOption] = useState<string>("default");
-  const handleChangeSortOption = (event: ChangeEvent<HTMLSelectElement>) => {
-    setSortOption(event.target.value);
-  };
+  // State variables
+  const [advertData, setAdvertData] = useState<any[]>([]); // Store advertisement data
+  const [sortOption, setSortOption] = useState<string>("default"); // Store the selected sorting option
+  // State variable to store sorted advertisement data
   const [sortedAdvertData, setSortedAdvertData] = useState<any[]>([]);
+  // Function to handle sorting option change
+  const handleChangeSortOption = (event: ChangeEvent<HTMLSelectElement>) => {
+    setSortOption(event.target.value); // Update the sorting option state
+  };
+  // Effect to sort advertisement data based on the selected sorting option
   useEffect(() => {
     const sortAdvertData = () => {
-      const sortedData = [...advertData];
+      const sortedData = [...advertData]; // Create a copy of the advertisement data
+      // Sort the data based on the selected sorting option
       if (sortOption === "Low") {
-        sortedData.sort((a, b) => a.price - b.price);
+        sortedData.sort((a, b) => a.price - b.price); // Sort by price (Low to high)
       } else if (sortOption === "High") {
-        sortedData.sort((a, b) => b.price - a.price);
+        sortedData.sort((a, b) => b.price - a.price); // Sort by price (High to low)
       }
-      setSortedAdvertData(sortedData);
+      setSortedAdvertData(sortedData); // Update the sorted advertisement data state
     };
 
     sortAdvertData();
   }, [advertData, sortOption]);
+  // Function to render advertisement data
   const showAdvert = () => {
     if (advertData.length === 0) {
-      return <p>Loading ...</p>;
+      return <p>Loading ...</p>; // Display loading message if there's no advertisement data
     } else {
       return (
         <ul>
@@ -58,8 +64,9 @@ export default function Offers() {
       );
     }
   };
+  // Calculate the length of the filtered and sorted advertisement data
   const filteredLength = sortedAdvertData.length;
-
+  // Render the Offers component
   return (
     <div className={styles.div}>
       <h2>What you're looking for?</h2>
