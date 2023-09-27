@@ -25,6 +25,10 @@ export const drive = [
 export const gearbox = [{ value: "Automatic" }, { value: "Manual" }];
 export const options = [
   {
+    value: "Aston Martin",
+    models: [],
+  },
+  {
     value: "Alfa Romeo",
     models: [
       {
@@ -5409,6 +5413,10 @@ export const options = [
         ],
       },
     ],
+  },
+  {
+    value: "Bentley",
+    models: [],
   },
   {
     value: "BMW",
@@ -11425,5 +11433,4 @@ export const options = [
       },
     ],
   },
-  
 ];
