@@ -22,11 +22,230 @@ export const drive = [
   { value: "FWD" },
 ];
 
-export const gearbox = [
-  {value:"Automatic"},
-  {value:"Manual"}
-]
+export const gearbox = [{ value: "Automatic" }, { value: "Manual" }];
 export const options = [
+  {
+    value: "Alfa Romeo",
+    models: [
+      {
+        value: "Gulia",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "1.3 Super 87KM 64kW",
+                  },
+                  {
+                    value: "1.3 TI 83KM 61kW",
+                  },
+                  {
+                    value: "1.6 Super 98KM 72kW",
+                  },
+                  {
+                    value: "1.6 Super 102KM 75kW",
+                  },
+                  {
+                    value: "1.8 D 52KM 38kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "II",
+            versions: [
+              {
+                value: "Sedan",
+                engine: [
+                  {
+                    value: "2.0 TBi 280KM 206kW",
+                  },
+                  {
+                    value: "2.0 Turbo 200KM 147kW",
+                  },
+                  {
+                    value: "2.9 V6 510KM 375kW",
+                  },
+                  {
+                    value: "2,2 JtdM-2 160KM 118kW",
+                  },
+                  {
+                    value: "2,2 JtdM-2 190KM 140kW",
+                  },
+                  {
+                    value: "2.2 JTD 150KM 110kW",
+                  },
+                  {
+                    value: "2.2 JTD 180KM 132kW",
+                  },
+                  {
+                    value: "2.2 JTD 210KM 154kW",
+                  },
+                ],
+              },
+              {
+                value: "Sedan Facelifting",
+                engine: [
+                  {
+                    value: "2.0 Turbo 200KM 147kW",
+                  },
+                  {
+                    value: "2.0 Turbo 280KM 206kW",
+                  },
+                  {
+                    value: "2.9 Turbo 510KM 375kW",
+                  },
+                  {
+                    value: "2.2 JTDM 136KM 100kW",
+                  },
+                  {
+                    value: "2.2 Turbo 160KM 118kW",
+                  },
+                  {
+                    value: "2.2 Turbo 190KM 140kW",
+                  },
+                  {
+                    value: "2.2 Turbo 210KM 154kW",
+                  },
+                ],
+              },
+              {
+                value: "Sedan Facelifting 2023",
+                engine: [
+                  {
+                    value: "2.0 GME Turbo 280KM 206kW",
+                  },
+                  {
+                    value: "2.9 GME Bi-Turbo 510KM 375kW",
+                  },
+                  {
+                    value: "2.2 JTDM 210KM 154kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Stelvio",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "SUV",
+                engine: [
+                  {
+                    value: "2.0 Turbo 280KM 206kW",
+                  },
+                  {
+                    value: "2.0 Turbo 200KM 147kW",
+                  },
+                  {
+                    value: "2.9 V6 Bi-Turbo 510KM 375kW",
+                  },
+                  {
+                    value: "2.2 Diesel 180KM 132kW",
+                  },
+                  {
+                    value: "2.2 JtdM-2 210KM 154kW",
+                  },
+                  {
+                    value: "2.2 JtdM-2 150KM 110kW",
+                  },
+                  {
+                    value: "2.2 JtdM-2 160KM 118kW",
+                  },
+                  {
+                    value: "2.2 JtdM-2 190KM 140kW",
+                  },
+                ],
+              },
+              {
+                value: "SUV Facelifting",
+                engine: [
+                  {
+                    value: "2.0 Turbo 200KM 147kW",
+                  },
+                  {
+                    value: "2.0 Turbo 280KM 206kW",
+                  },
+                  {
+                    value: "2.9 510KM 375kW",
+                  },
+                  {
+                    value: "2.2 Turbo 160KM 118kW",
+                  },
+                  {
+                    value: "2.2 Turbo 190KM 140kW",
+                  },
+                  {
+                    value: "2.2 Turbo 210KM 154kW",
+                  },
+                ],
+              },
+              {
+                value: "SUV Facelifting 2023",
+                engine: [
+                  {
+                    value: "2.0 GME Turbo 280KM 206kW",
+                  },
+                  {
+                    value: "2.2 JTDM 210KM 154kW",
+                  },
+                ],
+              },
+              {
+                value: "Quadrifoglio",
+                engine: [
+                  {
+                    value: "2.9 GME V6 510KM 375kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Tonale",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "SUV PHEV",
+                engine: [
+                  {
+                    value: "1.3 PHEV Q4 280KM 206kW",
+                  },
+                ],
+              },
+              {
+                value: "SUV",
+                engine: [
+                  {
+                    value: "1.6 JTD 130KM 96kW",
+                  },
+                  {
+                    value: "1.5 T4 160KM 118kW",
+                  },
+                  {
+                    value: "1.5 T4 Hybrid 130KM 96kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
   {
     value: "Audi",
     models: [
@@ -11206,4 +11425,5 @@ export const options = [
       },
     ],
   },
+  
 ];

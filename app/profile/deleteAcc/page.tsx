@@ -16,7 +16,6 @@ export default function DeleteAcc() {
       await user?.delete(); // Delete the user's authentication account
       await auth.signOut(); // Sign the user out
       setUser(null); // Set the user context to null
-      console.log("User Account deleted successful!"); // Log success message
       window.location.href = "/"; // Redirect to the home page
     } catch (err) {
       console.error("Error with deleting user: ", err); // Log any errors that occur during deletion

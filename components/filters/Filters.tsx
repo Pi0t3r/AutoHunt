@@ -59,10 +59,9 @@ export default function Filters({
       }
       if (selectedBody) {
         newQuery = query(newQuery, where("body", "==", selectedBody.value));
-        console.log(`Selected body: ${selectedBody}`);
+
       }
       if (selectedFuel) {
-        console.log(`Selected fuel: ${selectedFuel}`);
         newQuery = query(newQuery, where("fuel", "==", selectedFuel.value));
       }
       // Fetch data based on the query
