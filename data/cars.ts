@@ -5522,7 +5522,178 @@ export const options = [
   },
   {
     value: "Bentley",
-    models: [],
+    models: [
+      {
+        value: "Continental",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "R Azure",
+                engine: [
+                  {
+                    value: "6.7 i V8 408KM 300kW",
+                  },
+                  {
+                    value: "6.7 i V8 Mulliner 426KM 313kW",
+                  },
+                  {
+                    value: "6.8 i V8 389KM 286kW",
+                  },
+                ],
+              },
+              {
+                value: "R",
+                engine: [
+                  {
+                    value: "6.7 i V8 408KM 300kW",
+                  },
+                  {
+                    value: "6.7 i V8 Mulliner 426KM 313kW",
+                  },
+                  {
+                    value: "6.8 i V8 389KM 286kW",
+                  },
+                ],
+              },
+              {
+                value: "S",
+                engine: [
+                  {
+                    value: "6.7 320KM 235kW",
+                  },
+                ],
+              },
+              {
+                value: "T",
+                engine: [
+                  {
+                    value: "6.8 i V8 426KM 313kW",
+                  },
+                ],
+              },
+              {
+                value: "GT",
+                engine: [
+                  {
+                    value: "6.0 W12 Twin-Turbo 560KM 412kW",
+                  },
+                  {
+                    value: "6.0 W12 Twin-Turbo Speed 610KM 449kW",
+                  },
+                ],
+              },
+              {
+                value: "Flying Spur",
+                engine: [
+                  {
+                    value: "6.0 W12 Twin-Turbo 560KM 412kW",
+                  },
+                  {
+                    value: "6.0 W12 Twin-Turbo Speed 610KM 449kW",
+                  },
+                ],
+              },
+              {
+                value: "GTC",
+                engine: [
+                  {
+                    value: "6.0 W12 Twin-Turbo 560KM 412kW",
+                  },
+                  {
+                    value: "6.0 W12 Twin-Turbo Speed 610KM 449kW",
+                  },
+                ],
+              },
+              {
+                value: "Supersports Convertible",
+                engine: [
+                  {
+                    value: "6.0 W12 Twin-Turbo 560KM 412kW",
+                  },
+                  {
+                    value: "6.0 W12 Twin-Turbo Speed 610KM 449kW",
+                  },
+                ],
+              },
+              {
+                value: "Supersports",
+                engine: [
+                  {
+                    value: "6.0 W12 Twin-Turbo 560KM 412kW",
+                  },
+                  {
+                    value: "6.0 W12 Twin-Turbo Speed 610KM 449kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "II",
+            versions: [
+              {
+                value: "GT",
+                engine: [
+                  {
+                    value: "4.8 V8 600KM 441kW",
+                  },
+                  {
+                    value: "6.0 W12 567KM 417kW",
+                  },
+                ],
+              },
+              {
+                value: "GT Facelifting",
+                engine: [
+                  {
+                    value: "4.0 V8 600KM 441kW",
+                  },
+                  {
+                    value: "6.0 W12 590KM 434kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "III",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "6.0 TSI W12 635KM 467kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Bentayga",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "6.0 TSI W12 608KM 447kW",
+                  },
+                  {
+                    value: "4.0 Diesel V8 435KM 320kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "BMW",
@@ -11538,5 +11709,9 @@ export const options = [
         ],
       },
     ],
+  },
+  {
+    value: "Bugatti",
+    models: [],
   },
 ];

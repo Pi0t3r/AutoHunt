@@ -34,7 +34,7 @@ export default function Offers() {
   // Function to render advertisement data
   const showAdvert = () => {
     if (advertData.length === 0) {
-      return <p>Loading ...</p>; // Display loading message if there's no advertisement data
+      return <p>No ads in selected filters</p>; // Display loading message if there's no advertisement data
     } else {
       return (
         <ul>
