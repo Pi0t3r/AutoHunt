@@ -41,6 +41,7 @@ npm run dev
 
 - Improved appearance and user interface
 - Posibility to login & register with Google account
+- Add all cars from the entire history to the project
 
 ## License
 
@@ -49,6 +50,7 @@ The Autohunt project is not released under any license.
 ## Known problems
 
 - Currently lacking a proper design and user interface
+- Not all car brands are in the project
 
 ## Contact
 

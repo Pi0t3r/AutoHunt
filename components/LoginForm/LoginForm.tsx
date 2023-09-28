@@ -31,7 +31,21 @@ const LoginForm = () => {
       router.push("/");
     } catch (error) {
       // If there's an error during login, display the error message
-      const errorMessage = (error as Error).message;
+      const errorCode = (error as any).code;
+
+      let errorMessage = "An error occurred during login.";
+
+      // Customizing the error message when logging in
+      switch (errorCode) {
+        case "auth/user-not-found":
+          errorMessage = "User not found. Please check your email.";
+          break;
+        case "auth/wrong-password":
+          errorMessage = "Incorrect password. Please try again.";
+          break;
+        default:
+          errorMessage = "An error occurred during login";
+      }
       setErrorMessage(errorMessage);
     }
   };
