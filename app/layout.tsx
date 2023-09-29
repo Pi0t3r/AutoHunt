@@ -17,6 +17,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <title>Autohunt</title>
+      </head>
       <body className={inter.className}>
         <UserProvider>{children}</UserProvider>
       </body>

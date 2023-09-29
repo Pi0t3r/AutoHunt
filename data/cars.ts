@@ -11712,6 +11712,996 @@ export const options = [
   },
   {
     value: "Bugatti",
+    models: [
+      {
+        value: "Chiron",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "8.0 W16 1500KM 1103kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Veyron",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "8.0 W16 64V 1001KM 736kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: "Cadillac",
+    models: [
+      {
+        value: "CTS",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "2.6 i V6 24V 185KM 136kW",
+                  },
+                  {
+                    value: "2.8 i V6 24V 215KM 158kW",
+                  },
+                  {
+                    value: "3.2 i V6 24V 223KM 164kW",
+                  },
+                  {
+                    value: "3.6 i V6 24V 258KM 190kW",
+                  },
+                  {
+                    value: "5.7 i V8 CTS-V 405KM 298kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "II",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "2.8 VVT 213KM 157kW",
+                  },
+                  {
+                    value: "3.6 VVT 311KM 229kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Escalade",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "5.7 255KM 188kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "II",
+            versions: [
+              {
+                value: "SUV",
+                engine: [
+                  {
+                    value: "5.3 i V8 RWD 285KM 210kW",
+                  },
+                  {
+                    value: "5.3 i V8 RWD 295KM 217kW",
+                  },
+                  {
+                    value: "6.0 i V8 AWD 345KM 254kW",
+                  },
+                  {
+                    value: "6.0 i V8 AWD ESV 345KM 254kW",
+                  },
+                ],
+              },
+              {
+                value: "Pick Up",
+                engine: [
+                  {
+                    value: "6.0 i V8 AWD EXT 345KM 254kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "III",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "6.2 V8 409KM 301kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "SRX",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "3.6 i V6 24V AWD 264KM 194kW",
+                  },
+                  {
+                    value: "4.6 i V8 32V AWD 324KM 238kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "II",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "2.8 Turbo 305KM 224kW",
+                  },
+                  {
+                    value: "3.0 i 269KM 198kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: "Chevrolet",
+    models: [
+      {
+        value: "Aveo",
+        generations: [
+          {
+            value: "T200",
+            versions: [
+              {
+                value: "Sedan",
+                engine: [
+                  {
+                    value: "1.2 i 72KM 53kW",
+                  },
+                  {
+                    value: "1.4 i 83KM 61kW",
+                  },
+                  {
+                    value: "1.4 i 16V 94KM 69kW",
+                  },
+                  {
+                    value: "1.6 i 16V 106KM 78kW",
+                  },
+                ],
+              },
+              {
+                value: "Hatchback",
+                engine: [
+                  {
+                    value: "1.2 i 72KM 53kW",
+                  },
+                  {
+                    value: "1.4 i 83KM 61kW",
+                  },
+                  {
+                    value: "1.4 i 16V 94KM 69kW",
+                  },
+                  {
+                    value: "1.6 i 16V 106KM 78kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "T250",
+            versions: [
+              {
+                value: "Hatchback 5d",
+                engine: [
+                  {
+                    value: "1.2 DOHC 84KM 62kW",
+                  },
+                  {
+                    value: "1.2 i 72KM 53kW",
+                  },
+                  {
+                    value: "1.4 DOHC 101KM 74kW",
+                  },
+                  {
+                    value: "1.4 i 83KM 61kW",
+                  },
+                  {
+                    value: "1.4 i 16V 94KM 69kW",
+                  },
+                  {
+                    value: "1.6 i 16V 106KM 78kW",
+                  },
+                ],
+              },
+              {
+                value: "Sedan",
+                engine: [
+                  {
+                    value: "1.2 DOHC 84KM 62kW",
+                  },
+                  {
+                    value: "1.2 i 72KM 53kW",
+                  },
+                  {
+                    value: "1.4 DOHC 101KM 74kW",
+                  },
+                  {
+                    value: "1.4 i 83KM 61kW",
+                  },
+                  {
+                    value: "1.4 i 16V 94KM 69kW",
+                  },
+                  {
+                    value: "1.6 i 16V 106KM 78kW",
+                  },
+                ],
+              },
+              {
+                value: "Hatchback 3d",
+                engine: [
+                  {
+                    value: "1.2 DOHC 84KM 62kW",
+                  },
+                  {
+                    value: "1.4 DOHC 101KM 74kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "T300",
+            versions: [
+              {
+                value: "Hatchback 5d",
+                engine: [
+                  {
+                    value: "1.2 70KM 51kW",
+                  },
+                  {
+                    value: "1.2 86KM 63kW",
+                  },
+                  {
+                    value: "1.4 100KM 74kW",
+                  },
+                  {
+                    value: "1.4 Turbo 140KM 103kW",
+                  },
+                  {
+                    value: "1.6 115KM 85kW",
+                  },
+                  {
+                    value: "1.3D 75KM 55kW",
+                  },
+                  {
+                    value: "1.3D 95KM 70kW",
+                  },
+                ],
+              },
+              {
+                value: "Sedan",
+                engine: [
+                  {
+                    value: "1.2 70KM 51kW",
+                  },
+                  {
+                    value: "1.2 86KM 63kW",
+                  },
+                  {
+                    value: "1.4 100KM 74kW",
+                  },
+                  {
+                    value: "1.6 115KM 85kW",
+                  },
+                  {
+                    value: "1.3D 75KM 55kW",
+                  },
+                  {
+                    value: "1.3D 95KM 70kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Camaro",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "3.8 142KM 104kW",
+                  },
+                  {
+                    value: "4.0 157KM 115kW",
+                  },
+                  {
+                    value: "4.9 294KM 216kW",
+                  },
+                  {
+                    value: "5.4 213KM 157kW",
+                  },
+                  {
+                    value: "5.4 279KM 205kW",
+                  },
+                  {
+                    value: "5.7 254KM 187kW",
+                  },
+                  {
+                    value: "5.7 299KM 220kW",
+                  },
+                  {
+                    value: "6.5 380KM 279kW",
+                  },
+                  {
+                    value: "7.0 431KM 317kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "II",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "3.8 117KM 86kW",
+                  },
+                  {
+                    value: "3.8 112KM 82kW",
+                  },
+                  {
+                    value: "4.1 157KM 115kW",
+                  },
+                  {
+                    value: "5.0 203KM 149kW",
+                  },
+                  {
+                    value: "5.7 254KM 187kW",
+                  },
+                  {
+                    value: "5.7 Z28 365KM 268kW",
+                  },
+                  {
+                    value: "6.6 350KM 257kW",
+                  },
+                  {
+                    value: "6.6 375KM 276kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "III",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "2.5 91KM 67kW",
+                  },
+                  {
+                    value: "2.8 103KM 76kW",
+                  },
+                  {
+                    value: "2.8 137KM 101kW",
+                  },
+                  {
+                    value: "3.1 142KM 104kW",
+                  },
+                  {
+                    value: "5.0 147KM 108kW",
+                  },
+                  {
+                    value: "5.0 192KM 141kW",
+                  },
+                  {
+                    value: "5.0 218KM 160kW",
+                  },
+                  {
+                    value: "5.0 167KM 123kW",
+                  },
+                  {
+                    value: "5.7 223KM 164kW",
+                  },
+                  {
+                    value: "5.7 243KM 179kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "IV",
+            versions: [
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "3.4 i V6 160KM 118kW",
+                  },
+                  {
+                    value: "3.8 i V6 193KM 142kW",
+                  },
+                  {
+                    value: "3.8 i V6 203KM 149kW",
+                  },
+                  {
+                    value: "5.7 i V8 344KM 253kW",
+                  },
+                  {
+                    value: "5.7 i V8 275KM 202kW",
+                  },
+                  {
+                    value: "5.7 i V8 330KM 243kW",
+                  },
+                  {
+                    value: "5.7 i V8 324KM 238kW",
+                  },
+                  {
+                    value: " 5.7 i V8 SS 329KM 242kW",
+                  },
+                  {
+                    value: "5.7 i V8 Z28 288KM 212kW",
+                  },
+                  {
+                    value: "5.7 i V8 Z28 310KM 228kW",
+                  },
+                ],
+              },
+              {
+                value: "Cabrio",
+                engine: [
+                  {
+                    value: "3.4 i V6 160KM 118kW",
+                  },
+                  {
+                    value: "3.8 i V6 193KM 142kW",
+                  },
+                  {
+                    value: "3.8 i V6 203KM 149kW",
+                  },
+                  {
+                    value: "5.7 i V8 275KM 202kW",
+                  },
+                  {
+                    value: "5.7 i V8 324KM 238kW",
+                  },
+                  {
+                    value: "5.7 i V8 Z28 310KM 228kW",
+                  },
+                  {
+                    value: "5.7 i V8 Z28 314KM 231kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "V",
+            versions: [
+              {
+                value: "Cabrio",
+                engine: [
+                  {
+                    value: "3.6 304KM 224kW",
+                  },
+                  {
+                    value: "6.0 400KM 294kW",
+                  },
+                  {
+                    value: "6.2L V8 405KM 298kW",
+                  },
+                  {
+                    value: "6.2L V8 432KM 318kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "3.6 304KM 224kW",
+                  },
+                  {
+                    value: "6.0 400KM 294kW",
+                  },
+                  {
+                    value: "6.2L V8 405KM 298kW",
+                  },
+                  {
+                    value: "6.2L V8 432KM 318kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "VI",
+            versions: [
+              {
+                value: "Cabrio",
+                engine: [
+                  {
+                    value: "2.0 Turbo 275KM 202kW",
+                  },
+                  {
+                    value: "3.6 335KM 246kW",
+                  },
+                  {
+                    value: "6.2 455KM 335kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "2.0 Turbo 275KM 202kW",
+                  },
+                  {
+                    value: "3.6 335KM 246kW",
+                  },
+                  {
+                    value: "6.2 455KM 335kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Captiva",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "2.4 i 16V FWD 141KM 104kW",
+                  },
+                  {
+                    value: "3.2L 230KM 169kW",
+                  },
+                  {
+                    value: "2.0 SOHC 127KM 93kW",
+                  },
+                  {
+                    value: "2.0D 150KM 110kW",
+                  },
+                  {
+                    value: "2.0D 127KM 93kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "II",
+            versions: [
+              {
+                value: "SUV",
+                engine: [
+                  {
+                    value: "2.4 DOHC 167KM 123kW",
+                  },
+                  {
+                    value: "3.0 V6 258KM 190kW",
+                  },
+                  {
+                    value: "2.2D 163KM 120kW",
+                  },
+                  {
+                    value: "2.2D 184KM 135kW",
+                  },
+                ],
+              },
+              {
+                value: "SUV Facelifting",
+                engine: [
+                  {
+                    value: "2.4 DOHC 167KM 123kW",
+                  },
+                  {
+                    value: "3.0 V6 258KM 190kW",
+                  },
+                  {
+                    value: "2.0 D 163KM 120kW",
+                  },
+                  {
+                    value: "2.2D 184KM 135kW",
+                  },
+                  {
+                    value: "2.2D 163KM 120kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Corvette",
+        generations: [
+          {
+            value: "C1",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "4.6 233KM 171kW",
+                  },
+                  {
+                    value: "4.6 294KM 216kW",
+                  },
+                  {
+                    value: "5.4 360KM 265kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "C2",
+            versions: [
+              {
+                value: "Cabrio",
+                engine: [
+                  {
+                    value: "5.4 365KM 268kW",
+                  },
+                  {
+                    value: "5.4 380KM 279kW",
+                  },
+                  {
+                    value: "6.5 431KM 317kW",
+                  },
+                  {
+                    value: "7.0 530KM 390kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "5.4 365KM 268kW",
+                  },
+                  {
+                    value: "5.4 380KM 279kW",
+                  },
+                  {
+                    value: "6.5 431KM 317kW",
+                  },
+                  {
+                    value: "7.0 530KM 390kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "C3",
+            versions: [
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "5.7 375KM 276kW",
+                  },
+                  {
+                    value: "5.7 203KM 149kW",
+                  },
+                  {
+                    value: "5.7 223KM 164kW",
+                  },
+                  {
+                    value: "7.4 425KM 313kW",
+                  },
+                ],
+              },
+              {
+                value: "Cabrio",
+                engine: [
+                  {
+                    value: "5.7 375KM 276kW",
+                  },
+                  {
+                    value: "5.7 203KM 149kW",
+                  },
+                  {
+                    value: "5.7 224KM 164kW",
+                  },
+                  {
+                    value: "7.4 425KM 313kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "C4",
+            versions: [
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "5.7 i V8 354KM 260kW",
+                  },
+                  {
+                    value: "5.7 i V8 304KM 224kW",
+                  },
+                  {
+                    value: "5.7 i V8 208KM 153kW",
+                  },
+                  {
+                    value: "5.7 i V8 233KM 171kW",
+                  },
+                  {
+                    value: "5.7 i V8 243KM 179kW",
+                  },
+                  {
+                    value: "5.7 i V8 248KM 182kW",
+                  },
+                  {
+                    value: "5.7 i V8 380KM 279kW",
+                  },
+                  {
+                    value: "5.7 i V8 375KM 276kW",
+                  },
+                  {
+                    value: "5.7 i V8 405KM 298kW",
+                  },
+                  {
+                    value: "5.7 i V8 335KM 246kW",
+                  },
+                  {
+                    value: "5.7 i V8 ZR1 411KM 302kW",
+                  },
+                ],
+              },
+              {
+                value: "Cabrio",
+                engine: [
+                  {
+                    value: "5.7 i V8 254KM 187kW",
+                  },
+                  {
+                    value: "5.7 i V8 304KM 224kW",
+                  },
+                  {
+                    value: "5.7 i V8 411KM 302kW",
+                  },
+                  {
+                    value: "5.7 i V8 375KM 276kW",
+                  },
+                  {
+                    value: "5.7 i V8 380KM 279kW",
+                  },
+                  {
+                    value: "5.7 i V8 248KM 182kW",
+                  },
+                  {
+                    value: "5.7 i V8 243KM 179kW",
+                  },
+                  {
+                    value: "5.7 i V8 233KM 171kW",
+                  },
+                  {
+                    value: "5.7 i V8 208KM 153kW",
+                  },
+                  {
+                    value: "5.7 i V8 335KM 246kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "C5",
+            versions: [
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "5.7 i V8 16V 345KM 254kW",
+                  },
+                  {
+                    value: "5.7 i V8 16V 355KM 261kW",
+                  },
+                  {
+                    value: "5.7 i V8 16V Z06 411KM 302kW",
+                  },
+                  {
+                    value: "5.7 i V8 16V Z06 390KM 287kW",
+                  },
+                ],
+              },
+              {
+                value: "Cabrio",
+                engine: [
+                  {
+                    value: " 5.7 i V8 16V 344KM 253kW",
+                  },
+                  {
+                    value: "5.7 i V8 16V 349KM 257kW",
+                  },
+                  {
+                    value: "5.7 i V8 16V 355KM 261kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "C6",
+            versions: [
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "6.0 i V8 405KM 298kW",
+                  },
+                  {
+                    value: "6.2L V8 436KM 321kW",
+                  },
+                  {
+                    value: "7.0 i V8 513KM 377kW",
+                  },
+                  {
+                    value: "7.0L 8V 511KM 376kW",
+                  },
+                ],
+              },
+              {
+                value: "Cabrio",
+                engine: [
+                  {
+                    value: "6.0 i V8 405KM 298kW",
+                  },
+                  {
+                    value: "6.2L V8 436KM 321kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "C7",
+            versions: [
+              {
+                value: "Convertible",
+                engine: [
+                  {
+                    value: "6.2 V8 466KM 343kW",
+                  },
+                  {
+                    value: "6.2 V8 Z06 659KM 485kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe",
+                engine: [
+                  {
+                    value: "6.2 V8 466KM 343kW",
+                  },
+                  {
+                    value: "6.2 V8 Z06 659KM 485kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "C8",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "6.2 v8 495KM 637NM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Spark",
+        generations: [],
+      },
+      {
+        value: "TrailBlazer",
+        generations: [],
+      },
+      {
+        value: "Trax",
+        generations: [],
+      },
+      {
+        value: "Volt",
+        generations: [],
+      },
+    ],
+  },
+  {
+    value: "Chrysler",
+    models: [],
+  },
+  {
+    value: "Citroen",
     models: [],
   },
 ];
