@@ -50,7 +50,7 @@ The Autohunt project is not released under any license.
 ## Known problems
 
 - Currently lacking a proper design and user interface
-- Not all car brands are in the project
+- Due to the large number of cars in the history for the moment are added the newest from different brands
 
 ## Contact
 

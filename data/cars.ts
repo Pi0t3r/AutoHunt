@@ -12680,28 +12680,762 @@ export const options = [
       },
       {
         value: "Spark",
-        generations: [],
+        generations: [
+          {
+            value: "II",
+            versions: [
+              {
+                value: "Hatchback Facelifting",
+                engine: [
+                  {
+                    value: "1.0L DOHC 68KM 50kW",
+                  },
+                  {
+                    value: "1.2L DOHC 81KM 60kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "TrailBlazer",
-        generations: [],
+        generations: [
+          {
+            value: "II",
+            versions: [
+              {
+                value: "3564 243KM 179kW",
+              },
+              {
+                value: "2.5 CDTI 150KM 110kW",
+              },
+              {
+                value: "2.8 CDIT 180KM 132kW",
+              },
+            ],
+          },
+        ],
       },
       {
         value: "Trax",
-        generations: [],
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "1.4 140KM 103kW",
+                  },
+                  {
+                    value: "1.6 115KM 85kW",
+                  },
+                  {
+                    value: "1.7D 130KM 96kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
       {
         value: "Volt",
-        generations: [],
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                valie: "I",
+                engine: [
+                  {
+                    value: "Electrical 120kW 149KM 110kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
       },
     ],
   },
   {
     value: "Chrysler",
-    models: [],
+    models: [
+      {
+        value: "Pacifica",
+        generations: [
+          {
+            value: "II",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "3.6 V6 291KM 214kW",
+                  },
+                  {
+                    value: "3.6 V6 Hybrid 264KM 194kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "Citroen",
+    models: [
+      {
+        value: "C3",
+        generations: [
+          {
+            value: "III",
+            versions: [
+              {
+                value: "Hatchback Facelifting",
+                engine: [
+                  {
+                    value: "1.2 PureTech 82KM 60kW",
+                  },
+                  {
+                    value: "1.5 BlueHDi 102KM 75kW",
+                  },
+                  {
+                    value: "1.6 BlueHDI 75KM 55kW",
+                  },
+                ],
+              },
+              {
+                value: "VAN",
+                engine: [
+                  {
+                    value: "1.2 PureTech 82KM 60kW",
+                  },
+                  {
+                    value: "1.5 BlueHDi 102KM 75kW",
+                  },
+                  {
+                    value: "1.6 BlueHDI 75KM 55kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "C4",
+        generations: [
+          {
+            value: "III",
+            versions: [
+              {
+                value: "SUV",
+                engine: [
+                  {
+                    value: "1.2 PureTech 102KM 75kW",
+                  },
+                  {
+                    value: "1.2 PureTech 130KM 96kW",
+                  },
+                  {
+                    value: "1.2 PureTech 156KM 115kW",
+                  },
+                  {
+                    value: "1.5 BlueHDi 110KM 81kW",
+                  },
+                  {
+                    value: "1.5 BlueHDi 131KM 96kW",
+                  },
+                ],
+              },
+              {
+                value: "E-C4",
+                engine: [
+                  {
+                    value: "EV 136 136KM 100kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "C5 X",
+        generations: [
+          {
+            value: "Liftback",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "1.2 PureTech 131KM 96kW",
+                  },
+                  {
+                    value: "1.6 PureTech 181KM 133kW",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            value: "Plug-In",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "1.6 PureTech Plug-In 225KM 165kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: "Cupra",
+    models: [
+      {
+        value: "Formentor",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "Crossover PHEV",
+                engine: [
+                  {
+                    value: "1.4 e-HYBRID 245KM 180kW",
+                  },
+                  {
+                    value: "1.4 e-HYBRID 204KM 150kW",
+                  },
+                ],
+              },
+              {
+                value: "Crossover",
+                engine: [
+                  {
+                    value: "1.5 TSI 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 TSI 310KM 228kW",
+                  },
+                  {
+                    value: "2.0 TSI 190KM 140kW",
+                  },
+                  {
+                    value: "2.0 TSI 245KM 180kW",
+                  },
+                  {
+                    value: "2.5 TSI 390KM 287kW",
+                  },
+                  {
+                    value: "2.0 TDI 150KM 110kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Leon",
+        generations: [
+          {
+            value: "II",
+            versions: [
+              {
+                value: "Hatchback",
+                engine: [
+                  {
+                    value: "1.5 eTSI MHEV 150KM 110kW",
+                  },
+                  {
+                    value: "1.5 TSI 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 TSI 300KM 221kW",
+                  },
+                  {
+                    value: "2.0 TSI 245KM 180kW",
+                  },
+                  {
+                    value: "2.0 TSI 190KM 140kW",
+                  },
+                  {
+                    value: "2.0 TDI 150KM 110kW",
+                  },
+                ],
+              },
+              {
+                value: "Sportstourer",
+                engine: [
+                  {
+                    value: "1.5 eTSI MHEV 150KM 110kW",
+                  },
+                  {
+                    value: "1.5 TSI 150KM 110kW",
+                  },
+                  {
+                    value: "2.0 TSI 310KM 228kW",
+                  },
+                  {
+                    value: "2.0 TSI 245KM 180kW",
+                  },
+                  {
+                    value: "2.0 TSI 300KM 221kW",
+                  },
+                  {
+                    value: "2.0 TSI 190KM 140kW",
+                  },
+                  {
+                    value: "2.0 TDI 150KM 110kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: "Dacia",
+    models: [
+      {
+        value: "Duster",
+        generations: [
+          {
+            value: "II",
+            versions: [
+              {
+                value: "SUV Facelifting",
+                engine: [
+                  {
+                    value: "1.0 TCe 90KM 66kW",
+                  },
+                  {
+                    value: "1.3 TCe 130KM 96kW",
+                  },
+                  {
+                    value: "1.3 TCe 150KM 110kW",
+                  },
+                  {
+                    value: "1.0 TCe ECO-G 100KM 74kW",
+                  },
+                  {
+                    value: "1.0 TCe LPG 100KM 74kW",
+                  },
+                  {
+                    value: "1.5 Blue dCi 115KM 85kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Sandero",
+        generations: [
+          {
+            value: "III",
+            versions: [
+              {
+                value: "Hatchback 5d",
+                engine: [
+                  {
+                    value: "1.0 SCe 65KM 49kW",
+                  },
+                  {
+                    value: "1.0 TCe 90KM 67kW",
+                  },
+                  {
+                    value: "1.0 TCe ECO-G 100KM 74kW",
+                  },
+                  {
+                    value: "1.0 TCe LPG 100KM 74kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: "DS",
+    models: [
+      {
+        value: "4",
+        generations: [
+          {
+            value: "II",
+            versions: [
+              {
+                value: "Hatchback",
+                engine: [
+                  {
+                    value: "1.2 PureTech 130KM 96kW",
+                  },
+                  {
+                    value: "1.6 PureTech 181KM 133kW",
+                  },
+                  {
+                    value: "1.6 PureTech 224KM 165kW",
+                  },
+                  {
+                    value: "1.5 BlueHDi 130KM 96kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "9",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "Sedan",
+                engine: [
+                  {
+                    value: "1.6 PureTech 225KM 165kW",
+                  },
+                  {
+                    value: "1.6 PureTech E-TENSE 225KM 165kW",
+                  },
+                  {
+                    value: "1.6 PureTech E-TENSE 250KM 184kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: "Dodge",
+    models: [
+      {
+        value: "Challenger",
+        generations: [
+          {
+            value: "III",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "3.5 V6 254KM 187kW",
+                  },
+                  {
+                    value: "5.7 V8 HEMI 377KM 277kW",
+                  },
+                  {
+                    value: "6.1 V8 HEMI 431KM 317kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Charger",
+        generations: [
+          {
+            value: "VII",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "3.6 V6 296KM 218kW",
+                  },
+                  {
+                    value: "5.7 HEMI V8 375KM 276kW",
+                  },
+                  {
+                    value: "6.2 V8 717KM 527kW",
+                  },
+                  {
+                    value: "6.4 HEMI V8 492KM 362kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: "Ferrari",
+    models: [
+      {
+        value: "458 Italia",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "4.5 V8 570KM 419kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "599 GTB Fiorano",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "6.0 V12 620KM 456kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: "Fiat",
+    models: [
+      {
+        value: "500",
+        generations: [
+          {
+            value: "III",
+            versions: [
+              {
+                value: "Hatchback",
+                engine: [
+                  {
+                    value: "23.8kWh 95KM 70kW",
+                  },
+                  {
+                    value: "42kWh 118KM 87kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Panda",
+        generations: [
+          {
+            value: "III",
+            versions: [
+              {
+                value: "Hatchback 5d seria 4",
+                engine: [
+                  {
+                    value: "0.9 8v TwinAir Turbo 85KM 63kW",
+                  },
+                  {
+                    value: "1.2 LPG 69KM 51kW",
+                  },
+                  {
+                    value: "1.0 Hybrid 70KM 51kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: "Ford",
+    models: [
+      {
+        value: "Fiesta",
+        generations: [
+          {
+            value: "VIII",
+            versions: [
+              {
+                value: "ST Facelifting",
+                engine: [
+                  {
+                    value: "1.5 EcoBoost 200KM 147kW",
+                  },
+                ],
+              },
+              {
+                value: "Hatchback Facelifting",
+                engine: [
+                  {
+                    value: "1.0 EcoBoost 100KM 74kW",
+                  },
+                  {
+                    value: "1.0 EcoBoost 125KM 92kW",
+                  },
+                  {
+                    value: "1.1 75KM 55kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Focus",
+        generations: [
+          {
+            value: "IV",
+            versions: [
+              {
+                value: "Hatchback ST Facelifting",
+                engine: [
+                  {
+                    value: "2.3 EcoBoost 280KM 206kW",
+                  },
+                ],
+              },
+              {
+                value: "Hatchback Facelifting",
+                engine: [
+                  {
+                    value: "1.0 EcoBoost 100KM 74kW",
+                  },
+                  {
+                    value: "1.0 EcoBoost 125KM 92kW",
+                  },
+                  {
+                    value: "1.0 EcoBoost MHEV 125KM 92kW",
+                  },
+                  {
+                    value: "1.0 EcoBoost MHEV 155KM 114kW",
+                  },
+                  {
+                    value: "1.5 ECOBLUE 115KM 85kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Mustang",
+        generations: [
+          {
+            value: "VI",
+            versions: [
+              {
+                value: "Mach 1",
+                engine: [
+                  {
+                    value: "5.0 Ti-VCT 460KM 338kW",
+                  },
+                ],
+              },
+              {
+                value: "Fastback Facelifting",
+                engine: [
+                  {
+                    value: "2.3 EcoBoost 290KM 213kW",
+                  },
+                  {
+                    value: "5.0 Ti-VCT 450KM 331kW",
+                  },
+                  {
+                    value: "5.0 Ti-VCT 460KM 338kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: "Honda",
+    models: [],
+  },
+  {
+    value: "Hyundai",
+    models: [],
+  },
+  {
+    value: "Infiniti",
+    models: [],
+  },
+  {
+    value: "Jaguar",
+    models: [],
+  },
+  {
+    value: "Jeep",
+    models: [],
+  },
+  {
+    value: "Kia",
+    models: [],
+  },
+  {
+    value: "Land Rover",
+    models: [],
+  },
+  {
+    value: "Lamborghini",
+    models: [],
+  },
+  {
+    value: "Lexus",
+    models: [],
+  },
+  {
+    value: "Maserati",
+    models: [],
+  },
+  {
+    value: "Mazda",
+    models: [],
+  },
+  {
+    value: "Maybach",
+    models: [],
+  },
+  {
+    value: "Mercedes",
     models: [],
   },
 ];
