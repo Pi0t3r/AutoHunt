@@ -13388,23 +13388,375 @@ export const options = [
   },
   {
     value: "Honda",
-    models: [],
+    models: [
+      {
+        value: "Civic",
+        generations: [
+          {
+            value: "XII",
+            versions: [
+              {
+                value: "Hatchback",
+                engine: [
+                  {
+                    value: "2.0 i-MMD 184KM 135kW",
+                  },
+                ],
+              },
+              {
+                value: "Type-R",
+                engine: [
+                  {
+                    value: "2.0 VTEC Turbo 329KM 242kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "HR-V",
+        generations: [
+          {
+            value: "III",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "1.5 i-MMD 131KM 96kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "NSX",
+        generations: [
+          {
+            value: "II",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "3.5 V6 573KM 421kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "Hyundai",
-    models: [],
+    models: [
+      {
+        value: "i10",
+        generations: [
+          {
+            value: "III",
+            versions: [
+              {
+                value: "Hatchback Facelifting",
+                engine: [
+                  {
+                    value: "1.0 MPI 67KM 49kW",
+                  },
+                  {
+                    value: "1.0 T-GDI 100KM 74kW",
+                  },
+                  {
+                    value: "1.2 MPI 84KM 62kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "i20",
+        generations: [
+          {
+            value: "III",
+            versions: [
+              {
+                value: "Hatchback N",
+                engine: [
+                  {
+                    value: "1.6 T-GDI 204KM 150kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "i30",
+        generations: [
+          {
+            value: "III",
+            versions: [
+              {
+                value: "Hatchback N Facelifting",
+                engine: [
+                  {
+                    value: "2.0 T-GDI 250KM 184kW",
+                  },
+                  {
+                    value: "2.0 T-GDI 280KM 206kW",
+                  },
+                ],
+              },
+              {
+                value: "Hatchback Facelifting",
+                engine: [
+                  {
+                    value: "1.0 T-GDI 120KM 88kW",
+                  },
+                  {
+                    value: "1.5 DPI 110KM 81kW",
+                  },
+                  {
+                    value: "1.5 T-GDI 48V 160KM 118kW",
+                  },
+                  {
+                    value: "1.6 CRDi 115KM 85kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "Infiniti",
-    models: [],
+    models: [
+      {
+        value: "EX",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "3.7 V6 320KM 235kW",
+                  },
+                  {
+                    value: "3.0d V6 238KM 175kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "FX",
+        generations: [
+          {
+            value: "II",
+            versions: [
+              {
+                value: "Crossover Facelifting",
+                engine: [
+                  {
+                    value: "3.7 V6 320KM 235kW",
+                  },
+                  {
+                    value: "5.0 V8 390KM 287kW",
+                  },
+                  {
+                    value: "3.0d V6 238KM 175kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Q50",
+        generations: [
+          {
+            value: "II",
+            versions: [
+              {
+                value: "Sedan Facelifting",
+                engine: [
+                  {
+                    value: "3.5 V6 Hybrid 364KM 268kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "Jaguar",
-    models: [],
+    models: [
+      {
+        value: "E-Pace",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "SUV Facelifting",
+                engine: [
+                  {
+                    value: "1.5P MHEV 160KM 118kW",
+                  },
+                  {
+                    value: "2.0P MHEV 200KM 147kW",
+                  },
+                  {
+                    value: "2.0P MHEV 249KM 183kW",
+                  },
+                  {
+                    value: "2.0P MHEV 300KM 221kW",
+                  },
+                  {
+                    value: "2.0D MHEV 163KM 120kW",
+                  },
+                  {
+                    value: "2.0D MHEV 204KM 150kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "F-Type",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "Coupe Facelifting MY21",
+                engine: [
+                  {
+                    value: "2.0 i4 Turbo 300KM 221kW",
+                  },
+                  {
+                    value: "5.0 V8 450KM 331kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe R Facelifting",
+                engine: [
+                  {
+                    value: "5.0 V8 575KM 423kW",
+                  },
+                ],
+              },
+              {
+                value: "Coupe SVR",
+                engine: [
+                  {
+                    value: "5.0 S/C 575KM 423kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "XE",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "Sedan Facelifting",
+                engine: [
+                  {
+                    value: "2.0 i4P 250KM 184kW",
+                  },
+                  {
+                    value: "2.0 i4P 300KM 221kW",
+                  },
+                  {
+                    value: "2.0 204KM 150kW",
+                  },
+                  {
+                    value: "2.0 i4D 180KM 132kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "Jeep",
-    models: [],
+    models: [
+      {
+        value: "Avenger",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "SUV Electric",
+                engine: [
+                  {
+                    value: "eMotor 54kWh 156KM 115kW ",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Compass",
+        generations: [
+          {
+            value: "II",
+            versions: [
+              {
+                value: "SUV Facelifting",
+                engine: [
+                  {
+                    value: "1.3 GSE T4 130KM 96kW",
+                  },
+                  {
+                    value: "1.3 GSE T4 150KM 110kW",
+                  },
+                  {
+                    value: "1.6 MultiJet II 130KM 96kW",
+                  },
+                  {
+                    value: "1.5 MHEV T4 130KM 96kW",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "Kia",
