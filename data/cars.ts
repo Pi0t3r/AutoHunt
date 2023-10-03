@@ -13243,7 +13243,7 @@ export const options = [
                     value: "23.8kWh 95KM",
                   },
                   {
-                    value:"42kWh 118KM 87kW"
+                    value: "42kWh 118KM 87kW",
                   },
                 ],
               },
@@ -14012,18 +14012,632 @@ export const options = [
   },
   {
     value: "Maserati",
-    models: [],
-  },
-  {
-    value: "Mazda",
-    models: [],
+    models: [
+      {
+        value: "Ghibli",
+        generations: [
+          {
+            value: "III",
+            versions: [
+              {
+                value: "Sedan Facelifting",
+                engine: [
+                  {
+                    value: "3.0 V6 350KM",
+                  },
+                  {
+                    value: "S 3.0 V6 410KM",
+                  },
+                  {
+                    value: "3.0 V6 Diesel 275KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Quattroporte",
+        generations: [
+          {
+            value: "II",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "3.8 V8 530KM",
+                  },
+                  {
+                    value: "S 3.0 V6 410KM",
+                  },
+                  {
+                    value: "3.0 V6 Diesel 275KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "Maybach",
-    models: [],
+    models: [
+      {
+        value: "57",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "Limousine Facelifting",
+                engine: [
+                  {
+                    value: "560 469KM",
+                  },
+                  {
+                    value: "650 630KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "62",
+        generations: [
+          {
+            value: "X223",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "4.0 580 503KM",
+                  },
+                  {
+                    value: "6.0 680 612KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: "Mazda",
+    models: [
+      {
+        value: "3",
+        generations: [
+          {
+            value: "IV",
+            versions: [
+              {
+                value: "Hatchback",
+                engine: [
+                  {
+                    value: "2.0 SKYACTIV-G 150KM",
+                  },
+                  {
+                    value: "2.0 Skyactiv-G 122KM",
+                  },
+                  {
+                    value: "2.0 Skyactiv-X 180KM",
+                  },
+                  {
+                    value: "2.0 SkyActiv-X 186KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "6",
+        generations: [
+          {
+            value: "III",
+            versions: [
+              {
+                value: "Sedan Facelifting",
+                engine: [
+                  {
+                    value: "2.0 Skyactiv-G 145KM",
+                  },
+                  {
+                    value: "2.0 Skyactiv-G 165KM",
+                  },
+                  {
+                    value: "2.5 Skyactiv-G 194KM",
+                  },
+                  {
+                    value: "2.2 Skyactiv-D 150KM",
+                  },
+                  {
+                    value: "2.2 Skyactiv-D 184KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "Mercedes",
+    models: [
+      {
+        value: "AMG GT",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "Coupe 4d Facelifting",
+                engine: [
+                  {
+                    value: "4.0 63 585KM",
+                  },
+                  {
+                    value: "4.0 63S 639KM",
+                  },
+                  {
+                    value: "43 3.0 367KM",
+                  },
+                  {
+                    value: "53 3.0 435KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "CLA",
+        generations: [
+          {
+            value: "C118/X118",
+            versions: [
+              {
+                value: "Shooting Brake Facelifting",
+                engine: [
+                  {
+                    value: "1.3 180 136KM",
+                  },
+                  {
+                    value: "1.3 200 163KM",
+                  },
+                  {
+                    value: "2.0 220 190KM",
+                  },
+                  {
+                    value: "2.0 250 224KM",
+                  },
+                  {
+                    value: "2.0 180d 116KM",
+                  },
+                  {
+                    value: "2.0 200d 150KM",
+                  },
+                  {
+                    value: "2.0 220d 190KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "CLS",
+        generations: [
+          {
+            value: "C257",
+            versions: [
+              {
+                value: "Coupe AMG Facelifting",
+                engine: [
+                  {
+                    value: "3.0 53 435KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: "Mini",
+    models: [
+      {
+        value: "Countryman",
+        generations: [
+          {
+            value: "F60",
+            versions: [
+              {
+                value: "Crossover Facelifting",
+                engine: [
+                  {
+                    value: "1.5 136KM",
+                  },
+                  {
+                    value: "1.5 102KM",
+                  },
+                  {
+                    value: "2.0 S 178KM",
+                  },
+                  {
+                    value: "1.5 D 116KM",
+                  },
+                  {
+                    value: "2.0 D 150KM",
+                  },
+                  {
+                    value: "2.0 SD 190KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: "Mitsubishi",
+    models: [
+      {
+        value: "ASX",
+        generations: [
+          {
+            value: "II",
+            versions: [
+              {
+                value: "1.0 91KM",
+              },
+              {
+                value: "1.3 M Hybrid 140KM",
+              },
+              {
+                value: "1.3 M Hybrid 158KM",
+              },
+              {
+                value: "1.6 F Hybrid 143KM",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Space Star",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "Hatchback 5d Facelifting II",
+                engine: [
+                  {
+                    value: "1.0 71KM",
+                  },
+                  {
+                    value: "1.2 80KM",
+                  },
+                  {
+                    value: "1.2 71KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: "Nissan",
+    models: [
+      {
+        value: "GT-R",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "Coupe Facelifting",
+                engine: [
+                  {
+                    value: "3.8 570KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Leaf",
+        generations: [
+          {
+            value: "II",
+            versions: [
+              {
+                value: "Hatchback Facelifting",
+                engine: [
+                  {
+                    value: "39kWh 150KM",
+                  },
+                  {
+                    value: "59kWh 217KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: "Opel",
+    models: [
+      {
+        value: "Astra",
+        generations: [
+          {
+            value: "L",
+            versions: [
+              {
+                value: "Sports Tourer",
+                engine: [
+                  {
+                    value: "1.2 Turbo 110KM",
+                  },
+                  {
+                    value: "1.2 Turbo 130KM",
+                  },
+                  {
+                    value: "1.5 Diesel 130KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Insignia",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "Grand Sport Facelifting",
+                engine: [
+                  {
+                    value: "2.0 Turbo 170KM",
+                  },
+                  {
+                    value: "2.0 Turbo 200KM",
+                  },
+                  {
+                    value: "1.5 Diesel 122KM",
+                  },
+                  {
+                    value: "2.0 Diesel 174KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: "Peugeot",
+    models: [
+      {
+        value: "408",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "Crossover",
+                engine: [
+                  {
+                    value: "1.2 PureTech 130KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "508",
+        generations: [
+          {
+            value: "II",
+            versions: [
+              {
+                value: "SW Facelifting",
+                engine: [
+                  {
+                    value: "1.2 PureTech 130KM",
+                  },
+                  {
+                    value: "1.5 BlueHDI 130KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: "Porsche",
+    models: [
+      {
+        value: "911",
+        generations: [
+          {
+            value: "992",
+            versions: [
+              {
+                value: "GT 3 RS",
+                engine: [
+                  {
+                    value: "4.0 525KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Taycan",
+        generations: [
+          {
+            value: "Sport Tourismo",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "Performance 79.2kWh 408KM",
+                  },
+                  {
+                    value: "4S Performance 79.2 kWh 530KM",
+                  },
+                  {
+                    value: "93.4kWh 598KM",
+                  },
+                  {
+                    value: "Performance Plus 93,4kWh 571KM",
+                  },
+                  {
+                    value: "Performance Plus 93.4kWh 476KM",
+                  },
+                  {
+                    value: "Turbo 93.4kWh 680KM",
+                  },
+                  {
+                    value: "Turbo S 93.4 kWh 761KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: "Renault",
+    models: [
+      {
+        value: "Arkana",
+        generations: [
+          {
+            value: "I",
+            engine: [
+              {
+                value: "1.3 TCe 140KM",
+              },
+              {
+                value: "1.3 TCe 158KM",
+              },
+              {
+                value: "1.6 E-TECH 143KM",
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Clio",
+        generations: [
+          {
+            value: "V",
+            versions: [
+              {
+                value: "Hatchback 5d Hybrid Facelifting",
+                engine: [
+                  {
+                    value: "1.6 E-Tech 145KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+  {
+    value: "Rolls-Royce",
+    models: [],
+  },
+  {
+    value: "Rover",
+    models: [],
+  },
+  {
+    value: "Saab",
+    models: [],
+  },
+  {
+    value: "Seat",
+    models: [],
+  },
+  {
+    value: "Skoda",
+    models: [],
+  },
+  {
+    value: "Smart",
+    models: [],
+  },
+  {
+    value: "Subaru",
+    models: [],
+  },
+  {
+    value: "Suzuki",
+    models: [],
+  },
+  {
+    value: "Tesla",
+    models: [],
+  },
+  {
+    value: "Toyota",
+    models: [],
+  },
+  {
+    value: "Volkswagen",
+    models: [],
+  },
+  {
+    value: "Volvo",
     models: [],
   },
 ];
