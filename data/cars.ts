@@ -14594,50 +14594,461 @@ export const options = [
   },
   {
     value: "Rolls-Royce",
-    models: [],
+    models: [
+      {
+        value: "Ghost",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "SWB",
+                engine: [
+                  {
+                    value: "6.6 570KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Phantom",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "Drophead Coupe",
+                engine: [
+                  {
+                    value: "6.7 460KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Wraith",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "6.6 632KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "Rover",
-    models: [],
+    models: [
+      {
+        value: "100",
+        generations: [
+          {
+            value: "II",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "1.1 L 60KM",
+                  },
+                  {
+                    value: "1.4 GSi 103KM",
+                  },
+                  {
+                    value: "1.4 GTI 16V 103KM",
+                  },
+                  {
+                    value: "1.4 GTI/GT 16V KAT 90KM",
+                  },
+                  {
+                    value: "1.4 S/L/GTA 75KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "Saab",
-    models: [],
+    models: [
+      {
+        value: "9-3",
+        generations: [
+          {
+            value: "II",
+            versions: [
+              {
+                value: "9-3X",
+                engine: [
+                  {
+                    value: "2.0 Turbo 210KM",
+                  },
+                  {
+                    value: "2.0 Turbo 220KM",
+                  },
+                  {
+                    value: "2.0 Turbo BioPower 210KM",
+                  },
+                  {
+                    value: "2.0 Turbo BioPower 220KM",
+                  },
+                  {
+                    value: "1.9 TTiD PF 180KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "Seat",
-    models: [],
+    models: [
+      {
+        value: "Leon",
+        generations: [
+          {
+            value: "IV",
+            versions: [
+              {
+                value: "Hatchback Plug-In",
+                engine: [
+                  {
+                    value: "1.4 e-HYBRID 204KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Ibiza",
+        generations: [
+          {
+            value: "V",
+            versions: [
+              {
+                value: "Hatchback 5d Facelifting",
+                engine: [
+                  {
+                    value: "1.0 MPI 80KM",
+                  },
+                  {
+                    value: "1.0 TSI 95KM",
+                  },
+                  {
+                    value: "1.0 TSI 110KM",
+                  },
+                  {
+                    value: "1.5 TSI 150KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "Skoda",
-    models: [],
+    models: [
+      {
+        value: "Octavia",
+        generations: [
+          {
+            value: "IV",
+            versions: [
+              {
+                value: "RS Avant",
+                engine: [
+                  {
+                    value: "2.0 TSI 245KM",
+                  },
+                  {
+                    value: "2.0 TDI SCR 200KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Kodiaq",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "SUV Facelifting",
+                engine: [
+                  {
+                    value: "1.5 TSI 150KM",
+                  },
+                  {
+                    value: "2.0 TSI 190KM",
+                  },
+                  {
+                    value: "2.0 TDI SCR 150KM",
+                  },
+                  {
+                    value: "2.0 TDI SCR 200KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "Smart",
-    models: [],
+    models: [
+      {
+        value: "ForFour",
+        generations: [
+          {
+            value: "II",
+            versions: [
+              {
+                value: "Hatchback Facelifting",
+                engine: [
+                  {
+                    value: "EV 82KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "Subaru",
-    models: [],
+    models: [
+      {
+        value: "BRZ",
+        generations: [
+          {
+            value: "II",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "2.4 D-4S 228KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "Suzuki",
-    models: [],
+    models: [
+      {
+        value: "Swift",
+        generations: [
+          {
+            value: "VI",
+            versions: [
+              {
+                value: "Hatchback Facelifting",
+                engine: [
+                  {
+                    value: "1.2 DualJet SHVS 83KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "Tesla",
-    models: [],
+    models: [
+      {
+        value: "Model S",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "Coupe Facelifting 2021",
+                engine: [
+                  {
+                    value: "Long Range 100kWh 1020KM",
+                  },
+                  {
+                    value: "Plaid 100kWh 1020KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Model X",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "SUV Facelifting",
+                engine: [
+                  {
+                    value: "Long Range 100kWh 670KM",
+                  },
+                  {
+                    value: "Plaid 100kWh 1020KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "Toyota",
-    models: [],
+    models: [
+      {
+        value: "Supra",
+        generations: [
+          {
+            value: "V",
+            versions: [
+              {
+                value: "I",
+                engine: [
+                  {
+                    value: "2.0 258KM",
+                  },
+                  {
+                    value: "3.0 GR 340KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Yaris",
+        generations: [
+          {
+            value: "IV",
+            versions: [
+              {
+                value: "GR Hatchback",
+                engine: [
+                  {
+                    value: "1.6 261KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "Volkswagen",
-    models: [],
+    models: [
+      {
+        value: "Arteon",
+        generations: [
+          {
+            value: "I",
+            versions: [
+              {
+                value: "Shooting Brake R",
+                engine: [
+                  {
+                    value: "2.0 TSI 320KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        value: "Golf",
+        generations: [
+          {
+            value: "VIII",
+            versions: [
+              {
+                value: "R Variant",
+                engine: [
+                  {
+                    value: "2.0 TSI 320KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
   {
     value: "Volvo",
-    models: [],
+    models: [
+      {
+        value: "S60",
+        generations: [
+          {
+            value: "III",
+            versions: [
+              {
+                value: "Sedan Facelifting",
+                engine: [
+                  {
+                    value: "2.0 B4 197KM",
+                  },
+                  {
+                    value: "2.0 B5 250KM",
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+    ],
   },
 ];
