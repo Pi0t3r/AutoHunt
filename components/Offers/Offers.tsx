@@ -1,10 +1,22 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 "use client";
+import {
+  Box,
+  FormControl,
+  InputLabel,
+  List,
+  ListItem,
+  ListItemText,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+  Typography,
+} from "@mui/material";
+import Image from "next/image";
 import Link from "next/link";
-import { ChangeEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Filters from "../filters/Filters";
-import styles from "./offers.module.css";
 // Defining the Offers component
 export default function Offers() {
   // State variables
@@ -13,7 +25,7 @@ export default function Offers() {
   // State variable to store sorted advertisement data
   const [sortedAdvertData, setSortedAdvertData] = useState<any[]>([]);
   // Function to handle sorting option change
-  const handleChangeSortOption = (event: ChangeEvent<HTMLSelectElement>) => {
+  const handleChangeSortOption = (event: SelectChangeEvent) => {
     setSortOption(event.target.value); // Update the sorting option state
   };
   // Effect to sort advertisement data based on the selected sorting option
@@ -34,33 +46,45 @@ export default function Offers() {
   // Function to render advertisement data
   const showAdvert = () => {
     if (advertData.length === 0) {
-      return <p>No ads in selected filters</p>; // Display loading message if there's no advertisement data
+      return (
+        <Typography variant="body1">No ads in selected filters</Typography>
+      ); // Display loading message if there's no advertisement data
     } else {
       return (
-        <ul>
+        <List
+          sx={{
+            listStyle: "none",
+            padding: "10px 5px",
+          }}
+        >
           {sortedAdvertData.map((post) => (
-            <li key={post.id}>
+            <ListItem key={post.id}>
               <Link href={`/advert/${post.id}`} key={post.id}>
-                <div className={styles.offer}>
-                  <div className={styles.info}>
-                    <div>
+                <Box>
+                  <Box sx={{ padding: "0 10px" }}>
+                    <Box>
                       {post.images && post.images.length > 0 && (
-                        <img src={post.images[0]} alt={`Image 0`} />
+                        <Image
+                          width={250}
+                          height={250}
+                          src={post.images[0]}
+                          alt={`Image 0`}
+                        />
                       )}
-                    </div>
-                    <p>
-                      {post.brand} {post.model}{" "}
-                      {post.generation ? post.generation.split(" ")[0] : ""}{" "}
-                      {post.version}
-                    </p>
-                    <p>{post.price}</p>
-                    <p>{post.createAdvert}</p>
-                  </div>
-                </div>
+                    </Box>
+                    <ListItemText primary={`${post.brand} ${post.model}
+                      ${post.generation ? post.generation.split(" ")[0] : ""}
+                      ${post.version}`}>
+                      
+                    </ListItemText>
+                    {/* <Typography>{post.price}</Typography>
+                    <Typography>{post.createAdvert}</Typography> */}
+                  </Box>
+                </Box>
               </Link>
-            </li>
+            </ListItem>
           ))}
-        </ul>
+        </List>
       );
     }
   };
@@ -68,29 +92,52 @@ export default function Offers() {
   const filteredLength = sortedAdvertData.length;
   // Render the Offers component
   return (
-    <div className={styles.div}>
-      <h2>What you're looking for?</h2>
-      <div>
+    <Box
+      sx={{
+        width: "100%",
+        backgroundColor: "white",
+        textAlign: "center",
+        color: "black",
+      }}
+    >
+      <Typography fontSize={20} variant="h2">
+        What you're looking for?
+      </Typography>
+      <Box>
         <Filters
           filteredLength={filteredLength}
           setAdvertData={setAdvertData}
         />
-      </div>
-      <div>
-        <span>Sort </span>
-        <select
-          name="sort"
-          id="sort"
-          value={sortOption}
-          onChange={handleChangeSortOption}
+      </Box>
+      <Box>
+        <FormControl
+          sx={{
+            m: 1,
+            minWidth: 100,
+          }}
         >
-          <option value="default">---</option>
-          <option value="Low">By price (Low to high)</option>
-          <option value="High">By price (High to low)</option>
-        </select>
-      </div>
-
-      <div className={styles.offers}>{showAdvert()}</div>
-    </div>
+          <InputLabel id="sort">Sort</InputLabel>
+          <Select
+            labelId="sort"
+            autoWidth
+            label="sort"
+            value={sortOption}
+            onChange={handleChangeSortOption}
+          >
+            <MenuItem value={"default"}>--</MenuItem>
+            <MenuItem value={"Low"}>By price (Low to high)</MenuItem>
+            <MenuItem value={"High"}>By price (High to low)</MenuItem>
+          </Select>
+        </FormControl>
+      </Box>
+      <Box
+        sx={{
+          marginTop: 10,
+          backgroundColor: "#c6c6c6b3",
+        }}
+      >
+        {showAdvert()}
+      </Box>
+    </Box>
   );
 }
