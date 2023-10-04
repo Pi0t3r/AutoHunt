@@ -1,5 +1,5 @@
 import React, { ChangeEvent } from "react";
-
+import { IconButtonProps } from "@mui/material/IconButton";
 export type ActiveButton = "login" | "signup";
 
 export type SelectOption = {
@@ -123,4 +123,8 @@ export interface UserContextType {
 export interface MyTimerProps {
   expiryTimestamp: Date;
   onExpire: () => void;
+}
+
+export interface ExpandMoreProps extends IconButtonProps {
+  expand: boolean;
 }

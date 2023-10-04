@@ -7,27 +7,55 @@ import {
   InputLabel,
   List,
   ListItem,
-  ListItemText,
   MenuItem,
   Select,
+  Card,
+  CardHeader,
+  CardMedia,
+  CardContent,
+  Collapse,
+  CardActions,
   SelectChangeEvent,
   Typography,
+  IconButton,
+  styled,
 } from "@mui/material";
-import Image from "next/image";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Filters from "../filters/Filters";
+import { ExpandMoreProps } from "@/types/myTypes";
+
+const ExpandMore = styled((props: ExpandMoreProps) => {
+  const { expand, ...other } = props;
+  return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
+  marginLeft: "auto",
+  transition: theme.transitions.create("transform", {
+    duration: theme.transitions.duration.shortest,
+  }),
+}));
+
 // Defining the Offers component
 export default function Offers() {
+  const [expanded, setExpanded] = useState(false);
   // State variables
   const [advertData, setAdvertData] = useState<any[]>([]); // Store advertisement data
   const [sortOption, setSortOption] = useState<string>("default"); // Store the selected sorting option
+
   // State variable to store sorted advertisement data
   const [sortedAdvertData, setSortedAdvertData] = useState<any[]>([]);
+
   // Function to handle sorting option change
   const handleChangeSortOption = (event: SelectChangeEvent) => {
     setSortOption(event.target.value); // Update the sorting option state
   };
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
+
   // Effect to sort advertisement data based on the selected sorting option
   useEffect(() => {
     const sortAdvertData = () => {
@@ -54,33 +82,60 @@ export default function Offers() {
         <List
           sx={{
             listStyle: "none",
-            padding: "10px 5px",
+            // padding: "10px 5px",
+            display: "flex",
+            flexFlow: "row wrap",
           }}
         >
           {sortedAdvertData.map((post) => (
-            <ListItem key={post.id}>
-              <Link href={`/advert/${post.id}`} key={post.id}>
-                <Box>
-                  <Box sx={{ padding: "0 10px" }}>
-                    <Box>
-                      {post.images && post.images.length > 0 && (
-                        <Image
-                          width={250}
-                          height={250}
-                          src={post.images[0]}
-                          alt={`Image 0`}
-                        />
-                      )}
-                    </Box>
-                    <ListItemText primary={`${post.brand} ${post.model}
-                      ${post.generation ? post.generation.split(" ")[0] : ""}
-                      ${post.version}`}>
-                      
-                    </ListItemText>
-                    {/* <Typography>{post.price}</Typography>
-                    <Typography>{post.createAdvert}</Typography> */}
-                  </Box>
-                </Box>
+            <ListItem key={post.id} style={{ display: "block" }}>
+              <Link
+                href={`/advert/${post.id}`}
+                key={post.id}
+                style={{
+                  display: "flex",
+                  flexFlow: "row wrap",
+                  textDecoration: "none",
+                  width: "100%",
+                  border: "1px solid black",
+                }}
+              >
+                <Card sx={{ maxWidth: 400 }}>
+                  <CardHeader
+                    title={`${post.brand} ${post.model}`}
+                    subheader={`${post.price} PLN`}
+                  />
+                  {post.images && post.images.length > 0 && (
+                    <CardMedia
+                      component="img"
+                      height="250"
+                      width="100%"
+                      alt="Title image car"
+                      image={post.images[0]}
+                    />
+                  )}
+                  <CardContent>
+                    <Typography variant="body1">{post.mileage} km</Typography>
+                    <Typography variant="body1">{post.yearbook}</Typography>
+                    <Typography variant="body1">{post.fuel}</Typography>
+                    <Typography variant="body1">{post.mileage}</Typography>
+                  </CardContent>
+                  <CardActions disableSpacing>
+                    <ExpandMore
+                      expand={expanded}
+                      onClick={handleExpandClick}
+                      aria-expanded={expanded}
+                      aria-label="show more"
+                    >
+                      <ExpandMoreIcon />
+                    </ExpandMore>
+                  </CardActions>
+                  <Collapse in={expanded} timeout="auto" unmountOnExit>
+                    <CardContent>
+                      <Typography>Siema</Typography>
+                    </CardContent>
+                  </Collapse>
+                </Card>
               </Link>
             </ListItem>
           ))}
@@ -124,7 +179,7 @@ export default function Offers() {
             value={sortOption}
             onChange={handleChangeSortOption}
           >
-            <MenuItem value={"default"}>--</MenuItem>
+            <MenuItem value={"default"}></MenuItem>
             <MenuItem value={"Low"}>By price (Low to high)</MenuItem>
             <MenuItem value={"High"}>By price (High to low)</MenuItem>
           </Select>
@@ -134,6 +189,7 @@ export default function Offers() {
         sx={{
           marginTop: 10,
           backgroundColor: "#c6c6c6b3",
+          width: "100%",
         }}
       >
         {showAdvert()}

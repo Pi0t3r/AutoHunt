@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.11.0",
     "@firebase/app": "^0.9.14",
     "@firebase/auth": "^1.0.0",
+    "@mui/icons-material": "^5.14.11",
     "@mui/material": "^5.14.11",
     "@prisma/client": "^4.14.0",
     "@types/dotenv": "^8.2.0",
