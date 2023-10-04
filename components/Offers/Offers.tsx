@@ -3,43 +3,26 @@
 "use client";
 import {
   Box,
+  Button,
+  Card,
+  CardActions,
+  CardContent,
+  CardMedia,
   FormControl,
   InputLabel,
   List,
   ListItem,
   MenuItem,
   Select,
-  Card,
-  CardHeader,
-  CardMedia,
-  CardContent,
-  Collapse,
-  CardActions,
   SelectChangeEvent,
   Typography,
-  IconButton,
-  styled,
 } from "@mui/material";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Filters from "../filters/Filters";
-import { ExpandMoreProps } from "@/types/myTypes";
-
-const ExpandMore = styled((props: ExpandMoreProps) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
-  marginLeft: "auto",
-  transition: theme.transitions.create("transform", {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
 
 // Defining the Offers component
 export default function Offers() {
-  const [expanded, setExpanded] = useState(false);
   // State variables
   const [advertData, setAdvertData] = useState<any[]>([]); // Store advertisement data
   const [sortOption, setSortOption] = useState<string>("default"); // Store the selected sorting option
@@ -50,10 +33,6 @@ export default function Offers() {
   // Function to handle sorting option change
   const handleChangeSortOption = (event: SelectChangeEvent) => {
     setSortOption(event.target.value); // Update the sorting option state
-  };
-
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
   };
 
   // Effect to sort advertisement data based on the selected sorting option
@@ -82,61 +61,68 @@ export default function Offers() {
         <List
           sx={{
             listStyle: "none",
-            // padding: "10px 5px",
             display: "flex",
             flexFlow: "row wrap",
           }}
         >
           {sortedAdvertData.map((post) => (
             <ListItem key={post.id} style={{ display: "block" }}>
-              <Link
-                href={`/advert/${post.id}`}
-                key={post.id}
-                style={{
-                  display: "flex",
-                  flexFlow: "row wrap",
-                  textDecoration: "none",
-                  width: "100%",
-                  border: "1px solid black",
-                }}
-              >
-                <Card sx={{ maxWidth: 400 }}>
-                  <CardHeader
-                    title={`${post.brand} ${post.model}`}
-                    subheader={`${post.price} PLN`}
+              <Card sx={{ maxWidth: 400 }}>
+                {post.images && post.images.length > 0 && (
+                  <CardMedia
+                    component="img"
+                    height="250"
+                    width="100%"
+                    alt="Title image car"
+                    image={post.images[0]}
                   />
-                  {post.images && post.images.length > 0 && (
-                    <CardMedia
-                      component="img"
-                      height="250"
-                      width="100%"
-                      alt="Title image car"
-                      image={post.images[0]}
-                    />
-                  )}
-                  <CardContent>
-                    <Typography variant="body1">{post.mileage} km</Typography>
-                    <Typography variant="body1">{post.yearbook}</Typography>
-                    <Typography variant="body1">{post.fuel}</Typography>
-                    <Typography variant="body1">{post.mileage}</Typography>
-                  </CardContent>
-                  <CardActions disableSpacing>
-                    <ExpandMore
-                      expand={expanded}
-                      onClick={handleExpandClick}
-                      aria-expanded={expanded}
-                      aria-label="show more"
+                )}
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="div">
+                    {post.brand} {post.model}
+                  </Typography>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexFlow: "row wrap",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    {post.generation} • {post.yearbook} • {post.mileage} km •{" "}
+                    {post.fuel}
+                    <Typography
+                      variant="body1"
+                      sx={{ color: "primary.main", display: "inherit" }}
                     >
-                      <ExpandMoreIcon />
-                    </ExpandMore>
-                  </CardActions>
-                  <Collapse in={expanded} timeout="auto" unmountOnExit>
-                    <CardContent>
-                      <Typography>Siema</Typography>
-                    </CardContent>
-                  </Collapse>
-                </Card>
-              </Link>
+                      {post.price}{" "}
+                      <Typography
+                        variant="body1"
+                        sx={{
+                          marginLeft: 0.5,
+                          color: "black",
+                        }}
+                      >
+                        PLN
+                      </Typography>
+                    </Typography>
+                  </Box>
+                </CardContent>
+                <CardActions>
+                  <Button size="small" variant="contained" color="primary">
+                    <Link
+                      href={`/advert/${post.id}`}
+                      key={post.id}
+                      style={{
+                        textDecoration: "none",
+                        color: "white",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      Show more
+                    </Link>
+                  </Button>
+                </CardActions>
+              </Card>
             </ListItem>
           ))}
         </List>
