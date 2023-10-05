@@ -10,6 +10,7 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BsFillArrowLeftCircleFill, BsFillFlagFill } from "react-icons/bs";
 import styles from "./page.module.css";
+
 function Advert() {
   const [reportVisible, setReportVisible] = useState(false);
 

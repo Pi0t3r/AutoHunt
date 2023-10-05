@@ -1,9 +1,10 @@
 import { db } from "@/firebase";
 import { FiltersProps, SelectOption } from "@/types/myTypes";
+import Box from "@mui/material/Box";
+import Typograpgy from "@mui/material/Typography";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { body, fuelOptions, options } from "../../data/cars";
-import styles from "../offers/offers.module.css";
 import { Select } from "../select/Select";
 
 export default function Filters({
@@ -59,7 +60,6 @@ export default function Filters({
       }
       if (selectedBody) {
         newQuery = query(newQuery, where("body", "==", selectedBody.value));
-
       }
       if (selectedFuel) {
         newQuery = query(newQuery, where("fuel", "==", selectedFuel.value));
@@ -161,7 +161,7 @@ export default function Filters({
   };
 
   return (
-    <div>
+    <Box>
       {/* Dropdown selects for various filters */}
       <Select
         options={body}
@@ -207,9 +207,9 @@ export default function Filters({
         filter="Fuel type"
         disabled={selectedEngine?.value !== undefined}
       />
-      <p className={styles.information}>
+      <Typograpgy variant="body1">
         Available advertisements: {filteredLength}
-      </p>
-    </div>
+      </Typograpgy>
+    </Box>
   );
 }

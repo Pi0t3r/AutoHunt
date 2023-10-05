@@ -1,22 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import {
-  Box,
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  FormControl,
-  InputLabel,
-  List,
-  ListItem,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-  Typography,
-} from "@mui/material";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
+import CardActions from "@mui/material/CardActions";
+import CardContent from "@mui/material/CardContent";
+import CardMedia from "@mui/material/CardMedia";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from '@mui/material/InputLabel';
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import MenuItem from "@mui/material/MenuItem";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Typography from '@mui/material/Typography';
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import Filters from "../filters/Filters";

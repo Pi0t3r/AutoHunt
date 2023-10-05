@@ -1,24 +1,21 @@
-import { carDataProps } from "@/types/myTypes";
-import LocalGasStationIcon from "@mui/icons-material/LocalGasStation";
+import { carDataProps, InfoProps } from "@/types/myTypes";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
-interface InfoProps {
-  image: React.ReactNode;
-  title: string | number;
-}
-
-const Info = ({ image, title }: InfoProps) => {
+const Info = ({ title, value }: InfoProps) => {
   return (
     <Box
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
+        display: "inline-flex",
       }}
     >
-      {image}
-      <Typography>{title}</Typography>
+      <Typography
+        variant="body2"
+        sx={{ marginRight: 1, color: "primary.main", fontWeight: "bold" }}
+      >
+        {title}:
+      </Typography>
+      <Typography variant="body2">{value}</Typography>
     </Box>
   );
 };
@@ -35,30 +32,21 @@ const CarDetails = ({ data }: carDataProps) => {
         {data.brand} • {data.model} • {data.generation} • {data.version}
       </Typography>
       <Typography variant="body2">{data.engine}</Typography>
-      <Box sx={{ display: "flex", flexFlow: "row wrap", gap: 5 }}>
-        <Info title={data.fuel} image={<LocalGasStationIcon />} />
-        <Info title={data.gearbox} image={<LocalGasStationIcon />} />
-        <Info title={data.drive} image={<LocalGasStationIcon />} />
-        <Info title={data.mileage} image={<LocalGasStationIcon />} />
-        <Info title={data.firstRegister} image={<LocalGasStationIcon />} />
-        <Info title={data.vin} image={<LocalGasStationIcon />} />
-        <Info title={data.firstRegister} image={<LocalGasStationIcon />} />
-        <Info title={data.yearbook} image={<LocalGasStationIcon />} />
+      <Box
+        sx={{
+          display: "flex",
+          flexFlow: "column wrap",
+        }}
+      >
+        <Info title="Yearbook" value={data.yearbook} />
+        <Info title="Mileage" value={`${data.mileage} km`} />
+        <Info title="Fuel type" value={data.fuel} />
+        <Info title="Gearbox" value={data.gearbox} />
+        <Info title="Body type" value={data.body} />
+        <Info title="VIN" value={data.vin} />
+        <Info title="First register" value={data.firstRegister} />
       </Box>
     </Box>
-    // <div className={styles.infoCar}>
-    //   <p className={styles.title}>Details</p>
-    //   <dl>
-    //     <p>Price {data.price}</p>
-    //     <dt>Vehicle Body</dt>
-    //     <dd>{data.body}</dd>
-    //
-    //     <dt>Yearbook</dt>
-    //     <dd>{data.yearbook}</dd>
-    //
-    //   </dl>
-    //   <p>created: {data.createAdvert}</p>
-    // </div>
   );
 };
 

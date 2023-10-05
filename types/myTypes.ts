@@ -128,3 +128,8 @@ export interface MyTimerProps {
 export interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
 }
+
+export interface InfoProps {
+  title: string;
+  value: React.ReactNode;
+}
