@@ -1,74 +1,24 @@
-import FacebookIcon from "@mui/icons-material/Facebook";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import { BsFacebook, BsInstagram, BsYoutube, BsTwitter } from "react-icons/bs";
 export default function Footer() {
   return (
-    <Box
-      sx={{
-        display: "block",
-      }}
-    >
-      <Box
-        sx={{
-          display: "flex",
-          flexFlow: "row wrap",
-          justifyContent: "space-around",
-          padding: 5,
-        }}
-      >
-        <FacebookIcon
-          sx={{
-            width: 34,
-            height: 34,
-          }}
-        />
-        <InstagramIcon
-          sx={{
-            width: 34,
-            height: 34,
-          }}
-        />
-        <TwitterIcon
-          sx={{
-            width: 34,
-            height: 34,
-          }}
-        />
-        <YouTubeIcon
-          sx={{
-            width: 34,
-            height: 34,
-          }}
-        />
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          flexFlow: "row wrap",
-          justifyContent: "center",
-        }}
-      >
-        <Typography variant="body2">Privacy Policy |</Typography>
-        <Typography variant="body2"> Terms & Conditions |</Typography>
-        <Typography variant="body2"> Feedback</Typography>
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          flexFlow: "column nowrap",
-          alignItems: "center",
-          marginTop:2,
-          paddingBottom:4,
-        }}
-      >
-        <Typography variant="body1">Customer service:</Typography>
-        <Typography variant="body2">+48 123 321 231</Typography>
-        <Typography variant="body2">help@autohunt.com</Typography>
-        <Typography variant="body2">Mon - Fri, 08:00 - 17:00</Typography>
-      </Box>
-    </Box>
+    <div className="block">
+      <div className="flex flex-row flex-wrap justify-around p-5">
+        <BsFacebook />
+        <BsInstagram />
+        <BsTwitter />
+        <BsYoutube />
+      </div>
+      <div className="flex flex-row flex-wrap justify-center">
+        <span>Privacy Policy |</span>
+        <span> Terms & Conditions |</span>
+        <span> Feedback</span>
+      </div>
+      <div className="flex flex-column flex-nowrap items-center mt-2 pb-4">
+        <span>Customer service:</span>
+        <span>+48 123 321 231</span>
+        <span>help@autohunt.com</span>
+        <span>Mon - Fri, 08:00 - 17:00</span>
+      </div>
+    </div>
   );
 }

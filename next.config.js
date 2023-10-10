@@ -15,6 +15,7 @@ const nextConfig = {
     APP_ID: process.env.APP_ID,
     MEASUREMENT_ID: process.env.MEASUREMENT_ID,
   },
+
 };
 
 module.exports = nextConfig;

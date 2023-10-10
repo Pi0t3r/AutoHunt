@@ -1,22 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
-import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import FormControl from "@mui/material/FormControl";
-import InputLabel from '@mui/material/InputLabel';
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import MenuItem from "@mui/material/MenuItem";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import Typography from '@mui/material/Typography';
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import Filters from "../filters/Filters";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
 
 // Defining the Offers component
 export default function Offers() {
@@ -31,6 +24,7 @@ export default function Offers() {
   const handleChangeSortOption = (event: SelectChangeEvent) => {
     setSortOption(event.target.value); // Update the sorting option state
   };
+  const currentDate = new Date();
 
   // Effect to sort advertisement data based on the selected sorting option
   useEffect(() => {
@@ -50,79 +44,48 @@ export default function Offers() {
   // Function to render advertisement data
   const showAdvert = () => {
     if (advertData.length === 0) {
-      return (
-        <Typography variant="body1">No ads in selected filters</Typography>
-      ); // Display loading message if there's no advertisement data
+      return <p>No ads in selected filters</p>; // Display loading message if there's no advertisement data
     } else {
       return (
-        <List
-          sx={{
-            listStyle: "none",
-            display: "flex",
-            flexFlow: "row wrap",
-          }}
-        >
+        <ul className="flex list-none flex-row flex-wrap justify-center">
           {sortedAdvertData.map((post) => (
-            <ListItem key={post.id} style={{ display: "block" }}>
-              <Card sx={{ maxWidth: 400 }}>
+            <li key={post.id} className="block">
+              <div className="m-2 bg-neutral-100">
                 {post.images && post.images.length > 0 && (
-                  <CardMedia
-                    component="img"
-                    height="250"
-                    width="100%"
-                    alt="Title image car"
-                    image={post.images[0]}
+                  <Image
+                    src={post.images[0]}
+                    width={500}
+                    height={250}
+                    alt="First image car"
                   />
                 )}
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
+                <div className="text-left p-4">
+                  <h5>
                     {post.brand} {post.model}
-                  </Typography>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      flexFlow: "row wrap",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    {post.generation} • {post.yearbook} • {post.mileage} km •{" "}
-                    {post.fuel}
-                    <Typography
-                      variant="body1"
-                      sx={{ color: "primary.main", display: "inherit" }}
-                    >
-                      {post.price}{" "}
-                      <Typography
-                        variant="body1"
-                        sx={{
-                          marginLeft: 0.5,
-                          color: "black",
-                        }}
-                      >
-                        PLN
-                      </Typography>
-                    </Typography>
-                  </Box>
-                </CardContent>
-                <CardActions>
-                  <Button size="small" variant="contained" color="primary">
-                    <Link
-                      href={`/advert/${post.id}`}
-                      key={post.id}
-                      style={{
-                        textDecoration: "none",
-                        color: "white",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      Show more
-                    </Link>
-                  </Button>
-                </CardActions>
-              </Card>
-            </ListItem>
+                  </h5>
+                  <div className="flex flex-col flex-wrap justify-between">
+                    <p className="flex flex-row flex-wrap">
+                      {post.generation} • {post.yearbook} • {post.mileage} km •{" "}
+                      {post.fuel}
+                    </p>
+                    <p className="text-main inherit">
+                      {post.price} <span className="ml-2 text-black">PLN</span>
+                    </p>
+                  </div>
+                  <div className="flex flex-row flex-wrap justify-between items-center mt-4">
+                    <button className="bg-main rounded-md p-2">
+                      <Link href={`/advert/${post.id}`}>Show more</Link>
+                    </button>
+                    <p className="text-xs text-slate-500">
+                      Advert added:{" "}
+                      <span className="font-bold">{post.createAdvert}</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </li>
           ))}
-        </List>
+        </ul>
       );
     }
   };
@@ -130,24 +93,15 @@ export default function Offers() {
   const filteredLength = sortedAdvertData.length;
   // Render the Offers component
   return (
-    <Box
-      sx={{
-        width: "100%",
-        backgroundColor: "white",
-        textAlign: "center",
-        color: "black",
-      }}
-    >
-      <Typography fontSize={20} variant="h2">
-        What you're looking for?
-      </Typography>
-      <Box>
+    <div className="w-full bg-white text-center text-black">
+      <h2>What you're looking for?</h2>
+      <div>
         <Filters
           filteredLength={filteredLength}
           setAdvertData={setAdvertData}
         />
-      </Box>
-      <Box>
+      </div>
+      <div>
         <FormControl
           sx={{
             m: 1,
@@ -167,16 +121,8 @@ export default function Offers() {
             <MenuItem value={"High"}>By price (High to low)</MenuItem>
           </Select>
         </FormControl>
-      </Box>
-      <Box
-        sx={{
-          marginTop: 10,
-          backgroundColor: "#c6c6c6b3",
-          width: "100%",
-        }}
-      >
-        {showAdvert()}
-      </Box>
-    </Box>
+      </div>
+      <div className="mt-10 bg-[#c6c6c6b3] w-full">{showAdvert()}</div>
+    </div>
   );
 }

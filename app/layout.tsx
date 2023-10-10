@@ -2,8 +2,6 @@
 import { UserProvider } from "@/context/UserContext";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@mui/material";
-import { theme } from "@/theme/theme";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -22,9 +20,7 @@ export default function RootLayout({
         <title>Autohunt</title>
       </head>
       <body className={inter.className}>
-        <UserProvider>
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
-        </UserProvider>
+        <UserProvider>{children}</UserProvider>
       </body>
     </html>
   );
