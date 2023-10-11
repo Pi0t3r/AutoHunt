@@ -73,7 +73,7 @@ export default function Offers() {
                     </p>
                   </div>
                   <div className="flex flex-row flex-wrap justify-between items-center mt-4">
-                    <button className="bg-main rounded-md p-2">
+                    <button className="bg-main rounded-md p-2 text-white font-medium">
                       <Link href={`/advert/${post.id}`}>Show more</Link>
                     </button>
                     <p className="text-xs text-slate-500">
