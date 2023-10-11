@@ -2,21 +2,20 @@ import { carDataProps, InfoProps } from "@/types/myTypes";
 
 const Info = ({ title, value }: InfoProps) => {
   return (
-    <div className="inline-flex">
-      <span className="mr-1 text-{primary.main} font-bold">{title}:</span>
-      <span>{value}</span>
-    </div>
+    <li className="text-main font-medium p-4 border-2 m-2 rounded-md">
+      {title}: <span className="text-black font-normal">{value}</span>
+    </li>
   );
 };
 
 const CarDetails = ({ data }: carDataProps) => {
   return (
-    <div className="p-1 text-center">
-      <p>
-        {data.brand} • {data.model} • {data.generation} • {data.version}
+    <>
+      <p className="text-center font-medium italic">
+        {data.brand} • {data.model} • {data.generation} • {data.version} •{" "}
+        {data.engine}
       </p>
-      <span>{data.engine}</span>
-      <div className="flex flex-wrap flex-column">
+      <ul className="flex flex-row flex-wrap">
         <Info title="Yearbook" value={data.yearbook} />
         <Info title="Mileage" value={`${data.mileage} km`} />
         <Info title="Fuel type" value={data.fuel} />
@@ -24,8 +23,8 @@ const CarDetails = ({ data }: carDataProps) => {
         <Info title="Body type" value={data.body} />
         <Info title="VIN" value={data.vin} />
         <Info title="First register" value={data.firstRegister} />
-      </div>
-    </div>
+      </ul>
+    </>
   );
 };
 
