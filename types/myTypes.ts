@@ -1,5 +1,6 @@
 import React, { ChangeEvent } from "react";
 import { IconButtonProps } from "@mui/material/IconButton";
+import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
 export type ActiveButton = "login" | "signup";
 
 export type SelectOption = {
@@ -98,6 +99,7 @@ export interface ProfileImageProps {
 
 export interface ReportFormProps {
   setReportVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  reportVisible: boolean;
 }
 
 export interface UserContextType {
@@ -130,6 +132,6 @@ export interface ExpandMoreProps extends IconButtonProps {
 }
 
 export interface InfoProps {
-  title: string;
+  title: string | ReactJSXElement;
   value: React.ReactNode;
 }

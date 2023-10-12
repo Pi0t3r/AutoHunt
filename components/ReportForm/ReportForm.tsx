@@ -1,21 +1,25 @@
 import { ReportFormProps } from "@/types/myTypes";
 import { AiFillCloseCircle } from "react-icons/ai";
-import styles from "./ReportForm.module.css";
-
-const ReportForm = ({ setReportVisible }: ReportFormProps) => {
-
+const ReportForm = ({ setReportVisible, reportVisible }: ReportFormProps) => {
   const handleSubmit = () => {
     setReportVisible(false);
   };
+
   return (
-    <div className={styles.reportContainer}>
-      <div className={styles.titleReport}>
+    <div
+      className={`fixed w-3/4 h-80 max-w-md z-10 bg-red-500 top-1/2 left-1/2 -translate-y-1/2 transition-all duration-300 ease-in delay-150 ${
+        reportVisible
+          ? "-translate-x-1/2 opacity-100"
+          : "-translate-x-[200%] opacity-0"
+      }`}
+    >
+      <div>
         <p>report a violation</p>
-        <button onClick={() => setReportVisible(false)}>
+        <button onClick={handleSubmit}>
           <AiFillCloseCircle />
         </button>
       </div>
-      <div className={styles.choose}>
+      <div>
         <fieldset>
           <div>
             {" "}

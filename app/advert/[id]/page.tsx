@@ -9,7 +9,6 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BsFillArrowLeftCircleFill, BsFillFlagFill } from "react-icons/bs";
-import styles from "./page.module.css";
 
 function Advert() {
   const [reportVisible, setReportVisible] = useState(false);
@@ -36,24 +35,31 @@ function Advert() {
   // Find and display data for the specific advertisement
   const showData = advertData.find((car) => car.id === params.id);
   return (
-    <div className={styles.container}>
-      <div className={styles.back}>
+    <>
+      <div className="p-4">
         <Link href={"/"}>
-          <BsFillArrowLeftCircleFill />
+          <BsFillArrowLeftCircleFill className="w-10 h-10 text-main" />
         </Link>
       </div>
-      <div className={styles.offer}>
+      <>
         <Banner images={showData.images} />
         <CarDetails data={showData} />
         <SellerDetails data={showData} />
-        <div>
-          <button className={styles.report} onClick={handleReportClick}>
-            <BsFillFlagFill /> <span>Report </span>
+        <div className="m-4 flex flex-row flex-wrap items-center justify-start">
+          <p>Something wrong with this advert?</p>
+          <button
+            onClick={handleReportClick}
+            className="inline-flex bg-main p-3 rounded-md shadow-lg text-white items-center ml-4"
+          >
+            <BsFillFlagFill /> <span className="ml-2">Report </span>
           </button>
         </div>
-      </div>
-      {reportVisible && <ReportForm setReportVisible={setReportVisible} />}
-    </div>
+      </>
+        <ReportForm
+          setReportVisible={setReportVisible}
+          reportVisible={reportVisible}
+        />
+    </>
   );
 }
 export default Advert;

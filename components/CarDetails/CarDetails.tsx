@@ -2,7 +2,7 @@ import { carDataProps, InfoProps } from "@/types/myTypes";
 
 const Info = ({ title, value }: InfoProps) => {
   return (
-    <li className="text-main font-medium p-4 border-2 m-2 rounded-md">
+    <li className="text-main font-medium p-4 border-2 m-2 rounded-md shadow-lg bg-slate-50">
       {title}: <span className="text-black font-normal">{value}</span>
     </li>
   );
