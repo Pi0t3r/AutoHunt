@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useUserContext } from "../../context/UserContext";
 import LoggedInNabar from "./LoggedInNavbar";
-import styles from "./navbar.module.css";
+import { AiOutlineUser } from "react-icons/ai";
 // Defining the Navbar component
 export default function Navbar() {
   const { user } = useUserContext(); // Accessing user information from the user context
@@ -30,21 +30,25 @@ export default function Navbar() {
       {user ? ( // Conditional rendering based on user authentication
         <LoggedInNabar /> // Render the LoggedInNavbar component if the user is authenticated
       ) : (
-        <nav className={styles.nav} style={navbarStyles}>
+        <nav
+          className="fixed inset-x-0 top-0 flex justify-between p-5 z-50 items-center"
+          style={navbarStyles}
+        >
           {/* Render the navigation bar for non-authenticated users */}
           <div>
-            <span>
-              <Link href="/register">Login</Link> |{" "}
-              <Link href="/register">Sign up</Link>
+            <span className="text-white">
+              <Link href="/register">
+                <AiOutlineUser className="w-8 h-8"/>
+              </Link>
             </span>
           </div>
-          <div>
-            <Link href="/">
-              <h1>
-                Auto<span>hunt</span>
+          <>
+            <Link href="/" className="text-white no-underline">
+              <h1 className="uppercase font-medium text-lg">
+                Auto<span className="text-main">hunt</span>
               </h1>
             </Link>
-          </div>
+          </>
         </nav>
       )}
     </>

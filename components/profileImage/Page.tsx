@@ -4,7 +4,6 @@ import { getDownloadURL, ref } from "firebase/storage";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AiOutlineUser } from "react-icons/ai";
-import styles from "./profileImage.module.css";
 // ProfileImage component with userMail and selectedImage props
 const ProfileImage = ({ userMail, selectedImage }: ProfileImageProps) => {
   const [profileImageURL, setProfileImageURL] = useState<string | null>(null); // State to store the profile image URL
@@ -27,13 +26,14 @@ const ProfileImage = ({ userMail, selectedImage }: ProfileImageProps) => {
   }, [userMail, selectedImage]);
 
   return (
-    <div className={styles.profileImage}>
+    <div className="mt-10 my-5 flex justify-center">
       {profileImageURL ? ( // Display the profile image if the URL exists
         <Image
           src={profileImageURL}
           alt="Profile picture user"
           width={150}
           height={150}
+          className="rounded-full shadow-lg w-28"
         />
       ) : (
         <AiOutlineUser /> // Display a default user icon if no profile image is available

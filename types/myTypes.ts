@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from "react";
+import React, { ChangeEvent, ReactElement } from "react";
 import { IconButtonProps } from "@mui/material/IconButton";
 import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
 export type ActiveButton = "login" | "signup";
@@ -136,8 +136,13 @@ export interface InfoProps {
   value: React.ReactNode;
 }
 
-
 export interface LabelProps {
-  value:string;
-  title:string;
+  value: string;
+  title: string;
+}
+
+export interface LinksProps {
+  linkTo: '/profile' | '/profile/myAdvert'
+  title: string;
+  icon: JSX.Element;
 }
