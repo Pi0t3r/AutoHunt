@@ -55,10 +55,10 @@ function Advert() {
           </button>
         </div>
       </>
-        <ReportForm
-          setReportVisible={setReportVisible}
-          reportVisible={reportVisible}
-        />
+      <ReportForm
+        setReportVisible={setReportVisible}
+        reportVisible={reportVisible}
+      />
     </>
   );
 }

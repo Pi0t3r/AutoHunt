@@ -135,3 +135,9 @@ export interface InfoProps {
   title: string | ReactJSXElement;
   value: React.ReactNode;
 }
+
+
+export interface LabelProps {
+  value:string;
+  title:string;
+}
