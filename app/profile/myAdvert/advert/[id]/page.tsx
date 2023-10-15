@@ -5,11 +5,15 @@ import Banner from "@/components/banner/Banner";
 import CarDetails from "@/components/carDetails/CarDetails";
 import SellerDetails from "@/components/sellerDetails/SellerDetails";
 import { db } from "@/firebase";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import DeleteIcon from "@mui/icons-material/Delete";
+import EditIcon from "@mui/icons-material/Edit";
+import SaveIcon from "@mui/icons-material/Save";
+import { Button } from "@mui/material";
 import { collection, deleteDoc, doc, updateDoc } from "firebase/firestore";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { ChangeEvent, useEffect, useState } from "react";
-
 function MyAdvert() {
   const [advertData, setAdvertData] = useState<any[]>([]);
   const params = useParams();
@@ -85,17 +89,27 @@ function MyAdvert() {
   const showData = advertData.find((car) => car.id === params.id);
   return (
     <div>
-      <div>
-        <Link href="/profile/myAdvert">
-          <button>Back</button>
-        </Link>
-      </div>
+      <Link href="/profile/myAdvert" className="absolute top-0 left-0 p-4">
+        <Button
+          variant="outlined"
+          startIcon={<ArrowBackIosIcon />}
+          sx={{
+            borderColor: "#b78d20",
+            color: "#b78d20",
+            textTransform: "lowercase",
+
+            ":hover": { borderColor: "#a67c10", color: "#b78d20" },
+          }}
+        >
+          Back
+        </Button>
+      </Link>
       {isEditing ? (
-        <form>
+        <form className="mt-20 p-2 flex flex-row flex-wrap gap-2">
           <MyInput
             value={formData.mileage}
             type="number"
-            title="Mileage"
+            placeholder="Mileage"
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
               setFormData((prevData) => ({
                 ...prevData,
@@ -104,7 +118,7 @@ function MyAdvert() {
             }}
           />
           <MyInput
-            title="Price"
+            placeholder="Price"
             type="number"
             value={formData.price}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
@@ -116,7 +130,7 @@ function MyAdvert() {
             }}
           />
           <MyInput
-            title="Your phone number"
+            placeholder="Phone number"
             type="tel"
             value={formData.phone}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
@@ -128,7 +142,7 @@ function MyAdvert() {
             }}
           />
           <MyInput
-            title="Place"
+            placeholder="Place"
             type="text"
             value={formData.sellerPlace}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
@@ -139,17 +153,74 @@ function MyAdvert() {
               }));
             }}
           />
-          <button onClick={handleSaveChanges}>Save changes</button>
-          <button onClick={handleCancelEdit}>Cancel</button>
+          <div className="flex flex-row flex-wrap gap-2">
+            <Button
+              variant="contained"
+              onClick={handleSaveChanges}
+              size="small"
+              startIcon={<SaveIcon />}
+              sx={{
+                letterSpacing: "1px",
+                fontWeight: "bold",
+                fontSize: "10px",
+                background: "#b78d20",
+                ":hover": { backgroundColor: "#a67c10" },
+              }}
+            >
+              Save changes
+            </Button>
+            <Button
+              variant="contained"
+              onClick={handleCancelEdit}
+              size="small"
+              sx={{
+                letterSpacing: "1px",
+                fontWeight: "bold",
+                fontSize: "10px",
+                background: "#b78d20",
+                ":hover": { backgroundColor: "#a67c10" },
+              }}
+            >
+              Cancel
+            </Button>
+          </div>
         </form>
       ) : (
-        <div>
+        <div className="mt-20">
           <Banner images={showData.images} />
           <CarDetails data={showData} />
           <SellerDetails data={showData} />
-          <div>
-            <button onClick={handleDelete}>Delete advert</button>
-            <button onClick={handleEdit}>Edit advert</button>
+          <div className="p-4 flex flex-row flex-wrap gap-2">
+            <Button
+              variant="contained"
+              onClick={handleDelete}
+              size="small"
+              startIcon={<DeleteIcon />}
+              sx={{
+                letterSpacing: "1px",
+                fontWeight: "bold",
+                fontSize: "10px",
+                background: "#b78d20",
+                ":hover": { backgroundColor: "#a67c10" },
+              }}
+            >
+              Delete advert
+            </Button>
+            <Button
+              variant="contained"
+              onClick={handleEdit}
+              size="small"
+              startIcon={<EditIcon />}
+              sx={{
+                letterSpacing: "1px",
+                fontWeight: "bold",
+                fontSize: "10px",
+                background: "#b78d20",
+                ":hover": { backgroundColor: "#a67c10" },
+              }}
+            >
+              Edit advert
+            </Button>
           </div>
         </div>
       )}

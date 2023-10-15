@@ -9,6 +9,7 @@ import ImageUpload from "@/components/imageUpload/ImageUpload";
 import { db, storage } from "@/firebase";
 import { SelectOptionProps } from "@/types/myTypes";
 import useUserData from "@/useUserData";
+import { Button } from "@mui/material";
 import { addDoc, collection, updateDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import Link from "next/link";
@@ -252,7 +253,9 @@ export default function CreateAdvert() {
           <BsFillArrowLeftCircleFill className="w-10 h-10 text-main" />
         </Link>
       </div>
-      <h3 className="text-center uppercase font-bold italic">Create new advert</h3>
+      <h3 className="text-center uppercase font-bold italic">
+        Create new advert
+      </h3>
       <form
         onSubmit={handleSubmit}
         className="flex flex-row flex-wrap justify-center md:justify-start items-center gap-2 p-4 w-full"
@@ -317,7 +320,9 @@ export default function CreateAdvert() {
           valueGearbox={selectedGearbox}
         />
         <div className="flex flex-row flex-wrap gap-2 justify-center">
-          <p className="text-main font-medium text-lg text-center">Other information</p>
+          <p className="text-main font-medium text-lg text-center">
+            Other information
+          </p>
           <MyInput
             value={formData.yearbook}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
@@ -382,9 +387,20 @@ export default function CreateAdvert() {
         <p>
           <Result />
         </p>
-        <button onClick={clearData} type="submit" className="bg-main p-2 rounded-md text-white px-4 font-medium">
+        <Button
+          variant="contained"
+          onClick={clearData}
+          type="submit"
+          sx={{
+            letterSpacing: "1px",
+            fontWeight: "bold",
+            fontSize: "10px",
+            background: "#b78d20",
+            ":hover": { backgroundColor: "#a67c10" },
+          }}
+        >
           Display
-        </button>
+        </Button>
       </form>
     </>
   );
