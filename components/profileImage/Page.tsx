@@ -33,7 +33,7 @@ const ProfileImage = ({ userMail, selectedImage }: ProfileImageProps) => {
           alt="Profile picture user"
           width={150}
           height={150}
-          className="rounded-full shadow-lg w-28"
+          className="rounded-full shadow-xl w-28 border border-main max-h-28 max-w-28 object-contain"
         />
       ) : (
         <AiOutlineUser /> // Display a default user icon if no profile image is available

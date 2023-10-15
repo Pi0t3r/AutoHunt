@@ -1,6 +1,5 @@
 import { SelectOptionProps, SelectProps } from "@/types/myTypes";
 import { useEffect, useState } from "react";
-import styles from './select.module.css'
 
 export function Select({
   value,
@@ -32,7 +31,7 @@ export function Select({
     <div
       onBlur={() => setIsOpen(false)} // Close dropdown when focus is lost
       tabIndex={0}
-      className={`relative w-[90%] my-2.5 mx-auto min-h-[1.5em] border border-solid border-[#777] flex items-center rounded-md outline-none cursor-pointer p-[5px] focus:border-main ${
+      className={`relative w-full min-h-[1.5em] border border-solid border-[#777] flex items-center rounded-md outline-none cursor-pointer p-[5px] focus:border-main max-w-[400px] ${
         disabled ? "opacity-60 cursor-not-allowed pointer-events-none" : ""
       }`} // Apply CSS classes based on disabled state
     >

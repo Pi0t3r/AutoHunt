@@ -4,19 +4,18 @@ import { MyInputProps } from "@/types/myTypes";
 export const MyInput: React.FC<MyInputProps> = ({
   value,
   onChange,
-  title,
   type,
   placeholder,
 }) => {
   return (
-    <label>
-      {title}:
+    <label className="w-full">
       <input
         type={type}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
         required
+        className="border border-[#777] rounded-md p-2 w-full"
       />
     </label>
   );

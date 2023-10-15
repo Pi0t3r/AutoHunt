@@ -8,9 +8,15 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onImageSelect }) => {
     }
   };
   return (
-    <div>
-      <input type="file" multiple onChange={handleImageSelect} required />
-    </div>
+    <>
+      <input
+        type="file"
+        multiple
+        onChange={handleImageSelect}
+        required
+        className="w-[90%] max-w-[300px]"
+      />
+    </>
   );
 };
 

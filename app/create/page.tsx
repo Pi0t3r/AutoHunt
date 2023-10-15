@@ -13,6 +13,7 @@ import { addDoc, collection, updateDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import Link from "next/link";
 import { ChangeEvent, useState } from "react";
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { options } from "../../data/cars";
 
 export default function CreateAdvert() {
@@ -245,12 +246,18 @@ export default function CreateAdvert() {
     handleUserInfoChange();
   };
   return (
-    <div>
-      <Link href={"/"}>
-        <button>Back</button>
-      </Link>
-      <h3>Create new advert</h3>
-      <form onSubmit={handleSubmit}>
+    <>
+      <div className="p-4">
+        <Link href={"/"}>
+          <BsFillArrowLeftCircleFill className="w-10 h-10 text-main" />
+        </Link>
+      </div>
+      <h3 className="text-center uppercase font-bold italic">Create new advert</h3>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-row flex-wrap justify-center md:justify-start items-center gap-2 p-4 w-full"
+      >
+        <p className="font-medium text-main text-lg">Main Information</p>
         <ImageUpload onImageSelect={handleImageSelect} />
         <BodySelect onChange={handleBodyChange} value={selectedBody} />
         <BrandSelect onChange={handleBrandChange} />
@@ -309,74 +316,76 @@ export default function CreateAdvert() {
           valueDrive={selectedDrive}
           valueGearbox={selectedGearbox}
         />
-        <MyInput
-          value={formData.yearbook}
-          onChange={(event: ChangeEvent<HTMLInputElement>) => {
-            mapField("yearbook", event.target.value);
-          }}
-          type="number"
-          title="Yearbook"
-        />
-        <MyInput
-          value={formData.mileage}
-          type="number"
-          title="Mileage"
-          onChange={(event: ChangeEvent<HTMLInputElement>) => {
-            mapField("mileage", event.target.value);
-          }}
-        />
-        <MyInput
-          title="First Register"
-          type="text"
-          value={formData.firstRegister}
-          placeholder="e.g. 23/01/2023"
-          onChange={(event: ChangeEvent<HTMLInputElement>) => {
-            mapField("firstRegister", event.target.value);
-          }}
-        />
-        <MyInput
-          title="VIN"
-          value={formData.vin}
-          onChange={(event: ChangeEvent<HTMLInputElement>) => {
-            mapField("vin", event.target.value);
-          }}
-          type="text"
-        />
-        <MyInput
-          title="Price"
-          type="number"
-          value={formData.price}
-          onChange={(event: ChangeEvent<HTMLInputElement>) => {
-            mapField("price", event.target.value);
-          }}
-        />
-        <MyInput
-          title="Your phone number"
-          type="tel"
-          value={formData.phone}
-          onChange={(event: ChangeEvent<HTMLInputElement>) => {
-            mapField("phone", event.target.value);
-          }}
-        />
-        <MyInput
-          title="Place"
-          type="text"
-          value={formData.sellerPlace}
-          onChange={(event: ChangeEvent<HTMLInputElement>) => {
-            const value = event.target.value;
-            setFormData((prevData) => ({
-              ...prevData,
-              sellerPlace: value,
-            }));
-          }}
-        />
+        <div className="flex flex-row flex-wrap gap-2 justify-center">
+          <p className="text-main font-medium text-lg text-center">Other information</p>
+          <MyInput
+            value={formData.yearbook}
+            onChange={(event: ChangeEvent<HTMLInputElement>) => {
+              mapField("yearbook", event.target.value);
+            }}
+            type="number"
+            placeholder="Yearbook"
+          />
+          <MyInput
+            value={formData.mileage}
+            type="number"
+            placeholder="Mileage"
+            onChange={(event: ChangeEvent<HTMLInputElement>) => {
+              mapField("mileage", event.target.value);
+            }}
+          />
+          <MyInput
+            type="text"
+            value={formData.firstRegister}
+            placeholder="First register e.g. 23/01/2023"
+            onChange={(event: ChangeEvent<HTMLInputElement>) => {
+              mapField("firstRegister", event.target.value);
+            }}
+          />
+          <MyInput
+            placeholder="VIN"
+            value={formData.vin}
+            onChange={(event: ChangeEvent<HTMLInputElement>) => {
+              mapField("vin", event.target.value);
+            }}
+            type="text"
+          />
+          <MyInput
+            placeholder="Price"
+            type="number"
+            value={formData.price}
+            onChange={(event: ChangeEvent<HTMLInputElement>) => {
+              mapField("price", event.target.value);
+            }}
+          />
+          <MyInput
+            placeholder="Phone number"
+            type="tel"
+            value={formData.phone}
+            onChange={(event: ChangeEvent<HTMLInputElement>) => {
+              mapField("phone", event.target.value);
+            }}
+          />
+          <MyInput
+            placeholder="Place"
+            type="text"
+            value={formData.sellerPlace}
+            onChange={(event: ChangeEvent<HTMLInputElement>) => {
+              const value = event.target.value;
+              setFormData((prevData) => ({
+                ...prevData,
+                sellerPlace: value,
+              }));
+            }}
+          />
+        </div>
         <p>
           <Result />
         </p>
-        <button onClick={clearData} type="submit">
+        <button onClick={clearData} type="submit" className="bg-main p-2 rounded-md text-white px-4 font-medium">
           Display
         </button>
       </form>
-    </div>
+    </>
   );
 }

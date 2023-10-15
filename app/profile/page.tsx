@@ -2,12 +2,13 @@
 import ProfileImage from "@/components/profileImage/Page";
 import { db, storage } from "@/firebase";
 import useUserData from "@/useUserData";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import Button from "@mui/material/Button";
 import { doc, updateDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import styles from "./profile.module.css";
 export default function Profile() {
   // Get user data from context
   const { userData } = useUserData();
@@ -18,6 +19,7 @@ export default function Profile() {
   const [profileImage, setProfileImage] = useState<string | null>(null);
   // State for the selected image file
   const [imageFile, setImageFile] = useState<File | null>(null);
+  const [wantChangeImage, setWantImage] = useState<boolean>(false);
   // Effect to set profile image when user data changes
   useEffect(() => {
     if (userData.userProfilePicture) {
@@ -54,42 +56,50 @@ export default function Profile() {
     } else {
       console.error("File not found");
     }
+    setWantImage(false);
   };
   // Function to toggle password visibility
   const handleVisiblePassword = () => {
     setVisiblePassword(!visiblePassword);
   };
-
+  const handleChangeImage = () => {
+    setWantImage(true);
+  };
   return (
-    <div className={styles.container}>
-      <Link href="/">
-        <button>Back</button>
+    <div className="p-4 text-center">
+      <Link href="/" className="absolute top-0 left-0 m-4">
+      <Button
+          variant="outlined"
+          startIcon={<ArrowBackIosIcon />}
+          sx={{
+            borderColor: "#b78d20",
+            color: "#b78d20",
+            textTransform: "lowercase",
+
+            ":hover": { borderColor: "#a67c10", color: "#b78d20" },
+          }}
+        >
+          Back
+        </Button>
       </Link>
       <>
-        <div>
-          <div className={styles.circle}>
-            <ProfileImage userMail={userMail} selectedImage={profileImage} />
-          </div>
-          <div>
-            <input
-              type="file"
-              accept="image/png"
-              onChange={handleSelectedFile}
-            />
-            <button onClick={handleUploadFile}>Upload</button>
-          </div>
+        <div className="flex flex-row flex-wrap justify-center">
+          <ProfileImage userMail={userMail} selectedImage={profileImage} />
         </div>
-        <div className={styles.info}>
+        <div className="">
           <p>
             Hello,{" "}
-            <span className={styles.data}>
+            <span className="text-main font-bold">
               {userName} {userSurname}
             </span>{" "}
             <br />
-            Your email: <span className={styles.data}>{userMail}</span> <br />
-            <span className={styles.password}>
+            Your email: <span className="text-main font-bold">
+              {userMail}
+            </span>{" "}
+            <br />
+            <span>
               Your password:{" "}
-              <span className={styles.data}>
+              <span className="font-bold text-main">
                 {visiblePassword ? userPassword : "•••••••"}
               </span>{" "}
               <button onClick={handleVisiblePassword}>
@@ -98,14 +108,60 @@ export default function Profile() {
             </span>
           </p>
         </div>
-        <div className={styles.button}>
-          <Link href="/profile/resetPassword">
-            <button>Change my password</button>
+        <div className="flex flex-row flex-wrap justify-center gap-2 mt-2">
+          <Link href="/profile/resetPassword" className="relative no-underline">
+            <Button
+              variant="contained"
+              sx={{
+                background: "#b78d20",
+                ":hover": { backgroundColor: "#a67c10" },
+              }}
+            >
+              Change my password
+            </Button>
           </Link>
-          <br />
           <Link href="/profile/deleteAcc">
-            <button>I want to delete my account</button>
+            <Button
+              variant="contained"
+              sx={{
+                background: "#b78d20",
+                ":hover": { backgroundColor: "#a67c10" },
+              }}
+            >
+              I want delete my account
+            </Button>
           </Link>
+          {wantChangeImage ? (
+            <div className="mt-3">
+              <input
+                type="file"
+                accept="image/png"
+                onChange={handleSelectedFile}
+              />
+              <Button
+                variant="contained"
+                sx={{
+                  color: "#b78d20",
+                  background: "none",
+                  ":hover": { backgroundColor: "#a67c10", color: "white" },
+                }}
+                onClick={handleUploadFile}
+              >
+                Upload
+              </Button>
+            </div>
+          ) : (
+            <Button
+              onClick={handleChangeImage}
+              variant="contained"
+              sx={{
+                background: "#b78d20",
+                ":hover": { backgroundColor: "#a67c10" },
+              }}
+            >
+              I want change my Image
+            </Button>
+          )}
         </div>
       </>
     </div>

@@ -159,7 +159,7 @@ export default function Filters({
   };
 
   return (
-    <div>
+    <div className="flex flex-row flex-wrap justify-center md:justify-start gap-2 p-2">
       {/* Dropdown selects for various filters */}
       <Select
         options={body}
@@ -205,7 +205,7 @@ export default function Filters({
         filter="Fuel type"
         disabled={selectedEngine?.value !== undefined}
       />
-      <p>Available advertisements: {filteredLength}</p>
+      <p>Available advertisements: <span className="text-main font-medium">{filteredLength}</span></p>
     </div>
   );
 }

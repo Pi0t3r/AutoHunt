@@ -87,7 +87,7 @@ export interface ImageUploadProps {
 export interface MyInputProps {
   value: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-  title: string;
+  // title: string;
   type: string;
   placeholder?: string;
 }
@@ -142,7 +142,13 @@ export interface LabelProps {
 }
 
 export interface LinksProps {
-  linkTo: '/profile' | '/profile/myAdvert'
+  linkTo: "/profile" | "/profile/myAdvert";
   title: string;
   icon: JSX.Element;
+}
+
+export interface LabelInput {
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  placeholder: string;
 }
