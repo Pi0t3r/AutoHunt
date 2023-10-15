@@ -1,6 +1,6 @@
 import { SelectOptionProps, SelectProps } from "@/types/myTypes";
 import { useEffect, useState } from "react";
-import styles from "./select.module.css";
+import styles from './select.module.css'
 
 export function Select({
   value,
@@ -31,28 +31,40 @@ export function Select({
   return (
     <div
       onBlur={() => setIsOpen(false)} // Close dropdown when focus is lost
-      onClick={() => setIsOpen((prev) => !prev)} // Toggle dropdown visibility on click
       tabIndex={0}
-      className={`${styles.container} ${disabled ? styles.disabled : ""}`} // Apply CSS classes based on disabled state
+      className={`relative w-[90%] my-2.5 mx-auto min-h-[1.5em] border border-solid border-[#777] flex items-center rounded-md outline-none cursor-pointer p-[5px] focus:border-main ${
+        disabled ? "opacity-60 cursor-not-allowed pointer-events-none" : ""
+      }`} // Apply CSS classes based on disabled state
     >
-      <span className={styles.title}>{filter}</span>{" "}
+      <span className="font-bold text-main p-[3px]">{filter}</span>{" "}
       {/* Display the filter title */}
-      <div className={styles.divider} /> {/* Display a divider */}
-      <span className={styles.value}>{value?.value}</span>{" "}
+      <div className="bg-[#777] self-stretch w-px my-0 mx-2.5" />{" "}
+      {/* Display a divider */}
+      <span  className="grow">
+        {value?.value}
+      </span>{" "}
       {/* Display the selected value */}
       <button
         onClick={(e) => {
           e.preventDefault();
           clearOption(); // Clear the selected option when the clear button is clicked
         }}
-        className={styles["clear-btn"]}
+        className="bg-none text-[#777] border-none outline-none cursor-pointer p-0 text-3xl focus:text-[#333] hover:text-[#333]"
       >
         &times; {/* Display a clear button */}
       </button>
-      <div className={styles.divider} /> {/* Display a divider */}
-      <div className={styles.caret} />{" "}
+      <div className="bg-[#777] self-stretch w-px my-0 mx-2.5" />{" "}
+      {/* Display a divider */}
+      <div
+        className="-translate-x-1/4 translate-y-1/4 border-transparent border-solid border-t-[#777] border-[7px]"
+        onClick={() => setIsOpen((prev) => !prev)}
+      />{" "}
       {/* Display a caret for dropdown indicator */}
-      <ul className={`${styles.options} ${isOpen ? styles.show : ""}`}>
+      <ul
+        className={`absolute m-0 p-0 list-none max-h-52 overflow-y-auto border border-solid border-[#777] rounded-md w-full left-0 top-[105%] bg-white z-[100] ${
+          isOpen ? "block" : "hidden"
+        }`}
+      >
         {" "}
         {/* Display the dropdown options */}
         {options &&
@@ -65,9 +77,9 @@ export function Select({
               }}
               onMouseEnter={() => setHighlightedIndex(index)} // Highlight option on mouse enter
               key={option.value}
-              className={`${styles.option} ${
-                isOptionSelected(option) ? styles.selected : ""
-              } ${index === highlightedIndex ? styles.highlighted : ""}`}
+              className={`p-[5px] py-2.5 cursor-pointer ${
+                isOptionSelected(option) ? "bg-main" : ""
+              } ${index === highlightedIndex ? "bg-main text-white" : ""}`}
             >
               {option.value}
             </li>

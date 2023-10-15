@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import Filters from "../filters/Filters";
-import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
@@ -69,7 +68,10 @@ export default function Offers() {
                       {post.fuel}
                     </p>
                     <p className="text-main inherit">
-                      {post.price} <span className="ml-2 text-black">PLN</span>
+                      {post.price
+                        .toString()
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}
+                      <span className="ml-2 text-black">PLN</span>
                     </p>
                   </div>
                   <div className="flex flex-row flex-wrap justify-between items-center mt-4">
