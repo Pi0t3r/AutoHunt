@@ -26,12 +26,12 @@ export default function Navbar() {
   };
 
   return (
-    <>
+    <div className="w-full m-auto z-[51]">
       {user ? ( // Conditional rendering based on user authentication
         <LoggedInNabar /> // Render the LoggedInNavbar component if the user is authenticated
       ) : (
         <nav
-          className="fixed inset-x-0 top-0 flex justify-between p-5 z-50 items-center"
+          className="fixed inset-x-0 top-0 flex justify-between p-5 z-[51] items-center"
           style={navbarStyles}
         >
           {/* Render the navigation bar for non-authenticated users */}
@@ -51,6 +51,6 @@ export default function Navbar() {
           </>
         </nav>
       )}
-    </>
+    </div>
   );
 }

@@ -10,7 +10,7 @@ import { LinksProps } from "@/types/myTypes";
 
 const Links = ({ linkTo, icon, title }: LinksProps) => {
   return (
-    <li>
+    <li className="my-5">
       <Link href={linkTo} className="text-lg flex items-center">
         {icon} <span className="ml-3">{title}</span>
       </Link>
@@ -52,21 +52,24 @@ const Sidebar = () => {
           Add new Car Advert
         </Link>
       </div>
-      <>
-        <ul className="text-left p-0 list-none leading-10">
+      <div className="absolute inset-x-0 bottom-0 top-1/2 p-4">
+        <ul className="text-left p-0 list-none">
           <Links title="Profile" linkTo="/profile" icon={<AiOutlineUser />} />
           <Links
             title="My Car Advert"
             icon={<MdOutlineLocalOffer />}
             linkTo="/profile/myAdvert"
           />
-          <li>
-            <button onClick={handleLogout} className="flex text-lg items-center">
+          <li className="absolute bottom-0">
+            <button
+              onClick={handleLogout}
+              className="flex text-lg items-center"
+            >
               <BiExit /> <span className="ml-3">Logout</span>
             </button>
           </li>
         </ul>
-      </>
+      </div>
     </div>
   );
 };
