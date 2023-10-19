@@ -39,9 +39,10 @@ npm run dev
 
 ## Planned functions
 
-- Improved appearance and user interface
 - Posibility to login & register with Google account
 - Add all cars from the entire history to the project
+- Add more adverts
+- Add posibility to sorting offers by date published offer
 
 ## License
 
@@ -49,7 +50,6 @@ The Autohunt project is not released under any license.
 
 ## Known problems
 
-- Currently lacking a proper design and user interface
 - Due to the large number of cars in the history for the moment are added the newest from different brands
 
 ## Contact
