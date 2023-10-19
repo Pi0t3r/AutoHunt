@@ -2,7 +2,6 @@ import { createUserWithEmailAndPassword, getAuth } from "@firebase/auth"; // Imp
 import { collection, doc, setDoc } from "firebase/firestore"; // Import Firebase Firestore functions
 import React, { useState } from "react"; // Import React and useState hook
 import { AiOutlineCloseCircle } from "react-icons/ai"; // Import AiOutlineCloseCircle icon from react-icons
-import styles from "../../app/register/register.module.css"; // Import CSS styles
 import { db } from "../../firebase"; // Import Firebase database instance
 
 // RegisterForm component
@@ -88,7 +87,7 @@ const RegisterForm = () => {
           onChange={(e) => setPassword(e.target.value)} // Update the "password" state on input change
         />
       </label>
-      <div className={styles.checkboxDiv}>
+      <div>
         <input type="checkbox" required />
         <p>
           {/* Terms and conditions message */}I acknowledge that I have read and
@@ -109,7 +108,7 @@ const RegisterForm = () => {
           <p>You have been registered! Now go to the Login tab and log in.</p>
         </div>
       )}
-      <input type="submit" value="Create account" className={styles.submit} />
+      <input type="submit" value="Create account" />
     </form>
   );
 };

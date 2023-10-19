@@ -4,8 +4,7 @@ import RegisterForm from "@/components/registerForm/RegisterForm";
 import { ActiveButton } from "@/types/myTypes";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { BsArrowLeftCircle } from "react-icons/bs";
-import styles from "./register.module.css";
+import { Button } from "@mui/material";
 
 export default function Register() {
   const [activeButton, setActiveButton] = useState<ActiveButton>("login");
@@ -15,21 +14,32 @@ export default function Register() {
   };
 
   return (
-    <div className={styles.div}>
-      <Link className={styles.back} href="/">
-        <BsArrowLeftCircle />
+    <div>
+      <Link href="/" className="absolute top-0 left-0 p-4">
+        <Button
+          variant="outlined"
+          sx={{
+            borderColor: "#b78d20",
+            color: "#b78d20",
+            textTransform: "lowercase",
+
+            ":hover": { borderColor: "#a67c10", color: "#b78d20" },
+          }}
+        >
+          Back
+        </Button>
       </Link>
-      <h1>Join us to continue</h1>
-      <div className={styles.form}>
-        <div className={styles.formButton}>
+      <div className="flex flex-col justify-center items-center mt-20 bg-slate-200 w-full max-w-xl mx-auto rounded-md p-4">
+        <h1 className="uppercase">Join us to continue</h1>
+        <div className="flex flex-row justify-between w-full max-w-xl my-10">
           <button
-            className={activeButton === "login" ? styles.active : ""}
+            className={`${activeButton === "login" ? "text-slate-500 underline" : ""} uppercase font-medium text-main text-2xl`}
             onClick={() => handleButtonClick("login")}
           >
             Log in
           </button>
           <button
-            className={activeButton === "signup" ? styles.active : ""}
+            className={`${activeButton === "signup" ? "text-slate-500 underline" : ""} text-2xl uppercase font-medium text-main`}
             onClick={() => handleButtonClick("signup")}
           >
             Sign up

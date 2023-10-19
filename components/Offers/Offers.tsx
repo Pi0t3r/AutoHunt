@@ -10,6 +10,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import ReactPaginate from "react-paginate";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { Button } from "@mui/material";
 
 // Defining the Offers component
 export default function Offers() {
@@ -87,9 +88,19 @@ export default function Offers() {
                     </p>
                   </div>
                   <div className="flex flex-row flex-wrap justify-between items-center mt-4">
-                    <button className="bg-main rounded-md p-2 text-white font-medium">
-                      <Link href={`/advert/${post.id}`}>Show more</Link>
-                    </button>
+                    <Button
+                      variant="contained"
+                      sx={{
+                        letterSpacing: "1px",
+                        fontWeight: "bold",
+                        fontSize: "10px",
+                        background: "#b78d20",
+                        transition:"scale .5s",
+                        ":hover": { backgroundColor: "#a67c10", scale:"1.1" },
+                      }}
+                    >
+                      <Link href={`advert/${post.id}`}>Show more</Link>
+                    </Button>
                     <p className="text-xs text-slate-500">
                       Advert added:{" "}
                       <span className="font-bold">{post.createAdvert}</span>

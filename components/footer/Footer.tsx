@@ -1,7 +1,7 @@
 import { BsFacebook, BsInstagram, BsYoutube, BsTwitter } from "react-icons/bs";
 export default function Footer() {
   return (
-    <div className="flex flex-row flex-wrap gap-2 bg-black text-white">
+    <div className="flex flex-row flex-wrap gap-2 justify-center bg-black text-white">
       <div className="flex flex-row flex-wrap justify-around p-5 w-full max-w-56">
         <BsFacebook />
         <BsInstagram />

@@ -47,11 +47,9 @@ export default function MyAdvert() {
           Back
         </Button>
       </Link>
-      <div className="mt-20">
-        <h5 className="text-center uppercase text-main font-medium">
-          My Adverts
-        </h5>
-        <ul className="flex flex-row flex-wrap gap-2">
+      <div className="mt-20 flex flex-row flex-wrap justify-center">
+        <h5 className="uppercase text-main font-medium">My Adverts</h5>
+        <ul className="flex flex-row flex-wrap gap-2 justify-center items-center">
           {userAdverts.map((post) => (
             <li key={post.id} className="block">
               <div className="m-2 bg-neutral-100">
@@ -85,13 +83,19 @@ export default function MyAdvert() {
                         variant="contained"
                         size="small"
                         sx={{
-                          letterSpacing:"1px",
-                          fontWeight:"bold",
-                          fontSize:"10px",
+                          letterSpacing: "1px",
+                          fontWeight: "bold",
+                          fontSize: "10px",
+                          transition: "scale .5s",
                           background: "#b78d20",
-                          ":hover": { backgroundColor: "#a67c10" },
+                          ":hover": {
+                            backgroundColor: "#a67c10",
+                            scale: "1.1",
+                          },
                         }}
-                      >Show more</Button>
+                      >
+                        Show more
+                      </Button>
                     </Link>
                     <p className="text-xs text-slate-500">
                       Advert added:{" "}

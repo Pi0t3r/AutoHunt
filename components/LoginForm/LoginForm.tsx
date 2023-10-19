@@ -2,9 +2,9 @@ import { signInWithEmailAndPassword } from "@firebase/auth";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
-import styles from "../../app/register/register.module.css";
 import { useUserContext } from "../../context/UserContext";
 import { auth } from "../../firebase";
+import { Button } from "@mui/material";
 // This component represents a login form.
 const LoginForm = () => {
   const [email, setEmail] = useState("");
@@ -50,31 +50,58 @@ const LoginForm = () => {
     }
   };
   return (
-    <form action="login" onSubmit={handleSubmitLogin}>
-      <label htmlFor="email">E-mail</label>
-      <input
-        id="email"
-        name="email"
-        type="email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        placeholder="example@email.com"
-        required
-      />
-      <label htmlFor="password">Password</label>
-      <input
-        id="password"
-        name="password"
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="••••••••••"
-        required
-      />
-      <Link href="/register/forgot">
-        <span>Forgot password?</span>
-      </Link>
-      <input type="submit" value="Log in" className={styles.submit} />
+    <form
+      action="login"
+      onSubmit={handleSubmitLogin}
+      className="flex flex-col items-start justify-center gap-2"
+    >
+      <label>
+        <input
+          name="email"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
+          required
+          className="p-2 rounded-md"
+        />
+      </label>
+      <label htmlFor="password">
+        <input
+          name="password"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+          required
+          className="p-2 rounded-md"
+        />
+      </label>
+      <Button
+        variant="text"
+        sx={{
+          letterSpacing: "1px",
+          fontWeight: "bold",
+          fontSize: "10px",
+          color: "#b78d20",
+          alignSelf: "center",
+          transition: "scale .5s",
+          ":hover": { scale: "1.1", background: "none" },
+        }}
+      >
+        <Link href="/register/forgot">
+          <span>Forgot password?</span>
+        </Link>
+      </Button>
+      <Button
+      variant="contained"
+        type="submit"
+        sx={{
+          color: "#b78d20",
+        }}
+      >
+        Log in
+      </Button>
       {errorMessage && <p>{errorMessage}</p>}
     </form>
   );
