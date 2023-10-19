@@ -14,7 +14,6 @@ export type SelectOption = {
 };
 
 export type FiltersProps = {
-  filteredLength: number;
   setAdvertData: (data: any[]) => void;
 };
 
@@ -142,9 +141,9 @@ export interface LabelProps {
 }
 
 export interface LinksProps {
-  linkTo: "/profile" | "/profile/myAdvert";
+  linkTo: string;
   title: string;
-  icon: JSX.Element;
+  icon?: JSX.Element;
 }
 
 export interface LabelInput {

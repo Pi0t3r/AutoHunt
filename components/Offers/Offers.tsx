@@ -98,11 +98,11 @@ export default function Offers() {
     <div className="w-full bg-white text-center text-black mt-4">
       <h2 className="font-medium">What you're looking for?</h2>
       <div>
-        <Filters
-          filteredLength={filteredLength}
-          setAdvertData={setAdvertData}
-        />
+        <Filters setAdvertData={setAdvertData} />
       </div>
+      <p className="my-2">
+        Available advertisements: <span className="text-main font-bold">{filteredLength}</span>
+      </p>
       <div>
         <FormControl
           sx={{

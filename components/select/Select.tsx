@@ -1,6 +1,6 @@
 import { SelectOptionProps, SelectProps } from "@/types/myTypes";
 import { useEffect, useState } from "react";
-
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 export function Select({
   value,
   onChange,
@@ -39,9 +39,7 @@ export function Select({
       {/* Display the filter title */}
       <div className="bg-[#777] self-stretch w-px my-0 mx-2.5" />{" "}
       {/* Display a divider */}
-      <span  className="grow">
-        {value?.value}
-      </span>{" "}
+      <span className="grow">{value?.value}</span>{" "}
       {/* Display the selected value */}
       <button
         onClick={(e) => {
@@ -54,10 +52,11 @@ export function Select({
       </button>
       <div className="bg-[#777] self-stretch w-px my-0 mx-2.5" />{" "}
       {/* Display a divider */}
-      <div
-        className="-translate-x-1/4 translate-y-1/4 border-transparent border-solid border-t-[#777] border-[7px]"
-        onClick={() => setIsOpen((prev) => !prev)}
-      />{" "}
+      <div onClick={() => setIsOpen((prev) => !prev)}>
+        <button className={`transition-all duration-500 ${isOpen ? "rotate-180" : ""}`}>
+          <ExpandMoreIcon />
+        </button>
+      </div>
       {/* Display a caret for dropdown indicator */}
       <ul
         className={`absolute m-0 p-0 list-none max-h-52 overflow-y-auto border border-solid border-[#777] rounded-md w-full left-0 top-[105%] bg-white z-[100] ${

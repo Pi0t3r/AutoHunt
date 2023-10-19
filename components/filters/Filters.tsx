@@ -5,10 +5,7 @@ import { useEffect, useState } from "react";
 import { body, fuelOptions, options } from "../../data/cars";
 import { Select } from "../select/Select";
 
-export default function Filters({
-  filteredLength,
-  setAdvertData,
-}: FiltersProps) {
+export default function Filters({ setAdvertData }: FiltersProps) {
   const [selectedBody, setSelectedBody] = useState<SelectOption | undefined>(
     undefined
   );
@@ -159,7 +156,7 @@ export default function Filters({
   };
 
   return (
-    <div className="flex flex-row flex-wrap justify-center md:justify-start gap-2 p-2">
+    <div className="flex flex-row flex-wrap justify-center items-center gap-2 p-2">
       {/* Dropdown selects for various filters */}
       <Select
         options={body}
@@ -205,7 +202,6 @@ export default function Filters({
         filter="Fuel type"
         disabled={selectedEngine?.value !== undefined}
       />
-      <p>Available advertisements: <span className="text-main font-medium">{filteredLength}</span></p>
     </div>
   );
 }
