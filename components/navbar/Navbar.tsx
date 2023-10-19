@@ -31,7 +31,7 @@ export default function Navbar() {
         <LoggedInNabar /> // Render the LoggedInNavbar component if the user is authenticated
       ) : (
         <nav
-          className="fixed inset-x-0 top-0 flex justify-between p-5 z-[51] items-center"
+          className="fixed inset-x-0 top-0 flex justify-between p-5 z-[51] items-center max-w-7xl m-auto"
           style={navbarStyles}
         >
           {/* Render the navigation bar for non-authenticated users */}

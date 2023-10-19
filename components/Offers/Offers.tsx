@@ -118,11 +118,11 @@ export default function Offers() {
   const filteredLength = sortedAdvertData.length;
   // Render the Offers component
   return (
-    <div className="w-full bg-white text-center text-black mt-4">
+    <div className="w-full bg-white text-center text-black pt-4 bg-slate-100">
       <h2 className="font-medium">What you're looking for?</h2>
-      <div>
+      <>
         <Filters setAdvertData={setAdvertData} />
-      </div>
+      </>
       <p className="my-2">
         Available advertisements:{" "}
         <span className="text-main font-bold">{filteredLength}</span>
