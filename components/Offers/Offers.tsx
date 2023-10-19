@@ -8,6 +8,7 @@ import Filters from "../filters/Filters";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
+import ReactPaginate from "react-paginate";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 
 // Defining the Offers component
@@ -15,6 +16,7 @@ export default function Offers() {
   // State variables
   const [advertData, setAdvertData] = useState<any[]>([]); // Store advertisement data
   const [sortOption, setSortOption] = useState<string>("default"); // Store the selected sorting option
+  const [currentPage, setCurrentPage] = useState(0);
 
   // State variable to store sorted advertisement data
   const [sortedAdvertData, setSortedAdvertData] = useState<any[]>([]);
@@ -41,10 +43,20 @@ export default function Offers() {
     sortAdvertData();
   }, [advertData, sortOption]);
   // Function to render advertisement data
+
+  const handlePageChange = (selectedPage: { selected: number }) => {
+    setCurrentPage(selectedPage.selected);
+  };
+  const itemsPerPage = 20;
   const showAdvert = () => {
     if (advertData.length === 0) {
       return <p>No ads in selected filters</p>; // Display loading message if there's no advertisement data
     } else {
+      const offset = currentPage * itemsPerPage;
+      const currentPageData = sortedAdvertData.slice(
+        offset,
+        offset + itemsPerPage
+      );
       return (
         <ul className="flex list-none flex-row flex-wrap justify-center">
           {sortedAdvertData.map((post) => (
@@ -101,7 +113,8 @@ export default function Offers() {
         <Filters setAdvertData={setAdvertData} />
       </div>
       <p className="my-2">
-        Available advertisements: <span className="text-main font-bold">{filteredLength}</span>
+        Available advertisements:{" "}
+        <span className="text-main font-bold">{filteredLength}</span>
       </p>
       <div>
         <FormControl
@@ -125,6 +138,19 @@ export default function Offers() {
         </FormControl>
       </div>
       <div className="mt-10 bg-[#c6c6c6b3] w-full">{showAdvert()}</div>
+      <ReactPaginate
+        className="flex flex-row justify-between items-center px-10"
+        previousLabel={"Previous"}
+        previousClassName="hover:scale-105 transition-all duration-300 hover:text-main"
+        nextClassName="hover:scale-105 transition-all duration-300 hover:text-main"
+        nextLabel={"Next"}
+        pageCount={Math.ceil(sortedAdvertData.length / itemsPerPage)}
+        marginPagesDisplayed={2}
+        pageRangeDisplayed={5}
+        onPageChange={handlePageChange}
+        containerClassName="pagination"
+        activeClassName="active"
+      />
     </div>
   );
 }
