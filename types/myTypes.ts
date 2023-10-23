@@ -169,4 +169,13 @@ export interface LabelInput {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   placeholder: string;
+  type?: string;
+  name?: string;
+  title?: string;
+}
+
+export interface UserDataProps {
+  userName: string;
+  userSurname: string;
+  userMail: string;
 }

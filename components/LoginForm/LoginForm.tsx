@@ -72,7 +72,7 @@ const LoginForm = () => {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
           required
-          className={`p-2 rounded-md w-3/4 max-w-3xl mt-2 ${
+          className={`p-2 rounded-md w-3/4 max-w-xl mt-2 ${
             errorMessage === "User not found. Please check your email."
               ? "border-red-500 border-2 border-solid"
               : ""
@@ -89,7 +89,7 @@ const LoginForm = () => {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="••••••••"
             required
-            className={`p-2 rounded-md w-3/4 max-w-3xl mt-2 ${
+            className={`p-2 rounded-md w-3/4 max-w-xl mt-2 ${
               errorMessage === "Incorrect password. Please try again."
                 ? "border-red-500 border-2 border-solid"
                 : ""

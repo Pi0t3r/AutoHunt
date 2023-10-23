@@ -6,6 +6,32 @@ import { db } from "../../firebase"; // Import Firebase database instance
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Button } from "@mui/material";
+import { LabelInput } from "@/types/myTypes";
+
+const LabelInput: React.FC<LabelInput> = ({
+  title,
+  name,
+  type,
+  placeholder,
+  value,
+  onChange,
+}: any) => {
+  return (
+    <label className="font-bold flex flex-col  w-full">
+      {title}
+      <input
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        required
+        onChange={onChange} // Update the "name" state on input change
+        className="p-2 rounded-md w-3/4 max-w-3xl mt-2"
+      />
+    </label>
+  );
+};
+
 // RegisterForm component
 const RegisterForm = () => {
   const [name, setName] = useState(""); // State for user's name
@@ -59,42 +85,30 @@ const RegisterForm = () => {
       onSubmit={handleSubmitRegister}
       className="flex flex-col items-start justify-start gap-2 w-full"
     >
-      <label className="font-bold flex flex-col  w-full">
-        Name
-        <input
-          name="name"
-          type="text"
-          placeholder="Name"
-          value={name}
-          required
-          onChange={(e) => setName(e.target.value)} // Update the "name" state on input change
-          className="p-2 rounded-md w-3/4 max-w-3xl mt-2"
-        />
-      </label>
-      <label className="font-bold flex flex-col  w-full">
-        Surname
-        <input
-          required
-          name="surname"
-          type="text"
-          placeholder="Surname"
-          value={surname}
-          onChange={(e) => setSurname(e.target.value)} // Update the "surname" state on input change
-          className="p-2 rounded-md w-3/4 max-w-3xl mt-2"
-        />
-      </label>
-      <label className="font-bold flex flex-col  w-full">
-        E-mail
-        <input
-          required
-          name="email"
-          type="email"
-          placeholder="example@email.com"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)} // Update the "email" state on input change
-          className="p-2 rounded-md w-3/4 max-w-3xl mt-2"
-        />
-      </label>
+      <LabelInput
+        title="Name"
+        name="name"
+        type="text"
+        placeholder="Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <LabelInput
+        title="Surname"
+        name="surname"
+        type="text"
+        placeholder="Surname"
+        value={surname}
+        onChange={(e) => setSurname(e.target.value)}
+      />
+      <LabelInput
+        title="E-mail"
+        name="email"
+        type="email"
+        placeholder="example@mail.com"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
       <label className="font-bold flex flex-col  w-full">
         Password
         <div>

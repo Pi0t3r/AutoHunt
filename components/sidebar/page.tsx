@@ -39,10 +39,10 @@ const Sidebar = () => {
         <>
           <ProfileImage userMail={userMail} />
         </>
-        <span className="text-black">
+        <p className="text-black">
           Hello, <br />
           {userName} {userSurname}
-        </span>
+        </p>
       </>
       <div className="my-10">
         <Link
