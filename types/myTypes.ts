@@ -29,6 +29,26 @@ export type SelectProps = {
   disabled?: boolean;
 };
 
+type Engine = {
+  value: string;
+};
+type Version = {
+  value: string;
+  engine: Engine[];
+};
+type Generation = {
+  value: string;
+  versions: Version[];
+};
+type Model = {
+  value: string;
+  generations: Generation[];
+};
+export type Car = {
+  value: string;
+  models: Model[];
+};
+
 interface carDetailsProps {
   brand: string;
   model: string;

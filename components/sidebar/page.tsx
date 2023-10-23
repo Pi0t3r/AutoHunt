@@ -35,15 +35,15 @@ const Sidebar = () => {
 
   return (
     <div className="mt-1/4 p-5 text-center">
-      <div>
-        <div>
+      <>
+        <>
           <ProfileImage userMail={userMail} />
-        </div>
+        </>
         <span className="text-black">
           Hello, <br />
           {userName} {userSurname}
         </span>
-      </div>
+      </>
       <div className="my-10">
         <Link
           href="/create"

@@ -5,6 +5,7 @@ import Banner from "@/components/banner/Banner";
 import CarDetails from "@/components/carDetails/CarDetails";
 import ReportForm from "@/components/reportForm/ReportForm";
 import SellerDetails from "@/components/sellerDetails/SellerDetails";
+import { Button } from "@mui/material";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -47,12 +48,30 @@ function Advert() {
         <SellerDetails data={showData} />
         <div className="m-4 flex flex-row flex-wrap items-center justify-start">
           <p>Something wrong with this advert?</p>
-          <button
+          {/* <button
             onClick={handleReportClick}
             className="inline-flex bg-main p-3 rounded-md shadow-lg text-white items-center ml-4"
           >
             <BsFillFlagFill /> <span className="ml-2">Report </span>
-          </button>
+          </button> */}
+          <Button
+            variant="contained"
+            onClick={handleReportClick}
+            sx={{
+              letterSpacing: "1px",
+              fontWeight: "bold",
+              fontSize: "10px",
+              background: "#b78d20",
+              marginLeft:2,
+              transition: "scale .5s",
+              ":hover": {
+                backgroundColor: "#a67c10",
+                scale: "1.1",
+              },
+            }}
+          >
+            Report
+          </Button>
         </div>
       </>
       <ReportForm

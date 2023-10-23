@@ -1,3 +1,5 @@
+import { Car } from "@/types/myTypes";
+
 export const body = [
   { value: "SUV" },
   { value: "Coupe" },
@@ -23,7 +25,7 @@ export const drive = [
 ];
 
 export const gearbox = [{ value: "Automatic" }, { value: "Manual" }];
-export const options = [
+export const options: Car[] = [
   {
     value: "Aston Martin",
     models: [
@@ -10710,10 +10712,18 @@ export const options = [
         value: "X2",
         generations: [
           {
-            value: "Crossover",
+            value: "I",
             versions: [
               {
-                value: "I",
+                value: "Crossover Plug-In",
+                engine: [
+                  {
+                    value: "1.5 25e 220KM",
+                  },
+                ],
+              },
+              {
+                value: "Crossover",
                 engine: [
                   {
                     value: "1.5 18i 140KM",
@@ -10739,18 +10749,8 @@ export const options = [
                   {
                     value: "2.0 20d 190KM",
                   },
-                  {
-                    value: "2.0 25d 231KM",
-                  },
+                  { value: "2.0 25d 231KM" },
                 ],
-              },
-            ],
-          },
-          {
-            value: "Crossover Plug-In",
-            versions: [
-              {
-                value: "1.5 25e 220KM",
               },
             ],
           },
@@ -10763,49 +10763,54 @@ export const options = [
             value: "E83",
             versions: [
               {
-                value: "2.0i 150KM",
-              },
-              {
-                value: "2.5i 192KM",
-              },
-              {
-                value: "2.5i 218KM",
-              },
-              {
-                value: "3.0i 231KM",
-              },
-              {
-                value: "3.0i 272KM",
-              },
-              {
-                value: "xDrive20i 150KM",
-              },
-              {
-                value: "xDrive25i 218KM",
-              },
-              {
-                value: "xDrive30i 272KM",
-              },
-              {
-                value: "3.0d 204KM",
-              },
-              {
-                value: "3.0d 218KM",
-              },
-              {
-                value: "3.0sd 286KM",
-              },
-              {
-                value: "xDrive18d 143KM",
-              },
-              {
-                value: "xDrive20d 177KM",
-              },
-              {
-                value: "xDrive30d 218KM",
-              },
-              {
-                value: "xDrive35d 286KM",
+                value: "I",
+                engine: [
+                  {
+                    value: "2.0i 150KM",
+                  },
+                  {
+                    value: "2.5i 192KM",
+                  },
+                  {
+                    value: "2.5i 218KM",
+                  },
+                  {
+                    value: "3.0i 231KM",
+                  },
+                  {
+                    value: "3.0i 272KM",
+                  },
+                  {
+                    value: "xDrive20i 150KM",
+                  },
+                  {
+                    value: "xDrive25i 218KM",
+                  },
+                  {
+                    value: "xDrive30i 272KM",
+                  },
+                  {
+                    value: "3.0d 204KM",
+                  },
+                  {
+                    value: "3.0d 218KM",
+                  },
+                  {
+                    value: "3.0sd 286KM",
+                  },
+                  {
+                    value: "xDrive18d 143KM",
+                  },
+                  {
+                    value: "xDrive20d 177KM",
+                  },
+                  {
+                    value: "xDrive30d 218KM",
+                  },
+                  {
+                    value: "xDrive35d 286KM",
+                  },
+                ],
               },
             ],
           },
@@ -12704,13 +12709,18 @@ export const options = [
             value: "II",
             versions: [
               {
-                value: "3564 243KM",
-              },
-              {
-                value: "2.5 CDTI 150KM",
-              },
-              {
-                value: "2.8 CDIT 180KM",
+                value: "I",
+                engine: [
+                  {
+                    value: "3564 243KM",
+                  },
+                  {
+                    value: "2.5 CDTI 150KM",
+                  },
+                  {
+                    value: "2.8 CDIT 180KM",
+                  },
+                ],
               },
             ],
           },
@@ -12747,7 +12757,7 @@ export const options = [
             value: "I",
             versions: [
               {
-                valie: "I",
+                value: "I",
                 engine: [
                   {
                     value: "Electrical  149KM",
@@ -14306,16 +14316,21 @@ export const options = [
             value: "II",
             versions: [
               {
-                value: "1.0 91KM",
-              },
-              {
-                value: "1.3 M Hybrid 140KM",
-              },
-              {
-                value: "1.3 M Hybrid 158KM",
-              },
-              {
-                value: "1.6 F Hybrid 143KM",
+                value: "I",
+                engine: [
+                  {
+                    value: "1.0 91KM",
+                  },
+                  {
+                    value: "1.3 M Hybrid 140KM",
+                  },
+                  {
+                    value: "1.3 M Hybrid 158KM",
+                  },
+                  {
+                    value: "1.6 F Hybrid 143KM",
+                  },
+                ],
               },
             ],
           },

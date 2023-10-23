@@ -127,7 +127,7 @@ export default function Offers() {
         Available advertisements:{" "}
         <span className="text-main font-bold">{filteredLength}</span>
       </p>
-      <div>
+      <>
         <FormControl
           sx={{
             m: 1,
@@ -147,7 +147,7 @@ export default function Offers() {
             <MenuItem value={"High"}>By price (High to low)</MenuItem>
           </Select>
         </FormControl>
-      </div>
+      </>
       <div className="mt-10 bg-[#c6c6c6b3] w-full">{showAdvert()}</div>
       <ReactPaginate
         className="flex flex-row justify-between items-center px-10"
