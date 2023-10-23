@@ -9,7 +9,7 @@ import { Button } from "@mui/material";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { BsFillArrowLeftCircleFill, BsFillFlagFill } from "react-icons/bs";
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 
 function Advert() {
   const [reportVisible, setReportVisible] = useState(false);

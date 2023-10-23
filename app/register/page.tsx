@@ -15,7 +15,7 @@ export default function Register() {
   };
 
   return (
-    <div className="w-full max-w-7xl mx-auto grid grid-rows-3 grid-rows-[75px_minmax(400px,_1fr)_100px]">
+    <div className="w-full max-w-7xl mx-auto grid grid-rows-3 grid-rows-[75px_minmax(400px,_1fr)_250px]">
       <Link href="/" className="max-w-7xl mx-auto w-full p-4">
         <Button
           variant="outlined"
