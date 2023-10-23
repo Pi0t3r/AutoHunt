@@ -57,18 +57,22 @@ export default function ResetPassword() {
         setMess("User not logged in");
         return;
       }
-      // Update password in Firebase Authentication
-      const credential = EmailAuthProvider.credential(
-        user.email,
-        currentPassword
-      );
-      await updatePassword(user, newPassword);
-      // Update password in Firestore user document
-      const userCollectionRef = collection(db, "users");
-      const userDocRef = doc(userCollectionRef, userId);
-      await updateDoc(userDocRef, {
-        password: newPassword,
-      });
+      const userEmail = user.email;
+      if (userEmail) {
+        const credential = EmailAuthProvider.credential(
+          userEmail,
+          currentPassword
+        );
+        await updatePassword(user, newPassword);
+        // Update password in Firestore user document
+        const userCollectionRef = collection(db, "users");
+        const userDocRef = doc(userCollectionRef, userId);
+        await updateDoc(userDocRef, {
+          password: newPassword,
+        });
+      } else {
+        setMess("User email is not available");
+      }
     } catch (err) {
       console.error("Password change error: ", err);
       setMess("Error updating password");

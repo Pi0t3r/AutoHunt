@@ -48,12 +48,6 @@ function Advert() {
         <SellerDetails data={showData} />
         <div className="m-4 flex flex-row flex-wrap items-center justify-start">
           <p>Something wrong with this advert?</p>
-          {/* <button
-            onClick={handleReportClick}
-            className="inline-flex bg-main p-3 rounded-md shadow-lg text-white items-center ml-4"
-          >
-            <BsFillFlagFill /> <span className="ml-2">Report </span>
-          </button> */}
           <Button
             variant="contained"
             onClick={handleReportClick}
