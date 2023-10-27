@@ -1,4 +1,4 @@
-import { carDataProps, InfoProps } from "@/types/myTypes";
+import { carDataProps, InfoProps } from "@/types";
 
 const Info = ({ title, value }: InfoProps) => {
   return (

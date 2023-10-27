@@ -1,7 +1,7 @@
 "use client";
 import LoginForm from "@/components/loginForm/LoginForm";
 import RegisterForm from "@/components/registerForm/RegisterForm";
-import { ActiveButton } from "@/types/myTypes";
+import { ActiveButton } from "@/types";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@mui/material";

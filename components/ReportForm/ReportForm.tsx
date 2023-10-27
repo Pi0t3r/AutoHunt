@@ -1,4 +1,4 @@
-import { LabelProps, ReportFormProps } from "@/types/myTypes";
+import { LabelProps, ReportFormProps } from "@/types";
 import { useState, ChangeEvent } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 

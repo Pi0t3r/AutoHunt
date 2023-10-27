@@ -6,7 +6,7 @@ import { AiOutlineUser } from "react-icons/ai";
 import { BiExit } from "react-icons/bi";
 import { MdOutlineLocalOffer } from "react-icons/md";
 import ProfileImage from "../profileImage/Page";
-import { LinksProps } from "@/types/myTypes";
+import { LinksProps } from "@/types";
 
 const Links = ({ linkTo, icon, title }: LinksProps) => {
   return (

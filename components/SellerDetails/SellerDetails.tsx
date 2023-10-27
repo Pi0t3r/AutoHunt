@@ -1,4 +1,4 @@
-import { SellerDataProps, InfoProps } from "@/types/myTypes";
+import { SellerDataProps, InfoProps } from "@/types";
 import { FaMapPin } from "react-icons/fa";
 import { AiOutlineUser, AiOutlinePhone } from "react-icons/ai";
 

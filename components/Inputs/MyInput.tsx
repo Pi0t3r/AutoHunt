@@ -1,5 +1,5 @@
 import React from "react";
-import { MyInputProps } from "@/types/myTypes";
+import { MyInputProps } from "@/types";
 
 export const MyInput: React.FC<MyInputProps> = ({
   value,

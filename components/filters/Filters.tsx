@@ -1,5 +1,5 @@
 import { db } from "@/firebase";
-import { FiltersProps, SelectOption } from "@/types/myTypes";
+import { FiltersProps, SelectOption } from "@/types";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { body, fuelOptions, options } from "../../data/cars";

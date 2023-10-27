@@ -1,4 +1,4 @@
-import { Car } from "@/types/myTypes";
+import { Car } from "@/types";
 
 export const body = [
   { value: "SUV" },

@@ -6,7 +6,7 @@ import { db } from "../../firebase"; // Import Firebase database instance
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Button } from "@mui/material";
-import { LabelInput } from "@/types/myTypes";
+import { LabelInput } from "@/types";
 
 const LabelInput: React.FC<LabelInput> = ({
   title,

@@ -1,4 +1,4 @@
-import { SelectOptionProps, SelectProps } from "@/types/myTypes";
+import { SelectOptionProps, SelectProps } from "@/types";
 import { useEffect, useState } from "react";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 export function Select({
@@ -53,7 +53,11 @@ export function Select({
       <div className="bg-[#777] self-stretch w-px my-0 mx-2.5" />{" "}
       {/* Display a divider */}
       <div onClick={() => setIsOpen((prev) => !prev)}>
-        <button className={`transition-all duration-500 ${isOpen ? "rotate-180" : ""}`}>
+        <button
+          className={`transition-all duration-500 ${
+            isOpen ? "rotate-180" : ""
+          }`}
+        >
           <ExpandMoreIcon />
         </button>
       </div>

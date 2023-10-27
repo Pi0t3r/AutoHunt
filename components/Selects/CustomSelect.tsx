@@ -1,4 +1,4 @@
-import { CustomSelectProps } from "@/types/myTypes";
+import { CustomSelectProps } from "@/types";
 import React from "react";
 import { drive, gearbox } from "../../data/cars";
 import { Select } from "../select/Select";

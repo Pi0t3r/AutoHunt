@@ -1,5 +1,5 @@
 import { body } from "@/data/cars";
-import { FilterSelectProps } from "@/types/myTypes";
+import { FilterSelectProps } from "@/types";
 import { Select } from "../select/Select";
 export const BodySelect = ({ value, onChange }: FilterSelectProps) => {
   return (

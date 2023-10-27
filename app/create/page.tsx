@@ -7,7 +7,7 @@ import { CustomSelect } from "@/components/Selects/CustomSelect";
 import { FuelSelect } from "@/components/Selects/FuelSelect";
 import ImageUpload from "@/components/imageUpload/ImageUpload";
 import { db, storage } from "@/firebase";
-import { SelectOptionProps } from "@/types/myTypes";
+import { SelectOptionProps } from "@/types";
 import useUserData from "@/useUserData";
 import { Button } from "@mui/material";
 import { addDoc, collection, updateDoc } from "firebase/firestore";

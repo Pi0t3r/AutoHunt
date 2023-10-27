@@ -1,6 +1,6 @@
 "use client";
 import { db } from "@/firebase";
-import { LabelInput } from "@/types/myTypes";
+import { LabelInput } from "@/types";
 import useUserData from "@/useUserData";
 import { EmailAuthProvider, getAuth, updatePassword } from "@firebase/auth";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";

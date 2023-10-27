@@ -1,4 +1,4 @@
-import { UserContextType } from "@/types/myTypes";
+import { UserContextType } from "@/types";
 import { collection, doc, setDoc } from "firebase/firestore";
 import {
   ReactNode,
