@@ -28,14 +28,18 @@ The main goal of the Autohunt project is to make it easier for users to find the
 ```
 npm install
 ```
+2. Clone repository
+```
+git clone https://github.com/Pi0t3r/AutoHunt
+```
 
-2. Run project
+3. Run project
 
 ```
 npm run dev
 ```
 
-3. Write code
+4. Write code
 
 ## Planned functions
 

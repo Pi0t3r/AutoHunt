@@ -31,7 +31,6 @@ export default function Filters({ setAdvertData }: FiltersProps) {
     const getCarAdvert = async () => {
       const advertCollection = collection(db, "adverts");
       let newQuery = query(advertCollection);
-      // Apply filters based on selected options
       if (selectedBrand) {
         newQuery = query(newQuery, where("brand", "==", selectedBrand.value));
       }
@@ -59,7 +58,6 @@ export default function Filters({ setAdvertData }: FiltersProps) {
       if (selectedFuel) {
         newQuery = query(newQuery, where("fuel", "==", selectedFuel.value));
       }
-      // Fetch data based on the query
       const advertSnapshot = await getDocs(newQuery);
       const advert = advertSnapshot.docs.map((doc) => ({
         ...doc.data(),
@@ -80,7 +78,6 @@ export default function Filters({ setAdvertData }: FiltersProps) {
     selectedFuel,
     selectedVersion,
   ]);
-  // Functions to retrieve options based on selected filters
   const getModelOptions = (): SelectOption[] => {
     if (selectedBrand) {
       const brand: SelectOption | undefined = options.find(
@@ -122,7 +119,7 @@ export default function Filters({ setAdvertData }: FiltersProps) {
 
     return [];
   };
-  // Event handlers for filter selection
+
   const handleBrandChange = (brand: SelectOption | undefined) => {
     setSelectedBrand(brand);
     setSelectedModel(undefined);
@@ -157,7 +154,6 @@ export default function Filters({ setAdvertData }: FiltersProps) {
 
   return (
     <div className="flex flex-row flex-wrap justify-center items-center gap-2 p-2">
-      {/* Dropdown selects for various filters */}
       <Select
         options={body}
         value={selectedBody}

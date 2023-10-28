@@ -2,7 +2,7 @@ import { LabelProps, ReportFormProps } from "@/types";
 import { useState, ChangeEvent } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 
-// Label component to display radio button options
+
 const Label = ({ title, value }: LabelProps) => {
   return (
     <label>
@@ -14,11 +14,11 @@ const Label = ({ title, value }: LabelProps) => {
 
 const ReportForm = ({ setReportVisible, reportVisible }: ReportFormProps) => {
   const [comment, setComment] = useState("");
-  // Handle form submission
+
   const handleSubmit = () => {
     setReportVisible(false);
   };
-  // Handle changes in the comment textarea
+ 
   const handleCommentChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setComment(e.target.value);
   };

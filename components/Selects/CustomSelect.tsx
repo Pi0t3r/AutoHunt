@@ -1,14 +1,13 @@
 import { CustomSelectProps } from "@/types";
-import React from "react";
 import { drive, gearbox } from "../../data/cars";
 import { Select } from "../select/Select";
 
-export const CustomSelect: React.FC<CustomSelectProps> = ({
+export const CustomSelect = ({
   onChangeDrive,
   onChangeGearbox,
   valueDrive,
   valueGearbox,
-}) => {
+}: CustomSelectProps) => {
   return (
     <>
       <Select

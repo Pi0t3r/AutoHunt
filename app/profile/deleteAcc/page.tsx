@@ -7,20 +7,19 @@ import { deleteDoc, doc } from "firebase/firestore";
 import Link from "next/link";
 
 export default function DeleteAcc() {
-  const { setUser } = useUserContext(); // Use the user context to access user data
-  // Function to handle user account deletion
+  const { setUser } = useUserContext(); 
   async function handleDeleteUser() {
-    const user = auth.currentUser; // Get the current authenticated user
+    const user = auth.currentUser; 
 
     try {
-      const userId = user?.uid; // Get the user's UID
-      await deleteDoc(doc(db, "users", userId as string)); // Delete the user's document from Firestore
-      await user?.delete(); // Delete the user's authentication account
-      await auth.signOut(); // Sign the user out
-      setUser(null); // Set the user context to null
-      window.location.href = "/"; // Redirect to the home page
+      const userId = user?.uid; 
+      await deleteDoc(doc(db, "users", userId as string));
+      await user?.delete(); 
+      await auth.signOut(); 
+      setUser(null); 
+      window.location.href = "/"; 
     } catch (err) {
-      console.error("Error with deleting user: ", err); // Log any errors that occur during deletion
+      console.error("Error with deleting user: ", err); 
     }
   }
   return (

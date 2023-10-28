@@ -1,6 +1,6 @@
 import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
 import { IconButtonProps } from "@mui/material/IconButton";
-import React, { ChangeEvent } from "react";
+import { ChangeEvent, Dispatch, SetStateAction, ReactNode } from "react";
 export type ActiveButton = "login" | "signup";
 
 export type SelectOption = {
@@ -21,6 +21,12 @@ export type SelectOptionProps = {
   value: string;
 };
 
+export type BannerProps = {
+  images: string[];
+};
+export type UserProviderProps = {
+  children: ReactNode;
+};
 export type SelectProps = {
   options: SelectOption[];
   value: SelectOption | undefined;
@@ -116,7 +122,7 @@ export interface ProfileImageProps {
 }
 
 export interface ReportFormProps {
-  setReportVisible: React.Dispatch<React.SetStateAction<boolean>>;
+  setReportVisible: Dispatch<SetStateAction<boolean>>;
   reportVisible: boolean;
 }
 
@@ -151,7 +157,7 @@ export interface ExpandMoreProps extends IconButtonProps {
 
 export interface InfoProps {
   title: string | ReactJSXElement;
-  value: React.ReactNode;
+  value: ReactNode;
 }
 
 export interface LabelProps {
@@ -167,7 +173,7 @@ export interface LinksProps {
 
 export interface LabelInput {
   value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
   placeholder: string;
   type?: string;
   name?: string;

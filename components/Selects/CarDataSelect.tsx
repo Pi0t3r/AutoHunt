@@ -1,13 +1,12 @@
 import { CarDataSelectProps } from "@/types";
-import React from "react";
 import { Select } from "../select/Select";
 
-export const CarDataSelect: React.FC<CarDataSelectProps> = ({
+export const CarDataSelect = ({
   filter,
   value,
   options,
   onChange,
-}) => {
+}: CarDataSelectProps) => {
   return (
     <Select
       options={options}

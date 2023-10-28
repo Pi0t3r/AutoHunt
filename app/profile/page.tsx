@@ -7,34 +7,33 @@ import Button from "@mui/material/Button";
 import { doc, updateDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState, ChangeEvent } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 export default function Profile() {
-  // Get user data from context
   const { userData } = useUserData();
   const { userMail, userName, userPassword, userSurname } = userData;
-  // State for password visibility
+
   const [visiblePassword, setVisiblePassword] = useState(false);
-  // State for user profile image
+
   const [profileImage, setProfileImage] = useState<string | null>(null);
-  // State for the selected image file
+
   const [imageFile, setImageFile] = useState<File | null>(null);
-  const [wantChangeImage, setWantImage] = useState<boolean>(false);
-  // Effect to set profile image when user data changes
+  const [wantChangeImage, setWantImage] = useState(false);
+
   useEffect(() => {
     if (userData.userProfilePicture) {
       setProfileImage(userData.userProfilePicture);
     }
   }, [userData.userProfilePicture]);
-  // Function to handle file selection
-  const handleSelectedFile = (event: React.ChangeEvent<HTMLInputElement>) => {
+
+  const handleSelectedFile = (event: ChangeEvent<HTMLInputElement>) => {
     if (event.target.files && event.target.files[0]) {
       setImageFile(event.target.files[0]);
       const imageUrl = URL.createObjectURL(event.target.files[0]);
       setProfileImage(imageUrl);
     }
   };
-  // Function to handle image upload to Firebase
+
   const handleUploadFile = async () => {
     if (imageFile) {
       const storageRef = ref(storage, `profileImages/${userMail}`);
@@ -58,7 +57,6 @@ export default function Profile() {
     }
     setWantImage(false);
   };
-  // Function to toggle password visibility
   const handleVisiblePassword = () => {
     setVisiblePassword(!visiblePassword);
   };
@@ -68,7 +66,7 @@ export default function Profile() {
   return (
     <div className="p-4 text-center">
       <Link href="/" className="absolute top-0 left-0 m-4">
-      <Button
+        <Button
           variant="outlined"
           startIcon={<ArrowBackIosIcon />}
           sx={{

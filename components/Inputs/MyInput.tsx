@@ -1,14 +1,14 @@
-import React from "react";
 import { MyInputProps } from "@/types";
 
-export const MyInput: React.FC<MyInputProps> = ({
+export const MyInput = ({
   value,
   onChange,
   type,
   placeholder,
-}) => {
+}: MyInputProps) => {
   return (
     <label className="w-full">
+      {placeholder}
       <input
         type={type}
         value={value}

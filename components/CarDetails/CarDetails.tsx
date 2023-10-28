@@ -8,6 +8,8 @@ const Info = ({ title, value }: InfoProps) => {
   );
 };
 
+
+
 const CarDetails = ({ data }: carDataProps) => {
   return (
     <>

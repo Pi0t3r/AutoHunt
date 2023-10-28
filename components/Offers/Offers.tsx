@@ -12,38 +12,37 @@ import ReactPaginate from "react-paginate";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { Button } from "@mui/material";
 
-// Defining the Offers component
+
 export default function Offers() {
-  // State variables
-  const [advertData, setAdvertData] = useState<any[]>([]); // Store advertisement data
-  const [sortOption, setSortOption] = useState<string>("default"); // Store the selected sorting option
+
+  const [advertData, setAdvertData] = useState<any[]>([]); 
+  const [sortOption, setSortOption] = useState("default"); 
   const [currentPage, setCurrentPage] = useState(0);
 
-  // State variable to store sorted advertisement data
+ 
   const [sortedAdvertData, setSortedAdvertData] = useState<any[]>([]);
 
-  // Function to handle sorting option change
+ 
   const handleChangeSortOption = (event: SelectChangeEvent) => {
-    setSortOption(event.target.value); // Update the sorting option state
+    setSortOption(event.target.value);
   };
   const currentDate = new Date();
 
-  // Effect to sort advertisement data based on the selected sorting option
+  
   useEffect(() => {
     const sortAdvertData = () => {
-      const sortedData = [...advertData]; // Create a copy of the advertisement data
-      // Sort the data based on the selected sorting option
+      const sortedData = [...advertData]; 
       if (sortOption === "Low") {
-        sortedData.sort((a, b) => a.price - b.price); // Sort by price (Low to high)
+        sortedData.sort((a, b) => a.price - b.price); 
       } else if (sortOption === "High") {
-        sortedData.sort((a, b) => b.price - a.price); // Sort by price (High to low)
+        sortedData.sort((a, b) => b.price - a.price); 
       }
-      setSortedAdvertData(sortedData); // Update the sorted advertisement data state
+      setSortedAdvertData(sortedData);
     };
 
     sortAdvertData();
   }, [advertData, sortOption]);
-  // Function to render advertisement data
+  
 
   const handlePageChange = (selectedPage: { selected: number }) => {
     setCurrentPage(selectedPage.selected);
@@ -51,7 +50,7 @@ export default function Offers() {
   const itemsPerPage = 20;
   const showAdvert = () => {
     if (advertData.length === 0) {
-      return <p>No ads in selected filters</p>; // Display loading message if there's no advertisement data
+      return <p>No ads in selected filters</p>;
     } else {
       const offset = currentPage * itemsPerPage;
       const currentPageData = sortedAdvertData.slice(
@@ -114,9 +113,9 @@ export default function Offers() {
       );
     }
   };
-  // Calculate the length of the filtered and sorted advertisement data
+  
   const filteredLength = sortedAdvertData.length;
-  // Render the Offers component
+
   return (
     <div className="w-full bg-white text-center text-black pt-4 bg-slate-100">
       <h2 className="font-medium">What you're looking for?</h2>

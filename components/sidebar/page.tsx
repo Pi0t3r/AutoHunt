@@ -19,15 +19,14 @@ const Links = ({ linkTo, icon, title }: LinksProps) => {
 };
 
 const Sidebar = () => {
-  const { userData } = useUserData(); // Get user data using a custom hook
-  const { userName, userSurname, userMail } = userData; // Destructure user data
-  const { setUser } = useUserContext(); // Get user context and setUser function
-  // Function to handle user logout
+  const { userData } = useUserData(); 
+  const { userName, userSurname, userMail } = userData; 
+  const { setUser } = useUserContext(); 
   const handleLogout = async () => {
     try {
-      await auth.signOut(); // Sign out the user using Firebase
-      setUser(null); // Set the user context to null
-      localStorage.removeItem("user"); // Remove user data from local storage
+      await auth.signOut(); 
+      setUser(null); 
+      localStorage.removeItem("user"); 
     } catch (error) {
       console.error(error);
     }

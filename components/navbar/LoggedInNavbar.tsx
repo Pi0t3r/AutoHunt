@@ -30,17 +30,17 @@ const Buttons = ({ title, linkTo }: LinksProps) => {
 };
 
 const LoggedInNabar = () => {
-  const { userData } = useUserData(); // Get user data using a custom hook
-  const { userName, userSurname } = userData; // Destructure user data
-  const { setUser } = useUserContext(); // Get user context and setUser function
+  const { userData } = useUserData(); 
+  const { userName, userSurname } = userData; 
+  const { setUser } = useUserContext();
   const [visible, setVisible] = useState(false);
-  const [scroll, setScroll] = useState<number>(0); // State variable to track scroll position
+  const [scroll, setScroll] = useState(0);
 
   const handleLogout = async () => {
     try {
-      await auth.signOut(); // Sign out the user using Firebase
-      setUser(null); // Set the user context to null
-      localStorage.removeItem("user"); // Remove user data from local storage
+      await auth.signOut(); 
+      setUser(null); 
+      localStorage.removeItem("user");
     } catch (error) {
       console.error(error);
     }
@@ -48,22 +48,21 @@ const LoggedInNabar = () => {
   const toggleSidebar = () => {
     setVisible(!visible);
   };
-  // Adding a scroll event listener to update the scroll state
-  // Conditional styling for the navbar based on the scroll position
+
   const navbarStyles = {
-    background: scroll >= 50 ? "#515151f0" : "transparent", // Change background color when scrolled down
+    background: scroll >= 50 ? "#515151f0" : "transparent", 
   };
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      setScroll(window.scrollY); // Update the scroll state with the current scroll position
+      setScroll(window.scrollY); 
     });
-    // Cleaning up the event listener when the component unmounts
+
     return () => {
       window.removeEventListener("scroll", () => {
         setScroll(window.scrollY);
       });
     };
-  }, []); // Empty dependency array to ensure the effect runs only once
+  }, []); 
 
   return (
     <nav

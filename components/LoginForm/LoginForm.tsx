@@ -1,30 +1,27 @@
 import { signInWithEmailAndPassword } from "@firebase/auth";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import { useState, FormEvent } from "react";
 import { useUserContext } from "../../context/UserContext";
 import { auth } from "../../firebase";
 import { Button } from "@mui/material";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
-// This component represents a login form.
 const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState(""); // State to store error messages
+  const [errorMessage, setErrorMessage] = useState("");
   const [visiblePassword, setVisiblePassword] = useState(false);
-  const { setUser } = useUserContext(); // Access the user context
+  const { setUser } = useUserContext();
   const router = useRouter();
 
-  // Function to handle the form submission when the user tries to log in
-  const handleSubmitLogin = async (e: React.FormEvent) => {
-    e.preventDefault(); // Prevent the default form submission behavior
+  const handleSubmitLogin = async (e: FormEvent) => {
+    e.preventDefault();
 
     try {
-      // Attempt to sign in with email and password
       await signInWithEmailAndPassword(auth, email, password);
-      // Set user context with email and empty user details
+
       setUser({
         email: email,
         name: "",
@@ -32,15 +29,13 @@ const LoginForm = () => {
         password: "",
         profileImage: "",
       });
-      // Redirect the user to the home page after successful login
+
       router.push("/");
     } catch (error) {
-      // If there's an error during login, display the error message
       const errorCode = (error as any).code;
 
       let errorMessage = "An error occurred during login.";
 
-      // Customizing the error message when logging in
       switch (errorCode) {
         case "auth/user-not-found":
           errorMessage = "User not found. Please check your email.";
