@@ -36,6 +36,7 @@ function MyAdvert() {
     sellerPlace: "",
     vin: "",
   });
+  const [saveSuccess, setSaveSuccess] = useState(false)
 
   const handleEdit = () => {
     setIsEditing(!isEditing);
@@ -50,6 +51,7 @@ function MyAdvert() {
           mileage: formData.mileage,
           sellerPlace: formData.sellerPlace,
         });
+        setSaveSuccess(true)
       } catch (err) {
         console.error(`Error while saving changes: ${err}`);
       }
@@ -84,76 +86,59 @@ function MyAdvert() {
 
   const showData = advertData.find((car) => car.id === params.id);
   return (
-    <main className="max-w-7xl mx-auto">
-      <header className="relative h-20 mt-0">
-        <nav>
-          <Link href="/profile/myAdvert" className="absolute top-5 left-5">
-            <Button
-              variant="outlined"
-              startIcon={<ArrowBackIosIcon />}
-              sx={{
-                borderColor: "#b78d20",
-                color: "#b78d20",
-                textTransform: "lowercase",
-
-                ":hover": { borderColor: "#a67c10", color: "#b78d20" },
-              }}
-            >
-              Back
-            </Button>
-          </Link>
-        </nav>
-      </header>
+    <main className="mt-10">
       {isEditing ? (
-        <form className="mt-20 p-2 flex flex-row flex-wrap gap-2">
-          <MyInput
-            value={formData.mileage}
-            type="number"
-            placeholder="Mileage"
-            onChange={(event: ChangeEvent<HTMLInputElement>) => {
-              setFormData((prevData) => ({
-                ...prevData,
-                mileage: event.target.value,
-              }));
-            }}
-          />
-          <MyInput
-            placeholder="Price"
-            type="number"
-            value={formData.price}
-            onChange={(event: ChangeEvent<HTMLInputElement>) => {
-              const value = event.target.value;
-              setFormData((prevData) => ({
-                ...prevData,
-                price: value,
-              }));
-            }}
-          />
-          <MyInput
-            placeholder="Phone number"
-            type="tel"
-            value={formData.phone}
-            onChange={(event: ChangeEvent<HTMLInputElement>) => {
-              const value = event.target.value;
-              setFormData((prevData) => ({
-                ...prevData,
-                phone: value,
-              }));
-            }}
-          />
-          <MyInput
-            placeholder="Place"
-            type="text"
-            value={formData.sellerPlace}
-            onChange={(event: ChangeEvent<HTMLInputElement>) => {
-              const value = event.target.value;
-              setFormData((prevData) => ({
-                ...prevData,
-                sellerPlace: value,
-              }));
-            }}
-          />
-          <div className="flex flex-row flex-wrap gap-2">
+        <form className="mt-20 mb-10">
+          <fieldset className="p-2 flex flex-row flex-wrap gap-4 justify-center items-center">
+            <MyInput
+              value={formData.mileage}
+              type="number"
+              placeholder="Mileage"
+              onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                setFormData((prevData) => ({
+                  ...prevData,
+                  mileage: event.target.value,
+                }));
+              }}
+            />
+            <MyInput
+              placeholder="Price"
+              type="number"
+              value={formData.price}
+              onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                const value = event.target.value;
+                setFormData((prevData) => ({
+                  ...prevData,
+                  price: value,
+                }));
+              }}
+            />
+            <MyInput
+              placeholder="Phone number"
+              type="tel"
+              value={formData.phone}
+              onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                const value = event.target.value;
+                setFormData((prevData) => ({
+                  ...prevData,
+                  phone: value,
+                }));
+              }}
+            />
+            <MyInput
+              placeholder="Place"
+              type="text"
+              value={formData.sellerPlace}
+              onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                const value = event.target.value;
+                setFormData((prevData) => ({
+                  ...prevData,
+                  sellerPlace: value,
+                }));
+              }}
+            />
+          </fieldset>
+          <fieldset className="flex flex-row flex-wrap gap-2 justify-center items-center w-full">
             <Button
               variant="contained"
               onClick={handleSaveChanges}
@@ -183,10 +168,11 @@ function MyAdvert() {
             >
               Cancel
             </Button>
-          </div>
+          </fieldset>
+          {saveSuccess && <p className="text-center mt-2">Succesfully save changes!</p>}
         </form>
       ) : (
-        <div className="mt-20">
+        <div className="my-20">
           <section>
             <Banner images={showData.images} />
           </section>
@@ -196,7 +182,7 @@ function MyAdvert() {
           <section>
             <SellerDetails data={showData} />
           </section>
-          <section className="p-4 flex flex-row flex-wrap gap-2">
+          <section className="p-4 flex flex-row flex-wrap gap-2 justify-center items-center">
             <Button
               variant="contained"
               onClick={handleDelete}

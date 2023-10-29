@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import Link from "next/link";
 import { Button } from "@mui/material";
+import Link from "next/link";
 export default function Forgot() {
   return (
-    <main className="max-w-7xl mx-auto">
-      <header className="relative h-20">
+    <main className="mt-20">
+      <header>
         <nav>
-          <Link href="/register" className="absolute top-0 left-0 p-4">
+          <Link href="/register" className="p-4">
             <Button
               variant="outlined"
               sx={{
@@ -21,24 +21,24 @@ export default function Forgot() {
             </Button>
           </Link>
         </nav>
-        <h5 className="text-lg lg:text-3xl absolute bottom-0 left-1/2 -translate-x-1/2">
+        <h5 className="text-lg lg:text-3xl text-center font-bold text-main">
           Forgot password
         </h5>
       </header>
-      <section className="flex flex-col items-center justify-center absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2">
+      <section className="flex flex-col items-center justify-center p-5">
         <div className="mt-12">
           <p>
             Enter your email and we'll send you a link to reset your password.
           </p>
         </div>
-        <div className="flex flex-col gap-y-5 w-full mt-10">
-          <label className="font-bold flex flex-col w-full">
+        <div className="flex flex-col gap-y-5 w-full items-center justify-center mt-10">
+          <label className="font-bold flex flex-col w-60">
             E-mail
             <input
               type="text"
               id="email"
               placeholder="example@email.com"
-              className="p-2 rounded-md w-3/4 max-w-3xl mt-2 bg-[#a3a3a33e]"
+              className="p-2 rounded-md w-full mt-2 bg-[#a3a3a33e]"
             />
           </label>
           <Button

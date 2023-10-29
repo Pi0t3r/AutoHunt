@@ -22,8 +22,8 @@ export default function DeleteAcc() {
     }
   }
   return (
-    <main className="flex flex-col justify-center items-center p-4 max-w-7xl mx-auto">
-      <div className="mt-20 text-center flex flex-col gap-2">
+    <main className="mt-20">
+      <div className="text-center flex flex-col gap-2">
         <h2>Are you sure?</h2>
         <Button
           onClick={handleDeleteUser}

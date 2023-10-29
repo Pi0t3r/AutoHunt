@@ -93,24 +93,7 @@ export default function ResetPassword() {
 
   return (
     <main className="max-w-7xl mx-auto">
-      <header className="relative h-20 mt-0">
-        <nav>
-          <Link href="/profile" className="absolute top-0 left-0 p-4">
-            <Button
-              variant="outlined"
-              startIcon={<ArrowBackIosIcon />}
-              sx={{
-                borderColor: "#b78d20",
-                color: "#b78d20",
-                textTransform: "lowercase",
-
-                ":hover": { borderColor: "#a67c10", color: "#b78d20" },
-              }}
-            >
-              Back
-            </Button>
-          </Link>
-        </nav>
+      <header className="relative h-20 mt-10">
         <h3 className="text-main italic font-bold absolute bottom-0 left-1/2 -translate-x-1/2">
           Change Password
         </h3>

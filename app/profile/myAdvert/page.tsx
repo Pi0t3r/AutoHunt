@@ -29,15 +29,15 @@ export default function MyAdvert() {
   );
 
   return (
-    <main className="mx-auto max-w-7xl mt-10">
+    <main className="mt-10">
       <header className="relative h-20 mt-0">
         <h5 className="uppercase text-main font-medium absolute bottom-0 left-1/2 -translate-x-1/2">My Adverts</h5>
       </header>
-      <div className="mt-20 flex flex-row flex-wrap justify-center">
+      <section className="mt-20 flex flex-row flex-wrap justify-center">
         <ul className="flex flex-row flex-wrap gap-2 justify-center items-center">
           {userAdverts.map((post) => (
             <li key={post.id} className="block">
-              <section className="m-2 bg-neutral-100">
+              <div className="m-2 bg-neutral-100">
                 {post.images && post.images.length > 0 && (
                   <Image
                     src={post.images[0]}
@@ -88,11 +88,11 @@ export default function MyAdvert() {
                     </p>
                   </div>
                 </div>
-              </section>
+              </div>
             </li>
           ))}
         </ul>
-      </div>
+      </section>
     </main>
   );
 }
