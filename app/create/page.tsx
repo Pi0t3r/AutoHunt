@@ -73,14 +73,12 @@ export default function CreateAdvert() {
   >(undefined);
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
 
-
   const mapField = (field: string, value: string) => {
     setFormData((prevData) => ({
       ...prevData,
       [field]: value,
     }));
   };
-
 
   const handleImageSelect = (files: FileList) => {
     const imageArray = Array.from(files);
@@ -163,7 +161,7 @@ export default function CreateAdvert() {
       };
 
       const advertRef = await addDoc(collection(db, "adverts"), advertData);
-     
+
       if (selectedImages.length > 0) {
         const imageUrls = await uploadImagesToStorage(
           selectedImages,
@@ -206,7 +204,6 @@ export default function CreateAdvert() {
     }));
   };
 
-
   const Result = () => {
     if (advertAdded) {
       return <p>Your ad has been added</p>;
@@ -240,15 +237,17 @@ export default function CreateAdvert() {
     handleUserInfoChange();
   };
   return (
-    <>
-      <div className="p-4">
-        <Link href={"/"}>
-          <BsFillArrowLeftCircleFill className="w-10 h-10 text-main" />
-        </Link>
-      </div>
-      <h3 className="text-center uppercase font-bold italic">
-        Create new advert
-      </h3>
+    <main className="max-w-7xl mx-auto">
+      <header>
+        <nav className="p-4">
+          <Link href={"/"}>
+            <BsFillArrowLeftCircleFill className="w-10 h-10 text-main" />
+          </Link>
+        </nav>
+        <h3 className="text-center uppercase font-bold italic">
+          Create new advert
+        </h3>
+      </header>
       <form
         onSubmit={handleSubmit}
         className="flex flex-row flex-wrap justify-center md:justify-start items-center gap-2 p-4 w-full"
@@ -395,6 +394,6 @@ export default function CreateAdvert() {
           Display
         </Button>
       </form>
-    </>
+    </main>
   );
 }

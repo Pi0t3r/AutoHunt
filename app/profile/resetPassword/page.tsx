@@ -25,17 +25,16 @@ const LabelInput = ({ value, onChange, placeholder }: LabelInput) => {
 };
 
 export default function ResetPassword() {
-  
   const [newPassword, setNewPassword] = useState("");
   const [currentPassword, setCurrentPassword] = useState("");
   const [confirmNewPassword, setConfirmNewPassword] = useState("");
   const [mess, setMess] = useState("");
- 
+
   const { userData } = useUserData();
   const { userPassword, userId } = userData;
 
   const auth = getAuth();
- 
+
   const handleChangePassword = async () => {
     if (currentPassword !== userPassword) {
       setMess("Current password is incorrect");
@@ -64,7 +63,7 @@ export default function ResetPassword() {
           currentPassword
         );
         await updatePassword(user, newPassword);
- 
+
         const userCollectionRef = collection(db, "users");
         const userDocRef = doc(userCollectionRef, userId);
         await updateDoc(userDocRef, {
@@ -78,7 +77,7 @@ export default function ResetPassword() {
       setMess("Error updating password");
     }
   };
- 
+
   useEffect(() => {
     if (mess === "") {
       setNewPassword("");
@@ -86,34 +85,40 @@ export default function ResetPassword() {
       setCurrentPassword("");
     }
   }, [mess]);
- 
+
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     await handleChangePassword();
   };
 
   return (
-    <>
-      <Link href="/profile" className="absolute top-0 left-0 p-4">
-        <Button
-          variant="outlined"
-          startIcon={<ArrowBackIosIcon />}
-          sx={{
-            borderColor: "#b78d20",
-            color: "#b78d20",
-            textTransform: "lowercase",
+    <main className="max-w-7xl mx-auto">
+      <header className="relative h-20 mt-0">
+        <nav>
+          <Link href="/profile" className="absolute top-0 left-0 p-4">
+            <Button
+              variant="outlined"
+              startIcon={<ArrowBackIosIcon />}
+              sx={{
+                borderColor: "#b78d20",
+                color: "#b78d20",
+                textTransform: "lowercase",
 
-            ":hover": { borderColor: "#a67c10", color: "#b78d20" },
-          }}
-        >
-          Back
-        </Button>
-      </Link>
-      <div className="mt-20 text-center">
-        <h3 className="text-main italic font-bold">Change Password</h3>
+                ":hover": { borderColor: "#a67c10", color: "#b78d20" },
+              }}
+            >
+              Back
+            </Button>
+          </Link>
+        </nav>
+        <h3 className="text-main italic font-bold absolute bottom-0 left-1/2 -translate-x-1/2">
+          Change Password
+        </h3>
+      </header>
+      <section className="my-20 text-center">
         <form
           onSubmit={handleSubmit}
-          className="flex flex-row flex-wrap justify-center md:justify-start items-center"
+          className="flex flex-row flex-wrap gap-2 justify-center items-center"
         >
           <LabelInput
             value={currentPassword}
@@ -144,7 +149,7 @@ export default function ResetPassword() {
           </Button>
         </form>
         {mess && <p>{mess}</p>}
-      </div>
-    </>
+      </section>
+    </main>
   );
 }

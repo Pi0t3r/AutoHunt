@@ -37,7 +37,6 @@ function MyAdvert() {
     vin: "",
   });
 
-  
   const handleEdit = () => {
     setIsEditing(!isEditing);
   };
@@ -57,7 +56,6 @@ function MyAdvert() {
     }
   };
   useEffect(() => {
-   
     const fetchOffers = async () => {
       const adverts = await fetchAdverts();
       setAdvertData(adverts);
@@ -65,12 +63,10 @@ function MyAdvert() {
     fetchOffers();
   }, [formData, params.id]);
 
- 
   const handleCancelEdit = () => {
     setIsEditing(false);
   };
 
-  
   const handleDelete = async () => {
     if (params.id) {
       try {
@@ -88,22 +84,26 @@ function MyAdvert() {
 
   const showData = advertData.find((car) => car.id === params.id);
   return (
-    <div>
-      <Link href="/profile/myAdvert" className="absolute top-0 left-0 p-4">
-        <Button
-          variant="outlined"
-          startIcon={<ArrowBackIosIcon />}
-          sx={{
-            borderColor: "#b78d20",
-            color: "#b78d20",
-            textTransform: "lowercase",
+    <main className="max-w-7xl mx-auto">
+      <header className="relative h-20 mt-0">
+        <nav>
+          <Link href="/profile/myAdvert" className="absolute top-5 left-5">
+            <Button
+              variant="outlined"
+              startIcon={<ArrowBackIosIcon />}
+              sx={{
+                borderColor: "#b78d20",
+                color: "#b78d20",
+                textTransform: "lowercase",
 
-            ":hover": { borderColor: "#a67c10", color: "#b78d20" },
-          }}
-        >
-          Back
-        </Button>
-      </Link>
+                ":hover": { borderColor: "#a67c10", color: "#b78d20" },
+              }}
+            >
+              Back
+            </Button>
+          </Link>
+        </nav>
+      </header>
       {isEditing ? (
         <form className="mt-20 p-2 flex flex-row flex-wrap gap-2">
           <MyInput
@@ -187,10 +187,16 @@ function MyAdvert() {
         </form>
       ) : (
         <div className="mt-20">
-          <Banner images={showData.images} />
-          <CarDetails data={showData} />
-          <SellerDetails data={showData} />
-          <div className="p-4 flex flex-row flex-wrap gap-2">
+          <section>
+            <Banner images={showData.images} />
+          </section>
+          <section>
+            <CarDetails data={showData} />
+          </section>
+          <section>
+            <SellerDetails data={showData} />
+          </section>
+          <section className="p-4 flex flex-row flex-wrap gap-2">
             <Button
               variant="contained"
               onClick={handleDelete}
@@ -221,10 +227,10 @@ function MyAdvert() {
             >
               Edit advert
             </Button>
-          </div>
+          </section>
         </div>
       )}
-    </div>
+    </main>
   );
 }
 

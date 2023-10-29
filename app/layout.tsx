@@ -1,5 +1,6 @@
 import { UserProvider } from "@/context/UserContext";
 import { Inter } from "next/font/google";
+import Footer from "@/components/footer/Footer";
 import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,6 +21,9 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <UserProvider>{children}</UserProvider>
+        <footer className="max-w-7xl mx-auto">
+          <Footer />
+        </footer>
       </body>
     </html>
   );

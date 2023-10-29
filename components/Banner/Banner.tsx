@@ -17,7 +17,7 @@ const Banner = ({ images }: BannerProps) => {
   };
 
   const buttonClasses = clsx({
-    "block absolute top-0 right-0 p-5 transition duration-300 ease-out text-white":
+    "block absolute top-0 right-0 p-5 m-5 transition duration-300 ease-out text-white z-[101] cursor-pointer hover:text-[#111]":
       isClicked,
     hidden: !isClicked,
   });
@@ -26,17 +26,14 @@ const Banner = ({ images }: BannerProps) => {
     <div
       className={` ${
         isClicked
-          ? "bg-black/80 absolute inset-0 flex items-center justify-center transition duration-300 ease-out flex-col z-50"
+          ? "bg-black/80  absolute inset-0 flex items-center justify-center transition duration-300 ease-out flex-col z-50"
           : ""
       }`}
     >
-      <div
-        className={buttonClasses}
-        onClick={handleReduceImage}
-      >
+      <div className={buttonClasses} onClick={handleReduceImage}>
         <AiOutlineClose />
       </div>
-      <Carousel className="w-full">
+      <Carousel className={`w-full cursor-pointer ${isClicked ? 'cursor-default' : "cursor-pointer"}`}>
         {images.map((image, index) => (
           <div key={index} onClick={handleImageClick}>
             <Image

@@ -32,16 +32,24 @@ function Advert() {
   }
   const showData = advertData.find((car) => car.id === params.id);
   return (
-    <>
-      <div className="p-4">
-        <Link href={"/"}>
-          <BsFillArrowLeftCircleFill className="w-10 h-10 text-main" />
-        </Link>
-      </div>
-      <>
+    <main className="max-w-7xl mx-auto">
+      <header>
+        <nav className="p-4">
+          <Link href={"/"}>
+            <BsFillArrowLeftCircleFill className="w-10 h-10 text-main" />
+          </Link>
+        </nav>
+      </header>
+      <section>
         <Banner images={showData.images} />
+      </section>
+      <section>
         <CarDetails data={showData} />
+      </section>
+      <section>
         <SellerDetails data={showData} />
+      </section>
+      <section>
         <div className="m-4 flex flex-row flex-wrap items-center justify-start">
           <p>Something wrong with this advert?</p>
           <Button
@@ -63,12 +71,14 @@ function Advert() {
             Report
           </Button>
         </div>
-      </>
-      <ReportForm
-        setReportVisible={setReportVisible}
-        reportVisible={reportVisible}
-      />
-    </>
+      </section>
+      <section>
+        <ReportForm
+          setReportVisible={setReportVisible}
+          reportVisible={reportVisible}
+        />
+      </section>
+    </main>
   );
 }
 export default Advert;

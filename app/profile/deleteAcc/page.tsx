@@ -7,38 +7,42 @@ import { deleteDoc, doc } from "firebase/firestore";
 import Link from "next/link";
 
 export default function DeleteAcc() {
-  const { setUser } = useUserContext(); 
+  const { setUser } = useUserContext();
   async function handleDeleteUser() {
-    const user = auth.currentUser; 
+    const user = auth.currentUser;
 
     try {
-      const userId = user?.uid; 
+      const userId = user?.uid;
       await deleteDoc(doc(db, "users", userId as string));
-      await user?.delete(); 
-      await auth.signOut(); 
-      setUser(null); 
-      window.location.href = "/"; 
+      await user?.delete();
+      await auth.signOut();
+      setUser(null);
+      window.location.href = "/";
     } catch (err) {
-      console.error("Error with deleting user: ", err); 
+      console.error("Error with deleting user: ", err);
     }
   }
   return (
-    <div className="flex flex-col justify-center items-center p-4">
-      <Link href="/profile" className="absolute top-0 left-0 p-4">
-        <Button
-          variant="outlined"
-          startIcon={<ArrowBackIosIcon />}
-          sx={{
-            borderColor: "#b78d20",
-            color: "#b78d20",
-            textTransform: "lowercase",
+    <main className="flex flex-col justify-center items-center p-4 max-w-7xl mx-auto">
+      <header className="w-full">
+        <nav className="relative">
+          <Link href="/profile" className="absolute top-0 left-0 p-4">
+            <Button
+              variant="outlined"
+              startIcon={<ArrowBackIosIcon />}
+              sx={{
+                borderColor: "#b78d20",
+                color: "#b78d20",
+                textTransform: "lowercase",
 
-            ":hover": { borderColor: "#a67c10", color: "#b78d20" },
-          }}
-        >
-          Back
-        </Button>
-      </Link>
+                ":hover": { borderColor: "#a67c10", color: "#b78d20" },
+              }}
+            >
+              Back
+            </Button>
+          </Link>
+        </nav>
+      </header>
       <div className="mt-20 text-center flex flex-col gap-2">
         <h2>Are you sure?</h2>
         <Button
@@ -65,6 +69,6 @@ export default function DeleteAcc() {
           </Button>
         </Link>
       </div>
-    </div>
+    </main>
   );
 }
