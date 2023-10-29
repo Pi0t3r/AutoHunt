@@ -1,5 +1,5 @@
 import { CarDataSelectProps } from "@/types";
-import { Select } from "../select/Select";
+import { SelectUI } from "../select/SelectUI";
 
 export const CarDataSelect = ({
   filter,
@@ -8,7 +8,7 @@ export const CarDataSelect = ({
   onChange,
 }: CarDataSelectProps) => {
   return (
-    <Select
+    <SelectUI
       options={options}
       value={value}
       onChange={onChange}

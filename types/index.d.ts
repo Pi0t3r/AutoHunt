@@ -32,7 +32,7 @@ export type SelectProps = {
   value: SelectOption | undefined;
   onChange: (value: SelectOption | undefined) => void;
   filter: string;
-  disabled?: boolean;
+  isDisabled?: boolean;
 };
 
 type Engine = {

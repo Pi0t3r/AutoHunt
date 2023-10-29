@@ -1,10 +1,10 @@
 import { fuelOptions } from "@/data/cars";
 import { FilterSelectProps } from "@/types";
-import { Select } from "../select/Select";
+import { SelectUI } from "../select/SelectUI";
 
 export const FuelSelect = ({ value, onChange }: FilterSelectProps) => {
   return (
-    <Select
+    <SelectUI
       onChange={onChange}
       filter="Fuel type"
       options={fuelOptions}

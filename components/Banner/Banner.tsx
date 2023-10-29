@@ -4,7 +4,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { BannerProps } from "@/types";
-
+import clsx from "clsx";
 const Banner = ({ images }: BannerProps) => {
   const [isClicked, setIsClicked] = useState(false);
 
@@ -16,6 +16,12 @@ const Banner = ({ images }: BannerProps) => {
     setIsClicked(false);
   };
 
+  const buttonClasses = clsx({
+    "block absolute top-0 right-0 p-5 transition duration-300 ease-out text-white":
+      isClicked,
+    hidden: !isClicked,
+  });
+
   return (
     <div
       className={` ${
@@ -25,11 +31,7 @@ const Banner = ({ images }: BannerProps) => {
       }`}
     >
       <div
-        className={`${
-          isClicked
-            ? "block absolute top-0 right-0 p-5 transition duration-300 ease-out text-white"
-            : "hidden"
-        }`}
+        className={buttonClasses}
         onClick={handleReduceImage}
       >
         <AiOutlineClose />

@@ -1,7 +1,7 @@
 import { options } from "@/data/cars";
 import { FilterSelectProps, SelectOptionProps } from "@/types";
 import { useState } from "react";
-import { Select } from "../select/Select";
+import { SelectUI } from "../select/SelectUI";
 export const BrandSelect = ({ onChange }: FilterSelectProps) => {
   const [selectedBrand, setSelectedBrand] = useState<
     SelectOptionProps | undefined
@@ -11,7 +11,7 @@ export const BrandSelect = ({ onChange }: FilterSelectProps) => {
     onChange(brand);
   };
   return (
-    <Select
+    <SelectUI
       filter="Brand"
       options={options}
       value={selectedBrand}

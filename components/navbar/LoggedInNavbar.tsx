@@ -72,7 +72,7 @@ const LoggedInNabar = () => {
       <>
         <button
           onClick={toggleSidebar}
-          className="bg-inherit border-none md:hidden z-[100]"
+          className="bg-none border-none md:hidden z-[100]"
         >
           {visible ? (
             <AiOutlineClose className="w-8 h-8 text-main" />

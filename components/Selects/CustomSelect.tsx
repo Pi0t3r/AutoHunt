@@ -1,6 +1,6 @@
 import { CustomSelectProps } from "@/types";
 import { drive, gearbox } from "../../data/cars";
-import { Select } from "../select/Select";
+import { SelectUI } from "../select/SelectUI";
 
 export const CustomSelect = ({
   onChangeDrive,
@@ -10,13 +10,13 @@ export const CustomSelect = ({
 }: CustomSelectProps) => {
   return (
     <>
-      <Select
+      <SelectUI
         options={drive}
         filter="Drive"
         onChange={onChangeDrive}
         value={valueDrive}
       />
-      <Select
+      <SelectUI
         options={gearbox}
         filter="Gearbox"
         onChange={onChangeGearbox}

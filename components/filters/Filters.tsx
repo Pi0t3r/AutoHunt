@@ -3,8 +3,8 @@ import { FiltersProps, SelectOption } from "@/types";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { body, fuelOptions, options } from "../../data/cars";
-import { Select } from "../select/Select";
-
+import { SelectUI } from "../select/SelectUI";
+import Button from "@mui/material/Button";
 export default function Filters({ setAdvertData }: FiltersProps) {
   const [selectedBody, setSelectedBody] = useState<SelectOption | undefined>(
     undefined
@@ -151,53 +151,75 @@ export default function Filters({ setAdvertData }: FiltersProps) {
   const handleEngineChange = (engine: SelectOption | undefined) => {
     setSelectedEngine(engine);
   };
+  const clearFilter = () => {
+    setSelectedBody(undefined);
+    setSelectedBrand(undefined);
+    setSelectedModel(undefined);
+    setSelectedGeneration(undefined);
+    setSelectedVersion(undefined);
+    setSelectedEngine(undefined);
+    setSelectedFuel(undefined);
+  };
 
   return (
     <div className="flex flex-row flex-wrap justify-center items-center gap-2 p-2">
-      <Select
+      <SelectUI
         options={body}
         value={selectedBody}
         onChange={handleBodyChange}
         filter="Body"
-        disabled={selectedVersion?.value !== undefined}
+        isDisabled={selectedVersion?.value !== undefined}
       />
-      <Select
+      <SelectUI
         options={options}
         value={selectedBrand}
         onChange={handleBrandChange}
         filter="Brand"
       />
-      <Select
+      <SelectUI
         options={getModelOptions()}
         value={selectedModel}
         onChange={handleModelChange}
         filter="Model"
       />
-      <Select
+      <SelectUI
         options={getGenerationOption()}
         value={selectedGeneration}
         onChange={handleGenerationChange}
         filter="Generation"
       />
-      <Select
+      <SelectUI
         options={getVersionOption()}
         value={selectedVersion}
         onChange={handleVersionChange}
         filter="Version"
       />
-      <Select
+      <SelectUI
         options={getEngineOption()}
         value={selectedEngine}
         onChange={handleEngineChange}
         filter="Engine"
       />
-      <Select
+      <SelectUI
         options={fuelOptions}
         value={selectedFuel}
         onChange={handleFuelChange}
         filter="Fuel type"
-        disabled={selectedEngine?.value !== undefined}
+        isDisabled={selectedEngine?.value !== undefined}
       />
+      <Button
+        onClick={clearFilter}
+        variant="contained"
+        sx={{
+          letterSpacing: "1px",
+          fontWeight: "bold",
+          fontSize: "10px",
+          background: "#b78d20",
+          ":hover": { backgroundColor: "#a67c10" },
+        }}
+      >
+        Clear filter
+      </Button>
     </div>
   );
 }
