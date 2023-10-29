@@ -5,7 +5,6 @@ import { ActiveButton } from "@/types";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Button } from "@mui/material";
-import Footer from "@/components/footer/Footer";
 
 export default function Register() {
   const [activeButton, setActiveButton] = useState<ActiveButton>("login");
@@ -13,27 +12,30 @@ export default function Register() {
   const handleButtonClick = (button: ActiveButton) => {
     setActiveButton(button);
   };
-
   return (
-    <div className="w-full max-w-7xl mx-auto grid grid-rows-3 grid-rows-[75px_minmax(400px,_1fr)_250px]">
-      <Link href="/" className="max-w-7xl mx-auto w-full p-4">
-        <Button
-          variant="outlined"
-          sx={{
-            borderColor: "#b78d20",
-            color: "#b78d20",
-            textTransform: "lowercase",
+    <main className="max-w-7xl mx-auto">
+      <header className="relative h-20">
+        <nav>
+          <Link href="/" className="absolute top-0 left-0 p-4">
+            <Button
+              variant="outlined"
+              sx={{
+                borderColor: "#b78d20",
+                color: "#b78d20",
+                textTransform: "lowercase",
 
-            ":hover": { borderColor: "#a67c10", color: "#b78d20" },
-          }}
-        >
-          Back
-        </Button>
-      </Link>
-      <div className="flex flex-col justify-center items-center bg-slate-200 w-full mx-auto rounded-md p-4">
-        <h1 className="uppercase font-medium text-2xl">
+                ":hover": { borderColor: "#a67c10", color: "#b78d20" },
+              }}
+            >
+              Back
+            </Button>
+          </Link>
+        </nav>
+        <h2 className="uppercase font-medium text-2xl absolute bottom-0 left-1/2 -translate-x-1/2">
           <span className="font-bold text-main">Join us</span> to continue
-        </h1>
+        </h2>
+      </header>
+      <section className="flex flex-col justify-center items-center bg-slate-200 w-full mx-auto rounded-md p-4">
         <div className="flex flex-row justify-between w-full my-10">
           <button
             className={`${
@@ -58,10 +60,7 @@ export default function Register() {
         </div>
         {activeButton === "login" && <LoginForm />}
         {activeButton === "signup" && <RegisterForm />}
-      </div>
-      <>
-        <Footer />
-      </>
-    </div>
+      </section>
+    </main>
   );
 }

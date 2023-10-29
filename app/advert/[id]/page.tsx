@@ -6,10 +6,9 @@ import CarDetails from "@/components/carDetails/CarDetails";
 import ReportForm from "@/components/reportForm/ReportForm";
 import SellerDetails from "@/components/sellerDetails/SellerDetails";
 import { Button } from "@mui/material";
-import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+
 
 function Advert() {
   const [reportVisible, setReportVisible] = useState(false);
@@ -32,14 +31,7 @@ function Advert() {
   }
   const showData = advertData.find((car) => car.id === params.id);
   return (
-    <main className="max-w-7xl mx-auto">
-      <header>
-        <nav className="p-4">
-          <Link href={"/"}>
-            <BsFillArrowLeftCircleFill className="w-10 h-10 text-main" />
-          </Link>
-        </nav>
-      </header>
+    <main className="my-20">
       <section>
         <Banner images={showData.images} />
       </section>

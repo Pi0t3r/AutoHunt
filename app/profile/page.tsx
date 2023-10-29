@@ -2,7 +2,6 @@
 import ProfileImage from "@/components/profileImage/Page";
 import { db, storage } from "@/firebase";
 import useUserData from "@/useUserData";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import Button from "@mui/material/Button";
 import { doc, updateDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
@@ -64,105 +63,86 @@ export default function Profile() {
     setWantImage(true);
   };
   return (
-    <div className="p-4 text-center">
-      <Link href="/" className="absolute top-0 left-0 m-4">
-        <Button
-          variant="outlined"
-          startIcon={<ArrowBackIosIcon />}
-          sx={{
-            borderColor: "#b78d20",
-            color: "#b78d20",
-            textTransform: "lowercase",
-
-            ":hover": { borderColor: "#a67c10", color: "#b78d20" },
-          }}
-        >
-          Back
-        </Button>
-      </Link>
-      <>
-        <div className="flex flex-row flex-wrap justify-center">
-          <ProfileImage userMail={userMail} selectedImage={profileImage} />
-        </div>
-        <div className="">
-          <p>
-            Hello,{" "}
-            <span className="text-main font-bold">
-              {userName} {userSurname}
-            </span>{" "}
-            <br />
-            Your email: <span className="text-main font-bold">
-              {userMail}
-            </span>{" "}
-            <br />
-            <span>
-              Your password:{" "}
-              <span className="font-bold text-main">
-                {visiblePassword ? userPassword : "•••••••"}
-              </span>{" "}
-              <button onClick={handleVisiblePassword}>
-                {visiblePassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
-              </button>
-            </span>
-          </p>
-        </div>
-        <div className="flex flex-row flex-wrap justify-center gap-2 mt-2">
-          <Link href="/profile/resetPassword" className="relative no-underline">
+    <main className="my-20">
+      <section className="flex flex-row flex-wrap justify-center">
+        <ProfileImage userMail={userMail} selectedImage={profileImage} />
+      </section>
+      <section className="flex flex-row flex-wrap gap-4 items-center justify-center p-4">
+        <span>
+          Hello,{" "}
+          <span className="text-main font-bold">
+            {userName} {userSurname}
+          </span>
+        </span>
+        <span>
+          Your email: <span className="text-main font-bold">{userMail}</span>{" "}
+        </span>
+        <span>
+          Your password:{" "}
+          <span className="font-bold text-main">
+            {visiblePassword ? userPassword : "•••••••"}
+          </span>{" "}
+          <button onClick={handleVisiblePassword}>
+            {visiblePassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+          </button>
+        </span>
+      </section>
+      <section className="flex flex-row flex-wrap justify-center gap-2 my-2">
+        <Link href="/profile/resetPassword" className="relative no-underline">
+          <Button
+            variant="contained"
+            sx={{
+              background: "#b78d20",
+              ":hover": { backgroundColor: "#a67c10" },
+            }}
+          >
+            Change my password
+          </Button>
+        </Link>
+        <Link href="/profile/deleteAcc">
+          <Button
+            variant="contained"
+            sx={{
+              background: "#b78d20",
+              ":hover": { backgroundColor: "#a67c10" },
+            }}
+          >
+            I want delete my account
+          </Button>
+        </Link>
+        {wantChangeImage ? (
+          <div className="mt-3">
+            <input
+              type="file"
+              accept="image/png"
+              onChange={handleSelectedFile}
+            />
             <Button
               variant="contained"
               sx={{
-                background: "#b78d20",
-                ":hover": { backgroundColor: "#a67c10" },
+                color: "#b78d20",
+                background: "none",
+                ":hover": { backgroundColor: "#a67c10", color: "white" },
               }}
+              onClick={handleUploadFile}
             >
-              Change my password
+              Upload
             </Button>
-          </Link>
-          <Link href="/profile/deleteAcc">
-            <Button
-              variant="contained"
-              sx={{
-                background: "#b78d20",
-                ":hover": { backgroundColor: "#a67c10" },
-              }}
-            >
-              I want delete my account
-            </Button>
-          </Link>
-          {wantChangeImage ? (
-            <div className="mt-3">
-              <input
-                type="file"
-                accept="image/png"
-                onChange={handleSelectedFile}
-              />
-              <Button
-                variant="contained"
-                sx={{
-                  color: "#b78d20",
-                  background: "none",
-                  ":hover": { backgroundColor: "#a67c10", color: "white" },
-                }}
-                onClick={handleUploadFile}
-              >
-                Upload
-              </Button>
-            </div>
-          ) : (
-            <Button
-              onClick={handleChangeImage}
-              variant="contained"
-              sx={{
-                background: "#b78d20",
-                ":hover": { backgroundColor: "#a67c10" },
-              }}
-            >
-              I want change my Image
-            </Button>
-          )}
-        </div>
-      </>
-    </div>
+          </div>
+        ) : (
+          <Button
+            onClick={handleChangeImage}
+            variant="contained"
+            sx={{
+              background: "#b78d20",
+              ":hover": { backgroundColor: "#a67c10" },
+            }}
+          >
+            I want change my Image
+          </Button>
+        )}
+      </section>
+    </main>
   );
 }
 function getUploadTaskSnapshot(

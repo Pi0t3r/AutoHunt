@@ -30,16 +30,16 @@ const Buttons = ({ title, linkTo }: LinksProps) => {
 };
 
 const LoggedInNabar = () => {
-  const { userData } = useUserData(); 
-  const { userName, userSurname } = userData; 
+  const { userData } = useUserData();
+  const { userName, userSurname } = userData;
   const { setUser } = useUserContext();
   const [visible, setVisible] = useState(false);
   const [scroll, setScroll] = useState(0);
 
   const handleLogout = async () => {
     try {
-      await auth.signOut(); 
-      setUser(null); 
+      await auth.signOut();
+      setUser(null);
       localStorage.removeItem("user");
     } catch (error) {
       console.error(error);
@@ -50,11 +50,11 @@ const LoggedInNabar = () => {
   };
 
   const navbarStyles = {
-    background: scroll >= 50 ? "#515151f0" : "transparent", 
+    background: scroll >= 50 ? "#515151f0" : "transparent",
   };
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      setScroll(window.scrollY); 
+      setScroll(window.scrollY);
     });
 
     return () => {
@@ -62,12 +62,12 @@ const LoggedInNabar = () => {
         setScroll(window.scrollY);
       });
     };
-  }, []); 
+  }, []);
 
   return (
     <nav
-      className="fixed inset-x-0 top-0 flex justify-between p-5 z-[52] items-center max-w-7xl m-auto transition-all"
-      style={navbarStyles}
+      className="fixed bg-[#515151f0] inset-x-0 top-0 flex justify-between p-5 z-[52] items-center max-w-7xl mx-auto transition-all"
+      // style={navbarStyles}
     >
       <>
         <button

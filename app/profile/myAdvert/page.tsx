@@ -1,7 +1,6 @@
 "use client";
 import { fetchAdverts } from "@/api/getAdvertDetails";
 import useUserData from "@/useUserData";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { Button } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
@@ -30,32 +29,15 @@ export default function MyAdvert() {
   );
 
   return (
-    <main className="mx-auto max-w-7xl">
+    <main className="mx-auto max-w-7xl mt-10">
       <header className="relative h-20 mt-0">
-        <nav>
-          <Link href="/" className="absolute top-5 left-5">
-            <Button
-              variant="outlined"
-              startIcon={<ArrowBackIosIcon />}
-              sx={{
-                borderColor: "#b78d20",
-                color: "#b78d20",
-                textTransform: "lowercase",
-
-                ":hover": { borderColor: "#a67c10", color: "#b78d20" },
-              }}
-            >
-              Back
-            </Button>
-          </Link>
-        </nav>
         <h5 className="uppercase text-main font-medium absolute bottom-0 left-1/2 -translate-x-1/2">My Adverts</h5>
       </header>
       <div className="mt-20 flex flex-row flex-wrap justify-center">
         <ul className="flex flex-row flex-wrap gap-2 justify-center items-center">
           {userAdverts.map((post) => (
             <li key={post.id} className="block">
-              <div className="m-2 bg-neutral-100">
+              <section className="m-2 bg-neutral-100">
                 {post.images && post.images.length > 0 && (
                   <Image
                     src={post.images[0]}
@@ -106,7 +88,7 @@ export default function MyAdvert() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </section>
             </li>
           ))}
         </ul>

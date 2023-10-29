@@ -6,16 +6,21 @@ export const MyInput = ({
   type,
   placeholder,
 }: MyInputProps) => {
+  const today = new Date();
+  const dateTime = today
+    .toLocaleDateString("en-CA")
+    .replace(/(\d{2})\.(\d{2})\.(\d{4})/, "$3-$2-$1");
   return (
-    <label className="w-full">
+    <label>
       {placeholder}
       <input
         type={type}
+        max={dateTime}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
         required
-        className="border border-[#777] rounded-md p-2 w-full"
+        className="border border-[#777] rounded-md p-2 ml-2"
       />
     </label>
   );

@@ -26,14 +26,14 @@ const Banner = ({ images }: BannerProps) => {
     <div
       className={` ${
         isClicked
-          ? "bg-black/80  absolute inset-0 flex items-center justify-center transition duration-300 ease-out flex-col z-50"
+          ? "bg-black/80  absolute inset-0 flex items-center justify-center transition duration-300 ease-out flex-col z-[100]"
           : ""
       }`}
     >
       <div className={buttonClasses} onClick={handleReduceImage}>
         <AiOutlineClose />
       </div>
-      <Carousel className={`w-full cursor-pointer ${isClicked ? 'cursor-default' : "cursor-pointer"}`}>
+      <Carousel className={`w-full max-w-7xl mx-auto cursor-pointer ${isClicked ? 'cursor-auto' : "cursor-pointer"}`}>
         {images.map((image, index) => (
           <div key={index} onClick={handleImageClick}>
             <Image

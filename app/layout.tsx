@@ -1,6 +1,7 @@
 import { UserProvider } from "@/context/UserContext";
 import { Inter } from "next/font/google";
 import Footer from "@/components/footer/Footer";
+import Navbar from "@/components/navbar/Navbar";
 import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,9 +20,18 @@ export default function RootLayout({
       <head>
         <title>Autohunt</title>
       </head>
-      <body className={inter.className}>
-        <UserProvider>{children}</UserProvider>
-        <footer className="max-w-7xl mx-auto">
+      <body className={`${inter.className} max-w-7xl mx-auto`}>
+        <UserProvider>
+          <main>
+            <header>
+              <nav>
+                <Navbar />
+              </nav>
+            </header>
+            {children}
+          </main>
+        </UserProvider>
+        <footer>
           <Footer />
         </footer>
       </body>

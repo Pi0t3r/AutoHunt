@@ -56,9 +56,9 @@ const LoginForm = () => {
     <form
       action="login"
       onSubmit={handleSubmitLogin}
-      className="flex flex-col items-start justify-start gap-2 w-full"
+      className="flex flex-col items-center justify-center gap-2 w-full"
     >
-      <label className="font-bold flex flex-col w-full">
+      <label className="font-bold flex flex-col w-1/2">
         Email
         <input
           name="email"
@@ -67,34 +67,36 @@ const LoginForm = () => {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
           required
-          className={`p-2 rounded-md w-3/4 max-w-xl mt-2 ${
+          className={`p-2 rounded-md w-full mt-2 ${
             errorMessage === "User not found. Please check your email."
               ? "border-red-500 border-2 border-solid"
               : ""
           }`}
         />
       </label>
-      <label className="font-bold flex flex-col my-2 w-full">
+      <label className="font-bold flex flex-col my-2 w-1/2 relative">
         Password
-        <div className="flex flex-row flex-nowrap items-center">
-          <input
-            name="password"
-            type={visiblePassword ? "text" : "password"}
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="••••••••"
-            required
-            className={`p-2 rounded-md w-3/4 max-w-xl mt-2 ${
-              errorMessage === "Incorrect password. Please try again."
-                ? "border-red-500 border-2 border-solid"
-                : ""
-            }`}
-          />
-          <button onClick={toggleVisiblePassword} className="ml-4">
-            {visiblePassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
-          </button>
-        </div>
+        <input
+          name="password"
+          type={visiblePassword ? "text" : "password"}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="••••••••"
+          required
+          className={`p-2 rounded-md w-full mt-2 ${
+            errorMessage === "Incorrect password. Please try again."
+              ? "border-red-500 border-2 border-solid"
+              : ""
+          }`}
+        />
+        <button
+          onClick={toggleVisiblePassword}
+          className="absolute -right-10 top-1/2"
+        >
+          {visiblePassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+        </button>
       </label>
+
       <Button
         variant="text"
         sx={{

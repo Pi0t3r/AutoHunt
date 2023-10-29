@@ -12,9 +12,7 @@ import useUserData from "@/useUserData";
 import { Button } from "@mui/material";
 import { addDoc, collection, updateDoc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
-import Link from "next/link";
 import { ChangeEvent, useState } from "react";
-import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 import { options } from "../../data/cars";
 
 export default function CreateAdvert() {
@@ -72,6 +70,8 @@ export default function CreateAdvert() {
     SelectOptionProps | undefined
   >(undefined);
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
+
+  
 
   const mapField = (field: string, value: string) => {
     setFormData((prevData) => ({
@@ -236,85 +236,82 @@ export default function CreateAdvert() {
     setSelectedVersion(undefined);
     handleUserInfoChange();
   };
+
   return (
-    <main className="max-w-7xl mx-auto">
+    <main className="my-20">
       <header>
-        <nav className="p-4">
-          <Link href={"/"}>
-            <BsFillArrowLeftCircleFill className="w-10 h-10 text-main" />
-          </Link>
-        </nav>
         <h3 className="text-center uppercase font-bold italic">
           Create new advert
         </h3>
       </header>
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-row flex-wrap justify-center md:justify-start items-center gap-2 p-4 w-full"
-      >
-        <p className="font-medium text-main text-lg">Main Information</p>
-        <ImageUpload onImageSelect={handleImageSelect} />
-        <BodySelect onChange={handleBodyChange} value={selectedBody} />
-        <BrandSelect onChange={handleBrandChange} />
-        <CarDataSelect
-          filter="Model"
-          value={selectedModel}
-          options={getModelOptions()}
-          onChange={(model: SelectOptionProps | undefined) => {
-            mapField("model", model?.value || "");
-            setSelectedModel(model);
-            setSelectedGeneration(undefined);
-            setSelectedVersion(undefined);
-            setSelectedEngine(undefined);
-          }}
-        />
-        <CarDataSelect
-          filter="Generation"
-          value={selectedGeneration}
-          onChange={(generation: SelectOptionProps | undefined) => {
-            mapField("generation", generation?.value || "");
-            setSelectedGeneration(generation);
-            setSelectedVersion(undefined);
-            setSelectedEngine(undefined);
-          }}
-          options={getGenerationOption()}
-        />
-        <CarDataSelect
-          filter="Version"
-          value={selectedVersion}
-          options={getVersionOption()}
-          onChange={(version: SelectOptionProps | undefined) => {
-            mapField("version", version?.value || "");
-            setSelectedVersion(version);
-            setSelectedEngine(undefined);
-          }}
-        />
-        <CarDataSelect
-          filter="Engine"
-          value={selectedEngine}
-          options={getEngineOption()}
-          onChange={(engine: SelectOptionProps | undefined) => {
-            mapField("engine", engine?.value || "");
-            setSelectedEngine(engine);
-          }}
-        />
-        <FuelSelect onChange={handleFuelChange} value={selectedFuel} />
-        <CustomSelect
-          onChangeDrive={(drive: SelectOptionProps | undefined) => {
-            mapField("drive", drive?.value || "");
-            setSelectedDrive(drive);
-          }}
-          onChangeGearbox={(gearbox: SelectOptionProps | undefined) => {
-            mapField("gearbox", gearbox?.value || "");
-            setSelectedGearbox(gearbox);
-          }}
-          valueDrive={selectedDrive}
-          valueGearbox={selectedGearbox}
-        />
-        <div className="flex flex-row flex-wrap gap-2 justify-center">
-          <p className="text-main font-medium text-lg text-center">
+      <form onSubmit={handleSubmit} className="flex flex-col">
+        <fieldset className="flex flex-row flex-wrap gap-2 my-4 p-4 justify-start items-center">
+          <legend className="font-medium text-main text-lg text-center">
+            Main Information
+          </legend>
+          <ImageUpload onImageSelect={handleImageSelect} />
+          <BodySelect onChange={handleBodyChange} value={selectedBody} />
+          <BrandSelect onChange={handleBrandChange} />
+          <CarDataSelect
+            filter="Model"
+            value={selectedModel}
+            options={getModelOptions()}
+            onChange={(model: SelectOptionProps | undefined) => {
+              mapField("model", model?.value || "");
+              setSelectedModel(model);
+              setSelectedGeneration(undefined);
+              setSelectedVersion(undefined);
+              setSelectedEngine(undefined);
+            }}
+          />
+          <CarDataSelect
+            filter="Generation"
+            value={selectedGeneration}
+            onChange={(generation: SelectOptionProps | undefined) => {
+              mapField("generation", generation?.value || "");
+              setSelectedGeneration(generation);
+              setSelectedVersion(undefined);
+              setSelectedEngine(undefined);
+            }}
+            options={getGenerationOption()}
+          />
+          <CarDataSelect
+            filter="Version"
+            value={selectedVersion}
+            options={getVersionOption()}
+            onChange={(version: SelectOptionProps | undefined) => {
+              mapField("version", version?.value || "");
+              setSelectedVersion(version);
+              setSelectedEngine(undefined);
+            }}
+          />
+          <CarDataSelect
+            filter="Engine"
+            value={selectedEngine}
+            options={getEngineOption()}
+            onChange={(engine: SelectOptionProps | undefined) => {
+              mapField("engine", engine?.value || "");
+              setSelectedEngine(engine);
+            }}
+          />
+          <FuelSelect onChange={handleFuelChange} value={selectedFuel} />
+          <CustomSelect
+            onChangeDrive={(drive: SelectOptionProps | undefined) => {
+              mapField("drive", drive?.value || "");
+              setSelectedDrive(drive);
+            }}
+            onChangeGearbox={(gearbox: SelectOptionProps | undefined) => {
+              mapField("gearbox", gearbox?.value || "");
+              setSelectedGearbox(gearbox);
+            }}
+            valueDrive={selectedDrive}
+            valueGearbox={selectedGearbox}
+          />
+        </fieldset>
+        <fieldset className="flex flex-row flex-wrap gap-2 justify-start items-center p-4">
+          <legend className="text-main font-medium text-lg text-center">
             Other information
-          </p>
+          </legend>
           <MyInput
             value={formData.yearbook}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
@@ -332,9 +329,9 @@ export default function CreateAdvert() {
             }}
           />
           <MyInput
-            type="text"
+            type="date"
             value={formData.firstRegister}
-            placeholder="First register e.g. 23/01/2023"
+            placeholder="First register"
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
               mapField("firstRegister", event.target.value);
             }}
@@ -375,15 +372,18 @@ export default function CreateAdvert() {
               }));
             }}
           />
-        </div>
+        </fieldset>
         <p>
           <Result />
         </p>
         <Button
           variant="contained"
+          size="large"
           onClick={clearData}
           type="submit"
           sx={{
+            margin: "50px auto 0",
+            width:"150px",
             letterSpacing: "1px",
             fontWeight: "bold",
             fontSize: "10px",

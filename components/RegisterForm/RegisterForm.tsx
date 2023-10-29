@@ -17,7 +17,7 @@ const LabelInput = ({
   onChange,
 }: LabelInput) => {
   return (
-    <label className="font-bold flex flex-col  w-full">
+    <label className="font-bold flex flex-col w-3/4 max-w-xl">
       {title}
       <input
         name={name}
@@ -26,7 +26,7 @@ const LabelInput = ({
         value={value}
         required
         onChange={onChange}
-        className="p-2 rounded-md w-3/4 max-w-3xl mt-2"
+        className="p-2 rounded-md w-full mt-2"
       />
     </label>
   );
@@ -77,7 +77,7 @@ const RegisterForm = () => {
     <form
       action="signup"
       onSubmit={handleSubmitRegister}
-      className="flex flex-col items-start justify-start gap-2 w-full"
+      className="flex flex-row flex-wrap items-center justify-center gap-2 w-full"
     >
       <LabelInput
         title="Name"
@@ -103,22 +103,20 @@ const RegisterForm = () => {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
-      <label className="font-bold flex flex-col  w-full">
+      <label className="font-bold flex flex-col w-3/4 max-w-xl relative">
         Password
-        <div>
-          <input
-            required
-            name="password"
-            type={visiblePassword ? "text" : "password"}
-            placeholder="••••••••"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="p-2 rounded-md w-3/4 max-w-3xl mt-2"
-          />
-          <button onClick={toggleVisiblePassword} className="ml-4">
-            {visiblePassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
-          </button>
-        </div>
+        <input
+          required
+          name="password"
+          type={visiblePassword ? "text" : "password"}
+          placeholder="••••••••"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="p-2 rounded-md w-full mt-2"
+        />
+        <button onClick={toggleVisiblePassword} className="absolute top-1/2 -right-10">
+          {visiblePassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+        </button>
       </label>
       <div>
         <input type="checkbox" required />

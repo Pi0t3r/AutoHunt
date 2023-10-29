@@ -4,8 +4,7 @@ import Offers from "@/components/offers/Offers";
 
 export default function Home() {
   return (
-    <div className="max-w-7xl m-auto">
-      <Navbar />
+    <main className="max-w-7xl m-auto">
       <header className="relative">
         <picture>
           <source
@@ -29,14 +28,9 @@ export default function Home() {
           <p>The best site to find your dream car</p>
         </div>
       </header>
-      <main>
-        <section>
-          <Offers />
-        </section>
-      </main>
-      <footer>
-        <Footer />
-      </footer>
-    </div>
+      <section>
+        <Offers />
+      </section>
+    </main>
   );
 }

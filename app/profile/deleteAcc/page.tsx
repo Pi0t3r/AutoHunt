@@ -1,7 +1,6 @@
 "use client";
 import { useUserContext } from "@/context/UserContext";
 import { auth, db } from "@/firebase";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import Button from "@mui/material/Button";
 import { deleteDoc, doc } from "firebase/firestore";
 import Link from "next/link";
@@ -24,25 +23,6 @@ export default function DeleteAcc() {
   }
   return (
     <main className="flex flex-col justify-center items-center p-4 max-w-7xl mx-auto">
-      <header className="w-full">
-        <nav className="relative">
-          <Link href="/profile" className="absolute top-0 left-0 p-4">
-            <Button
-              variant="outlined"
-              startIcon={<ArrowBackIosIcon />}
-              sx={{
-                borderColor: "#b78d20",
-                color: "#b78d20",
-                textTransform: "lowercase",
-
-                ":hover": { borderColor: "#a67c10", color: "#b78d20" },
-              }}
-            >
-              Back
-            </Button>
-          </Link>
-        </nav>
-      </header>
       <div className="mt-20 text-center flex flex-col gap-2">
         <h2>Are you sure?</h2>
         <Button

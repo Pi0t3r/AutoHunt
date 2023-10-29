@@ -6,38 +6,37 @@ import LoggedInNabar from "./LoggedInNavbar";
 import { AiOutlineUser } from "react-icons/ai";
 
 export default function Navbar() {
-  const { user } = useUserContext(); 
+  const { user } = useUserContext();
   const [scroll, setScroll] = useState(0);
-  
+
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      setScroll(window.scrollY); 
+      setScroll(window.scrollY);
     });
-   
+
     return () => {
       window.removeEventListener("scroll", () => {
         setScroll(window.scrollY);
       });
     };
-  }, []); 
+  }, []);
   const navbarStyles = {
-    background: scroll >= 50 ? "#515151f0" : "transparent", 
+    background: scroll >= 50 ? "#515151f0" : "transparent",
   };
 
   return (
-    <div className="w-full m-auto z-[51]">
-      {user ? ( 
+    <div className="z-[51]">
+      {user ? (
         <LoggedInNabar />
       ) : (
         <nav
-          className="fixed inset-x-0 top-0 flex justify-between p-5 z-[51] items-center max-w-7xl m-auto"
-          style={navbarStyles}
+          className="fixed bg-[#515151f0] inset-x-0 top-0 flex justify-between p-5 z-[51] items-center max-w-7xl mx-auto"
+          // style={navbarStyles}
         >
-         
           <div>
             <span className="text-white">
               <Link href="/register">
-                <AiOutlineUser className="w-8 h-8"/>
+                <AiOutlineUser className="w-8 h-8" />
               </Link>
             </span>
           </div>
