@@ -1,3 +1,4 @@
+'use client'
 import { UserContextType, UserProviderProps } from "@/types";
 import { collection, doc, setDoc } from "firebase/firestore";
 import {

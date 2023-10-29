@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import { fetchAdverts } from "@/api/getAdvertDetails";
-import Banner from "../../../components/banner/Banner";
-import CarDetails from "../../../components/carDetails/CarDetails";
-import ReportForm from "../../../components/reportForm/ReportForm";
-import SellerDetails from "../../../components/sellerDetails/SellerDetails";
+import Banner from "@/components/banner/Banner";
+import CarDetails from "@/components/carDetails/CarDetails";
+import ReportForm from "@/components/reportForm/ReportForm";
+import SellerDetails from "@/components/sellerDetails/SellerDetails";
 import { Button } from "@mui/material";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -20,7 +20,6 @@ function Advert() {
   const [advertData, setAdvertData] = useState<any[]>([]);
   const params = useParams();
   useEffect(() => {
-   
     const fetchOffers = async () => {
       const adverts = await fetchAdverts();
       setAdvertData(adverts);
@@ -53,7 +52,7 @@ function Advert() {
               fontWeight: "bold",
               fontSize: "10px",
               background: "#b78d20",
-              marginLeft:2,
+              marginLeft: 2,
               transition: "scale .5s",
               ":hover": {
                 backgroundColor: "#a67c10",
