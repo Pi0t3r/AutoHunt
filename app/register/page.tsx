@@ -2,9 +2,7 @@
 import LoginForm from "@/components/loginForm/LoginForm";
 import RegisterForm from "@/components/registerForm/RegisterForm";
 import { ActiveButton } from "@/types";
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import { Button } from "@mui/material";
 
 export default function Register() {
   const [activeButton, setActiveButton] = useState<ActiveButton>("login");
@@ -13,24 +11,8 @@ export default function Register() {
     setActiveButton(button);
   };
   return (
-    <main className="max-w-7xl mx-auto">
+    <main className="mt-20">
       <header className="relative h-20">
-        <nav>
-          <Link href="/" className="absolute top-0 left-0 p-4">
-            <Button
-              variant="outlined"
-              sx={{
-                borderColor: "#b78d20",
-                color: "#b78d20",
-                textTransform: "lowercase",
-
-                ":hover": { borderColor: "#a67c10", color: "#b78d20" },
-              }}
-            >
-              Back
-            </Button>
-          </Link>
-        </nav>
         <h2 className="uppercase font-medium text-2xl absolute bottom-0 left-1/2 -translate-x-1/2">
           <span className="font-bold text-main">Join us</span> to continue
         </h2>

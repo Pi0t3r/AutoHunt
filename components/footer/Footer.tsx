@@ -1,4 +1,5 @@
 import { BsFacebook, BsInstagram, BsYoutube, BsTwitter } from "react-icons/bs";
+import { ReactNode } from "react";
 const footerLinks = [
   {
     value: "Privacy Policy",
@@ -26,32 +27,64 @@ const socialMedia = [
 ];
 const helpService = [
   {
-    value:""
-  }
-]
+    value: (
+      <>
+        Customer service: <a href="tel: +48 123 321 231"> +48 123 321 231</a>
+      </>
+    ),
+  },
+  {
+    value: "help@autohunt.com",
+  },
+  {
+    value: "Mon - Fri, 08:00 - 17:00",
+  },
+];
+const List = ({
+  children,
+  justify,
+  width,
+}: {
+  children: ReactNode;
+  justify: string;
+  width?: string;
+}) => {
+  return (
+    <ul
+      className={`flex flex-row flex-wrap justify-${justify} items-center gap-3 my-4 w-3/4 mx-auto`}
+    >
+      {children}
+    </ul>
+  );
+};
 export default function Footer() {
   return (
     <div className="bg-black text-white p-5">
-      <ul className="flex flex-row flex-wrap justify-between items-center gap-3">
+      <List justify="between">
         {socialMedia.map(({ value }, index) => (
-          <li key={index} className="hover:scale-110 cursor-pointer">{value}</li>
-        ))}
-      </ul>
-      <ul className="flex flex-row flex-wrap justify-center items-center gap-3">
-        {footerLinks.map(({ value }, index) => (
-          <span key={index}>
+          <li
+            key={index}
+            className="hover:scale-125 transition duration-300 cursor-pointer"
+          >
             {value}
-            {index < footerLinks.length - 1 && " | "}
-          </span>
+          </li>
         ))}
-      </ul>
-      <ul className="">
-        <span>
-          Customer service: <a href="tel: +48 123 321 231"> +48 123 321 231</a>
-        </span>
-        <span>help@autohunt.com</span>
-        <span>Mon - Fri, 08:00 - 17:00</span>
-      </ul>
+      </List>
+      <List justify="center">
+        {footerLinks.map(({ value }, index) => (
+          <li key={index}>
+            <span>
+              {value}
+              {index < footerLinks.length - 1 && " | "}
+            </span>
+          </li>
+        ))}
+      </List>
+      <List justify="center">
+        {helpService.map(({ value }, index) => (
+          <li key={index}>{value}</li>
+        ))}
+      </List>
     </div>
   );
 }

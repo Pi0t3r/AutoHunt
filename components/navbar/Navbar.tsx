@@ -31,7 +31,6 @@ export default function Navbar() {
       ) : (
         <nav
           className="fixed bg-[#515151f0] inset-x-0 top-0 flex justify-between p-5 z-[51] items-center max-w-7xl mx-auto"
-          // style={navbarStyles}
         >
           <div>
             <span className="text-white">

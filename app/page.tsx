@@ -1,10 +1,8 @@
-import Footer from "@/components/footer/Footer";
-import Navbar from "@/components/navbar/Navbar";
 import Offers from "@/components/offers/Offers";
 
 export default function Home() {
   return (
-    <main className="max-w-7xl m-auto">
+    <main>
       <header className="relative">
         <picture>
           <source

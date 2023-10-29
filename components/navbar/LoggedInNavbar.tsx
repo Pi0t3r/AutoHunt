@@ -65,48 +65,48 @@ const LoggedInNabar = () => {
   }, []);
 
   return (
-    <nav
-      className="fixed bg-[#515151f0] inset-x-0 top-0 flex justify-between p-5 z-[52] items-center max-w-7xl mx-auto transition-all"
-      // style={navbarStyles}
-    >
-      <>
-        <button
-          onClick={toggleSidebar}
-          className="bg-none border-none md:hidden z-[100]"
-        >
-          {visible ? (
-            <AiOutlineClose className="w-8 h-8 text-main" />
-          ) : (
-            <FiMenu className="w-8 h-8 text-main" />
-          )}
-        </button>
-        <div className="hidden md:flex flex-row gap-2 items-center text-white justify-between hidden">
-          <p>
-            Hello, {userName} {userSurname}
-          </p>
-          <ul className="flex flex-row gap-x-3 items-center ml-6">
-            <Buttons title="Add new advert" linkTo="create" />
-            <Buttons title="Profile" linkTo="/profile" />
-            <Buttons title="My advert" linkTo="/profile/myAdvert" />
-            <li className="hover:scale-110 transition-all hover:mx-2">
-              <Button
-                onClick={handleLogout}
-                variant="text"
-                size="small"
-                sx={{
-                  letterSpacing: "1px",
-                  fontWeight: "bold",
-                  fontSize: "10px",
-                  color: "white",
-                  textDecoration: "underline",
-                }}
-              >
-                Logout
-              </Button>
-            </li>
-          </ul>
-        </div>
-      </>
+    <header className="fixed bg-[#515151f0] inset-x-0 top-0 flex justify-between p-5 z-[52] items-center max-w-7xl mx-auto transition-all">
+      <button
+        onClick={toggleSidebar}
+        className="bg-none border-none md:hidden z-[100]"
+      >
+        {visible ? (
+          <AiOutlineClose className="w-8 h-8 text-main" />
+        ) : (
+          <FiMenu className="w-8 h-8 text-main" />
+        )}
+      </button>
+      <p className="hidden md:block text-white">
+        Hello,
+        <span className="text-main font-medium italic">
+          {" "}
+          {userName} {userSurname}
+        </span>
+      </p>
+
+      <nav className="hidden md:block text-white">
+        <ul className="flex flex-row gap-x-3 items-center justify-center ml-6">
+          <Buttons title="Add new advert" linkTo="create" />
+          <Buttons title="Profile" linkTo="/profile" />
+          <Buttons title="My advert" linkTo="/profile/myAdvert" />
+          <li className="hover:scale-110 transition-all hover:mx-2">
+            <Button
+              onClick={handleLogout}
+              variant="text"
+              size="small"
+              sx={{
+                letterSpacing: "1px",
+                fontWeight: "bold",
+                fontSize: "10px",
+                color: "white",
+                textDecoration: "underline",
+              }}
+            >
+              Logout
+            </Button>
+          </li>
+        </ul>
+      </nav>
       <div
         className="bg-white fixed inset-y-0 left-0"
         style={{
@@ -123,7 +123,7 @@ const LoggedInNabar = () => {
           </h1>
         </Link>
       </>
-    </nav>
+    </header>
   );
 };
 
