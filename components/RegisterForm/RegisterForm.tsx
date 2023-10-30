@@ -1,12 +1,12 @@
-import { createUserWithEmailAndPassword, getAuth } from "@firebase/auth";
-import { collection, doc, setDoc } from 'firebase/firestore'
-import { useState } from "react";
-import { AiOutlineCloseCircle } from "react-icons/ai";
-import { db } from "../../firebase";
-import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import { Button } from "@mui/material";
-import { LabelInputExtends } from "@/types/InputTypes";
+import { createUserWithEmailAndPassword, getAuth } from '@firebase/auth';
+import { collection, doc, setDoc } from 'firebase/firestore';
+import { useState } from 'react';
+import { AiOutlineCloseCircle } from 'react-icons/ai';
+import { db } from '../../firebase';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import { Button } from '@mui/material';
+import { LabelInputExtends } from '@/types/InputTypes';
 
 const LabelInput = ({
   title,
@@ -33,11 +33,11 @@ const LabelInput = ({
 };
 
 const RegisterForm = () => {
-  const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [, setErrorMessage] = useState("");
+  const [name, setName] = useState('');
+  const [surname, setSurname] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [, setErrorMessage] = useState('');
   const [info, setInfo] = useState(false);
   const auth = getAuth();
   const [visiblePassword, setVisiblePassword] = useState(false);
@@ -49,12 +49,12 @@ const RegisterForm = () => {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
         email,
-        password
+        password,
       );
 
       const user = userCredential.user;
 
-      const usersCollectionRef = collection(db, "users");
+      const usersCollectionRef = collection(db, 'users');
       const userDocRef = doc(usersCollectionRef, user.uid);
 
       await setDoc(userDocRef, {
@@ -108,13 +108,16 @@ const RegisterForm = () => {
         <input
           required
           name="password"
-          type={visiblePassword ? "text" : "password"}
+          type={visiblePassword ? 'text' : 'password'}
           placeholder="••••••••"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           className="p-2 rounded-md w-full mt-2"
         />
-        <button onClick={toggleVisiblePassword} className="absolute top-1/2 -right-10">
+        <button
+          onClick={toggleVisiblePassword}
+          className="absolute top-1/2 -right-10"
+        >
           {visiblePassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
         </button>
       </label>
@@ -142,17 +145,17 @@ const RegisterForm = () => {
         variant="outlined"
         type="submit"
         sx={{
-          letterSpacing: "1px",
-          fontWeight: "bold",
-          fontSize: "10px",
-          color: "#b78d20",
-          alignSelf: "center",
-          borderColor: "#b78d20",
-          transition: "scale .5s",
-          ":hover": {
-            scale: "1.1",
-            background: "none",
-            borderColor: "#b78d20",
+          letterSpacing: '1px',
+          fontWeight: 'bold',
+          fontSize: '10px',
+          color: '#b78d20',
+          alignSelf: 'center',
+          borderColor: '#b78d20',
+          transition: 'scale .5s',
+          ':hover': {
+            scale: '1.1',
+            background: 'none',
+            borderColor: '#b78d20',
           },
         }}
       >

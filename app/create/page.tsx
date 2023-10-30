@@ -1,44 +1,45 @@
-"use client";
-import { MyInput } from "@/components/Inputs/MyInput";
-import { BodySelect } from "@/components/Selects/BodySelect";
-import { BrandSelect } from "@/components/Selects/BrandSelect";
-import { CarDataSelect } from "@/components/Selects/CarDataSelect";
-import { CustomSelect } from "@/components/Selects/CustomSelect";
-import { FuelSelect } from "@/components/Selects/FuelSelect";
-import ImageUpload from "@/components/imageUpload/ImageUpload";
-import { db, storage } from "@/firebase";
-import { SelectOptionProps } from "@/types/SelectTypes";
-import useUserData from "@/useUserData";
-import { Button } from "@mui/material";
-import { addDoc, collection, updateDoc } from "firebase/firestore";
-import { uploadBytes,ref,getDownloadURL } from "firebase/storage";
-import { ChangeEvent, useState } from "react";
-import { options } from "../../data/cars";
+'use client';
+import { MyInput } from '@/components/Inputs/MyInput';
+import { BodySelect } from '@/components/Selects/BodySelect';
+import { BrandSelect } from '@/components/Selects/BrandSelect';
+import { CarDataSelect } from '@/components/Selects/CarDataSelect';
+import { CustomSelect } from '@/components/Selects/CustomSelect';
+import { FuelSelect } from '@/components/Selects/FuelSelect';
+import ImageUpload from '@/components/imageUpload/ImageUpload';
+import { db, storage } from '@/firebase';
+import { SelectOptionProps } from '@/types/SelectTypes';
+import useUserData from '@/useUserData';
+import { Button } from '@mui/material';
+import { addDoc, collection, updateDoc } from 'firebase/firestore';
+import { uploadBytes, ref, getDownloadURL } from 'firebase/storage';
+import { ChangeEvent, useState } from 'react';
+import { options } from '../../data/cars';
+import { EMPTY_VALUE } from '@/constants';
 
 export default function CreateAdvert() {
   const { userData } = useUserData();
   const { userName, userSurname, userMail } = userData;
   const [formData, setFormData] = useState({
-    body: "",
-    brand: "",
-    model: "",
-    generation: "",
-    version: "",
-    engine: "",
-    fuel: "",
-    yearbook: "",
-    mileage: "",
-    drive: "",
-    firstRegister: "",
-    vin: "",
-    gearbox: "",
-    price: "",
-    phone: "",
-    sellerName: "",
-    sellerSurname: "",
-    sellerContact: "",
-    sellerPlace: "",
-    createAdvert: "",
+    body: '',
+    brand: '',
+    model: '',
+    generation: '',
+    version: '',
+    engine: '',
+    fuel: '',
+    yearbook: '',
+    mileage: '',
+    drive: '',
+    firstRegister: '',
+    vin: '',
+    gearbox: '',
+    price: '',
+    phone: '',
+    sellerName: '',
+    sellerSurname: '',
+    sellerContact: '',
+    sellerPlace: '',
+    createAdvert: '',
   });
 
   const [advertAdded, setAdvertAdded] = useState(false);
@@ -163,9 +164,8 @@ export default function CreateAdvert() {
         createAdvert: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`,
       };
 
-      const advertRef = await addDoc(collection(db, "adverts"), advertData);
-
-      if (selectedImages.length > 0) {
+      const advertRef = await addDoc(collection(db, 'adverts'), advertData);
+      if (selectedImages.length > EMPTY_VALUE) {
         const imageUrls = await uploadImagesToStorage(
           selectedImages,
           advertRef.id
@@ -175,12 +175,12 @@ export default function CreateAdvert() {
 
       setAdvertAdded(true);
     } catch (error) {
-      console.error("Error while adding advert: ", error);
+      console.error('Error while adding advert: ', error);
     }
   };
 
   const handleBrandChange = (brand: SelectOptionProps | undefined) => {
-    setFormData((prevData) => ({ ...prevData, brand: brand?.value || "" }));
+    setFormData((prevData) => ({ ...prevData, brand: brand?.value || '' }));
     setSelectedBrand(brand);
     setSelectedModel(undefined);
     setSelectedGeneration(undefined);
@@ -189,12 +189,12 @@ export default function CreateAdvert() {
   };
 
   const handleBodyChange = (body: SelectOptionProps | undefined) => {
-    setFormData((prevData) => ({ ...prevData, body: body?.value || "" }));
+    setFormData((prevData) => ({ ...prevData, body: body?.value || '' }));
     setSelectedBody(body);
   };
 
   const handleFuelChange = (fuel: SelectOptionProps | undefined) => {
-    setFormData((prevData) => ({ ...prevData, fuel: fuel?.value || "" }));
+    setFormData((prevData) => ({ ...prevData, fuel: fuel?.value || '' }));
     setSelectedFuel(fuel);
   };
 
@@ -210,8 +210,6 @@ export default function CreateAdvert() {
   const Result = () => {
     if (advertAdded) {
       return <p>Your ad has been added</p>;
-    } else {
-      return null;
     }
   };
 
@@ -241,26 +239,26 @@ export default function CreateAdvert() {
   };
 
   return (
-    <main className="my-20">
+    <main className='my-20'>
       <header>
-        <h3 className="text-center uppercase font-bold italic">
+        <h3 className='text-center uppercase font-bold italic'>
           Create new advert
         </h3>
       </header>
-      <form onSubmit={handleSubmit} className="flex flex-col">
-        <fieldset className="flex flex-row flex-wrap gap-2 my-4 p-4 justify-start items-center">
-          <legend className="font-medium text-main text-lg text-center">
+      <form onSubmit={handleSubmit} className='flex flex-col'>
+        <fieldset className='flex flex-row flex-wrap gap-2 my-4 p-4 justify-start items-center'>
+          <legend className='font-medium text-main text-lg text-center'>
             Main Information
           </legend>
           <ImageUpload onImageSelect={handleImageSelect} />
           <BodySelect onChange={handleBodyChange} value={selectedBody} />
           <BrandSelect onChange={handleBrandChange} />
           <CarDataSelect
-            filter="Model"
+            filter='Model'
             value={selectedModel}
             options={getModelOptions()}
             onChange={(model: SelectOptionProps | undefined) => {
-              mapField("model", model?.value || "");
+              mapField('model', model?.value || '');
               setSelectedModel(model);
               setSelectedGeneration(undefined);
               setSelectedVersion(undefined);
@@ -268,10 +266,10 @@ export default function CreateAdvert() {
             }}
           />
           <CarDataSelect
-            filter="Generation"
+            filter='Generation'
             value={selectedGeneration}
             onChange={(generation: SelectOptionProps | undefined) => {
-              mapField("generation", generation?.value || "");
+              mapField('generation', generation?.value || '');
               setSelectedGeneration(generation);
               setSelectedVersion(undefined);
               setSelectedEngine(undefined);
@@ -279,93 +277,93 @@ export default function CreateAdvert() {
             options={getGenerationOption()}
           />
           <CarDataSelect
-            filter="Version"
+            filter='Version'
             value={selectedVersion}
             options={getVersionOption()}
             onChange={(version: SelectOptionProps | undefined) => {
-              mapField("version", version?.value || "");
+              mapField('version', version?.value || '');
               setSelectedVersion(version);
               setSelectedEngine(undefined);
             }}
           />
           <CarDataSelect
-            filter="Engine"
+            filter='Engine'
             value={selectedEngine}
             options={getEngineOption()}
             onChange={(engine: SelectOptionProps | undefined) => {
-              mapField("engine", engine?.value || "");
+              mapField('engine', engine?.value || '');
               setSelectedEngine(engine);
             }}
           />
           <FuelSelect onChange={handleFuelChange} value={selectedFuel} />
           <CustomSelect
             onChangeDrive={(drive: SelectOptionProps | undefined) => {
-              mapField("drive", drive?.value || "");
+              mapField('drive', drive?.value || '');
               setSelectedDrive(drive);
             }}
             onChangeGearbox={(gearbox: SelectOptionProps | undefined) => {
-              mapField("gearbox", gearbox?.value || "");
+              mapField('gearbox', gearbox?.value || '');
               setSelectedGearbox(gearbox);
             }}
             valueDrive={selectedDrive}
             valueGearbox={selectedGearbox}
           />
         </fieldset>
-        <fieldset className="flex flex-row flex-wrap gap-2 justify-start items-center p-4">
-          <legend className="text-main font-medium text-lg text-center">
+        <fieldset className='flex flex-row flex-wrap gap-2 justify-start items-center p-4'>
+          <legend className='text-main font-medium text-lg text-center'>
             Other information
           </legend>
           <MyInput
             value={formData.yearbook}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
-              mapField("yearbook", event.target.value);
+              mapField('yearbook', event.target.value);
             }}
-            type="number"
-            placeholder="Yearbook"
+            type='number'
+            placeholder='Yearbook'
           />
           <MyInput
             value={formData.mileage}
-            type="number"
-            placeholder="Mileage"
+            type='number'
+            placeholder='Mileage'
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
-              mapField("mileage", event.target.value);
+              mapField('mileage', event.target.value);
             }}
           />
           <MyInput
-            type="date"
+            type='date'
             value={formData.firstRegister}
-            placeholder="First register"
+            placeholder='First register'
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
-              mapField("firstRegister", event.target.value);
+              mapField('firstRegister', event.target.value);
             }}
           />
           <MyInput
-            placeholder="VIN"
+            placeholder='VIN'
             value={formData.vin}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
-              mapField("vin", event.target.value);
+              mapField('vin', event.target.value);
             }}
-            type="text"
+            type='text'
           />
           <MyInput
-            placeholder="Price"
-            type="number"
+            placeholder='Price'
+            type='number'
             value={formData.price}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
-              mapField("price", event.target.value);
+              mapField('price', event.target.value);
             }}
           />
           <MyInput
-            placeholder="Phone number"
-            type="tel"
+            placeholder='Phone number'
+            type='tel'
             value={formData.phone}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
-              mapField("phone", event.target.value);
+              mapField('phone', event.target.value);
             }}
           />
           <MyInput
-            placeholder="Place"
-            type="text"
+            placeholder='Place'
+            type='text'
             value={formData.sellerPlace}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
               const value = event.target.value;
@@ -380,18 +378,18 @@ export default function CreateAdvert() {
           <Result />
         </p>
         <Button
-          variant="contained"
-          size="large"
+          variant='contained'
+          size='large'
           onClick={clearData}
-          type="submit"
+          type='submit'
           sx={{
-            margin: "50px auto 0",
-            width: "150px",
-            letterSpacing: "1px",
-            fontWeight: "bold",
-            fontSize: "10px",
-            background: "#b78d20",
-            ":hover": { backgroundColor: "#a67c10" },
+            margin: '50px auto 0',
+            width: '150px',
+            letterSpacing: '1px',
+            fontWeight: 'bold',
+            fontSize: '10px',
+            background: '#b78d20',
+            ':hover': { backgroundColor: '#a67c10' },
           }}
         >
           Display

@@ -1,5 +1,5 @@
-import { CarDataSelectProps } from "@/types/SelectTypes";
-import { SelectUI } from "../select/SelectUI";
+import { CarDataSelectProps } from '@/types/SelectTypes';
+import { SelectUI } from '../select/SelectUI';
 
 export const CarDataSelect = ({
   filter,

@@ -1,3 +1,12 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "no-console": ["error", { "allow": ["error"] }],
+    "quotes": ["error", "single"],
+    "no-else-return": "error",
+    "no-const-assign": "error",
+    "no-magic-numbers": "error",
+    "no-multiple-empty-lines": ["error", { "max": 2 }],
+    "arrow-spacing": "error"
+  }
 }

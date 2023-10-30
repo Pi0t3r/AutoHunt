@@ -1,40 +1,41 @@
-"use client";
-import { fetchAdverts } from "@/api/getAdvertDetails";
-import { MyInput } from "@/components/Inputs/MyInput";
-import Banner from "@/components/banner/Banner";
-import CarDetails from "@/components/carDetails/CarDetails";
-import SellerDetails from "@/components/sellerDetails/SellerDetails";
-import { db } from "@/firebase";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
-import SaveIcon from "@mui/icons-material/Save";
-import { Button } from "@mui/material";
-import { collection, deleteDoc, doc, updateDoc } from 'firebase/firestore'
-import { useParams } from "next/navigation";
-import { ChangeEvent, useEffect, useState } from "react";
+'use client';
+import { fetchAdverts } from '@/api/getAdvertDetails';
+import { MyInput } from '@/components/Inputs/MyInput';
+import Banner from '@/components/banner/Banner';
+import CarDetails from '@/components/carDetails/CarDetails';
+import SellerDetails from '@/components/sellerDetails/SellerDetails';
+import { db } from '@/firebase';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import SaveIcon from '@mui/icons-material/Save';
+import { Button } from '@mui/material';
+import { collection, deleteDoc, doc, updateDoc } from 'firebase/firestore';
+import { useParams } from 'next/navigation';
+import { ChangeEvent, useEffect, useState } from 'react';
+import { EMPTY_VALUE } from '@/constants';
 function MyAdvert() {
   const [advertData, setAdvertData] = useState<any[]>([]);
   const params = useParams();
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
-    body: "",
-    brand: "",
-    model: "",
-    generation: "",
-    version: "",
-    drive: "",
-    engine: "",
-    firstRegister: "",
-    fuel: "",
-    gearbox: "",
-    mileage: "",
-    phone: "",
-    price: "",
-    yearbook: "",
-    sellerPlace: "",
-    vin: "",
+    body: '',
+    brand: '',
+    model: '',
+    generation: '',
+    version: '',
+    drive: '',
+    engine: '',
+    firstRegister: '',
+    fuel: '',
+    gearbox: '',
+    mileage: '',
+    phone: '',
+    price: '',
+    yearbook: '',
+    sellerPlace: '',
+    vin: '',
   });
-  const [saveSuccess, setSaveSuccess] = useState(false)
+  const [saveSuccess, setSaveSuccess] = useState(false);
 
   const handleEdit = () => {
     setIsEditing(!isEditing);
@@ -43,13 +44,13 @@ function MyAdvert() {
   const handleSaveChanges = async () => {
     if (params.id) {
       try {
-        await updateDoc(doc(db, "adverts", params.id as string), {
+        await updateDoc(doc(db, 'adverts', params.id as string), {
           phone: formData.phone,
           price: formData.price,
           mileage: formData.mileage,
           sellerPlace: formData.sellerPlace,
         });
-        setSaveSuccess(true)
+        setSaveSuccess(true);
       } catch (err) {
         console.error(`Error while saving changes: ${err}`);
       }
@@ -70,15 +71,14 @@ function MyAdvert() {
   const handleDelete = async () => {
     if (params.id) {
       try {
-        await deleteDoc(doc(collection(db, "adverts"), params.id as string));
-        window.location.href = "/profile/myAdvert";
+        await deleteDoc(doc(collection(db, 'adverts'), params.id as string));
+        window.location.href = '/profile/myAdvert';
       } catch (err) {
         console.error(`Error while deleting ads: ${err}`);
       }
     }
   };
-
-  if (advertData.length === 0) {
+  if (advertData.length === EMPTY_VALUE) {
     return <p>Loading ...</p>;
   }
 
@@ -143,11 +143,11 @@ function MyAdvert() {
               size="small"
               startIcon={<SaveIcon />}
               sx={{
-                letterSpacing: "1px",
-                fontWeight: "bold",
-                fontSize: "10px",
-                background: "#b78d20",
-                ":hover": { backgroundColor: "#a67c10" },
+                letterSpacing: '1px',
+                fontWeight: 'bold',
+                fontSize: '10px',
+                background: '#b78d20',
+                ':hover': { backgroundColor: '#a67c10' },
               }}
             >
               Save changes
@@ -157,17 +157,19 @@ function MyAdvert() {
               onClick={handleCancelEdit}
               size="small"
               sx={{
-                letterSpacing: "1px",
-                fontWeight: "bold",
-                fontSize: "10px",
-                background: "#b78d20",
-                ":hover": { backgroundColor: "#a67c10" },
+                letterSpacing: '1px',
+                fontWeight: 'bold',
+                fontSize: '10px',
+                background: '#b78d20',
+                ':hover': { backgroundColor: '#a67c10' },
               }}
             >
               Cancel
             </Button>
           </fieldset>
-          {saveSuccess && <p className="text-center mt-2">Succesfully save changes!</p>}
+          {saveSuccess && (
+            <p className="text-center mt-2">Succesfully save changes!</p>
+          )}
         </form>
       ) : (
         <div className="my-20">
@@ -187,11 +189,11 @@ function MyAdvert() {
               size="small"
               startIcon={<DeleteIcon />}
               sx={{
-                letterSpacing: "1px",
-                fontWeight: "bold",
-                fontSize: "10px",
-                background: "#b78d20",
-                ":hover": { backgroundColor: "#a67c10" },
+                letterSpacing: '1px',
+                fontWeight: 'bold',
+                fontSize: '10px',
+                background: '#b78d20',
+                ':hover': { backgroundColor: '#a67c10' },
               }}
             >
               Delete advert
@@ -202,11 +204,11 @@ function MyAdvert() {
               size="small"
               startIcon={<EditIcon />}
               sx={{
-                letterSpacing: "1px",
-                fontWeight: "bold",
-                fontSize: "10px",
-                background: "#b78d20",
-                ":hover": { backgroundColor: "#a67c10" },
+                letterSpacing: '1px',
+                fontWeight: 'bold',
+                fontSize: '10px',
+                background: '#b78d20',
+                ':hover': { backgroundColor: '#a67c10' },
               }}
             >
               Edit advert

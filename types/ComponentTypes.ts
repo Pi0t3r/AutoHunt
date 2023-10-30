@@ -1,8 +1,8 @@
-import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
-import { IconButtonProps } from "@mui/material/IconButton";
-import { ReactNode } from "react";
+import { ReactJSXElement } from '@emotion/react/types/jsx-namespace';
+import { IconButtonProps } from '@mui/material/IconButton';
+import { ReactNode, JSX } from 'react';
 
-export type ActiveButton = "login" | "signup";
+export type ActiveButton = 'login' | 'signup';
 
 export type FiltersProps = {
   setAdvertData: (data: any[]) => void;

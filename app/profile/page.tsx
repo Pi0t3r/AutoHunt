@@ -1,13 +1,14 @@
-"use client";
-import ProfileImage from "@/components/profileImage/Page";
-import { db, storage } from "@/firebase";
-import useUserData from "@/useUserData";
-import Button from "@mui/material/Button";
-import { doc, updateDoc } from "firebase/firestore";
-import { getDownloadURL, ref, uploadBytesResumable } from "firebase/storage";
-import Link from "next/link";
-import { useEffect, useState, ChangeEvent } from "react";
-import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+'use client';
+import ProfileImage from '@/components/profileImage/Page';
+import { db, storage } from '@/firebase';
+import useUserData from '@/useUserData';
+import Button from '@mui/material/Button';
+import { doc, updateDoc } from 'firebase/firestore';
+import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
+import Link from 'next/link';
+import { useEffect, useState, ChangeEvent } from 'react';
+import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai';
+import { EMPTY_VALUE } from '@/constants';
 export default function Profile() {
   const { userData } = useUserData();
   const { userMail, userName, userPassword, userSurname } = userData;
@@ -18,7 +19,6 @@ export default function Profile() {
 
   const [imageFile, setImageFile] = useState<File | null>(null);
   const [wantChangeImage, setWantImage] = useState(false);
-
   useEffect(() => {
     if (userData.userProfilePicture) {
       setProfileImage(userData.userProfilePicture);
@@ -26,9 +26,9 @@ export default function Profile() {
   }, [userData.userProfilePicture]);
 
   const handleSelectedFile = (event: ChangeEvent<HTMLInputElement>) => {
-    if (event.target.files && event.target.files[0]) {
-      setImageFile(event.target.files[0]);
-      const imageUrl = URL.createObjectURL(event.target.files[0]);
+    if (event.target.files && event.target.files[EMPTY_VALUE]) {
+      setImageFile(event.target.files[EMPTY_VALUE]);
+      const imageUrl = URL.createObjectURL(event.target.files[EMPTY_VALUE]);
       setProfileImage(imageUrl);
     }
   };
@@ -43,7 +43,7 @@ export default function Profile() {
         const imageUrl = await getDownloadURL(storageRef);
         setProfileImage(imageUrl);
 
-        const userDocRef = doc(db, "users", userMail);
+        const userDocRef = doc(db, 'users', userMail);
         const userDataToUpdate = {
           profileImage: imageUrl,
         };
@@ -52,7 +52,7 @@ export default function Profile() {
         console.error(`Error while sending file: ${err}`);
       }
     } else {
-      console.error("File not found");
+      console.error('File not found');
     }
     setWantImage(false);
   };
@@ -69,19 +69,19 @@ export default function Profile() {
       </section>
       <section className="flex flex-row flex-wrap gap-4 items-center justify-center p-4">
         <span>
-          Hello,{" "}
+          Hello,{' '}
           <span className="text-main font-bold">
             {userName} {userSurname}
           </span>
         </span>
         <span>
-          Your email: <span className="text-main font-bold">{userMail}</span>{" "}
+          Your email: <span className="text-main font-bold">{userMail}</span>{' '}
         </span>
         <span>
-          Your password:{" "}
+          Your password:{' '}
           <span className="font-bold text-main">
-            {visiblePassword ? userPassword : "•••••••"}
-          </span>{" "}
+            {visiblePassword ? userPassword : '•••••••'}
+          </span>{' '}
           <button onClick={handleVisiblePassword}>
             {visiblePassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
           </button>
@@ -92,8 +92,8 @@ export default function Profile() {
           <Button
             variant="contained"
             sx={{
-              background: "#b78d20",
-              ":hover": { backgroundColor: "#a67c10" },
+              background: '#b78d20',
+              ':hover': { backgroundColor: '#a67c10' },
             }}
           >
             Change my password
@@ -103,8 +103,8 @@ export default function Profile() {
           <Button
             variant="contained"
             sx={{
-              background: "#b78d20",
-              ":hover": { backgroundColor: "#a67c10" },
+              background: '#b78d20',
+              ':hover': { backgroundColor: '#a67c10' },
             }}
           >
             I want delete my account
@@ -120,9 +120,9 @@ export default function Profile() {
             <Button
               variant="contained"
               sx={{
-                color: "#b78d20",
-                background: "none",
-                ":hover": { backgroundColor: "#a67c10", color: "white" },
+                color: '#b78d20',
+                background: 'none',
+                ':hover': { backgroundColor: '#a67c10', color: 'white' },
               }}
               onClick={handleUploadFile}
             >
@@ -134,8 +134,8 @@ export default function Profile() {
             onClick={handleChangeImage}
             variant="contained"
             sx={{
-              background: "#b78d20",
-              ":hover": { backgroundColor: "#a67c10" },
+              background: '#b78d20',
+              ':hover': { backgroundColor: '#a67c10' },
             }}
           >
             I want change my Image
@@ -146,7 +146,7 @@ export default function Profile() {
   );
 }
 function getUploadTaskSnapshot(
-  uploadTask: Promise<import("@firebase/storage").UploadResult>
+  uploadTask: Promise<import('@firebase/storage').UploadResult>,
 ) {
-  throw new Error("Function not implemented.");
+  throw new Error('Function not implemented.');
 }

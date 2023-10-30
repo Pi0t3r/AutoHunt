@@ -1,14 +1,14 @@
-import { useUserContext } from "@/context/UserContext";
-import { auth } from "@/firebase";
-import { IconProps } from "@/types/ComponentTypes";
-import useUserData from "@/useUserData";
-import AddBoxIcon from "@mui/icons-material/AddBox";
-import Button from "@mui/material/Button";
-import Link from "next/link";
-import { AiOutlineUser } from "react-icons/ai";
-import { BiExit } from "react-icons/bi";
-import { MdOutlineLocalOffer } from "react-icons/md";
-import ProfileImage from "../profileImage/Page";
+import { useUserContext } from '@/context/UserContext';
+import { auth } from '@/firebase';
+import { IconProps } from '@/types/ComponentTypes';
+import useUserData from '@/useUserData';
+import AddBoxIcon from '@mui/icons-material/AddBox';
+import Button from '@mui/material/Button';
+import Link from 'next/link';
+import { AiOutlineUser } from 'react-icons/ai';
+import { BiExit } from 'react-icons/bi';
+import { MdOutlineLocalOffer } from 'react-icons/md';
+import ProfileImage from '../profileImage/Page';
 const SidebarLinks = ({ linkTo, icon, title }: IconProps) => {
   return (
     <li className="my-5">
@@ -17,10 +17,10 @@ const SidebarLinks = ({ linkTo, icon, title }: IconProps) => {
           variant="outlined"
           startIcon={icon}
           sx={{
-            ":hover": {
-              scale: "1.1",
+            ':hover': {
+              scale: '1.1',
             },
-            transition: "scale .3s",
+            transition: 'scale .3s',
           }}
         >
           {title}
@@ -38,7 +38,7 @@ const Sidebar = () => {
     try {
       await auth.signOut();
       setUser(null);
-      localStorage.removeItem("user");
+      localStorage.removeItem('user');
     } catch (error) {
       console.error(error);
     }
@@ -77,10 +77,10 @@ const Sidebar = () => {
             variant="outlined"
             startIcon={<BiExit />}
             sx={{
-              ":hover": {
-                scale: "1.1",
+              ':hover': {
+                scale: '1.1',
               },
-              transition: "scale .3s",
+              transition: 'scale .3s',
             }}
           >
             Logout

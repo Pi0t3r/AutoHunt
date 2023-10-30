@@ -1,5 +1,5 @@
-import { ImageUploadProps } from "@/types/ImageTypes";
-import { ChangeEvent } from "react";
+import { ImageUploadProps } from '@/types/ImageTypes';
+import { ChangeEvent } from 'react';
 const ImageUpload = ({ onImageSelect }: ImageUploadProps) => {
   const handleImageSelect = (e: ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;

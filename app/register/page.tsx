@@ -1,11 +1,11 @@
-"use client";
-import LoginForm from "@/components/loginForm/LoginForm";
-import RegisterForm from "@/components/registerForm/RegisterForm";
-import { ActiveButton } from "@/types/ComponentTypes";
-import { useEffect, useState } from "react";
+'use client';
+import LoginForm from '@/components/loginForm/LoginForm';
+import RegisterForm from '@/components/registerForm/RegisterForm';
+import { ActiveButton } from '@/types/ComponentTypes';
+import { useEffect, useState } from 'react';
 
 export default function Register() {
-  const [activeButton, setActiveButton] = useState<ActiveButton>("login");
+  const [activeButton, setActiveButton] = useState<ActiveButton>('login');
   useEffect(() => {}, [activeButton]);
   const handleButtonClick = (button: ActiveButton) => {
     setActiveButton(button);
@@ -21,27 +21,27 @@ export default function Register() {
         <div className="flex flex-row justify-between w-full my-10">
           <button
             className={`${
-              activeButton === "login"
-                ? "text-main border-solid border-2 border-b-main"
-                : "text-[#a3a3a3]"
+              activeButton === 'login'
+                ? 'text-main border-solid border-2 border-b-main'
+                : 'text-[#a3a3a3]'
             } uppercase w-2/5 text-2xl text-left font-medium hover:scale-110 transition`}
-            onClick={() => handleButtonClick("login")}
+            onClick={() => handleButtonClick('login')}
           >
             Log in
           </button>
           <button
             className={`${
-              activeButton === "signup"
-                ? "text-main border-solid border-2 border-b-main"
-                : "text-[#a3a3a3]"
+              activeButton === 'signup'
+                ? 'text-main border-solid border-2 border-b-main'
+                : 'text-[#a3a3a3]'
             } text-2xl uppercase w-2/5 text-left font-medium  hover:scale-110 transition`}
-            onClick={() => handleButtonClick("signup")}
+            onClick={() => handleButtonClick('signup')}
           >
             Sign up
           </button>
         </div>
-        {activeButton === "login" && <LoginForm />}
-        {activeButton === "signup" && <RegisterForm />}
+        {activeButton === 'login' && <LoginForm />}
+        {activeButton === 'signup' && <RegisterForm />}
       </section>
     </main>
   );

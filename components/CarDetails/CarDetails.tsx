@@ -1,5 +1,5 @@
-import { carDataProps } from "@/types/CarTypes";
-import { InfoProps } from "@/types/ComponentTypes";
+import { carDataProps } from '@/types/CarTypes';
+import { InfoProps } from '@/types/ComponentTypes';
 const Info = ({ title, value }: InfoProps) => {
   return (
     <li className="text-main font-medium p-4 border-2 m-2 rounded-md shadow-lg bg-slate-50">
@@ -12,7 +12,7 @@ const CarDetails = ({ data }: carDataProps) => {
   return (
     <>
       <p className="text-center font-medium italic">
-        {data.brand} • {data.model} • {data.generation} • {data.version} •{" "}
+        {data.brand} • {data.model} • {data.generation} • {data.version} •{' '}
         {data.engine}
       </p>
       <ul className="flex flex-row flex-wrap">

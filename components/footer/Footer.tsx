@@ -1,14 +1,15 @@
-import { ReactNode } from "react";
-import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from "react-icons/bs";
+import { ReactNode } from 'react';
+import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from 'react-icons/bs';
+import { ONE_VALUE } from '@/constants';
 const footerLinks = [
   {
-    value: "Privacy Policy",
+    value: 'Privacy Policy',
   },
   {
-    value: "Terms & Conditions",
+    value: 'Terms & Conditions',
   },
   {
-    value: "Feedback",
+    value: 'Feedback',
   },
 ];
 const socialMedia = [
@@ -34,10 +35,10 @@ const helpService = [
     ),
   },
   {
-    value: "help@autohunt.com",
+    value: 'help@autohunt.com',
   },
   {
-    value: "Mon - Fri, 08:00 - 17:00",
+    value: 'Mon - Fri, 08:00 - 17:00',
   },
 ];
 const List = ({
@@ -74,7 +75,7 @@ export default function Footer() {
           <li key={index}>
             <span>
               {value}
-              {index < footerLinks.length - 1 && " | "}
+              {index < footerLinks.length - ONE_VALUE && ' | '}
             </span>
           </li>
         ))}

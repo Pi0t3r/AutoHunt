@@ -1,12 +1,12 @@
-"use client";
-import { db } from "@/firebase";
-import { LabelInput } from "@/types/InputTypes";
-import useUserData from "@/useUserData";
-import { EmailAuthProvider, getAuth, updatePassword } from "@firebase/auth";
-import SaveIcon from "@mui/icons-material/Save";
-import Button from "@mui/material/Button";
-import { collection, doc, updateDoc } from "firebase/firestore";
-import { FormEvent, useEffect, useState } from "react";
+'use client';
+import { db } from '@/firebase';
+import { LabelInput } from '@/types/InputTypes';
+import useUserData from '@/useUserData';
+import { EmailAuthProvider, getAuth, updatePassword } from '@firebase/auth';
+import SaveIcon from '@mui/icons-material/Save';
+import Button from '@mui/material/Button';
+import { collection, doc, updateDoc } from 'firebase/firestore';
+import { FormEvent, useEffect, useState } from 'react';
 const LabelInput = ({ value, onChange, placeholder }: LabelInput) => {
   return (
     <label>
@@ -23,10 +23,10 @@ const LabelInput = ({ value, onChange, placeholder }: LabelInput) => {
 };
 
 export default function ResetPassword() {
-  const [newPassword, setNewPassword] = useState("");
-  const [currentPassword, setCurrentPassword] = useState("");
-  const [confirmNewPassword, setConfirmNewPassword] = useState("");
-  const [mess, setMess] = useState("");
+  const [newPassword, setNewPassword] = useState('');
+  const [currentPassword, setCurrentPassword] = useState('');
+  const [confirmNewPassword, setConfirmNewPassword] = useState('');
+  const [mess, setMess] = useState('');
 
   const { userData } = useUserData();
   const { userPassword, userId } = userData;
@@ -35,52 +35,49 @@ export default function ResetPassword() {
 
   const handleChangePassword = async () => {
     if (currentPassword !== userPassword) {
-      setMess("Current password is incorrect");
+      setMess('Current password is incorrect');
       return;
-    } else {
-      setMess("");
     }
 
     if (newPassword !== confirmNewPassword) {
-      setMess("New passwords do not match");
-      return;
+      setMess('New passwords do not match');
     } else {
-      setMess("Your password is updated!");
+      setMess('Your password is updated!');
     }
 
     try {
       const user = auth.currentUser;
       if (!user) {
-        setMess("User not logged in");
+        setMess('User not logged in');
         return;
       }
       const userEmail = user.email;
       if (userEmail) {
         const credential = EmailAuthProvider.credential(
           userEmail,
-          currentPassword
+          currentPassword,
         );
         await updatePassword(user, newPassword);
 
-        const userCollectionRef = collection(db, "users");
+        const userCollectionRef = collection(db, 'users');
         const userDocRef = doc(userCollectionRef, userId);
         await updateDoc(userDocRef, {
           password: newPassword,
         });
       } else {
-        setMess("User email is not available");
+        setMess('User email is not available');
       }
     } catch (err) {
-      console.error("Password change error: ", err);
-      setMess("Error updating password");
+      console.error('Password change error: ', err);
+      setMess('Error updating password');
     }
   };
 
   useEffect(() => {
-    if (mess === "") {
-      setNewPassword("");
-      setConfirmNewPassword("");
-      setCurrentPassword("");
+    if (mess === '') {
+      setNewPassword('');
+      setConfirmNewPassword('');
+      setCurrentPassword('');
     }
   }, [mess]);
 
@@ -122,8 +119,8 @@ export default function ResetPassword() {
             variant="contained"
             size="small"
             sx={{
-              background: "#b78d20",
-              ":hover": { backgroundColor: "#a67c10" },
+              background: '#b78d20',
+              ':hover': { backgroundColor: '#a67c10' },
             }}
           >
             Change my password

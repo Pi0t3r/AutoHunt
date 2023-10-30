@@ -1,6 +1,6 @@
-import { CustomSelectProps } from "@/types/SelectTypes";
-import { drive, gearbox } from "../../data/cars";
-import { SelectUI } from "../select/SelectUI";
+import { CustomSelectProps } from '@/types/SelectTypes';
+import { drive, gearbox } from '../../data/cars';
+import { SelectUI } from '../select/SelectUI';
 
 export const CustomSelect = ({
   onChangeDrive,

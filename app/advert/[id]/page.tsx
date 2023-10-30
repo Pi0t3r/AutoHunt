@@ -1,14 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
-import { fetchAdverts } from "@/api/getAdvertDetails";
-import Banner from "@/components/banner/Banner";
-import CarDetails from "@/components/carDetails/CarDetails";
-import ReportForm from "@/components/reportForm/ReportForm";
-import SellerDetails from "@/components/sellerDetails/SellerDetails";
-import { Button } from "@mui/material";
-import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
-
+'use client';
+import { fetchAdverts } from '@/api/getAdvertDetails';
+import Banner from '@/components/banner/Banner';
+import CarDetails from '@/components/carDetails/CarDetails';
+import ReportForm from '@/components/reportForm/ReportForm';
+import SellerDetails from '@/components/sellerDetails/SellerDetails';
+import { Button } from '@mui/material';
+import { useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { EMPTY_VALUE } from '@/constants';
 
 function Advert() {
   const [reportVisible, setReportVisible] = useState(false);
@@ -25,8 +25,7 @@ function Advert() {
     };
     fetchOffers();
   }, []);
-
-  if (advertData.length === 0) {
+  if (advertData.length === EMPTY_VALUE) {
     return <p>Loading ...</p>;
   }
   const showData = advertData.find((car) => car.id === params.id);
@@ -48,15 +47,15 @@ function Advert() {
             variant="contained"
             onClick={handleReportClick}
             sx={{
-              letterSpacing: "1px",
-              fontWeight: "bold",
-              fontSize: "10px",
-              background: "#b78d20",
+              letterSpacing: '1px',
+              fontWeight: 'bold',
+              fontSize: '10px',
+              background: '#b78d20',
               marginLeft: 2,
-              transition: "scale .5s",
-              ":hover": {
-                backgroundColor: "#a67c10",
-                scale: "1.1",
+              transition: 'scale .5s',
+              ':hover': {
+                backgroundColor: '#a67c10',
+                scale: '1.1',
               },
             }}
           >

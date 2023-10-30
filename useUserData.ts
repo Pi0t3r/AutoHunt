@@ -1,4 +1,4 @@
-import { db } from "@/firebase";
+import { db } from '@/firebase';
 import {
   collection,
   doc,
@@ -6,20 +6,21 @@ import {
   query,
   where,
   updateDoc,
-} from "firebase/firestore";
-import { useEffect, useState } from "react";
-import { useUserContext } from "./context/UserContext";
+} from 'firebase/firestore';
+import { useEffect, useState } from 'react';
+import { useUserContext } from './context/UserContext';
+import { EMPTY_VALUE } from './constants';
 
 const useUserData = () => {
   const { user, setUser } = useUserContext();
 
   const [userData, setUserData] = useState({
-    userName: "",
-    userSurname: "",
-    userMail: "",
-    userPassword: "",
-    userProfilePicture: "",
-    userId: "",
+    userName: '',
+    userSurname: '',
+    userMail: '',
+    userPassword: '',
+    userProfilePicture: '',
+    userId: '',
   });
 
   const updateProfilePicture = (newProfilePicture: string | null) => {
@@ -29,16 +30,14 @@ const useUserData = () => {
         profileImage: newProfilePicture,
       });
       if (user.email && newProfilePicture !== null) {
-        const userDocRef = doc(db, "users", user.email);
+        const userDocRef = doc(db, 'users', user.email);
 
         const userDataToUpdate = {
           profileImage: newProfilePicture,
         };
 
         updateDoc(userDocRef, userDataToUpdate)
-          .then(() => {
-            console.log("Profile picture updated");
-          })
+          .then(() => {})
           .catch((err) => {
             console.error(`Error updating profile picture: ${err}`);
           });
@@ -49,13 +48,13 @@ const useUserData = () => {
   const getUserData = async () => {
     try {
       if (user && user.email) {
-        const userCollectionRef = collection(db, "users");
+        const userCollectionRef = collection(db, 'users');
 
-        const q = query(userCollectionRef, where("email", "==", user.email));
+        const q = query(userCollectionRef, where('email', '==', user.email));
 
         const usersSnapshot = await getDocs(q);
         if (!usersSnapshot.empty) {
-          const userData = usersSnapshot.docs[0].data();
+          const userData = usersSnapshot.docs[EMPTY_VALUE].data();
 
           setUserData({
             userName: userData.name,
@@ -63,7 +62,7 @@ const useUserData = () => {
             userMail: userData.email,
             userPassword: userData.password,
             userProfilePicture: userData.userProfilePicture,
-            userId: usersSnapshot.docs[0].id,
+            userId: usersSnapshot.docs[EMPTY_VALUE].id,
           });
         }
       }
@@ -74,7 +73,7 @@ const useUserData = () => {
 
   useEffect(() => {
     if (!user) {
-      const storedUser = localStorage.getItem("user");
+      const storedUser = localStorage.getItem('user');
       if (storedUser) {
         setUser(JSON.parse(storedUser));
       }

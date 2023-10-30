@@ -1,7 +1,7 @@
-import { SellerDataProps } from "@/types/SellerTypes";
-import { InfoProps } from "@/types/ComponentTypes";
-import { FaMapPin } from "react-icons/fa";
-import { AiOutlineUser, AiOutlinePhone } from "react-icons/ai";
+import { SellerDataProps } from '@/types/SellerTypes';
+import { InfoProps } from '@/types/ComponentTypes';
+import { FaMapPin } from 'react-icons/fa';
+import { AiOutlineUser, AiOutlinePhone } from 'react-icons/ai';
 
 const Info = ({ title, value }: InfoProps) => {
   return (
@@ -19,7 +19,7 @@ const SellerDetails = ({ data }: SellerDataProps) => {
         <Info title={<AiOutlineUser />} value={data.sellerName} />
         <Info title={<FaMapPin />} value={data.sellerPlace} />
         <li className="flex items-center bg-gray-100 border-2 m-2 p-4 rounded-md shadow-lg text-main font-medium">
-          <AiOutlinePhone />{" "}
+          <AiOutlinePhone />{' '}
           <span className="text-black font-normal ml-4">
             <a href={`tel: ${data.phone} `}>{data.phone}</a>
           </span>

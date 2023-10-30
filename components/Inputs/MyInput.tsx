@@ -1,4 +1,4 @@
-import { MyInputProps } from "@/types/InputTypes";
+import { MyInputProps } from '@/types/InputTypes';
 
 export const MyInput = ({
   value,
@@ -8,8 +8,8 @@ export const MyInput = ({
 }: MyInputProps) => {
   const today = new Date();
   const dateTime = today
-    .toLocaleDateString("en-CA")
-    .replace(/(\d{2})\.(\d{2})\.(\d{4})/, "$3-$2-$1");
+    .toLocaleDateString('en-CA')
+    .replace(/(\d{2})\.(\d{2})\.(\d{4})/, '$3-$2-$1');
   return (
     <label>
       {placeholder}

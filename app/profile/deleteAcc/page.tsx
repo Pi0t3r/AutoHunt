@@ -1,9 +1,9 @@
-"use client";
-import { useUserContext } from "@/context/UserContext";
-import { auth, db } from "@/firebase";
-import Button from "@mui/material/Button";
-import { deleteDoc, doc } from "firebase/firestore";
-import Link from "next/link";
+'use client';
+import { useUserContext } from '@/context/UserContext';
+import { auth, db } from '@/firebase';
+import Button from '@mui/material/Button';
+import { deleteDoc, doc } from 'firebase/firestore';
+import Link from 'next/link';
 
 export default function DeleteAcc() {
   const { setUser } = useUserContext();
@@ -12,37 +12,37 @@ export default function DeleteAcc() {
 
     try {
       const userId = user?.uid;
-      await deleteDoc(doc(db, "users", userId as string));
+      await deleteDoc(doc(db, 'users', userId as string));
       await user?.delete();
       await auth.signOut();
       setUser(null);
-      window.location.href = "/";
+      window.location.href = '/';
     } catch (err) {
-      console.error("Error with deleting user: ", err);
+      console.error('Error with deleting user: ', err);
     }
   }
   return (
-    <main className="mt-20">
-      <div className="text-center flex flex-col gap-2">
+    <main className='mt-20'>
+      <div className='text-center flex flex-col gap-2'>
         <h2>Are you sure?</h2>
         <Button
           onClick={handleDeleteUser}
-          variant="contained"
+          variant='contained'
           sx={{
-            background: "#b78d20",
-            textTransform: "lowercase",
-            ":hover": { backgroundColor: "#a67c10" },
+            background: '#b78d20',
+            textTransform: 'lowercase',
+            ':hover': { backgroundColor: '#a67c10' },
           }}
         >
           Yes, delele my account
         </Button>
-        <Link href="/profile">
+        <Link href='/profile'>
           <Button
-            variant="contained"
+            variant='contained'
             sx={{
-              textTransform: "lowercase",
-              ":hover": { backgroundColor: "#a67c10" },
-              background: "#b78d20",
+              textTransform: 'lowercase',
+              ':hover': { backgroundColor: '#a67c10' },
+              background: '#b78d20',
             }}
           >
             No, not now

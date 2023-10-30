@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Button } from "@mui/material";
-import Link from "next/link";
+import { Button } from '@mui/material';
+import Link from 'next/link';
 export default function Forgot() {
   return (
     <main className="mt-20">
@@ -10,11 +10,11 @@ export default function Forgot() {
             <Button
               variant="outlined"
               sx={{
-                borderColor: "#b78d20",
-                color: "#b78d20",
-                textTransform: "lowercase",
+                borderColor: '#b78d20',
+                color: '#b78d20',
+                textTransform: 'lowercase',
 
-                ":hover": { borderColor: "#a67c10", color: "#b78d20" },
+                ':hover': { borderColor: '#a67c10', color: '#b78d20' },
               }}
             >
               Back
@@ -35,7 +35,7 @@ export default function Forgot() {
           <label className="font-bold flex flex-col w-60">
             E-mail
             <input
-              type="text"
+              type="email"
               id="email"
               placeholder="example@email.com"
               className="p-2 rounded-md w-full mt-2 bg-[#a3a3a33e]"
@@ -45,13 +45,13 @@ export default function Forgot() {
             type="submit"
             variant="contained"
             sx={{
-              backgroundColor: "#b78d20",
-              transition: "scale .5s",
-              margin: "auto",
-              width: "fit-content",
-              ":hover": {
-                scale: "1.1",
-                backgroundColor: "#b78d20",
+              backgroundColor: '#b78d20',
+              transition: 'scale .5s',
+              margin: 'auto',
+              width: 'fit-content',
+              ':hover': {
+                scale: '1.1',
+                backgroundColor: '#b78d20',
               },
             }}
           >

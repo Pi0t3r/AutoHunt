@@ -1,13 +1,14 @@
-import { useUserContext } from "@/context/UserContext";
-import { auth } from "@/firebase";
-import useUserData from "@/useUserData";
-import { Button } from "@mui/material";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { AiOutlineClose } from "react-icons/ai";
-import { FiMenu } from "react-icons/fi";
-import Sidebar from "../sidebar/Page";
-import { LinksProps } from "@/types/ComponentTypes";
+'use client';
+import { useUserContext } from '@/context/UserContext';
+import { auth } from '@/firebase';
+import { LinksProps } from '@/types/ComponentTypes';
+import useUserData from '@/useUserData';
+import { Button } from '@mui/material';
+import Link from 'next/link';
+import { useState } from 'react';
+import { AiOutlineClose } from 'react-icons/ai';
+import { FiMenu } from 'react-icons/fi';
+import Sidebar from '../sidebar/Page';
 const Buttons = ({ title, linkTo }: LinksProps) => {
   return (
     <li className="hover:scale-110 transition-all hover:mx-2">
@@ -15,12 +16,12 @@ const Buttons = ({ title, linkTo }: LinksProps) => {
         variant="outlined"
         size="small"
         sx={{
-          letterSpacing: "1px",
-          fontWeight: "bold",
-          fontSize: "10px",
-          borderColor: "#b78d20",
-          color: "#b78d20",
-          ":hover": { borderColor: "#a67c10" },
+          letterSpacing: '1px',
+          fontWeight: 'bold',
+          fontSize: '10px',
+          borderColor: '#b78d20',
+          color: '#b78d20',
+          ':hover': { borderColor: '#a67c10' },
         }}
       >
         <Link href={linkTo}>{title}</Link>
@@ -34,13 +35,12 @@ const LoggedInNabar = () => {
   const { userName, userSurname } = userData;
   const { setUser } = useUserContext();
   const [visible, setVisible] = useState(false);
-  const [scroll, setScroll] = useState(0);
 
   const handleLogout = async () => {
     try {
       await auth.signOut();
       setUser(null);
-      localStorage.removeItem("user");
+      localStorage.removeItem('user');
     } catch (error) {
       console.error(error);
     }
@@ -49,23 +49,8 @@ const LoggedInNabar = () => {
     setVisible(!visible);
   };
 
-  const navbarStyles = {
-    background: scroll >= 50 ? "#515151f0" : "transparent",
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", () => {
-      setScroll(window.scrollY);
-    });
-
-    return () => {
-      window.removeEventListener("scroll", () => {
-        setScroll(window.scrollY);
-      });
-    };
-  }, []);
-
   return (
-    <header className="fixed bg-[#515151f0] inset-x-0 top-0 flex justify-between p-5 z-[52] items-center max-w-7xl mx-auto transition-all">
+    <div className="fixed bg-[#515151f0] inset-x-0 top-0 flex justify-between p-5 z-[52] items-center max-w-7xl mx-auto transition-all">
       <button
         onClick={toggleSidebar}
         className="bg-none border-none md:hidden z-[100]"
@@ -79,7 +64,7 @@ const LoggedInNabar = () => {
       <p className="hidden md:block text-white">
         Hello,
         <span className="text-main font-medium italic">
-          {" "}
+          {' '}
           {userName} {userSurname}
         </span>
       </p>
@@ -95,11 +80,11 @@ const LoggedInNabar = () => {
               variant="text"
               size="small"
               sx={{
-                letterSpacing: "1px",
-                fontWeight: "bold",
-                fontSize: "10px",
-                color: "white",
-                textDecoration: "underline",
+                letterSpacing: '1px',
+                fontWeight: 'bold',
+                fontSize: '10px',
+                color: 'white',
+                textDecoration: 'underline',
               }}
             >
               Logout
@@ -110,8 +95,8 @@ const LoggedInNabar = () => {
       <div
         className="bg-white fixed inset-y-0 left-0"
         style={{
-          transform: visible ? "translateX(0)" : "translateX(-100%)",
-          transition: "transform 0.3s ease-in-out",
+          transform: visible ? 'translateX(0)' : 'translateX(-100%)',
+          transition: 'transform 0.3s ease-in-out',
         }}
       >
         <Sidebar />
@@ -123,7 +108,7 @@ const LoggedInNabar = () => {
           </h1>
         </Link>
       </>
-    </header>
+    </div>
   );
 };
 

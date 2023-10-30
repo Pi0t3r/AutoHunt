@@ -1,11 +1,11 @@
-"use client";
-import { fetchAdverts } from "@/api/getAdvertDetails";
-import useUserData from "@/useUserData";
-import { Button } from "@mui/material";
-import Image from "next/image";
-import Link from "next/link";
-import { useEffect, useState } from "react";
-
+'use client';
+import { fetchAdverts } from '@/api/getAdvertDetails';
+import useUserData from '@/useUserData';
+import { Button } from '@mui/material';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { EMPTY_VALUE } from '@/constants';
 export default function MyAdvert() {
   const [advertData, setAdvertData] = useState<any[]>([]);
 
@@ -18,29 +18,32 @@ export default function MyAdvert() {
         const adverts = await fetchAdverts();
         setAdvertData(adverts);
       } catch (error) {
-        console.error("Error fetching adverts: ", error);
+        console.error('Error fetching adverts: ', error);
       }
     };
     fetchOffers();
   }, []);
 
   const userAdverts = advertData.filter(
-    (advert) => advert.sellerContact === userMail
+    (advert) => advert.sellerContact === userMail,
   );
+
 
   return (
     <main className="mt-10">
       <header className="relative h-20 mt-0">
-        <h5 className="uppercase text-main font-medium absolute bottom-0 left-1/2 -translate-x-1/2">My Adverts</h5>
+        <h5 className="uppercase text-main font-medium absolute bottom-0 left-1/2 -translate-x-1/2">
+          My Adverts
+        </h5>
       </header>
       <section className="mt-20 flex flex-row flex-wrap justify-center">
         <ul className="flex flex-row flex-wrap gap-2 justify-center items-center">
           {userAdverts.map((post) => (
             <li key={post.id} className="block">
               <div className="m-2 bg-neutral-100">
-                {post.images && post.images.length > 0 && (
+                {post.images && post.images.length > EMPTY_VALUE && (
                   <Image
-                    src={post.images[0]}
+                    src={post.images[EMPTY_VALUE]}
                     width={500}
                     height={250}
                     alt="First image car"
@@ -52,13 +55,13 @@ export default function MyAdvert() {
                   </h5>
                   <div className="flex flex-col flex-wrap justify-between">
                     <p className="flex flex-row flex-wrap">
-                      {post.generation} • {post.yearbook} • {post.mileage} km •{" "}
+                      {post.generation} • {post.yearbook} • {post.mileage} km •{' '}
                       {post.fuel}
                     </p>
                     <p className="text-main inherit">
                       {post.price
                         .toString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, " ")}
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ' ')}
                       <span className="ml-2 text-black">PLN</span>
                     </p>
                   </div>
@@ -68,14 +71,14 @@ export default function MyAdvert() {
                         variant="contained"
                         size="small"
                         sx={{
-                          letterSpacing: "1px",
-                          fontWeight: "bold",
-                          fontSize: "10px",
-                          transition: "scale .5s",
-                          background: "#b78d20",
-                          ":hover": {
-                            backgroundColor: "#a67c10",
-                            scale: "1.1",
+                          letterSpacing: '1px',
+                          fontWeight: 'bold',
+                          fontSize: '10px',
+                          transition: 'scale .5s',
+                          background: '#b78d20',
+                          ':hover': {
+                            backgroundColor: '#a67c10',
+                            scale: '1.1',
                           },
                         }}
                       >
@@ -83,7 +86,7 @@ export default function MyAdvert() {
                       </Button>
                     </Link>
                     <p className="text-xs text-slate-500">
-                      Advert added:{" "}
+                      Advert added:{' '}
                       <span className="font-bold">{post.createAdvert}</span>
                     </p>
                   </div>

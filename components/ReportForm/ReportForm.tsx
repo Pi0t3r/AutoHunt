@@ -1,7 +1,7 @@
-import { LabelProps } from "@/types/ComponentTypes";
-import { ReportFormProps } from "@/types/ReportTypes";
-import { useState, ChangeEvent } from "react";
-import { AiFillCloseCircle } from "react-icons/ai";
+import { LabelProps } from '@/types/ComponentTypes';
+import { ReportFormProps } from '@/types/ReportTypes';
+import { useState, ChangeEvent } from 'react';
+import { AiFillCloseCircle } from 'react-icons/ai';
 
 const Label = ({ title, value }: LabelProps) => {
   return (
@@ -13,7 +13,7 @@ const Label = ({ title, value }: LabelProps) => {
 };
 
 const ReportForm = ({ setReportVisible, reportVisible }: ReportFormProps) => {
-  const [comment, setComment] = useState("");
+  const [comment, setComment] = useState('');
 
   const handleSubmit = () => {
     setReportVisible(false);
@@ -27,8 +27,8 @@ const ReportForm = ({ setReportVisible, reportVisible }: ReportFormProps) => {
     <div
       className={`fixed w-3/4 h-fit shadow-lg max-w-md rounded-md z-10 bg-slate-200 top-1/2 left-1/2 -translate-y-1/2 transition-all  border-2 border-black duration-300 ease-in delay-150 ${
         reportVisible
-          ? "-translate-x-1/2 opacity-100"
-          : "-translate-x-[200%] opacity-0"
+          ? '-translate-x-1/2 opacity-100'
+          : '-translate-x-[200%] opacity-0'
       }`}
     >
       <div className="flex justify-between items-center p-2 h-fit">

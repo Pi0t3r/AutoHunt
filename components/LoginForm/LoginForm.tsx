@@ -1,17 +1,17 @@
-import { signInWithEmailAndPassword } from "@firebase/auth";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState, FormEvent } from "react";
-import { useUserContext } from "../../context/UserContext";
-import { auth } from "../../firebase";
-import { Button } from "@mui/material";
-import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
-import VisibilityIcon from "@mui/icons-material/Visibility";
+import { signInWithEmailAndPassword } from '@firebase/auth';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { useState, FormEvent } from 'react';
+import { useUserContext } from '../../context/UserContext';
+import { auth } from '../../firebase';
+import { Button } from '@mui/material';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import VisibilityIcon from '@mui/icons-material/Visibility';
 
 const LoginForm = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const [visiblePassword, setVisiblePassword] = useState(false);
   const { setUser } = useUserContext();
   const router = useRouter();
@@ -24,27 +24,27 @@ const LoginForm = () => {
 
       setUser({
         email: email,
-        name: "",
-        surname: "",
-        password: "",
-        profileImage: "",
+        name: '',
+        surname: '',
+        password: '',
+        profileImage: '',
       });
 
-      router.push("/");
+      router.push('/');
     } catch (error) {
       const errorCode = (error as any).code;
 
-      let errorMessage = "An error occurred during login.";
+      let errorMessage = 'An error occurred during login.';
 
       switch (errorCode) {
-        case "auth/user-not-found":
-          errorMessage = "User not found. Please check your email.";
+        case 'auth/user-not-found':
+          errorMessage = 'User not found. Please check your email.';
           break;
-        case "auth/wrong-password":
-          errorMessage = "Incorrect password. Please try again.";
+        case 'auth/wrong-password':
+          errorMessage = 'Incorrect password. Please try again.';
           break;
         default:
-          errorMessage = "An error occurred during login";
+          errorMessage = 'An error occurred during login';
       }
       setErrorMessage(errorMessage);
     }
@@ -68,9 +68,9 @@ const LoginForm = () => {
           placeholder="Email"
           required
           className={`p-2 rounded-md w-full mt-2 ${
-            errorMessage === "User not found. Please check your email."
-              ? "border-red-500 border-2 border-solid"
-              : ""
+            errorMessage === 'User not found. Please check your email.'
+              ? 'border-red-500 border-2 border-solid'
+              : ''
           }`}
         />
       </label>
@@ -78,15 +78,15 @@ const LoginForm = () => {
         Password
         <input
           name="password"
-          type={visiblePassword ? "text" : "password"}
+          type={visiblePassword ? 'text' : 'password'}
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="••••••••"
           required
           className={`p-2 rounded-md w-full mt-2 ${
-            errorMessage === "Incorrect password. Please try again."
-              ? "border-red-500 border-2 border-solid"
-              : ""
+            errorMessage === 'Incorrect password. Please try again.'
+              ? 'border-red-500 border-2 border-solid'
+              : ''
           }`}
         />
         <button
@@ -100,13 +100,13 @@ const LoginForm = () => {
       <Button
         variant="text"
         sx={{
-          letterSpacing: "1px",
-          fontWeight: "bold",
-          fontSize: "10px",
-          color: "#b78d20",
-          alignSelf: "center",
-          transition: "scale .5s",
-          ":hover": { scale: "1.1", background: "none" },
+          letterSpacing: '1px',
+          fontWeight: 'bold',
+          fontSize: '10px',
+          color: '#b78d20',
+          alignSelf: 'center',
+          transition: 'scale .5s',
+          ':hover': { scale: '1.1', background: 'none' },
         }}
       >
         <Link href="/register/forgot">
@@ -117,10 +117,10 @@ const LoginForm = () => {
         variant="contained"
         type="submit"
         sx={{
-          alignSelf: "center",
-          transition: "scale .5s",
-          backgroundColor: "#b78d20",
-          ":hover": { scale: "1.2", backgroundColor: "#b67c10" },
+          alignSelf: 'center',
+          transition: 'scale .5s',
+          backgroundColor: '#b78d20',
+          ':hover': { scale: '1.2', backgroundColor: '#b67c10' },
         }}
       >
         Log in

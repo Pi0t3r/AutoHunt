@@ -1,17 +1,17 @@
-import { db } from "@/firebase";
-import { FiltersProps } from "@/types/ComponentTypes";
-import { SelectOption } from "@/types/SelectTypes";
-import Button from "@mui/material/Button";
-import { collection, getDocs, query, where } from 'firebase/firestore'
-import { useEffect, useState } from "react";
-import { body, fuelOptions, options } from "../../data/cars";
-import { SelectUI } from "../select/SelectUI";
+import { db } from '@/firebase';
+import { FiltersProps } from '@/types/ComponentTypes';
+import { SelectOption } from '@/types/SelectTypes';
+import Button from '@mui/material/Button';
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
+import { body, fuelOptions, options } from '../../data/cars';
+import { SelectUI } from '../select/SelectUI';
 export default function Filters({ setAdvertData }: FiltersProps) {
   const [selectedBody, setSelectedBody] = useState<SelectOption | undefined>(
-    undefined
+    undefined,
   );
   const [selectedFuel, setSelectedFuel] = useState<SelectOption | undefined>(
-    undefined
+    undefined,
   );
   const [selectedGeneration, setSelectedGeneration] = useState<
     SelectOption | undefined
@@ -20,44 +20,44 @@ export default function Filters({ setAdvertData }: FiltersProps) {
     SelectOption | undefined
   >(undefined);
   const [selectedBrand, setSelectedBrand] = useState<SelectOption | undefined>(
-    undefined
+    undefined,
   );
   const [selectedModel, setSelectedModel] = useState<SelectOption | undefined>(
-    undefined
+    undefined,
   );
   const [selectedEngine, setSelectedEngine] = useState<
     SelectOption | undefined
   >(undefined);
   useEffect(() => {
     const getCarAdvert = async () => {
-      const advertCollection = collection(db, "adverts");
+      const advertCollection = collection(db, 'adverts');
       let newQuery = query(advertCollection);
       if (selectedBrand) {
-        newQuery = query(newQuery, where("brand", "==", selectedBrand.value));
+        newQuery = query(newQuery, where('brand', '==', selectedBrand.value));
       }
       if (selectedModel) {
-        newQuery = query(newQuery, where("model", "==", selectedModel.value));
+        newQuery = query(newQuery, where('model', '==', selectedModel.value));
       }
       if (selectedGeneration) {
         newQuery = query(
           newQuery,
-          where("generation", "==", selectedGeneration.value)
+          where('generation', '==', selectedGeneration.value),
         );
       }
       if (selectedVersion) {
         newQuery = query(
           newQuery,
-          where("version", "==", selectedVersion.value)
+          where('version', '==', selectedVersion.value),
         );
       }
       if (selectedEngine) {
-        newQuery = query(newQuery, where("engine", "==", selectedEngine.value));
+        newQuery = query(newQuery, where('engine', '==', selectedEngine.value));
       }
       if (selectedBody) {
-        newQuery = query(newQuery, where("body", "==", selectedBody.value));
+        newQuery = query(newQuery, where('body', '==', selectedBody.value));
       }
       if (selectedFuel) {
-        newQuery = query(newQuery, where("fuel", "==", selectedFuel.value));
+        newQuery = query(newQuery, where('fuel', '==', selectedFuel.value));
       }
       const advertSnapshot = await getDocs(newQuery);
       const advert = advertSnapshot.docs.map((doc) => ({
@@ -82,7 +82,7 @@ export default function Filters({ setAdvertData }: FiltersProps) {
   const getModelOptions = (): SelectOption[] => {
     if (selectedBrand) {
       const brand: SelectOption | undefined = options.find(
-        (option) => option.value === selectedBrand.value
+        (option) => option.value === selectedBrand.value,
       );
       return brand ? brand.models || [] : [];
     }
@@ -92,7 +92,7 @@ export default function Filters({ setAdvertData }: FiltersProps) {
   const getGenerationOption = (): SelectOption[] => {
     if (selectedModel) {
       const model = getModelOptions().find(
-        (option) => option.value === selectedModel.value
+        (option) => option.value === selectedModel.value,
       );
       return model ? model.generations || [] : [];
     }
@@ -102,7 +102,7 @@ export default function Filters({ setAdvertData }: FiltersProps) {
   const getVersionOption = (): SelectOption[] => {
     if (selectedGeneration) {
       const generation = getGenerationOption().find(
-        (option) => option.value === selectedGeneration.value
+        (option) => option.value === selectedGeneration.value,
       );
       return generation ? generation.versions || [] : [];
     }
@@ -113,7 +113,7 @@ export default function Filters({ setAdvertData }: FiltersProps) {
   const getEngineOption = (): SelectOption[] => {
     if (selectedVersion) {
       const version = getVersionOption().find(
-        (option) => option.value === selectedVersion.value
+        (option) => option.value === selectedVersion.value,
       );
       return version ? version.engine || [] : [];
     }
@@ -209,17 +209,22 @@ export default function Filters({ setAdvertData }: FiltersProps) {
         isDisabled={selectedEngine?.value !== undefined}
       />
       <Button
-        onClick={clearFilter}
         variant="contained"
+        onClick={clearFilter}
         sx={{
-          letterSpacing: "1px",
-          fontWeight: "bold",
-          fontSize: "10px",
-          background: "#b78d20",
-          ":hover": { backgroundColor: "#a67c10" },
+          letterSpacing: '1px',
+          fontWeight: 'bold',
+          fontSize: '10px',
+          background: '#b78d20',
+          marginLeft: 2,
+          transition: 'scale .5s',
+          ':hover': {
+            backgroundColor: '#a67c10',
+            scale: '1.1',
+          },
         }}
       >
-        Clear filter
+        Report
       </Button>
     </div>
   );

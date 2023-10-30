@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
 export interface UserContextType {
   user: {
@@ -15,7 +15,7 @@ export interface UserContextType {
       surname: string;
       password: string;
       profileImage: string | null;
-    } | null
+    } | null,
   ) => void;
   updatePassword: (newPassword: string) => void;
   updateProfilePicture: (newImage: string) => void;
