@@ -1,12 +1,11 @@
+import { LabelInputExtends } from '@/types/InputTypes';
 import { createUserWithEmailAndPassword, getAuth } from '@firebase/auth';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import { Button } from '@mui/material';
 import { collection, doc, setDoc } from 'firebase/firestore';
 import { useState } from 'react';
-import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { db } from '../../firebase';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import { Button } from '@mui/material';
-import { LabelInputExtends } from '@/types/InputTypes';
 
 const LabelInput = ({
   title,
@@ -130,17 +129,7 @@ const RegisterForm = () => {
           Similar Technologies, which I have read.
         </p>
       </div>
-      {info && (
-        <div>
-          <div>
-            <button onClick={() => setInfo(false)}>
-              <AiOutlineCloseCircle />
-            </button>
-          </div>
 
-          <p>You have been registered! Now go to the Login tab and log in.</p>
-        </div>
-      )}
       <Button
         variant="outlined"
         type="submit"
@@ -161,6 +150,14 @@ const RegisterForm = () => {
       >
         Create account
       </Button>
+      {info && (
+        <div className="fixed top-1/2 left-1/2 bg-white -translate-x-1/2 -translate-y-1/2 border-solid border-main rounded-md border-2 p-4">
+          <p>You have been registered! Now go to the Login tab and log in.</p>
+          <Button variant="text" onClick={() => setInfo(false)}>
+            OK!
+          </Button>
+        </div>
+      )}
     </form>
   );
 };

@@ -114,13 +114,14 @@ const LoginForm = () => {
         </Link>
       </Button>
       <Button
-        variant="contained"
+        variant="outlined"
         type="submit"
         sx={{
           alignSelf: 'center',
           transition: 'scale .5s',
-          backgroundColor: '#b78d20',
-          ':hover': { scale: '1.2', backgroundColor: '#b67c10' },
+          borderColor: '#b78d20',
+          color: '#b78d20',
+          ':hover': { scale: '1.2', borderColor: '#b67c10' },
         }}
       >
         Log in
