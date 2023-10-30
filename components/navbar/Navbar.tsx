@@ -11,8 +11,8 @@ export default function Navbar() {
   }
 
   return (
-    <header className="fixed bg-[#515151f0] inset-x-0 top-0 flex justify-between p-5 z-[51] items-center max-w-7xl mx-auto">
-      <nav>
+    <header className="fixed bg-[#515151f0] inset-x-0 top-0 p-5 z-[51] items-center max-w-7xl mx-auto">
+      <nav className="flex justify-between">
         <div>
           <span className="text-white">
             <Link href="/register">

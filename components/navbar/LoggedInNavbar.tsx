@@ -1,4 +1,3 @@
-'use client';
 import { useUserContext } from '@/context/UserContext';
 import { auth } from '@/firebase';
 import { LinksProps } from '@/types/ComponentTypes';
@@ -9,28 +8,21 @@ import { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { FiMenu } from 'react-icons/fi';
 import Sidebar from '../sidebar/Page';
-const Buttons = ({ title, linkTo }: LinksProps) => {
-  return (
-    <li className="hover:scale-110 transition-all hover:mx-2">
-      <Link href={linkTo}>
-        <Button
-          variant="outlined"
-          size="small"
-          sx={{
-            letterSpacing: '1px',
-            fontWeight: 'bold',
-            fontSize: '10px',
-            borderColor: '#b78d20',
-            color: '#b78d20',
-            ':hover': { borderColor: '#a67c10' },
-          }}
-        >
-          {title}
-        </Button>
-      </Link>
-    </li>
-  );
-};
+
+const buttonLink = [
+  {
+    title: 'Add new advert',
+    link: '/create',
+  },
+  {
+    title: 'Profile',
+    link: '/profile',
+  },
+  {
+    title: 'My advert',
+    link: '/myAdvert',
+  },
+];
 
 const LoggedInNabar = () => {
   const { userData } = useUserData();
@@ -70,30 +62,34 @@ const LoggedInNabar = () => {
           {userName} {userSurname}
         </span>
       </p>
-
-      <nav className="hidden md:block text-white">
+      <nav className='hidden md:block'>
         <ul className="flex flex-row gap-x-3 items-center justify-center ml-6">
-          <Buttons title="Add new advert" linkTo="create" />
-          <Buttons title="Profile" linkTo="/profile" />
-          <Buttons title="My advert" linkTo="/profile/myAdvert" />
-          <li className="hover:scale-110 transition-all hover:mx-2">
-            <Button
-              onClick={handleLogout}
-              variant="text"
-              size="small"
-              sx={{
-                letterSpacing: '1px',
-                fontWeight: 'bold',
-                fontSize: '10px',
-                color: 'white',
-                textDecoration: 'underline',
-              }}
+          {buttonLink.map(({ title, link }, index) => (
+            <li
+              key={index}
+              className="hover:scale-110 transition-all hover:mx-2"
             >
-              Logout
-            </Button>
-          </li>
+              <Link href={link}>
+                <Button
+                  variant="outlined"
+                  size="small"
+                  sx={{
+                    letterSpacing: '1px',
+                    fontWeight: 'bold',
+                    fontSize: '10px',
+                    borderColor: '#b78d20',
+                    color: '#b78d20',
+                    ':hover': { borderColor: '#a67c10' },
+                  }}
+                >
+                  {title}
+                </Button>
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
+
       <div
         className="bg-white fixed inset-y-0 left-0"
         style={{
