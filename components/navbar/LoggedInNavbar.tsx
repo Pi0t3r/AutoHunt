@@ -1,32 +1,17 @@
 import { useUserContext } from '@/context/UserContext';
 import { auth } from '@/firebase';
-import { LinksProps } from '@/types/ComponentTypes';
 import useUserData from '@/useUserData';
-import { Button } from '@mui/material';
+
 import Link from 'next/link';
 import { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { FiMenu } from 'react-icons/fi';
 import Sidebar from '../sidebar/Page';
-
-const buttonLink = [
-  {
-    title: 'Add new advert',
-    link: '/create',
-  },
-  {
-    title: 'Profile',
-    link: '/profile',
-  },
-  {
-    title: 'My advert',
-    link: '/myAdvert',
-  },
-];
+import { Navigation } from './Navigation';
 
 const LoggedInNabar = () => {
   const { userData } = useUserData();
-  const { userName, userSurname } = userData;
+  const { userName } = userData;
   const { setUser } = useUserContext();
   const [visible, setVisible] = useState(false);
 
@@ -55,39 +40,12 @@ const LoggedInNabar = () => {
           <FiMenu className="w-8 h-8 text-main" />
         )}
       </button>
-      <p className="hidden md:block text-white">
+      <p className="hidden md:block text-white w-1/4">
         Hello,
-        <span className="text-main font-medium italic">
-          {' '}
-          {userName} {userSurname}
-        </span>
+        <span className="text-main font-medium italic"> {userName}</span>
       </p>
-      <nav className='hidden md:block'>
-        <ul className="flex flex-row gap-x-3 items-center justify-center ml-6">
-          {buttonLink.map(({ title, link }, index) => (
-            <li
-              key={index}
-              className="hover:scale-110 transition-all hover:mx-2"
-            >
-              <Link href={link}>
-                <Button
-                  variant="outlined"
-                  size="small"
-                  sx={{
-                    letterSpacing: '1px',
-                    fontWeight: 'bold',
-                    fontSize: '10px',
-                    borderColor: '#b78d20',
-                    color: '#b78d20',
-                    ':hover': { borderColor: '#a67c10' },
-                  }}
-                >
-                  {title}
-                </Button>
-              </Link>
-            </li>
-          ))}
-        </ul>
+      <nav className="hidden md:block w-3/4">
+        <Navigation gap="x" onClick={handleLogout} flex="row" color="white" />
       </nav>
 
       <div
@@ -99,13 +57,13 @@ const LoggedInNabar = () => {
       >
         <Sidebar />
       </div>
-      <>
+      <div className="ml-5">
         <Link href="/" className="text-white no-underline">
           <h1 className="uppercase font-medium text-lg">
             Auto<span className="text-main">hunt</span>
           </h1>
         </Link>
-      </>
+      </div>
     </header>
   );
 };

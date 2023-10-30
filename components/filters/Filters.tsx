@@ -6,6 +6,7 @@ import { collection, getDocs, query, where } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 import { body, fuelOptions, options } from '../../data/cars';
 import { SelectUI } from '../select/SelectUI';
+import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 export default function Filters({ setAdvertData }: FiltersProps) {
   const [selectedBody, setSelectedBody] = useState<SelectOption | undefined>(
     undefined,
@@ -208,7 +209,7 @@ export default function Filters({ setAdvertData }: FiltersProps) {
         filter="Fuel type"
         isDisabled={selectedEngine?.value !== undefined}
       />
-      <Button
+      {/* <Button
         variant="contained"
         onClick={clearFilter}
         sx={{
@@ -225,6 +226,26 @@ export default function Filters({ setAdvertData }: FiltersProps) {
         }}
       >
         Report
+      </Button> */}
+      <Button
+        variant="outlined"
+        onClick={clearFilter}
+        endIcon={<DeleteForeverIcon />}
+        sx={{
+          letterSpacing: '1px',
+          fontWeight: 'bold',
+          fontSize: '10px',
+          borderColor: '#b78d20',
+          color: '#b78d20',
+          marginLeft: 2,
+          transition: 'scale .5s',
+          ':hover': {
+            scale: '1.1',
+            borderColor: '#b78d20',
+          },
+        }}
+      >
+        Clear filter
       </Button>
     </div>
   );

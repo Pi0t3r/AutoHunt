@@ -85,14 +85,15 @@ export default function Offers() {
                 </div>
                 <div className="flex flex-row flex-wrap justify-between items-center mt-4">
                   <Button
-                    variant="contained"
+                    variant="outlined"
                     sx={{
                       letterSpacing: '1px',
                       fontWeight: 'bold',
                       fontSize: '10px',
-                      background: '#b78d20',
+                      color:'#b78d20',
+                      borderColor: '#b78d20',
                       transition: 'scale .5s',
-                      ':hover': { backgroundColor: '#a67c10', scale: '1.1' },
+                      ':hover': { borderColor: '#a67c10', scale: '1.1' },
                     }}
                   >
                     <Link href={`advert/${post.id}`}>Show more</Link>

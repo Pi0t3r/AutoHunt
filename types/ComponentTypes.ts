@@ -38,3 +38,10 @@ export interface LinksProps {
 export interface IconProps extends LinksProps {
   icon: JSX.Element;
 }
+
+export interface NavigationProps {
+  flex: string;
+  gap: string;
+  onClick: () => void;
+  color:string
+}
