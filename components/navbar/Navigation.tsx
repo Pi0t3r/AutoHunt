@@ -23,13 +23,13 @@ const buttonLink = [
   },
 ];
 
-export const Navigation = ({ flex, gap, onClick, color }: NavigationProps) => {
+export const Navigation = ({ flex, gap, onClick, color, margin,scale }: NavigationProps) => {
   return (
     <ul
       className={`flex flex-${flex} gap-${gap}-3 items-center justify-between w-full h-full `}
     >
       {buttonLink.map(({ title, link, icon }, index) => (
-        <li key={index} className="hover:scale-110 transition-all hover:mx-2">
+        <li key={index} className={`hover:${scale}-110 transition-all hover:${margin}-2`}>
           <Link href={link}>
             <Button
               variant="outlined"

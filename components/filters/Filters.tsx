@@ -209,24 +209,6 @@ export default function Filters({ setAdvertData }: FiltersProps) {
         filter="Fuel type"
         isDisabled={selectedEngine?.value !== undefined}
       />
-      {/* <Button
-        variant="contained"
-        onClick={clearFilter}
-        sx={{
-          letterSpacing: '1px',
-          fontWeight: 'bold',
-          fontSize: '10px',
-          background: '#b78d20',
-          marginLeft: 2,
-          transition: 'scale .5s',
-          ':hover': {
-            backgroundColor: '#a67c10',
-            scale: '1.1',
-          },
-        }}
-      >
-        Report
-      </Button> */}
       <Button
         variant="outlined"
         onClick={clearFilter}

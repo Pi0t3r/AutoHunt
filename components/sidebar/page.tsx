@@ -4,7 +4,6 @@ import useUserData from '@/useUserData';
 import ProfileImage from '../profileImage/Page';
 import { Navigation } from '../navbar/Navigation';
 
-
 const Sidebar = () => {
   const { userData } = useUserData();
   const { userName, userSurname, userMail } = userData;
@@ -30,8 +29,15 @@ const Sidebar = () => {
           </span>
         </p>
       </header>
-      <nav className='h-52 mt-10'>
-        <Navigation gap='y' onClick={handleLogout} flex='col' color='#b78d20'/>
+      <nav className="h-52 mt-10">
+        <Navigation
+        scale='scale-y'
+          gap="y"
+          onClick={handleLogout}
+          flex="col"
+          color="#b78d20"
+          margin="my"
+        />
       </nav>
     </aside>
   );

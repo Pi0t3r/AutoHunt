@@ -45,7 +45,7 @@ const LoggedInNabar = () => {
         <span className="text-main font-medium italic"> {userName}</span>
       </p>
       <nav className="hidden md:block w-3/4">
-        <Navigation gap="x" onClick={handleLogout} flex="row" color="white" />
+        <Navigation gap="x" onClick={handleLogout} flex="row" color="white" margin='mx' scale='scale-x' />
       </nav>
 
       <div
