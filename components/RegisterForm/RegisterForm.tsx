@@ -1,5 +1,5 @@
 import { createUserWithEmailAndPassword, getAuth } from "@firebase/auth";
-import { collection, doc, setDoc } from "firebase/firestore";
+import { collection, doc, setDoc } from 'firebase/firestore'
 import { useState } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { db } from "../../firebase";

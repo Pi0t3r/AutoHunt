@@ -9,7 +9,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import SaveIcon from "@mui/icons-material/Save";
 import { Button } from "@mui/material";
-import { collection, deleteDoc, doc, updateDoc } from "firebase/firestore";
+import { collection, deleteDoc, doc, updateDoc } from 'firebase/firestore'
 import { useParams } from "next/navigation";
 import { ChangeEvent, useEffect, useState } from "react";
 function MyAdvert() {

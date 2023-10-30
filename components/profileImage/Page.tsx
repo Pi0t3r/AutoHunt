@@ -1,6 +1,6 @@
 import { storage } from "@/firebase";
 import { ProfileImageProps } from "@/types/ImageTypes";
-import { getDownloadURL, ref } from "firebase/storage";
+import { getDownloadURL, ref } from 'firebase/storage'
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { AiOutlineUser } from "react-icons/ai";

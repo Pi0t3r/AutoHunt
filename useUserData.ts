@@ -4,16 +4,15 @@ import {
   doc,
   getDocs,
   query,
-  updateDoc,
   where,
+  updateDoc,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useUserContext } from "./context/UserContext";
 
 const useUserData = () => {
- 
   const { user, setUser } = useUserContext();
- 
+
   const [userData, setUserData] = useState({
     userName: "",
     userSurname: "",
@@ -25,19 +24,17 @@ const useUserData = () => {
 
   const updateProfilePicture = (newProfilePicture: string | null) => {
     if (user) {
-     
       setUser({
         ...user,
         profileImage: newProfilePicture,
       });
       if (user.email && newProfilePicture !== null) {
-     
         const userDocRef = doc(db, "users", user.email);
-       
+
         const userDataToUpdate = {
           profileImage: newProfilePicture,
         };
-    
+
         updateDoc(userDocRef, userDataToUpdate)
           .then(() => {
             console.log("Profile picture updated");
@@ -52,15 +49,14 @@ const useUserData = () => {
   const getUserData = async () => {
     try {
       if (user && user.email) {
-      
         const userCollectionRef = collection(db, "users");
-   
+
         const q = query(userCollectionRef, where("email", "==", user.email));
-       
+
         const usersSnapshot = await getDocs(q);
         if (!usersSnapshot.empty) {
           const userData = usersSnapshot.docs[0].data();
-      
+
           setUserData({
             userName: userData.name,
             userSurname: userData.surname,
@@ -75,20 +71,28 @@ const useUserData = () => {
       console.error(error);
     }
   };
-  
+
   useEffect(() => {
     if (!user) {
-    
       const storedUser = localStorage.getItem("user");
       if (storedUser) {
         setUser(JSON.parse(storedUser));
       }
     }
     if (user && !userData.userName && !userData.userSurname) {
-    
       getUserData();
     }
-  }, [user, userData.userName, userData.userSurname, userData.userMail, userData.userPassword, userData.userId, userData.userProfilePicture, setUser, getUserData]);
+  }, [
+    user,
+    userData.userName,
+    userData.userSurname,
+    userData.userMail,
+    userData.userPassword,
+    userData.userId,
+    userData.userProfilePicture,
+    setUser,
+    getUserData,
+  ]);
 
   return { userData, updateProfilePicture };
 };

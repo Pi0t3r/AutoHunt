@@ -1,12 +1,7 @@
-'use client'
+"use client";
 import { UserContextType, UserProviderProps } from "@/types/UserTypes";
 import { collection, doc, setDoc } from "firebase/firestore";
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useState
-} from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { db } from "../firebase";
 
 export const UserContext = createContext<UserContextType | null>(null);

@@ -43,7 +43,6 @@ const helpService = [
 const List = ({
   children,
   justify,
-  width,
 }: {
   children: ReactNode;
   justify: string;
