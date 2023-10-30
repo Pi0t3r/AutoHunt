@@ -12,20 +12,22 @@ import Sidebar from '../sidebar/Page';
 const Buttons = ({ title, linkTo }: LinksProps) => {
   return (
     <li className="hover:scale-110 transition-all hover:mx-2">
-      <Button
-        variant="outlined"
-        size="small"
-        sx={{
-          letterSpacing: '1px',
-          fontWeight: 'bold',
-          fontSize: '10px',
-          borderColor: '#b78d20',
-          color: '#b78d20',
-          ':hover': { borderColor: '#a67c10' },
-        }}
-      >
-        <Link href={linkTo}>{title}</Link>
-      </Button>
+      <Link href={linkTo}>
+        <Button
+          variant="outlined"
+          size="small"
+          sx={{
+            letterSpacing: '1px',
+            fontWeight: 'bold',
+            fontSize: '10px',
+            borderColor: '#b78d20',
+            color: '#b78d20',
+            ':hover': { borderColor: '#a67c10' },
+          }}
+        >
+          {title}
+        </Button>
+      </Link>
     </li>
   );
 };
@@ -50,7 +52,7 @@ const LoggedInNabar = () => {
   };
 
   return (
-    <div className="fixed bg-[#515151f0] inset-x-0 top-0 flex justify-between p-5 z-[52] items-center max-w-7xl mx-auto transition-all">
+    <header className="fixed bg-[#515151f0] inset-x-0 top-0 flex justify-between p-5 z-[52] items-center max-w-7xl mx-auto transition-all">
       <button
         onClick={toggleSidebar}
         className="bg-none border-none md:hidden z-[100]"
@@ -108,7 +110,7 @@ const LoggedInNabar = () => {
           </h1>
         </Link>
       </>
-    </div>
+    </header>
   );
 };
 

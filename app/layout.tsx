@@ -23,17 +23,11 @@ export default function RootLayout({
       <body className={`${inter.className} max-w-7xl mx-auto`}>
         <UserProvider>
           <main>
-            <header>
-              <nav>
-                <Navbar />
-              </nav>
-            </header>
+            <Navbar />
             {children}
           </main>
         </UserProvider>
-        <footer>
-          <Footer />
-        </footer>
+        <Footer />
       </body>
     </html>
   );
