@@ -23,13 +23,22 @@ const buttonLink = [
   },
 ];
 
-export const Navigation = ({ flex, gap, onClick, color, margin,scale }: NavigationProps) => {
+export const Navigation = ({
+  flex,
+  gap,
+  onClick,
+  color,
+  margin,
+}: NavigationProps) => {
   return (
     <ul
       className={`flex flex-${flex} gap-${gap}-3 items-center justify-between w-full h-full `}
     >
       {buttonLink.map(({ title, link, icon }, index) => (
-        <li key={index} className={`hover:${scale}-110 transition-all hover:${margin}-2`}>
+        <li
+          key={index}
+          className={`hover:scale-110 transition-all hover:${margin}-2`}
+        >
           <Link href={link}>
             <Button
               variant="outlined"
@@ -40,8 +49,8 @@ export const Navigation = ({ flex, gap, onClick, color, margin,scale }: Navigati
                 fontWeight: 'medium',
                 fontSize: '10px',
                 borderColor: '#b78d20',
-                color: {color},
-                ':hover': { borderColor: '#a67c10' },
+                color: { color },
+                ':hover': { borderColor: '#a67c10', background: 'none' },
               }}
             >
               {title}

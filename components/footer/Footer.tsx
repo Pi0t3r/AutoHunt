@@ -1,6 +1,7 @@
 import { ReactNode } from 'react';
 import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from 'react-icons/bs';
 import { ONE_VALUE } from '@/constants';
+import IconButton from '@mui/material/IconButton';
 const footerLinks = [
   {
     value: 'Privacy Policy',
@@ -66,13 +67,16 @@ export default function Footer() {
             key={index}
             className="hover:scale-125 transition duration-300 cursor-pointer"
           >
-            {value}
+            <IconButton sx={{ color: '#b78d20' }}>{value}</IconButton>
           </li>
         ))}
       </List>
       <List justify="center">
         {footerLinks.map(({ value }, index) => (
-          <li key={index}>
+          <li
+            key={index}
+            className="hover:scale-110 cursor-pointer transition duration-300"
+          >
             <span>
               {value}
               {index < footerLinks.length - ONE_VALUE && ' | '}

@@ -44,18 +44,20 @@ function Advert() {
         <div className="m-4 flex flex-row flex-wrap items-center justify-start">
           <p>Something wrong with this advert?</p>
           <Button
-            variant="contained"
+            variant="outlined"
             onClick={handleReportClick}
             sx={{
               letterSpacing: '1px',
-              fontWeight: 'bold',
+              fontWeight: 'medium',
               fontSize: '10px',
-              background: '#b78d20',
+              borderColor: '#b78d20',
+              color: '#b78d20',
               marginLeft: 2,
               transition: 'scale .5s',
               ':hover': {
-                backgroundColor: '#a67c10',
+                background: 'none',
                 scale: '1.1',
+                borderColor: '#b78d20',
               },
             }}
           >

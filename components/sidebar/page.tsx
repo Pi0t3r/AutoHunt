@@ -31,7 +31,6 @@ const Sidebar = () => {
       </header>
       <nav className="h-52 mt-10">
         <Navigation
-        scale='scale-y'
           gap="y"
           onClick={handleLogout}
           flex="col"

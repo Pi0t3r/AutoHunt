@@ -4,7 +4,7 @@ import Link from 'next/link';
 export default function Forgot() {
   return (
     <main className="mt-20">
-      <header>
+      <header className="pt-2">
         <nav>
           <Link href="/register" className="p-4">
             <Button
@@ -13,8 +13,13 @@ export default function Forgot() {
                 borderColor: '#b78d20',
                 color: '#b78d20',
                 textTransform: 'lowercase',
-
-                ':hover': { borderColor: '#a67c10', color: '#b78d20' },
+                transition:'scale .5s',
+                ':hover': {
+                  borderColor: '#a67c10',
+                  color: '#b78d20',
+                  background: 'none',
+                  scale:'1.1'
+                },
               }}
             >
               Back
@@ -43,15 +48,17 @@ export default function Forgot() {
           </label>
           <Button
             type="submit"
-            variant="contained"
+            variant="outlined"
             sx={{
-              backgroundColor: '#b78d20',
+              borderColor: '#b78d20',
+              color: '#b78d20',
               transition: 'scale .5s',
               margin: 'auto',
               width: 'fit-content',
               ':hover': {
                 scale: '1.1',
-                backgroundColor: '#b78d20',
+                borderColor: '#b78d20',
+                background: 'none',
               },
             }}
           >

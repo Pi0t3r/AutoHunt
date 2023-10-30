@@ -45,5 +45,4 @@ export interface NavigationProps {
   onClick: () => void;
   color: string;
   margin: string;
-  scale:string
 }
