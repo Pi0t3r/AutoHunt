@@ -1,5 +1,5 @@
 import { storage } from "@/firebase";
-import { ProfileImageProps } from "@/types";
+import { ProfileImageProps } from "@/types/ImageTypes";
 import { getDownloadURL, ref } from "firebase/storage";
 import Image from "next/image";
 import { useEffect, useState } from "react";

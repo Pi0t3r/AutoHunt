@@ -3,7 +3,7 @@ import { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { BannerProps } from "@/types";
+import { BannerProps } from "@/types/ComponentTypes";
 import clsx from "clsx";
 const Banner = ({ images }: BannerProps) => {
   const [isClicked, setIsClicked] = useState(false);

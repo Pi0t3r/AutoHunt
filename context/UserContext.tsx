@@ -1,5 +1,5 @@
 'use client'
-import { UserContextType, UserProviderProps } from "@/types";
+import { UserContextType, UserProviderProps } from "@/types/UserTypes";
 import { collection, doc, setDoc } from "firebase/firestore";
 import {
   createContext,

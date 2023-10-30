@@ -1,5 +1,5 @@
-import { carDataProps, InfoProps } from "@/types";
-
+import { carDataProps } from "@/types/CarTypes";
+import { InfoProps } from "@/types/ComponentTypes";
 const Info = ({ title, value }: InfoProps) => {
   return (
     <li className="text-main font-medium p-4 border-2 m-2 rounded-md shadow-lg bg-slate-50">
@@ -7,8 +7,6 @@ const Info = ({ title, value }: InfoProps) => {
     </li>
   );
 };
-
-
 
 const CarDetails = ({ data }: carDataProps) => {
   return (

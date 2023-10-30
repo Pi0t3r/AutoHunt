@@ -1,7 +1,7 @@
 "use client";
 import LoginForm from "@/components/loginForm/LoginForm";
 import RegisterForm from "@/components/registerForm/RegisterForm";
-import { ActiveButton } from "@/types";
+import { ActiveButton } from "@/types/ComponentTypes";
 import { useEffect, useState } from "react";
 
 export default function Register() {

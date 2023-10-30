@@ -1,4 +1,4 @@
-import { CarDataSelectProps } from "@/types";
+import { CarDataSelectProps } from "@/types/SelectTypes";
 import { SelectUI } from "../select/SelectUI";
 
 export const CarDataSelect = ({

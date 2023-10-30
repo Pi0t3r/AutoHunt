@@ -1,13 +1,11 @@
 "use client";
 import { db } from "@/firebase";
-import { LabelInput } from "@/types";
+import { LabelInput } from "@/types/InputTypes";
 import useUserData from "@/useUserData";
 import { EmailAuthProvider, getAuth, updatePassword } from "@firebase/auth";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import SaveIcon from "@mui/icons-material/Save";
 import Button from "@mui/material/Button";
 import { collection, doc, updateDoc } from "firebase/firestore";
-import Link from "next/link";
-import SaveIcon from "@mui/icons-material/Save";
 import { FormEvent, useEffect, useState } from "react";
 const LabelInput = ({ value, onChange, placeholder }: LabelInput) => {
   return (

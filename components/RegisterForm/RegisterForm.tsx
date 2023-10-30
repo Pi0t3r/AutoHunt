@@ -6,7 +6,7 @@ import { db } from "../../firebase";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import { Button } from "@mui/material";
-import { LabelInput } from "@/types";
+import { LabelInputExtends } from "@/types/InputTypes";
 
 const LabelInput = ({
   title,
@@ -15,7 +15,7 @@ const LabelInput = ({
   placeholder,
   value,
   onChange,
-}: LabelInput) => {
+}: LabelInputExtends) => {
   return (
     <label className="font-bold flex flex-col w-3/4 max-w-xl">
       {title}

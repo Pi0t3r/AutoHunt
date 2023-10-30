@@ -1,15 +1,15 @@
 import { useUserContext } from "@/context/UserContext";
 import { auth } from "@/firebase";
+import { IconProps } from "@/types/ComponentTypes";
 import useUserData from "@/useUserData";
+import AddBoxIcon from "@mui/icons-material/AddBox";
+import Button from "@mui/material/Button";
 import Link from "next/link";
 import { AiOutlineUser } from "react-icons/ai";
 import { BiExit } from "react-icons/bi";
 import { MdOutlineLocalOffer } from "react-icons/md";
 import ProfileImage from "../profileImage/Page";
-import { LinksProps } from "@/types";
-import AddBoxIcon from "@mui/icons-material/AddBox";
-import Button from "@mui/material/Button";
-const SidebarLinks = ({ linkTo, icon, title }: LinksProps) => {
+const SidebarLinks = ({ linkTo, icon, title }: IconProps) => {
   return (
     <li className="my-5">
       <Link href={linkTo} passHref>

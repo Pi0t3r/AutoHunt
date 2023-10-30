@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { SelectProps } from "@/types";
+import { SelectProps } from "@/types/SelectTypes";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";

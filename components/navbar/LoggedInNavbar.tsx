@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { FiMenu } from "react-icons/fi";
 import Sidebar from "../sidebar/Page";
-import { LinksProps } from "@/types";
+import { LinksProps } from "@/types/ComponentTypes";
 const Buttons = ({ title, linkTo }: LinksProps) => {
   return (
     <li className="hover:scale-110 transition-all hover:mx-2">

@@ -7,7 +7,7 @@ import { CustomSelect } from "@/components/Selects/CustomSelect";
 import { FuelSelect } from "@/components/Selects/FuelSelect";
 import ImageUpload from "@/components/imageUpload/ImageUpload";
 import { db, storage } from "@/firebase";
-import { SelectOptionProps } from "@/types";
+import { SelectOptionProps } from "@/types/SelectTypes";
 import useUserData from "@/useUserData";
 import { Button } from "@mui/material";
 import { addDoc, collection, updateDoc } from "firebase/firestore";
@@ -71,8 +71,6 @@ export default function CreateAdvert() {
   >(undefined);
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
 
-  
-
   const mapField = (field: string, value: string) => {
     setFormData((prevData) => ({
       ...prevData,
@@ -101,7 +99,7 @@ export default function CreateAdvert() {
       );
       if (brand && brand.models) {
         const model = brand.models.find(
-          (option) => option.value === selectedModel.value
+          (option: { value: string }) => option.value === selectedModel.value
         );
         return model ? model.generations || [] : [];
       }
@@ -115,11 +113,13 @@ export default function CreateAdvert() {
       );
       if (brand && brand.models) {
         const model = brand.models.find(
-          (option) => option.value === selectedModel?.value
+          (option: { value: string | undefined }) =>
+            option.value === selectedModel?.value
         );
         if (model && model.generations) {
           const generation = model.generations.find(
-            (option) => option.value === selectedGeneration.value
+            (option: { value: string }) =>
+              option.value === selectedGeneration.value
           );
           return generation ? generation.versions || [] : [];
         }
@@ -134,15 +134,18 @@ export default function CreateAdvert() {
       );
       if (brand && brand.models) {
         const model = brand.models.find(
-          (option) => option.value === selectedModel?.value
+          (option: { value: string | undefined }) =>
+            option.value === selectedModel?.value
         );
         if (model && model.generations) {
           const generation = model.generations.find(
-            (option) => option.value === selectedGeneration?.value
+            (option: { value: string | undefined }) =>
+              option.value === selectedGeneration?.value
           );
           if (generation && generation.versions) {
             const version = generation.versions.find(
-              (option) => option.value === selectedVersion.value
+              (option: { value: string }) =>
+                option.value === selectedVersion.value
             );
             return version ? version.engine || [] : [];
           }
@@ -383,7 +386,7 @@ export default function CreateAdvert() {
           type="submit"
           sx={{
             margin: "50px auto 0",
-            width:"150px",
+            width: "150px",
             letterSpacing: "1px",
             fontWeight: "bold",
             fontSize: "10px",

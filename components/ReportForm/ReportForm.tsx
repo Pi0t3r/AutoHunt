@@ -1,7 +1,7 @@
-import { LabelProps, ReportFormProps } from "@/types";
+import { LabelProps } from "@/types/ComponentTypes";
+import { ReportFormProps } from "@/types/ReportTypes";
 import { useState, ChangeEvent } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
-
 
 const Label = ({ title, value }: LabelProps) => {
   return (
@@ -18,7 +18,7 @@ const ReportForm = ({ setReportVisible, reportVisible }: ReportFormProps) => {
   const handleSubmit = () => {
     setReportVisible(false);
   };
- 
+
   const handleCommentChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setComment(e.target.value);
   };

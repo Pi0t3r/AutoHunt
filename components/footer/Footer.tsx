@@ -1,5 +1,5 @@
-import { BsFacebook, BsInstagram, BsYoutube, BsTwitter } from "react-icons/bs";
 import { ReactNode } from "react";
+import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from "react-icons/bs";
 const footerLinks = [
   {
     value: "Privacy Policy",

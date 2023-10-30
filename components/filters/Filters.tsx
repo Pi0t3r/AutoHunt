@@ -1,10 +1,11 @@
 import { db } from "@/firebase";
-import { FiltersProps, SelectOption } from "@/types";
+import { FiltersProps } from "@/types/ComponentTypes";
+import { SelectOption } from "@/types/SelectTypes";
+import Button from "@mui/material/Button";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { body, fuelOptions, options } from "../../data/cars";
 import { SelectUI } from "../select/SelectUI";
-import Button from "@mui/material/Button";
 export default function Filters({ setAdvertData }: FiltersProps) {
   const [selectedBody, setSelectedBody] = useState<SelectOption | undefined>(
     undefined

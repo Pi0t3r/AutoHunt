@@ -5,13 +5,11 @@ import Banner from "@/components/banner/Banner";
 import CarDetails from "@/components/carDetails/CarDetails";
 import SellerDetails from "@/components/sellerDetails/SellerDetails";
 import { db } from "@/firebase";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import SaveIcon from "@mui/icons-material/Save";
 import { Button } from "@mui/material";
 import { collection, deleteDoc, doc, updateDoc } from "firebase/firestore";
-import Link from "next/link";
 import { useParams } from "next/navigation";
 import { ChangeEvent, useEffect, useState } from "react";
 function MyAdvert() {
