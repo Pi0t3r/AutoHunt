@@ -145,8 +145,3 @@ export default function Profile() {
     </main>
   );
 }
-function getUploadTaskSnapshot(
-  uploadTask: Promise<import('@firebase/storage').UploadResult>,
-) {
-  throw new Error('Function not implemented.');
-}
