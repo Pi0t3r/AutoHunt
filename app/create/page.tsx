@@ -387,7 +387,7 @@ export default function CreateAdvert() {
           <Result />
         </p>
         <Button
-          variant="contained"
+          variant="outlined"
           size="large"
           onClick={clearData}
           type="submit"
@@ -397,8 +397,14 @@ export default function CreateAdvert() {
             letterSpacing: '1px',
             fontWeight: 'bold',
             fontSize: '10px',
-            background: '#b78d20',
-            ':hover': { backgroundColor: '#a67c10' },
+            borderColor: '#b78d20',
+            color: '#b78d20',
+            transition: 'scale .5s',
+            ':hover': {
+              borderColor: '#b78d20',
+              scale: '1.2',
+              background: 'none',
+            },
           }}
         >
           Display

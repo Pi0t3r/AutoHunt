@@ -29,3 +29,14 @@ export interface UserDataProps {
 export type UserProviderProps = {
   children: ReactNode;
 };
+
+
+interface User {
+  email: string;
+  name: string;
+  surname: string;
+  password: string;
+  profileImage: string | null;
+}
+
+export type SetUserFunction = (user: User | null) => void;

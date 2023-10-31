@@ -1,23 +1,13 @@
 import { useUserContext } from '@/context/UserContext';
-import { auth } from '@/firebase';
+import { handleLogout } from '@/functions';
 import useUserData from '@/useUserData';
-import ProfileImage from '../profileImage/Page';
 import { Navigation } from '../navbar/Navigation';
+import ProfileImage from '../profileImage/Page';
 
 export const Sidebar = () => {
   const { userData } = useUserData();
   const { userName, userSurname, userMail } = userData;
   const { setUser } = useUserContext();
-  const handleLogout = async () => {
-    try {
-      await auth.signOut();
-      setUser(null);
-      localStorage.removeItem('user');
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   return (
     <aside className="mt-1/4 p-5 text-center">
       <header>
@@ -32,7 +22,7 @@ export const Sidebar = () => {
       <nav className="h-52 mt-10">
         <Navigation
           gap="y"
-          onClick={handleLogout}
+          onClick={() => handleLogout(setUser)}
           flex="col"
           color="#b78d20"
           margin="my"
@@ -41,4 +31,3 @@ export const Sidebar = () => {
     </aside>
   );
 };
-

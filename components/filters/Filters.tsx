@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { body, fuelOptions, options } from '../../data/cars';
 import { SelectUI } from '../select/SelectUI';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
+import { MyInput } from '../Inputs/MyInput';
 export default function Filters({ setAdvertData }: FiltersProps) {
   const [selectedBody, setSelectedBody] = useState<SelectOption | undefined>(
     undefined,
@@ -222,23 +223,19 @@ export default function Filters({ setAdvertData }: FiltersProps) {
         filter="Fuel type"
         isDisabled={selectedEngine?.value !== undefined}
       />
-      <div>
-        <label>
-          <input
-            type="number"
-            placeholder="Min price"
-            value={minPrice}
-            onChange={(e) => setMinPrice(parseInt(e.target.value))}
-          />
-        </label>
-        <label>
-          <input
-            type="number"
-            placeholder="Max price"
-            value={maxPrice}
-            onChange={(e) => setMaxPrice(parseInt(e.target.value))}
-          />
-        </label>
+      <div className="flex flex-row flex-wrap gap-2 justify-center items-center">
+        <MyInput
+          value={minPrice}
+          placeholder="Min price"
+          type="number"
+          onChange={(e) => setMinPrice(parseInt(e.target.value))}
+        />
+        <MyInput
+          type="number"
+          placeholder="Max price"
+          value={maxPrice}
+          onChange={(e) => setMaxPrice(parseInt(e.target.value))}
+        />
       </div>
       <Button
         variant="outlined"

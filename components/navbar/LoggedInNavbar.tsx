@@ -1,5 +1,5 @@
 import { useUserContext } from '@/context/UserContext';
-import { auth } from '@/firebase';
+import { handleLogout } from '@/functions';
 import useUserData from '@/useUserData';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -7,26 +7,15 @@ import { AiOutlineClose } from 'react-icons/ai';
 import { FiMenu } from 'react-icons/fi';
 import { Sidebar } from '../sidebar/page';
 import { Navigation } from './Navigation';
-
 const LoggedInNabar = () => {
   const { userData } = useUserData();
   const { userName } = userData;
   const { setUser } = useUserContext();
   const [visible, setVisible] = useState(false);
 
-  const handleLogout = async () => {
-    try {
-      await auth.signOut();
-      setUser(null);
-      localStorage.removeItem('user');
-    } catch (error) {
-      console.error(error);
-    }
-  };
   const toggleSidebar = () => {
     setVisible(!visible);
   };
-
   return (
     <header className="fixed bg-[#515151f0] inset-x-0 top-0 flex justify-between p-5 z-[52] items-center max-w-7xl mx-auto transition-all">
       <button
@@ -46,7 +35,7 @@ const LoggedInNabar = () => {
       <nav className="hidden md:block w-3/4">
         <Navigation
           gap="x"
-          onClick={handleLogout}
+          onClick={() => handleLogout(setUser)}
           flex="row"
           color="white"
           margin="mx"
