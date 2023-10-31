@@ -45,14 +45,16 @@ const helpService = [
 const List = ({
   children,
   justify,
+  divide,
 }: {
   children: ReactNode;
   justify: string;
   width?: string;
+  divide?: string;
 }) => {
   return (
     <ul
-      className={`flex flex-row flex-wrap justify-${justify} items-center gap-3 my-4 w-3/4 mx-auto`}
+      className={`flex flex-row flex-wrap justify-${justify} items-center gap-3 my-4 w-3/4 mx-auto ${divide}`}
     >
       {children}
     </ul>
@@ -71,16 +73,13 @@ export default function Footer() {
           </li>
         ))}
       </List>
-      <List justify="center">
+      <List justify="center" divide='divide-x'>
         {footerLinks.map(({ value }, index) => (
           <li
             key={index}
-            className="hover:scale-110 cursor-pointer transition duration-300"
+            className="hover:scale-110 cursor-pointer transition duration-300 px-2"
           >
-            <span>
-              {value}
-              {index < footerLinks.length - ONE_VALUE && ' | '}
-            </span>
+            <span>{value}</span>
           </li>
         ))}
       </List>

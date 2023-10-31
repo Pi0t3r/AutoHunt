@@ -44,7 +44,25 @@ export default function Offers() {
   const itemsPerPage = 20;
   const showAdvert = () => {
     if (advertData.length === EMPTY_VALUE) {
-      return <p>No ads in selected filters</p>;
+      return (
+        <div className="block bg-white w-1/2 mx-auto h-fit rounded-md">
+          <div className="animate-pulse w-full overflow-hidden p-1">
+            <div className="bg-slate-700 bg-red-500 h-32 w-full"></div>
+            <div className="mt-2 p-4">
+              <div className="bg-slate-700 h-4 w-1/3 rounded"></div>
+              <div className="flex flex-col flex-wrap">
+                <div className="h-4 rounded"></div>
+                <div className="bg-slate-700 rounded h-4 w-1/2"></div>
+                <div className="bg-slate-700 rounded h-4 w-1/3 mt-2"></div>
+              </div>
+              <div className="flex flex-row flex-wrap justify-between items-center mt-4">
+                <div className="bg-slate-700 rounded h-4 w-1/4"></div>
+                <div className="bg-slate-700 rounded h-4 w-1/4"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
     }
 
     const offset = currentPage * itemsPerPage;
@@ -143,7 +161,7 @@ export default function Offers() {
           </Select>
         </FormControl>
       </>
-      <div className="mt-10 bg-[#c6c6c6b3] w-full">{showAdvert()}</div>
+      <div className="mt-10 bg-[#c6c6c6b3] w-full p-2">{showAdvert()}</div>
       <ReactPaginate
         className="flex flex-row justify-between items-center px-10"
         previousLabel={'Previous'}
