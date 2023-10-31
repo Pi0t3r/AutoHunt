@@ -1,9 +1,9 @@
 'use client';
 import { fetchAdverts } from '@/api/getAdvertDetails';
 import { MyInput } from '@/components/Inputs/MyInput';
-import Banner from '@/components/banner/Banner';
-import CarDetails from '@/components/carDetails/CarDetails';
-import SellerDetails from '@/components/sellerDetails/SellerDetails';
+import { Banner } from '@/components/banner/Banner';
+import { CarDetails } from '@/components/carDetails/CarDetails';
+import { SellerDetails } from '@/components/sellerDetails/SellerDetails';
 import { db } from '@/firebase';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';

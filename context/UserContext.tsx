@@ -90,7 +90,7 @@ export const useUserContext = () => {
   const context = useContext(UserContext);
   if (!context) {
     console.warn('useUserContext must be used within a UserContextProvider');
-    return null;
+    return { setUser: null };
   }
   return context;
 };

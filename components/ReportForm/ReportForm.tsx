@@ -12,7 +12,7 @@ const Label = ({ title, value }: LabelProps) => {
   );
 };
 
-const ReportForm = ({ setReportVisible, reportVisible }: ReportFormProps) => {
+export const ReportForm = ({ setReportVisible, reportVisible }: ReportFormProps) => {
   const [comment, setComment] = useState('');
 
   const handleSubmit = () => {
@@ -69,5 +69,3 @@ const ReportForm = ({ setReportVisible, reportVisible }: ReportFormProps) => {
     </div>
   );
 };
-
-export default ReportForm;

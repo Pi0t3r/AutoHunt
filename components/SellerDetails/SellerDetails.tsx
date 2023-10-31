@@ -11,7 +11,7 @@ const Info = ({ title, value }: InfoProps) => {
   );
 };
 
-const SellerDetails = ({ data }: SellerDataProps) => {
+export const SellerDetails = ({ data }: SellerDataProps) => {
   return (
     <div className="bg-gray-300 pt-2">
       <h4 className="text-center font-medium text-lg">About the seller</h4>
@@ -29,4 +29,4 @@ const SellerDetails = ({ data }: SellerDataProps) => {
   );
 };
 
-export default SellerDetails;
+

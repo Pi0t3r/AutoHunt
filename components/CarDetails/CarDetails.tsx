@@ -8,7 +8,7 @@ const Info = ({ title, value }: InfoProps) => {
   );
 };
 
-const CarDetails = ({ data }: carDataProps) => {
+export const CarDetails = ({ data }: carDataProps) => {
   return (
     <>
       <p className="text-center font-medium italic">
@@ -28,4 +28,4 @@ const CarDetails = ({ data }: carDataProps) => {
   );
 };
 
-export default CarDetails;
+

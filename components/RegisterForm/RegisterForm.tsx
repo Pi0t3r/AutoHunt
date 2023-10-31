@@ -5,7 +5,7 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import { Button } from '@mui/material';
 import { collection, doc, setDoc } from 'firebase/firestore';
 import { useState } from 'react';
-import { db } from '../../firebase';
+import { db } from '@/firebase';
 
 const LabelInput = ({
   title,
