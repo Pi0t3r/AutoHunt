@@ -3,7 +3,7 @@
 import { fetchAdverts } from '@/api/getAdvertDetails';
 import { Banner } from '@/components/Banner';
 import { CarDetails } from '@/components/CarDetails';
-import { ReportForm } from '@/components/reportForm/ReportForm';
+import { ReportForm } from '@/components/ReportForm';
 import { SellerDetails } from '@/components/SellerDetails';
 import { Button } from '@mui/material';
 import { useParams } from 'next/navigation';

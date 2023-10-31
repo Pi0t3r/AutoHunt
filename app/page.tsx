@@ -1,4 +1,4 @@
-import Offers from '@/components/offers/Offers';
+import Offers from '@/components/Offers';
 
 export default function Home() {
   return (
