@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 import { fetchAdverts } from '@/api/getAdvertDetails';
-import { Banner } from '@/components/banner/Banner';
-import { CarDetails } from '@/components/carDetails/CarDetails';
+import { Banner } from '@/components/Banner';
+import { CarDetails } from '@/components/CarDetails';
 import { ReportForm } from '@/components/reportForm/ReportForm';
-import { SellerDetails } from '@/components/sellerDetails/SellerDetails';
+import { SellerDetails } from '@/components/SellerDetails';
 import { Button } from '@mui/material';
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
