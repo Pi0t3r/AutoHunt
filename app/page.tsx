@@ -16,7 +16,7 @@ export default function Home() {
           <div className="bg-gradient-to-r from-[#020024] via-[#0b0101] to-[#10505d] hidden absolute inset-0 z-50 min-[1015px]:block" />
         </picture>
         <div className="absolute inset-0 bg-black/70" />
-        <div className="absolute top-1/2 left-1/2 z-10 text-white -translate-x-1/2 -translate-y-1/2 z-[51] lg:text-3xl lg:text-center">
+        <div className="absolute top-1/2 left-1/2 z-10 text-white -translate-x-1/2 -translate-y-1/2 z-[51] lg:text-3xl text-center">
           <p>
             Welcome to{' '}
             <span className="uppercase font-bold text-main">autohunt</span>
