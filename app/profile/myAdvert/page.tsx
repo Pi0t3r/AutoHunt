@@ -28,7 +28,6 @@ export default function MyAdvert() {
     (advert) => advert.sellerContact === userMail,
   );
 
-
   return (
     <main className="mt-10">
       <header className="relative h-20 mt-0">

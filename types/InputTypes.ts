@@ -1,7 +1,7 @@
 import { ChangeEvent } from 'react';
 
 export interface MyInputProps {
-  value: string;
+  value: string | number;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
   type: string;
   placeholder: string;

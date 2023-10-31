@@ -72,7 +72,7 @@ export default function CreateAdvert() {
   >(undefined);
   const [selectedImages, setSelectedImages] = useState<File[]>([]);
 
-  const mapField = (field: string, value: string) => {
+  const mapField = (field: string, value: number | string) => {
     setFormData((prevData) => ({
       ...prevData,
       [field]: value,
@@ -87,7 +87,7 @@ export default function CreateAdvert() {
   const getModelOptions = (): SelectOptionProps[] => {
     if (selectedBrand && selectedBrand.value) {
       const brand = options.find(
-        (option) => option.value === selectedBrand.value
+        (option) => option.value === selectedBrand.value,
       );
       return brand ? brand.models || [] : [];
     }
@@ -96,11 +96,11 @@ export default function CreateAdvert() {
   const getGenerationOption = (): SelectOptionProps[] => {
     if (selectedModel && selectedModel.value) {
       const brand = options.find(
-        (option) => option.value === selectedBrand?.value
+        (option) => option.value === selectedBrand?.value,
       );
       if (brand && brand.models) {
         const model = brand.models.find(
-          (option: { value: string }) => option.value === selectedModel.value
+          (option: { value: string }) => option.value === selectedModel.value,
         );
         return model ? model.generations || [] : [];
       }
@@ -110,17 +110,17 @@ export default function CreateAdvert() {
   const getVersionOption = (): SelectOptionProps[] => {
     if (selectedGeneration && selectedGeneration.value) {
       const brand = options.find(
-        (option) => option.value === selectedBrand?.value
+        (option) => option.value === selectedBrand?.value,
       );
       if (brand && brand.models) {
         const model = brand.models.find(
           (option: { value: string | undefined }) =>
-            option.value === selectedModel?.value
+            option.value === selectedModel?.value,
         );
         if (model && model.generations) {
           const generation = model.generations.find(
             (option: { value: string }) =>
-              option.value === selectedGeneration.value
+              option.value === selectedGeneration.value,
           );
           return generation ? generation.versions || [] : [];
         }
@@ -131,22 +131,22 @@ export default function CreateAdvert() {
   const getEngineOption = (): SelectOptionProps[] => {
     if (selectedVersion && selectedVersion.value) {
       const brand = options.find(
-        (option) => option.value === selectedBrand?.value
+        (option) => option.value === selectedBrand?.value,
       );
       if (brand && brand.models) {
         const model = brand.models.find(
           (option: { value: string | undefined }) =>
-            option.value === selectedModel?.value
+            option.value === selectedModel?.value,
         );
         if (model && model.generations) {
           const generation = model.generations.find(
             (option: { value: string | undefined }) =>
-              option.value === selectedGeneration?.value
+              option.value === selectedGeneration?.value,
           );
           if (generation && generation.versions) {
             const version = generation.versions.find(
               (option: { value: string }) =>
-                option.value === selectedVersion.value
+                option.value === selectedVersion.value,
             );
             return version ? version.engine || [] : [];
           }
@@ -159,16 +159,25 @@ export default function CreateAdvert() {
     event.preventDefault();
     try {
       const date = new Date();
+      const price = parseFloat(formData.price);
+      const mileage = parseFloat(formData.mileage);
+      const yearbook = parseFloat(formData.yearbook);
+      const phone = parseFloat(formData.phone);
+
       const advertData = {
         ...formData,
         createAdvert: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}`,
+        price: price,
+        mileage: mileage,
+        yearbook: yearbook,
+        phone: phone,
       };
 
       const advertRef = await addDoc(collection(db, 'adverts'), advertData);
       if (selectedImages.length > EMPTY_VALUE) {
         const imageUrls = await uploadImagesToStorage(
           selectedImages,
-          advertRef.id
+          advertRef.id,
         );
         await updateDoc(advertRef, { images: imageUrls });
       }
@@ -239,22 +248,22 @@ export default function CreateAdvert() {
   };
 
   return (
-    <main className='my-20'>
+    <main className="my-20">
       <header>
-        <h3 className='text-center uppercase font-bold italic'>
+        <h3 className="text-center uppercase font-bold italic">
           Create new advert
         </h3>
       </header>
-      <form onSubmit={handleSubmit} className='flex flex-col'>
-        <fieldset className='flex flex-row flex-wrap gap-2 my-4 p-4 justify-start items-center'>
-          <legend className='font-medium text-main text-lg text-center'>
+      <form onSubmit={handleSubmit} className="flex flex-col">
+        <fieldset className="flex flex-row flex-wrap gap-2 my-4 p-4 justify-start items-center">
+          <legend className="font-medium text-main text-lg text-center">
             Main Information
           </legend>
           <ImageUpload onImageSelect={handleImageSelect} />
           <BodySelect onChange={handleBodyChange} value={selectedBody} />
           <BrandSelect onChange={handleBrandChange} />
           <CarDataSelect
-            filter='Model'
+            filter="Model"
             value={selectedModel}
             options={getModelOptions()}
             onChange={(model: SelectOptionProps | undefined) => {
@@ -266,7 +275,7 @@ export default function CreateAdvert() {
             }}
           />
           <CarDataSelect
-            filter='Generation'
+            filter="Generation"
             value={selectedGeneration}
             onChange={(generation: SelectOptionProps | undefined) => {
               mapField('generation', generation?.value || '');
@@ -277,7 +286,7 @@ export default function CreateAdvert() {
             options={getGenerationOption()}
           />
           <CarDataSelect
-            filter='Version'
+            filter="Version"
             value={selectedVersion}
             options={getVersionOption()}
             onChange={(version: SelectOptionProps | undefined) => {
@@ -287,7 +296,7 @@ export default function CreateAdvert() {
             }}
           />
           <CarDataSelect
-            filter='Engine'
+            filter="Engine"
             value={selectedEngine}
             options={getEngineOption()}
             onChange={(engine: SelectOptionProps | undefined) => {
@@ -309,8 +318,8 @@ export default function CreateAdvert() {
             valueGearbox={selectedGearbox}
           />
         </fieldset>
-        <fieldset className='flex flex-row flex-wrap gap-2 justify-start items-center p-4'>
-          <legend className='text-main font-medium text-lg text-center'>
+        <fieldset className="flex flex-row flex-wrap gap-2 justify-start items-center p-4">
+          <legend className="text-main font-medium text-lg text-center">
             Other information
           </legend>
           <MyInput
@@ -318,52 +327,52 @@ export default function CreateAdvert() {
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
               mapField('yearbook', event.target.value);
             }}
-            type='number'
-            placeholder='Yearbook'
+            type="number"
+            placeholder="Yearbook"
           />
           <MyInput
             value={formData.mileage}
-            type='number'
-            placeholder='Mileage'
+            type="number"
+            placeholder="Mileage"
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
               mapField('mileage', event.target.value);
             }}
           />
           <MyInput
-            type='date'
+            type="date"
             value={formData.firstRegister}
-            placeholder='First register'
+            placeholder="First register"
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
               mapField('firstRegister', event.target.value);
             }}
           />
           <MyInput
-            placeholder='VIN'
+            placeholder="VIN"
             value={formData.vin}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
               mapField('vin', event.target.value);
             }}
-            type='text'
+            type="text"
           />
           <MyInput
-            placeholder='Price'
-            type='number'
+            placeholder="Price"
+            type="number"
             value={formData.price}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
               mapField('price', event.target.value);
             }}
           />
           <MyInput
-            placeholder='Phone number'
-            type='tel'
+            placeholder="Phone number"
+            type="tel"
             value={formData.phone}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
               mapField('phone', event.target.value);
             }}
           />
           <MyInput
-            placeholder='Place'
-            type='text'
+            placeholder="Place"
+            type="text"
             value={formData.sellerPlace}
             onChange={(event: ChangeEvent<HTMLInputElement>) => {
               const value = event.target.value;
@@ -378,10 +387,10 @@ export default function CreateAdvert() {
           <Result />
         </p>
         <Button
-          variant='contained'
-          size='large'
+          variant="contained"
+          size="large"
           onClick={clearData}
-          type='submit'
+          type="submit"
           sx={{
             margin: '50px auto 0',
             width: '150px',

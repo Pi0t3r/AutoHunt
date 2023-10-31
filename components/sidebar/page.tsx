@@ -4,7 +4,7 @@ import useUserData from '@/useUserData';
 import ProfileImage from '../profileImage/Page';
 import { Navigation } from '../navbar/Navigation';
 
-const Sidebar = () => {
+export const Sidebar = () => {
   const { userData } = useUserData();
   const { userName, userSurname, userMail } = userData;
   const { setUser } = useUserContext();
@@ -42,4 +42,3 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;

@@ -10,13 +10,15 @@ export const MyInput = ({
   const dateTime = today
     .toLocaleDateString('en-CA')
     .replace(/(\d{2})\.(\d{2})\.(\d{4})/, '$3-$2-$1');
+  const formattedValue = value !== undefined ? value : '';
+  
   return (
     <label>
       {placeholder}
       <input
         type={type}
         max={dateTime}
-        value={value}
+        value={formattedValue}
         onChange={onChange}
         placeholder={placeholder}
         required

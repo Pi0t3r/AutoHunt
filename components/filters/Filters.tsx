@@ -29,6 +29,9 @@ export default function Filters({ setAdvertData }: FiltersProps) {
   const [selectedEngine, setSelectedEngine] = useState<
     SelectOption | undefined
   >(undefined);
+  const [minPrice, setMinPrice] = useState<number | undefined>(undefined);
+  const [maxPrice, setMaxPrice] = useState<number | undefined>(undefined);
+
   useEffect(() => {
     const getCarAdvert = async () => {
       const advertCollection = collection(db, 'adverts');
@@ -60,6 +63,12 @@ export default function Filters({ setAdvertData }: FiltersProps) {
       if (selectedFuel) {
         newQuery = query(newQuery, where('fuel', '==', selectedFuel.value));
       }
+      if (minPrice !== undefined) {
+        newQuery = query(newQuery, where('price', '>=', minPrice));
+      }
+      if (maxPrice !== undefined) {
+        newQuery = query(newQuery, where('price', '<=', maxPrice));
+      }
       const advertSnapshot = await getDocs(newQuery);
       const advert = advertSnapshot.docs.map((doc) => ({
         ...doc.data(),
@@ -79,6 +88,8 @@ export default function Filters({ setAdvertData }: FiltersProps) {
     selectedGeneration,
     selectedFuel,
     selectedVersion,
+    minPrice,
+    maxPrice,
   ]);
   const getModelOptions = (): SelectOption[] => {
     if (selectedBrand) {
@@ -161,6 +172,8 @@ export default function Filters({ setAdvertData }: FiltersProps) {
     setSelectedVersion(undefined);
     setSelectedEngine(undefined);
     setSelectedFuel(undefined);
+    setMaxPrice(undefined);
+    setMinPrice(undefined);
   };
 
   return (
@@ -209,6 +222,24 @@ export default function Filters({ setAdvertData }: FiltersProps) {
         filter="Fuel type"
         isDisabled={selectedEngine?.value !== undefined}
       />
+      <div>
+        <label>
+          <input
+            type="number"
+            placeholder="Min price"
+            value={minPrice}
+            onChange={(e) => setMinPrice(parseInt(e.target.value))}
+          />
+        </label>
+        <label>
+          <input
+            type="number"
+            placeholder="Max price"
+            value={maxPrice}
+            onChange={(e) => setMaxPrice(parseInt(e.target.value))}
+          />
+        </label>
+      </div>
       <Button
         variant="outlined"
         onClick={clearFilter}

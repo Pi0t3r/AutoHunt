@@ -18,7 +18,7 @@ const buttonLink = [
   },
   {
     title: 'My advert',
-    link: '/myAdvert',
+    link: '/profile/myAdvert',
     icon: <MdOutlineLocalOffer />,
   },
 ];

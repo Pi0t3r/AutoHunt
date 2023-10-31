@@ -12,7 +12,6 @@ import ReactPaginate from 'react-paginate';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import { Button } from '@mui/material';
 import { EMPTY_VALUE } from '@/constants';
-
 export default function Offers() {
   const [advertData, setAdvertData] = useState<any[]>([]);
   const [sortOption, setSortOption] = useState('default');
@@ -23,7 +22,6 @@ export default function Offers() {
   const handleChangeSortOption = (event: SelectChangeEvent) => {
     setSortOption(event.target.value);
   };
-  const currentDate = new Date();
 
   useEffect(() => {
     const sortAdvertData = () => {
@@ -33,6 +31,7 @@ export default function Offers() {
       } else if (sortOption === 'High') {
         sortedData.sort((a, b) => b.price - a.price);
       }
+
       setSortedAdvertData(sortedData);
     };
 
@@ -90,7 +89,7 @@ export default function Offers() {
                       letterSpacing: '1px',
                       fontWeight: 'bold',
                       fontSize: '10px',
-                      color:'#b78d20',
+                      color: '#b78d20',
                       borderColor: '#b78d20',
                       transition: 'scale .5s',
                       ':hover': { borderColor: '#a67c10', scale: '1.1' },

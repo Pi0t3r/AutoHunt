@@ -46,7 +46,6 @@ npm run dev
 - Posibility to login & register with Google account
 - Add all cars from the entire history to the project
 - Add more adverts
-- Add posibility to sorting offers by date published offer
 
 ## License
 
