@@ -5,6 +5,7 @@ export const handleLogout = async (setUser: SetUserFunction) => {
     await auth.signOut();
     setUser(null);
     localStorage.removeItem('user');
+    window.location.href = '/';
   } catch (error) {
     console.error(error);
   }
