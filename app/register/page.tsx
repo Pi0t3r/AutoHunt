@@ -1,6 +1,6 @@
 'use client';
-import LoginForm from '@/components/loginForm/LoginForm';
-import RegisterForm from '@/components/registerForm/RegisterForm';
+import { LoginForm } from '@/components/LoginForm';
+import { RegisterForm } from '@/components/RegisterForm';
 import { ActiveButton } from '@/types/ComponentTypes';
 import { useEffect, useState } from 'react';
 

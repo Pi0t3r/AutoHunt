@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState, FormEvent } from 'react';
 import { useUserContext } from '@/context/UserContext';
-import { auth } from '../../firebase';
+import { auth } from '../firebase';
 import { Button } from '@mui/material';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 
-const LoginForm = () => {
+export const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -134,5 +134,3 @@ const LoginForm = () => {
     </form>
   );
 };
-
-export default LoginForm;
