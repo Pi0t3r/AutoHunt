@@ -40,6 +40,7 @@
     "@types/react-slick": "0.23.10",
     "autoprefixer": "^10.4.16",
     "eslint-plugin-react-hooks": "^5.0.0-canary-7118f5dd7-20230705",
+    "gh-pages": "^6.0.0",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
     "prisma": "^4.14.0",
