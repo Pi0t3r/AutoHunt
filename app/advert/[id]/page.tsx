@@ -30,18 +30,16 @@ function Advert() {
   }
   const showData = advertData.find((car) => car.id === params.id);
   return (
-    <main className="my-20">
-      <section>
+    <main className="mt-20 overflow-hidden">
+      <section className="flex flex-row flex-wrap w-full justify-start p-4">
         <Banner images={showData.images} />
-      </section>
-      <section>
         <CarDetails data={showData} />
       </section>
       <section>
         <SellerDetails data={showData} />
       </section>
       <section>
-        <div className="m-4 flex flex-row flex-wrap items-center justify-start">
+        <div className="p-4 flex flex-row flex-wrap items-center justify-center">
           <p>Something wrong with this advert?</p>
           <Button
             variant="outlined"

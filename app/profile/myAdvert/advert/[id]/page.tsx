@@ -173,18 +173,16 @@ function MyAdvert() {
         </form>
       ) : (
         <div className="my-20">
-          <section>
+          <section className="flex flex-row flex-wrap w-full justify-start p-4">
             <Banner images={showData.images} />
-          </section>
-          <section>
             <CarDetails data={showData} />
           </section>
           <section>
             <SellerDetails data={showData} />
           </section>
-          <section className="p-4 flex flex-row flex-wrap gap-2 justify-center items-center">
+          <section className="p-4 flex flex-row flex-wrap gap-4 justify-center items-center">
             <Button
-              variant="contained"
+              variant="outlined"
               onClick={handleDelete}
               size="small"
               startIcon={<DeleteIcon />}
@@ -192,14 +190,20 @@ function MyAdvert() {
                 letterSpacing: '1px',
                 fontWeight: 'bold',
                 fontSize: '10px',
-                background: '#b78d20',
-                ':hover': { backgroundColor: '#a67c10' },
+                borderColor: '#b78d20',
+                color: '#b78d20',
+                transition: 'scale .5s',
+                ':hover': {
+                  borderColor: '#a67c10',
+                  background: 'none',
+                  scale: '1.1',
+                },
               }}
             >
               Delete advert
             </Button>
             <Button
-              variant="contained"
+              variant="outlined"
               onClick={handleEdit}
               size="small"
               startIcon={<EditIcon />}
@@ -207,8 +211,14 @@ function MyAdvert() {
                 letterSpacing: '1px',
                 fontWeight: 'bold',
                 fontSize: '10px',
-                background: '#b78d20',
-                ':hover': { backgroundColor: '#a67c10' },
+                borderColor: '#b78d20',
+                color: '#b78d20',
+                transition: 'scale .5s',
+                ':hover': {
+                  borderColor: '#a67c10',
+                  background: 'none',
+                  scale: '1.1',
+                },
               }}
             >
               Edit advert

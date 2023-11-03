@@ -60,7 +60,7 @@ export const LoginForm = () => {
       onSubmit={handleSubmitLogin}
       className="flex flex-col items-center justify-center gap-2 w-full"
     >
-      <label className="font-bold flex flex-col w-1/2">
+      <label className="font-bold flex flex-col w-3/4 max-w-lg">
         Email
         <input
           name="email"
@@ -76,7 +76,7 @@ export const LoginForm = () => {
           }`}
         />
       </label>
-      <label className="font-bold flex flex-col my-2 w-1/2 relative">
+      <label className="font-bold flex flex-col my-2 w-3/4 max-w-lg relative">
         Password
         <input
           name="password"

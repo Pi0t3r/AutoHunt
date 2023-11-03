@@ -87,13 +87,23 @@ export default function Profile() {
           </button>
         </span>
       </section>
-      <section className="flex flex-row flex-wrap justify-center gap-2 my-2">
+      <section className="flex flex-row flex-wrap justify-center gap-3 my-2">
         <Link href="/profile/resetPassword" className="relative no-underline">
           <Button
-            variant="contained"
+            variant="outlined"
             sx={{
-              background: '#b78d20',
-              ':hover': { backgroundColor: '#a67c10' },
+              letterSpacing: '1px',
+              fontWeight: 'bold',
+              fontSize: '10px',
+              borderColor: '#b78d20',
+              color: '#b78d20',
+              transition: 'scale .5s',
+              ':hover': {
+                margin: '0 5px',
+                borderColor: '#a67c10',
+                background: 'none',
+                scale: '1.1',
+              },
             }}
           >
             Change my password
@@ -101,41 +111,54 @@ export default function Profile() {
         </Link>
         <Link href="/profile/deleteAcc">
           <Button
-            variant="contained"
+            variant="outlined"
             sx={{
-              background: '#b78d20',
-              ':hover': { backgroundColor: '#a67c10' },
+              letterSpacing: '1px',
+              fontWeight: 'bold',
+              fontSize: '10px',
+              borderColor: '#b78d20',
+              color: '#b78d20',
+              transition: 'scale .5s',
+              ':hover': {
+                margin: '0 5px',
+                borderColor: '#a67c10',
+                background: 'none',
+                scale: '1.1',
+              },
             }}
           >
             I want delete my account
           </Button>
         </Link>
         {wantChangeImage ? (
-          <div className="mt-3">
-            <input
-              type="file"
-              accept="image/png"
-              onChange={handleSelectedFile}
-            />
-            <Button
-              variant="contained"
-              sx={{
-                color: '#b78d20',
-                background: 'none',
-                ':hover': { backgroundColor: '#a67c10', color: 'white' },
-              }}
-              onClick={handleUploadFile}
-            >
-              Upload
-            </Button>
+          <div className="m3-3">
+            <label className="block mb-2 w-3/4 text-sm font-medium text-gray-900 dark:text-white">
+              Upload files
+              <input
+                className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                type="file"
+                multiple
+                onChange={handleChangeImage}
+              />
+            </label>
           </div>
         ) : (
           <Button
             onClick={handleChangeImage}
-            variant="contained"
+            variant="outlined"
             sx={{
-              background: '#b78d20',
-              ':hover': { backgroundColor: '#a67c10' },
+              letterSpacing: '1px',
+              fontWeight: 'bold',
+              fontSize: '10px',
+              borderColor: '#b78d20',
+              color: '#b78d20',
+              transition: 'scale .5s',
+              ':hover': {
+                margin: '0 5px',
+                borderColor: '#a67c10',
+                background: 'none',
+                scale: '1.1',
+              },
             }}
           >
             I want change my Image

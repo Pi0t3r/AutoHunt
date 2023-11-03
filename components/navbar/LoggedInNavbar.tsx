@@ -9,7 +9,7 @@ import { Sidebar } from '../Sidebar';
 import { Navigation } from './Navigation';
 const LoggedInNabar = () => {
   const { userData } = useUserData();
-  const { userName } = userData;
+  const { userName, userSurname } = userData;
   const { setUser } = useUserContext();
   const [visible, setVisible] = useState(false);
 
@@ -28,9 +28,12 @@ const LoggedInNabar = () => {
           <FiMenu className="w-8 h-8 text-main" />
         )}
       </button>
-      <p className="hidden md:block text-white w-1/4">
+      <p className="hidden md:block text-white w-1/4 w-fit">
         Hello,
-        <span className="text-main font-medium italic"> {userName}</span>
+        <span className="text-main font-medium italic">
+          {' '}
+          {userName}
+        </span>
       </p>
       <nav className="hidden md:block w-3/4">
         <Navigation

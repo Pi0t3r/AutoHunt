@@ -15,7 +15,7 @@ export const SellerDetails: React.FC<SellerDataProps> = ({ data }) => {
   return (
     <div className="bg-gray-300 pt-2">
       <h4 className="text-center font-medium text-lg">About the seller</h4>
-      <ul className="flex flex-row flex-wrap justify-center">
+      <ul className="flex flex-row flex-wrap justify-evenly">
         <Info title={<AiOutlineUser />} value={data.sellerName} />
         <Info title={<FaMapPin />} value={data.sellerPlace} />
         <li className="flex items-center bg-gray-100 border-2 m-2 p-4 rounded-md shadow-lg text-main font-medium">

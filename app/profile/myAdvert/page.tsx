@@ -67,17 +67,19 @@ export default function MyAdvert() {
                   <div className="flex flex-row flex-wrap justify-between items-center mt-4">
                     <Link href={`/profile/myAdvert/advert/${post.id}`}>
                       <Button
-                        variant="contained"
+                        variant="outlined"
                         size="small"
                         sx={{
                           letterSpacing: '1px',
                           fontWeight: 'bold',
                           fontSize: '10px',
                           transition: 'scale .5s',
-                          background: '#b78d20',
+                          borderColor: '#b78d20',
+                          color: '#b78d20',
                           ':hover': {
-                            backgroundColor: '#a67c10',
+                            borderColor: '#a67c10',
                             scale: '1.1',
+                            background: 'none',
                           },
                         }}
                       >

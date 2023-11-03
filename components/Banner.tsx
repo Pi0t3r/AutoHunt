@@ -5,6 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { BannerProps } from '@/types/ComponentTypes';
 import clsx from 'clsx';
+import { BASIC_IMAGE_SIZE, CLICKED_IMAGE_SIZE } from '@/constants';
 export const Banner: React.FC<BannerProps> = ({ images }) => {
   const [isClicked, setIsClicked] = useState(false);
 
@@ -26,25 +27,24 @@ export const Banner: React.FC<BannerProps> = ({ images }) => {
     <div
       className={` ${
         isClicked
-          ? 'bg-black/80  absolute inset-0 flex items-center justify-center transition duration-300 ease-out flex-col z-[100]'
-          : ''
+          ? 'bg-black/80 absolute inset-0 flex items-center justify-center transition duration-300 ease-out flex-col z-[100]'
+          : 'w-1/2'
       }`}
     >
       <div className={buttonClasses} onClick={handleReduceImage}>
         <AiOutlineClose />
       </div>
       <Carousel
-        className={`w-full max-w-7xl mx-auto cursor-pointer ${
-          isClicked ? 'cursor-auto' : 'cursor-pointer'
-        }`}
+        className={`max-w-7xl ${isClicked ? 'cursor-auto' : 'cursor-pointer'}`}
       >
         {images.map((image, index) => (
           <div key={index} onClick={handleImageClick}>
             <Image
               src={image}
               alt={`Image ${index}`}
-              width={300}
-              height={250}
+              width={isClicked ? CLICKED_IMAGE_SIZE : BASIC_IMAGE_SIZE}
+              height={isClicked ? CLICKED_IMAGE_SIZE : BASIC_IMAGE_SIZE}
+              className={`${isClicked ? 'max-w-[400px]' : ''} max-h-[600px] ` }
             />
           </div>
         ))}

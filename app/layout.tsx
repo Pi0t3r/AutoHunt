@@ -20,7 +20,7 @@ export default function RootLayout({
       <head>
         <title>Autohunt</title>
       </head>
-      <body className={`${inter.className} max-w-7xl mx-auto`}>
+      <body className={`${inter.className} max-w-7xl mx-auto xl:w-[1280px]`}>
         <UserProvider>
           <main>
             <Navbar />

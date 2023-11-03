@@ -13,7 +13,7 @@ export default function Register() {
   return (
     <main className="mt-20">
       <header className="relative h-20">
-        <h2 className="uppercase font-medium text-2xl absolute bottom-0 left-1/2 -translate-x-1/2">
+        <h2 className="uppercase font-medium text-2xl text-center absolute bottom-0 left-1/2 -translate-x-1/2">
           <span className="font-bold text-main">Join us</span> to continue
         </h2>
       </header>

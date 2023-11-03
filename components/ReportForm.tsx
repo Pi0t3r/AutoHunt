@@ -28,7 +28,7 @@ export const ReportForm = ({ setReportVisible, reportVisible }: ReportFormProps)
       className={`fixed w-3/4 h-fit shadow-lg max-w-md rounded-md z-10 bg-slate-200 top-1/2 left-1/2 -translate-y-1/2 transition-all  border-2 border-black duration-300 ease-in delay-150 ${
         reportVisible
           ? '-translate-x-1/2 opacity-100'
-          : '-translate-x-[200%] opacity-0'
+          : '-translate-x-[200%] opacity-0 z-[-100] cursor-default'
       }`}
     >
       <div className="flex justify-between items-center p-2 h-fit">
