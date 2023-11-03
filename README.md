@@ -20,6 +20,14 @@ The main goal of the Autohunt project is to make it easier for users to find the
 ## Repository
 
 [link to the repository](https://github.com/Pi0t3r/AutoHunt)
+[link to live](https://auto-hunt.vercel.app)
+
+
+## Screenshots
+![Screenshot 1](/images/Zrzut%20ekranu%20(139).png)
+![Screenshot 2](/images/Zrzut%20ekranu%20(140).png)
+![Screenshot 3](/images/Zrzut%20ekranu%20(141).png)
+![Screenshot 4](/images/Zrzut%20ekranu%20(142).png)
 
 ## Installation instructions
 
