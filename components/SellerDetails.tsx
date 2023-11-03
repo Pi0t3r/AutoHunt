@@ -11,7 +11,7 @@ const Info = ({ title, value }: InfoProps) => {
   );
 };
 
-export const SellerDetails = ({ data }: SellerDataProps) => {
+export const SellerDetails: React.FC<SellerDataProps> = ({ data }) => {
   return (
     <div className="bg-gray-300 pt-2">
       <h4 className="text-center font-medium text-lg">About the seller</h4>
@@ -28,5 +28,3 @@ export const SellerDetails = ({ data }: SellerDataProps) => {
     </div>
   );
 };
-
-

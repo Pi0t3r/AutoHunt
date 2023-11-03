@@ -8,7 +8,7 @@ const Info = ({ title, value }: InfoProps) => {
   );
 };
 
-export const CarDetails = ({ data }: carDataProps) => {
+export const CarDetails: React.FC<carDataProps> = ({ data }) => {
   return (
     <>
       <p className="text-center font-medium italic">
@@ -27,5 +27,3 @@ export const CarDetails = ({ data }: carDataProps) => {
     </>
   );
 };
-
-

@@ -5,7 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { BannerProps } from '@/types/ComponentTypes';
 import clsx from 'clsx';
-export const Banner = ({ images }: BannerProps) => {
+export const Banner: React.FC<BannerProps> = ({ images }) => {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleImageClick = () => {
