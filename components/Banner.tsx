@@ -28,7 +28,7 @@ export const Banner: React.FC<BannerProps> = ({ images }) => {
       className={` ${
         isClicked
           ? 'bg-black/80 absolute inset-0 flex items-center justify-center transition duration-300 ease-out flex-col z-[100]'
-          : 'w-1/2'
+          : 'w-full md:w-1/2'
       }`}
     >
       <div className={buttonClasses} onClick={handleReduceImage}>

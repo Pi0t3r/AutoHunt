@@ -23,26 +23,33 @@ export default function DeleteAcc() {
   }
   return (
     <main className="mt-20">
-      <div className="text-center flex flex-col gap-2">
-        <h2>Are you sure?</h2>
+      <div className="text-center flex flex-row flex-wrap justify-center items-center gap-2 p-10">
+        <h2>Are you sure you want to delete your account?</h2>
+        <p>
+          Deleting your account will result in the permanent loss of all your
+          data associated with your account. Are you absolutely certain you wish
+          to proceed with this action?
+        </p>
         <Button
           onClick={handleDeleteUser}
-          variant="contained"
+          variant="outlined"
           sx={{
-            background: '#b78d20',
+            color: '#b78d20',
+            borderColor: '#b78d20',
             textTransform: 'lowercase',
-            ':hover': { backgroundColor: '#a67c10' },
+            ':hover': { borderColor: '#a67c10', background: 'none' },
           }}
         >
           Yes, delele my account
         </Button>
         <Link href="/profile">
           <Button
-            variant="contained"
+            variant="outlined"
             sx={{
+              color: '#b78d20',
+              borderColor: '#b78d20',
               textTransform: 'lowercase',
-              ':hover': { backgroundColor: '#a67c10' },
-              background: '#b78d20',
+              ':hover': { borderColor: '#a67c10', background: 'none' },
             }}
           >
             No, not now

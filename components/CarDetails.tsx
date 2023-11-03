@@ -10,7 +10,7 @@ const Info = ({ title, value }: InfoProps) => {
 
 export const CarDetails: React.FC<carDataProps> = ({ data }) => {
   return (
-    <div className='flex flex-col items-center w-1/2 justify-start p-4'>
+    <div className='flex flex-col items-center w-full md:w-1/2 justify-start p-4'>
       <p className="text-center font-medium italic">
         {data.brand} • {data.model} • {data.generation} • {data.version} •{' '}
         {data.engine}

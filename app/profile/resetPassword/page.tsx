@@ -116,11 +116,12 @@ export default function ResetPassword() {
           <Button
             type="submit"
             endIcon={<SaveIcon />}
-            variant="contained"
+            variant="outlined"
             size="small"
             sx={{
-              background: '#b78d20',
-              ':hover': { backgroundColor: '#a67c10' },
+              borderColor: '#b78d20',
+              color: '#b78d20',
+              ':hover': { borderColor: '#a67c10', background: 'none' },
             }}
           >
             Change my password
