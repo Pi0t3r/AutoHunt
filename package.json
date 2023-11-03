@@ -1,12 +1,15 @@
 {
+  "homepage": ".",
   "name": "autohunt",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "gh-pages -d .next",
+    "preview": "vite preview --port 8080"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
