@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["ireland.apollo.olxcdn.com", "firebasestorage.googleapis.com"],
+    domains: ['ireland.apollo.olxcdn.com', 'firebasestorage.googleapis.com'],
   },
   env: {
     FIREBASE_KEY: process.env.FIREBASE_KEY,
@@ -15,7 +15,7 @@ const nextConfig = {
     APP_ID: process.env.APP_ID,
     MEASUREMENT_ID: process.env.MEASUREMENT_ID,
   },
-
+  output: 'export',
 };
 
 module.exports = nextConfig;
