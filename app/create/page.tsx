@@ -218,7 +218,11 @@ export default function CreateAdvert() {
 
   const Result = () => {
     if (advertAdded) {
-      return <p>Your ad has been added</p>;
+      return (
+        <p className="text-center my-10 uppercase">
+          Your advert has been added!
+        </p>
+      );
     }
   };
 

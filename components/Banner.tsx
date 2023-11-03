@@ -5,7 +5,7 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { BannerProps } from '@/types/ComponentTypes';
 import clsx from 'clsx';
-import { BASIC_IMAGE_SIZE, CLICKED_IMAGE_SIZE } from '@/constants';
+import { BASIC_IMAGE_SIZE, CLICKED_IMAGE_SIZE, EMPTY_VALUE } from '@/constants';
 export const Banner: React.FC<BannerProps> = ({ images }) => {
   const [isClicked, setIsClicked] = useState(false);
 

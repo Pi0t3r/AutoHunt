@@ -122,7 +122,7 @@ export const RegisterForm = () => {
       </label>
       <div>
         <input type="checkbox" required />
-        <p>
+        <p className="px-4">
           I acknowledge that I have read and accept the Terms and Conditions,
           and understand that AutoHunt Group Ltd. will process my personal data
           in accordance with the Privacy Policy and the Policy on Cookies and
@@ -141,6 +141,7 @@ export const RegisterForm = () => {
           alignSelf: 'center',
           borderColor: '#b78d20',
           transition: 'scale .5s',
+          margin: '20px',
           ':hover': {
             scale: '1.1',
             background: 'none',
@@ -161,5 +162,3 @@ export const RegisterForm = () => {
     </form>
   );
 };
-
-

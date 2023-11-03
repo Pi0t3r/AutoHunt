@@ -24,7 +24,7 @@ export default function Register() {
               activeButton === 'login'
                 ? 'text-main border-solid border-2 border-b-main'
                 : 'text-[#a3a3a3]'
-            } uppercase w-2/5 text-2xl text-left font-medium hover:scale-110 transition`}
+            } uppercase w-2/5 text-2xl text-left font-medium hover:scale-105 transition hover:border-none`}
             onClick={() => handleButtonClick('login')}
           >
             Log in
@@ -34,7 +34,7 @@ export default function Register() {
               activeButton === 'signup'
                 ? 'text-main border-solid border-2 border-b-main'
                 : 'text-[#a3a3a3]'
-            } text-2xl uppercase w-2/5 text-left font-medium  hover:scale-110 transition`}
+            } text-2xl uppercase w-2/5 text-left font-medium  hover:scale-105 transition hover:border-none`}
             onClick={() => handleButtonClick('signup')}
           >
             Sign up

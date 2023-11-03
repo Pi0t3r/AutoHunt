@@ -78,155 +78,165 @@ function MyAdvert() {
       }
     }
   };
-  if (advertData.length === EMPTY_VALUE) {
-    return <p>Loading ...</p>;
-  }
 
   const showData = advertData.find((car) => car.id === params.id);
+  if (showData && showData.images && showData.images.length === EMPTY_VALUE) {
+    return <p>You currently do not have any advertisements.</p>;
+  }
+
+  if (showData && showData.images) {
+    return (
+      <main className="mt-10">
+        {isEditing ? (
+          <form className="mt-20 mb-10">
+            <fieldset className="p-2 flex flex-row flex-wrap gap-4 justify-center items-center">
+              <MyInput
+                value={formData.mileage}
+                type="number"
+                placeholder="Mileage"
+                onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                  setFormData((prevData) => ({
+                    ...prevData,
+                    mileage: event.target.value,
+                  }));
+                }}
+              />
+              <MyInput
+                placeholder="Price"
+                type="number"
+                value={formData.price}
+                onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                  const value = event.target.value;
+                  setFormData((prevData) => ({
+                    ...prevData,
+                    price: value,
+                  }));
+                }}
+              />
+              <MyInput
+                placeholder="Phone number"
+                type="tel"
+                value={formData.phone}
+                onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                  const value = event.target.value;
+                  setFormData((prevData) => ({
+                    ...prevData,
+                    phone: value,
+                  }));
+                }}
+              />
+              <MyInput
+                placeholder="Place"
+                type="text"
+                value={formData.sellerPlace}
+                onChange={(event: ChangeEvent<HTMLInputElement>) => {
+                  const value = event.target.value;
+                  setFormData((prevData) => ({
+                    ...prevData,
+                    sellerPlace: value,
+                  }));
+                }}
+              />
+            </fieldset>
+            <fieldset className="flex flex-row flex-wrap gap-2 justify-center items-center w-full">
+              <Button
+                variant="outlined"
+                onClick={handleSaveChanges}
+                size="small"
+                startIcon={<SaveIcon />}
+                sx={{
+                  letterSpacing: '1px',
+                  fontWeight: 'bold',
+                  fontSize: '10px',
+                  borderColor: '#b78d20',
+                  color: '#b78d20',
+                  ':hover': { borderColor: '#a67c10' },
+                }}
+              >
+                Save changes
+              </Button>
+              <Button
+                variant="outlined"
+                onClick={handleCancelEdit}
+                size="small"
+                sx={{
+                  letterSpacing: '1px',
+                  fontWeight: 'bold',
+                  fontSize: '10px',
+                  borderColor: '#b78d20',
+                  color: '#b78d20',
+                  ':hover': { borderColor: '#a67c10' },
+                }}
+              >
+                Cancel
+              </Button>
+            </fieldset>
+            {saveSuccess && (
+              <p className="text-center mt-2">Successfully saved changes!</p>
+            )}
+          </form>
+        ) : (
+          <div className="my-20">
+            <section className="flex flex-row flex-wrap w-full justify-start p-4">
+              <Banner images={showData.images} />
+              <CarDetails data={showData} />
+            </section>
+            <section>
+              <SellerDetails data={showData} />
+            </section>
+            <section className="p-4 flex flex-row flex-wrap gap-4 justify-center items-center">
+              <Button
+                variant="outlined"
+                onClick={handleDelete}
+                size="small"
+                startIcon={<DeleteIcon />}
+                sx={{
+                  letterSpacing: '1px',
+                  fontWeight: 'bold',
+                  fontSize: '10px',
+                  borderColor: '#b78d20',
+                  color: '#b78d20',
+                  transition: 'scale .5s',
+                  ':hover': {
+                    borderColor: '#a67c10',
+                    background: 'none',
+                    scale: '1.1',
+                  },
+                }}
+              >
+                Delete advert
+              </Button>
+              <Button
+                variant="outlined"
+                onClick={handleEdit}
+                size="small"
+                startIcon={<EditIcon />}
+                sx={{
+                  letterSpacing: '1px',
+                  fontWeight: 'bold',
+                  fontSize: '10px',
+                  borderColor: '#b78d20',
+                  color: '#b78d20',
+                  transition: 'scale .5s',
+                  ':hover': {
+                    borderColor: '#a67c10',
+                    background: 'none',
+                    scale: '1.1',
+                  },
+                }}
+              >
+                Edit advert
+              </Button>
+            </section>
+          </div>
+        )}
+      </main>
+    );
+  }
   return (
-    <main className="mt-10">
-      {isEditing ? (
-        <form className="mt-20 mb-10">
-          <fieldset className="p-2 flex flex-row flex-wrap gap-4 justify-center items-center">
-            <MyInput
-              value={formData.mileage}
-              type="number"
-              placeholder="Mileage"
-              onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                setFormData((prevData) => ({
-                  ...prevData,
-                  mileage: event.target.value,
-                }));
-              }}
-            />
-            <MyInput
-              placeholder="Price"
-              type="number"
-              value={formData.price}
-              onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                const value = event.target.value;
-                setFormData((prevData) => ({
-                  ...prevData,
-                  price: value,
-                }));
-              }}
-            />
-            <MyInput
-              placeholder="Phone number"
-              type="tel"
-              value={formData.phone}
-              onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                const value = event.target.value;
-                setFormData((prevData) => ({
-                  ...prevData,
-                  phone: value,
-                }));
-              }}
-            />
-            <MyInput
-              placeholder="Place"
-              type="text"
-              value={formData.sellerPlace}
-              onChange={(event: ChangeEvent<HTMLInputElement>) => {
-                const value = event.target.value;
-                setFormData((prevData) => ({
-                  ...prevData,
-                  sellerPlace: value,
-                }));
-              }}
-            />
-          </fieldset>
-          <fieldset className="flex flex-row flex-wrap gap-2 justify-center items-center w-full">
-            <Button
-              variant="contained"
-              onClick={handleSaveChanges}
-              size="small"
-              startIcon={<SaveIcon />}
-              sx={{
-                letterSpacing: '1px',
-                fontWeight: 'bold',
-                fontSize: '10px',
-                background: '#b78d20',
-                ':hover': { backgroundColor: '#a67c10' },
-              }}
-            >
-              Save changes
-            </Button>
-            <Button
-              variant="contained"
-              onClick={handleCancelEdit}
-              size="small"
-              sx={{
-                letterSpacing: '1px',
-                fontWeight: 'bold',
-                fontSize: '10px',
-                background: '#b78d20',
-                ':hover': { backgroundColor: '#a67c10' },
-              }}
-            >
-              Cancel
-            </Button>
-          </fieldset>
-          {saveSuccess && (
-            <p className="text-center mt-2">Succesfully save changes!</p>
-          )}
-        </form>
-      ) : (
-        <div className="my-20">
-          <section className="flex flex-row flex-wrap w-full justify-start p-4">
-            <Banner images={showData.images} />
-            <CarDetails data={showData} />
-          </section>
-          <section>
-            <SellerDetails data={showData} />
-          </section>
-          <section className="p-4 flex flex-row flex-wrap gap-4 justify-center items-center">
-            <Button
-              variant="outlined"
-              onClick={handleDelete}
-              size="small"
-              startIcon={<DeleteIcon />}
-              sx={{
-                letterSpacing: '1px',
-                fontWeight: 'bold',
-                fontSize: '10px',
-                borderColor: '#b78d20',
-                color: '#b78d20',
-                transition: 'scale .5s',
-                ':hover': {
-                  borderColor: '#a67c10',
-                  background: 'none',
-                  scale: '1.1',
-                },
-              }}
-            >
-              Delete advert
-            </Button>
-            <Button
-              variant="outlined"
-              onClick={handleEdit}
-              size="small"
-              startIcon={<EditIcon />}
-              sx={{
-                letterSpacing: '1px',
-                fontWeight: 'bold',
-                fontSize: '10px',
-                borderColor: '#b78d20',
-                color: '#b78d20',
-                transition: 'scale .5s',
-                ':hover': {
-                  borderColor: '#a67c10',
-                  background: 'none',
-                  scale: '1.1',
-                },
-              }}
-            >
-              Edit advert
-            </Button>
-          </section>
-        </div>
-      )}
-    </main>
+    <div className="h-96 flex items-center justify-center">
+      <p>You currently do not have any advertisements.</p>
+    </div>
   );
 }
 
