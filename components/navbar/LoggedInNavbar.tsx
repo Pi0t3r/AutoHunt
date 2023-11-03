@@ -1,11 +1,11 @@
-import { useUserContext } from '@/context/UserContext';
+import { useUserContext } from '@/context';
 import { handleLogout } from '@/functions';
 import useUserData from '@/useUserData';
 import Link from 'next/link';
 import { useState } from 'react';
 import { AiOutlineClose } from 'react-icons/ai';
 import { FiMenu } from 'react-icons/fi';
-import { Sidebar } from '../sidebar/page';
+import { Sidebar } from '../Sidebar';
 import { Navigation } from './Navigation';
 const LoggedInNabar = () => {
   const { userData } = useUserData();

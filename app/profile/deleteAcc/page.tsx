@@ -1,5 +1,5 @@
 'use client';
-import { useUserContext } from '@/context/UserContext';
+import { useUserContext } from '@/context';
 import { auth, db } from '@/firebase';
 import Button from '@mui/material/Button';
 import { deleteDoc, doc } from 'firebase/firestore';
@@ -22,12 +22,12 @@ export default function DeleteAcc() {
     }
   }
   return (
-    <main className='mt-20'>
-      <div className='text-center flex flex-col gap-2'>
+    <main className="mt-20">
+      <div className="text-center flex flex-col gap-2">
         <h2>Are you sure?</h2>
         <Button
           onClick={handleDeleteUser}
-          variant='contained'
+          variant="contained"
           sx={{
             background: '#b78d20',
             textTransform: 'lowercase',
@@ -36,9 +36,9 @@ export default function DeleteAcc() {
         >
           Yes, delele my account
         </Button>
-        <Link href='/profile'>
+        <Link href="/profile">
           <Button
-            variant='contained'
+            variant="contained"
             sx={{
               textTransform: 'lowercase',
               ':hover': { backgroundColor: '#a67c10' },

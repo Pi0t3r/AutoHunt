@@ -1,6 +1,6 @@
 'use client';
 import { fetchAdverts } from '@/api/getAdvertDetails';
-import { MyInput } from '@/components/Inputs/MyInput';
+import { MyInput } from '@/components/MyInput';
 import { Banner } from '@/components/Banner';
 import { CarDetails } from '@/components/CarDetails';
 import { SellerDetails } from '@/components/SellerDetails';

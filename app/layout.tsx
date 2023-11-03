@@ -1,6 +1,6 @@
-import { UserProvider } from '@/context/UserContext';
+import { UserProvider } from '@/context';
 import { Inter } from 'next/font/google';
-import Footer from '@/components/footer/Footer';
+import Footer from '@/components/Footer';
 import Navbar from '@/components/navbar/Navbar';
 import './globals.css';
 const inter = Inter({ subsets: ['latin'] });

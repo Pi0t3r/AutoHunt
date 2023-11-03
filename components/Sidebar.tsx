@@ -1,8 +1,8 @@
-import { useUserContext } from '@/context/UserContext';
+import { useUserContext } from '@/context';
 import { handleLogout } from '@/functions';
 import useUserData from '@/useUserData';
-import { Navigation } from '../navbar/Navigation';
-import ProfileImage from '../profileImage/Page';
+import { Navigation } from './navbar/Navigation';
+import ProfileImage from './ProfileImage';
 
 export const Sidebar = () => {
   const { userData } = useUserData();

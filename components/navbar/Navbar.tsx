@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { AiOutlineUser } from 'react-icons/ai';
-import { useUserContext } from '../../context/UserContext';
+import { useUserContext } from '../../context';
 import LoggedInNabar from './LoggedInNavbar';
 import IconButton from '@mui/material/IconButton';
 export default function Navbar() {

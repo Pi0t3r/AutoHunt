@@ -8,7 +8,7 @@ import {
   updateDoc,
 } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
-import { useUserContext } from './context/UserContext';
+import { useUserContext } from './context';
 import { EMPTY_VALUE } from './constants';
 
 const useUserData = () => {

@@ -1,5 +1,5 @@
 'use client';
-import ProfileImage from '@/components/profileImage/Page';
+import ProfileImage from '@/components/ProfileImage';
 import { db, storage } from '@/firebase';
 import useUserData from '@/useUserData';
 import Button from '@mui/material/Button';

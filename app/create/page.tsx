@@ -1,11 +1,11 @@
 'use client';
-import { MyInput } from '@/components/Inputs/MyInput';
+import { MyInput } from '@/components/MyInput';
 import { BodySelect } from '@/components/Selects/BodySelect';
 import { BrandSelect } from '@/components/Selects/BrandSelect';
 import { CarDataSelect } from '@/components/Selects/CarDataSelect';
 import { CustomSelect } from '@/components/Selects/CustomSelect';
 import { FuelSelect } from '@/components/Selects/FuelSelect';
-import ImageUpload from '@/components/imageUpload/ImageUpload';
+import ImageUpload from '@/components/ImageUpload';
 import { db, storage } from '@/firebase';
 import { SelectOptionProps } from '@/types/SelectTypes';
 import useUserData from '@/useUserData';

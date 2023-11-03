@@ -2,7 +2,7 @@ import { signInWithEmailAndPassword } from '@firebase/auth';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useState, FormEvent } from 'react';
-import { useUserContext } from '@/context/UserContext';
+import { useUserContext } from '@/context';
 import { auth } from '../firebase';
 import { Button } from '@mui/material';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';

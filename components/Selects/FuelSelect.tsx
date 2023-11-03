@@ -1,6 +1,6 @@
 import { fuelOptions } from '@/data/cars';
 import { FilterSelectPropsExtend } from '@/types/SelectTypes';
-import { SelectUI } from '../select/SelectUI';
+import { SelectUI } from '../SelectUI';
 
 export const FuelSelect = ({ value, onChange }: FilterSelectPropsExtend) => {
   return (
