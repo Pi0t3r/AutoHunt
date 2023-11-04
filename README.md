@@ -11,7 +11,7 @@ Autohunt is an online application that aims to help users find their dream car o
 
 ## Status
 
-The Autohunt project is under development and is not yet finished. Currently, some features are not yet implemented and the project does not have full functionality.
+The Autohunt project is under development and is not yet finished. Currently, some features are not yet implemented and the project does not have full functionality. 
 
 ## Project goals
 
@@ -22,12 +22,12 @@ The main goal of the Autohunt project is to make it easier for users to find the
 [link to the repository](https://github.com/Pi0t3r/AutoHunt)
 [link to live](https://auto-hunt.vercel.app)
 
-
 ## Screenshots
-![Screenshot 1](/images/Zrzut%20ekranu%20(139).png)
-![Screenshot 2](/images/Zrzut%20ekranu%20(140).png)
-![Screenshot 3](/images/Zrzut%20ekranu%20(141).png)
-![Screenshot 4](/images/Zrzut%20ekranu%20(142).png)
+
+![Screenshot 1](</images/Zrzut%20ekranu%20(139).png>)
+![Screenshot 2](</images/Zrzut%20ekranu%20(140).png>)
+![Screenshot 3](</images/Zrzut%20ekranu%20(141).png>)
+![Screenshot 4](</images/Zrzut%20ekranu%20(142).png>)
 
 ## Installation instructions
 
@@ -36,7 +36,9 @@ The main goal of the Autohunt project is to make it easier for users to find the
 ```
 npm install
 ```
+
 2. Clone repository
+
 ```
 git clone https://github.com/Pi0t3r/AutoHunt
 ```
@@ -52,7 +54,6 @@ npm run dev
 ## Planned functions
 
 - Posibility to login & register with Google account
-- Add all cars from the entire history to the project
 - Add more adverts
 
 ## License
@@ -61,7 +62,7 @@ The Autohunt project is not released under any license.
 
 ## Known problems
 
-- Due to the large number of cars in the history for the moment are added the newest from different brands
+- It is not possible to search for or list all models or generations of the cars in question in the project because of the number that exist.
 
 ## Contact
 
