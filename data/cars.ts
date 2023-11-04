@@ -14219,6 +14219,20 @@ export const options: Car[] = [
             value: 'C118/X118',
             versions: [
               {
+                value: 'Shooting Brake AMG',
+                engine:[
+                  {
+                    value:'2.0 35 AMG 306KM',
+                  },
+                  {
+                    value:'2.0 45 AMG 387KM',
+                  },
+                  {
+                    value:'2.0 45 S AMG 421KM',
+                  },
+                ]
+              },
+              {
                 value: 'Shooting Brake Facelifting',
                 engine: [
                   {

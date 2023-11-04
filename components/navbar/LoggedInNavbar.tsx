@@ -35,7 +35,7 @@ const LoggedInNabar = () => {
           {userName}
         </span>
       </p>
-      <nav className="hidden md:block w-3/4">
+      <nav className="hidden md:block w-4/6">
         <Navigation
           gap="x"
           onClick={() => handleLogout(setUser)}

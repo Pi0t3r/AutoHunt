@@ -218,6 +218,17 @@ export default function CreateAdvert() {
 
   const Result = () => {
     if (advertAdded) {
+      setFormData((prevData) => ({
+        ...prevData,
+        yearbook: '',
+        mileage: '',
+        firstRegister: '',
+        vin: '',
+        price: '',
+        phone: '',
+        sellerPlace: '',
+        brand: '',
+      }));
       return (
         <p className="text-center my-10 uppercase">
           Your advert has been added!
